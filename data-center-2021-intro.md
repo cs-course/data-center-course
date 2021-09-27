@@ -27,6 +27,22 @@ title: 数据中心技术
 
 ## 课堂背景调查
 
+<style scoped>
+img {
+  height: 450px;
+}
+th {
+  display: none;
+}
+table {
+  width: 100%;
+}
+</style>
+
+|   |   |
+|:-:|:--|
+|![课堂QQ群](images/qq-group-2021.png)|1. 扫码进群<br/>2. 参与投票|
+
 ---
 
 ## 应用服务的规模化
