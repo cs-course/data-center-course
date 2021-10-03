@@ -22,13 +22,9 @@ title: 数据中心技术
 
 ---
 
-## 数字世界发展的恒久挑战
+![bg](images/The-trend-of-global-data-creation-Reproduced-from-IDC-5.png)
 
-{配图}
-
----
-
-{配图}
+<!-- https://www.researchgate.net/figure/The-trend-of-global-data-creation-Reproduced-from-IDC-5_fig1_312012444 -->
 
 ---
 
@@ -160,7 +156,6 @@ li, p {
 <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/release/2.4.0/RELEASENOTES.2.4.0.html>
 
   If a read from a block is slow, start up another parallel, ‘hedged’ read against a different block replica. We then take the result of which ever read returns first (the outstanding read is cancelled). This ‘hedged’ read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
-
 
 ---
 

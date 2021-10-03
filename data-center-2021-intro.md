@@ -49,6 +49,36 @@ table {
 
 ---
 
+![bg](images/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png)
+
+<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png -->
+
+---
+
+![bg](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
+
+<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png -->
+
+---
+
+<style scoped>
+li, p {
+  font-size: 20px;
+}
+</style>
+
+## 数据洪流
+
+![w:1150](images/IDC_DataSphere.png)
+
+<https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
+
+---
+
+![bg fit](images/IDC_edge_to_core.png)
+
+---
+
 ## 信息系统的规模化
 
 仓库式计算机的提出
@@ -222,7 +252,7 @@ li, p {
     - <https://grafana.com>
     - <https://github.com/grafana/grafana>
   - Prometheus
-    - <https://prometheus.io/>, 
+    - <https://prometheus.io/>
     - <https://github.com/prometheus/prometheus>
   - InfluxDB & Telegraf
     - <https://www.influxdata.com>
@@ -243,7 +273,7 @@ td {
 }
 </style>
 
-## 数据中心的日常
+## 经典问题
 
 |微观|宏观|环境|
 |:-|:-|:-|
@@ -254,7 +284,7 @@ td {
 
 ## 后续内容
 
-- 熟悉环境 
+- 熟悉环境
   - *Linux, Git, SSH, Python, OpenStack, K8S, Docker* …
 - 着手综述
   - 跟随讲座内容，检索和阅读论文，准备下个月汇报
