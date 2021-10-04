@@ -55,9 +55,43 @@ table {
 
 ---
 
+<style scoped>
+p {
+  padding-top: 200px;
+  text-align: center;
+  font-size: 72px;
+  color: 0040FF;
+}
+</style>
+
+![bg opacity:.3 brightness:.5](images/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png)
+
+<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png -->
+
+网络服务已渗透社会各个方面
+
+---
+
 ![bg](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
 
 <!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png -->
+
+---
+
+<style scoped>
+p {
+  padding-top: 200px;
+  text-align: center;
+  font-size: 72px;
+  color: 0040FF;
+}
+</style>
+
+![bg opacity:.3 brightness:.5](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
+
+<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png -->
+
+疫情甚至加快了这个过程
 
 ---
 
@@ -67,7 +101,7 @@ li, p {
 }
 </style>
 
-## 数据洪流
+## 随之而来的数据洪流
 
 ![w:1150](images/IDC_DataSphere.png)
 
@@ -169,7 +203,7 @@ li, p {
   3. 监控管理工具
 - 还有**亿点点**细节
 
-![3steps](images/3steps.png)
+![bg right fit](images/3steps.png)
 
 ---
 
