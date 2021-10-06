@@ -22,9 +22,18 @@ title: 数据中心技术
 
 ---
 
-![bg](images/The-trend-of-global-data-creation-Reproduced-from-IDC-5.png)
+<style scoped>
+p {
+  font-size: 20px;
+  text-align: right;
+}
+</style>
 
-<!-- https://www.researchgate.net/figure/The-trend-of-global-data-creation-Reproduced-from-IDC-5_fig1_312012444 -->
+## 数据洪流
+
+![w:1150](images/IDC_DataSphere.png)
+
+<https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
 
 ---
 
@@ -49,7 +58,7 @@ title: 数据中心技术
 
 ---
 
-## 典型对象存储
+## 典型对象存储系统
 
 ---
 
@@ -149,23 +158,37 @@ li, p {
 
 ---
 
+<style scoped>
+p {
+  font-size: 16px;
+  text-align: right;
+}
+</style>
+
 ### 对冲请求
 
 - HDFS (2.4+)
+  - If a read from a block is slow, start up another parallel, **‘hedged’ read** against a different block replica.
+  - We then **take the result of which ever read returns first** (the outstanding read is cancelled).
+  - This ‘hedged’ read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
 
 <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/release/2.4.0/RELEASENOTES.2.4.0.html>
 
-  If a read from a block is slow, start up another parallel, ‘hedged’ read against a different block replica. We then take the result of which ever read returns first (the outstanding read is cancelled). This ‘hedged’ read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
-
 ---
+
+<style scoped>
+p {
+  font-size: 16px;
+  text-align: right;
+}
+</style>
 
 ### 关联请求
 
 - mongodb (4.4+)
+  - With hedged reads, the mongos instances can **route read operations to two replica set members per each queried shard** and **return results from the first respondent** per shard.
 
 <https://docs.mongodb.com/manual/core/read-preference-hedge-option/>
-
-  With hedged reads, the mongos instances can route read operations to two replica set members per each queried shard and return results from the first respondent per shard.
 
 ---
 
@@ -178,13 +201,18 @@ li, p {
 
 ### 测试工具
 
+- s3bench
+- cosbench
+
 ---
 
 ### 测试指标
 
+百分位延迟
+
 ---
 
-## 性能预测难题
+## 如何准确预测？
 
 给系统建立性能模型
 
@@ -193,7 +221,7 @@ li, p {
 
 ---
 
-## 性能预测难题…
+## 建模面临的挑战
 
 给系统建立性能模型
 
