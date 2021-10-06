@@ -43,9 +43,29 @@ table {
 
 ---
 
-## 应用服务的规模化
+## 刚刚发生的事情背后
 
-刚刚发生的事情背后，在腾讯公司的平台上
+![h:450](images/Web-Application-Architecture.png)
+
+<https://codecondo.com/web-application-architecture/>
+
+---
+
+<style scoped>
+table, p {
+  font-size: 20px;
+}
+</style>
+
+## 在腾讯公司的平台上
+
+![h:380](images/tencent-fact-2016.png)
+
+|全球服务器|数据存储规模|全球加速节点|带宽储备|云产品服务|
+|:-:|:-:|:-:|:-:|:-:|
+|100W+|EB级|2800+|200T|300+|
+
+<https://cloud.tencent.com/about>
 
 ---
 
@@ -113,15 +133,76 @@ li, p {
 
 ---
 
-## 信息系统的规模化
-
-仓库式计算机的提出
-
----
+<style scoped>
+li, p {
+  font-size: 30px;
+}
+</style>
 
 ## 新基建
 
-行业的发展，国家的重视
+- 国家发展改革委创新和高技术发展司2020年发布
+  - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
+- **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
+  - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
+  - 以人工智能、云计算、区块链等为代表的新技术基础设施
+  - 以**数据中心**、智能计算中心为代表的算力基础设施
+
+<http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
+
+---
+
+<style scoped>
+h3, li, p {
+  font-size: 16px;
+}
+</style>
+
+## 信息系统的规模化趋势
+
+### Latency Comparison Numbers
+
+L1 cache reference                           0.5 ns
+Branch mispredict                            5   ns
+L2 cache reference                           7   ns                      14x L1 cache
+Mutex lock/unlock                           25   ns
+Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
+Compress 1K bytes with Zippy             3,000   ns        3 us
+Send 1K bytes over 1 Gbps network       10,000   ns       10 us
+Read 4K randomly from SSD*             150,000   ns      150 us          ~1GB/sec SSD
+Read 1 MB sequentially from memory     250,000   ns      250 us
+Round trip within same datacenter      500,000   ns      500 us
+Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
+Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+Read 1 MB sequentially from disk    20,000,000   ns   20,000 us   20 ms  80x memory, 20X SSD
+Send packet CA->Netherlands->CA    150,000,000   ns  150,000 us  150 ms
+
+### Notes
+
+1 ns = 10^-9 seconds
+1 us = 10^-6 seconds = 1,000 ns
+1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+
+### Credit
+
+By Jeff Dean:               <http://research.google.com/people/jeff/>
+Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+
+---
+
+<style scoped>
+li, p {
+  font-size: 30px;
+}
+</style>
+
+## 仓储级计算机
+
+[路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
+
+- [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
+- [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
+- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf)
 
 ---
 
