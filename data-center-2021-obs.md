@@ -71,6 +71,26 @@ p {
 
 ---
 
+## 更进一步的扩展
+
+方法对象
+
+---
+
+<style scoped>
+li, p {
+  font-size: 20px;
+  text-align: right;
+  padding: 60px;
+}
+</style>
+
+![bg fit](images/comp-storage-02.png)
+
+<https://www.snia.org/computationaltwg>
+
+---
+
 ## 典型对象存储系统
 
 ---
