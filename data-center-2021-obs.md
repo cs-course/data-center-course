@@ -37,6 +37,19 @@ p {
 
 ---
 
+<style scoped>
+p {
+  font-size: 20px;
+  text-align: right;
+}
+</style>
+
+## 各个区域的情况
+
+![w:1150](images/idc-datasphere-2020.webp)
+
+---
+
 ## 扩展，还是扩展
 
 - 规模
