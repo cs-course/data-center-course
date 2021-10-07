@@ -65,16 +65,17 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-{配图}
+## 对象存储系统
 
-<https://www.ibm.com/cloud/learn/object-storage>
+![h:450](images/Object-Storage.webp)
+<https://lakefs.io/object-storage/>
 
 ---
 
-## 对象存储系统
+## 对象存储系统…
 
-![w:900](images/Object-Storage.webp)
-<https://lakefs.io/object-storage/>
+![h:450](images/Block-Storage-vs-File-Storage.jpg)
+<https://www.ibm.com/cloud/learn/object-storage>
 
 ---
 
@@ -84,13 +85,34 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
   - [Object Storage: What, How and Why](https://www.snia.org/educational-library/object-storage-what-how-and-why-2020)
     - Object storage, as a definition, can be: A storage system that manages and manipulates data storage as distinct units, called objects
   - [CDMI Cloud Storage Standard](https://www.snia.org/cloud/cdmi)
-    - The Cloud Data Management Interface (CDMI) defines the functional interface that applications will use to create, retrieve, update and delete data elements from the Cloud. 
+    - The Cloud Data Management Interface (CDMI) defines the functional interface that applications will use to create, retrieve, update and delete data elements from the Cloud.
 
 ---
 
 ## 更进一步的扩展
 
-方法对象
+<style scoped>
+  h2 {
+    text-align: center;
+  }
+</style>
+
+![bg](images/active-object-storage.png)
+
+---
+
+## 相关成果
+
+<style scoped>
+  h2, p {
+    text-align: center;
+  }
+</style>
+
+![bg opacity:.3](images/active-object-storage.png)
+
+![w:300](images/active-object-storage-award.png)
+**主动对象海量存储系统及关键技术**
 
 ---
 
@@ -109,6 +131,22 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 ---
 
 ## 典型对象存储系统
+
+- **Amazon S3**: Amazon S3 stores data as objects within resources called “buckets.” AWS S3 offers features like 99.999999999% durability, cross-region replication, event notifications, versioning, encryption, and flexible storage options (redundant and standard).
+- **Rackspace Cloud Files**: Cloud Files provides online object storage for files and media. Cloud Files writes each file to three storage disks on separate nodes that have dual power supplies. All traffic between your application and Cloud Files uses SSL to establish a secure, encrypted channel. You can host static websites (for example: blogs, brochure sites, small company sites) entirely from Cloud Files with a global CDN.
+
+---
+
+- **Azure Blob Storage**: For users with large amounts of unstructured data to store in the cloud, Blob storage offers a cost-effective and scalable solution. Every blob is organized into a container with up to a 500 TB storage account capacity limit.
+- **Google cloud storage**: Cloud Storage allows you to store data in Google’s cloud. Google Cloud Storage supports individual objects that are terabytes in size. It also supports a large number of buckets per account. Google Cloud Storage provides strong read-after-write consistency for all upload and delete operations. Two types of storage class are available: Standard Storage class and Storage Near line class (with Near Line being MUCH cheaper).
+
+<https://cloudacademy.com/blog/object-storage-block-storage/>
+
+---
+
+- [**阿里云对象存储OSS（Object Storage Service）**](https://www.aliyun.com/product/oss/)是一款海量、安全、低成本、高可靠的云存储服务，提供99.9999999999%(12个9)的数据持久性，99.995%的数据可用性。多种存储类型供选择，全面优化存储成本。
+- [**腾讯对象存储（Cloud Object Storage，COS）**](https://cloud.tencent.com/document/product/436)是腾讯云提供的一种存储海量文件的分布式存储服务，具有高扩展性、低成本、可靠安全等优点。通过控制台、API、SDK 和工具等多样化方式，用户可简单、快速地接入 COS，进行多格式文件的上传、下载和管理，实现海量数据存储和管理。
+- [**华为对象存储服务（Object Storage Service）**](https://www.huaweicloud.com/product/obs.html)是一款稳定、安全、高效、易用的云存储服务，具备标准Restful API接口，可存储任意数量和形式的非结构化数据。
 
 ---
 
@@ -165,8 +203,8 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
 - Ceph was developed at University of California, Santa Cruz, by Sage Weil in 2003 as a part of his PhD project.
   - The initial project prototype was the Ceph filesystem, written in approximately 40,000 lines of C++ code, which was made open source in 2006 under LGPL to serve as a reference implementation and research platform.
-  - LLNL supported Sage's initial research work. 
-  - The period from 2003 to 2007 was the research period of Ceph. By this time, its core components were emerging, and the community contribution to the project had begun at pace. 
+  - LLNL supported Sage's initial research work.
+  - The period from 2003 to 2007 was the research period of Ceph. By this time, its core components were emerging, and the community contribution to the project had begun at pace.
 
 [Learning Ceph, Packt, 2015](https://subscription.packtpub.com/book/virtualization-and-cloud/9781783985623/1)
 
@@ -299,11 +337,13 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ## 毫末之变
 
-- 大的系统由小的组件汇聚而成
-- 所汇聚者不仅仅是规模
+- 大系统由小组件汇聚而成
+- 汇聚改变的不仅仅是规模
 - 还有伴随组件而来的变化
 
 ---
+
+## 扩展之鉴
 
 <style scoped>
   p {
@@ -312,27 +352,39 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
   }
 </style>
 
-![bg](images/Taurus-Barrel-F.png)
+![bg right fit](images/law-of-the-minimum.jpg)
 
-<https://taurus.ag/micronutrient-deficiency-and-yield/>
+- 必受各组件状态的影响
+  - 设备故障
+  - 性能波动
 
----
-
-## 扩展之鉴
-
-扩展必然受到各组件工作状态的影响
-
-- 设备故障
-- 性能波动
+<https://nutrien-ekonomics.com/latest-fertilizer-research/liebigs-law-of-the-minimum/>
 
 ---
 
-## 需求浮现
+## 需求浮现-容错
 
-扩展的系统必然受到组件工作状态的影响
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+</style>
 
-- 设备故障——需要 **Fault-Tolerant** 容错！
-- 性能波动——需要 **Tail-Tolerant** 容滞？
+- 必受各组件状态的影响
+  - 设备故障——需要 **Fault-Tolerant** 容错！
+
+![h:350](images/Replication-and-Erasure-Coding.jpg)
+
+<https://www.researchgate.net/publication/319283505_Cloud_Storage_Reliability_for_Big_Data_Applications_A_State_of_the_Art_Survey>
+
+---
+
+## 需求浮现-容滞
+
+- 必受各组件状态的影响
+  - 设备故障——需要 **Fault-Tolerant** 容错！
+  - 性能波动——需要 **Tail-Tolerant** 容滞？
 
 ---
 
