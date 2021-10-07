@@ -50,10 +50,11 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 <style scoped>
   p {
     font-size: 20px;
+    text-align: center;
   }
 </style>
 
-![bg fit](images/what-happens-online-in-60-seconds.png)
+![h:560](images/what-happens-online-in-60-seconds.png)
 
 Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/>
 
@@ -61,8 +62,16 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ## 扩展
 
-- 规模
-- 种类
+<style scoped>
+  tr, td {
+    font-size: 18px;
+    vertical-align: bottom;
+  }
+</style>
+
+|规模|种类|
+|:-:|:-:|
+|![w:550](images/scaleout-diagram.jpg)<br><http://sancluster.com/scale-out-file-system/>|![w:550](images/OSD-Metadata.webp)<br><http://storagegaga.com/the-future-is-intelligent-objects/>|
 
 ---
 
@@ -87,6 +96,19 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
   }
 </style>
 
+![h:450](images/object-vs-traditional.png)
+<https://usdc.vn/object-storage-vs-traditional-storage/>
+
+---
+
+## 对象存储系统……
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
 ![h:450](images/Block-Storage-vs-File-Storage.jpg)
 <https://www.ibm.com/cloud/learn/object-storage>
 
@@ -99,6 +121,53 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
     - Object storage, as a definition, can be: A storage system that manages and manipulates data storage as distinct units, called objects
   - [CDMI Cloud Storage Standard](https://www.snia.org/cloud/cdmi)
     - The Cloud Data Management Interface (CDMI) defines the functional interface that applications will use to create, retrieve, update and delete data elements from the Cloud.
+
+---
+
+![bg fit](images/OSD-vs-block-based.webp)
+
+---
+
+![bg fit](images/SCSI-Architecture-OSD.webp)
+
+---
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+![bg](images/s3-storage-classes.png)
+
+Source: <https://aws.amazon.com/cn/s3/storage-classes/>
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+</style>
+
+![h:600](images/S3-decision-flow-chart_1.png)
+
+Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-class>
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+</style>
+
+![h:600](images/aws_proxy_s3_create_methods_on_folder.png)
+
+Source: <https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html>
 
 ---
 
@@ -356,11 +425,27 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+## 毫末之变…
+
+- 还有伴随组件而来的变化
+
+![h:450](images/Source-of-Latency.png)
+
+---
+
+## 毫末之变……
+
+- 还有伴随组件而来的变化
+
+![h:450](images/Source-of-Latency-Solutions.png)
+
+---
+
 ## 扩展之鉴
 
 <style scoped>
   p {
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
   }
 </style>
@@ -379,7 +464,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 <style scoped>
   p {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
   }
 </style>
@@ -401,14 +486,90 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-![bg fit](images/latency-sla.png)
+![bg fit](images/SNIA-tail-latency.webp)
 
 ---
 
-## 经典方法
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/latency-sla.png)
+
+Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
+
+---
+
+## 为何要谈尾延迟
+
+- [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
+- [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
+  - **小概率事件**不能忽视
+
+![bg right](images/Screen-Shot-2015-10-04-at-6.15.24-PM.png)
+
+---
+
+## 为何要谈尾延迟
+
+- [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
+- [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
+  - **小概率事件**不能忽视
+  - 延迟可能"**被平均**"
+
+![bg right fit](images/graph_logbase10_ms.png)
+
+---
+
+## 量化描述尾延迟
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+</style>
+
+![h:500](images/measuring-percentile-latency.svg)
+
+<https://blog.bramp.net/post/2018/01/16/measuring-percentile-latency/>
+
+---
+
+## 经典应对策略
+
+- [SNIA: Avoiding tail latency by failing IO operations on purpose](https://faststorage.eu/snia-avoiding-tail-latency-by-failing-io-operations-on-purpose/)
+  - One of these initiatives is adding a per I/O tag that indicates whether a drive **can fail fast** and return an error if it takes too long to retrieve the data. 
+  - If there’s a replica of the data somewhere else, it might just be faster to retrieve the data from there, instead of waiting for the slow drive to respond. 
+  - The other side of the coin is a “**try really hard**” I/O tag, that indicates you’ve exhausted all other options and really need the data from this drive.
+
+---
+
+## 主要方法分类
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
 
 - **对冲请求** Hedged Request
+  - Issue the same request to multiple replicas and use the results from whichever replica responds first.
+  - "hedged" - a client first sends one request to the replica believed to be the most appropriate, but then falls back on sending a secondary request after some brief delay.
+  - The client cancels remaining outstanding requests once the first result is received.
 - **关联请求** Tied Request
+  - The hedged-requests technique also has a window of vulnerability in which multiple servers can execute the same request unnecessarily.
+    - Can be capped by waiting for the P95 expected latency before issuing the hedged request, but limits the benefits to only a small fraction of requests.
+  - Permitting more aggressive use of hedged requests with moderate resource consumption requires faster cancellation of requests.
+
+[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
 
 ---
 
@@ -462,12 +623,6 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-### 测试指标
-
-![h:500](images/graph_logbase10_ms.png)
-
----
-
 ## 进一步思考：如何准确预测？
 
 给系统建立性能模型
@@ -496,6 +651,8 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 - [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
 - [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
+
+![h:400](images/Basic-structure-of-queueing-models.png)
 
 ---
 
