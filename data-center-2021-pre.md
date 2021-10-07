@@ -5,6 +5,8 @@ title: 数据中心技术
 # size: 4:3
 ---
 
+<!-- _class: lead -->
+
 # 数据中心技术
 
 **施展，童薇**
@@ -39,7 +41,7 @@ li, p {
   - EMail zshi@hust.edu.cn
   - 电话 027-87792450
   - 主页
-    - <https://shizhan.github.io/>
+    - <https://shizhan.github.io/>, <https://shi_zhan.gitee.io/>
     - <http://faculty.hust.edu.cn/shizhan/zh_CN/index.htm>
 
 ---
