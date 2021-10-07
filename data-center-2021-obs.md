@@ -33,20 +33,11 @@ p {
 
 ![w:1150](images/IDC_DataSphere.png)
 
-<https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
+Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
 
 ---
 
-<style scoped>
-p {
-  font-size: 20px;
-  text-align: right;
-}
-</style>
-
-## 各个区域的情况
-
-![w:1150](images/idc-datasphere-2020.webp)
+![bg fit](images/idc-datasphere-2020.webp)
 
 ---
 
@@ -105,17 +96,17 @@ li, p {
 ---
 
 <style scoped>
-li, p {
+p {
   font-size: 20px;
+  text-align: right;
 }
 </style>
 
-- <https://ceph.io/>
-- <https://github.com/ceph/ceph>
+<https://ceph.io/>
+<https://github.com/ceph/ceph>
+Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
 
-![h:450](images/ceph-graphic.png)
-
-*<https://icicimov.github.io/blog/images/CEPH-graphic.png>*
+![bg fit](images/ceph-graphic.png)
 
 ---
 
@@ -128,17 +119,17 @@ li, p {
 ---
 
 <style scoped>
-li, p {
+p {
   font-size: 20px;
+  text-align: right;
 }
 </style>
 
-- <https://docs.openstack.org/swift/>
-- <https://github.com/openstack/swift>
+<https://docs.openstack.org/swift/>
+<https://github.com/openstack/swift>
+Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
-![h:450](images/openstack-swift.jpg)
-
-*<https://software.intel.com/content/dam/develop/external/us/en/images/optimizing-openstack-swift-performance-pypy-fig2-755234.jpg>*
+![bg fit](images/swift_network_diagram-1.png)
 
 ---
 
@@ -152,17 +143,19 @@ li, p {
 ---
 
 <style scoped>
-li, p {
+p {
   font-size: 20px;
+  text-align: right;
 }
 </style>
 
-- <https://min.io/>, <http://www.minio.org.cn/>
-- <https://github.com/minio/minio>
+<https://min.io/>
+<http://www.minio.org.cn/>
+<https://github.com/minio/minio>
 
-![h:450](images/minio_architecture_diagram.svg)
+Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
-*<http://www.minio.org.cn/static/picture/architecture_diagram.svg>*
+![bg](images/minio_architecture_diagram.svg)
 
 ---
 
