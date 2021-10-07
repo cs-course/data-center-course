@@ -5,11 +5,16 @@ title: 数据中心技术
 # size: 4:3
 ---
 
+<!-- _class: lead -->
+
 # 对象存储系统尾延迟问题
 
 **施展**
 武汉光电国家研究中心
 光电信息存储研究部
+
+<https://shizhan.github.io/>
+<https://shi_zhan.gitee.io/>
 
 ---
 
@@ -23,10 +28,10 @@ title: 数据中心技术
 ---
 
 <style scoped>
-p {
-  font-size: 20px;
-  text-align: right;
-}
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
 </style>
 
 ## 数据洪流
@@ -41,7 +46,19 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 
 ---
 
-## 扩展，还是扩展
+<style scoped>
+  p {
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/what-happens-online-in-60-seconds.png)
+
+Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/>
+
+---
+
+## 扩展
 
 - 规模
 - 种类
@@ -50,15 +67,24 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 
 {配图}
 
+<https://www.ibm.com/cloud/learn/object-storage>
+
 ---
 
 ## 对象存储系统
 
+![w:900](images/Object-Storage.webp)
+<https://lakefs.io/object-storage/>
+
 ---
 
-## SNIA标准化
+## 标准化
 
-……
+- **Storage Networking Industry Association** - SNIA
+  - [Object Storage: What, How and Why](https://www.snia.org/educational-library/object-storage-what-how-and-why-2020)
+    - Object storage, as a definition, can be: A storage system that manages and manipulates data storage as distinct units, called objects
+  - [CDMI Cloud Storage Standard](https://www.snia.org/cloud/cdmi)
+    - The Cloud Data Management Interface (CDMI) defines the functional interface that applications will use to create, retrieve, update and delete data elements from the Cloud. 
 
 ---
 
@@ -69,11 +95,11 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 ---
 
 <style scoped>
-li, p {
-  font-size: 20px;
-  text-align: right;
-  padding: 60px;
-}
+  li, p {
+    font-size: 20px;
+    text-align: right;
+    padding: 60px;
+  }
 </style>
 
 ![bg fit](images/comp-storage-02.png)
@@ -83,6 +109,66 @@ li, p {
 ---
 
 ## 典型对象存储系统
+
+---
+
+## OpenStack
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
+
+- OpenStack was created during the first months of 2010. Rackspace wanted to rewrite the infrastructure code running its Cloud servers offering, and considered open sourcing the existing Cloud files code. At the same time, Anso Labs (contracting for NASA) had published beta code for Nova, a Python-based “cloud computing fabric controller”.
+- Both efforts converged and formed the base for OpenStack. The first Design Summit was held in Austin, TX on July 13-14, 2010, and the project was officially announced at OSCON in Portland, OR, on July 21st, 2010.
+
+<https://docs.openstack.org/project-team-guide/introduction.html>
+
+---
+
+## OpenStack Swift
+
+- OpenStack Object Storage (swift) is used for **redundant, scalable data storage using clusters of standardized servers** to store petabytes of accessible data.
+- Swift uses a distributed architecture with **no central point of control**, providing greater scalability, redundancy, and performance.
+- Storage clusters **scale horizontally** by adding new nodes, uses software logic to ensure data replication and distribution across different devices, inexpensive **commodity hard drives and servers**.
+
+---
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+<https://docs.openstack.org/swift/>
+<https://github.com/openstack/swift>
+Source: <https://docs.openstack.org/security-guide/object-storage.html>
+
+![bg fit](images/swift_network_diagram-1.png)
+
+---
+
+## Ceph as a research project
+
+<style scoped>
+  li {
+    font-size: 30px
+  }
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+- Ceph was developed at University of California, Santa Cruz, by Sage Weil in 2003 as a part of his PhD project.
+  - The initial project prototype was the Ceph filesystem, written in approximately 40,000 lines of C++ code, which was made open source in 2006 under LGPL to serve as a reference implementation and research platform.
+  - LLNL supported Sage's initial research work. 
+  - The period from 2003 to 2007 was the research period of Ceph. By this time, its core components were emerging, and the community contribution to the project had begun at pace. 
+
+[Learning Ceph, Packt, 2015](https://subscription.packtpub.com/book/virtualization-and-cloud/9781783985623/1)
 
 ---
 
@@ -96,10 +182,10 @@ li, p {
 ---
 
 <style scoped>
-p {
-  font-size: 20px;
-  text-align: right;
-}
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
 </style>
 
 <https://ceph.io/>
@@ -110,26 +196,13 @@ Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
 
 ---
 
-## OpenStack Swift
+![bg](images/red-hat-ceph-storage.png)
 
-- OpenStack Object Storage (swift) is used for **redundant, scalable data storage using clusters of standardized servers** to store petabytes of accessible data.
-- Swift uses a distributed architecture with **no central point of control**, providing greater scalability, redundancy, and performance.
-- Storage clusters **scale horizontally** by adding new nodes, uses software logic to ensure data replication and distribution across different devices, inexpensive **commodity hard drives and servers**.
+<!-- https://www.sandisk.com/business/datacenter/resources/solution-briefs/red-hat-ceph-storage-on-the-infiniflash-all-flash-storage-platform -->
 
 ---
 
-<style scoped>
-p {
-  font-size: 20px;
-  text-align: right;
-}
-</style>
-
-<https://docs.openstack.org/swift/>
-<https://github.com/openstack/swift>
-Source: <https://docs.openstack.org/security-guide/object-storage.html>
-
-![bg fit](images/swift_network_diagram-1.png)
+![bg](images/github-object-storage.png)
 
 ---
 
@@ -143,10 +216,10 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 ---
 
 <style scoped>
-p {
-  font-size: 20px;
-  text-align: right;
-}
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
 </style>
 
 <https://min.io/>
@@ -159,20 +232,102 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-![bg fit](images/latency-sla.png)
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3](images/distributed-storage.png)
+
+系统扩展固然可以应对应用扩展
 
 ---
 
-## 扩展带来的问题
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
 
-必然受到各组件工作状态的影响
+![bg opacity:.3](images/workload-plot-1.jpg)
+
+![bg opacity:.3](images/workload-plot-2.jpg)
+
+可是又会带来什么问题？
+
+<!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
+
+---
+
+![bg fit](images/yi-zhuan.jpg)
+
+<!-- https://github.com/kanripo/KR1a0140/ -->
+
+![bg fit](images/who-moved-my-cheese.jpg)
+
+---
+
+![bg fit](images/WYG0047-0179d.png)
+
+![bg fit](images/it-was-nature-for-change.png)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3 brightness:.5 fit](images/WYG0047-0179d.png)
+
+![bg opacity:.3 brightness:.5 fit](images/it-was-nature-for-change.png)
+
+唯一不变的是变化本身
+
+---
+
+## 毫末之变
+
+- 大的系统由小的组件汇聚而成
+- 所汇聚者不仅仅是规模
+- 还有伴随组件而来的变化
+
+---
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/Taurus-Barrel-F.png)
+
+<https://taurus.ag/micronutrient-deficiency-and-yield/>
+
+---
+
+## 扩展之鉴
+
+扩展必然受到各组件工作状态的影响
 
 - 设备故障
 - 性能波动
 
 ---
 
-## 需求由此浮现
+## 需求浮现
 
 扩展的系统必然受到组件工作状态的影响
 
@@ -181,42 +336,47 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+![bg fit](images/latency-sla.png)
+
+---
+
 ## 经典方法
 
-- 对冲请求 Hedged Request
-- 关联请求 Tied Request
+- **对冲请求** Hedged Request
+- **关联请求** Tied Request
 
 ---
 
 <style scoped>
-p {
-  font-size: 16px;
-  text-align: right;
-}
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
 </style>
 
-### 对冲请求
+### 案例1：HDFS
 
 - HDFS (2.4+)
-  - If a read from a block is slow, start up another parallel, **‘hedged’ read** against a different block replica.
-  - We then **take the result of which ever read returns first** (the outstanding read is cancelled).
-  - This ‘hedged’ read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
+  - If a read from a block is slow, start up another parallel, **'hedged' read** against a different block replica.
+  - We then **take the result of which ever read returns first** (*the outstanding read is cancelled*).
+  - This 'hedged' read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
 
 <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/release/2.4.0/RELEASENOTES.2.4.0.html>
 
 ---
 
 <style scoped>
-p {
-  font-size: 16px;
-  text-align: right;
-}
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
 </style>
 
-### 关联请求
+### 案例2：MongoDB
 
 - mongodb (4.4+)
-  - With hedged reads, the mongos instances can **route read operations to two replica set members per each queried shard** and **return results from the first respondent** per shard.
+  - With hedged reads, the mongos instances can route read operations to **two replica set members per each queried shard** and **return results from the first respondent** per shard.
+  - The additional read sent to hedge the read operation uses the **maxTimeMS** value of **maxTimeMSForHedgedReads**.
 
 <https://docs.mongodb.com/manual/core/read-preference-hedge-option/>
 
@@ -231,8 +391,9 @@ p {
 
 ### 测试工具
 
-- s3bench
-- cosbench
+- 详情参考 <https://github.com/cs-course/obs-tutorial>
+  - s3bench
+  - cosbench
 
 ---
 
@@ -263,9 +424,9 @@ p {
 ### 我们的工作
 
 <style scoped>
-li {
-  font-size: 25px;
-}
+  li {
+    font-size: 25px;
+  }
 </style>
 
 - Understanding the latency distribution of cloud object storage systems, JPDC 2019.
@@ -273,16 +434,12 @@ li {
 
 ---
 
-## 实验要求
-
----
-
 ## 参考文献
 
 <style scoped>
-li {
-  font-size: 25px;
-}
+  li {
+    font-size: 25px;
+  }
 </style>
 
 1. Tail Latency in Datacenter Networks, MASCOTS 2020.
