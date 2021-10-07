@@ -5,9 +5,9 @@ title: 数据中心技术
 # size: 4:3
 ---
 
-<!-- _class: lead -->
-
 # 对象存储系统尾延迟问题
+
+<!-- _class: lead -->
 
 **施展**
 武汉光电国家研究中心
@@ -20,12 +20,15 @@ title: 数据中心技术
 
 ## 内容大纲
 
+<!-- paginate: true -->
+
 - 对象存储背景
 - 尾延迟问题
 - 经典方法和实践
-- 尾延迟预测
 
 ---
+
+## 数据洪流
 
 <style scoped>
   p {
@@ -33,8 +36,6 @@ title: 数据中心技术
     text-align: right;
   }
 </style>
-
-## 数据洪流
 
 ![w:1150](images/IDC_DataSphere.png)
 
@@ -67,12 +68,24 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ## 对象存储系统
 
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
 ![h:450](images/Object-Storage.webp)
 <https://lakefs.io/object-storage/>
 
 ---
 
 ## 对象存储系统…
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
 
 ![h:450](images/Block-Storage-vs-File-Storage.jpg)
 <https://www.ibm.com/cloud/learn/object-storage>
@@ -399,14 +412,14 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+### 案例1：HDFS
+
 <style scoped>
   p {
     font-size: 16px;
     text-align: right;
   }
 </style>
-
-### 案例1：HDFS
 
 - HDFS (2.4+)
   - If a read from a block is slow, start up another parallel, **'hedged' read** against a different block replica.
@@ -417,14 +430,14 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+### 案例2：MongoDB
+
 <style scoped>
   p {
     font-size: 16px;
     text-align: right;
   }
 </style>
-
-### 案例2：MongoDB
 
 - mongodb (4.4+)
   - With hedged reads, the mongos instances can route read operations to **two replica set members per each queried shard** and **return results from the first respondent** per shard.
@@ -455,7 +468,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 如何准确预测？
+## 进一步思考：如何准确预测？
 
 给系统建立性能模型
 
@@ -481,8 +494,8 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
   }
 </style>
 
-- Understanding the latency distribution of cloud object storage systems, JPDC 2019.
-- Predicting Response Latency Percentiles for Cloud Object Storage Systems, ICPP 2017.
+- [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
+- [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
 
 ---
 
@@ -490,14 +503,14 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 <style scoped>
   li {
-    font-size: 25px;
+    font-size: 20px;
   }
 </style>
 
-1. Tail Latency in Datacenter Networks, MASCOTS 2020.
-2. A Black-Box Fork-Join Latency Prediction Model for Data-Intensive Applications, TPDS 2020.
-3. The Fast and The Frugal: Tail Latency Aware Provisioning for Coping with Load Variations, WWW 2020.
-4. Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints, EuroSys 2019.
-5. Amdahl's Law for Tail Latency, CACM 2018.
-6. The Tail at Scale: How to Predict It?, HotCloud 16.
-7. The Tail at Scale, CACM 2013.
+1. [Tail Latency in Datacenter Networks](https://link.springer.com/chapter/10.1007%2F978-3-030-68110-4_17), MASCOTS 2020.
+2. [A Black-Box Fork-Join Latency Prediction Model for Data-Intensive Applications](https://ieeexplore.ieee.org/document/9043685), TPDS 2020.
+3. [The Fast and The Frugal: Tail Latency Aware Provisioning for Coping with Load Variations](https://dl.acm.org/doi/10.1145/3366423.3380117), WWW 2020.
+4. [Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints](https://dl.acm.org/doi/10.1145/3302424.3303973), EuroSys 2019.
+5. [Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), CACM 2018.
+6. [The Tail at Scale: How to Predict It?](https://www.usenix.org/conference/hotcloud16/workshop-program/presentation/nguyen), HotCloud 16.
+7. [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
