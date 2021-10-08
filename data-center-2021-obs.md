@@ -96,20 +96,30 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 对象存储系统
+## 对象存储系统的提出
 
 <style scoped>
   p {
-    text-align: center;
+    font-size: 25px;
+    text-align: right;
   }
 </style>
 
-![h:450](images/Object-Storage.webp)
-<https://lakefs.io/object-storage/>
+- Object storage originated in the late 1990s:
+- Seagate specifications from 1999
+  - [Object Based Storage: A Vision](https://www.t10.org/ftp/t10/document.99/99-341r0.pdf)
+  - [Object based storage devices: a command set proposal](https://pdfs.semanticscholar.org/bcd1/97cb0f8544b651289dfdb95efd0b1fd70753.pdf)
+- [Dr. Garth Gibson](http://www.cs.cmu.edu/~garth/), CMU & [NASD project](https://www.pdl.cmu.edu/NASD/index.shtml)
+  - High-bandwidth, Low-latency, Scalable Storage Systems
+  - File Server Scaling with Network-Attached Secure Disks (NASD), 1997
+
+![bg opacity:.2](images/Object-Storage.webp)
+
+Source: <https://www.snia.org/educational-library/object-storage-what-how-and-why-2020>
 
 ---
 
-## 对象存储系统…
+## 和传统存储系统的比较
 
 <style scoped>
   p {
@@ -118,11 +128,34 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 </style>
 
 ![h:450](images/object-vs-traditional.png)
-<https://usdc.vn/object-storage-vs-traditional-storage/>
+Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
 ---
 
-## 对象存储系统……
+## 和传统存储系统的比较…
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+  tr {
+    font-size: 25px;
+  }
+</style>
+
+| Object | File | Block | Archive |
+|:-|:-|:-|:-|
+| Object Storage | NAS | SAN | Tape |
+| Videos, photos serving streaming | All kinds of file | Attach to server | The file needs to be saved permanently |
+| Read (download) data regularly | Read data regularly, install as a network drive | Run data directly on Storage | Rarely to download |
+| High upload / download speed | High upload / download speed | Very High upload / download speed | High upload speed, slow download |
+| Use with CDN | Many usage scenarios | Use with server (VM) | Use independently |
+
+Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
+
+---
+
+## 和传统存储系统的比较……
 
 <style scoped>
   p {
@@ -131,7 +164,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 </style>
 
 ![h:450](images/Block-Storage-vs-File-Storage.jpg)
-<https://www.ibm.com/cloud/learn/object-storage>
+Source: <https://www.ibm.com/cloud/learn/object-storage>
 
 ---
 
@@ -196,6 +229,73 @@ Source: <https://www.snia.org/educational-library/object-based-storage-device-os
 
 <style scoped>
   p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/Restful-Web-Services.png)
+
+Source: [What are Restful Web Services](https://gocoding.org/what-are-restful-web-services/)
+
+---
+
+## Amazon S3 REST API
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+  li {
+    font-size: 25px;
+    text-align: left;
+  }
+</style>
+
+- **GET** on the API's root resource to list all of the Amazon S3 buckets of a caller.
+- **GET** on a Folder resource to view a list of all of the objects in an Amazon S3 bucket.
+- **PUT** on a Folder resource to add a bucket to Amazon S3.
+- **DELETE** on a Folder resource to remove a bucket from Amazon S3.
+- **GET** on a Folder/Item resource to view or download an object from an Amazon S3 bucket.
+- **PUT** on a Folder/Item resource to upload an object to an Amazon S3 bucket.
+- **HEAD** on a Folder/Item resource to get object metadata in an Amazon S3 bucket.
+- **DELETE** on a Folder/Item resource to remove an object from an Amazon S3 bucket.
+
+Source: <https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html>
+
+---
+
+<style scoped>
+  li, p {
+    font-size: 18px;
+  }
+</style>
+
+To access the object-based storage system:
+
+- **secret-access-key** and **access-key-id** – private/public pair of keys that you can generate using different tools or sometimes directly on the provider dashboard
+- **endpoint** – the web address of the space
+
+```java
+const AWS = require("aws-sdk");
+
+const s3 = new AWS.S3({
+  endpoint: "provider-space-endpoint",
+  secretAccessKey: "my-secret-key",
+  accessKeyId: "my-access-key",
+});
+```
+
+![bg right fit](images/aws_proxy_s3_create_methods_on_folder.png)
+
+- <https://lakefs.io/object-storage/>
+- <https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html>
+
+---
+
+<style scoped>
+  p {
     font-size: 20px;
     text-align: right;
   }
@@ -217,19 +317,6 @@ Source: <https://aws.amazon.com/cn/s3/storage-classes/>
 ![h:600](images/S3-decision-flow-chart_1.png)
 
 Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-class>
-
----
-
-<style scoped>
-  p {
-    font-size: 18px;
-    text-align: center;
-  }
-</style>
-
-![h:600](images/aws_proxy_s3_create_methods_on_folder.png)
-
-Source: <https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html>
 
 ---
 
