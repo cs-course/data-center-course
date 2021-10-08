@@ -29,12 +29,12 @@ title: 数据中心技术
 ## 课堂背景调查
 
 <style scoped>
-th {
-  display: none;
-}
-table {
-  width: 100%;
-}
+  th {
+    display: none;
+  }
+  table {
+    width: 100%;
+  }
 </style>
 
 |   |   |
@@ -51,13 +51,13 @@ table {
 
 ---
 
-<style scoped>
-table, p {
-  font-size: 20px;
-}
-</style>
-
 ## 在腾讯公司的平台上
+
+<style scoped>
+  table, p {
+    font-size: 20px;
+  }
+</style>
 
 ![h:380](images/tencent-fact-2016.png)
 
@@ -76,12 +76,12 @@ table, p {
 ---
 
 <style scoped>
-p {
-  padding-top: 200px;
-  text-align: center;
-  font-size: 72px;
-  color: 0040FF;
-}
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
 </style>
 
 ![bg opacity:.3 brightness:.5](images/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png)
@@ -99,12 +99,12 @@ p {
 ---
 
 <style scoped>
-p {
-  padding-top: 200px;
-  text-align: center;
-  font-size: 72px;
-  color: 0040FF;
-}
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
 </style>
 
 ![bg opacity:.3 brightness:.5](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
@@ -115,13 +115,13 @@ p {
 
 ---
 
-<style scoped>
-li, p {
-  font-size: 20px;
-}
-</style>
-
 ## 随之而来的数据洪流
+
+<style scoped>
+  li, p {
+    font-size: 20px;
+  }
+</style>
 
 ![w:1150](images/IDC_DataSphere.png)
 
@@ -133,13 +133,13 @@ li, p {
 
 ---
 
-<style scoped>
-li, p {
-  font-size: 30px;
-}
-</style>
-
 ## 新基建
+
+<style scoped>
+  li, p {
+    font-size: 30px;
+  }
+</style>
 
 - 国家发展改革委创新和高技术发展司2020年发布
   - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
@@ -152,16 +152,16 @@ li, p {
 
 ---
 
-<style scoped>
-th {
-  display: none;
-}
-h3, li, td, p {
-  font-size: 14px;
-}
-</style>
-
 ## 信息系统的规模化趋势
+
+<style scoped>
+  th {
+    display: none;
+  }
+  h3, li, td, p {
+    font-size: 14px;
+  }
+</style>
 
 ### Latency Comparison Numbers
 
@@ -201,13 +201,13 @@ Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
 
 ---
 
-<style scoped>
-li, p {
-  font-size: 30px;
-}
-</style>
-
 ## 仓储级计算机
+
+<style scoped>
+  li, p {
+    font-size: 30px;
+  }
+</style>
 
 [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 
@@ -227,23 +227,23 @@ li, p {
 
 ---
 
-## 谷歌
+### 谷歌
 
 ---
 
-## 微软
+### 微软
 
 ---
 
-## 脸书
+### 脸书
 
 ---
 
-## 阿里
+### 阿里
 
 ---
 
-## 腾讯
+### 腾讯
 
 ---
 
@@ -312,13 +312,13 @@ li, p {
 
 ---
 
-<style scoped>
-li, p {
-  font-size: 20px;
-}
-</style>
-
 ## 准备和熟悉环境
+
+<style scoped>
+  li, p {
+    font-size: 20px;
+  }
+</style>
 
 - **目标**：
   - 远程连接主机、远程执行命令
@@ -393,13 +393,13 @@ li, p {
 
 ---
 
-<style scoped>
-td {
-  font-size: 25px;
-}
-</style>
-
 ## 经典问题
+
+<style scoped>
+  td {
+    font-size: 25px;
+  }
+</style>
 
 |微观|宏观|环境|
 |:-|:-|:-|
