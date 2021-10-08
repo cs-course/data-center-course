@@ -63,15 +63,36 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 ## 扩展
 
 <style scoped>
-  tr, td {
+  a {
     font-size: 18px;
+  }
+  tr {
     vertical-align: bottom;
   }
 </style>
 
 |规模|种类|
 |:-:|:-:|
-|![w:550](images/scaleout-diagram.jpg)<br><http://sancluster.com/scale-out-file-system/>|![w:550](images/OSD-Metadata.webp)<br><http://storagegaga.com/the-future-is-intelligent-objects/>|
+|![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
+| <http://sancluster.com/scale-out-file-system/>|<http://storagegaga.com/the-future-is-intelligent-objects/>|
+
+---
+
+## 扩展…
+
+<style scoped>
+  a {
+    font-size: 18px;
+  }
+  tr {
+    vertical-align: bottom;
+  }
+</style>
+
+|规模|种类|
+|:-:|:-:|
+|![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
+|元数据形态|元数据内容|
 
 ---
 
@@ -114,13 +135,54 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
+## 定义
+
+- [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
+  - Object Storage is a method of storing and subsequently retrieving sets of data as collections of single, uniquely identifiable indivisible items or objects. **It applies to any forms of data that can be wrapped up and managed as an object.**
+  - Objects are treated as an atomic unit. **There is no structure corresponding to a hierarchy of directories in a file system**; each object is uniquely identified in the system by a unique object identifier.
+
+---
+
+## 特性
+
+- [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
+  - When you create an object on this type of storage, the entire set of data is handled and processed without regard to what sub-parts it may have.
+  - When reading from object storage, you can read either the whole object, or ask to read parts of it.
+  - There is often no capability to update to the object or parts of the object; the entire object is usually required to be re-written.
+  - Most object storage allows for objects to be deleted.
+
+---
+
+## 特性…
+
+- [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
+  - Object storage often supports meta-data.
+    - This is data that is part of the object, but that is in addition to the object ID and the data.
+    - It is often expressed as an attribute-value pair; for instance, an attribute of COLOR in our collection of objects may have the value RED for some objects and BLUE for others.
+    - These permit collections of objects, individually addressable by their object ID, to be searched, filtered and read in groups without needing to know the specific object IDs.
+
+---
+
 ## 标准化
 
 - **Storage Networking Industry Association** - SNIA
-  - [Object Storage: What, How and Why](https://www.snia.org/educational-library/object-storage-what-how-and-why-2020)
-    - Object storage, as a definition, can be: A storage system that manages and manipulates data storage as distinct units, called objects
-  - [CDMI Cloud Storage Standard](https://www.snia.org/cloud/cdmi)
-    - The Cloud Data Management Interface (CDMI) defines the functional interface that applications will use to create, retrieve, update and delete data elements from the Cloud.
+  - [Object Storage: What, How and Why, 2020](https://www.snia.org/educational-library/object-storage-what-how-and-why-2020)
+    - Object storage, as a definition, can be: A storage system that manages and manipulates data storage as **distinct units**, called objects
+  - [CDMI Cloud Storage Standard, 2.0a, 2020](https://www.snia.org/cloud/cdmi)
+    - The Cloud Data Management Interface (CDMI) defines the **functional interface** that applications will use to create, retrieve, update and delete data elements from the Cloud.
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/osd-2007.png)
+
+Source: <https://www.snia.org/educational-library/object-based-storage-device-osd-architecture-and-systems-2007>
 
 ---
 
@@ -198,17 +260,30 @@ Source: <https://docs.aws.amazon.com/apigateway/latest/developerguide/integratin
 
 ---
 
+## 算存一体化
+
 <style scoped>
-  li, p {
-    font-size: 20px;
+  p {
+    font-size: 18px;
     text-align: right;
     padding: 60px;
   }
 </style>
 
+![bg fit](images/comp-storage-01.png)
 ![bg fit](images/comp-storage-02.png)
 
-<https://www.snia.org/computationaltwg>
+<https://www.snia.org/computationaltwg>, <https://www.snia.org/education/what-is-computational-storage>
+
+---
+
+## 算存一体化…
+
+![bg opacity:.3 fit](images/comp-storage-01.png)
+![bg opacity:.3 fit](images/comp-storage-02.png)
+
+- Computational Storage is defined as architectures that provide **Computational Storage Functions (CSF) coupled to storage**, **offloading host processing** or **reducing data movement**.
+- These architectures enable improvements in application performance and/or infrastructure efficiency through the integration of compute resources (outside of the traditional compute & memory architecture) either **directly with storage** or **between the host and the storage**.
 
 ---
 
