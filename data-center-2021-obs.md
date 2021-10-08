@@ -227,6 +227,10 @@ Source: <https://www.snia.org/educational-library/object-based-storage-device-os
 
 ---
 
+![bg fit](images/osd-commands.png)
+
+---
+
 <style scoped>
   p {
     font-size: 18px;
