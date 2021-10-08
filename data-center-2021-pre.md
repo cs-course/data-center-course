@@ -16,9 +16,9 @@ title: 数据中心技术
 ---
 
 <style scoped>
-li, p {
-  font-size: 30px;
-}
+  li {
+    font-size: 30px;
+  }
 </style>
 
 ## 基本信息
@@ -60,11 +60,10 @@ li, p {
 
 ## 授课目标
 
-<!-- Scoped style -->
 <style scoped>
-li {
-  font-size: 25px;
-}
+  li {
+    font-size: 25px;
+  }
 </style>
 
 - 工程实践方面
@@ -82,11 +81,10 @@ li {
 
 ## 授课目标…
 
-<!-- Scoped style -->
 <style scoped>
-li {
-  font-size: 25px;
-}
+  li {
+    font-size: 25px;
+  }
 </style>
 
 - 评分构成
@@ -105,11 +103,10 @@ li {
 
 ## 课程计划
 
-<!-- Scoped style -->
 <style scoped>
-td {
-  font-size: 30px;
-}
+  td {
+    font-size: 30px;
+  }
 </style>
 
 |   | 讲座内容 | 日期 | 地点 |
