@@ -482,6 +482,12 @@ Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
 
 ---
 
+![bg fit](images/ceph-stack.png)
+
+<!-- https://docs.ceph.com/en/pacific/architecture/ -->
+
+---
+
 ![bg](images/red-hat-ceph-storage.png)
 
 <!-- https://www.sandisk.com/business/datacenter/resources/solution-briefs/red-hat-ceph-storage-on-the-infiniflash-all-flash-storage-platform -->
