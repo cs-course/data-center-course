@@ -15,13 +15,13 @@ title: 数据中心技术
 
 ---
 
+## 基本信息
+
 <style scoped>
   li {
     font-size: 30px;
   }
 </style>
-
-## 基本信息
 
 - 课程资料 <https://github.com/cs-course/data-center-course>  
 - 作业库 <https://github.com/cs-course/data-center-course-assignment-2021>
