@@ -28,15 +28,124 @@ title: 数据中心技术
 
 ---
 
+## 广泛应用的云
+
+![bg](images/cloud-storage.jpg)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg](images/Cloud-Computing-as-a-Service-Revenue.png)
+
+Source: <https://www.kiwiqa.com/top-6-cloud-computing-trends-impacting-cloud-adoption-in-2020/>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg](images/Top-Four-Cloud-Infrastructure-Providers.jpg)
+
+Source: <https://www.canalys.com/newsroom/worldwide-cloud-market-q320>
+
+---
+
+<style scoped>
+  p {
+    font-size: 72px;
+    text-align: center;
+    padding: 120px
+  }
+</style>
+
+![bg opacity:.3](images/Top-Four-Cloud-Infrastructure-Providers.jpg)
+
+Pandemic boosts cloud consumption by a third in Q3 2020
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/CIS_Q320.jpg)
+
+Source: <https://www.srgresearch.com/articles/cloud-market-growth-rate-nudges-amazon-and-microsoft-solidify-leadership>
+
+<!-- New data from Synergy Research Group shows that Q3 enterprise spending on cloud infrastructure services were almost $33 billion, up 33% from the third quarter of 2019. -->
+
+<!-- Amazon and Microsoft continue to account for over half of the worldwide market, with Amazon market share remaining at its long-standing mark of around 33%, while Microsoft’s share was over 18%. Google, Alibaba and Tencent are all growing more rapidly than the overall market and are gaining market share. -->
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 14px;
+  }
+</style>
+
+![bg](images/multitenancy-web.png)
+
+Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-0-multi-tenant-amazon-s3-storage-ntfs-permissions-support-and-more/>
+
+---
+
 ## 多租户共享存储
+
+---
+
+{QoS场景图}
+
+---
+
+## 服务等级协议
+
+SLA
+
+---
+
+## 服务等级目标
+
+SLO
 
 ---
 
 ## 不足还是过量
 
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+![w:1150](images/provisioning.png)
+
+Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/1721654.1721672)
+
 ---
 
 ## 资源决策问题
+
+---
+
+## 评价标准
+
+![h:450](images/slo-spec.png)
 
 ---
 
