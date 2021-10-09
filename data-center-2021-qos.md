@@ -104,6 +104,18 @@ Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-
 
 ---
 
+## 服务器整合
+
+![h:400](images/server-consolidation.svg)
+
+<!-- 
+- SaaS 软件即服务，云应用
+- PaaS 平台即服务，云数据库
+- IaaS 基础架构即服务，云主机
+ -->
+
+---
+
 ## 多租户共享存储
 
 ---
