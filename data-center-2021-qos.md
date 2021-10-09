@@ -185,6 +185,8 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
 
 ### 控制论
 
+![w:1100](images/block-diagram-of-feedback-control-system.svg)
+
 ---
 
 ### 多目标优化
