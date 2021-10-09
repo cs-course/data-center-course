@@ -117,11 +117,25 @@ Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-
 
 ---
 
-## 多租户共享存储
+## 服务器整合…
+
+![h:370](images/server-consolidation-scenario.svg)
 
 ---
 
-{QoS场景图}
+## 服务器整合……
+
+…优势…
+
+---
+
+## 多租户共享存储
+
+…普遍现象…
+
+---
+
+## 性能干扰
 
 ---
 
@@ -152,6 +166,12 @@ Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/17
 
 ---
 
+## 一般评价标准
+
+![h:450](images/slo-spec.png)
+
+---
+
 ## 资源决策问题
 
 $(r_i, l^{r}_i, l^{w}_i)$
@@ -170,12 +190,6 @@ ${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_
 ![bg fit](images/QoS-managed-distributed-storage-system.gif)
 
 Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey, TPDS 2019](https://ieeexplore.ieee.org/document/8618414)
-
----
-
-## 评价标准
-
-![h:450](images/slo-spec.png)
 
 ---
 
@@ -209,6 +223,8 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
 ---
 
 ## 进一步思考：如何精确控制？
+
+- 波动性与突发性问题
 
 ---
 
