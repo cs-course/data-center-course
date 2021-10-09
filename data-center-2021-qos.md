@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术
 # size: 4:3
+math: katex
 ---
 
 <!-- _class: lead -->
@@ -152,6 +153,23 @@ Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/17
 ---
 
 ## 资源决策问题
+
+$(r_i, l^{r}_i, l^{w}_i)$
+
+${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_i$
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/QoS-managed-distributed-storage-system.gif)
+
+Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey](https://ieeexplore.ieee.org/document/8618414), TPDS 2019
 
 ---
 
