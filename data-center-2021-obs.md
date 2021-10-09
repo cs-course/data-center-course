@@ -60,7 +60,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 扩展
+## 迫切需要扩展
 
 <style scoped>
   a {
@@ -78,7 +78,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 扩展…
+### 元数据
 
 <style scoped>
   a {
@@ -132,7 +132,20 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
 ---
 
-## 和传统存储系统的比较…
+### 传统存储系统
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
+![h:450](images/Block-Storage-vs-File-Storage.jpg)
+Source: <https://www.ibm.com/cloud/learn/object-storage>
+
+---
+
+### 对象、文件、块和归档存储
 
 <style scoped>
   p {
@@ -152,19 +165,6 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 | Use with CDN | Many usage scenarios | Use with server (VM) | Use independently |
 
 Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
-
----
-
-## 和传统存储系统的比较……
-
-<style scoped>
-  p {
-    text-align: center;
-  }
-</style>
-
-![h:450](images/Block-Storage-vs-File-Storage.jpg)
-Source: <https://www.ibm.com/cloud/learn/object-storage>
 
 ---
 
@@ -244,7 +244,7 @@ Source: [What are Restful Web Services](https://gocoding.org/what-are-restful-we
 
 ---
 
-## Amazon S3 REST API
+### Amazon S3 REST API
 
 <style scoped>
   p {
@@ -336,7 +336,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## 相关成果
+### 相关成果
 
 <style scoped>
   h2, p {
@@ -351,7 +351,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## 算存一体化
+### 算存一体化
 
 <style scoped>
   p {
@@ -368,7 +368,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## 算存一体化…
+### 算存一体化…
 
 ![bg opacity:.3 fit](images/comp-storage-01.png)
 ![bg opacity:.3 fit](images/comp-storage-02.png)
@@ -398,7 +398,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## OpenStack
+### OpenStack
 
 <style scoped>
   p {
@@ -414,7 +414,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## OpenStack Swift
+### OpenStack Swift
 
 - OpenStack Object Storage (swift) is used for **redundant, scalable data storage using clusters of standardized servers** to store petabytes of accessible data.
 - Swift uses a distributed architecture with **no central point of control**, providing greater scalability, redundancy, and performance.
@@ -437,7 +437,7 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
 ---
 
-## Ceph as a research project
+### Ceph as a research project
 
 <style scoped>
   li {
@@ -458,7 +458,7 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
 ---
 
-## Ceph
+### Ceph
 
 - Ceph uniquely delivers **object, block, and file storage in one unified system**.
 - Ceph is highly reliable, easy to manage, and free.
@@ -498,7 +498,7 @@ Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
 
 ---
 
-## Minio
+### Minio
 
 - MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0.
 - It is **API compatible with Amazon S3** cloud storage service.
@@ -804,7 +804,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 建模面临的挑战
+### 建模面临的挑战
 
 给系统建立性能模型
 
