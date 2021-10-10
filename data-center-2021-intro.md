@@ -45,9 +45,16 @@ title: 数据中心技术
 
 ## 刚刚发生的事情背后
 
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: center;
+  }
+</style>
+
 ![h:450](images/Web-Application-Architecture.png)
 
-<https://codecondo.com/web-application-architecture/>
+Source: <https://codecondo.com/web-application-architecture/>
 
 ---
 
@@ -65,13 +72,21 @@ title: 数据中心技术
 |:-:|:-:|:-:|:-:|:-:|
 |100W+|EB级|2800+|200T|300+|
 
-<https://cloud.tencent.com/about>
+Source: <https://cloud.tencent.com/about>
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+    text-align: right;
+  }
+</style>
+
 ![bg](images/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png)
 
-<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png -->
+Source: <https://datareportal.com/reports/>
 
 ---
 
@@ -86,15 +101,11 @@ title: 数据中心技术
 
 ![bg opacity:.3 brightness:.5](images/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png)
 
-<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/01-Global-Overview-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-7.png -->
-
 网络服务已渗透社会各个方面
 
 ---
 
 ![bg](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
-
-<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png -->
 
 ---
 
@@ -108,8 +119,6 @@ title: 数据中心技术
 </style>
 
 ![bg opacity:.3 brightness:.5](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
-
-<!-- https://wearesocial-net.s3.amazonaws.com/uk/wp-content/uploads/sites/2/2020/04/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png -->
 
 疫情甚至加快了这个过程
 
@@ -125,7 +134,7 @@ title: 数据中心技术
 
 ![w:1150](images/IDC_DataSphere.png)
 
-<https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
+Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
 
 ---
 
@@ -148,7 +157,7 @@ title: 数据中心技术
   - 以人工智能、云计算、区块链等为代表的新技术基础设施
   - 以**数据中心**、智能计算中心为代表的算力基础设施
 
-<http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
+Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
@@ -195,9 +204,16 @@ Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
 ![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
 
-<!-- https://colin-scott.github.io/personal_website/research/interactive_latency.html -->
+Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
 
 ---
 
