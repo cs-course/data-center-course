@@ -636,7 +636,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 <style scoped>
   p {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
   }
 </style>
@@ -646,7 +646,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![h:350](images/Replication-and-Erasure-Coding.jpg)
 
-<https://www.researchgate.net/publication/319283505_Cloud_Storage_Reliability_for_Big_Data_Applications_A_State_of_the_Art_Survey>
+[Cloud Storage Reliability for Big Data Applications: A State of the Art Survey, Journal of Network and Computer Applications 2017](https://linkinghub.elsevier.com/retrieve/pii/S1084804517302734)
 
 ---
 
@@ -664,8 +664,8 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 <style scoped>
   p {
-    font-size: 16px;
-    text-align: left;
+    padding-top: 620px;
+    font-size: 20px;
   }
 </style>
 
@@ -700,7 +700,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 <style scoped>
   p {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
   }
 </style>
@@ -789,9 +789,12 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ### 测试工具
 
-- 详情参考 <https://github.com/cs-course/obs-tutorial>
-  - s3bench
-  - cosbench
+- [s3bench](https://github.com/igneous-systems/s3bench) (based on AWS Go SDK)
+  - Run very basic throughput benchmarking against an S3-compatible endpoint.
+  - Does a series of put operations followed by a series of get operations and displays the corresponding statistics.
+- [cosbench](https://github.com/intel-cloud/cosbench)
+  - A benchmarking tool to measure the performance of Cloud Object Storage services.
+  - Supports OpenStack Swift, Amazon S3, Amplidata v2.3+, Scality, Ceph, CDMI, Google Cloud Storage, Aliyun OSS ...
 
 ---
 
