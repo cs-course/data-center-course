@@ -197,6 +197,59 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
 
 ---
 
+## 案例1：cgroup (Linux内核)
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+
+- [Block IO Controller](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/blkio-controller.html)
+- [Variations on fair I/O schedulers](https://lwn.net/Articles/309400/)
+
+![h:350](images/cfq-cgroup.png)
+
+---
+
+## 案例2：libvirt (KVM, Xen, VMware, QEMU)
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+
+- [virsh blkiotune](https://www.libvirt.org/manpages/virsh.html#blkiotune)
+- ...
+
+---
+
+## 案例3：Ceph (对象存储系统)
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+
+- [QoS Study with mClock and WPQ Schedulers](https://ceph.com/en/news/blog/2021/qos-study-with-mclock-and-wpq-schedulers/)
+- [The dmclock distributed quality of service algorithm](https://github.com/ceph/dmclock)
+- [mClock: handling throughput variability for hypervisor IO scheduling](https://dl.acm.org/doi/10.5555/1924943.1924974), [OSDI'10](https://www.usenix.org/legacy/events/osdi10/tech/)
+
+![h:350](images/mclock.png)
+
+---
+
 ### 控制论
 
 ![w:1100](images/block-diagram-of-feedback-control-system.svg)
