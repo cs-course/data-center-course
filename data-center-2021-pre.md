@@ -66,13 +66,13 @@ title: 数据中心技术
 </style>
 
 - 工程实践方面
-  - 能初步完成数据中心实际部署
-    - Kubernetes (k8s)、OpenStack
+  - 熟悉数据中心关键技术平台
+    - Kubernetes、OpenStack、Object Storage……
   - 具备运行、维护、使用基础技能
-    - Linux, Bash, Object Storage, Vagrant, VirtualBox, Docker
+    - Linux, Bash, Vagrant, VirtualBox, Docker……
 - 学术探索方面
   - 熟悉相关领域前沿技术与进展
-    - 虚拟化、对象存储、监控管理……
+    - 对象存储、虚拟化、监控管理……
   - 能独立开展相关领域创新性研究
     - 监控管理、调度迁移、应用、可靠、节能、安全……
 
@@ -123,4 +123,4 @@ title: 数据中心技术
 
 ## 后续内容
 
-- 数据中心基础
+- [数据中心技术总体介绍](data-center-2021-intro.md)
