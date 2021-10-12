@@ -26,10 +26,9 @@ title: 数据中心技术
 - 课程资料 <https://github.com/cs-course/data-center-course>  
 - 作业库 <https://github.com/cs-course/data-center-course-assignment-2021>
 - 参考书
+  - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
+  - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
   - 云计算——概念、技术与架构，机械工业出版社，2014
-  - Luiz André Barroso, Urs Hölzle, and Parthasarathy Ranganathan, **The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition., 2019
-    - <https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046>
-  - **数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）, [美] 路易斯·安德烈·巴罗索 著，徐凌杰译 译, 2020
 
 ---
 
