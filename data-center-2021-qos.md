@@ -139,36 +139,79 @@ Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-
 
 ---
 
-## 服务等级协议
+## 服务等级协议、服务等级目标、服务等级指标
 
-SLA
+- **服务等级协议**(SLA)：协议双方(服务提供者和用户)签订的一个合约或协议，这个合约**规范了双方的商务关系或部分商务关系**。
+  - SLA是服务提供者与用户之间协商并签订的一个具有**法律约束力**的合同，合同规定了在服务提供过程中双方所承担的商务条款。
+- **服务等级目标**(SLO)：指定服务所提供功能的一种**期望状态**。
+- **服务等级指标**(SLI)：经过仔细定义的**测量指标**，它根据不同系统特点确定要测量什么。
+
+Source: [SLO（服务等级目标）与 SLA（服务等级协议）](https://xie.infoq.cn/article/eda3b32806bc800173793118e)
 
 ---
 
-## 服务等级目标
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
 
-SLO
+![bg](images/slo-vs-sla-vs-sli-1.jpg)
+
+Source: [SLA vs. SLO vs. SLI: What’s the difference?](https://www.atlassian.com/incident-management/kpis/sla-vs-slo-vs-sli)
 
 ---
 
-## 不足还是过量
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
+![bg](images/sla-slo-sli-relation.png)
+
+Source: [The Key Differences Between SLI, SLO, and SLA in SRE](https://dzone.com/articles/the-key-differences-between-sli-slo-and-sla-in-sre)
+
+---
+
+### 归纳一下
+
+- SLA是法律文书而非技术文档，重在严格约束而非技术实现
+- SLO是细分后的具体目标承诺，重在明确量化而非如何测量
+- SLI是监控采集的实际观测值，需要精辟选择合适指标
+
+---
+
+### 范例 —— Web 服务器可用性和延迟
+
+- 考察Web服务器**可用性**。指标为收到的HTTP请求数和成功响应的HTTP请求数。若要了解Web服务器是否胜任用户需求，可以分析成功请求数与请求总数的比率。
+  - 用成功请求数除以请求总数，可得一个比率。乘以100得到百分比。例如，Web服务器收到100个请求，成功响应了80个，则比率为0.8，即可用性为80%。
+- 另例，考察Web**服务延迟**相关的度量值。需观测不到10毫秒内完成的操作与操作总数的比率。
+  - 若阈值时间内返回80个请求，请求总数100，则延迟满足率80%。
+
+Source: [服务级别指标(SLI)和服务级别目标(SLO)示例](https://docs.microsoft.com/zh-cn/learn/modules/improve-reliability-monitoring/7-sli-slo)
+
+---
+
+### 一般评价标准
+
+![h:450](images/slo-spec.png)
+
+---
+
+## 问题：不足还是过量
 
 <style scoped>
   p {
     font-size: 18px;
-    text-align: left;
   }
 </style>
 
 ![w:1150](images/provisioning.png)
 
 Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/1721654.1721672)
-
----
-
-## 一般评价标准
-
-![h:450](images/slo-spec.png)
 
 ---
 
@@ -241,15 +284,24 @@ Source: [mClock: handling throughput variability for hypervisor IO scheduling](h
 
 ---
 
-## 资源决策的挑战
+## 决策过程
 
 <style scoped>
+  li {
+    font-size: 25px;
+  }
   p {
     font-size: 18px;
   }
 </style>
 
-![h:450](images/QoS-managed-distributed-storage-system.gif)
+![bg right fit](images/QoS-managed-distributed-storage-system.gif)
+
+- **MAPE**-loop steps
+  - Monitoring QoS metrics
+  - Analyzing divergence of current performance from goals and updating a performance model
+  - Planning decisions about actions needed to achieve performance goals
+  - Executing those actions
 
 Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey, TPDS 2019](https://ieeexplore.ieee.org/document/8618414)
 
