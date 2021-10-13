@@ -172,28 +172,11 @@ Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/17
 
 ---
 
-## 资源决策问题
+## 经典机制
 
-$(r_i, l^{r}_i, l^{w}_i)$
-
-${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_i$
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg fit](images/QoS-managed-distributed-storage-system.gif)
-
-Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey, TPDS 2019](https://ieeexplore.ieee.org/document/8618414)
-
----
-
-## 经典方法
+- **操作系统**：I/O管理器
+- **虚拟化环境**：虚拟机管理器
+- **存储系统**：I/O调度模块
 
 ---
 
@@ -258,17 +241,39 @@ Source: [mClock: handling throughput variability for hypervisor IO scheduling](h
 
 ---
 
-### 控制论
+## 资源决策的挑战
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:450](images/QoS-managed-distributed-storage-system.gif)
+
+Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey, TPDS 2019](https://ieeexplore.ieee.org/document/8618414)
+
+---
+
+## 问题描述
+
+$(r_i, l^{r}_i, l^{w}_i)$
+
+${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_i$
+
+---
+
+### 方法1：控制论
 
 ![w:1100](images/block-diagram-of-feedback-control-system.svg)
 
 ---
 
-### 多目标优化
+### 方法2：多目标优化
 
 ---
 
-### 机器学习
+### 方法3：机器学习
 
 ---
 
