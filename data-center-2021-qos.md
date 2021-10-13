@@ -204,14 +204,17 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
     font-size: 25px;
   }
   p {
+    font-size: 20px;
     text-align: center;
   }
 </style>
 
 - [Block IO Controller](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/blkio-controller.html)
-- [Variations on fair I/O schedulers](https://lwn.net/Articles/309400/)
+  - [BFQ (Budget Fair Queueing)](https://www.kernel.org/doc/html/latest/block/bfq-iosched.html), [BFQ I/O Scheduler](https://lwn.net/Articles/306641/), [Comparison among 6 schedulers](http://algo.ing.unimo.it/people/paolo/disk_sched/comparison.php)
 
 ![h:350](images/cfq-cgroup.png)
+
+Source: [Variations on fair I/O schedulers](https://lwn.net/Articles/309400/), 2008
 
 ---
 
@@ -222,31 +225,36 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
     font-size: 25px;
   }
   p {
-    text-align: center;
+    font-size: 20px;
   }
 </style>
 
 - [virsh blkiotune](https://www.libvirt.org/manpages/virsh.html#blkiotune)
-- ...
+- [Quality of Service (QoS) in OpenStack](https://wiki.openstack.org/wiki/QoS)
+
+![h:300](images/cgroup-vs-qemu.png) ![h:300](images/openstack-frontend-qos.png)
+
+Source: [IO Throttling in QEMU](https://www.linux-kvm.org/images/7/72/2011-forum-keep-a-limit-on-it-io-throttling-in-qemu.pdf), [KVM Forum 2011](https://www.linux-kvm.org/page/KVM_Forum_2011); [OpenStack - Basic volume quality of service](https://docs.openstack.org/cinder/latest/admin/blockstorage-basic-volume-qos.html);
 
 ---
 
-## 案例3：Ceph (对象存储系统)
+## 案例3：Object Storage (Ceph)
 
 <style scoped>
   li {
     font-size: 25px;
   }
   p {
-    text-align: center;
-  }
+    font-size: 20px;
+}
 </style>
 
 - [QoS Study with mClock and WPQ Schedulers](https://ceph.com/en/news/blog/2021/qos-study-with-mclock-and-wpq-schedulers/)
 - [The dmclock distributed quality of service algorithm](https://github.com/ceph/dmclock)
-- [mClock: handling throughput variability for hypervisor IO scheduling](https://dl.acm.org/doi/10.5555/1924943.1924974), [OSDI'10](https://www.usenix.org/legacy/events/osdi10/tech/)
 
-![h:350](images/mclock.png)
+![h:330](images/mclock.png) ![h:330](images/vhost-target.png)
+
+Source: [mClock: handling throughput variability for hypervisor IO scheduling](https://dl.acm.org/doi/10.5555/1924943.1924974), [OSDI'10](https://www.usenix.org/legacy/events/osdi10/tech/); [Using Ceph RBD as a QEMU Storage](https://insujang.github.io/2021-03-04/using-ceph-rbd-as-a-qemu-storage/);
 
 ---
 
