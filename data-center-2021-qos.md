@@ -94,6 +94,20 @@ Source: <https://www.srgresearch.com/articles/cloud-market-growth-rate-nudges-am
 
 ## 服务器整合
 
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:450](images/cmp-consolidated-servers.png)
+
+Source: [Virtual hierarchies to support server consolidation, ISCA '07](https://dl.acm.org/doi/10.1145/1250662.1250670)
+
+---
+
+### 机遇
+
 ![h:400](images/server-consolidation.svg)
 
 <!-- 
@@ -106,7 +120,25 @@ Source: <https://www.srgresearch.com/articles/cloud-market-growth-rate-nudges-am
 
 ### 意义
 
-![h:370](images/server-consolidation-scenario.svg)
+![bg fit](images/server-consolidation-scenario.svg)
+
+---
+
+### 更丰富意义
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![bg right fit](images/beyond-server-consolidation.png)
+
+1) 规模化应用部署
+2) 扩展、可靠和安全
+3) 使能服务质量保障
+
+Source: [Beyond Server Consolidation: Server consolidation helps companies improve resource utilization, but virtualization can help in other ways, too. Queue 2008](https://dl.acm.org/doi/10.1145/1348583.1348590)
 
 ---
 
@@ -166,20 +198,6 @@ Source:
 ![bg](images/multitenancy-web.png)
 
 Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-0-multi-tenant-amazon-s3-storage-ntfs-permissions-support-and-more/>
-
----
-
-## 性能干扰
-
-<style scoped>
-  p {
-    font-size: 18px;
-  }
-</style>
-
-![h:500](images/performance-isolation-1.png) ![h:500](images/performance-isolation-2.png)
-
-Source: [Enforcing performance isolation across virtual machines in Xen](https://dl.acm.org/doi/10.5555/1515984.1516011)
 
 ---
 
@@ -245,7 +263,7 @@ Source: [服务级别指标(SLI)和服务级别目标(SLO)示例](https://docs.m
 
 ---
 
-## 问题：不足还是过量
+## 问题：过度供应
 
 <style scoped>
   p {
@@ -256,6 +274,20 @@ Source: [服务级别指标(SLI)和服务级别目标(SLO)示例](https://docs.m
 ![w:1150](images/provisioning.png)
 
 Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/1721654.1721672)
+
+---
+
+## 问题：性能干扰
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:500](images/performance-isolation-1.png) ![h:500](images/performance-isolation-2.png)
+
+Source: [Enforcing performance isolation across virtual machines in Xen, Middleware '06](https://dl.acm.org/doi/10.5555/1515984.1516011)
 
 ---
 
@@ -396,7 +428,7 @@ ${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_
 
 ---
 
-### 测试方法与指标
+### 实验方法
 
 ---
 
