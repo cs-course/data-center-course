@@ -117,15 +117,37 @@ Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-
 
 ---
 
-## 服务器整合…
+### 意义
 
 ![h:370](images/server-consolidation-scenario.svg)
 
 ---
 
-## 服务器整合……
+### 案例
 
-…优势…
+<style scoped>
+  p {
+    padding-top: 500px;
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/CPU-Utilization-on-a-vSphere-Host-Before-and-After-Consolidation.jpg)
+
+Source: [Update on Virtualizing SQL](https://blogs.vmware.com/apps/2012/11/update-on-virtualizing-sql.html)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 600px;
+    font-size: 20px;
+  }
+</style>
+
+![bg](images/SQL-and-Oracle-Database-Consolidation-Reduces-Software-Costs-by-70-Percent.jpg)
+
+Source: [Update on Virtualizing SQL](https://blogs.vmware.com/apps/2012/11/update-on-virtualizing-sql.html)
 
 ---
 
