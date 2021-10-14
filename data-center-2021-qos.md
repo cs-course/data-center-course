@@ -299,7 +299,7 @@ Source: [Enforcing performance isolation across virtual machines in Xen, Middlew
 
 ---
 
-## 案例1：cgroup (Linux内核)
+### 案例1：cgroup (Linux内核)
 
 <style scoped>
   li {
@@ -336,7 +336,7 @@ Source: [Variations on fair I/O schedulers](https://lwn.net/Articles/309400/), 2
 
 ---
 
-## 案例2：libvirt (KVM, Xen, VMware, QEMU)
+### 案例2：libvirt (KVM, Xen, VMware, QEMU)
 
 <style scoped>
   li {
@@ -356,7 +356,7 @@ Source: [IO Throttling in QEMU](https://www.linux-kvm.org/images/7/72/2011-forum
 
 ---
 
-## 案例3：Object Storage (Ceph)
+### 案例3：Object Storage (Ceph)
 
 <style scoped>
   li {
