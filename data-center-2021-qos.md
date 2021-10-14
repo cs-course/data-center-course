@@ -92,19 +92,6 @@ Source: <https://www.srgresearch.com/articles/cloud-market-growth-rate-nudges-am
 
 ---
 
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 14px;
-  }
-</style>
-
-![bg](images/multitenancy-web.png)
-
-Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-0-multi-tenant-amazon-s3-storage-ntfs-permissions-support-and-more/>
-
----
-
 ## 服务器整合
 
 ![h:400](images/server-consolidation.svg)
@@ -151,13 +138,48 @@ Source: [Update on Virtualizing SQL](https://blogs.vmware.com/apps/2012/11/updat
 
 ---
 
-## 多租户共享存储
+## 多租户存储
 
-…普遍现象…
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:450](images/multi-tenancy-degrees.png)
+
+Source:
+[What is a multi-tenant system?](https://www.prudentdevs.club/mts/)
+<https://tech.asimio.net/2017/01/17/Multitenant-applications-using-Spring-Boot-JPA-Hibernate-and-Postgres.html>
+
+<!-- Software architects have borrowed lot of concepts from civil engineering. Multi-tenancy is one such concept. -->
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 14px;
+  }
+</style>
+
+![bg](images/multitenancy-web.png)
+
+Source: <https://www.getfilecloud.com/blog/2014/06/launching-tonido-filecloud-6-0-multi-tenant-amazon-s3-storage-ntfs-permissions-support-and-more/>
 
 ---
 
 ## 性能干扰
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:500](images/performance-isolation-1.png) ![h:500](images/performance-isolation-2.png)
+
+Source: [Enforcing performance isolation across virtual machines in Xen](https://dl.acm.org/doi/10.5555/1515984.1516011)
 
 ---
 
