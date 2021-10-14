@@ -242,6 +242,22 @@ Source: [A View of Cloud Computing. CACM 2010](https://dl.acm.org/doi/10.1145/17
 
 Source: [Variations on fair I/O schedulers](https://lwn.net/Articles/309400/), 2008
 
+<!-- 
+
+1. Algorithms that allocate throughput or bandwidth in proportion to the specified weights of the clients.
+
+  Provide proportional allocation of IO resources, such as Stonehenge SFQ(D), Argon, and Aqua. Many of these algorithms are variants of weighted fair queuing mechanisms (Virtual Clock, WFQ, PGPS, WF2Q, SCFQ, Leap Forward, SFQ and Latency-rate scheduling) proposed in the networking literature, adapted to handle various storage-specific concerns such as concurrency, minimizing seek delays and improving throughput.
+
+2. Algorithms that provide support for latency-sensitive applications along with proportional sharing.
+
+  These algorithms include SMART, BVT, pClock, Avatar and service curve based techniques.
+
+3. Algorithms that support reservation along with proportional allocation.
+  
+  Such as Rialto, ESX memory management and other reservation based CPU scheduling methods.
+
+ -->
+
 ---
 
 ## 案例2：libvirt (KVM, Xen, VMware, QEMU)
