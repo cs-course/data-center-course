@@ -482,9 +482,29 @@ Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
 ![bg fit](images/ceph-stack.png)
 
-<!-- https://docs.ceph.com/en/pacific/architecture/ -->
+Source: [Ceph Documentation » Architecture](https://docs.ceph.com/en/pacific/architecture/)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/cephDiagramm.webp)
+
+Source: [Ceph storage on Ubuntu: An overview](https://ubuntu.com/blog/ceph-storage-on-ubuntu-an-overview)
 
 ---
 
