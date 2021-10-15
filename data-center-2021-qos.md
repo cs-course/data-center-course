@@ -452,6 +452,11 @@ Source: [Decision-Making Approaches for Performance QoS in Distributed Storage S
 
 ## 问题描述
 
+- 静态：任务初始资源如何分配
+  - 调整资源配置
+- 动态：负载、系统变化如何动态适应
+  - 流量控制
+
 $(r_i, l^{r}_i, l^{w}_i)$
 
 ${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_i$
@@ -460,15 +465,19 @@ ${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_
 
 ### 方法1：控制论
 
-![w:1100](images/block-diagram-of-feedback-control-system.svg)
+![w:1150](images/block-diagram-of-feedback-control-system.svg)
 
 ---
 
-### 方法2：多目标优化
+### 方法2：约束优化
+
+![h:500](images/constrained-optimization-l.jpg)
 
 ---
 
 ### 方法3：机器学习
+
+![w:1150](images/reinforcement-Learning.svg)
 
 ---
 
