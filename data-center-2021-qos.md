@@ -240,9 +240,46 @@ Source: [The Key Differences Between SLI, SLO, and SLA in SRE](https://dzone.com
 
 ### 归纳一下
 
-- SLA是法律文书而非技术文档，重在严格约束而非技术实现
-- SLO是细分后的具体目标承诺，重在明确量化而非如何测量
-- SLI是监控采集的实际观测值，需要精辟选择合适指标
+<style scoped>
+  li {
+    font-size: 32px;
+    padding: 30px;
+  }
+</style>
+
+- SLA是法律文书而非技术文档
+- SLO是细分后的具体目标承诺
+- SLI是监控采集的实际观测值
+
+---
+
+### 归纳一下…
+
+<style scoped>
+  li {
+    font-size: 32px;
+    padding: 30px;
+  }
+</style>
+
+- SLA是法律文书而非技术文档，**重在严格约束而非技术实现**
+- SLO是细分后的具体目标承诺，**重在明确量化而非如何测量**
+- SLI是监控采集的实际观测值，**需要精辟选择合适指标**
+
+---
+
+### 归纳一下……
+
+<style scoped>
+  li {
+    font-size: 32px;
+    padding: 30px;
+  }
+</style>
+
+- SLA是法律文书而非技术文档，重在严格约束而非技术实现，**难在协商**
+- SLO是细分后的具体目标承诺，重在明确量化而非如何测量，**难在提炼**
+- SLI是监控采集的实际观测值，需要精辟选择合适指标，**难在精准观测**
 
 ---
 
@@ -296,6 +333,19 @@ Source: [Enforcing performance isolation across virtual machines in Xen, Middlew
 - **操作系统**：I/O管理器
 - **虚拟化环境**：虚拟机管理器
 - **存储系统**：I/O调度模块
+
+---
+
+### 公平排队的悠久历史
+
+![bg right fit](images/Stochastic-Fairness-Queuing.png)
+
+网络领域很早就开始探索……
+
+- [Stochastic fairness queueing, INFOCOM '90](https://ieeexplore.ieee.org/document/91316)
+- [On Measuring Fairness in Queues, Advances in Applied Probability 2004](https://www.jstor.org/stable/4140415)
+
+<!-- 计算机网络领域上很早就开展服务质量保障方向研究 (Virtual Clock, WFQ, PGPS, WF2Q, SCFQ, Leap Forward, SFQ and Latency-rate scheduling)，主要起步于公平队列 -->
 
 ---
 
@@ -372,7 +422,8 @@ Source: [IO Throttling in QEMU](https://www.linux-kvm.org/images/7/72/2011-forum
 
 ![h:330](images/mclock.png) ![h:330](images/vhost-target.png)
 
-Source: [mClock: handling throughput variability for hypervisor IO scheduling](https://dl.acm.org/doi/10.5555/1924943.1924974), [OSDI'10](https://www.usenix.org/legacy/events/osdi10/tech/); [Using Ceph RBD as a QEMU Storage](https://insujang.github.io/2021-03-04/using-ceph-rbd-as-a-qemu-storage/);
+Source: [mClock: handling throughput variability for hypervisor IO scheduling](https://dl.acm.org/doi/10.5555/1924943.1924974), [OSDI'10](https://www.usenix.org/legacy/events/osdi10/tech/);
+[Using Ceph RBD as a QEMU Storage](https://insujang.github.io/2021-03-04/using-ceph-rbd-as-a-qemu-storage/);
 
 ---
 
@@ -390,10 +441,10 @@ Source: [mClock: handling throughput variability for hypervisor IO scheduling](h
 ![bg right fit](images/QoS-managed-distributed-storage-system.gif)
 
 - **MAPE**-loop steps
-  - Monitoring QoS metrics
-  - Analyzing divergence of current performance from goals and updating a performance model
-  - Planning decisions about actions needed to achieve performance goals
-  - Executing those actions
+  - **Monitoring** QoS metrics
+  - **Analyzing** divergence of current performance from goals and updating a performance model
+  - **Planning** decisions about actions needed to achieve performance goals
+  - **Executing** those actions
 
 Source: [Decision-Making Approaches for Performance QoS in Distributed Storage Systems: A Survey, TPDS 2019](https://ieeexplore.ieee.org/document/8618414)
 
@@ -428,13 +479,32 @@ ${Average\ latency\ over\ time}\ w \leq f_r\cdot l^{r}_i + (1 - f_r)\cdot l^{w}_
 
 ---
 
-### 实验方法
+### 实验思路
+
+- 调节并发数，观察性能约束与提升的空间
+
+  ```python
+  with ThreadPoolExecutor(max_workers=1) as executor:
+      futures = [ executor.submit(access_obs for i in range(100) ]
+  ```
+
+- 尝试反馈控制并发数
+
+  ```bash
+  s3bench ... -numClients=8 ...
+  ```
+
+- Minio API 子系统节流实践
+  - <https://docs.min.io/docs/minio-server-configuration-guide.html>
 
 ---
 
 ## 进一步思考：如何精确控制？
 
 - 波动性与突发性问题
+  - 比例积分控制？
+  - 机器学习序列预测？
+  - ……
 
 ---
 
