@@ -1,0 +1,29 @@
+stages:
+  - marp
+  - deploy
+
+marp-prepare:
+  stage: marp
+  image: busybox:uclibc
+  script:
+    - wget https://github.com/marp-team/marp-cli/releases/download/v1.4.1/marp-cli-v1.4.1-linux.tar.gz
+    - tar xzvf marp-cli-v1.4.1-linux.tar.gz
+    - mkdir bin
+    - mv marp ./bin/
+  artifacts:
+    paths:
+      - bin/
+
+pages:
+  stage: deploy
+  image: ubuntu:focal-20211006
+  script:
+    - bin/marp *.md
+    - mkdir public
+    - mv *.html public
+    - mv images public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
