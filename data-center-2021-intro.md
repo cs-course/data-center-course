@@ -5,11 +5,16 @@ title: 数据中心技术
 # size: 4:3
 ---
 
+<!-- _class: lead -->
+
 # 数据中心技术简介
 
 **施展**
 武汉光电国家研究中心
 光电信息存储研究部
+
+<https://shizhan.github.io/>
+<https://shi_zhan.gitee.io/>
 
 ---
 
@@ -241,9 +246,28 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ## 经典案例
 
+![h:450](images/odcc-2021.jpg)
+Source: <http://dcp.odcc.org.cn/idc/idcMap>
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/us_datacenters.jpg)
+
+Source: <http://www.iiclouds.org/20141114/maps-of-data-center-localization/>
+
 ---
 
 ### 谷歌
+
+Source: <https://www.google.cn/about/datacenters/locations/>
 
 ---
 
@@ -251,7 +275,80 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ---
 
-### 脸书
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/azure-data-center-global-map.webp)
+
+Source: <https://www.urtech.ca/2019/01/solved-where-are-microsofts-data-centers-located/>
+
+---
+
+### 亚马逊
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/aws-region.png)
+
+Source: <https://www.cloudwards.net/news/amazon-announces-new-aws-paris-region-opening-in-2017-14326/>
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/Cloudfront-Map_9.24_2x.png)
+
+Source: <https://aws.amazon.com/cn/cloudfront/features/>
+
+---
+
+### AWS, Azure and Google Cloud
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 520px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/cloud-provider-location-map.png)
+
+Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-of-aws-azure-and-google-cloud/>
+
+---
+
+### AWS, Azure and Google Cloud …
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+![h:430](images/cloud-dc-locations@2x.png)![h:430](images/cloud-dc-numbers@2x.png)
+
+Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-of-aws-azure-and-google-cloud/>
 
 ---
 
@@ -332,7 +429,7 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 <style scoped>
   li, p {
-    font-size: 20px;
+    font-size: 27px;
   }
 </style>
 
@@ -428,8 +525,10 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 - 熟悉环境
   - *Linux, Git, SSH, Python, OpenStack, K8S, Docker* …
-- 着手综述
-  - 跟随讲座内容，检索和阅读论文，准备下个月汇报
 - 数据中心专题讲座与实践
   - 键值存储
   - 对象存储
+    - [尾延迟问题](data-center-2021-obs)
+    - [服务质量保障问题](data-center-2021-qos)
+- 着手综述
+  - 跟随讲座内容，检索和阅读论文，准备下个月汇报

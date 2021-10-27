@@ -123,4 +123,4 @@ title: 数据中心技术
 
 ## 后续内容
 
-- [数据中心技术总体介绍](data-center-2021-intro.md)
+- [数据中心技术总体介绍](data-center-2021-intro)
