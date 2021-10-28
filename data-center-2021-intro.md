@@ -271,24 +271,6 @@ Source: <https://www.google.cn/about/datacenters/locations/>
 
 ---
 
-### 微软
-
----
-
-<style scoped>
-  p {
-    font-size: 18px;
-    padding-top: 620px;
-    text-align: left;
-  }
-</style>
-
-![bg](images/azure-data-center-global-map.webp)
-
-Source: <https://www.urtech.ca/2019/01/solved-where-are-microsofts-data-centers-located/>
-
----
-
 ### 亚马逊
 
 ---
@@ -318,6 +300,24 @@ Source: <https://www.cloudwards.net/news/amazon-announces-new-aws-paris-region-o
 ![bg](images/Cloudfront-Map_9.24_2x.png)
 
 Source: <https://aws.amazon.com/cn/cloudfront/features/>
+
+---
+
+### 微软
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg](images/azure-data-center-global-map.webp)
+
+Source: <https://www.urtech.ca/2019/01/solved-where-are-microsofts-data-centers-located/>
 
 ---
 
@@ -394,9 +394,17 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 绿色环保、模块化、边缘计算
 
+惊人的资源消耗，信息化不总是意味着环保
+
+PUE
+
 ---
 
 ## 学习目的
+
+- 数据中心技术的基础知识
+- 大规模计算机系统的响应能力
+- 经典的应对方法
 
 ---
 
@@ -412,7 +420,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 选择合适的系统
+### 选择合适的系统
 
 怎么给自己准备一套便利的Linux学习环境？
 
@@ -425,7 +433,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 准备和熟悉环境
+### 准备和熟悉环境
 
 <style scoped>
   li, p {
@@ -448,7 +456,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 命令行操作入门
+### 命令行操作入门
 
 - 系统状态
   - 有哪些关键目录
@@ -462,9 +470,9 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 初步尝试管理
+### 初步尝试管理
 
-- 编制Bash脚本
+- 编制bash脚本
   - 循环、参数、管道与重定向
 - 远程管理方法
   - 网络管道、文件同步、终端会话保持
@@ -484,7 +492,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 更进一步
+### 更进一步
 
 - Dashboard仪表盘
   - Grafana
