@@ -240,7 +240,18 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ## 定义、起源和历史
 
-存储工业协会SNIA的定义
+- 数据中心的概念可以追溯到互联网时代的早期
+- ARPANET (70s) 与 WWW (90s)
+  - EMail, SNS, Instant Messaging, Blogging, Online Video, Map ...
+  - Dial up, ADSL, Cable Modem, FTTH, 2G - 5G ...
+- Server-side Computing -- **Cloud**
+
+---
+
+## 云和超算
+
+- 是**为人民群众服务**
+- 还是**集中力量办大事**
 
 ---
 
