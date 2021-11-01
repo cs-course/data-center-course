@@ -250,8 +250,15 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ## 云和超算
 
-- 是**为人民群众服务**
-- 还是**集中力量办大事**
+- **为人民群众服务**
+- **集中力量办大事**
+
+---
+
+## 超算上云、边缘计算
+
+- **动员广大人民办大事**
+- **从群众中来，到群众中去**
 
 ---
 
