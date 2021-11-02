@@ -543,7 +543,7 @@ Source: [PID Controllers Explained](https://blog.opticontrols.com/archives/344)
 
 <style scoped>
   li {
-    font-size: 25px;
+    font-size: 20px;
   }
 </style>
 
