@@ -242,23 +242,9 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 - 数据中心的概念可以追溯到互联网时代的早期
 - ARPANET (70s) 与 WWW (90s)
-  - EMail, SNS, Instant Messaging, Blogging, Online Video, Map ...
-  - Dial up, ADSL, Cable Modem, FTTH, 2G - 5G ...
+  - **应用**：EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
+  - **网络**：拨号、ADSL、宽带、光纤入户，2G至5G ...
 - Server-side Computing -- **Cloud**
-
----
-
-## 云和超算
-
-- **为人民群众服务**
-- **集中力量办大事**
-
----
-
-## 超算上云、边缘计算
-
-- **动员广大人民办大事**
-- **从群众中来，到群众中去**
 
 ---
 
@@ -408,6 +394,103 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
+## 比较思考：云和超算
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- …
+- …
+
+![bg fit right](images/hpc_schematic.png)
+
+Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
+
+---
+
+## 云和超算…
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- 或 **为人民群众服务**
+- …
+
+![bg fit right](images/autoscaling-architecture5.png)
+
+Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-computing-architectures>
+
+---
+
+## 超算上云
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- 或 **为人民群众服务**
+- 又或者 **动员广大人民办大事**
+
+![bg fit right](images/architecture-hpc-cfd.png)
+
+Source: <https://docs.microsoft.com/en-us/azure/architecture/example-scenario/infrastructure/hpc-cfd>
+
+Discussions:
+2013 [A comparative study of high-performance computing on the cloud, HPDC'13](https://dl.acm.org/doi/10.1145/2462902.2462919)
+2017 [Understanding the Performance and Potential of Cloud Computing for Scientific Applications, ToCC'17](https://ieeexplore.ieee.org/document/7045591)
+2018 [HPC Cloud for Scientific and Business Applications: Taxonomy, Vision, and Research Challenges, CSUR'18](https://dl.acm.org/doi/10.1145/3150224)
+2019 [Use Cases for HPC in the Cloud](https://insidehpc.com/2019/10/use-cases-for-hpc-in-the-cloud/)
+2020 [HPC in the Cloud? Yes, No and In Between](https://www.arm.com/blogs/blueprint/hpc-cloud)
+2020 [High Performance Computing Vs Cloud Computing: Which is Better?](https://www.1plus1tech.com/high-performance-computing-vs-cloud-computing/)
+2021 [HPC and the Cloud](https://www.cioreview.com/cxoinsight/hpc-and-the-cloud-nid-12863-cid-84.html)
+
+---
+
+## 众包、边缘、雾计算
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- **从群众中来，到群众中去**
+
+![h:400](images/690px-SETI-home_ScrSaver.jpg) ![h:400](images/google-maps2-576x1024.png)
+
+Source: [The Power of the Community – Crowd Sourcing, Open Source and Social Networking](https://www.omniasecuritas.com/archives/116)
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/cloud-fog-edge_infographic.webp)
+
+Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
+
+---
+
 ## 发展趋势
 
 绿色环保、模块化、边缘计算
@@ -420,9 +503,9 @@ PUE
 
 ## 学习目的
 
-- 数据中心技术的基础知识
-- 大规模计算机系统的响应能力
-- 经典的应对方法
+- 数据中心技术的**基础知识**
+- 大规模计算机系统**响应能力问题**
+- 经典的**应对方法**
 
 ---
 
