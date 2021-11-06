@@ -252,23 +252,25 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ## 经典案例
 
-![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
-
-Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odcc.org.cn/idc)
-
----
-
 <style scoped>
+  h2 {
+    color: #F0F0F0;
+  }
   p {
     font-size: 18px;
-    padding-top: 620px;
+    padding-top: 520px;
     text-align: left;
+    color: #F0F0F0;
   }
 </style>
 
-![bg fit](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+![bg](images/Data-Centers-top10.webp)
 
-Source: <http://dcp.odcc.org.cn/idc/idcMap>
+Source: <https://www.analyticsinsight.net/top-10-data-centers-world-today/>
+
+---
+
+……
 
 ---
 
@@ -370,6 +372,28 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 ![h:430](images/cloud-dc-locations@2x.png)![h:430](images/cloud-dc-numbers@2x.png)
 
 Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-of-aws-azure-and-google-cloud/>
+
+---
+
+## 国内情况
+
+![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
+
+Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odcc.org.cn/idc)
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+
+Source: <http://dcp.odcc.org.cn/idc/idcMap>
 
 ---
 
