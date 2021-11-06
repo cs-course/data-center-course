@@ -266,11 +266,15 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ![bg](images/Data-Centers-top10.webp)
 
-Source: <https://www.analyticsinsight.net/top-10-data-centers-world-today/>
+Source: [Top 10 Data Centers in the World Today](https://www.analyticsinsight.net/top-10-data-centers-world-today/), Preetipadma, September 8, 2020
 
 ---
 
 ……
+
+---
+
+[2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
 
 ---
 
