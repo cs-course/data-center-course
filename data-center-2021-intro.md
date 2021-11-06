@@ -20,11 +20,13 @@ title: 数据中心技术
 
 ## 内容大纲
 
+<!-- paginate: true -->
+
 - 课堂背景调查
 - 数据中心技术
   - 定义、起源和历史
   - 经典案例
-  - 问题和挑战
+  - 主要问题
   - 发展趋势
 - 学习目的
 - 实践基础
@@ -364,7 +366,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 仓库规模的计算机，就是数据中心？
+## 仓库规模的计算机系统，就是数据中心？
 
 ![bg fit](images/wsc-arch.svg)
 
