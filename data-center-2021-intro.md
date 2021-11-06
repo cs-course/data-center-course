@@ -252,7 +252,22 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ## 经典案例
 
-![h:450](images/odcc-2021.jpg)
+![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
+
+Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odcc.org.cn/idc)
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+
 Source: <http://dcp.odcc.org.cn/idc/idcMap>
 
 ---
@@ -366,7 +381,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 仓库规模的计算机系统，就是数据中心？
+## 仓储规模的计算机系统，就是数据中心？
 
 ![bg fit](images/wsc-arch.svg)
 
