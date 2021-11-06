@@ -364,37 +364,26 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 问题和挑战
+## 仓库规模的计算机，就是数据中心？
 
-- 可靠性
-- 一致性
-- 波动性
-- 可用性
-- 尾延迟
+![bg fit](images/wsc-arch.svg)
 
 ---
 
-### 可靠性
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+    color: 0040FF;
+  }
+</style>
+
+一项经典的比较：HPC vs Cloud
 
 ---
 
-### 一致性
-
----
-
-### 波动性
-
----
-
-### 可用性
-
----
-
-### 尾延迟
-
----
-
-## 比较思考：云和超算
+## 超算和云
 
 <style scoped>
   p {
@@ -413,7 +402,7 @@ Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
 
 ---
 
-## 云和超算…
+## 超算和云…
 
 <style scoped>
   p {
@@ -423,7 +412,7 @@ Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
 </style>
 
 - 是 **集中力量办大事**
-- 或 **为人民群众服务**
+- 或 **人民群众无小事**
 - …
 
 ![bg fit right](images/autoscaling-architecture5.png)
@@ -442,7 +431,7 @@ Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-compu
 </style>
 
 - 是 **集中力量办大事**
-- 或 **为人民群众服务**
+- 或 **人民群众无小事**
 - 又或者 **动员广大人民办大事**
 
 ![bg fit right](images/architecture-hpc-cfd.png)
@@ -488,6 +477,36 @@ Source: [The Power of the Community – Crowd Sourcing, Open Source and Social N
 ![bg fit](images/cloud-fog-edge_infographic.webp)
 
 Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
+
+---
+
+## 主要问题
+
+- 可靠性
+- 一致性
+- 波动性
+- 可用性
+- 尾延迟
+
+---
+
+### 可靠性
+
+---
+
+### 一致性
+
+---
+
+### 波动性
+
+---
+
+### 可用性
+
+---
+
+### 尾延迟
 
 ---
 
