@@ -168,75 +168,25 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
-## 信息系统的规模化趋势
-
-<style scoped>
-  th {
-    display: none;
-  }
-  h3, li, td, p {
-    font-size: 14px;
-  }
-</style>
-
-### Latency Comparison Numbers
-
-||||||
-|:-|-:|-:|-:|:-|
-| L1 cache reference                 |          0.5 ns |            |        |                             |
-| Branch mispredict                  |          5   ns |            |        |                             |
-| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
-| Mutex lock/unlock                  |         25   ns |            |        |                             |
-| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
-| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
-| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
-| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
-| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
-| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
-| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
-| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
-| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
-| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
-
-### Notes
-
-1 ns = 10^-9 seconds
-1 us = 10^-6 seconds = 1,000 ns
-1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
-
-### Credit
-
-By Jeff Dean: <http://research.google.com/people/jeff/>
-Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
-
-Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
-
----
-
 ## 仓储级计算机
 
 <style scoped>
-  li, p {
+  li {
     font-size: 30px;
+  }
+  p {
+    font-size: 25px;
+    font-style: italic;
+    color: #F07000;
   }
 </style>
 
-[路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
-
+- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 - [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
 - [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
 - [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 Eckert-Mauchly Award
+
+Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
 
 ---
 
@@ -522,6 +472,62 @@ Source: [The Power of the Community – Crowd Sourcing, Open Source and Social N
 ![bg fit](images/cloud-fog-edge_infographic.webp)
 
 Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
+
+---
+
+## 在规模化的背后
+
+<style scoped>
+  th {
+    display: none;
+  }
+  h3, li, td, p {
+    font-size: 14px;
+  }
+</style>
+
+### Latency Comparison Numbers
+
+||||||
+|:-|-:|-:|-:|:-|
+| L1 cache reference                 |          0.5 ns |            |        |                             |
+| Branch mispredict                  |          5   ns |            |        |                             |
+| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
+| Mutex lock/unlock                  |         25   ns |            |        |                             |
+| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
+| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
+| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
+| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
+| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
+| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
+| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
+| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
+| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
+| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
+
+### Notes
+
+1 ns = 10^-9 seconds
+1 us = 10^-6 seconds = 1,000 ns
+1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+
+### Credit
+
+By Jeff Dean: <http://research.google.com/people/jeff/>
+Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
+
+Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
 
 ---
 
