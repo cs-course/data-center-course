@@ -102,7 +102,7 @@ Source: <https://datareportal.com/reports/>
     padding-top: 200px;
     text-align: center;
     font-size: 72px;
-    color: 0040FF;
+    color: #0040FF;
   }
 </style>
 
@@ -121,7 +121,7 @@ Source: <https://datareportal.com/reports/>
     padding-top: 200px;
     text-align: center;
     font-size: 72px;
-    color: 0040FF;
+    color: #0040FF;
   }
 </style>
 
