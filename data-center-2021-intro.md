@@ -433,7 +433,7 @@ Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-compu
 
 <style scoped>
   p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
   }
 </style>
@@ -482,7 +482,7 @@ Source: [The Power of the Community – Crowd Sourcing, Open Source and Social N
   }
 </style>
 
-![bg fit](images/cloud-fog-edge_infographic.webp)
+![bg 80%](images/cloud-fog-edge_infographic.jpg)
 
 Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
 
