@@ -36,6 +36,10 @@ title: 数据中心技术
 ## 课堂背景调查
 
 <style scoped>
+  p, td {
+    font-size: 16px;
+    vertical-align:text-top;
+  }
   th {
     display: none;
   }
@@ -44,9 +48,16 @@ title: 数据中心技术
   }
 </style>
 
-|   |   |
-|:-:|:--|
-|![h:450](images/qq-group-2021.png)|1. 扫码进群<br/>2. 参与投票|
+扫码进群投票(一项一分，全中25分)
+
+![bg right:32% fit](images/qq-group-2021.png)
+
+|||
+|:-|:-|
+|**动手实践** 3 pts<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境** 5 pts<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
+|**C/C++** 3 pts<br/>- 作业程序<br/>- 多模块工程<br/>- 知名程序库(STL, Boost, MPI…)|**Java** 3 pts<br/>- 课程作业<br/>- 知名工程(Hadoop, Spark, Giraph…)<br/>- 构建工具(Ant, Maven, SBT…)|
+|**Python** 3 pts<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**知识面** 3 pts<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
+|**资料来源** 5 pts<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…|
 
 ---
 
@@ -187,6 +198,8 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 - [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 Eckert-Mauchly Award
 
 Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
+
+<!-- 计算机体系结构最高奖Eckert-Mauchly奖 -->
 
 ---
 
