@@ -328,15 +328,9 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 
 ### Swiss Fort Knox
 
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-</style>
-
 - Location: Baar, Switzerland
 - 号称世界最安全的数据中心
-- Built in 1994, by Christoph Oschwald, and his business partner Hanspeter Baumann, who converted the former headquarters of the Swiss Air Force into a top-notch data center by installing emergency diesel engines, a ventilation system, a filter, and an air-pressure system to prevent the entry of any poisonous gases. 
+- Built in 1994, by Christoph Oschwald, and his business partner Hanspeter Baumann, who converted the former headquarters of the Swiss Air Force into a top-notch data center by installing emergency diesel engines, a ventilation system, a filter, and an air-pressure system to prevent the entry of any poisonous gases.
 - Water from an underground lake keeps the center’s cooling system at 8 degrees Celsius.
 - 数据全加密，密钥只有客户持有。
 
@@ -347,15 +341,6 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 - Location: Bluffdale, Utah
 - 神秘(臭名昭著)的NSA
 - Also known as the Intelligence Community Comprehensive National Cybersecurity Initiative Data Center, it was designed to support the US intelligence community. Its purpose is to intercept, decipher, analyze, and store vast swaths of the World’s communications as they zap down from satellites and zip through the underground and undersea cables of international, foreign, and domestic networks.
-
----
-
-<style scoped>
-  li {
-    font-size: 22px;
-  }
-</style>
-
 
 ---
 
