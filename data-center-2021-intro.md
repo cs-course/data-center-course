@@ -302,6 +302,63 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 
 ---
 
+<style scoped>
+  li {
+    font-size: 20px;
+  }
+</style>
+
+- Lakeside Technology Center
+  - Location: Chicago, Illinois
+  - 印刷厂改；大量备用发电机组(53)；大量冷却水(8.5 million gallons of cooling fluid per year)；客户有IBM, CenturyLink, Facebook, and TelX。
+- Kolos Data Centre
+  - Location: Ballengen, Norway
+  - 北欧天然冷却；挪威丰富水电；北大西洋高速互联。
+- Tulip Data City
+  - Location: Bangalore, India
+  - 一度非美国最大(Tulip Telecom Ltd.)；IBM帮助设计。
+- Bahnhof’s Pionen
+  - Location: Central Stockholm, Sweden
+  - 斯德哥尔摩人防工程(in 1943 to protect essential government functions)；潜艇发动机做备电(Maybach MTU diesel engines)。
+- Next-Generation Data
+  - Location: Newport, UK
+  - 服务于BT、IBM各路公有云；全英最高PUE；独占电网(has its own sub-station with a direct connection to the 400kV Super Grid)。
+
+---
+
+### Swiss Fort Knox
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+- Location: Baar, Switzerland
+- 号称世界最安全的数据中心
+- Built in 1994, by Christoph Oschwald, and his business partner Hanspeter Baumann, who converted the former headquarters of the Swiss Air Force into a top-notch data center by installing emergency diesel engines, a ventilation system, a filter, and an air-pressure system to prevent the entry of any poisonous gases. 
+- Water from an underground lake keeps the center’s cooling system at 8 degrees Celsius.
+- 数据全加密，密钥只有客户持有。
+
+---
+
+### Utah Data Center
+
+- Location: Bluffdale, Utah
+- 神秘(臭名昭著)的NSA
+- Also known as the Intelligence Community Comprehensive National Cybersecurity Initiative Data Center, it was designed to support the US intelligence community. Its purpose is to intercept, decipher, analyze, and store vast swaths of the World’s communications as they zap down from satellites and zip through the underground and undersea cables of international, foreign, and domestic networks.
+
+---
+
+<style scoped>
+  li {
+    font-size: 22px;
+  }
+</style>
+
+
+---
+
 [2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
 
 ---
