@@ -233,7 +233,72 @@ Source: [Top 10 Data Centers in the World Today](https://www.analyticsinsight.ne
 
 ---
 
-……
+### ACC7
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li,a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/dft-acc7.jpg)
+
+- Begin from 2014, DuPont Fabros Technology, whose business is building massive data centers and leasing wholesale space to companies on a long-term basis, brought online its biggest facility yet: ACC7 in Ashburn, Virginia.
+- The ACC7 is 446,000 square feet in size and has a total power capacity of a whopping 41.6 megawatts. The building includes 28 large computer rooms, with a standard critical load of 1.486 megawatts each, and the ability to increase density to offer up to 2.1 megawatts each. Each data hall can accomodate approximately 378 standard cabinets.
+- The company applies a new approach "**water side economization plant with chiller assist.**" This means that outside air will cool water for the cooling system, using a plate and frame heat exchanger, which is expected to be the primary cooling source for 75 percent of the calendar year.
+
+Source: [New Data Center Design Drives Efficiency Gains for Dupont Fabros](https://www.datacenterknowledge.com/archives/2014/02/13/new-data-center-design-drives-efficiency-gains-dupont-fabros), 2014
+
+---
+
+### Tahoe Reno 1
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li, a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/Tahoe-Reno-1.2e16d0ba.fill-1200x630.jpg)
+
+- Built and designed to Tier IV standards, Tahoe Reno 1 consists of 1.3 million square feet (120,000 sq m) of data center space, which Switch claims is the largest data center for colocation in the world. Switch plans to expand this to a total of 7.2 million sq ft (670,000 sq m). It has a power capacity of 130 MW, a fifth of its 650 MW goal.
+- Switch highlighted the data center’s security, reliability and low latency, which is backed by the Superloop system, a 500-mile, multi-terabyte fiber optic network to San Francisco and Los Angeles, as well as the company’s 2.5 million sq ft of data center space located in Las Vegas with 10Gbps circuits at 4-millisecond latency. The facility has a tri-redundant UPS power system, and offers up to 42 kW of power per cabinet.
+- **100 percent renewable energy**, which Switch currently purchases externally, but plans to produce itself in future using Switch I and Switch II, the company’s ongoing solar projects located near the Apex Industrial Park in Southern Nevada.
+
+Source: [Switch opens Tahoe Reno 1, "world’s largest" colo data center](https://www.datacenterdynamics.com/en/news/switch-opens-tahoe-reno-1-worlds-largest-colo-data-center/), 2017
+
+---
+
+### Range International Information Group
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li, a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/range-intl-langfang.jpg)
+
+- It was designed to help meet the skyrocketing needs of the Chinese economic and technological boom that has been running for about two decades. As with most large scale projects in China, this data center was built by a combined public and private investment and is overseen by IBM. It consumes 150 megawatts of power.
+- Located in Langfang China, Range International Information Group is **the world’s largest data center** and occupies 6.3 million square feet of space.
+  - It is equivalent to the area occupied by the Pentagon or a combination of 110 football fields. Construction of the Range International Information Group was completed in 2016.
+
+Source: [And The Title of The Largest Data Center in the World and Largest Data Center in US Goes To...](https://www.datacenters.com/news/and-the-title-of-the-largest-data-center-in-the-world-and-largest-data-center-in), 2018
 
 ---
 
