@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术
 # size: 4:3
+math: katex
 ---
 
 <!-- _class: lead -->
@@ -20,11 +21,13 @@ title: 数据中心技术
 
 ## 内容大纲
 
+<!-- paginate: true -->
+
 - 课堂背景调查
 - 数据中心技术
   - 定义、起源和历史
   - 经典案例
-  - 问题和挑战
+  - 主要问题
   - 发展趋势
 - 学习目的
 - 实践基础
@@ -34,6 +37,14 @@ title: 数据中心技术
 ## 课堂背景调查
 
 <style scoped>
+  p {
+    font-size: 20px;
+  }
+  td {
+    font-size: 16px;
+    vertical-align:text-top;
+    color: #003FFF;
+  }
   th {
     display: none;
   }
@@ -42,9 +53,24 @@ title: 数据中心技术
   }
 </style>
 
-|   |   |
-|:-:|:--|
-|![h:450](images/qq-group-2021.png)|1. 扫码进群<br/>2. 参与投票|
+扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
+
+![bg right:32% fit](images/qq-group-2021.png)
+
+|||
+|:-|:-|
+|**动手实践** 3 pts<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境** 5 pts<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
+|**C/C++** 3 pts<br/>- 作业程序<br/>- 多模块工程(make, autoconf…)<br/>- 知名程序库(STL, Boost, MPI…)|**Java** 3 pts<br/>- 课程作业<br/>- 构建工具(Ant, Maven, SBT…)<br/>- 知名工程(Hadoop, Spark, Giraph…)|
+|**Python** 3 pts<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**还接触过** 3 pts<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
+|**资料来源** 5 pts<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
+
+---
+
+## 或者扫描问卷条码
+
+![bg right:32% fit](images/qq-group-2021.png)
+
+![h:450](images/class-survey.jpg)
 
 ---
 
@@ -82,10 +108,10 @@ Source: <https://cloud.tencent.com/about>
 ---
 
 <style scoped>
-  p {
+  p, a {
     padding-top: 620px;
     font-size: 18px;
-    text-align: right;
+    color: #F0F0F0;
   }
 </style>
 
@@ -100,7 +126,7 @@ Source: <https://datareportal.com/reports/>
     padding-top: 200px;
     text-align: center;
     font-size: 72px;
-    color: 0040FF;
+    color: #0040FF;
   }
 </style>
 
@@ -119,7 +145,7 @@ Source: <https://datareportal.com/reports/>
     padding-top: 200px;
     text-align: center;
     font-size: 72px;
-    color: 0040FF;
+    color: #0040FF;
   }
 </style>
 
@@ -166,75 +192,29 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
-## 信息系统的规模化趋势
-
-<style scoped>
-  th {
-    display: none;
-  }
-  h3, li, td, p {
-    font-size: 14px;
-  }
-</style>
-
-### Latency Comparison Numbers
-
-||||||
-|:-|-:|-:|-:|:-|
-| L1 cache reference                 |          0.5 ns |            |        |                             |
-| Branch mispredict                  |          5   ns |            |        |                             |
-| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
-| Mutex lock/unlock                  |         25   ns |            |        |                             |
-| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
-| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
-| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
-| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
-| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
-| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
-| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
-| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
-| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
-| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
-
-### Notes
-
-1 ns = 10^-9 seconds
-1 us = 10^-6 seconds = 1,000 ns
-1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
-
-### Credit
-
-By Jeff Dean: <http://research.google.com/people/jeff/>
-Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
-
-Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
-
----
-
 ## 仓储级计算机
 
 <style scoped>
-  li, p {
+  li {
     font-size: 30px;
+  }
+  p {
+    font-size: 25px;
+    font-style: italic;
+    color: #F07000;
   }
 </style>
 
-[路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
-
+- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 - [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
 - [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
-- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 Eckert-Mauchly Award
+- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
+
+Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
+
+<!--
+计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
+-->
 
 ---
 
@@ -242,30 +222,249 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 - 数据中心的概念可以追溯到互联网时代的早期
 - ARPANET (70s) 与 WWW (90s)
-  - EMail, SNS, Instant Messaging, Blogging, Online Video, Map ...
-  - Dial up, ADSL, Cable Modem, FTTH, 2G - 5G ...
+  - **应用**：EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
+  - **网络**：拨号、ADSL、宽带、光纤入户，2G至5G ...
 - Server-side Computing -- **Cloud**
-
----
-
-## 云和超算
-
-- **为人民群众服务**
-- **集中力量办大事**
-
----
-
-## 超算上云、边缘计算
-
-- **动员广大人民办大事**
-- **从群众中来，到群众中去**
 
 ---
 
 ## 经典案例
 
-![h:450](images/odcc-2021.jpg)
-Source: <http://dcp.odcc.org.cn/idc/idcMap>
+<style scoped>
+  h2 {
+    color: #F0F0F0;
+  }
+  p, a {
+    font-size: 18px;
+    padding-top: 520px;
+    text-align: left;
+    color: #F0F0F0;
+  }
+</style>
+
+![bg](images/Data-Centers-top10.webp)
+
+Source: [Top 10 Data Centers in the World Today](https://www.analyticsinsight.net/top-10-data-centers-world-today/), Preetipadma, September 8, 2020
+
+---
+
+### ACC7
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li,a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/dft-acc7.jpg)
+
+- Begin from 2014, DuPont Fabros Technology, whose business is building massive data centers and leasing wholesale space to companies on a long-term basis, brought online its biggest facility yet: ACC7 in Ashburn, Virginia.
+- The ACC7 is 446,000 square feet in size and has a total power capacity of a whopping 41.6 megawatts. The building includes 28 large computer rooms, with a standard critical load of 1.486 megawatts each, and the ability to increase density to offer up to 2.1 megawatts each. Each data hall can accomodate approximately 378 standard cabinets.
+- The company applies a new approach "**water side economization plant with chiller assist.**" This means that outside air will cool water for the cooling system, using a plate and frame heat exchanger, which is expected to be the primary cooling source for 75 percent of the calendar year.
+
+Source: [New Data Center Design Drives Efficiency Gains for Dupont Fabros](https://www.datacenterknowledge.com/archives/2014/02/13/new-data-center-design-drives-efficiency-gains-dupont-fabros), 2014
+
+---
+
+### Tahoe Reno 1
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li, a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/Tahoe-Reno-1.2e16d0ba.fill-1200x630.jpg)
+
+- Built and designed to Tier IV standards, Tahoe Reno 1 consists of 1.3 million square feet (120,000 sq m) of data center space, which Switch claims is the largest data center for colocation in the world. Switch plans to expand this to a total of 7.2 million sq ft (670,000 sq m). It has a power capacity of 130 MW, a fifth of its 650 MW goal.
+- Switch highlighted the data center’s security, reliability and low latency, which is backed by the Superloop system, a 500-mile, multi-terabyte fiber optic network to San Francisco and Los Angeles, as well as the company’s 2.5 million sq ft of data center space located in Las Vegas with 10Gbps circuits at 4-millisecond latency. The facility has a tri-redundant UPS power system, and offers up to 42 kW of power per cabinet.
+- **100 percent renewable energy**, which Switch currently purchases externally, but plans to produce itself in future using Switch I and Switch II, the company’s ongoing solar projects located near the Apex Industrial Park in Southern Nevada.
+
+Source: [Switch opens Tahoe Reno 1, "world’s largest" colo data center](https://www.datacenterdynamics.com/en/news/switch-opens-tahoe-reno-1-worlds-largest-colo-data-center/), 2017
+
+---
+
+### Range International Information Group
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+  p, li, a {
+    font-size: 27px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.5);
+  }
+</style>
+
+![bg](images/range-intl-langfang.jpg)
+
+- It was designed to help meet the skyrocketing needs of the Chinese economic and technological boom that has been running for about two decades. As with most large scale projects in China, this data center was built by a combined public and private investment and is overseen by IBM. It consumes 150 megawatts of power.
+- Located in Langfang China, Range International Information Group is **the world’s largest data center** and occupies 6.3 million square feet of space.
+  - It is equivalent to the area occupied by the Pentagon or a combination of 110 football fields. Construction of the Range International Information Group was completed in 2016.
+
+Source: [And The Title of The Largest Data Center in the World and Largest Data Center in US Goes To...](https://www.datacenters.com/news/and-the-title-of-the-largest-data-center-in-the-world-and-largest-data-center-in), 2018
+
+---
+
+<style scoped>
+  li {
+    font-size: 20px;
+  }
+</style>
+
+- Lakeside Technology Center
+  - Location: Chicago, Illinois
+  - 印刷厂改；大量备用发电机组(53)；大量冷却水(8.5 million gallons of cooling fluid per year)；客户有IBM, CenturyLink, Facebook, and TelX。
+- Kolos Data Centre
+  - Location: Ballengen, Norway
+  - 北欧天然冷却；挪威丰富水电；北大西洋高速互联。
+- Tulip Data City
+  - Location: Bangalore, India
+  - 一度非美国最大(Tulip Telecom Ltd.)；IBM帮助设计。
+- Bahnhof’s Pionen
+  - Location: Central Stockholm, Sweden
+  - 斯德哥尔摩人防工程(in 1943 to protect essential government functions)；潜艇发动机做备电(Maybach MTU diesel engines)。
+- Next-Generation Data
+  - Location: Newport, UK
+  - 服务于BT、IBM各路公有云；全英最高PUE；独占电网(has its own sub-station with a direct connection to the 400kV Super Grid)。
+
+---
+
+### Swiss Fort Knox 瑞士诺克斯地堡
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+- Location: Baar, Switzerland
+- 号称世界最安全的数据中心，源自2010年的欧盟 [Planets (Preservation and Long-term Access through Networked Services)](https://planets-project.eu/) 项目
+  - 爱因斯坦的纸质笔记现在我们仍能看到，但斯蒂芬·霍金的数字笔记在70年后我们很有可能看不到。项目旨在确保“我们的数字化文化和科学宝藏可被长期访问”。
+- Built in 1994, by Christoph Oschwald, and his business partner Hanspeter Baumann, who converted the former headquarters of the Swiss Air Force into a top-notch data center by installing emergency diesel engines, a ventilation system, a filter, and an air-pressure system to prevent the entry of any poisonous gases.
+- Water from an underground lake keeps the center’s cooling system at 8 degrees Celsius.
+
+---
+
+### 瑞士诺克斯地堡
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 520px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/sfk-big-english.jpg)
+
+Source: [SWISS FORT KNOX I + II is an underground datacenter concept with various locations, deep inside the Swiss Alps.](https://www.mount10.ch/en/mount10/swiss-fort-knox/)
+
+---
+
+### 瑞士诺克斯地堡…
+
+<style scoped>
+  p {
+    text-align: center;
+    font-size: 60px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit](images/Erklarung_M10_72ppi_EN.png)
+
+客户专属密钥备份
+
+<!-- https://www.mount10.ch/en/products/backup/combo.html -->
+
+---
+
+### 瑞士诺克斯地堡……
+
+<style scoped>
+  p {
+    text-align: center;
+    font-size: 60px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit opacity:.5](images/Erklarung_M10_72ppi_EN.png)
+
+Ideal protection against NSA and PRISM!
+
+- Data storage inside of Switzerland (www.swissfortknox.com)
+- Encryption of the data with 256-bit AES (wikipedia)
+- Personal encryption key which is NOT known to us (no backdoors)
+- Redundant data storage and contractual availability of 99.7% (GTC)
+- Compliance with the legal requirements for a backup in accordance with Swiss law ( Certificate (German) und Report (German) )
+
+---
+
+### 那么NSA在用什么？
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li, a {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg](images/utah-data-center-entrance.jpg)
+
+- Location: Bluffdale, Utah
+- 也称情报体系综合性国家计算机安全计划数据中心 (Intelligence Community Comprehensive National Cybersecurity Initiative Data Center)
+  - <https://nsa.gov1.info/utah-data-center/>
+
+---
+
+### Utah Data Center 犹他数据中心
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li, a {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg opacity:.5](images/utah-data-center-entrance.jpg)
+
+- 拥有**尧字节级存储能力**。
+- 能储存100年有价值的通讯信息(全世界2011年整个互联网的容量总和也不过52艾$2^{60}$字节)，目的是支持综合性国家计算机安全计划 (Comprehensive National Cybersecurity Initiative, CNCI)，也是国家情报总监 (DNI) 的执行机构，具体职责保密。
+- $Y_{otta}Byte=2^{80}B=10^{24}B=2^{10}*Z_{etta}B=2^{20}*E_{xa}B$
+
+---
+
+[2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
 
 ---
 
@@ -370,6 +569,28 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
+## 国内情况
+
+![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
+
+Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odcc.org.cn/idc)
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+
+Source: <http://dcp.odcc.org.cn/idc/idcMap>
+
+---
+
 ### 阿里
 
 ---
@@ -378,7 +599,178 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 问题和挑战
+## 仓储规模的计算机系统，就是数据中心？
+
+![bg fit](images/wsc-arch.svg)
+
+---
+
+### 一项经典的比较：HPC vs Cloud
+
+<style scoped>
+  h3 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
+### 超算和云
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- …
+- …
+
+![bg fit right](images/hpc_schematic.png)
+
+Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
+
+---
+
+### 超算和云…
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- 或 **人民群众无小事**
+- …
+
+![bg fit right](images/autoscaling-architecture5.png)
+
+Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-computing-architectures>
+
+---
+
+### 超算上云
+
+<style scoped>
+  p {
+    font-size: 14px;
+    text-align: left;
+  }
+</style>
+
+- 是 **集中力量办大事**
+- 或 **人民群众无小事**
+- 又或者 **动员广大人民办大事**
+
+![bg fit right](images/architecture-hpc-cfd.png)
+
+Source: <https://docs.microsoft.com/en-us/azure/architecture/example-scenario/infrastructure/hpc-cfd>
+
+Discussions:
+2013 [A comparative study of high-performance computing on the cloud, HPDC'13](https://dl.acm.org/doi/10.1145/2462902.2462919)
+2017 [Understanding the Performance and Potential of Cloud Computing for Scientific Applications, ToCC'17](https://ieeexplore.ieee.org/document/7045591)
+2018 [HPC Cloud for Scientific and Business Applications: Taxonomy, Vision, and Research Challenges, CSUR'18](https://dl.acm.org/doi/10.1145/3150224)
+2019 [Use Cases for HPC in the Cloud](https://insidehpc.com/2019/10/use-cases-for-hpc-in-the-cloud/)
+2020 [HPC in the Cloud? Yes, No and In Between](https://www.arm.com/blogs/blueprint/hpc-cloud)
+2020 [High Performance Computing Vs Cloud Computing: Which is Better?](https://www.1plus1tech.com/high-performance-computing-vs-cloud-computing/)
+2021 [HPC and the Cloud](https://www.cioreview.com/cxoinsight/hpc-and-the-cloud-nid-12863-cid-84.html)
+
+---
+
+### 众包、边缘、雾计算
+
+<style scoped>
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+</style>
+
+- **从群众中来，到群众中去**
+
+![h:400](images/690px-SETI-home_ScrSaver.jpg) ![h:400](images/google-maps2-576x1024.png)
+
+Source: [The Power of the Community – Crowd Sourcing, Open Source and Social Networking](https://www.omniasecuritas.com/archives/116)
+
+---
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 620px;
+    text-align: left;
+  }
+</style>
+
+![bg 80%](images/cloud-fog-edge_infographic.jpg)
+
+Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
+
+---
+
+## 在规模化的背后
+
+<style scoped>
+  th {
+    display: none;
+  }
+  h3, li, td, p {
+    font-size: 14px;
+  }
+</style>
+
+### Latency Comparison Numbers
+
+||||||
+|:-|-:|-:|-:|:-|
+| L1 cache reference                 |          0.5 ns |            |        |                             |
+| Branch mispredict                  |          5   ns |            |        |                             |
+| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
+| Mutex lock/unlock                  |         25   ns |            |        |                             |
+| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
+| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
+| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
+| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
+| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
+| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
+| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
+| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
+| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
+| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
+
+### Notes
+
+1 ns = 10^-9 seconds
+1 us = 10^-6 seconds = 1,000 ns
+1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+
+### Credit
+
+By Jeff Dean: <http://research.google.com/people/jeff/>
+Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
+
+Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
+
+---
+
+## 主要问题
 
 - 可靠性
 - 一致性
@@ -420,9 +812,9 @@ PUE
 
 ## 学习目的
 
-- 数据中心技术的基础知识
-- 大规模计算机系统的响应能力
-- 经典的应对方法
+- 数据中心技术的**基础知识**
+- 大规模计算机系统**响应能力问题**
+- 经典的**应对方法**
 
 ---
 
