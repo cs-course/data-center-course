@@ -384,7 +384,7 @@ Source: [SWISS FORT KNOX I + II is an underground datacenter concept with variou
   }
 </style>
 
-![bg fit](images/Erklärung%20M10_72ppi_EN.png)
+![bg fit](images/Erklarung_M10_72ppi_EN.png)
 
 客户专属密钥备份
 
@@ -408,7 +408,7 @@ Source: [SWISS FORT KNOX I + II is an underground datacenter concept with variou
   }
 </style>
 
-![bg fit](images/Erklärung%20M10_72ppi_EN.png)
+![bg fit opacity:.5](images/Erklarung_M10_72ppi_EN.png)
 
 Ideal protection against NSA and PRISM!
 
@@ -420,16 +420,45 @@ Ideal protection against NSA and PRISM!
 
 ---
 
-### Utah Data Center 犹他数据中心
+### 那么NSA在用什么？
 
 <style scoped>
-  li {
-    font-size: 27px;
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li, a {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
   }
 </style>
 
+![bg](images/utah-data-center-entrance.jpg)
+
 - Location: Bluffdale, Utah
-- 也称情报体系综合性国家计算机安全计划数据中心 (Intelligence Community Comprehensive National Cybersecurity Initiative Data Center)，是**美国国家安全局NSA**使用的一座数据存储设施，尧字节级存储能力。
+- 也称情报体系综合性国家计算机安全计划数据中心 (Intelligence Community Comprehensive National Cybersecurity Initiative Data Center)
+  - <https://nsa.gov1.info/utah-data-center/>
+
+---
+
+### Utah Data Center 犹他数据中心
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li, a {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg opacity:.5](images/utah-data-center-entrance.jpg)
+
+- 拥有**尧字节级存储能力**。
 - 能储存100年有价值的通讯信息(全世界2011年整个互联网的容量总和也不过52艾$2^{60}$字节)，目的是支持综合性国家计算机安全计划 (Comprehensive National Cybersecurity Initiative, CNCI)，也是国家情报总监 (DNI) 的执行机构，具体职责保密。
 - $Y_{otta}Byte=2^{80}B=10^{24}B=2^{10}*Z_{etta}B=2^{20}*E_{xa}B$
 
