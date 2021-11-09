@@ -827,6 +827,19 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg 68%](images/cpu-operations.png)
+
+Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-know>
+
+---
+
 ## 主要问题
 
 - 可靠性
