@@ -36,9 +36,13 @@ title: 数据中心技术
 ## 课堂背景调查
 
 <style scoped>
-  p, td {
+  p {
+    font-size: 20px;
+  }
+  td {
     font-size: 16px;
     vertical-align:text-top;
+    color: #003FFF;
   }
   th {
     display: none;
@@ -48,7 +52,7 @@ title: 数据中心技术
   }
 </style>
 
-扫码进群投票(一项一分，全中25分)
+扫码进群投票，**1项1分，全中25分**
 
 ![bg right:32% fit](images/qq-group-2021.png)
 
@@ -95,10 +99,10 @@ Source: <https://cloud.tencent.com/about>
 ---
 
 <style scoped>
-  p {
+  p, a {
     padding-top: 620px;
     font-size: 18px;
-    text-align: right;
+    color: #F0F0F0;
   }
 </style>
 
@@ -195,11 +199,13 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 - [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 - [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
 - [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
-- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 Eckert-Mauchly Award
+- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
 
 Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
 
-<!-- 计算机体系结构最高奖Eckert-Mauchly奖 -->
+<!--
+计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
+-->
 
 ---
 
@@ -219,7 +225,7 @@ Before the onset of the current pandemic, some of us may have underappreciated h
   h2 {
     color: #F0F0F0;
   }
-  p {
+  p, a {
     font-size: 18px;
     padding-top: 520px;
     text-align: left;
