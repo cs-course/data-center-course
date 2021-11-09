@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术
 # size: 4:3
+math: katex
 ---
 
 <!-- _class: lead -->
@@ -340,21 +341,97 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 
 ---
 
-### Swiss Fort Knox
+### Swiss Fort Knox 瑞士诺克斯地堡
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - Location: Baar, Switzerland
-- 号称世界最安全的数据中心
+- 号称世界最安全的数据中心，源自2010年的欧盟 [Planets (Preservation and Long-term Access through Networked Services)](https://planets-project.eu/) 项目
+  - 爱因斯坦的纸质笔记现在我们仍能看到，但斯蒂芬·霍金的数字笔记在70年后我们很有可能看不到。项目旨在确保“我们的数字化文化和科学宝藏可被长期访问”。
 - Built in 1994, by Christoph Oschwald, and his business partner Hanspeter Baumann, who converted the former headquarters of the Swiss Air Force into a top-notch data center by installing emergency diesel engines, a ventilation system, a filter, and an air-pressure system to prevent the entry of any poisonous gases.
 - Water from an underground lake keeps the center’s cooling system at 8 degrees Celsius.
-- 数据全加密，密钥只有客户持有。
 
 ---
 
-### Utah Data Center
+### 瑞士诺克斯地堡
+
+<style scoped>
+  p {
+    font-size: 18px;
+    padding-top: 520px;
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/sfk-big-english.jpg)
+
+Source: [SWISS FORT KNOX I + II is an underground datacenter concept with various locations, deep inside the Swiss Alps.](https://www.mount10.ch/en/mount10/swiss-fort-knox/)
+
+---
+
+### 瑞士诺克斯地堡…
+
+<style scoped>
+  p {
+    text-align: center;
+    font-size: 60px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit](images/Erklärung%20M10_72ppi_EN.png)
+
+客户专属密钥备份
+
+<!-- https://www.mount10.ch/en/products/backup/combo.html -->
+
+---
+
+### 瑞士诺克斯地堡……
+
+<style scoped>
+  p {
+    text-align: center;
+    font-size: 60px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  li {
+    font-size: 30px;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit](images/Erklärung%20M10_72ppi_EN.png)
+
+Ideal protection against NSA and PRISM!
+
+- Data storage inside of Switzerland (www.swissfortknox.com)
+- Encryption of the data with 256-bit AES (wikipedia)
+- Personal encryption key which is NOT known to us (no backdoors)
+- Redundant data storage and contractual availability of 99.7% (GTC)
+- Compliance with the legal requirements for a backup in accordance with Swiss law ( Certificate (German) und Report (German) )
+
+---
+
+### Utah Data Center 犹他数据中心
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - Location: Bluffdale, Utah
-- 神秘(臭名昭著)的NSA
-- Also known as the Intelligence Community Comprehensive National Cybersecurity Initiative Data Center, it was designed to support the US intelligence community. Its purpose is to intercept, decipher, analyze, and store vast swaths of the World’s communications as they zap down from satellites and zip through the underground and undersea cables of international, foreign, and domestic networks.
+- 也称情报体系综合性国家计算机安全计划数据中心 (Intelligence Community Comprehensive National Cybersecurity Initiative Data Center)，是**美国国家安全局NSA**使用的一座数据存储设施，尧字节级存储能力。
+- 能储存100年有价值的通讯信息(全世界2011年整个互联网的容量总和也不过52艾$2^{60}$字节)，目的是支持综合性国家计算机安全计划 (Comprehensive National Cybersecurity Initiative, CNCI)，也是国家情报总监 (DNI) 的执行机构，具体职责保密。
+- $Y_{otta}Byte=2^{80}B=10^{24}B=2^{10}*Z_{etta}B=2^{20}*E_{xa}B$
 
 ---
 
@@ -499,20 +576,19 @@ Source: <http://dcp.odcc.org.cn/idc/idcMap>
 
 ---
 
+### 一项经典的比较：HPC vs Cloud
+
 <style scoped>
-  p {
+  h3 {
     padding-top: 200px;
     text-align: center;
     font-size: 70px;
-    color: 0040FF;
   }
 </style>
 
-一项经典的比较：HPC vs Cloud
-
 ---
 
-## 超算和云
+### 超算和云
 
 <style scoped>
   p {
@@ -531,7 +607,7 @@ Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
 
 ---
 
-## 超算和云…
+### 超算和云…
 
 <style scoped>
   p {
@@ -550,7 +626,7 @@ Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-compu
 
 ---
 
-## 超算上云
+### 超算上云
 
 <style scoped>
   p {
@@ -578,7 +654,7 @@ Discussions:
 
 ---
 
-## 众包、边缘、雾计算
+### 众包、边缘、雾计算
 
 <style scoped>
   p {
