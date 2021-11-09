@@ -169,26 +169,41 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 
 ---
 
-![bg fit](images/IDC_edge_to_core.png)
-
----
-
-## 新基建
+## 从侧面观察这股洪流
 
 <style scoped>
-  li, p {
-    font-size: 30px;
+  p {
+    font-size: 18px;
   }
 </style>
 
-- 国家发展改革委创新和高技术发展司2020年发布
-  - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
-- **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
-  - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
-  - 以人工智能、云计算、区块链等为代表的新技术基础设施
-  - 以**数据中心**、智能计算中心为代表的算力基础设施
+![h:330](images/Global-electricity-demand-of-consumer-devices-2010-2030.png) ![h:330](images/Global-electricity-demand-of-data-centers-2010-2030.png)
 
-Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
+Source: [On Global Electricity Usage of Communication Technology: Trends to 2030](https://www.mdpi.com/2078-1547/6/1/117), Challenges, 2015
+
+---
+
+## 驱动力
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![bg right:50% fit](images/451figures.original.png)
+
+- **云计算**
+  - Continued cloud adoption
+- **物联网**
+  - IoT will further data center demand
+- **大数据**
+  - Analytics workloads driving computing demands
+
+Source: [Understanding the drivers behind data center demand](https://www.datacenterdynamics.com/en/opinions/understanding-the-drivers-behind-data-center-demand/), Data Centre Dynamics, 2018
 
 ---
 
@@ -215,6 +230,25 @@ Before the onset of the current pandemic, some of us may have underappreciated h
 <!--
 计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
 -->
+
+---
+
+## 新基建
+
+<style scoped>
+  li, p {
+    font-size: 30px;
+  }
+</style>
+
+- 国家发展改革委创新和高技术发展司2020年发布
+  - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
+- **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
+  - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
+  - 以人工智能、云计算、区块链等为代表的新技术基础设施
+  - 以**数据中心**、智能计算中心为代表的算力基础设施
+
+Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
@@ -323,19 +357,19 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
   }
 </style>
 
-- Lakeside Technology Center
+- **Lakeside Technology Center**
   - Location: Chicago, Illinois
   - 印刷厂改；大量备用发电机组(53)；大量冷却水(8.5 million gallons of cooling fluid per year)；客户有IBM, CenturyLink, Facebook, and TelX。
-- Kolos Data Centre
+- **Kolos Data Centre**
   - Location: Ballengen, Norway
   - 北欧天然冷却；挪威丰富水电；北大西洋高速互联。
-- Tulip Data City
+- **Tulip Data City**
   - Location: Bangalore, India
   - 一度非美国最大(Tulip Telecom Ltd.)；IBM帮助设计。
-- Bahnhof’s Pionen
+- **Bahnhof’s Pionen**
   - Location: Central Stockholm, Sweden
   - 斯德哥尔摩人防工程(in 1943 to protect essential government functions)；潜艇发动机做备电(Maybach MTU diesel engines)。
-- Next-Generation Data
+- **Next-Generation Data**
   - Location: Newport, UK
   - 服务于BT、IBM各路公有云；全英最高PUE；独占电网(has its own sub-station with a direct connection to the 400kV Super Grid)。
 
@@ -464,10 +498,6 @@ Ideal protection against NSA and PRISM!
 
 ---
 
-[2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
-
----
-
 <style scoped>
   p {
     font-size: 18px;
@@ -484,18 +514,29 @@ Source: <http://www.iiclouds.org/20141114/maps-of-data-center-localization/>
 
 ### 谷歌
 
+<style scoped>
+  h3 {
+    padding-top: 5%;
+  }
+  p {
+    font-size: 18px;
+    padding-top: 40%;
+    text-align: center;
+  }
+</style>
+
+![bg](images/google-cloud-platform-infra-map.jpg)
+
 Source: <https://www.google.cn/about/datacenters/locations/>
 
 ---
 
 ### 亚马逊
 
----
-
 <style scoped>
   p {
     font-size: 18px;
-    padding-top: 620px;
+    padding-top: 47%;
     text-align: left;
   }
 </style>
@@ -506,10 +547,12 @@ Source: <https://www.cloudwards.net/news/amazon-announces-new-aws-paris-region-o
 
 ---
 
+### 亚马逊…
+
 <style scoped>
   p {
     font-size: 18px;
-    padding-top: 620px;
+    padding-top: 47%;
     text-align: left;
   }
 </style>
@@ -522,13 +565,15 @@ Source: <https://aws.amazon.com/cn/cloudfront/features/>
 
 ### 微软
 
----
-
 <style scoped>
-  p {
+  h3 {
+    color: #F0F0F0;
+  }
+  p, a {
     font-size: 18px;
-    padding-top: 620px;
+    padding-top: 47%;
     text-align: left;
+    color: #F0F0F0;
   }
 </style>
 
@@ -596,6 +641,14 @@ Source: <http://dcp.odcc.org.cn/idc/idcMap>
 ---
 
 ### 腾讯
+
+---
+
+## 巨无霸背后的巨无霸
+
+数据中心的建造者
+
+[2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
 
 ---
 
@@ -711,6 +764,10 @@ Source: [The Power of the Community – Crowd Sourcing, Open Source and Social N
 ![bg 80%](images/cloud-fog-edge_infographic.jpg)
 
 Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
+
+---
+
+![bg fit](images/IDC_edge_to_core.png)
 
 ---
 
