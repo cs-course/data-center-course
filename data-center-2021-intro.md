@@ -52,16 +52,24 @@ title: 数据中心技术
   }
 </style>
 
-扫码进群投票，**1项1分，全中25分**
+扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
 ![bg right:32% fit](images/qq-group-2021.png)
 
 |||
 |:-|:-|
 |**动手实践** 3 pts<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境** 5 pts<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
-|**C/C++** 3 pts<br/>- 作业程序<br/>- 多模块工程<br/>- 知名程序库(STL, Boost, MPI…)|**Java** 3 pts<br/>- 课程作业<br/>- 知名工程(Hadoop, Spark, Giraph…)<br/>- 构建工具(Ant, Maven, SBT…)|
-|**Python** 3 pts<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**知识面** 3 pts<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
-|**资料来源** 5 pts<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…|
+|**C/C++** 3 pts<br/>- 作业程序<br/>- 多模块工程(make, autoconf…)<br/>- 知名程序库(STL, Boost, MPI…)|**Java** 3 pts<br/>- 课程作业<br/>- 构建工具(Ant, Maven, SBT…)<br/>- 知名工程(Hadoop, Spark, Giraph…)|
+|**Python** 3 pts<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**还接触过** 3 pts<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
+|**资料来源** 5 pts<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
+
+---
+
+## 或者扫描问卷条码
+
+![bg right:32% fit](images/qq-group-2021.png)
+
+![h:450](images/class-survey.jpg)
 
 ---
 
