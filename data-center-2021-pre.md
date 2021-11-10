@@ -133,3 +133,18 @@ title: 数据中心技术
 ## 后续内容
 
 - [数据中心技术总体介绍](data-center-2021-intro)
+
+---
+
+## 研讨论文列表
+
+![bg right](images/simulated-sessions.png)
+
+扫码在线填表
+
+- 确认 **16 位** 分会主席
+- 选择 **78 篇** 拟汇报论文
+
+也可以点击
+
+- [【腾讯文档】数据中心技术课程论文研讨](https://docs.qq.com/doc/DRG1CZFZmaFRRYkJj)
