@@ -643,6 +643,42 @@ Source: <http://dcp.odcc.org.cn/idc/idcMap>
 
 ### 阿里
 
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p, a {
+    font-size: 18px;
+    padding-top: 550px;
+    text-align: left;
+    color: #F0F0F0;
+  }
+</style>
+
+![bg](images/aliyun-top5.jpg)
+
+Source: [阿里云宣布五大超级数据中心落成 未来还将再添十座](http://it.people.com.cn/n1/2020/0731/c1009-31805645.html), 2020年07月31日
+
+---
+
+### 阿里…
+
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p {
+    font-size: 45px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg opacity:.5](images/aliyun-top5.jpg)
+
+超级数据中心广泛使用**液冷、水冷、风能**等节能技术，此次新建成的杭州数据中心就部署了全球最大的液冷服务器集群，通过将服务器“泡在水里”（实际使用的是特殊的冷却液）的方式散热，可为数据中心节能70%以上；在五大超级数据中心内，还采用了**自动运维机器人**进行智能运维，24小时保障数据中心安全运行。
+
 ---
 
 ### 腾讯
