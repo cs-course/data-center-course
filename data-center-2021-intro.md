@@ -763,7 +763,7 @@ Source: [腾讯云全球基础设施](https://cloud.tencent.com/act/event/global
 
 ---
 
-It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS, and 21Vianet), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
+It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
 
 China’s protectionist regulatory policy makes it extremely difficult for foreign companies to compete in the country’s vast data center market, and international players’ interest in China has waned. **As a result, Chinese hyperscalers’ explosive growth in recent years has driven huge growth for Chinese companies that build and operate data centers for the likes of Alibaba and Tencent.**
 
@@ -987,13 +987,15 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 ---
 
-## 发展趋势
+## 数据中心能源效率
 
-绿色环保、模块化、边缘计算
+- PUE (Power Usage Effectiveness) 指标：几成能源用在实际业务中？
 
-惊人的资源消耗，信息化不总是意味着环保
+$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
 
-PUE
+- 理想 PUE=1.0 (无冷却能耗)
+- 早期一般在2.0左右，即设施整体耗能倍增于信息系统
+- 迄今为止 1.07 (Facebook)、1.12 (Google)，阿里巴巴国内自营数据中心平均PUE可以做到约 1.3
 
 ---
 
