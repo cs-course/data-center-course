@@ -459,25 +459,6 @@ Ideal protection against NSA and PRISM!
 
 ---
 
-### NSA在干什么？
-
-<style scoped>
-  h3 {
-    color: #F0F0F0;
-    background: rgba(0, 80, 192, 0.7);
-  }
-  p, a {
-    font-size: 30px;
-    padding-top: 45%;
-  }
-</style>
-
-![bg fit](images/collect-citizen-data.jpg)
-
-Source: [Your Data: If You Have Nothing to Hide, You Have Nothing to Fear](https://nsa.gov1.info/data/index.html)
-
----
-
 ### NSA在用什么？
 
 <style scoped>
