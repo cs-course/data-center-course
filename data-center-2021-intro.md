@@ -53,7 +53,7 @@ math: katex
   }
 </style>
 
-扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计30复选项**
+扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
 ![bg right:32% fit](images/qq-group-2021.png)
 
@@ -62,7 +62,7 @@ math: katex
 |**动手实践**<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境**<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
 |**C/C++**<br/>- 作业程序<br/>- 多模块工程(make, autoconf…)<br/>- 知名程序库(STL, Boost, MPI…)|**Java**<br/>- 课程作业<br/>- 构建工具(Ant, Maven, SBT…)<br/>- 知名工程(Hadoop, Spark, Giraph…)|
 |**Python**<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**还接触过**<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
-|**资料来源**<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…|**学习经历**<br/>- 做过二课<br/>- 竞赛获奖<br/>- 大厂实习<br/>- 专利主笔<br/>- 论文一作|
+|**资料来源**<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
 
 ---
 
@@ -683,13 +683,89 @@ Source: [阿里云宣布五大超级数据中心落成 未来还将再添十座]
 
 ### 腾讯
 
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p, a {
+    font-size: 18px;
+    padding-top: 530px;
+    text-align: right;
+  }
+</style>
+
+![bg](images/tencent-cloud-2021.png)
+
+Source: [腾讯云全球基础设施](https://cloud.tencent.com/act/event/global-base), [腾讯云印尼数据中心开服 未来将打造双可用区格局](https://www.sohu.com/a/460330019_120873246)
+
+---
+
+### 腾讯…
+
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p {
+    font-size: 45px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg opacity:.5](images/tencent-cloud-2021.png)
+
+2021年4月，腾讯云宣布其在印尼的首个云计算数据中心正式开服。该数据中心位于 印尼首都雅加达未来一年内将在印尼开放第二个数据中心，打造印尼双可用区格局。此次印尼数据中心开服后，腾讯云已经在全球27个地理区域，运营61个可用区。其中，腾讯云海外数据中心已经落地韩国、日本、印度、新加坡、美国、德国、俄罗斯、加拿大、泰国等国家。
+
 ---
 
 ## 巨无霸背后的巨无霸
 
+![bg fit right](images/here-are-the-10-largest-data-center-providers-in-the-world.jpg)
+
 数据中心的建造者
 
 [2021: These are the World’s Largest Data Center Colocation Providers](https://www.datacenterknowledge.com/archives/2017/01/20/here-are-the-10-largest-data-center-providers-in-the-world), Yevgeniy Sverdlik, Jan 15, 2021
+
+---
+
+<style scoped>
+  table {
+    width: 100%;
+    font-size: 22px;
+  }
+  th {
+    background: #007FFF;
+  }
+  tr:nth-of-type(3), tr:nth-of-type(5), tr:nth-of-type(6), tr:nth-of-type(9), tr:nth-of-type(11) {
+    color: #F08000;
+  }
+</style>
+
+|    | Company             | Market share|Headquarters           |
+| :- | :-                  | -:     | :-                         |
+|  1 | Equinix             | 11.1 % | Redwood City, California   |
+|  2 | Digital Realty Trust|  7.6 % | Austin, Texas              |
+|  3 | **China Telecom**   |  6.1 % | Beijing, China             |
+|  4 | NTT GDC             |  4.3 % | Tokyo, Japan               |
+|  5 | **China Unicom**    |  4.2 % | Beijing, China             |
+|  6 | **China Mobile**    |  2.1 % | Beijing, China             |
+|  7 | CyrusOne            |  1.9 % | Dallas, Texas              |
+|  8 | KDDI Telehouse      |  1.9 % | Tokyo, Japan               |
+|  9 | **GDS**             |  1.6 % | Shanghai, China            |
+| 10 | Global Switch       |  1.4 % | London, UK                 |
+| 11 | **21Vianet**        |  1.4 % | Beijing, China             |
+| 12 | CoreSite            |  1.3 % | Denver, Colorado           |
+| 13 | Cyxtera             |  1.2 % | Coral Gables, Florida      |
+| 14 | Lumen (CenturyLink) |  1.1 % | Monroe, Louisiana          |
+| 15 | Flexential          |  1.1 % | Charlotte, North Carolina  |
+
+---
+
+It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS, and 21Vianet), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
+
+China’s protectionist regulatory policy makes it extremely difficult for foreign companies to compete in the country’s vast data center market, and international players’ interest in China has waned. **As a result, Chinese hyperscalers’ explosive growth in recent years has driven huge growth for Chinese companies that build and operate data centers for the likes of Alibaba and Tencent.**
 
 ---
 
