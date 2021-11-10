@@ -410,19 +410,24 @@ Source: [SWISS FORT KNOX I + II is an underground datacenter concept with variou
 ### 瑞士诺克斯地堡…
 
 <style scoped>
-  p {
+  li {
     text-align: center;
     font-size: 60px;
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
   }
+  p {
+    font-size: 18px;
+    padding-top: 380px;
+    text-align: left;
+  }
 </style>
 
 ![bg fit](images/Erklarung_M10_72ppi_EN.png)
 
-客户专属密钥备份
+- 客户专属密钥备份
 
-<!-- https://www.mount10.ch/en/products/backup/combo.html -->
+Source: [Encrypted, daily monitored and fully automatic](https://www.mount10.ch/en/products/backup/combo.html)
 
 ---
 
@@ -454,7 +459,26 @@ Ideal protection against NSA and PRISM!
 
 ---
 
-### 那么NSA在用什么？
+### NSA在干什么？
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  p, a {
+    font-size: 30px;
+    padding-top: 45%;
+  }
+</style>
+
+![bg fit](images/collect-citizen-data.jpg)
+
+Source: [Your Data: If You Have Nothing to Hide, You Have Nothing to Fear](https://nsa.gov1.info/data/index.html)
+
+---
+
+### NSA在用什么？
 
 <style scoped>
   h3 {
