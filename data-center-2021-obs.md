@@ -380,6 +380,16 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ## 典型对象存储系统
 
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
 - **Amazon S3**: Amazon S3 stores data as objects within resources called “buckets.” AWS S3 offers features like 99.999999999% durability, cross-region replication, event notifications, versioning, encryption, and flexible storage options (redundant and standard).
 - **Rackspace Cloud Files**: Cloud Files provides online object storage for files and media. Cloud Files writes each file to three storage disks on separate nodes that have dual power supplies. All traffic between your application and Cloud Files uses SSL to establish a secure, encrypted channel. You can host static websites (for example: blogs, brochure sites, small company sites) entirely from Cloud Files with a global CDN.
 
@@ -544,6 +554,18 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+## 对象存储系统的问题
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
 <style scoped>
   p {
     padding-top: 200px;
@@ -609,31 +631,39 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 毫末之变
+### 毫末之变、扩展之鉴
 
-- 大系统由小组件汇聚而成
-- 汇聚改变的不仅仅是规模
-- 还有伴随组件而来的变化
+1. 大系统由小组件汇聚而成
+2. 汇聚改变的不仅仅是规模
+3. 还有伴随组件而来的变化
 
 ---
 
-## 毫末之变…
+### 扩展使变化越来越复杂
 
-- 还有伴随组件而来的变化
+<style scoped>
+  h3 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
+### 组件异常情况繁复
 
 ![h:450](images/Source-of-Latency.png)
 
 ---
 
-## 毫末之变……
-
-- 还有伴随组件而来的变化
+### 虽然各有预案
 
 ![h:450](images/Source-of-Latency-Solutions.png)
 
 ---
 
-## 扩展之鉴
+### 仍然难免短板
 
 <style scoped>
   p {
@@ -645,14 +675,14 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 ![bg right fit](images/law-of-the-minimum.jpg)
 
 - 必受各组件状态的影响
-  - 设备故障
-  - 性能波动
+  - 设备故障 **Fail**
+  - 性能波动 **Tail**
 
-<https://nutrien-ekonomics.com/latest-fertilizer-research/liebigs-law-of-the-minimum/>
+Source: <https://nutrien-ekonomics.com/latest-fertilizer-research/liebigs-law-of-the-minimum/>
 
 ---
 
-## 需求浮现-容错
+### 容错
 
 <style scoped>
   p {
@@ -670,7 +700,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 需求浮现-容滞
+### 容滞
 
 - 必受各组件状态的影响
   - 设备故障——需要 **Fault-Tolerant** 容错！
