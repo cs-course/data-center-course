@@ -893,17 +893,15 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 ## 在规模化的背后
 
 <style scoped>
-  th {
-    display: none;
+  table {
+    width: 100%
   }
-  h3, li, td, p {
+  h3, li, th, td, p {
     font-size: 14px;
   }
 </style>
 
-### Latency Comparison Numbers
-
-||||||
+|Latency Comparison Numbers|||||
 |:-|-:|-:|-:|:-|
 | L1 cache reference                 |          0.5 ns |            |        |                             |
 | Branch mispredict                  |          5   ns |            |        |                             |
@@ -920,13 +918,13 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 | Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
 | Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
 
-### Notes
+Notes
 
-1 ns = 10^-9 seconds
-1 us = 10^-6 seconds = 1,000 ns
-1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+$1 ns = 10^{-9} seconds$
+$1 us = 10^{-6} seconds = 1,000 ns$
+$1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
 
-### Credit
+Credit
 
 By Jeff Dean: <http://research.google.com/people/jeff/>
 Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
@@ -993,11 +991,11 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 - PUE (Power Usage Effectiveness) 指标：几成能源用在实际业务中？
 
-$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
+$$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$$
 
 - 理想 PUE=1.0 (无冷却能耗)
 - 早期一般在2.0左右，即设施整体耗能倍增于信息系统
-- 迄今为止 1.07 (Facebook)、1.12 (Google)，阿里巴巴国内自营数据中心平均PUE可以做到约 1.3
+- 迄今为止 1.07 (Facebook)、1.12 (Google)，阿里巴巴国内自营数据中心平均PUE可以做到约 1.3。
 
 ---
 
@@ -1085,15 +1083,44 @@ $PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
 
 ---
 
+### 逐渐直面复杂
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+</style>
+
 ![bg cover](images/emergency.jpg)
 
 ---
+
+### 数据为王
 
 ![bg fit](images/keep-calm.png)
 
 ---
 
-### 更进一步
+<style scoped>
+  th {
+    font-size: 25px;
+  }
+  td {
+    font-size: 20px;
+  }
+  table {
+    width: 100%;
+  }
+</style>
+
+|微观因素|宏观因素|环境因素|
+|:-|:-|:-|
+|*Understanding Disk Failure Rates: What Does an MTTF of 1,000,000 Hours Mean to You?*|*Failure Trends in a Large Disk Drive Population*|*Datacenter Scale Evaluation of the Impact of Temperature on Hard Disk Drive Failures*|
+|![w:355](images/understanding-disk-failure.png)|![w:355](images/failure-trends.png)|![w:355](images/datacenter-scale-evaluation.png)|
+
+---
+
+### 更进一步尝试
 
 - Dashboard仪表盘
   - Grafana
@@ -1115,29 +1142,13 @@ $PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
 
 ---
 
-## 经典问题
-
-<style scoped>
-  td {
-    font-size: 25px;
-  }
-</style>
-
-|微观|宏观|环境|
-|:-|:-|:-|
-|*Understanding Disk Failure Rates: What Does an MTTF of 1,000,000 Hours Mean to You?*|*Failure Trends in a Large Disk Drive Population*|*Datacenter Scale Evaluation of the Impact of Temperature on Hard Disk Drive Failures*|
-|![w:350](images/understanding-disk-failure.png)|![w:350](images/failure-trends.png)|![w:350](images/datacenter-scale-evaluation.png)|
-
----
-
 ## 后续内容
 
-- 熟悉环境
-  - *Linux, Git, SSH, Python, OpenStack, K8S, Docker* …
 - 数据中心专题讲座与实践
   - 键值存储
   - 对象存储
     - [尾延迟问题](data-center-2021-obs)
     - [服务质量保障问题](data-center-2021-qos)
-- 着手综述
-  - 跟随讲座内容，检索和阅读论文，准备下个月汇报
+- 熟悉**实验**，准备对象存储课堂实践
+- 阅读论文，准备下个月**研讨**
+- 检索相关工作，准备写**综述**
