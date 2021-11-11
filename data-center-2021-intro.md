@@ -183,7 +183,7 @@ Source: [On Global Electricity Usage of Communication Technology: Trends to 2030
 
 ---
 
-## 驱动力
+## 多方需求驱动
 
 <style scoped>
   li {
@@ -258,8 +258,10 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 - 数据中心的概念可以追溯到互联网时代的早期
 - ARPANET (70s) 与 WWW (90s)
-  - **应用**：EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
-  - **网络**：拨号、ADSL、宽带、光纤入户，2G至5G ...
+  - **应用日渐丰富**
+    - EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
+  - **网络能力增长**
+    - 拨号、ADSL、宽带、光纤入户，2G至5G ...
 - Server-side Computing -- **Cloud**
 
 ---
@@ -901,7 +903,7 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
   }
 </style>
 
-|Latency Comparison Numbers|||||
+|操作|用时||||
 |:-|-:|-:|-:|:-|
 | L1 cache reference                 |          0.5 ns |            |        |                             |
 | Branch mispredict                  |          5   ns |            |        |                             |
