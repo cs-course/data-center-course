@@ -470,7 +470,7 @@ Ideal protection against NSA and PRISM!
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
   }
-  li, a {
+  p, li, a {
     font-size: 30px;
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
@@ -480,8 +480,10 @@ Ideal protection against NSA and PRISM!
 ![bg](images/utah-data-center-entrance.jpg)
 
 - Location: Bluffdale, Utah
-- 也称情报体系综合性国家计算机安全计划数据中心 (Intelligence Community Comprehensive National Cybersecurity Initiative Data Center)
-  - <https://nsa.gov1.info/utah-data-center/>
+- The $1.2billion project included 100,000-square-feet of Tier III data center space and 1,350,000-square-feet of technical support and administrative space. Support facilities include water treatment facilities, vehicle inspection facility, interim visitor control center, perimeter site security measures, fuel storage, water storage, chiller plant, fire suppression systems and 100% electrical generator and UPS back up capacity.
+- The facility showcases numerous innovative technology and energy efficiency features and was designed and constructed to achieve LEED Silver certification.
+
+Source: [FLAGSHIP UTAH DATA CENTER](https://www.novva.com/utah-data-center)
 
 ---
 
@@ -501,7 +503,6 @@ Ideal protection against NSA and PRISM!
 
 ![bg opacity:.5](images/utah-data-center-entrance.jpg)
 
-- 拥有**尧字节级存储能力**。
 - 能储存100年有价值的通讯信息(全世界2011年整个互联网的容量总和也不过52艾$2^{60}$字节)，目的是支持综合性国家计算机安全计划 (Comprehensive National Cybersecurity Initiative, CNCI)，也是国家情报总监 (DNI) 的执行机构，具体职责保密。
 - $Y_{otta}Byte=2^{80}B=10^{24}B=2^{10}*Z_{etta}B=2^{20}*E_{xa}B$
 
