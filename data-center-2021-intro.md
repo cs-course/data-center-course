@@ -503,8 +503,11 @@ Source: [FLAGSHIP UTAH DATA CENTER](https://www.novva.com/utah-data-center)
 
 ![bg opacity:.5](images/utah-data-center-entrance.jpg)
 
+- 拥有尧字节 (yottabyte) 级的设计存储能力 ... *此处尚缺可信数据*
+  - [百度百科](https://baike.baidu.com/item/犹他数据中心/6759396)，[犹他州大数据中心——美国国家安全的核心资产](http://www.xinhuanet.com/mil/2017-05/09/c_129596267.htm)
+- $Y_{otta}Byte=2^{10}*Z_{etta}B=2^{20}*E_{xa}B=2^{30}*P_{etta}B=2^{80}B$
 - 能储存100年有价值的通讯信息(全世界2011年整个互联网的容量总和也不过52艾$2^{60}$字节)，目的是支持综合性国家计算机安全计划 (Comprehensive National Cybersecurity Initiative, CNCI)，也是国家情报总监 (DNI) 的执行机构，具体职责保密。
-- $Y_{otta}Byte=2^{80}B=10^{24}B=2^{10}*Z_{etta}B=2^{20}*E_{xa}B$
+- 位于犹他州小城布拉夫代尔的犹他州大数据中心，是继马里兰州米德堡国家安全局总部、得克萨斯州圣安东尼奥备份中心之后，美国安全局建立的第三个数据中心。其目的，是在全面共享国家安全情报的基础上，存储、处理、分析网络空间大数据，支撑新时期美国国家安全。
 
 ---
 
