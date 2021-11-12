@@ -942,7 +942,7 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 **slow disks, bad memory, misconfigured machines, flaky machines**, etc.
 
 - Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
-- Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2019
+- Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2009
 
 ---
 
