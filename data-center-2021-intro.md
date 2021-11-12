@@ -1059,7 +1059,7 @@ https://www.fx361.com/page/2020/0503/6626362.shtml -->
 $$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$$
 
 - 由 [Green Grid](https://www.thegreengrid.org/) 倡导和维护
-- 理想 1.0
+- 理想 $PUE=1.0$
   - IT设备以外基本没有能耗，包括冷却
   - 现实中不可能，哪台电脑不散热？
 - 早期一般在2.0左右，即整体耗能倍增。
@@ -1094,7 +1094,7 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ### 数据中心能源效率…
 
-- 科技局头 Google 和 Microsoft 普遍可以控制在 1.2 以内
+- 科技巨头 Amazon、Google 和 Microsoft 可以控制在 1.2 以内
   - 迄今最优 1.07 (Facebook)、1.12 (Google)
 - 其余可不好说
   - According to the [Uptime Institute research](https://www.colocationamerica.com/blog/what-is-pue), an average US data center has a PUE of 2.5. However, servers with a PUE of 3.3 and higher are common to find as well...
@@ -1103,27 +1103,55 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
 ![bg](images/439Microsoft_Project-Natick-servers-1068x601.jpg)
 
-<!-- https://natick.research.microsoft.com/ -->
+<https://natick.research.microsoft.com/>
 
 ---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
 
 ![bg](images/Facebook-s-Arctic-Server-Farm-1.jpg)
 
-<!-- https://www.demilked.com/facebook-server-farm-arctic-lule-sweden/ -->
+<https://www.demilked.com/facebook-server-farm-arctic-lule-sweden/>
 
 ---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
 
 ![bg](images/tencent-guizhou.jpg)
 
-<!-- https://www.sohu.com/a/233201201_398039 -->
+<https://www.sohu.com/a/233201201_398039>
 
 ---
 
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
 ![bg](images/ali-qiandaohu.jpg)
 
-<!-- https://alibabagroup.com/cn/news/article?news=p150908 -->
+<https://alibabagroup.com/cn/news/article?news=p150908>
 
 ---
 
