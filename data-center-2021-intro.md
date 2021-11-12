@@ -981,27 +981,29 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 ---
 
-### 可靠性
-
----
-
-### 一致性
-
----
-
-### 波动性
-
----
-
-### 可用性
-
----
-
-### 尾延迟
-
----
-
 ## 惊人的能耗
+
+<style scoped>
+  p {
+    font-size: 27px;
+  }
+</style>
+
+Globally, data centers were estimated to use between 196 terawatt hours (TWh) ([Masanet et al, 2020](https://doi.org/10.1126/science.aba3758)) and 400 TWh ([Hintemann, 2020](https://dx.doi.org/10.13140/RG.2.2.26033.40800)) in 2020. This would mean data centers consume between 1-2% of global electricity demand.
+
+![h:300](images/Historical-energy-usage.jpeg)
+
+Source: [Recalibrating global data center energy-use estimates](https://www.science.org/doi/10.1126/science.aba3758), Science, 28 Feb 2020
+
+<!-- 报告显示，2018年数据中心的总用电量约为205太瓦时，约占全球用电总量的1%（该领域通常引用的统计值为2%，可以看出数据中心实际耗能远低于此）。205太瓦时的功耗相较于2010年的数值增长了6%，但是同一时期全球数据处理中心计算量却增加了550%。更确切地说，在计算量大幅增加的同时，能耗基本保持了稳定。
+
+文中列举了许多原因。首先，硬件电源效率得到了极大的提高。数据处理向虚拟服务器端迁移，这使得在仅6%的能耗增长下，计算量增加了6倍。得益于更快、更节能的端口技术，虽然数据中心的IP流量增长了10倍，但是网络设备的能耗增长却十分有限。
+
+该报告还指出，超大规模数据中心技术的兴起和使用也帮助减少了能耗。超大型数据中心和云数据中心通常比企业数据中心具有更高的能源效率，因为高效的能源利用对于它们更为重要。像亚马逊、微软、谷歌这样的公司，在处理数据方面需要的电能越少，利润空间就会越大。超大规模数据中心非常注重使用更为便宜的大量可再生能源，如水电和风能。
+
+因此，如果某个公司将本身效率低下的老旧数据中心换成AWS（亚马逊网络服务）或者Google Cloud（谷歌云），那么整个数据中心的总功耗将会下降。
+
+https://www.fx361.com/page/2020/0503/6626362.shtml -->
 
 ---
 
@@ -1011,16 +1013,97 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 $$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$$
 
-- 理想 1.0 (无冷却能耗)，早期一般在2.0左右，即整体耗能倍增。
-- 迄今为止 1.07 (Facebook)、1.12 (Google)
+- 由 [Green Grid](https://www.thegreengrid.org/) 倡导和维护
+- 理想 1.0
+  - IT设备以外基本没有能耗，包括冷却
+  - 现实中不可能，哪台电脑不散热？
+- 早期一般在2.0左右，即整体耗能倍增。
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg 50%](images/Fraction-of-US-data-center-electricity-use-in-2014.png)
+
+Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.org/2020/03/17/how-much-energy-do-data-centers-really-use/), March 17, 2020
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/GooglePUE-800.png)
+
+[Google: Our PUE is Lower, and It's Scrupulous](https://www.datacenterknowledge.com/archives/2012/03/26/google-our-pue-is-lower-and-its-scrupulous), Mar 26, 2012
+
+---
+
+### 数据中心能源效率…
+
+- 科技局头 Google 和 Microsoft 普遍可以控制在 1.2 以内
+  - 迄今最优 1.07 (Facebook)、1.12 (Google)
+- 其余可不好说
+  - According to the [Uptime Institute research](https://www.colocationamerica.com/blog/what-is-pue), an average US data center has a PUE of 2.5. However, servers with a PUE of 3.3 and higher are common to find as well...
 - 工信部、国家机关事务管理局、国家能源局联合印发《[关于加强绿色数据中心建设的指导意见](http://www.gov.cn/xinwen/2019-02/14/content_5365516.htm)》，提出到2022年全国新建大型、超大型数据中心PUE需达到1.4以下。
-- [阿里国内自营平均 1.3 以内](http://dc.idcquan.com/mkh/164245.shtml)，[腾讯清远用间接蒸发冷却做到约 1.25](http://tech.idcquan.com/179786.shtml)。
+  - [阿里国内自营平均 1.3 以内](http://dc.idcquan.com/mkh/164245.shtml)，[腾讯清远用间接蒸发冷却约 1.25](http://tech.idcquan.com/179786.shtml)。
+
+---
+
+![bg](images/439Microsoft_Project-Natick-servers-1068x601.jpg)
+
+<!-- https://natick.research.microsoft.com/ -->
+
+---
+
+![bg](images/Facebook-s-Arctic-Server-Farm-1.jpg)
+
+<!-- https://www.demilked.com/facebook-server-farm-arctic-lule-sweden/ -->
+
+---
+
+![bg](images/tencent-guizhou.jpg)
+
+<!-- https://www.sohu.com/a/233201201_398039 -->
+
+---
+
+![bg](images/ali-qiandaohu.jpg)
+
+<!-- https://alibabagroup.com/cn/news/article?news=p150908 -->
 
 ---
 
 ### 在PUE背后
 
+- 问题依然复杂
+- PUE作为评估数据中心总用电量的衡量指标
+  - 主要考察资源运转效率
+  - 只考虑数据中心的内部操作，未揭露电力来源与实际用电量
+  - 数据中心占全球用电量的1~2%，但是来源呢？
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg 60%](images/data-centre-fuel-cell-efficiency.png)
+
 Source: [How much energy do data centers use?](https://davidmytton.blog/how-much-energy-do-data-centers-use/) October 8, 2021
+
+<!-- 做研究要多思考背后因素 -->
 
 ---
 
