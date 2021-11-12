@@ -907,10 +907,62 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 ## 在规模化的背后
 
 <style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
+### Typical first year for a new cluster
+
+<style scoped>
+  p {
+    font-size: 27px;
+  }
+</style>
+
+~0.5 **overheating** (power down most machines in <5 mins, ~1-2 days to recover)
+~1 **PDU failure** (~500-1000 machines suddenly disappear, ~6 hours to come back)
+~1 **rack-move** (plenty of warning, ~500-1000 machines powered down, ~6 hours)
+~1 **network rewiring** (rolling ~5% of machines down over 2-day span)
+~20 **rack failures** (40-80 machines instantly disappear, 1-6 hours to get back)
+~5 **racks go wonky** (40-80 machines see 50% packetloss)
+~8 **network maintenances** (4 might cause ~30-minute random connectivity losses)
+~12 **router reloads** (takes out DNS and external vips for a couple minutes)
+~3 **router failures** (have to immediately pull traffic for an hour)
+~dozens of minor 30-second **blips for dns**
+~1000 **individual machine failures**
+~thousands of **hard drive failures**
+
+**slow disks, bad memory, misconfigured machines, flaky machines**, etc.
+
+Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
+
+---
+
+## 主要问题
+
+- 可靠性
+  - Failover to other replicas/datacenters.
+- 扩展性
+  - Ensure your design works if scale changes by 10X or 20X, but the right solution for X often not optimal for 100X.
+- 一致性
+  - Multiple data centers implies dealing with consistency issues.
+- 可用性
+  - Worry about variance! Redundancy or timeouts can help bring in latency tail.
+
+---
+
+### 关于延迟的真相
+
+<style scoped>
   table {
     width: 100%
   }
-  h3, li, th, td, p {
+  li, th, td, p {
     font-size: 14px;
   }
 </style>
@@ -968,16 +1020,6 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 ![bg 68%](images/cpu-operations.png)
 
 Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-know>
-
----
-
-## 主要问题
-
-- 可靠性
-- 一致性
-- 波动性
-- 可用性
-- 尾延迟
 
 ---
 
@@ -1128,6 +1170,8 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 ---
 
 ### 选择合适的系统
+
+![bg fit right:30%](images/toolbox.png)
 
 怎么给自己准备一套便利的Linux学习环境？
 
