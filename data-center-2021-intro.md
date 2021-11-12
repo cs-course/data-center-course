@@ -904,7 +904,7 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 
 ---
 
-## 在规模化的背后
+## 隐藏在规模化的背后的是？
 
 <style scoped>
   h2 {
@@ -922,6 +922,9 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
   p {
     font-size: 27px;
   }
+  li {
+    font-size: 18px;
+  }
 </style>
 
 ~0.5 **overheating** (power down most machines in <5 mins, ~1-2 days to recover)
@@ -936,14 +939,14 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 ~dozens of minor 30-second **blips for dns**
 ~1000 **individual machine failures**
 ~thousands of **hard drive failures**
-
 **slow disks, bad memory, misconfigured machines, flaky machines**, etc.
 
-Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
+- Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
+- Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2019
 
 ---
 
-## 主要问题
+### 主要问题
 
 - 可靠性
   - Failover to other replicas/datacenters.
@@ -1023,7 +1026,7 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 ---
 
-## 惊人的能耗
+### 惊人的能耗
 
 <style scoped>
   p {
