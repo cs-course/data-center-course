@@ -356,15 +356,14 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 <style scoped>
   p {
     font-size: 18px;
-    text-align: right;
-    padding: 60px;
+    padding-top: 520px;
   }
 </style>
 
 ![bg fit](images/comp-storage-01.png)
 ![bg fit](images/comp-storage-02.png)
 
-<https://www.snia.org/computationaltwg>, <https://www.snia.org/education/what-is-computational-storage>
+Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education/what-is-computational-storage>
 
 ---
 
@@ -459,7 +458,7 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
   }
 </style>
 
-- Ceph was developed at University of California, Santa Cruz, by Sage Weil in 2003 as a part of his PhD project.
+- Ceph was developed at **University of California, Santa Cruz, by Sage Weil** in 2003 as a part of his PhD project.
   - The initial project prototype was the Ceph filesystem, written in approximately 40,000 lines of C++ code, which was made open source in 2006 under LGPL to serve as a reference implementation and research platform.
   - LLNL supported Sage's initial research work.
   - The period from 2003 to 2007 was the research period of Ceph. By this time, its core components were emerging, and the community contribution to the project had begun at pace.
@@ -594,7 +593,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![bg opacity:.3](images/workload-plot-2.jpg)
 
-可是又会带来什么问题？
+可是背后有着怎样的代价？
 
 <!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
 
@@ -804,7 +803,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
   }
 </style>
 
-- HDFS (2.4+)
+- **HDFS** (2.4+)
   - If a read from a block is slow, start up another parallel, **'hedged' read** against a different block replica.
   - We then **take the result of which ever read returns first** (*the outstanding read is cancelled*).
   - This 'hedged' read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
@@ -822,7 +821,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
   }
 </style>
 
-- mongodb (4.4+)
+- **mongodb** (4.4+)
   - With hedged reads, the mongos instances can route read operations to **two replica set members per each queried shard** and **return results from the first respondent** per shard.
   - The additional read sent to hedge the read operation uses the **maxTimeMS** value of **maxTimeMSForHedgedReads**.
 
@@ -830,21 +829,16 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 实践环境
+## 对象存储实验
 
-- 大数据存储实验课 <https://github.com/cs-course/iot-storage-experiment>
-- 对象存储入门实验 <https://github.com/cs-course/obs-tutorial>
-
----
-
-### 测试工具
-
-- [s3bench](https://github.com/igneous-systems/s3bench) (based on AWS Go SDK)
-  - Run very basic throughput benchmarking against an S3-compatible endpoint.
-  - Does a series of put operations followed by a series of get operations and displays the corresponding statistics.
-- [cosbench](https://github.com/intel-cloud/cosbench)
-  - A benchmarking tool to measure the performance of Cloud Object Storage services.
-  - Supports OpenStack Swift, Amazon S3, Amplidata v2.3+, Scality, Ceph, CDMI, Google Cloud Storage, Aliyun OSS ...
+- 实验说明
+  - <https://github.com/cs-course/obs-tutorial>
+  - <https://gitee.com/shi_zhan/obs-tutorial>
+- 实验内容
+  - 熟悉性能指标：吞吐率、带宽、延迟
+  - 分析不同负载下的指标、延迟的分布
+  - 观测尾延迟现象
+  - 尝试对冲请求方案
 
 ---
 
@@ -852,8 +846,8 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 给系统建立性能模型
 
-- 分析
-- 统计
+- 分析 Analytical Modelling
+- 统计 Statistical Modelling
 
 ---
 

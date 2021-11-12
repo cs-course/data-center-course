@@ -183,7 +183,7 @@ Source: [On Global Electricity Usage of Communication Technology: Trends to 2030
 
 ---
 
-## 驱动力
+## 多方需求驱动
 
 <style scoped>
   li {
@@ -258,8 +258,10 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 - 数据中心的概念可以追溯到互联网时代的早期
 - ARPANET (70s) 与 WWW (90s)
-  - **应用**：EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
-  - **网络**：拨号、ADSL、宽带、光纤入户，2G至5G ...
+  - **应用日渐丰富**
+    - EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
+  - **网络能力增长**
+    - 拨号、ADSL、宽带、光纤入户，2G至5G ...
 - Server-side Computing -- **Cloud**
 
 ---
@@ -905,17 +907,15 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 ## 在规模化的背后
 
 <style scoped>
-  th {
-    display: none;
+  table {
+    width: 100%
   }
-  h3, li, td, p {
+  h3, li, th, td, p {
     font-size: 14px;
   }
 </style>
 
-### Latency Comparison Numbers
-
-||||||
+|操作|用时||||
 |:-|-:|-:|-:|:-|
 | L1 cache reference                 |          0.5 ns |            |        |                             |
 | Branch mispredict                  |          5   ns |            |        |                             |
@@ -932,13 +932,13 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 | Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
 | Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
 
-### Notes
+Notes
 
-1 ns = 10^-9 seconds
-1 us = 10^-6 seconds = 1,000 ns
-1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+$1 ns = 10^{-9} seconds$
+$1 us = 10^{-6} seconds = 1,000 ns$
+$1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
 
-### Credit
+Credit
 
 By Jeff Dean: <http://research.google.com/people/jeff/>
 Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
@@ -1003,18 +1003,15 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 ## 惊人的能耗
 
-
-
 ---
 
 ### 数据中心能源效率
 
 - PUE (Power Usage Effectiveness) 指标：几成能源用在实际业务中？
 
-$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
+$$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$$
 
-- 理想 PUE=1.0 (无冷却能耗)
-- 早期一般在2.0左右，即设施整体耗能倍增于信息系统
+- 理想 1.0 (无冷却能耗)，早期一般在2.0左右，即整体耗能倍增。
 - 迄今为止 1.07 (Facebook)、1.12 (Google)
 - 工信部、国家机关事务管理局、国家能源局联合印发《[关于加强绿色数据中心建设的指导意见](http://www.gov.cn/xinwen/2019-02/14/content_5365516.htm)》，提出到2022年全国新建大型、超大型数据中心PUE需达到1.4以下。
 - [阿里国内自营平均 1.3 以内](http://dc.idcquan.com/mkh/164245.shtml)，[腾讯清远用间接蒸发冷却做到约 1.25](http://tech.idcquan.com/179786.shtml)。
@@ -1022,8 +1019,6 @@ $PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
 ---
 
 ### 在PUE背后
-
-
 
 Source: [How much energy do data centers use?](https://davidmytton.blog/how-much-energy-do-data-centers-use/) October 8, 2021
 
@@ -1113,15 +1108,44 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
+### 逐渐直面复杂
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+  }
+</style>
+
 ![bg cover](images/emergency.jpg)
 
 ---
+
+### 数据为王
 
 ![bg fit](images/keep-calm.png)
 
 ---
 
-### 更进一步
+<style scoped>
+  th {
+    font-size: 25px;
+  }
+  td {
+    font-size: 20px;
+  }
+  table {
+    width: 100%;
+  }
+</style>
+
+|微观因素|宏观因素|环境因素|
+|:-|:-|:-|
+|*Understanding Disk Failure Rates: What Does an MTTF of 1,000,000 Hours Mean to You?*|*Failure Trends in a Large Disk Drive Population*|*Datacenter Scale Evaluation of the Impact of Temperature on Hard Disk Drive Failures*|
+|![w:355](images/understanding-disk-failure.png)|![w:355](images/failure-trends.png)|![w:355](images/datacenter-scale-evaluation.png)|
+
+---
+
+### 更进一步尝试
 
 - Dashboard仪表盘
   - Grafana
@@ -1143,29 +1167,13 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-## 经典问题
-
-<style scoped>
-  td {
-    font-size: 25px;
-  }
-</style>
-
-|微观|宏观|环境|
-|:-|:-|:-|
-|*Understanding Disk Failure Rates: What Does an MTTF of 1,000,000 Hours Mean to You?*|*Failure Trends in a Large Disk Drive Population*|*Datacenter Scale Evaluation of the Impact of Temperature on Hard Disk Drive Failures*|
-|![w:350](images/understanding-disk-failure.png)|![w:350](images/failure-trends.png)|![w:350](images/datacenter-scale-evaluation.png)|
-
----
-
 ## 后续内容
 
-- 熟悉环境
-  - *Linux, Git, SSH, Python, OpenStack, K8S, Docker* …
 - 数据中心专题讲座与实践
   - 键值存储
   - 对象存储
     - [尾延迟问题](data-center-2021-obs)
     - [服务质量保障问题](data-center-2021-qos)
-- 着手综述
-  - 跟随讲座内容，检索和阅读论文，准备下个月汇报
+- 熟悉**实验**，准备对象存储课堂实践
+- 阅读论文，准备下个月**研讨**
+- 检索相关工作，准备写**综述**
