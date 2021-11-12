@@ -722,6 +722,18 @@ Source: [腾讯云全球基础设施](https://cloud.tencent.com/act/event/global
 
 ---
 
+### T-Block
+
+![bg right fit](images/tencent-qingyuan.jpg)
+
+腾讯位于清远市的云计算数据中心于2020年7月开服，8栋机房，容纳的服务器将超过100万台。
+
+T-Block使机房、空调、电力等等部件全部模块化，高度简化数据中心的建设，现场施工周期减少了80%以上。
+
+Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](http://dc.idcquan.com/jfjs/183618.shtml)
+
+---
+
 ## 巨无霸背后的巨无霸
 
 ![bg fit right](images/here-are-the-10-largest-data-center-providers-in-the-world.jpg)
@@ -989,7 +1001,13 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 ---
 
-## 数据中心能源效率
+## 惊人的能耗
+
+
+
+---
+
+### 数据中心能源效率
 
 - PUE (Power Usage Effectiveness) 指标：几成能源用在实际业务中？
 
@@ -997,7 +1015,17 @@ $PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$
 
 - 理想 PUE=1.0 (无冷却能耗)
 - 早期一般在2.0左右，即设施整体耗能倍增于信息系统
-- 迄今为止 1.07 (Facebook)、1.12 (Google)，阿里巴巴国内自营数据中心平均PUE可以做到约 1.3
+- 迄今为止 1.07 (Facebook)、1.12 (Google)
+- 工信部、国家机关事务管理局、国家能源局联合印发《[关于加强绿色数据中心建设的指导意见](http://www.gov.cn/xinwen/2019-02/14/content_5365516.htm)》，提出到2022年全国新建大型、超大型数据中心PUE需达到1.4以下。
+- [阿里国内自营平均 1.3 以内](http://dc.idcquan.com/mkh/164245.shtml)，[腾讯清远用间接蒸发冷却做到约 1.25](http://tech.idcquan.com/179786.shtml)。
+
+---
+
+### 在PUE背后
+
+
+
+Source: [How much energy do data centers use?](https://davidmytton.blog/how-much-energy-do-data-centers-use/) October 8, 2021
 
 ---
 
