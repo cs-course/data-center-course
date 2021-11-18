@@ -730,7 +730,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 - [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
   - **小概率事件**不能忽视
 
-![bg right](images/Screen-Shot-2015-10-04-at-6.15.24-PM.png)
+![bg right](images/Screen-Shot-2015-10-04-at-6.15.24-PM-small.jpg)
 
 ---
 

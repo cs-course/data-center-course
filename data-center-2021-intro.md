@@ -299,7 +299,7 @@ Source: [Top 10 Data Centers in the World Today](https://www.analyticsinsight.ne
   }
 </style>
 
-![bg](images/dft-acc7.jpg)
+![bg](images/dft-acc7-small.jpg)
 
 - Begin from 2014, DuPont Fabros Technology, whose business is building massive data centers and leasing wholesale space to companies on a long-term basis, brought online its biggest facility yet: ACC7 in Ashburn, Virginia.
 - The ACC7 is 446,000 square feet in size and has a total power capacity of a whopping 41.6 megawatts. The building includes 28 large computer rooms, with a standard critical load of 1.486 megawatts each, and the ability to increase density to offer up to 2.1 megawatts each. Each data hall can accomodate approximately 378 standard cabinets.
@@ -538,7 +538,7 @@ Source: <http://www.iiclouds.org/20141114/maps-of-data-center-localization/>
   }
 </style>
 
-![bg](images/google-cloud-platform-infra-map.jpg)
+![bg](images/google-cloud-platform-infra-map-small.jpg)
 
 Source: <https://www.google.cn/about/datacenters/locations/>
 
@@ -884,7 +884,7 @@ Discussions:
 
 - **从群众中来，到群众中去**
 
-![h:400](images/690px-SETI-home_ScrSaver.jpg) ![h:400](images/google-maps2-576x1024.png)
+![h:400](images/690px-SETI-home_ScrSaver.jpg) ![h:400](images/google-maps2-576x1024-small.jpg)
 
 Source: [The Power of the Community – Crowd Sourcing, Open Source and Social Networking](https://www.omniasecuritas.com/archives/116)
 
@@ -1153,7 +1153,7 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
   }
 </style>
 
-![bg](images/ali-qiandaohu.jpg)
+![bg](images/ali-qiandaohu-small.jpg)
 
 <https://alibabagroup.com/cn/news/article?news=p150908>
 
@@ -1206,7 +1206,7 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ### 选择合适的系统
 
-![bg fit right:30%](images/toolbox.png)
+![bg fit right:30%](images/toolbox-small.png)
 
 怎么给自己准备一套便利的Linux学习环境？
 
