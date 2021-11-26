@@ -54,7 +54,7 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
   }
 </style>
 
-![h:560](images/what-happens-online-in-60-seconds.png)
+![h:580](images/what-happens-online-in-60-seconds.png)
 
 Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/>
 
@@ -63,10 +63,11 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 ## 迫切需要扩展
 
 <style scoped>
-  a {
-    font-size: 18px;
+  th {
+    font-size: 36px;
   }
   tr {
+    font-size: 16px;
     vertical-align: bottom;
   }
 </style>
@@ -74,17 +75,18 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 |规模|种类|
 |:-:|:-:|
 |![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
-| <http://sancluster.com/scale-out-file-system/>|<http://storagegaga.com/the-future-is-intelligent-objects/>|
+| Source: <http://sancluster.com/scale-out-file-system/>| Source: <http://storagegaga.com/the-future-is-intelligent-objects/>|
 
 ---
 
-### 元数据
+## 元数据
 
 <style scoped>
-  a {
-    font-size: 18px;
+  th {
+    font-size: 36px;
   }
   tr {
+    font-size: 30px;
     vertical-align: bottom;
   }
 </style>
@@ -92,7 +94,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 |规模|种类|
 |:-:|:-:|
 |![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
-|元数据形态|元数据内容|
+|**检索地址**|**区分内容**|
 
 ---
 
@@ -179,9 +181,9 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 ## 特性
 
 - [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
-  - When you create an object on this type of storage, the entire set of data is handled and processed without regard to what sub-parts it may have.
-  - When reading from object storage, you can read either the whole object, or ask to read parts of it.
-  - There is often no capability to update to the object or parts of the object; the entire object is usually required to be re-written.
+  - When you create an object on this type of storage, the **entire set of data** is handled and processed without regard to what sub-parts it may have.
+  - When reading from object storage, you can **read either the whole object, or ask to read parts of it**.
+  - There is often no capability to update to the object or parts of the object; **the entire object is usually required to be re-written**.
   - Most object storage allows for objects to be deleted.
 
 ---
@@ -191,8 +193,8 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 - [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
   - Object storage often supports meta-data.
     - This is data that is part of the object, but that is in addition to the object ID and the data.
-    - It is often expressed as an attribute-value pair; for instance, an attribute of COLOR in our collection of objects may have the value RED for some objects and BLUE for others.
-    - These permit collections of objects, individually addressable by their object ID, to be searched, filtered and read in groups without needing to know the specific object IDs.
+    - It is often expressed as an **attribute-value pair**; for instance, an attribute of COLOR in our collection of objects may have the value RED for some objects and BLUE for others.
+    - These permit collections of objects, individually addressable by their object ID, **to be searched, filtered and read in groups** without needing to know the specific object IDs.
 
 ---
 
@@ -209,11 +211,11 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 <style scoped>
   p {
     font-size: 18px;
-    text-align: left;
+    padding-top: 620px;
   }
 </style>
 
-![bg fit](images/osd-2007.png)
+![bg 85%](images/osd-2007.png)
 
 Source: <https://www.snia.org/educational-library/object-based-storage-device-osd-architecture-and-systems-2007>
 
@@ -234,7 +236,7 @@ Source: <https://www.snia.org/educational-library/object-based-storage-device-os
 <style scoped>
   p {
     font-size: 18px;
-    text-align: left;
+    padding-top: 620px;
   }
 </style>
 
@@ -301,6 +303,7 @@ const s3 = new AWS.S3({
 <style scoped>
   p {
     font-size: 20px;
+    color: #F0F0F0;
     text-align: right;
   }
 </style>
@@ -336,7 +339,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-### 相关成果
+### 主动对象存储
 
 <style scoped>
   h2, p {
