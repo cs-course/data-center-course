@@ -207,6 +207,10 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
 
 ---
 
+## 计算机系统结构的天然延伸
+
+---
+
 ## 仓储级计算机
 
 <style scoped>
