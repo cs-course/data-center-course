@@ -1336,10 +1336,17 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 ## 后续内容
 
 - 数据中心专题讲座与实践
-  - 键值存储
-  - 对象存储
-    - [尾延迟问题](data-center-2021-obs)
+  - 数据中心**固态存储**技术
+    - 开放通道固态存储OC-SSD、区域命名空间固态存储ZNS-SSD
+  - 数据中心**纠删码**技术
+    - 纠删码、再生码
+  - **对象存储**技术
+    - [尾延迟问题](data-center-2021-obs)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
     - [服务质量保障问题](data-center-2021-qos)
-- 熟悉**实验**，准备对象存储课堂实践
+
+---
+
+## 后续内容…
+
 - 阅读论文，准备下个月**研讨**
 - 检索相关工作，准备写**综述**
