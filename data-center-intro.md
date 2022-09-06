@@ -1341,8 +1341,8 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
   - 数据中心**纠删码**技术
     - 纠删码、再生码
   - **对象存储**技术
-    - [尾延迟问题](data-center-2021-obs)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
-    - [服务质量保障问题](data-center-2021-qos)
+    - [尾延迟问题](object-storage)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
+    - [服务质量保障问题](qos-guarantee)
 
 ---
 

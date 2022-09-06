@@ -11,7 +11,7 @@ title: 数据中心技术
 
 **施展，童薇，胡燏翀**
 武汉光电国家研究中心
-2022-11-12 至 2022-12-31
+2022-11-03 至 2022-12-22
 
 ---
 
@@ -24,7 +24,7 @@ title: 数据中心技术
 </style>
 
 - 课程资料 <https://github.com/cs-course/data-center-course>  
-- 作业库 <https://github.com/cs-course/data-center-course-assignment-2021>
+- 作业库 <https://github.com/cs-course/data-center-course-assignment-2022>
 - 参考书
   - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
   - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
@@ -114,7 +114,7 @@ title: 数据中心技术
     - 注意每人实验环境各不一样，数据势必有别
     - 实验报告、实验代码上传仓库文件夹
 - 电子版(**汇报胶片、综述报告、实验报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
-  - <https://github.com/cs-course/data-center-course-assignment-2021>
+  - <https://github.com/cs-course/data-center-course-assignment-2022>
 
 ---
 
@@ -125,7 +125,7 @@ title: 数据中心技术
     width: 100%;
   }
   th {
-    background: #007FFF;
+    background: #003FFF;
   }
   td, p, li {
     font-size: 27px;
@@ -134,14 +134,14 @@ title: 数据中心技术
 
 |   | 讲座内容 | 日期 | 地点 |
 |:-:|:--------|:---| :--- |
-| 1 | [数据中心技术总体介绍](data-center-intro) | 11-12 | 南一楼116机房 |
-| 2 | 数据中心固态存储技术 | 11-19 | 南一楼116机房 |
-| 3 | 数据中心纠删码技术 | 11-26 | 南一楼116机房 |
-| 4 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 12-03 | 南一楼116机房 |
-| 5 | 论文研讨* | 12-10 | 南一楼116机房 |
-| 6 | 论文研讨 | 12-17 | 南一楼116机房 |
-| 7 | 论文研讨 | 12-24 | 南一楼116机房 |
-| 8 | 论文研讨 | 12-31 | 南一楼116机房 |
+| 1 | [数据中心技术总体介绍](data-center-intro) | 11-03 | D9-D311 |
+| 2 | 数据中心固态存储技术 | 11-10 | D9-D311 |
+| 3 | 数据中心纠删码技术 | 11-17 | D9-D311 |
+| 4 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-24 | D9-D311 |
+| 5 | 论文研讨* | 12-01 | D9-D311 |
+| 6 | 论文研讨 | 12-08 | D9-D311 |
+| 7 | 论文研讨 | 12-15 | D9-D311 |
+| 8 | 论文研讨 | 12-22 | D9-D311 |
 
 \* 20 presenters in 4 sessions
 
