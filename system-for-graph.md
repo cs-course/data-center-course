@@ -234,26 +234,45 @@ Source: [Shi Z, Li J, Guo P et al. Partitioning dynamic graph asynchronously wit
 
 ---
 
+### 异常通话侦测
+
+---
+
+### 动态图存储
+
+---
+
 ## 新的挑战
 
 <style scoped>
-  p {
+  li {
     font-size: 18px;
   }
 </style>
 
-- 表示学习
-- 时空检索
+### 庞大的数据集、复杂的模式
 
-Source: [CS224W: Machine Learning with Graphs(Stanford)](https://www.bilibili.com/video/BV1me411x7Rm)
+以表示学习取代点边遍历
+
+### 在检索中综合时空条件
+
+数据结构的特长综合
+
+- [CS224W: Machine Learning with Graphs(Stanford)](https://www.bilibili.com/video/BV1me411x7Rm)
+- [Kumar P, Huang H H. GraphOne: A Data Store for Real-time Analytics on Evolving Graphs. FAST 2019.](https://www.usenix.org/conference/fast19/presentation/kumar)
 
 ---
 
-## 对系统的探索
+## 对系统的一些探索
 
-- 尝试修改采样过程，减少冗余样本 FGCS2019
-- 用一套理论来准确指导采样过程，最优化样本尺寸 ICDE2021
-- APWeb-WAIM2022
+### 表示学习样本缩减
+
+- 尝试修改采样过程，减少冗余样本 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
+- 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
+
+### 时空检索数据结构
+
+- 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
 
 ---
 
