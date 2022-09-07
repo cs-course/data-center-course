@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术、计算机系统设计
 # size: 4:3
+math: mathjax
 ---
 
 # 面向图应用的系统设计
@@ -229,20 +230,69 @@ Source: [Shi Z, Li J, Guo P et al. Partitioning dynamic graph asynchronously wit
 
 ## 图应用的发展
 
-- 异常通话侦测
-- 动态图存储
+- **电信欺诈**——异常模式侦测
+- **金融欺诈**——动态图分析
 
 ---
 
-### 异常通话侦测
+### 异常模式侦测
+
+![h:450](images/Telecom-Fraud.png)
 
 ---
 
-### 动态图存储
+源电话拨打过电话的联系人的总数目
+源电话拨打目标圈的总通话次数
+源电话拨打目标圈的总通话时长
+源电话拨打目标圈的平均通话时长
+源电话拨打目标圈的平均通话次数
+源电话与每个目标圈的联系人平均通话的活跃天数
+目标圈内有回拨源电话的联系人的总数
+目标圈内回拨源电话的总通话个数
+目标圈内回拨源电话的平均回拨通话时长
+...
+
+---
+
+### 动态图分析
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+![bg right w:500](images/evolving-graph-apps.png)
+
+- 动态图不仅规模巨大，其拓扑结构亦持续变化
+  - Facebook: 月活跃用户达25亿
+  - Twitter: 每天500亿条推文被发送
+  - 淘宝: 每秒54.4万笔订单被创建
+- 分析目标
+  - 复盘各时状态
+  - 找出演化趋势
 
 ---
 
 ## 新的挑战
+
+<style scoped>
+  li {
+    font-size: 18px;
+  }
+</style>
+
+### 庞大的数据集、复杂的模式…
+
+？
+
+### 在检索中综合时空条件…
+
+？
+
+---
+
+## 新的挑战…
 
 <style scoped>
   li {
@@ -256,23 +306,102 @@ Source: [Shi Z, Li J, Guo P et al. Partitioning dynamic graph asynchronously wit
 
 ### 在检索中综合时空条件
 
-数据结构的特长综合
+结合各类数据结构特长以综合使用
 
-- [CS224W: Machine Learning with Graphs(Stanford)](https://www.bilibili.com/video/BV1me411x7Rm)
+- [CS224W: Machine Learning with Graphs(Stanford)](http://web.stanford.edu/class/cs224w/), [B站搬运](https://www.bilibili.com/video/BV1me411x7Rm)
 - [Kumar P, Huang H H. GraphOne: A Data Store for Real-time Analytics on Evolving Graphs. FAST 2019.](https://www.usenix.org/conference/fast19/presentation/kumar)
 
 ---
 
-## 对系统的一些探索
+## 对系统的探索——图表示学习
 
-### 表示学习样本缩减
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
-- 尝试修改采样过程，减少冗余样本 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
-- 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
+- 图数据持续增大 --> 空间开销（状态向量，邻接矩阵）算力需求（矩阵运算）开销巨大
+- 图表示学习 --> 对于 $\forall v \in V$ 有 $f: v \rightarrow R^d(d \ll |V|)$，映射为低维稠密的实值向量
 
-### 时空检索数据结构
+![h:330](images/network-representative-learning.png)
+
+- 将分类、预测等任务转化为对向量的计算
+
+---
+
+## 对系统的探索——图抽样系统
+
+<style scoped>
+  th {
+    font-size: 25px;
+  }
+  td {
+    font-size: 25px;
+  }
+</style>
+
+|类别|代表方法|特点|
+|:-|:-|:-|
+|基于矩阵分解|LLE(Science'00), Laplacian Eigenmaps(NIPS'01), HOPE(SIGKDD'16), STRAP(KDD’19), ProNE(ICAJI’19)|时间和空间开销大、依赖相似矩阵的选择|
+|基于随机游走|DeepWalk(KDD'14), LINE(KDD'15), Node2Vec(KDD'16), Struct2Vec(KDD’17), DiaRW(FGCS’19)|扩展性更好（时间和空间）、适应性更强|
+
+![h:280](images/deepwalk.png)
+
+---
+
+## 对系统的探索——数据结构分析
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+![h:300](images/snapshot-vs-log.png)
+
+- 快照模型: 支持高效地查询，但存储开销大
+- 日志模型: 降低了存储开销，但查询时间成本高
+- 全图模型: 存储开销大，且查询效率低
+
+---
+
+## 对系统的探索——动态图系统
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+![h:300](images/evolving-graph-research.png)
+
+- 快照模型: $G=<G_0, G_1, G_2, \dots, G_t>$
+- 日志模型: $G=<ev_0, ev_1, ev_2, \dots, ev_t>$
+- 全图模型: $G_[t_1, t_n]=<V_[t_1, t_n], E_[t_1, t_n]>$
+- 混合模型: 基于偏斜性感知或基于相关性感知
+
+---
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+## 我们的尝试——表示学习样本缩减
+
+- 样本规模数十倍于图数据，不能在一周内完成千万个节点的表示学习
+  - 动态调节采样，减少冗余 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
+    - 找出顶点度与游走冗余之间的关系，实现动态游走
+  - 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
+    - 用信息熵理论来估计游走冗余
+
+## 我们的尝试——时空检索数据结构
 
 - 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
+  - 基于偏斜性感知动态设置关键快照
+  - 偏斜性包括度的偏斜性(空间)和访问频率(时间)的偏斜性
 
 ---
 
