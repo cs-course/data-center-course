@@ -136,7 +136,55 @@ title: 数据中心技术、计算机系统设计
 
 ---
 
+##### SNAP真实图数据集
+
+<style scoped>
+  h5 {
+    font-style: italic;
+  }
+  th {
+    font-size: 20px;
+  }
+  td {
+    font-size: 16px;
+  }
+</style>
+
+|Name|Type|Nodes|Edges|Communities|Description|
+|:-|:-|-:|-:|-:|:-|
+|[com-LiveJournal](http://snap.stanford.edu/data/com-LiveJournal.html)|Undirected, Communities|3,997,962|34,681,189|287,512|LiveJournal online social network|
+|[com-Friendster](http://snap.stanford.edu/data/com-Friendster.html)|Undirected, Communities|65,608,366|1,806,067,135|957,154|Friendster online social network|
+|[com-Orkut](http://snap.stanford.edu/data/com-Orkut.html)|Undirected, Communities|3,072,441|117,185,083|6,288,363|Orkut online social network|
+|[com-Youtube](http://snap.stanford.edu/data/com-Youtube.html)|Undirected, Communities|1,134,890|2,987,624|8,385|Youtube online social network|
+|[com-DBLP](http://snap.stanford.edu/data/com-DBLP.html)|Undirected, Communities|317,080|1,049,866|13,477|DBLP collaboration network|
+|[com-Amazon](http://snap.stanford.edu/data/com-Amazon.html)|Undirected, Communities|334,863|925,872|75,149|Amazon product network|
+|[email-Eu-core](http://snap.stanford.edu/data/email-Eu-core.html)|Directed, Communities|1,005|25,571|42|E-mail network|
+|[wiki-topcats](http://snap.stanford.edu/data/wiki-topcats.html)|Directed, Communities|1,791,489|28,511,807|17,364|Wikipedia hyperlinks|
+
+##### 统计度分布
+
+```bash
+grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
+```
+
+---
+
 #### 随机性
+
+---
+
+##### 经典BFS遍历顺序
+
+<style scoped>
+  h5 {
+    font-style: italic;
+  }
+  li {
+    font-size: 18px;
+  }
+</style>
+
+- <https://github.com/snap-stanford/snap/blob/master/tutorials/demo-bfsdfs.cpp>
 
 ---
 
@@ -170,6 +218,12 @@ Source: [Shi Z, Li J, Guo P et al. Partitioning dynamic graph asynchronously wit
   - 顺序访问的实现
 - 布局问题
   - 如何排序
+
+---
+
+### 图处理系统发展
+
+![w:1100](images/graph-processing-systems.png)
 
 ---
 
