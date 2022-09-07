@@ -32,6 +32,12 @@ math: mathjax
 
 ---
 
+## 图有着广泛的应用
+
+……
+
+---
+
 ## 经典图应用
 
 <style scoped>
@@ -172,6 +178,8 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 #### 随机性
 
+…GraphChi、X-Stream PPT…
+
 ---
 
 ##### 经典BFS遍历顺序
@@ -184,6 +192,8 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
     font-size: 18px;
   }
 </style>
+
+……
 
 - <https://github.com/snap-stanford/snap/blob/master/tutorials/demo-bfsdfs.cpp>
 
@@ -206,9 +216,11 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 </style>
 
 - MapReduce的问题
+  - 漫长迭代、不平衡负载
 - 图分区的矛盾
+  - 尺寸平衡，切割少
 
-Source: [Shi Z, Li J, Guo P et al. Partitioning dynamic graph asynchronously with distributed FENNEL. Future Generation Computer Systems, 2017.](https://www.sciencedirect.com/science/article/pii/S0167739X1730033X)
+[Shi Z, Li J, Guo P et al. **Partitioning dynamic graph asynchronously with distributed FENNEL**. FGCS 2017.](https://www.sciencedirect.com/science/article/pii/S0167739X1730033X)
 
 ---
 
