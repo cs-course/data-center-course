@@ -80,6 +80,24 @@ math: mathjax
 
 ---
 
+## 背后的系统
+
+<style scoped>
+  li {
+    font-size: 18px;
+  }
+  p {
+    font-size: 36px;
+    text-align: center;
+  }
+</style>
+
+![h:400](images/vertex-computing.png)
+
+- [Malewicz G, Austern M H, Bik A J C et al. **Pregel: A System for Large-Scale Graph Processing**. SIGMOD 2010.](https://dl.acm.org/doi/10.1145/1807167.1807184)
+
+---
+
 ## 对系统的挑战
 
 ### 经典系统结构回顾
@@ -178,11 +196,35 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 #### 随机性
 
-…GraphChi、X-Stream PPT…
+<style scoped>
+  p {
+    text-align: center;
+  }
+  li {
+    font-size: 18px;
+  }
+</style>
+
+![h:450](images/random-access-problem.jpg)
+
+- [Kyrola A, Blelloch G, Guestrin C. **GraphChi: Large-Scale Graph Computation on Just a PC**. OSDI 2012.](https://www.usenix.org/conference/osdi12/technical-sessions/presentation/kyrola)
 
 ---
 
-##### 经典BFS遍历顺序
+<style scoped>
+  li {
+    padding-top: 600px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/vertex-centric.jpg)
+
+- <https://github.com/snap-stanford/snap/blob/master/tutorials/demo-bfsdfs.cpp>
+
+---
+
+##### 点随机还是边随机？
 
 <style scoped>
   h5 {
@@ -193,9 +235,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-……
-
-- <https://github.com/snap-stanford/snap/blob/master/tutorials/demo-bfsdfs.cpp>
+![h:500](images/vertex-edge-computing.png) ![h:500](images/edge-centric.jpg)
 
 ---
 
@@ -209,28 +249,74 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ### 分布式架构
 
+- 让足量内存应对随机访存，然而…
+
+---
+
+### 分布式架构…
+
 <style scoped>
   p {
     font-size: 18px;
   }
 </style>
 
+- 让足量内存应对随机访存，然而…
 - MapReduce的问题
   - 漫长迭代、不平衡负载
 - 图分区的矛盾
   - 尺寸平衡，切割少
+  - 过度分区
 
+[Gonzalez J E, Low Y, Gu H et al. **PowerGraph: distributed graph-parallel computation on natural graphs**. OSDI 2012.](https://www.usenix.org/conference/osdi12/technical-sessions/presentation/gonzalez)
+[Chen R, Shi J, Chen Y et al. **PowerLyra: differentiated graph computation and partitioning on skewed graphs**. EuroSys 2015.](https://dl.acm.org/doi/10.1145/2741948.2741970)
+[Tsourakakis C, Gkantsidis C, Radunovic B et al. **FENNEL: streaming graph partitioning for massive scale graphs**. WSDM 2014.](https://dl.acm.org/doi/10.1145/2556195.2556213)
 [Shi Z, Li J, Guo P et al. **Partitioning dynamic graph asynchronously with distributed FENNEL**. FGCS 2017.](https://www.sciencedirect.com/science/article/pii/S0167739X1730033X)
+...
 
 ---
 
 ### 分层式架构
 
+- 让足量外存实现扩展避免网络分布，可是…
+
+---
+
+### 分层式架构…
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+- 让足量外存实现扩展避免网络分布，可是…
 - 外存模式
   - 大块访问的实现
   - 顺序访问的实现
 - 布局问题
   - 如何排序
+
+[Wei H, Yu J X, Lu C et al. **Speedup Graph Processing by Graph Ordering**. SIGMOD 2016.](http://doi.acm.org/10.1145/2882903.2915220)
+[Xu X, Wang F, Jiang H et al. **HUS-Graph: I/O-Efficient Out-of-Core Graph Processing with Hybrid Update Strategy**. ICPP 2018.](https://dl.acm.org/doi/10.1145/3225058.3225108)
+...
+
+---
+
+### 分布式、分层架构
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+  li {
+    font-size: 18px;
+  }
+</style>
+
+![h:450](images/chaos.jpg)
+
+- [Roy A, Bindschaedler L, Malicevic J et al. **Chaos: Scale-Out Graph Processing from Secondary Storage**. SOSP 2015.](https://dl.acm.org/doi/10.1145/2815400.2815408)
 
 ---
 
@@ -294,13 +380,15 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-### 庞大的数据集、复杂的模式…
+问题1：**庞大的数据集、复杂的模式**…
 
-？
+超算可以拼GTEPS，可是还有那么多任务形式那么多应用？
 
-### 在检索中综合时空条件…
+问题2：**在检索中综合时空条件**…
 
-？
+…10分钟以内的账号同IP多开…？
+
+![h:200](images/evolving-graph-logic.png)
 
 ---
 
@@ -312,11 +400,11 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-### 庞大的数据集、复杂的模式
+问题1：**庞大的数据集、复杂的模式**
 
 以表示学习取代点边遍历
 
-### 在检索中综合时空条件
+问题2：**在检索中综合时空条件**
 
 结合各类数据结构特长以综合使用
 
