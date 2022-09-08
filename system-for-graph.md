@@ -34,7 +34,13 @@ math: mathjax
 
 ## 图有着广泛的应用
 
-……
+<style scoped>
+  h2 {
+    padding-top: 260px;
+    text-align: center;
+  }
+</style>
+![bg fit](images/graph-app-1.jpg)
 
 ---
 
