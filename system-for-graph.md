@@ -44,6 +44,10 @@ math: mathjax
 
 ---
 
+![bg fit](images/graphs-are-everywhere.jpg)
+
+---
+
 ## 经典图应用
 
 <style scoped>
@@ -257,6 +261,8 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 - 让足量内存应对随机访存，然而…
 
+![h:450](images/dilemma-on-skewness.jpg)
+
 ---
 
 ### 分布式架构…
@@ -284,7 +290,17 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ### 分层式架构
 
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
 - 让足量外存实现扩展避免网络分布，可是…
+
+![h:350](images/sequential-vs-random.jpg)
+
+[Roy A, Mihailovic I, Zwaenepoel W. X-Stream: edge-centric graph processing using streaming partitions. SOSP 2013.](https://dl.acm.org/doi/10.1145/2517349.2522740)
 
 ---
 
@@ -375,6 +391,10 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 - 分析目标
   - 复盘各时状态
   - 找出演化趋势
+
+---
+
+![bg fit](images/fund-tracking.png)
 
 ---
 
