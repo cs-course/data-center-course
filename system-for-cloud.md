@@ -592,6 +592,24 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+![bg right fit](images/the-long-tail.jpg)
+
+**长尾**（The Long Tail）这一概念是由《连线》杂志主编Chris Anderson在2004年10月的“长尾”一文中最早提出，用来描述诸如亚马逊和Netflix之类网站的商业和经济模式。
+
+实际上是统计学中幂律（Power Laws）和帕累托分布（Pareto distributions）特征的一个口语化表达。
+
+---
+
+![bg right fit](images/the-long-tail.jpg)
+
+规模化业务中，“尾部”产生的总体效益甚至会超过“头部”。
+
+- 冷门商品的销售量可以达到总额的半数
+- 自然语言中的中低频词对信息量的贡献
+- ...
+
+---
+
 <style scoped>
   p {
     padding-top: 200px;
@@ -603,7 +621,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![bg opacity:.3](images/distributed-storage.png)
 
-系统扩展固然可以应对应用扩展
+规模化系统以扩展应对需求增长
 
 ---
 
@@ -665,7 +683,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-### 扩展使变化越来越复杂
+### 扩展将变化放大
 
 <style scoped>
   h3 {
@@ -883,8 +901,14 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-- 故障预测
-- 性能预测
+- 容错的代价
+  - 浪费的空间
+    - 从副本到纠删码、动态重编码
+    - 故障预测
+- 容滞的代价
+  - 浪费的吞吐
+    - 激进降延迟和加剧拥塞
+    - 性能预测
 
 ---
 
