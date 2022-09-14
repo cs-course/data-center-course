@@ -612,6 +612,21 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 <style scoped>
   p {
+    padding-top: 600px;
+    text-align: center;
+    font-size: 18px;
+    color: 0040FF;
+  }
+</style>
+
+![bg fit](images/Thelongtailshift.webp)
+
+<https://newmedia.fandom.com/wiki/The_Long_Tail>
+
+---
+
+<style scoped>
+  p {
     padding-top: 200px;
     text-align: center;
     font-size: 72px;
@@ -805,6 +820,22 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
+## 如何应对？
+
+- 必受各组件状态的影响
+  - 设备故障——容错——**提供冗余部件**
+  - 性能波动——容滞——？
+
+---
+
+## 如何应对？…
+
+- 必受各组件状态的影响
+  - 设备故障——容错——**提供冗余部件**
+  - 性能波动——容滞——**执行冗余操作**
+
+---
+
 ## 经典应对策略
 
 - [SNIA: Avoiding tail latency by failing IO operations on purpose](https://faststorage.eu/snia-avoiding-tail-latency-by-failing-io-operations-on-purpose/)
@@ -902,13 +933,35 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 ---
 
 - 容错的代价
+  - **浪费的空间**
+    - …
+    - …
+- 容滞的代价
+  - **浪费的吞吐**
+    - …
+    - …
+
+---
+
+- 容错的代价
+  - 浪费的空间
+    - 从**副本**到**纠删码**、**动态重编码**
+    - …
+- 容滞的代价
+  - 浪费的吞吐
+    - **积极对冲**加剧拥塞
+    - …
+
+---
+
+- 容错的代价
   - 浪费的空间
     - 从副本到纠删码、动态重编码
-    - 故障预测
+    - **故障预测**
 - 容滞的代价
   - 浪费的吞吐
     - 激进降延迟和加剧拥塞
-    - 性能预测
+    - **性能预测**
 
 ---
 
