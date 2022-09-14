@@ -26,13 +26,29 @@ math: mathjax
 - 云服务背景
 - 对系统的挑战
 - 对系统设计的影响
-- for (云服务的发展):
+- for (云应用的需求):
   - 新的挑战
   - 对系统的探索
 
 ---
 
 ## 广泛应用的云
+
+<style scoped>
+  h2 {
+    padding-top: 500px;
+    font-size: 72px;
+    text-align: center;
+    color: #F0F0F0;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![bg](images/cloud-everywhere.jpg)
+
+<https://www.corporatecomplianceinsights.com/data-data-data-everywhere/>
 
 ---
 
@@ -602,10 +618,10 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![bg right fit](images/the-long-tail.jpg)
 
-规模化业务中，“尾部”产生的总体效益甚至会超过“头部”。
+**规模化业务**中，“**尾部**”产生的总体效益甚至会超过“**头部**”。
 
-- 冷门商品的销售量可以达到总额的半数
-- 自然语言中的中低频词对信息量的贡献
+- *冷门商品的销售量可以达到总额的半数*
+- *自然语言中的中低频词对信息量的贡献*
 - ...
 
 ---
@@ -690,23 +706,13 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-### 毫末之变、扩展之鉴
+### 扩展将变化放大
+
+毫末之变、扩展之鉴
 
 1. 大系统由小组件汇聚而成
 2. 汇聚改变的不仅仅是规模
 3. 还有伴随组件而来的变化
-
----
-
-### 扩展将变化放大
-
-<style scoped>
-  h3 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 70px;
-  }
-</style>
 
 ---
 
@@ -805,6 +811,18 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
+## 为何要谈尾延迟……
+
+- [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
+- [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
+  - **小概率事件**不能忽视
+  - 延迟可能"**被平均**"
+  - 任务可能**被拖累**
+
+![bg right fit](images/web-request-tail.png)
+
+---
+
 ## 量化描述尾延迟
 
 <style scoped>
@@ -823,8 +841,10 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 ## 如何应对？
 
 - 必受各组件状态的影响
-  - 设备故障——容错——**提供冗余部件**
+  - 设备故障——容错——**提供冗余部件** *（回顾计算机系统结构课…）*
   - 性能波动——容滞——？
+
+![h:300](images/3-replica.png) ![h:300](images/erasure-code.png)
 
 ---
 
@@ -833,6 +853,8 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 - 必受各组件状态的影响
   - 设备故障——容错——**提供冗余部件**
   - 性能波动——容滞——**执行冗余操作**
+
+![h:300](images/hedged-requests.png) ![h:200](images/byte-dance-hedged-read.webp)
 
 ---
 
@@ -905,6 +927,30 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
+### 案例3：字节跳动HDFS改
+
+<style scoped>
+  th {
+    font-size: 25px;
+  }
+  td {
+    font-size: 25px;
+  }
+</style>
+
+|Host:X.X.X.X|3 副本Switch Read|2 副本 Hedged Read|3 副本 Hedged Read|3 副本 Fast Switch Read（优化）|
+|:-|-:|-:|-:|-:|
+|读取时长 p999|977 ms|549 ms|192 ms|128 ms|
+|最长读取时间|300 s|125 s|60 s|15.5 s|
+|长尾出现次数（大于 500ms）|238 次/天|75 次/天|15 次/天|3 次/天|
+|长尾出现次数（大于 1000ms）|196 次/天|64 次/天|6 次/天|3 次/天|
+
+- 优化：根据当前的读取状况动态地调整阈值，动态改变时间窗口的长度以及吞吐量阈值的大小。
+
+[字节跳动 EB 级 HDFS 实践](https://juejin.cn/post/6844904035112189966)
+
+---
+
 ## 课后实验：对象存储系统
 
 - 实验说明
@@ -929,6 +975,17 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 </style>
 
 预测
+
+---
+
+- **容错的代价**
+  - …
+    - …
+    - …
+- **容滞的代价**
+  - …
+    - …
+    - …
 
 ---
 
@@ -960,21 +1017,70 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
     - **故障预测**
 - 容滞的代价
   - 浪费的吞吐
-    - 激进降延迟和加剧拥塞
+    - 积极对冲加剧拥塞
     - **性能预测**
 
 ---
 
-## 时序预测
+## 故障预测
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+</style>
+
+![bg right fit](images/failure-prediction.png)
+
+- 故障预前处理优于故障事后处理
+  - 数据不丢失、服务不中断、不降级
+  - 处理开销小、处理时间充足易于分摊开销
+- 故障后处理（数据冗余策略的部署）是保底机制
+  - 故障预测模型的检测率难以达到100%，存在故障漏报现象
+  - 预测到故障的存储设备已经出现数据丢失或出错
+  - 能够处理更多种类的异常情况，如软件错误、网络异常等
 
 ---
 
-## 分析模型
+![bg fit](images/datacenter-reliability.png)
 
 ---
+
+## 一些尝试
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+</style>
+
+- 副本和纠删码动态转换
+  - [Non-Sequential Striping for Distributed Storage Systems with Different Redundancy Schemes](https://ieeexplore.ieee.org/document/8025297/), ICPP 2017.
+  - Non-sequential Striping Encoder from Replication to Erasure Coding for Distributed Storage System, Frontiers of Computer Science (FCS), 2019.
+- 磁盘故障预测
+  - [OME: An Optimized Modeling Engine for Disk Failure Prediction in Heterogeneous Datacenter](https://ieeexplore.ieee.org/abstract/document/8615739), ICCD 2018.
+
 ---
 
-### 我们的工作
+## 性能模型——考虑要素
+
+![h:500](images/cloud-storage-performance-factors.png)
+
+---
+
+## 性能模型——困难之处
+
+![h:500](images/cloud-storage-performance-prediction.png)
+
+---
+
+## 性能模型——系统分析
+
+![h:500](images/cloud-storage-request-analysis.png)
+
+---
+
+### 一些尝试…
 
 <style scoped>
   li {
