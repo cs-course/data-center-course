@@ -68,15 +68,17 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
+## 第一个难题
+
 <style scoped>
   p {
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
-    font-size: 70px;
+    font-size: 72px;
   }
 </style>
 
-第一个难题：扩展
+扩展
 
 ---
 
@@ -400,7 +402,193 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 
 ---
 
-## 性能上的不确定性
+## 典型对象存储系统
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
+- **Amazon S3**: Amazon S3 stores data as objects within resources called “buckets.” AWS S3 offers features like 99.999999999% durability, cross-region replication, event notifications, versioning, encryption, and flexible storage options (redundant and standard).
+- **Rackspace Cloud Files**: Cloud Files provides online object storage for files and media. Cloud Files writes each file to three storage disks on separate nodes that have dual power supplies. All traffic between your application and Cloud Files uses SSL to establish a secure, encrypted channel. You can host static websites (for example: blogs, brochure sites, small company sites) entirely from Cloud Files with a global CDN.
+
+---
+
+- **Azure Blob Storage**: For users with large amounts of unstructured data to store in the cloud, Blob storage offers a cost-effective and scalable solution. Every blob is organized into a container with up to a 500 TB storage account capacity limit.
+- **Google cloud storage**: Cloud Storage allows you to store data in Google’s cloud. Google Cloud Storage supports individual objects that are terabytes in size. It also supports a large number of buckets per account. Google Cloud Storage provides strong read-after-write consistency for all upload and delete operations. Two types of storage class are available: Standard Storage class and Storage Near line class (with Near Line being MUCH cheaper).
+
+<https://cloudacademy.com/blog/object-storage-block-storage/>
+
+---
+
+- [**阿里云对象存储OSS（Object Storage Service）**](https://www.aliyun.com/product/oss/)是一款海量、安全、低成本、高可靠的云存储服务，提供99.9999999999%(12个9)的数据持久性，99.995%的数据可用性。多种存储类型供选择，全面优化存储成本。
+- [**腾讯对象存储（Cloud Object Storage，COS）**](https://cloud.tencent.com/document/product/436)是腾讯云提供的一种存储海量文件的分布式存储服务，具有高扩展性、低成本、可靠安全等优点。通过控制台、API、SDK 和工具等多样化方式，用户可简单、快速地接入 COS，进行多格式文件的上传、下载和管理，实现海量数据存储和管理。
+- [**华为对象存储服务（Object Storage Service）**](https://www.huaweicloud.com/product/obs.html)是一款稳定、安全、高效、易用的云存储服务，具备标准Restful API接口，可存储任意数量和形式的非结构化数据。
+
+---
+
+### OpenStack
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
+
+- OpenStack was created during the first months of 2010. Rackspace wanted to rewrite the infrastructure code running its Cloud servers offering, and considered open sourcing the existing Cloud files code. At the same time, Anso Labs (contracting for NASA) had published beta code for Nova, a Python-based “cloud computing fabric controller”.
+- Both efforts converged and formed the base for OpenStack. The first Design Summit was held in Austin, TX on July 13-14, 2010, and the project was officially announced at OSCON in Portland, OR, on July 21st, 2010.
+
+<https://docs.openstack.org/project-team-guide/introduction.html>
+
+---
+
+### OpenStack Swift
+
+- OpenStack Object Storage (swift) is used for **redundant, scalable data storage using clusters of standardized servers** to store petabytes of accessible data.
+- Swift uses a distributed architecture with **no central point of control**, providing greater scalability, redundancy, and performance.
+- Storage clusters **scale horizontally** by adding new nodes, uses software logic to ensure data replication and distribution across different devices, inexpensive **commodity hard drives and servers**.
+
+---
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+<https://docs.openstack.org/swift/>
+<https://github.com/openstack/swift>
+Source: <https://docs.openstack.org/security-guide/object-storage.html>
+
+![bg fit](images/swift_network_diagram-1.png)
+
+---
+
+### Ceph as a research project
+
+<style scoped>
+  li {
+    font-size: 30px
+  }
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+- Ceph was developed at **University of California, Santa Cruz, by Sage Weil** in 2003 as a part of his PhD project.
+  - The initial project prototype was the Ceph filesystem, written in approximately 40,000 lines of C++ code, which was made open source in 2006 under LGPL to serve as a reference implementation and research platform.
+  - LLNL supported Sage's initial research work.
+  - The period from 2003 to 2007 was the research period of Ceph. By this time, its core components were emerging, and the community contribution to the project had begun at pace.
+
+[Learning Ceph, Packt, 2015](https://subscription.packtpub.com/book/virtualization-and-cloud/9781783985623/1)
+
+---
+
+### Ceph
+
+- Ceph uniquely delivers **object, block, and file storage in one unified system**.
+- Ceph is highly reliable, easy to manage, and free.
+- Ceph delivers extraordinary scalability–thousands of clients accessing petabytes to exabytes of data.
+- A Ceph Node leverages **commodity hardware** and intelligent daemons, and a Ceph Storage Cluster accommodates large numbers of nodes, which communicate with each other to **replicate and redistribute data dynamically**.
+
+---
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+<https://ceph.io/>
+<https://github.com/ceph/ceph>
+Source: <https://icicimov.github.io/blog/images/CEPH-graphic.png>
+
+![bg fit](images/ceph-graphic.png)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/ceph-stack.png)
+
+Source: [Ceph Documentation » Architecture](https://docs.ceph.com/en/pacific/architecture/)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/cephDiagramm.webp)
+
+Source: [Ceph storage on Ubuntu: An overview](https://ubuntu.com/blog/ceph-storage-on-ubuntu-an-overview)
+
+---
+
+![bg](images/red-hat-ceph-storage.png)
+
+<!-- https://www.sandisk.com/business/datacenter/resources/solution-briefs/red-hat-ceph-storage-on-the-infiniflash-all-flash-storage-platform -->
+
+---
+
+![bg](images/github-object-storage.png)
+
+---
+
+### Minio
+
+- MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0.
+- It is **API compatible with Amazon S3** cloud storage service.
+- **Standalone MinIO servers** are best suited for early development and evaluation.
+- Certain features such as versioning, object locking, and bucket replication require distributed deploying MinIO with **Erasure Coding**.
+
+---
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: right;
+  }
+</style>
+
+<https://min.io/>
+<http://www.minio.org.cn/>
+<https://github.com/minio/minio>
+
+Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
+
+![bg](images/minio_architecture_diagram.svg)
+
+---
+
+## 第二个难题
+
+<style scoped>
+  p {
+    padding-top: 100px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+长尾
 
 ---
 
@@ -408,15 +596,14 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
   p {
     padding-top: 200px;
     text-align: center;
-    font-size: 70px;
+    font-size: 72px;
+    color: 0040FF;
   }
 </style>
 
-第二个难题：长尾
+![bg opacity:.3](images/distributed-storage.png)
 
----
-
-## 延迟和尾延迟
+系统扩展固然可以应对应用扩展
 
 ---
 
@@ -424,11 +611,280 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
   p {
     padding-top: 200px;
     text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3](images/workload-plot-1.jpg)
+
+![bg opacity:.3](images/workload-plot-2.jpg)
+
+可是背后有着怎样的代价？
+
+<!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
+
+---
+
+![bg fit](images/yi-zhuan.jpg)
+
+<!-- https://github.com/kanripo/KR1a0140/ -->
+
+![bg fit](images/who-moved-my-cheese.jpg)
+
+---
+
+![bg fit](images/WYG0047-0179d.png)
+
+![bg fit](images/it-was-nature-for-change.png)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3 brightness:.5 fit](images/WYG0047-0179d.png)
+
+![bg opacity:.3 brightness:.5 fit](images/it-was-nature-for-change.png)
+
+唯一不变的是变化本身
+
+---
+
+### 毫末之变、扩展之鉴
+
+1. 大系统由小组件汇聚而成
+2. 汇聚改变的不仅仅是规模
+3. 还有伴随组件而来的变化
+
+---
+
+### 扩展使变化越来越复杂
+
+<style scoped>
+  h3 {
+    padding-top: 200px;
+    text-align: center;
     font-size: 70px;
   }
 </style>
 
-第三个难题：预测
+---
+
+### 组件异常情况繁复
+
+![h:450](images/Source-of-Latency.png)
+
+---
+
+### 虽然各有预案
+
+![h:450](images/Source-of-Latency-Solutions.png)
+
+---
+
+### 仍然难免短板
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: left;
+  }
+</style>
+
+![bg right fit](images/law-of-the-minimum.jpg)
+
+- 必受各组件状态的影响
+  - 设备故障 **Fail**
+  - 性能波动 **Tail**
+
+Source: <https://nutrien-ekonomics.com/latest-fertilizer-research/liebigs-law-of-the-minimum/>
+
+---
+
+### 容错
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+</style>
+
+- 必受各组件状态的影响
+  - 设备故障——需要 **Fault-Tolerant** 容错！
+
+![h:350](images/Replication-and-Erasure-Coding.jpg)
+
+[Cloud Storage Reliability for Big Data Applications: A State of the Art Survey, Journal of Network and Computer Applications 2017](https://linkinghub.elsevier.com/retrieve/pii/S1084804517302734)
+
+---
+
+### 容滞
+
+- 必受各组件状态的影响
+  - 设备故障——需要 **Fault-Tolerant** 容错！
+  - 性能波动——需要 **Tail-Tolerant** 容滞？
+
+---
+
+![bg fit](images/SNIA-tail-latency.webp)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+  }
+</style>
+
+![bg fit](images/latency-sla.png)
+
+Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
+
+---
+
+## 为何要谈尾延迟
+
+- [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
+- [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
+  - **小概率事件**不能忽视
+
+![bg right](images/Screen-Shot-2015-10-04-at-6.15.24-PM-small.jpg)
+
+---
+
+## 为何要谈尾延迟…
+
+- [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
+- [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
+  - **小概率事件**不能忽视
+  - 延迟可能"**被平均**"
+
+![bg right fit](images/graph_logbase10_ms.png)
+
+---
+
+## 量化描述尾延迟
+
+<style scoped>
+  p {
+    font-size: 20px;
+    text-align: center;
+  }
+</style>
+
+![h:500](images/measuring-percentile-latency.svg)
+
+<https://blog.bramp.net/post/2018/01/16/measuring-percentile-latency/>
+
+---
+
+## 经典应对策略
+
+- [SNIA: Avoiding tail latency by failing IO operations on purpose](https://faststorage.eu/snia-avoiding-tail-latency-by-failing-io-operations-on-purpose/)
+  - One of these initiatives is adding a per I/O tag that indicates whether a drive **can fail fast** and return an error if it takes too long to retrieve the data.
+  - If there’s a replica of the data somewhere else, it might just be faster to retrieve the data from there, instead of waiting for the slow drive to respond.
+  - The other side of the coin is a “**try really hard**” I/O tag, that indicates you’ve exhausted all other options and really need the data from this drive.
+
+---
+
+## 主要方法分类
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
+
+- **对冲请求** Hedged Request
+  - Issue the same request to multiple replicas and use the results from whichever replica responds first.
+  - "hedged" - a client first sends one request to the replica believed to be the most appropriate, but then falls back on sending a secondary request after some brief delay.
+  - The client cancels remaining outstanding requests once the first result is received.
+- **关联请求** Tied Request
+  - The hedged-requests technique also has a window of vulnerability in which multiple servers can execute the same request unnecessarily.
+    - Can be capped by waiting for the P95 expected latency before issuing the hedged request, but limits the benefits to only a small fraction of requests.
+  - Permitting more aggressive use of hedged requests with moderate resource consumption requires faster cancellation of requests.
+
+[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
+
+---
+
+### 案例1：HDFS
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
+
+- **HDFS** (2.4+)
+  - If a read from a block is slow, start up another parallel, **'hedged' read** against a different block replica.
+  - We then **take the result of which ever read returns first** (*the outstanding read is cancelled*).
+  - This 'hedged' read feature will help rein in the outliers, the odd read that takes a long time because it hit a bad patch on the disc, etc.
+
+<https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/release/2.4.0/RELEASENOTES.2.4.0.html>
+
+---
+
+### 案例2：MongoDB
+
+<style scoped>
+  p {
+    font-size: 16px;
+    text-align: right;
+  }
+</style>
+
+- **mongodb** (4.4+)
+  - With hedged reads, the mongos instances can route read operations to **two replica set members per each queried shard** and **return results from the first respondent** per shard.
+  - The additional read sent to hedge the read operation uses the **maxTimeMS** value of **maxTimeMSForHedgedReads**.
+
+<https://docs.mongodb.com/manual/core/read-preference-hedge-option/>
+
+---
+
+## 课后实验：对象存储系统
+
+- 实验说明
+  - <https://github.com/cs-course/obs-tutorial>
+  - <https://gitee.com/shi_zhan/obs-tutorial>
+- 实验内容
+  - 熟悉性能指标：吞吐率、带宽、延迟
+  - 分析不同负载下的指标、延迟的分布
+  - 观测尾延迟现象
+  - 尝试对冲请求方案
+
+---
+
+## 第三个难题
+
+<style scoped>
+  p {
+    padding-top: 100px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+预测
+
+---
+
+- 故障预测
+- 性能预测
 
 ---
 
@@ -439,3 +895,35 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 ## 分析模型
 
 ---
+---
+
+### 我们的工作
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+</style>
+
+- [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
+- [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
+
+![h:400](images/Basic-structure-of-queueing-models.png)
+
+---
+
+## 参考文献
+
+<style scoped>
+  li {
+    font-size: 20px;
+  }
+</style>
+
+1. [Tail Latency in Datacenter Networks](https://link.springer.com/chapter/10.1007%2F978-3-030-68110-4_17), MASCOTS 2020.
+2. [A Black-Box Fork-Join Latency Prediction Model for Data-Intensive Applications](https://ieeexplore.ieee.org/document/9043685), TPDS 2020.
+3. [The Fast and The Frugal: Tail Latency Aware Provisioning for Coping with Load Variations](https://dl.acm.org/doi/10.1145/3366423.3380117), WWW 2020.
+4. [Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints](https://dl.acm.org/doi/10.1145/3302424.3303973), EuroSys 2019.
+5. [Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), CACM 2018.
+6. [The Tail at Scale: How to Predict It?](https://www.usenix.org/conference/hotcloud16/workshop-program/presentation/nguyen), HotCloud 16.
+7. [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
