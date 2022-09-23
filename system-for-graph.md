@@ -108,24 +108,17 @@ math: mathjax
 
 ---
 
-## 对系统的挑战
-
-### 经典系统结构回顾
+## 经典系统结构回顾
 
 - 并行结构
 - 层次存储
 
-### 图应用带来什么问题
-
-- 偏斜性
-- 随机性
-
 ---
 
-#### 并行结构
+### 并行结构
 
 <style scoped>
-  h4 {
+  h3 {
     padding-top: 500px;
   }
   p {
@@ -139,10 +132,10 @@ math: mathjax
 
 ---
 
-#### 层次存储
+### 层次存储
 
 <style scoped>
-  h4 {
+  h3 {
     padding-top: 500px;
   }
   p {
@@ -156,7 +149,14 @@ math: mathjax
 
 ---
 
-#### 偏斜性
+## 图应用访存特点
+
+- 偏斜性
+- 随机性
+
+---
+
+### 偏斜性
 
 <style scoped>
   li {
@@ -171,7 +171,7 @@ math: mathjax
 
 ---
 
-##### SNAP真实图数据集
+#### SNAP真实图数据集
 
 <style scoped>
   h5 {
@@ -196,7 +196,7 @@ math: mathjax
 |[email-Eu-core](http://snap.stanford.edu/data/email-Eu-core.html)|Directed, Communities|1,005|25,571|42|E-mail network|
 |[wiki-topcats](http://snap.stanford.edu/data/wiki-topcats.html)|Directed, Communities|1,791,489|28,511,807|17,364|Wikipedia hyperlinks|
 
-##### 统计度分布
+#### 统计度分布
 
 ```bash
 grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
@@ -204,7 +204,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ---
 
-#### 随机性
+### 随机性
 
 <style scoped>
   p {
@@ -234,7 +234,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ---
 
-##### 点随机还是边随机？
+#### 点随机还是边随机？
 
 <style scoped>
   h5 {
@@ -249,7 +249,21 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ---
 
-## 对系统设计的影响
+## 第一个难题
+
+<style scoped>
+  p {
+    padding-top: 100px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+布局
+
+---
+
+## 系统怎么设计？
 
 - 分布式架构
 - 分层式架构
@@ -316,7 +330,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 - 外存模式
   - 大块访问的实现
   - 顺序访问的实现
-- 布局问题
+- 分批问题
   - 如何排序
 
 [Wei H, Yu J X, Lu C et al. **Speedup Graph Processing by Graph Ordering**. SIGMOD 2016.](http://doi.acm.org/10.1145/2882903.2915220)
@@ -345,6 +359,18 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 ### 图处理系统发展
 
 ![w:1100](images/graph-processing-systems.png)
+
+---
+
+## 实验：对象存储系统
+
+- 实验说明
+  - <https://www.kaggle.com/competitions/cache-lab-plus>
+- 实验内容
+  - 重温 CSAPP::CacheLab
+  - 分析不同数据集上的BFS访存如何影响缓存性能
+  - 观测局部性缺失现象
+  - 尝试图数据布局方案
 
 ---
 
