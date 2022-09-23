@@ -951,7 +951,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 课后实验：对象存储系统
+## 实验：对象存储系统
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
