@@ -249,7 +249,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ---
 
-## 第一个难题
+## 挑战
 
 <style scoped>
   p {
@@ -362,7 +362,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 ---
 
-## 实验：对象存储系统
+## 实验：图数据存储系统
 
 - 实验说明
   - <https://www.kaggle.com/competitions/cache-lab-plus>
@@ -432,11 +432,11 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-问题1：**庞大的数据集、复杂的模式**…
+问题1：**复杂模式**…
 
 超算可以拼GTEPS，可是还有那么多任务形式那么多应用？
 
-问题2：**在检索中综合时空条件**…
+问题2：**时空检索**…
 
 …10分钟以内的账号同IP多开…？
 
@@ -452,11 +452,11 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-问题1：**庞大的数据集、复杂的模式**
+问题1：**复杂模式**
 
 以表示学习取代点边遍历
 
-问题2：**在检索中综合时空条件**
+问题2：**时空检索**
 
 结合各类数据结构特长以综合使用
 
