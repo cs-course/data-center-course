@@ -26,9 +26,10 @@ title: 数据中心技术
 - 课程资料 <https://github.com/cs-course/data-center-course>  
 - 作业库 <https://github.com/cs-course/data-center-course-assignment-2022>
 - 参考书
+  - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
+  - [**计算机体系结构：量化研究方法**（第5版）](https://item.jd.com/19082510945.html), 机械工业出版社, 2013
   - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
   - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
-  - 云计算——概念、技术与架构，机械工业出版社，2014
 
 ---
 
@@ -101,19 +102,16 @@ title: 数据中心技术
 
 - **论文研讨** *40%*
   - 制作胶片汇报一篇相关论文，**模拟学术会议**
-    - 第一次课内完成 Schedule，确认 16 个 Session Chair 和 78 篇 Paper
-    - 每位 Presenter 有 7 分钟汇报和 1 至 2 分钟讨论，由 Session Chair 严格组织并计时
+    - 第一次课内完成 Schedule，确认 12 个 Session Chair 和 48 篇 Paper
+    - 每位 Presenter 有 12 分钟汇报和 3 分钟讨论，由 Session Chair 严格组织并计时
     - Session Chair 组织得力可加分
 - **综述报告** *40%*
   - 围绕自选研讨主题综述不少于3篇近3年CCF-A/B类会议、期刊论文
     - [**在线填报**](https://docs.qq.com/form/page/DREZhYWV1Q3hPbG1n?_w_tencentdocx_form=1)，注意腾讯收集表提交时限和各栏字数要求
     - 内容按计算机学报样式([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版后上传仓库文件夹
     - 打印纸质版（A4）
-- **实验报告** *20%*
-  - 围绕课程[第三讲：对象存储技术](data-center-2021-obs)主题，按照[实验说明](data-center-2021-obs#67)进行实验，编纂实验报告
-    - 注意每人实验环境各不一样，数据势必有别
-    - 实验报告、实验代码上传仓库文件夹
-- 电子版(**汇报胶片、综述报告、实验报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
+- **考试** *20%*
+- 电子版(**汇报胶片、综述报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
   - <https://github.com/cs-course/data-center-course-assignment-2022>
 
 ---
@@ -143,7 +141,7 @@ title: 数据中心技术
 | 7 | 论文研讨 | 12-15 | D9-D311 |
 | 8 | 论文研讨 | 12-22 | D9-D311 |
 
-\* 20 presenters in 4 sessions
+\* *12 presenters in 3 sessions*
 
 ---
 
@@ -159,7 +157,7 @@ title: 数据中心技术
 
 扫码在线填表
 
-- 确认 **16 位** 分会主席
+- 确认 **12 位** 分会主席
 - 选择 **48 篇** 拟汇报论文
 
 也可以点击
