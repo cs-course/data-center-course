@@ -23,7 +23,6 @@ math: katex
 
 <!-- paginate: true -->
 
-- 课堂背景调查
 - 数据中心技术
   - 定义、起源和历史
   - 经典案例
@@ -31,46 +30,6 @@ math: katex
   - 主要问题
 - 学习目的
 - 实践基础
-
----
-
-## 课堂背景调查
-
-<style scoped>
-  p {
-    font-size: 20px;
-  }
-  td {
-    font-size: 16px;
-    vertical-align:text-top;
-    color: #003FFF;
-  }
-  th {
-    display: none;
-  }
-  table {
-    width: 100%;
-  }
-</style>
-
-扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
-
-![bg right:32% fit](images/qq-group-2021.png)
-
-|||
-|:-|:-|
-|**动手实践**<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境**<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
-|**C/C++**<br/>- 作业程序<br/>- 多模块工程(make, autoconf…)<br/>- 知名程序库(STL, Boost, MPI…)|**Java**<br/>- 课程作业<br/>- 构建工具(Ant, Maven, SBT…)<br/>- 知名工程(Hadoop, Spark, Giraph…)|
-|**Python**<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**还接触过**<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
-|**资料来源**<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
-
----
-
-## 或者扫描问卷条码
-
-![bg right:32% fit](images/qq-group-2021.png)
-
-![h:450](images/class-survey.jpg)
 
 ---
 

@@ -100,17 +100,17 @@ title: 数据中心技术
   }
 </style>
 
-- **论文研讨** *40%*
+- **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文，**模拟学术会议**
     - 第一次课内完成 Schedule，确认 12 个 Session Chair 和 48 篇 Paper
     - 每位 Presenter 有 12 分钟汇报和 3 分钟讨论，由 Session Chair 严格组织并计时
     - Session Chair 组织得力可加分
-- **综述报告** *40%*
+- **综述报告** *30%*
   - 围绕自选研讨主题综述不少于3篇近3年CCF-A/B类会议、期刊论文
     - [**在线填报**](https://docs.qq.com/form/page/DREZhYWV1Q3hPbG1n?_w_tencentdocx_form=1)，注意腾讯收集表提交时限和各栏字数要求
     - 内容按计算机学报样式([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版后上传仓库文件夹
     - 打印纸质版（A4）
-- **考试** *20%*
+- **考试** *40%*
 - 电子版(**汇报胶片、综述报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
   - <https://github.com/cs-course/data-center-course-assignment-2022>
 
@@ -145,12 +145,6 @@ title: 数据中心技术
 
 ---
 
-## 后续内容
-
-- [数据中心技术总体介绍](data-center-intro)
-
----
-
 ## 研讨论文列表
 
 ![bg right](images/simulated-sessions.png)
@@ -163,3 +157,55 @@ title: 数据中心技术
 也可以点击
 
 - [【腾讯文档】数据中心技术课程论文研讨](https://docs.qq.com/doc/DRG1CZFZmaFRRYkJj)
+
+---
+
+## 课堂背景调查
+
+<style scoped>
+  p {
+    font-size: 20px;
+  }
+  td {
+    font-size: 16px;
+    vertical-align:text-top;
+    color: #003FFF;
+  }
+  th {
+    display: none;
+  }
+  table {
+    width: 100%;
+  }
+</style>
+
+扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
+
+![bg right:32% fit](images/qq-group-2022.jpg)
+
+|||
+|:-|:-|
+|**动手实践**<br/>- 在裸机上安装过系统<br/>- 自己用零件装配台式机<br/>- 实验室的机群是我配的|**系统环境**<br/>- 只用桌面(GNOME, KDE…)<br/>- 命令行(bash, zsh, fish…)<br/>- 5个以上GNU工具(grep, sed, awk…)<br/>- 远程操作(ssh, tmux, screen…)<br/>- 拥有VPS、云主机|
+|**C/C++**<br/>- 作业程序<br/>- 多模块工程(make, autoconf…)<br/>- 知名程序库(STL, Boost, MPI…)|**Java**<br/>- 课程作业<br/>- 构建工具(Ant, Maven, SBT…)<br/>- 知名工程(Hadoop, Spark, Giraph…)|
+|**Python**<br/>- 一般脚本<br/>- 管理过系统、运行过网站<br/>- 跑过大数据或ML任务(Tensorflow, torch…)|**还接触过**<br/>- 专业语言(Matlab, R)<br/>- 流行语言(Go, JS, Rust)<br/>- 特长语言(Scala, Julia)|
+|**资料来源**<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
+
+---
+
+## 或者扫描问卷条码
+
+![bg right:32% fit](images/qq-group-2022.jpg)
+
+![h:450](images/class-survey.jpg)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+[数据中心技术总体介绍](data-center-intro)
