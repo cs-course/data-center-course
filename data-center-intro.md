@@ -166,7 +166,19 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
 
 ---
 
-## 计算机系统结构的天然延伸
+## 计算机系统结构拓展
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+![bg right fit](images/caqa6e.jpg)
+
+- [计算机系统结构教程（第2版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_05056301.html)， 清华大学出版社，2014
+- [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
+- [**计算机体系结构：量化研究方法**（第5版）](https://item.jd.com/19082510945.html), 机械工业出版社, 2013
 
 ---
 
