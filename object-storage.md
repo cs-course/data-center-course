@@ -558,6 +558,18 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+## 对象存储实验
+
+- 实验说明
+  - <https://github.com/cs-course/obs-tutorial>
+  - <https://gitee.com/shi_zhan/obs-tutorial>
+- 实验内容
+  - 实践Minio、mock_s3…，认识对象存储系统
+  - 熟悉功能特性：RESTful接口
+  - 部署Web应用
+
+---
+
 ## 对象存储系统的问题之一：长尾
 
 <style scoped>
@@ -946,7 +958,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 对象存储实验
+## 对象存储实验…
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
@@ -1085,6 +1097,17 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 - [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
 
 ![h:400](images/Basic-structure-of-queueing-models.png)
+
+---
+
+## 对象存储实验……
+
+- 实验说明
+  - <https://github.com/cs-course/obs-tutorial>
+  - <https://gitee.com/shi_zhan/obs-tutorial>
+- 实验内容
+  - 网络存储仿真
+  - 排队论模型
 
 ---
 
