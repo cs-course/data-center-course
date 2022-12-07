@@ -100,18 +100,18 @@ title: 数据中心技术
   }
 </style>
 
-- **论文研讨** *30%*
+- **论文研讨** *40%*
   - 制作胶片汇报一篇相关论文，**模拟学术会议**
     - 第一次课内完成 Schedule，确认 12 个 Session Chair 和 48 篇 Paper
     - 每位 Presenter 有 12 分钟汇报和 3 分钟讨论，由 Session Chair 严格组织并计时
     - Session Chair 组织得力可加分
-- **综述报告** *30%*
-  - 围绕自选研讨主题综述不少于3篇近3年CCF-A/B类会议、期刊论文
-    - 内容按计算机学报样式([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版后上传仓库文件夹
+- **综述报告** *60%*
+  - 围绕自选研讨主题综述**不少于5篇近3年CCF-A/B类会议、期刊论文**
+    - 内容按**计算机学报样式**([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版后上传仓库文件夹
     - 打印纸质版（A4）
-- **考试** *40%*
 - 电子版(**汇报胶片、综述报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
   - <https://github.com/cs-course/data-center-course-assignment-2022>
+  - 课程结束一周内提交(**2022-12-29**)，提供合理原因可延期一周(**2023-01-05**)
 
 ---
 
