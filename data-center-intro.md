@@ -974,8 +974,7 @@ $1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
 
 Credit
 
-By Jeff Dean: <http://research.google.com/people/jeff/>
-Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+By Jeff Dean: <http://research.google.com/people/jeff/>, Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
 
 ---
 
@@ -1002,6 +1001,19 @@ Source: <https://colin-scott.github.io/personal_website/research/interactive_lat
 ![bg 68%](images/cpu-operations.png)
 
 Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-know>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/Micron-Computex-2021-Keynote-Memory-Pyramid.jpg)
+
+<https://www.servethehome.com/compute-express-link-cxl-latency-how-much-is-added-at-hc34/>
 
 ---
 

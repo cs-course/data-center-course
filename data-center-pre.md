@@ -11,7 +11,7 @@ title: 数据中心技术
 
 **施展，童薇，胡燏翀**
 武汉光电国家研究中心，计算机学院
-2022-11-03 至 2022-12-22
+2023-11-03 至 2023-12-22
 
 ---
 
@@ -24,7 +24,7 @@ title: 数据中心技术
 </style>
 
 - 课程资料 <https://github.com/cs-course/data-center-course>  
-- 作业库 <https://github.com/cs-course/data-center-course-assignment-2022>
+- 作业库 <https://github.com/cs-course/data-center-course-assignment-2023>
 - 参考书
   - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
   - [**计算机体系结构：量化研究方法**（第5版）](https://item.jd.com/19082510945.html), 机械工业出版社, 2013
@@ -111,7 +111,7 @@ title: 数据中心技术
     - 打印纸质版（A4）
 - 电子版(**汇报胶片、综述报告**)向作业库提交，纸质版只需综述报告，双面打印交国光C523
   - <https://github.com/cs-course/data-center-course-assignment-2022>
-  - 课程结束三周内提交(**2023-01-12**)，受疫情影响可延期至春节前(**2023-01-19**)
+  - 课程结束一周内提交(**2023-01-12**)，有特殊情况可延期一周(**2023-01-17**)
 
 ---
 

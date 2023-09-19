@@ -612,7 +612,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 **长尾**（The Long Tail）这一概念是由《连线》杂志主编Chris Anderson在2004年10月的“长尾”一文中最早提出，用来描述诸如亚马逊和Netflix之类网站的商业和经济模式。
 
-实际上是统计学中幂律（Power Laws）和帕累托分布（Pareto distributions）特征的一个口语化表达。
+实际上是统计学中**幂律**（Power Laws）和**帕累托分布**（Pareto distributions）特征的一个口语化表达。
 
 ---
 
@@ -652,7 +652,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![bg opacity:.3](images/distributed-storage.png)
 
-规模化系统以扩展应对需求增长
+系统以规模扩展应对需求增长
 
 ---
 
@@ -669,7 +669,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ![bg opacity:.3](images/workload-plot-2.jpg)
 
-可是背后有着怎样的代价？
+那么代价是？
 
 <!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
 
