@@ -405,7 +405,7 @@ $$
 
 <style scoped>
   li {
-    font-size: 22px;
+    font-size: 20px;
   }
   p {
     font-size: 14px;
