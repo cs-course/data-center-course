@@ -256,7 +256,7 @@ Lecture12 Cache Memory
 
 #### 实验准备
 
-- [实验扩展](https://gitee.com/computer-architecture-hust/computer-architecture-experiment), [作业参考](https://github.com/cs-course/bfs-cachelab-handin)
+- [实验扩展](https://gitee.com/computer-architecture-hust/computer-architecture-experiment), [作业参考](https://github.com/cs-course/bfs_cachelab_handin)
   - 基于 CacheLab 观察经典图算法访存行为
 - [辅助工具](https://github.com/ShiZhan/generator)
   - 4种经典随机图生成器，合成具备自然图特征的实验数据集
