@@ -883,6 +883,24 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 
 ---
 
+## 国家的愿景？
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+</style>
+
+---
+
+国家算力基础设施
+
+Datacenters as a Computer
+
+---
+
 ## 隐藏在规模化的背后的是？
 
 <style scoped>
@@ -1094,6 +1112,10 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
+国内统计数据
+
+---
+
 <style scoped>
   p {
     padding-top: 620px;
@@ -1174,158 +1196,21 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 ## 学习目的
 
 - 数据中心技术的**基础知识**
-- 大规模计算机系统**响应能力问题**
+- 大规模计算机系统**性能、可用性、可靠性**问题
 - 经典的**应对方法**
-
----
-
-## 实践基础
-
-- 建立一套数据中心实验平台
-  1. Linux系统
-  2. 虚拟机、容器、存储
-  3. 监控管理工具
-- 还有**亿点点**细节
-
-![bg right fit](images/3steps.png)
-
----
-
-### 选择合适的系统
-
-![bg fit right:30%](images/toolbox-small.png)
-
-怎么给自己准备一套便利的Linux学习环境？
-
-- **Linux** 直接安装，多重引导
-- **Mac/Win** 虚拟机、容器、编排工具
-- **Win**
-  - 虚拟机、容器、编排工具
-  - Windows Subsystem Linux (WSL, WSL2)
-  - Cygwin, MSYS (MinGW)
-
----
-
-### 准备和熟悉环境
-
-<style scoped>
-  li, p {
-    font-size: 27px;
-  }
-</style>
-
-- **目标**：
-  - 远程连接主机、远程执行命令
-  - 检查服务器状态:
-    - 发行版、内核版本、时间、网络、进程、设备、磁盘、文件系统
-    - *uname, date, ifconfig, ps, /proc, /dev, df, du, mount*
-  - 代码、脚本、配置管理初步
-    - 版本管理 *git, github, bitbucket, gitee*
-    - 文本操作 *cat, head, tail, grep, sed, awk, cut, paste, join*
-  - 一两套批量部署工具 *ansible, puppet, cfengine*
-    - 添加和更新软件安装源
-    - 想一想，怎样提高效率？学校源 <http://mirrors.hust.edu.cn/>、本地源
-  - 集群时间同步 *ntp, chrony*
-
----
-
-### 命令行操作入门
-
-- 系统状态
-  - 有哪些关键目录
-  - 系统信息的跟踪和采集
-- 信息处理
-  - 控制台文本的读写、查找、提取、统计、排序、去重、合并
-- 数据处理
-  - 压缩与解压缩、二进制转换
-  - 特殊设备(/dev/null, /dev/zero, /dev/random)
-- 工具之间的联动与**KISS原则**
-
----
-
-### 初步尝试管理
-
-- 编制bash脚本
-  - 循环、参数、管道与重定向
-- 远程管理方法
-  - 网络管道、文件同步、终端会话保持
-- 任务执行
-  - 后台执行、控制台管理
-  - 定时重复、计划任务
-- 配置和脚本管理
-  - git与github
-
----
-
-### 逐渐直面复杂
-
-<style scoped>
-  h3 {
-    color: #F0F0F0;
-  }
-</style>
-
-![bg cover](images/emergency.jpg)
-
----
-
-### 数据为王
-
-![bg fit](images/keep-calm.png)
-
----
-
-<style scoped>
-  th {
-    font-size: 25px;
-  }
-  td {
-    font-size: 20px;
-  }
-  table {
-    width: 100%;
-  }
-</style>
-
-|微观因素|宏观因素|环境因素|
-|:-|:-|:-|
-|*Understanding Disk Failure Rates: What Does an MTTF of 1,000,000 Hours Mean to You?*|*Failure Trends in a Large Disk Drive Population*|*Datacenter Scale Evaluation of the Impact of Temperature on Hard Disk Drive Failures*|
-|![w:355](images/understanding-disk-failure.png)|![w:355](images/failure-trends.png)|![w:355](images/datacenter-scale-evaluation.png)|
-
----
-
-### 更进一步尝试
-
-- Dashboard仪表盘
-  - Grafana
-    - <https://grafana.com>
-    - <https://github.com/grafana/grafana>
-  - Prometheus
-    - <https://prometheus.io/>
-    - <https://github.com/prometheus/prometheus>
-  - InfluxDB & Telegraf
-    - <https://www.influxdata.com>
-
----
-
-![bg fit](images/prometheus-architecture.png)
-
----
-
-![bg fit](images/APM-Diagram-1.webp)
 
 ---
 
 ## 后续内容
 
 - 数据中心专题讲座与实践
+  - **对象存储**技术
+    - [尾延迟问题](object-storage)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
+    - [服务质量保障问题](qos-guarantee)
   - 数据中心**固态存储**技术
     - 开放通道固态存储OC-SSD、区域命名空间固态存储ZNS-SSD
   - 数据中心**纠删码**技术
     - 纠删码、再生码
-  - **对象存储**技术
-    - [尾延迟问题](object-storage)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
-    - [服务质量保障问题](qos-guarantee)
 
 ---
 

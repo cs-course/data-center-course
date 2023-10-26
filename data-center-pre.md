@@ -113,7 +113,7 @@ title: 数据中心技术
   - <https://github.com/cs-course/data-center-course-assignment-2022>
   - 课程结束一周内提交(**2023-12-29**)，有特殊情况可延期一周(**2024-01-05**)
 - **开卷考试** 30%
-  - 综合应用题x3
+  - 综合应用题x3(暂定**2023-12-30**)
 
 ---
 
@@ -142,7 +142,7 @@ title: 数据中心技术
 | 7 | 论文研讨 | 12-12, 12-14 | D9-D309, D311 |
 | 8 | 论文研讨 | 12-19, 12-21 | D9-D309, D311 |
 
-\* *12 presenters in 3 sessions*
+\* *每周11名同学，每人15分钟报告，3~5分钟问答。*
 
 ---
 
@@ -152,8 +152,7 @@ title: 数据中心技术
 
 扫码在线填表
 
-- 确认 **12 位** 分会主席
-- 选择 **48 篇** 拟汇报论文
+- 选择 **43 篇** 拟汇报论文
 
 也可以点击
 
@@ -182,7 +181,7 @@ title: 数据中心技术
 
 扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
-![bg right:32% fit](images/qq-group-2022.jpg)
+![bg right:32% fit](images/qq-group-2023.jpg)
 
 |||
 |:-|:-|
@@ -195,7 +194,7 @@ title: 数据中心技术
 
 ## 或者扫描问卷条码
 
-![bg right:32% fit](images/qq-group-2022.jpg)
+![bg right:32% fit](images/qq-group-2023.jpg)
 
 ![h:450](images/class-survey.jpg)
 
