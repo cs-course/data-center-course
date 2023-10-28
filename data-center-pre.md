@@ -148,15 +148,16 @@ title: 数据中心技术
 
 ## 研讨论文列表
 
-![bg right](images/simulated-sessions.png)
+![bg right](images/reading-list-2023.png)
 
 扫码在线填表
 
-- 选择 **43 篇** 拟汇报论文
+- 每人选择1篇拟汇报论文
+- 选择范围：ATC/OSDI23相关论文合计97篇
 
 也可以点击
 
-- [【腾讯文档】数据中心技术课程论文研讨](https://docs.qq.com/doc/DRG1CZFZmaFRRYkJj)
+- [【腾讯文档】数据中心技术课程论文研讨2023](https://docs.qq.com/sheet/DRFF3T0p1b05mcnJO)
 
 ---
 
