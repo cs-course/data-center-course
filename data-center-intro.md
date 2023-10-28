@@ -176,9 +176,9 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
 
 ![bg right fit](images/caqa6e.jpg)
 
-- [计算机系统结构教程（第2版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_05056301.html)， 清华大学出版社，2014
+- [计算机系统结构教程（第3版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09019101.html)， 清华大学出版社，2021
 - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
-- [**计算机体系结构：量化研究方法**（第5版）](https://item.jd.com/19082510945.html), 机械工业出版社, 2013
+- [**计算机体系结构：量化研究方法**（第6版）](https://item.jd.com/13427803.html), 人民邮电出版社, 2022
 
 ---
 
@@ -195,7 +195,7 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
   }
 </style>
 
-- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
+- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)![h:33](images/white-flower-icon-5.jpg)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 - [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
 - [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
 - [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
