@@ -172,6 +172,27 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
 
 ---
 
+## 多方需求驱动…
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+
+- The extraordinary growth in the use of Artificial Intelligence (AI) in various sectors of activity is posing challenges and requiring changes in the design and operation of datacenters so that they can meet ever-increasing demand.
+
+![w:1100](images/schneider1.jpg)
+
+Source:
+[Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
+[AI and the Data Center: Challenges and Investment Strategies](https://www.informationweek.com/it-infrastructure/ai-and-the-data-center-challenges-and-investment-strategies-), Information Week, 2023
+
+---
+
 ## 计算机系统结构拓展
 
 <style scoped>
