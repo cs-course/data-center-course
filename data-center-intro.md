@@ -142,6 +142,12 @@ Source: [On Global Electricity Usage of Communication Technology: Trends to 2030
 
 ---
 
+百度指数
+
+![w:1100](images/baidu-index-datacenter.jpg)
+
+---
+
 ## 多方需求驱动
 
 <style scoped>
