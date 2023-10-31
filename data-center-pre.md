@@ -15,24 +15,6 @@ title: 数据中心技术
 
 ---
 
-## 基本信息
-
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-</style>
-
-- 课程资料 <https://github.com/cs-course/data-center-course>  
-- 作业库 <https://github.com/cs-course/data-center-course-assignment-2023>
-- 参考书
-  - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
-  - [**计算机体系结构：量化研究方法**（第6版）](https://item.jd.com/13427803.html), 人民邮电出版社, 2022
-  - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
-  - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
-
----
-
 ## 授课教师
 
 - **施展** 副教授，武汉光电国家研究中心，存储部，C523
@@ -68,6 +50,98 @@ title: 数据中心技术
   - 主页
     - <http://yuchonghu.com>
     - <http://faculty.hust.edu.cn/huyuchong/zh_CN/index.htm>
+
+---
+
+## 基本信息
+
+<!-- paginate: true -->
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+- 课程资料 <https://github.com/cs-course/data-center-course>  
+- 作业库 <https://github.com/cs-course/data-center-course-assignment-2023>
+- 参考书
+  - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
+  - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
+  - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
+  - [计算机系统结构教程（第3版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09019101.html)， 清华大学出版社，2021
+
+---
+
+## 计算机系统结构拓展
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+![bg right fit](images/caqa6e.jpg)
+
+- [**计算机体系结构：量化研究方法**（第6版）](https://item.jd.com/13427803.html), 人民邮电出版社, 2022
+
+![w:270](images/WSC-in-CAQA6e.png)
+
+---
+
+## 仓储级计算机
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 25px;
+    font-style: italic;
+    color: #F07000;
+  }
+</style>
+
+- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)![h:33](images/white-flower-icon-5.jpg)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
+- [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
+- [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
+- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
+
+Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
+
+<!--
+计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
+
+First awarded in 1979, it was named for John Presper Eckert and John William Mauchly, who between 1943 and 1946 collaborated on the design and construction of the first large scale electronic computing machine, known as ENIAC, the Electronic Numerical Integrator and Computer.
+-->
+
+---
+
+Barroso was born in Brazil and had a bachelor’s and master’s degree in electrical engineering from the Pontifical Catholic University of Rio de Janeiro.
+
+In the United States, he did a doctorate in computer engineering at the University of Southern California and worked with processors at Compaq and Digital Equipment Corporation. In 2001, he joined Google as a software engineer.
+
+---
+
+According to an article in Wired, Barroso had never designed a datacenter until he received this request from Google. He came up with the concept of “datacenter as a computer”, building data centres with low-cost components, as we know them today.
+
+He comments that **the lack of experience in datacenter design may have been an advantage**, as we questioned almost every aspect of how these facilities were designed. Perhaps the most important thing was having **the opportunity to look at the entire design**, from the cooling towers to the compilers, and this quickly revealed important opportunities for improvement. Barroso’s idea quickly spread throughout Silicon Valley, among the datacenters of other Internet giants.
+
+---
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+  Barroso shared three lessons he learnt in the first half of his career:
+
+  1. **Consider the winding road**: Although there are always risks when embarking on somethingnew, the upside of being adventurous in your professional career can be incredibly rewarding.
+
+  2. **Develop respect for the obvious**: Big problems and important issues have one characteristic incommon: they tend to be simple to understand but difficult to solve. They are obvious and deserveattention.
+
+  3. **Even success has an expiry date**: Some of the most intellectual moments in Barrosa’s careercame when he was forced to abandon his original position, in which he had invested significanttime and effort and achieved some success.
 
 ---
 

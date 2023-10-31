@@ -181,59 +181,46 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
   p {
     font-size: 18px;
   }
-</style>
-
-- The extraordinary growth in the use of Artificial Intelligence (AI) in various sectors of activity is posing challenges and requiring changes in the design and operation of datacenters so that they can meet ever-increasing demand.
-
-![w:1100](images/schneider1.jpg)
-
-Source:
-[Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
-[AI and the Data Center: Challenges and Investment Strategies](https://www.informationweek.com/it-infrastructure/ai-and-the-data-center-challenges-and-investment-strategies-), Information Week, 2023
-
----
-
-## 计算机系统结构拓展
-
-<style scoped>
-  li {
-    font-size: 30px;
+  td {
+    vertical-align:text-top;
+    color: #003FFF;
+  }
+  table {
+    font-size: 25px;
+    width: 100%;
   }
 </style>
 
-![bg right fit](images/caqa6e.jpg)
+- The extraordinary growth in the use of **Artificial Intelligence (AI)** in various sectors of activity is posing challenges and requiring changes in the design and operation of datacenters so that they can meet ever-increasing demand.
 
-- [计算机系统结构教程（第3版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09019101.html)， 清华大学出版社，2021
-- [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
-- [**计算机体系结构：量化研究方法**（第6版）](https://item.jd.com/13427803.html), 人民邮电出版社, 2022
+|GPU|TDP (W)|TFLOPS (Training)|Over V100|TOPS (Inference)|Over V100|
+|:-|:-|:-|:-|:-|:-|
+|V100 SXM2 32GB|300|15.7|1X   |62   |1X   |
+|A100 SXM 80GB |400|156 |9.9X |624  |10.1X|
+|H100 SXM 80GB |700|500 |31.8X|2,000|32.3X|
+
+Source: [Schneider Electric – Energy Management Research Center White Paper 110 Version 1.1](https://www.se.com/ww/en/download/document/SPD_WP110_EN/?=1)
 
 ---
 
-## 仓储级计算机
+## 多方需求驱动……
 
 <style scoped>
   li {
     font-size: 30px;
   }
   p {
-    font-size: 25px;
-    font-style: italic;
-    color: #F07000;
+    font-size: 18px;
   }
 </style>
 
-- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)![h:33](images/white-flower-icon-5.jpg)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
-- [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
-- [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
-- [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
+- An estimate by Schneider Electric, a company that operates inthe field of energy systems management and automation, points out that AI currently represents 4.3 GW of energy demand, a figure that is expected to grow at a **compound annual rate of 26% to36%**, resulting in a total of between 13.5 GW and 20 GW by 2028.
 
-Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
+![w:800](images/schneider1.jpg)
 
-<!--
-计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
-
-First awarded in 1979, it was named for John Presper Eckert and John William Mauchly, who between 1943 and 1946 collaborated on the design and construction of the first large scale electronic computing machine, known as ENIAC, the Electronic Numerical Integrator and Computer.
--->
+Source:
+[Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
+[AI and the Data Center: Challenges and Investment Strategies](https://www.informationweek.com/it-infrastructure/ai-and-the-data-center-challenges-and-investment-strategies-), Information Week, 2023
 
 ---
 
@@ -250,9 +237,15 @@ First awarded in 1979, it was named for John Presper Eckert and John William Mau
 - **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
   - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
   - 以人工智能、云计算、区块链等为代表的新技术基础设施
-  - 以**数据中心**、智能计算中心为代表的算力基础设施
+  - 以**数据中心**、**智能计算中心**为代表的算力基础设施
 
 Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
+
+---
+
+![bg fit](images/datacenter-trend.png)
+
+## 过去20年归纳
 
 ---
 
@@ -922,9 +915,38 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 
 ---
 
-国家算力基础设施
+### 数据中心集群
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
+![h:500](images/china-multi-cloud.png)
+
+---
+
+### 国家算力网
+
+<style scoped>
+  h3 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+  p {
+    text-align: center;
+  }
+</style>
 
 Datacenters as a Computer
+
+全国一盘棋：“东数西算”
+
+……
+
+***Nation as a Computer?***
 
 ---
 
@@ -1139,7 +1161,15 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
-国内统计数据
+### 国内统计数据
+
+<style scoped>
+  h3 {
+    text-align: center;
+  }
+</style>
+
+![bg fit](images/china-datacenter-pue.png)
 
 ---
 
