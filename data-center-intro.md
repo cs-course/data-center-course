@@ -340,7 +340,7 @@ Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia9
 ### “十大”
 
 <style scoped>
-  h2 {
+  h3 {
     color: #F0F0F0;
   }
   p, a {
