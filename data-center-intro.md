@@ -23,17 +23,27 @@ math: katex
 
 <!-- paginate: true -->
 
-- 数据中心技术
-  - 定义、起源和历史
-  - 经典案例
-  - 发展趋势
-  - 主要问题
-- 学习目的
-- 实践基础
+- 发展现状和驱动力
+- 定义、起源和历史
+- 数据中心经典案例
+- 超算和数据中心
+- 主要问题和挑战
 
 ---
 
-## 刚刚发生的事情背后
+## 发展现状
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+### 刚刚发生的事情背后
 
 <style scoped>
   p {
@@ -48,7 +58,7 @@ Source: <https://codecondo.com/web-application-architecture/>
 
 ---
 
-## 在腾讯公司的平台上
+### 在腾讯公司的平台上
 
 <style scoped>
   table, p {
@@ -114,7 +124,7 @@ Source: <https://datareportal.com/reports/>
 
 ---
 
-## 随之而来的数据洪流
+### 随之而来的数据洪流
 
 <style scoped>
   li, p {
@@ -128,7 +138,7 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 
 ---
 
-## 从侧面观察这股洪流
+### 从侧面观察这股洪流
 
 <style scoped>
   p {
@@ -148,7 +158,19 @@ Source: [On Global Electricity Usage of Communication Technology: Trends to 2030
 
 ---
 
-## 多方需求驱动
+## 核心业务驱动
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+### 来自多方的发展需求
 
 <style scoped>
   li {
@@ -172,7 +194,7 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
 
 ---
 
-## 多方需求驱动…
+### AI大势所趋
 
 <style scoped>
   li {
@@ -203,7 +225,7 @@ Source: [Schneider Electric – Energy Management Research Center White Paper 11
 
 ---
 
-## 多方需求驱动……
+### 飙升的能源消耗
 
 <style scoped>
   li {
@@ -224,7 +246,7 @@ Source:
 
 ---
 
-## 新基建
+### 新基建倡议
 
 <style scoped>
   li, p {
@@ -245,11 +267,23 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ![bg fit](images/datacenter-trend.png)
 
-## 过去20年归纳
+### 过去20年归纳
 
 ---
 
-## 定义、起源和历史
+## 起源、历史和定义
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+### 起源和历史
 
 - 数据中心的概念可以追溯到互联网时代的早期
 - ARPANET (70s) 与 WWW (90s)
@@ -261,7 +295,49 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
-## 经典案例
+### 标准规范
+
+<style scoped>
+  li, p {
+    font-size: 25px;
+  }
+</style>
+
+![bg right fit](images/ANSI_TIA-942_Standard.png)
+
+- 数据中心设备及系统可靠性规范 ANSI/TIA-942
+  - 一个**集中存储、处理和分发大量数据的设施**，用于支持各种信息技术服务和业务运营。
+  - 通常包括服务器、网络设备、存储设备、电力供应系统、冷却系统等基础设施，并**提供安全性、稳定性和可靠性保障**。
+  - 为企业和组织提供高效的数据管理和处理能力，支持**云计算、大数据分析、在线服务等应用场景**。
+
+---
+
+### 经典分级
+
+|Tier|Feature|
+|:-|:-|
+|Tier 1 –– basic data center|no redundancy|
+|Tier 2 –– redundant components|Single distribution path with redundant components
+|Tier 3 –– concurrently maintainable|Multiple distribution paths with only one active|
+|Tier 4 –– fault tolerant|Multiple active distribution paths|
+
+Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
+
+---
+
+## 数据中心经典案例
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+### “十大”
 
 <style scoped>
   h2 {
@@ -281,10 +357,10 @@ Source: [Top 10 Data Centers in the World Today](https://www.analyticsinsight.ne
 
 ---
 
-### ACC7
+#### ACC7
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
   }
   p, li,a {
@@ -304,10 +380,10 @@ Source: [New Data Center Design Drives Efficiency Gains for Dupont Fabros](https
 
 ---
 
-### Tahoe Reno 1
+#### Tahoe Reno 1
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
   }
   p, li, a {
@@ -327,10 +403,10 @@ Source: [Switch opens Tahoe Reno 1, "world’s largest" colo data center](https:
 
 ---
 
-### Range International Information Group
+#### Range International Information Group
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
   }
   p, li, a {
@@ -950,7 +1026,7 @@ Datacenters as a Computer
 
 ---
 
-## 隐藏在规模化的背后的是？
+## 主要问题和挑战
 
 <style scoped>
   h2 {
@@ -958,7 +1034,12 @@ Datacenters as a Computer
     text-align: center;
     font-size: 70px;
   }
+  p {
+    text-align: center;
+  }
 </style>
+
+隐藏在规模化的背后的是？
 
 ---
 
@@ -966,10 +1047,7 @@ Datacenters as a Computer
 
 <style scoped>
   p {
-    font-size: 27px;
-  }
-  li {
-    font-size: 18px;
+    font-size: 25px;
   }
 </style>
 
@@ -987,12 +1065,12 @@ Datacenters as a Computer
 ~thousands of **hard drive failures**
 **slow disks, bad memory, misconfigured machines, flaky machines**, etc.
 
-- Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
-- Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2009
+Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
+Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2009
 
 ---
 
-### 主要问题
+### 常见问题
 
 - 可靠性
   - Failover to other replicas/datacenters.
@@ -1005,7 +1083,7 @@ Datacenters as a Computer
 
 ---
 
-### 关于延迟的真相
+### 严峻的延迟难题
 
 <style scoped>
   table {
@@ -1042,6 +1120,8 @@ $1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
 Credit
 
 By Jeff Dean: <http://research.google.com/people/jeff/>, Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+
+<!-- 延迟和可靠性问题还将在随后的讲座中详谈 -->
 
 ---
 
