@@ -23,15 +23,15 @@ math: katex
 
 <!-- paginate: true -->
 
-- 发展现状和驱动力
-- 定义、起源和历史
-- 数据中心经典案例
+- 背景现状和驱动力
+- 历史起源和定义
+- 经典案例
 - 超算和数据中心
 - 主要问题和挑战
 
 ---
 
-## 发展现状
+## 背景现状
 
 <style scoped>
   h2 {
@@ -203,13 +203,12 @@ Source: [Understanding the drivers behind data center demand](https://www.datace
   p {
     font-size: 18px;
   }
-  td {
-    vertical-align:text-top;
-    color: #003FFF;
-  }
   table {
-    font-size: 25px;
+    font-size: 22px;
     width: 100%;
+  }
+  th {
+    background: #007FFF;
   }
 </style>
 
@@ -232,13 +231,26 @@ Source: [Schneider Electric – Energy Management Research Center White Paper 11
     font-size: 30px;
   }
   p {
-    font-size: 18px;
+    font-size: 14px;
+  }
+  table {
+    font-size: 22px;
+    width: 100%;
+  }
+  th {
+    background: #007FFF;
   }
 </style>
 
 - An estimate by Schneider Electric, a company that operates inthe field of energy systems management and automation, points out that AI currently represents 4.3 GW of energy demand, a figure that is expected to grow at a **compound annual rate of 26% to36%**, resulting in a total of between 13.5 GW and 20 GW by 2028.
 
-![w:800](images/schneider1.jpg)
+|Schneider Electric estimate|2023|2028|
+|:-|-:|-:|
+|Total data center workload|54 GW|90 GW|
+|AI workload|4.3 GW|13.5-20 GW|
+|AI workload (% of total)|8%|15-20%|
+|AI workload (Training vs Inference)|20% Training, 80% Inference|15% Training, 85% Inference|
+|AI workload (Central vs Edge)|95% Central, 5% Edge|50% Central, 50% Edge|
 
 Source:
 [Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
@@ -265,13 +277,7 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
-![bg fit](images/datacenter-trend.png)
-
-### 过去20年归纳
-
----
-
-## 起源、历史和定义
+## 历史起源和定义
 
 <style scoped>
   h2 {
@@ -283,15 +289,16 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
-### 起源和历史
+### 历史起源
 
-- 数据中心的概念可以追溯到互联网时代的早期
+- 数据中心的概念可以追溯到互联网时代的早期 (60s)
 - ARPANET (70s) 与 WWW (90s)
   - **应用日渐丰富**
     - EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
   - **网络能力增长**
     - 拨号、ADSL、宽带、光纤入户，2G至5G ...
 - Server-side Computing -- **Cloud**
+  - 2006年，亚马逊开创性发布了Amazon Web Services云计算平台
 
 ---
 
@@ -305,23 +312,48 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ![bg right fit](images/ANSI_TIA-942_Standard.png)
 
-- 数据中心设备及系统可靠性规范 ANSI/TIA-942
+- 数据中心设备及系统可靠性规范 [ANSI/TIA-942](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)，2005年发表，2010、2014年修订
   - 一个**集中存储、处理和分发大量数据的设施**，用于支持各种信息技术服务和业务运营。
   - 通常包括服务器、网络设备、存储设备、电力供应系统、冷却系统等基础设施，并**提供安全性、稳定性和可靠性保障**。
   - 为企业和组织提供高效的数据管理和处理能力，支持**云计算、大数据分析、在线服务等应用场景**。
 
 ---
 
-### 经典分级
+### 分级
+
+<style scoped>
+  th {
+    background: #007FFF;
+  }
+</style>
 
 |Tier|Feature|
 |:-|:-|
-|Tier 1 –– basic data center|no redundancy|
-|Tier 2 –– redundant components|Single distribution path with redundant components
-|Tier 3 –– concurrently maintainable|Multiple distribution paths with only one active|
-|Tier 4 –– fault tolerant|Multiple active distribution paths|
+|**Tier 1** –– basic data center|no redundancy|
+|**Tier 2** –– redundant components|Single distribution path with redundant components
+|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
+|**Tier 4** –– fault tolerant|Multiple active distribution paths|
 
 Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
+
+---
+
+### 发展阶段
+
+![bg fit](images/datacenter-trend.png)
+
+---
+
+### 发展阶段…
+
+1. 计算中心阶段（2001-2006 年）
+    - 基础资源和设施**托管、维护**
+2. 信息中心阶段（2006-2012 年）
+    - 大型化、**虚拟化**、综合化
+3. 云中心阶段（2012-2019 年）
+    - **云计算**技术成熟，指标监控和度量
+4. 算力中心阶段（2019 年至今）
+    - **绿色化、智能化**，敏捷运营和精细管理
 
 ---
 
@@ -688,7 +720,6 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 <style scoped>
   p {
     font-size: 18px;
-    text-align: left;
   }
 </style>
 
@@ -698,7 +729,27 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-## 国内情况
+### 国内情况
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:500](images/Globa-and-China-DC-trend.png)
+
+Source: 中国数据中心产业发展白皮书，中国通服数字基建产业研究院，2023
+
+---
+
+### 细分类型
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
 
 ![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
 
@@ -706,15 +757,15 @@ Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odc
 
 ---
 
+### 地域分布
+
 <style scoped>
   p {
     font-size: 18px;
-    padding-top: 620px;
-    text-align: left;
   }
 </style>
 
-![bg fit](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+![h:500](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
 
 Source: <http://dcp.odcc.org.cn/idc/idcMap>
 
@@ -1347,7 +1398,7 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
   - 数据中心**固态存储**技术
     - 开放通道固态存储OC-SSD、区域命名空间固态存储ZNS-SSD
   - 数据中心**纠删码**技术
-    - 纠删码、再生码
+    - 纠删码、再生码、大条带
 
 ---
 
