@@ -753,7 +753,7 @@ Source: 中国数据中心产业发展白皮书，中国通服数字基建产业
 
 ![h:450](images/odcc-chart1.png)![h:450](images/odcc-chart5.png)
 
-Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odcc.org.cn/idc)
+Source: [中国信息通信研究院 开放数据中心委员会](https://www.odcc.org.cn/)
 
 ---
 
@@ -765,9 +765,9 @@ Source: [中国信息通信研究院 开放数据中心委员会](http://dcp.odc
   }
 </style>
 
-![h:500](images/dcp.odcc.org.cn_2021-11-06-163130.jpg)
+![h:500](images/china-datacenter-map.png)
 
-Source: <http://dcp.odcc.org.cn/idc/idcMap>
+Source: <https://www.newdc.org.cn/datacenter.html>
 
 ---
 
