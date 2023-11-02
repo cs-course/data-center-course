@@ -1050,7 +1050,13 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
   }
 </style>
 
-![h:500](images/china-multi-cloud.png)
+![bg right fit](images/china-multi-cloud.png)
+
+- 多云
+  - BAT新增机柜主要用于**云承载**，占比达60%-80%
+  - 从小规模单中心向**行业/区域大规模多中心、跨行业/区域中心**演进
+- 东数西算
+  - 呈现由**中心向周边**转移趋势，未来也将由**东部向西部**迁移
 
 ---
 
@@ -1069,11 +1075,35 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 
 Datacenters as a Computer
 
-全国一盘棋：“东数西算”
-
 ……
 
-***Nation as a Computer?***
+**Nation as a Computer?**
+
+---
+
+### 服务算力化
+
+![bg fit](images/china-new-construction.png)
+
+<!-- 算力 2.0 时代到来，算力由基础算力向智能算力发展，异构算力需求崛起。
+
+数字经济高质量发展诉求推动算力由 1.0 向 2.0 演进，单纯数据中心转向数算一体服务，并由基础算力向智算等高阶算力演化。算力 1.0 主要提供数据存储、分发服务，传统数据中心相当于一个算力“仓库”，对数据大规模处理和提供高性能计算（智算/超算）能力有限。算力 2.0 由新型数据中心提供大规模数据处理和高性能计算能力，具有互通性、智能性、融合性、绿色性、安全中立性等五大特征，自 2020 年“新基建”概念提出以后，国家着重开始规划新型算力中心，例如在 2020 年 4 月，国家发改委明确提出要推进新型算力设施规划。 -->
+
+---
+
+### 算力规模情况
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
+![h:450](images/china-computing-power.png)
+
+算力规模持续扩大，缩小与世界先进国家差距。
+
+<!-- 据 IDC、Gartner、中国通服数字基建产业研究院等多方机构测算，2020 年我国算力总规模达到 135EFlops，全球占比约为 31%，同比增长 55%，进一步缩小与美国等发达国家差距。其中，基础算力规模（FP32）达到 77EFlops，全球同类占比约为 26%，美国占比 43%；智能算力规模（换算为 FP32）达到 20EFlops，全球同类占比约为 19%，美国占比 52%，中美差距较大；超算算力规模（换算为 FP32）约为 2EFlops，全球同类占比约为 20%，美国占比 31%。 -->
 
 ---
 
@@ -1292,18 +1322,6 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
-### 国内统计数据
-
-<style scoped>
-  h3 {
-    text-align: center;
-  }
-</style>
-
-![bg fit](images/china-datacenter-pue.png)
-
----
-
 <style scoped>
   p {
     padding-top: 620px;
@@ -1353,6 +1371,68 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 ![bg](images/ali-qiandaohu-small.jpg)
 
 <https://alibabagroup.com/cn/news/article?news=p150908>
+
+---
+
+### 国内统计数据
+
+<style scoped>
+  h3 {
+    text-align: center;
+  }
+</style>
+
+![bg fit](images/china-datacenter-pue.png)
+
+<!-- 全国数据中心能效水平不断提升。根据 CDCC 统计分析，2021 年度全国数据中心平均 PUE 为 1.49，相较于 2019 年全国平均 PUE 近 1.6，全国数据中心 PUE 已有所提升。其中华北、华东的数据中心平均 PUE 接近 1.40，处于相对较优水平。华中、华南地区受地理位置、上架率及其他多种因素的影响，数据中心平均 PUE 值接近 1.6，存在较大的提升空间。 -->
+
+---
+
+### 国内统计数据…
+
+<style scoped>
+  h3 {
+    text-align: left;
+  }
+</style>
+
+![bg fit](images/china-datacenter-pue-area.png)
+
+<!-- 随着多个省市实际要求设计 PUE 不高于 1.2，液冷等新技术嵌入加速普及。“东数西算”政策明确要求到 2025 年，东部枢纽节点数据中心 PUE＜1.25，西部枢纽节点数据中心 PUE＜1.2，实际上目前很多省份数据中心项目可研审批均要求在设计 PUE 在1.2以下。同时在各大节点绿色节能示范工程实施推动下，数据中心建设低碳化进程有望进一步加快。按照赛迪顾问相关数据测算，液冷渗透率预计在 2025 年达到 20%。同时，在氟泵变频技术、热管多联技术、间接蒸发却机组（AHU 一体化机组）、智慧机房运维（AI 调优等）等其他新技术也在快速推广开来，数据中心能效优化空间有望进一步扩大。 -->
+
+---
+
+### 当下
+
+<style scoped>
+  h3, p {
+    color: #FFFFFF;
+  }
+</style>
+
+![bg opacity:.5 brightness:.5](images/green-sustainable-data-center-with-earth.jpg)
+
+数据中心可再生能源利用率在未来几年有望快速改善。根据国际环保组织绿色和平研究，2018 年中国数据中心火电用电量占其总用电量的 73%，而中国数据中心可再生能源使用比例仅为 23%，低于我国市电中可再生能源使用比例 26.5%。
+
+到 2020 年，我国数据中心可再生能源利用率达到 30%左右，相较于 2018 年已有所提升。
+
+未来几年，随着国家及各省市加大对数据中心化石能源使用的约束，新型储能、分布式光伏等技术及应用的规模化发展，数据中心可再生能源利用率将大幅提升，绿电占比或将大于 50%。
+
+---
+
+### 愿景
+
+<style scoped>
+  h3, p {
+    color: #FFFFFF;
+  }
+</style>
+
+![bg opacity:.5 brightness:.5](images/green-sustainable-data-center-with-earth.jpg)
+
+打造“零碳数据中心”成为数据中心低碳化发展的终极目标。随着国家对数据中心能耗管控趋严，以及 PUE 优化、源网荷储一体化技术发展，打造 100%可再生能源的“零碳数据中心”或“低碳数据中心”成为主流服务商的重要发展方向。
+
+如中国电信创新推动数字经济与青海清洁能源深度融合发展，打造中国电信数字青海绿色大数据中心，成为全国首个 100%清洁能源可溯源绿色大数据中心，也是首个数据中心源网荷储绿电智慧供应系统示范样板，重新定义了绿色大数据中心新标准和绿色能源消费新模式。
 
 ---
 
