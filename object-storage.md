@@ -23,10 +23,23 @@ title: 数据中心技术
 <!-- paginate: true -->
 
 - 对象存储背景
-- **尾延迟问题**
+- 典型对象存储系统
+- **长尾延迟问题**
 - 经典方法和实践
 - **预测问题**
 - 一些初步的探讨
+
+---
+
+## 对象存储背景
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
 
 ---
 
@@ -558,19 +571,21 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 对象存储实验
+## 课堂实践1
 
-- 实验说明
+- 说明
   - <https://github.com/cs-course/obs-tutorial>
   - <https://gitee.com/shi_zhan/obs-tutorial>
-- 实验内容
-  - 实践Minio、mock_s3…，认识对象存储系统
-  - 熟悉功能特性：RESTful接口
-  - 部署Web应用
+- 内容
+  - 认识对象存储系统
+    - 快速部署：Minio、mock_s3…
+    - 功能特性：RESTful接口
+  - 熟悉性能指标：吞吐率、带宽、延迟
+    - 观测工具：s3bench、COSbench…
 
 ---
 
-## 对象存储系统的问题之一：长尾
+## 对象存储系统的问题之一：长尾延迟
 
 <style scoped>
   h2 {
@@ -579,40 +594,6 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
     font-size: 60px;
   }
 </style>
-
----
-
-<style scoped>
-  p {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-    color: 0040FF;
-  }
-</style>
-
-![bg opacity:.3](images/distributed-storage.png)
-
-系统扩展固然可以应对应用扩展
-
----
-
-<style scoped>
-  p {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-    color: 0040FF;
-  }
-</style>
-
-![bg opacity:.3](images/workload-plot-1.jpg)
-
-![bg opacity:.3](images/workload-plot-2.jpg)
-
-可是背后有着怎样的代价？
-
-<!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
 
 ---
 
@@ -664,11 +645,49 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
   }
 </style>
 
-"**尾**"源自细微的变化
+"**长尾**"即不起眼事件的积累
 
 ![bg opacity:.3 fit](images/Thelongtailshift.webp)
 
 - <https://newmedia.fandom.com/wiki/The_Long_Tail>
+
+---
+
+### 对系统来说……
+
+<style scoped>
+  p {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3](images/distributed-storage.png)
+
+系统以规模扩展应对需求增长
+
+---
+
+### 那么代价是……
+
+<style scoped>
+  p {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 72px;
+    color: 0040FF;
+  }
+</style>
+
+![bg opacity:.3](images/workload-plot-1.jpg)
+
+![bg opacity:.3](images/workload-plot-2.jpg)
+
+不起眼的事件也在扩展中积累
+
+<!-- https://www.pdl.cmu.edu/Workload/index.shtml -->
 
 ---
 
@@ -686,9 +705,11 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
+### 『不起眼』的事件将一直存在
+
 <style scoped>
   p {
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
     font-size: 72px;
     color: 0040FF;
@@ -703,27 +724,19 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-### 毫末之变、扩展之鉴
+### 归纳起来
+
+毫末之变、扩展之鉴
 
 1. 大系统由小组件汇聚而成
 2. 汇聚改变的不仅仅是规模
 3. 还有伴随组件而来的变化
 
----
-
-### 扩展使变化越来越复杂
-
-<style scoped>
-  h3 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 70px;
-  }
-</style>
+系统的扩展将同时成为**小概率事件的放大器**！
 
 ---
 
-### 组件异常情况繁复
+### 实际系统组件异常情况繁复
 
 ![h:450](images/Source-of-Latency.png)
 
@@ -845,6 +858,26 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
+## 尾延迟和系统规模
+
+<style scoped>
+  p {
+    font-size: 25px;
+  }
+</style>
+
+![bg right fit](images/tail-latency-with-scaling-and-outliers.png)
+
+服务器通常响应时间10毫秒，但第P99百分位上的响应时间将达到一秒，即100个请求中将有1个慢请求用时超过1秒。
+
+如果一个用户请求必须并行地从100个这样的服务器收集响应，则63%的用户请求将需要超过一秒的时间（在图表中标记为“x”）。
+
+即使对于请求中只有1/10000（即P9999百分位）超过一秒延迟的服务器，基于2000台这样的服务器的系统也会有近五分之一的用户请求需要超过一秒的时间（在图表中标记为“o”）。
+
+<!-- 例如，考虑一个系统，在这个系统中，每个服务器通常的响应时间为10毫秒，但第99百分位的响应时间将达到一秒。如果一个用户请求仅在一个这样的服务器上处理，那么100个用户请求中会有一个请求变慢（一秒）。右图描述了在这种假设情景中，非常小的延迟异常所导致的服务级别延迟的影响。如果一个用户请求必须并行地从100个这样的服务器收集响应，则63%的用户请求将需要超过一秒的时间（在图表中标记为“x”）。即使对于只有万分之一的请求在单个服务器上经历超过一秒延迟的服务，有2,000个这样的服务器的服务也会导致近五分之一的用户请求需要超过一秒的时间（在图表中标记为“o”）。 -->
+
+---
+
 ## 如何应对？
 
 - 各组件状态的影响
@@ -958,20 +991,19 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 对象存储实验…
+## 课堂实践2
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
   - <https://gitee.com/shi_zhan/obs-tutorial>
 - 实验内容
-  - 熟悉性能指标：吞吐率、带宽、延迟
   - 分析不同负载下的指标、延迟的分布
   - 观测尾延迟现象
   - 尝试对冲请求方案
 
 ---
 
-## 对象存储系统的问题之二：冗余的代价
+## 对象存储系统的问题之二：预测问题
 
 <style scoped>
   h2 {
@@ -1100,14 +1132,15 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 对象存储实验……
+## 课堂实践3
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
   - <https://gitee.com/shi_zhan/obs-tutorial>
 - 实验内容
   - 网络存储仿真
-  - 排队论模型
+  - 排队论模型拟合
+  - 思考：准确预测的要素？
 
 ---
 
