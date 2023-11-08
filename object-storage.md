@@ -858,7 +858,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 尾延迟和系统规模
+## 规模扩展与尾延迟
 
 <style scoped>
   p {
@@ -873,6 +873,8 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 如果一个用户请求必须并行地从100个这样的服务器收集响应，则63%的用户请求将需要超过一秒的时间（在图表中标记为“x”）。
 
 即使对于请求中只有1/10000（即P9999百分位）超过一秒延迟的服务器，基于2000台这样的服务器的系统也会有近五分之一的用户请求需要超过一秒的时间（在图表中标记为“o”）。
+
+Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
 
 <!-- 例如，考虑一个系统，在这个系统中，每个服务器通常的响应时间为10毫秒，但第99百分位的响应时间将达到一秒。如果一个用户请求仅在一个这样的服务器上处理，那么100个用户请求中会有一个请求变慢（一秒）。右图描述了在这种假设情景中，非常小的延迟异常所导致的服务级别延迟的影响。如果一个用户请求必须并行地从100个这样的服务器收集响应，则63%的用户请求将需要超过一秒的时间（在图表中标记为“x”）。即使对于只有万分之一的请求在单个服务器上经历超过一秒延迟的服务，有2,000个这样的服务器的服务也会导致近五分之一的用户请求需要超过一秒的时间（在图表中标记为“o”）。 -->
 
@@ -1059,65 +1061,71 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 故障预测
+### 尾延迟与阿姆达尔定律
+
+<style scoped>
+  p {
+    font-size: 25px;
+  }
+</style>
+
+![bg right fit](images/homogeneous-server-queue.jpg)
+
+**尾延迟（也就是最坏情况下的延迟）会使Amdahl's Law变得更重要**：在优化平均性能时，一些部分性能的提升可能不会对整体性能有太大影响，但在优化尾部延迟时，每个部分都可能成为瓶颈。
+
+**队列理论可以提供准确的基础理论**：帮助我们预测和控制系统中的延迟，以指导如何设计未来交互式服务的硬件。
+
+随着服务响应能力和可预测性变得越来越关键，需要根据应用的需求，**找到计算和内存资源之间的平衡**，以实现最优的系统性能。
+
+Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), CACM 2018.
+
+<!-- 首先，优化尾延迟（也就是最坏情况下的延迟）会使Amdahl's Law变得更重要。Amdahl's Law是计算机科学中的一个概念，它描述的是并行计算中加速比的极限。在优化平均性能时，一些部分性能的提升可能不会对整体性能有太大影响，但在优化尾部延迟时，每个部分都可能成为瓶颈，因此需要考虑Amdahl's Law，确保系统的每个部分都得到充分优化。
+
+其次，队列理论可以提供准确的基础理论，以指导如何设计未来交互式服务的硬件。队列理论是研究等待过程（队列）的数学理论，它可以帮助我们预测和控制系统中的延迟。在设计交互式服务的硬件时，我们需要考虑如何减少延迟，提高系统的响应能力，队列理论可以帮助我们实现这一目标。
+
+最后，随着服务响应能力和可预测性变得越来越关键，找到计算和内存资源之间的平衡也变得越来越重要。计算和内存是计算机系统的两个核心资源，它们之间的平衡直接影响到系统的性能。如果计算资源过多，而内存资源不足，那么系统可能会因为内存瓶颈而无法充分发挥计算资源的能力。反之亦然。因此，我们需要根据应用的需求，找到计算和内存资源之间的平衡，以实现最优的系统性能。 -->
+
+---
+
+## 初步尝试——排队论模型
 
 <style scoped>
   li {
     font-size: 25px;
   }
-</style>
-
-![bg right fit](images/failure-prediction.png)
-
-- 故障预前处理优于故障事后处理
-  - 数据不丢失、服务不中断、不降级
-  - 处理开销小、处理时间充足易于分摊开销
-- 故障后处理（数据冗余策略的部署）是保底机制
-  - 故障预测模型的检测率难以达到100%，存在故障漏报现象
-  - 预测到故障的存储设备已经出现数据丢失或出错
-  - 能够处理更多种类的异常情况，如软件错误、网络异常等
-
----
-
-![bg fit](images/datacenter-reliability.png)
-
----
-
-## 一些尝试
-
-<style scoped>
-  li {
-    font-size: 25px;
+  p {
+    text-align: center;
   }
 </style>
 
-- 副本和纠删码动态转换
-  - [Non-Sequential Striping for Distributed Storage Systems with Different Redundancy Schemes](https://ieeexplore.ieee.org/document/8025297/), ICPP 2017.
-  - Non-sequential Striping Encoder from Replication to Erasure Coding for Distributed Storage System, Frontiers of Computer Science (FCS), 2019.
-- 磁盘故障预测
-  - [OME: An Optimized Modeling Engine for Disk Failure Prediction in Heterogeneous Datacenter](https://ieeexplore.ieee.org/abstract/document/8615739), ICCD 2018.
+![h:300](images/Basic-structure-of-queueing-models.png)
+
+- 如何建模**非线性的系统**？
+  - [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
+- 怎么分析**请求的分布**？
+  - [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
 
 ---
 
-## 性能模型——考虑要素
+### 性能模型——考虑要素
 
 ![h:500](images/cloud-storage-performance-factors.png)
 
 ---
 
-## 性能模型——困难之处
+### 性能模型——困难之处
 
 ![h:500](images/cloud-storage-performance-prediction.png)
 
 ---
 
-## 性能模型——系统分析
+### 性能模型——系统分析
 
 ![h:500](images/cloud-storage-request-analysis.png)
 
 ---
 
-### 一些尝试…
+## 更进一步
 
 <style scoped>
   li {
@@ -1125,10 +1133,18 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
   }
 </style>
 
-- [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
-- [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
+- 用预测提高**缓存算法效率**
+  - [Fair Will Go On: A Collaboration-Aware Fairness Scheme for NVMe SSD in Cloud Storage System](https://ieeexplore.ieee.org/document/10247718). DAC 2023.
+- 用预测改善**服务质量保障**
+  - [Graph3PO: A Temporal Graph Data Processing Method for Latency QoS Guarantee in Object Cloud Storage System](https://dl.acm.org/doi/10.1145/3581784.3607075). SC 2023.
 
-![h:400](images/Basic-structure-of-queueing-models.png)
+---
+
+### 用预测提高**缓存算法效率**
+
+---
+
+### 用预测改善**服务质量保障**
 
 ---
 
