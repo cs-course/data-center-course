@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术
 # size: 4:3
+math: katex
 ---
 
 # 对象存储系统尾延迟问题
@@ -1061,6 +1062,42 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
+- 容错的代价
+  - 浪费的空间
+    - 从副本到纠删码、动态重编码
+    - **故障预测**
+- 容滞的代价
+  - 浪费的吞吐
+    - 积极对冲加剧拥塞
+    - **性能预测**
+- 更进一步：**从偶然到必然**……
+
+---
+
+### 重温阿姆达尔定律
+
+<style scoped>
+  p {
+    font-size: 25px;
+  }
+</style>
+
+![bg right fit](images/amdahl-law.png)
+
+请再次回顾计算机系统结构课…
+
+$$
+Speedup_{Overall}=\frac{Time_{Before}}{Time_{After}}=\frac{1}{(1-Fraction_{Improved})+\frac{Fraction_{Improved}}{Speedup}}
+$$
+
+在优化平均性能时，一些部分性能的提升可能不会对整体性能有太大影响…
+
+但在优化尾部延迟时，**每个部分都可能成为瓶颈**。
+
+因此，**尾延迟（也就是最坏情况下的延迟）会使Amdahl's Law变得更有挑战性**！
+
+---
+
 ### 尾延迟与阿姆达尔定律
 
 <style scoped>
@@ -1071,7 +1108,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ![bg right fit](images/homogeneous-server-queue.jpg)
 
-**尾延迟（也就是最坏情况下的延迟）会使Amdahl's Law变得更重要**：在优化平均性能时，一些部分性能的提升可能不会对整体性能有太大影响，但在优化尾部延迟时，每个部分都可能成为瓶颈。
+**尾延迟（也就是最坏情况下的延迟）会使Amdahl's Law变得更有挑战性**：在优化平均性能时，一些部分性能的提升可能不会对整体性能有太大影响，但在优化尾部延迟时，每个部分都可能成为瓶颈。
 
 **队列理论可以提供准确的基础理论**：帮助我们预测和控制系统中的延迟，以指导如何设计未来交互式服务的硬件。
 
@@ -1125,7 +1162,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-## 更进一步
+## 更多的问题…
 
 <style scoped>
   li {
@@ -1134,6 +1171,8 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 </style>
 
 - 用预测提高**缓存算法效率**
+  - [A Multi-Factor Adaptive Multi-Level Cooperative Replacement Policy in Block Storage Systems](https://ieeexplore.ieee.org/document/9978474). ICCD 2022
+- 用预测协调**缓存和调度公平性**
   - [Fair Will Go On: A Collaboration-Aware Fairness Scheme for NVMe SSD in Cloud Storage System](https://ieeexplore.ieee.org/document/10247718). DAC 2023.
 - 用预测改善**服务质量保障**
   - [Graph3PO: A Temporal Graph Data Processing Method for Latency QoS Guarantee in Object Cloud Storage System](https://dl.acm.org/doi/10.1145/3581784.3607075). SC 2023.
@@ -1142,9 +1181,68 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ### 用预测提高**缓存算法效率**
 
+![bg 80%](images/iccd22-bg1.png)
+
+<!-- TODO: 浓缩提炼至每页一个问题及创新 -->
+
+---
+
+![bg fit](images/iccd22-bg2.png)
+
+---
+
+![bg fit](images/iccd22-bg3.png)
+
+---
+
+![bg fit](images/iccd22-bg4.png)
+
+---
+
+### 用预测协调**缓存和调度公平性**
+
+![bg 80%](images/dac23-bg1.png)
+
+---
+
+![bg fit](images/dac23-bg2.png)
+
+---
+
+![bg fit](images/dac23-bg3.png)
+
 ---
 
 ### 用预测改善**服务质量保障**
+
+![bg 75%](images/sc23-bg1.png)
+
+<!-- 黑盒白盒各有不足 -->
+
+---
+
+![bg 80%](images/sc23-bg2.png)
+
+<!-- 不要逃避关联结构，要迎难而上 -->
+
+---
+
+## 预测是永恒的话题
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 60px;
+  }
+  p {
+    text-align: right;
+  }
+</style>
+
+毕竟变化将一直持续！
+
+<!-- 研究的神坑…人类历史上一直在努力，从仰望星空制定历法就已经开始了…… -->
 
 ---
 
