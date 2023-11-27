@@ -20,7 +20,7 @@ title: 数据中心技术
 - **施展** 副教授，武汉光电国家研究中心，存储部，C523
 - 课程公务 每周五上午08:30-10:00
 - 联系方式
-  - EMail zshi@hust.edu.cn
+  - EMail <zshi@hust.edu.cn>
   - 电话 027-87792450
   - 主页
     - <https://shizhan.github.io/>
@@ -33,7 +33,7 @@ title: 数据中心技术
 - **童薇** 副教授，武汉光电国家研究中心，存储部，C522
 - 课程公务 每周四上午08:30-10:00
 - 联系方式
-  - EMail tongwei@hust.edu.cn
+  - EMail <tongwei@hust.edu.cn>
   - 电话 027-87792450
   - 主页
     - <http://faculty.hust.edu.cn/tongwei/zh_CN/index.htm>
@@ -45,7 +45,7 @@ title: 数据中心技术
 - **胡燏翀** 教授，武汉光电国家研究中心，存储部，B518
 - 课程公务 每周五上午08:30-10:00
 - 联系方式
-  - EMail yuchonghu@hust.edu.cn
+  - EMail <yuchonghu@hust.edu.cn>
   - 电话 027-87792450
   - 主页
     - <http://yuchonghu.com>
