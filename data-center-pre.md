@@ -187,7 +187,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 - **汇报胶片、综述报告**课程结束一周内(**2023-12-29**)提交作业库，有特殊情况补充说明可延期一周(**2024-01-05**)提交
   - 作业库：<https://github.com/cs-course/data-center-course-assignment-2023>
 - **开卷考试** 30%
-  - 综合应用题x3(暂定**2023-12-30**)
+  - 综合应用题x3(静候学院安排**元旦后一周左右**)
 
 ---
 
