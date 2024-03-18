@@ -176,3 +176,28 @@ if not 学习过"缺失的一课"，至少第6讲:
 3. [Late submission of coursework](https://www.essex.ac.uk/student/exams-and-coursework/late-submission-of-coursework)
 4. [What are the penalties for late submission of an assignment?](https://www.sheffield.ac.uk/mltc/courses/learning/validation)
 5. [What to Say (and Not Say) When Handing in Late Assignments, According to Professors](https://lifehacker.com/what-to-say-and-not-say-when-handing-in-late-assignme-1850343910)
+
+---
+
+### 往年作业参考
+
+<style scoped>
+  li {
+    font-size: 20px;
+  }
+</style>
+
+- <https://github.com/cs-course/bigdata-storage-experiment-assignment-2023>
+- <https://github.com/cs-course/bigdata-storage-experiment-assignment-2022>
+- <https://github.com/cs-course/iot-storage-experiment-assignment-2021>
+- <https://github.com/cs-course/iot-storage-experiment-assignment-2020>
+- <https://github.com/cs-course/iot-storage-experiment-assignment-2019>
+- <https://github.com/cs-course/iot-storage-experiment-assignment-2018>
+
+#### 模范作业
+
+- [bigdata-storage-experiment-assignment-2023/U202015630](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/U202015630/)
+- [bigdata-storage-experiment-assignment-2023/U202015628](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/U202015628/)
+- [bigdata-storage-experiment-assignment-2022/U201916202](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/U201916202/)
+- [bigdata-storage-experiment-assignment-2022/U201915084](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/U201915084/)
+- [iot-storage-experiment-assignment-2021/U201816030](https://github.com/cs-course/iot-storage-experiment-assignment-2021/U201816030)
