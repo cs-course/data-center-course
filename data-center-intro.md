@@ -330,7 +330,7 @@ Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 |Tier|Feature|
 |:-|:-|
 |**Tier 1** –– basic data center|no redundancy|
-|**Tier 2** –– redundant components|Single distribution path with redundant components
+|**Tier 2** –– redundant components|Single distribution path with redundant components |
 |**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
 |**Tier 4** –– fault tolerant|Multiple active distribution paths|
 
@@ -558,7 +558,7 @@ Source: [Encrypted, daily monitored and fully automatic](https://www.mount10.ch/
 
 Ideal protection against NSA and PRISM!
 
-- Data storage inside of Switzerland (www.swissfortknox.com)
+- Data storage inside of Switzerland (<www.swissfortknox.com>)
 - Encryption of the data with 256-bit AES (wikipedia)
 - Personal encryption key which is NOT known to us (no backdoors)
 - Redundant data storage and contractual availability of 99.7% (GTC)
