@@ -88,25 +88,41 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 ### Lab 1 搭建对象存储
 
-- [课程背景知识](object-storage)
-- [实验参考资料](https://github.com/cs-course/obs-tutorial)
+- [背景知识](object-storage)
+- [实验参考](https://github.com/cs-course/obs-tutorial)
+- 目标系统
+  - [Minio](https://minio.io/)
+  - [Ceph](https://ceph.com/)
+  - [OpenStack Swift](http://www.openstack.org/software/releases/ocata/components/swift)
 
 ---
 
 ### Lab 2 实践基本功能
 
-- 功能
-- 拓展：
+- 基本功能
+  - CRUD
+
+---
+
+#### 应用集成
+
+- 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
+- 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
+- 欢迎感兴趣的同学自行探索...
 
 ---
 
 ### Lab 3 观测分析性能
 
-<style scoped>
-  li, p {
-    font-size: 25px;
-  }
-</style>
+实验测试工具
+
+- [s3bench](https://github.com/igneous-systems/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) (Go语言)
+- [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) (Rust语言，感谢 [@SKTT1Ryze](https://github.com/SKTT1Ryze) 同学提供，欢迎更多同学参与！)
+- [COSBench](https://github.com/intel-cloud/cosbench) (Java语言)
+
+---
+
+#### 尾延迟问题分析
 
 - 尾延迟为什么很重要？
   - [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794). Commun. ACM, 2013, 56(2): 74–80.
