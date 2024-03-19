@@ -47,7 +47,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 - 1/13: 课程概览与 shell
 - 1/14: Shell 工具和脚本
-- 1/22: 版本控制(Git)
+- 1/22: 版本控制([Git](https://git-scm.com/download))
 
 ---
 
@@ -69,19 +69,50 @@ if not 学习过"缺失的一课"，至少第6讲:
 - 使用**fork功能**在自己账号下建立作业库
 - 使用`git clone`抓取作业库到本地
 - 在本地作业库根目录中建立**以自己学号命名**的目录
-- 建立包含学生信息的Markdown格式**README.md**作为目录内容说明
+- 内置包含学生信息的Markdown格式**README.md**作为目录内容说明
 - 建立**Lab0**至**Lab3**子目录，分别放各次实验的**脚本、程序、实验记录**
   - **注意1**：大语言模型的时代**不卷八股报告**，还请**忠实记录实验过程**
   - **注意2**：作业库整洁，实验代码、脚本放assets，实验记录配图放figure，在实验记录中引用(***没有两次实验的观测是一摸一样的***)
 
 ---
 
-#### README.md 模板
+#### 学号目录 README.md 模板
 
 ```Markdown
-姓名  XXX
-学号  XXXXXXXX
-班号  xxxx班
+姓名：XXX
+班级：xxxx班
+学号：XXXXXXXX
+
+# 课程报告简介
+
+……
+
+# 实验内容简介
+
+……
+```
+
+---
+
+#### Lab X README.md 模板
+
+```Markdown
+# 实验名称
+
+……
+
+# 实验环境
+
+……
+
+# 实验记录
+
+## 实验X-1：……
+……
+
+# 实验小结
+
+……
 ```
 
 ---
@@ -99,30 +130,79 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 ### Lab 2 实践基本功能
 
-- 基本功能
-  - CRUD
+<style scoped>
+  table, li {
+    font-size: 30px;
+  }
+</style>
+
+- 在计算机领域中，[create, read, update, and delete (缩写为 CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) 是访问持久存储的4项基本操作。
+
+|    Operation     |  SQL   |        HTTP        |
+| :--------------  | :----  | :----------------  |
+|      Create      | INSERT |     PUT / POST     |
+| Read (Retrieve)  | SELECT |        GET         |
+| Update (Modify)  | UPDATE | PUT / POST / PATCH |
+| Delete (Destroy) | DELETE |       DELETE       |
+
+- 通过典型界面访问在 Lab 1 中搭建的系统，执行上述典型操作
+  - 从标配客户端到API编程
 
 ---
 
-#### 应用集成
+#### 【扩展探索】应用集成
 
-- 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
-- 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
-- 欢迎感兴趣的同学自行探索...
+- 通过部署实际应用来了解对象存储在云环境中的角色
+  - 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
+  - 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
+  - ……
 
 ---
 
 ### Lab 3 观测分析性能
 
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
 实验测试工具
 
 - [s3bench](https://github.com/igneous-systems/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) (Go语言)
-- [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) (Rust语言，感谢 [@SKTT1Ryze](https://github.com/SKTT1Ryze) 同学提供，欢迎更多同学参与！)
+- [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) (Rust语言)
+  - 感谢 [@SKTT1Ryze](https://github.com/SKTT1Ryze) 同学提供，欢迎更多同学参与！
 - [COSBench](https://github.com/intel-cloud/cosbench) (Java语言)
 
 ---
 
-#### 尾延迟问题分析
+#### 观察影响性能的主要因素
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+典型问题举例
+
+- 对象尺寸如何影响性能?
+  - 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
+- 如何全面观测I/O延迟?
+  - 平均值与统计分布
+- 如果客户端爆满将怎样?
+  - 请求并发数如何同时影响延迟分布和吞吐率？如何保障服务质量？
+- 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
+
+---
+
+#### 【扩展探索】尾延迟问题
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
 
 - 尾延迟为什么很重要？
   - [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794). Commun. ACM, 2013, 56(2): 74–80.
@@ -138,13 +218,10 @@ if not 学习过"缺失的一课"，至少第6讲:
 <style scoped>
   table {
     width: 100%;
+    font-size: 30px;
   }
-  th {
-    background: #00AFFF;
-    font-size: 32px;
-  }
-  td, li {
-    font-size: 25px;
+  li {
+    font-size: 35px;
   }
 </style>
 
@@ -152,12 +229,12 @@ if not 学习过"缺失的一课"，至少第6讲:
 | :--- | :--- | :--- | :--- |
 | $Server$ | Minio Server | s3proxy/mock-s3/... | Ceph/Swift |
 | $Client$ | Minio Client | osm/s3cmd/aws-{cli\|shell} | awssdk/boto3 |
-| $Benchmark_3$  | 预置负载范例 | 选题测试研究 | 编制实验程序研究 |
+| $Benchmark_3$  | 预置负载范例 | 选题观察分析 | 编制实验程序研究 |
 | **评分标准** | 每项**25分** | 每项**加5分** | 每项**加10分** |
 
-1. **有限课堂帮助**，同时在本程序库内提供全套在线资源。
-2. 超过本资料库所提供导引之外部分 **请自己探索**。
-3. s3bench/benchio/COSBench
+1. 提供**有限课堂帮助**，[实验参考](https://github.com/cs-course/obs-tutorial)库内提供在线资源传送门。
+2. 超过本资料库所提供导引之外部分**请自己探索**。
+3. s3bench/benchio/COSBench……
 
 ---
 
@@ -177,7 +254,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 在 <https://github.com/cs-course/bigdata-storage-experiment-assignment-2024> 中完成实验记录
 
-上午的课堂学习也会要求交一份作业，请上传进作业库中自己的文件夹。
+上午的**课堂学习也会要求交一份作业**，请上传进作业库中自己的文件夹。
 
 ### 提交日期
 
@@ -212,8 +289,8 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 #### 模范作业
 
-- [bigdata-storage-experiment-assignment-2023/U202015630](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/U202015630/)
-- [bigdata-storage-experiment-assignment-2023/U202015628](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/U202015628/)
-- [bigdata-storage-experiment-assignment-2022/U201916202](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/U201916202/)
-- [bigdata-storage-experiment-assignment-2022/U201915084](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/U201915084/)
-- [iot-storage-experiment-assignment-2021/U201816030](https://github.com/cs-course/iot-storage-experiment-assignment-2021/U201816030)
+- [bigdata-storage-experiment-assignment-2023/U202015630](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/tree/main/U202015630/)
+- [bigdata-storage-experiment-assignment-2023/U202015628](https://github.com/cs-course/bigdata-storage-experiment-assignment-2023/tree/main/U202015628/)
+- [bigdata-storage-experiment-assignment-2022/U201916202](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/tree/master/U201916202/)
+- [bigdata-storage-experiment-assignment-2022/U201915084](https://github.com/cs-course/bigdata-storage-experiment-assignment-2022/tree/master/U201915084/)
+- [iot-storage-experiment-assignment-2021/U201816030](https://github.com/cs-course/iot-storage-experiment-assignment-2021/tree/master/U201816030)
