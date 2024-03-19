@@ -221,20 +221,26 @@ if not 学习过"缺失的一课"，至少第6讲:
     font-size: 30px;
   }
   li {
-    font-size: 35px;
+    font-size: 20px;
+  }
+  p {
+    font-size: 25px;
   }
 </style>
 
 | $组成部分$ | $基础$ | $进阶_1$ | $困难_2$ |
 | :--- | :--- | :--- | :--- |
 | $Server$ | Minio Server | s3proxy/mock-s3/... | Ceph/Swift |
-| $Client$ | Minio Client | osm/s3cmd/aws-{cli\|shell} | awssdk/boto3 |
+| $Client$ | Minio Client | osm/s3cmd/aws-{cli\|shell} | boto3/awssdk |
 | $Benchmark_3$  | 预置负载范例 | 选题观察分析 | 编制实验程序研究 |
-| **评分标准** | 每项**25分** | 每项**加5分** | 每项**加10分** |
+| **评分标准** | 每项**25分** | 每项**30分** | 每项**35分** |
 
 1. 提供**有限课堂帮助**，[实验参考](https://github.com/cs-course/obs-tutorial)库内提供在线资源传送门。
 2. 超过本资料库所提供导引之外部分**请自己探索**。
 3. s3bench/benchio/COSBench……
+
+实验方案示例1：Minio Server (25) + boto3 (35) + 延迟分布随并发数的变化趋势分析 (35)=95分
+实验方案示例2：mock-s3 (30) + osm (30) + run-s3bench.cmd (25)=85分
 
 ---
 
