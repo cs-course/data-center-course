@@ -260,7 +260,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 在 <https://github.com/cs-course/bigdata-storage-experiment-assignment-2024> 中完成实验记录
 
-上午的**课堂学习也会要求交一份作业**，请上传进作业库中自己的文件夹。
+周一的**课堂学习也会要求交一份作业**，请上传进作业库中自己的文件夹。
 
 ### 提交日期
 
