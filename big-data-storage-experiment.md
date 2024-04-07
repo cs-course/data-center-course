@@ -273,15 +273,11 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 第9周周二：**2024-04-23**
 
-### 延迟提交
+### 提交内容
 
-有合理原因请附说明提交作业，可延迟1周至**2024-04-30**，规则参考
+课堂部分，华老师会在04-10课堂给出报告要求，和实验部分一起入库。
 
-1. [cs231n assignments](http://vision.stanford.edu/teaching/cs231n/assignments.html)
-2. [EE365: Late Policy](https://stanford.edu/class/ee365/late.html)
-3. [Late submission of coursework](https://www.essex.ac.uk/student/exams-and-coursework/late-submission-of-coursework)
-4. [What are the penalties for late submission of an assignment?](https://www.sheffield.ac.uk/mltc/courses/learning/validation)
-5. [What to Say (and Not Say) When Handing in Late Assignments, According to Professors](https://lifehacker.com/what-to-say-and-not-say-when-handing-in-late-assignme-1850343910)
+实验部分，请同学们按照前述要求用Markdown在Lab0至Lab3中完成编写。
 
 ---
 
