@@ -9,19 +9,17 @@ title: 数据中心技术
 
 # 数据中心技术
 
-**施展，童薇，胡燏翀**
+**施展，童薇，胡燏翀，谭支鹏**
 武汉光电国家研究中心，计算机学院
-2023-10-31 至 2023-12-21
+2024-11-06 至 2024-12-27
 
 ---
 
 ## 授课教师
 
 - **施展** 副教授，武汉光电国家研究中心，存储部，C523
-- 课程公务 每周五上午08:30-10:00
 - 联系方式
   - EMail <zshi@hust.edu.cn>
-  - 电话 027-87792450
   - 主页
     - <https://shizhan.github.io/>
     - <http://faculty.hust.edu.cn/shizhan/zh_CN/index.htm>
@@ -31,10 +29,8 @@ title: 数据中心技术
 ## 授课教师…
 
 - **童薇** 副教授，武汉光电国家研究中心，存储部，C522
-- 课程公务 每周四上午08:30-10:00
 - 联系方式
   - EMail <tongwei@hust.edu.cn>
-  - 电话 027-87792450
   - 主页
     - <http://faculty.hust.edu.cn/tongwei/zh_CN/index.htm>
 
@@ -42,14 +38,22 @@ title: 数据中心技术
 
 ## 授课教师……
 
-- **胡燏翀** 教授，武汉光电国家研究中心，存储部，B518
-- 课程公务 每周五上午08:30-10:00
+- **胡燏翀** 教授，计算机科学与技术学院，存储所，B518
 - 联系方式
   - EMail <yuchonghu@hust.edu.cn>
-  - 电话 027-87792450
   - 主页
     - <http://yuchonghu.com>
     - <http://faculty.hust.edu.cn/huyuchong/zh_CN/index.htm>
+
+---
+
+## 授课教师………
+
+- **谭支鹏** 教授，武汉光电国家研究中心，存储部，C525
+- 联系方式
+  - EMail <tanzhipeng@hust.edu.cn>
+  - 主页
+    - <http://faculty.hust.edu.cn/tanzhipeng/zh_CN/index.htm>
 
 ---
 
@@ -63,8 +67,8 @@ title: 数据中心技术
   }
 </style>
 
-- 课程资料 <https://github.com/cs-course/data-center-course>  
-- 作业库 <https://github.com/cs-course/data-center-course-assignment-2023>
+- 课程资料 <https://shi_zhan.gitlab.io/cs-courses/data-center-pre>  
+- 作业库 <https://github.com/cs-course/data-center-course-assignment-2024>
 - 参考书
   - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
   - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019
