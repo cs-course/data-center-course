@@ -820,21 +820,50 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
+## 我们的尝试
+
+- **节流**: 表示学习样本缩减
+- **开源**: 发挥传统分级存储优势
+- **适应**: 动态图时空检索
+
+---
+
 <style scoped>
   li {
     font-size: 27px;
   }
 </style>
 
-## 我们的尝试——表示学习样本缩减
+### 表示学习样本缩减
 
 - 样本规模数十倍于图数据，不能在一周内完成千万个节点的表示学习
   - 动态调节采样，减少冗余 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
     - 找出顶点度与游走冗余之间的关系，实现动态游走
   - 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
     - 用信息熵理论来估计游走冗余
+  - [IEEE ToBD](https://doi.org/10.1109/TBDATA.2022.3164575)
 
-## 我们的尝试——时空检索数据结构
+---
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+### 发挥传统分级存储优势
+
+[ATC 23](https://www.usenix.org/conference/atc23/presentation/wu)
+
+---
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+### 时空检索数据结构
 
 - 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
   - 基于偏斜性感知动态设置关键快照
@@ -842,7 +871,56 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 更多参考
+<style scoped>
+  p, li {
+    font-size: 23px;
+  }
+</style>
 
-- <https://github.com/jbmusso/awesome-graph>
-- <https://github.com/Team309/awesome-graph-processing>
+## 图学习案例实验
+
+### 实验背景
+
+随着图神经网络（GNNs）在图数据挖掘研究中的广泛应用，研究者开始关注其在异构图（Heterogeneous Graphs）上的潜力。异构图由多种类型的节点和边组成，携带丰富的侧信息，连接了新颖有效的图学习算法与复杂多变的工业场景，如推荐系统。为了应对异构性的挑战，提出了多种异构图神经网络（HGNNs）模型来处理节点分类、链接预测和知识感知推荐等任务。然而，由于每个模型采用独特的数据处理和设置，我们对这些模型实际进展的理解仍然有限。
+
+为了促进健壮且开放的HGNN发展，构建了异构图基准（HGB）。HGB目前包含11个异构图数据集，这些数据集在异构性（节点和边类型的数目）、任务（节点分类、链接预测和知识感知推荐）和领域（如学术图、用户-项目图和知识图）方面各不相同。HGB提供了统一的接口用于数据加载、特征处理和评估，为比较HGNN模型提供了便捷一致的方式。
+
+---
+
+<style scoped>
+  p, li {
+    font-size: 23px;
+  }
+</style>
+
+### 实验要求
+
+- **组队要求**：每3名同学一组。各组需共同完成模型的选择、实现、调优、评估和报告撰写等任务。
+- **算法实现**：基于HGB提供的异构图数据集，实现一个或多个异构图神经网络模型，进行节点分类任务。
+- **性能评估**：使用Micro-F1和Macro-F1作为评价指标，对模型性能进行评估。
+- **代码提交**：按照HGB官方排行榜的要求，通过HGB在线表格提交代码，并在验证后加入官方排行榜。
+- **结果提交**：提交一个包含4个数据集预测结果的zip文件，每个数据集运行5次，共20个文件。文件命名格式为数据集名_序号.txt。
+- **实验报告**：撰写实验报告，介绍实验采用的模型、过程、结果分析及结论。明确标注小组成员的贡献。
+
+#### 时间安排
+
+- 开始日期：2024年10月10日
+- 提交截止：2024年10月24日
+
+请在规定时间内完成实验，并按照要求提交代码、预测结果和实验报告。各组需确保在实验过程中积极协作，充分发挥团队成员的专长和创意。
+
+---
+
+<style scoped>
+  p, li {
+    font-size: 23px;
+  }
+</style>
+
+### 参考资料
+
+[HGB官网](https://www.biendata.xyz/hgb/)：提供HGB的详细介绍、数据集和使用指南。
+[HGB节点分类任务](https://www.biendata.xyz/competition/hgb-1/)：介绍节点分类任务的背景和数据集。
+[HGB竞赛规则](https://www.biendata.xyz/competition/hgb-1/rules/)：详细说明如何提交算法代码和论文，以及如何加入官方排行榜。
+[HGB评估标准](https://www.biendata.xyz/competition/hgb-1/evaluation/)：介绍Micro-F1和Macro-F1评估指标，以及提交格式要求。
+[HGB GitHub仓库](https://github.com/THUDM/HGB)：提供数据加载、特征处理和评估的脚本，以及如何生成预测结果文件的指南。
