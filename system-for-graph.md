@@ -17,6 +17,8 @@ math: mathjax
 <https://shizhan.github.io/>
 <https://shi_zhan.gitee.io/>
 
+<!-- 这门课之目的在于以图应用为例，探讨计算机系统设计的相关实践，大家应该还有一门课叫图神经网络，和这门课有背景知识的交叉，不过估摸着你们不少人没选那门课，所以我们也不得不在这里进行一些必要的科普 -->
+
 ---
 
 ## 内容大纲
@@ -41,6 +43,8 @@ math: mathjax
   }
 </style>
 ![bg fit](images/graph-app-1.jpg)
+
+<!-- 首先当然要了解一下这类系统服务的对象，请大家想一想身旁的图数据相关应用都有哪些？不拘泥于几年前课堂上所学的最短路径算法 -->
 
 ---
 
@@ -97,21 +101,79 @@ math: mathjax
     font-size: 18px;
   }
   p {
-    font-size: 36px;
+    font-size: 20px;
     text-align: center;
   }
 </style>
 
 ![h:400](images/vertex-computing.png)
 
-- [Malewicz G, Austern M H, Bik A J C et al. **Pregel: A System for Large-Scale Graph Processing**. SIGMOD 2010.](https://dl.acm.org/doi/10.1145/1807167.1807184)
+[Malewicz G, Austern M H, Bik A J C et al. **Pregel: A System for Large-Scale Graph Processing**. SIGMOD 2010.](https://dl.acm.org/doi/10.1145/1807167.1807184)
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 20px;
+    text-align: center;
+  }
+</style>
+
+![bg](images/spark-arch.png)
+
+[Apache Spark - A Unified engine for large-scale data analytics](https://spark.apache.org/docs/latest/index.html)
+
+<!-- 正如知名的Hadoop系统，其实是MapReduce框架的开源实现，其上构建的Spark GraphX也是Pregel的重视复现 -->
+
+---
+
+![bg fit](images/spark-graphx-property_graph.png)
+
+<!-- 系统内以属性图的形式，通过规范化的编程框架来实现复杂的图应用 -->
+
+---
+
+![bg fit](images/spark-graphx-app.gif)
+
+<!-- 比方说这个用来找寻维基百科热门社区的应用，里面就包含了两路并行的图分析过程 -->
+
+---
+
+![h:340](images/graphlab-consistency-model.jpg) ![h:340](images/graphlab-framework.jpg)
+
+[The Story of GraphLab – From Scaling Machine Learning to Shaping Graph Systems Research (VLDB 2023 Test-of-time Award Talk)](https://www.vldb.org/pvldb/vol16/p4138-gonzalez.pdf)
+
+<!-- 作为高校的科研成果，GraphLab则更强调处理的范式，结合Pregel的顶点中心计算框架，提出了GAS模型 -->
+
+---
+
+![bg fit](images/neo4j-intro.png)
+
+<!-- 专攻图数据处理的系统，还专门分支出了一个门类，如今被归类为一种NoSQL的图数据库，曾经风光一时，但是其中最具标志意义的创业公司Neo4j的发展却颇为坎坷，最近倒是又有新的契机闪过，即KG与LLM的合作 -->
+
+---
+
+## 想了解更多……
+
+<https://github.com/Team309/awesome-graph-processing>
+
+<https://chwan1016.github.io/awesome-gnn-systems/>
+
+[A software resource for large graph processing and analysis](https://www.nature.com/articles/s43588-023-00466-7), Nature Computational Science volume 3, pages 586–587 (2023)
 
 ---
 
 ## 经典系统结构回顾
 
+![bg right fit](images/text-book.jpg)
+
 - 并行结构
+  - 指令级、线程级、数据级、请求级
 - 层次存储
+  - 缓存、内存、外存
+
+<!-- 为了深入认识这些图处理系统背后的设计方法，有必要回顾一下我们以往学习的计算机系统相关知识 -->
 
 ---
 
@@ -130,6 +192,8 @@ math: mathjax
 
 [Computer Architecture A Quantitative Approach 6th Edition](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), Chapter 4, 5.
 
+<!-- 这就是一个典型的并行处理结构，试问其并行任务工作在什么级别呢？ -->
+
 ---
 
 ### 层次存储
@@ -147,12 +211,16 @@ math: mathjax
 
 [Computer Architecture A Quantitative Approach 6th Edition](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), Chapter 2.
 
+<!-- 这里则是一个典型的层次存储结构，试问其出现的动机又是什么呢？ -->
+
 ---
 
 ## 图应用访存特点
 
 - 偏斜性
 - 随机性
+
+<!-- 趁着刚刚重温了相关概念，这里审视一下目标应用的特点，首先点个题，图应用最突出的存储器访问特点在于这两者：偏斜性和随机性，两者分别是分布式处理和分层存储架构的大敌 -->
 
 ---
 
@@ -822,9 +890,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ## 我们的尝试
 
-- **节流**: 表示学习样本缩减
-- **开源**: 发挥传统分级存储优势
-- **适应**: 动态图时空检索
+- **节流**: 缩减表示学习样本
+- **开源**: 重新挖掘传统分级存储特性
+- **适应**: 平衡动态图上的时空检索
 
 ---
 
@@ -841,19 +909,86 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
     - 找出顶点度与游走冗余之间的关系，实现动态游走
   - 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
     - 用信息熵理论来估计游走冗余
-  - [IEEE ToBD](https://doi.org/10.1109/TBDATA.2022.3164575)
+  - 进一步优化内存使用及多核并行增强系统扩展能力[IEEE ToBD](https://ieeexplore.ieee.org/document/9749008)
+
+---
+
+![bg fit](images/huge-hrw.jpg)
+
+---
+
+![bg right fit](images/huge-workflow.jpg)
+
+- 节省游走
+  - 启发式随机游走
+  - 自适应游走长度
+  - 自适应游走次数
+- 实现
+  - 内存占用优化
+  - 细粒度、多线程并行
+
+<!-- 启发式随机游走：HuGE+采用混合属性启发式随机游走（HRW），它在每一步随机游走中考虑了节点的公共邻居数量和节点信息内容，从而更有效地捕捉节点特征，减少了对计算资源的需求。
+
+自适应游走长度：HuGE+使用启发式方法来确定随机游走的长度，而不是采用固定的游走长度。这种方法通过观察信息熵的变化来决定何时停止游走，从而避免了生成过多冗余信息，提高了计算效率。
+
+自适应游走次数：HuGE+还提出了一种方法来决定每个节点的游走次数，它通过计算相对熵（即Kullback-Leibler散度）来评估生成的语料库与图的度分布之间的差异，从而确定合适的游走次数，以确保语料库的质量和效率。
+
+内存占用优化：HuGE+显著减少了内存占用，平均减少了68.9%。这是通过优化游走策略和减少生成的语料库大小实现的，从而使得方法能够扩展到更大规模的图。
+
+并行化处理：HuGE+的设计允许并行化执行，这意味着它可以利用多核处理器来同时处理多个任务，从而进一步提高处理大规模图的速度。
+
+线性运行时间：在合成图上的实验表明，HuGE+的运行时间与图的大小呈线性关系，这表明它能够以可控的方式处理大规模图。
+
+高效的训练方法：HuGE+使用Skip-Gram模型来训练节点的嵌入向量，并通过负采样等技术优化了训练过程，减少了计算和存储开销。 -->
+
+---
+
+![bg fit](images/huge-evaluation-0.jpg)
+
+---
+
+![bg fit](images/huge-evaluation-1.jpg)
+
+---
+
+![bg fit](images/huge-evaluation-2.jpg)
+
+---
+
+### 发挥传统分级存储优势
+
+- **以矩阵记录游走**（Walk Matrix）：提出了一种走矩阵来避免加载不可更新的游走，从而消除无用的游走I/O操作。
+- **效益感知I/O模型**（Benefit-Aware I/O Model）：开发了一种效益感知的I/O模型，用于加载包含最大累积可更新游走的多个数据块，以提高I/O利用率。
+- **块集导向游走更新方案**（Block Set-Oriented Walk Updating Scheme）：采用了一种块集导向的游走更新方案，允许每个游走在已加载的数据块集中尽可能多地移动步数，从而显著提高游走更新率。
 
 ---
 
 <style scoped>
-  li {
-    font-size: 27px;
+  p {
+    padding-top: 500px;
+    font-size: 23px;
   }
 </style>
 
-### 发挥传统分级存储优势
+![bg fit](images/sowalker-background.jpg)
 
-[ATC 23](https://www.usenix.org/conference/atc23/presentation/wu)
+[SOWalker: An I/O-Optimized Out-of-Core Graph Processing System for Second-Order Random Walks](https://www.usenix.org/conference/atc23/presentation/wu), ATC 23
+
+---
+
+![bg fit](images/sowalker-motivation.jpg)
+
+---
+
+![bg fit](images/sowalker-contribution.jpg)
+
+---
+
+![bg fit](images/sowalker-evaluation-1.jpg)
+
+---
+
+![bg fit](images/sowalker-evaluation-2.jpg)
 
 ---
 
@@ -924,3 +1059,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 [HGB竞赛规则](https://www.biendata.xyz/competition/hgb-1/rules/)：详细说明如何提交算法代码和论文，以及如何加入官方排行榜。
 [HGB评估标准](https://www.biendata.xyz/competition/hgb-1/evaluation/)：介绍Micro-F1和Macro-F1评估指标，以及提交格式要求。
 [HGB GitHub仓库](https://github.com/THUDM/HGB)：提供数据加载、特征处理和评估的脚本，以及如何生成预测结果文件的指南。
+
+---
+
+## 思考
+
+为机器学习设计的系统又有哪些关键挑战问题？
