@@ -320,6 +320,8 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
 
 Lecture12 Cache Memory
 
+<!-- 上次我们谈到图这种特点鲜明，价值深远的应用，其构造具有偏斜性，行为具有随机性，而支撑其运转的系统，则仰赖各个层级的并行性，以及塑造层次存储的局部性，然而这里面涌现出天然的矛盾，构成了我们面前的第一重挑战 -->
+
 ---
 
 #### 实验准备
@@ -331,6 +333,12 @@ Lecture12 Cache Memory
   - 清理自连边、重复边脚本，重编号脚本
 - [SNAP工具包](http://snap.stanford.edu/snap/download.html)
   - Windows版本需要Cygwin，Linux版本需要Ubuntu
+
+<!-- 从这个问题开始，我们演示一下作为一名研究生，大致的学习过程应该是怎样的
+
+首先，之前学习的记忆里，告诉我们局部性这样一个概念，我们很自然的希望从如今的实验环境中找出来
+
+当时课本上是一个什么样的表述呢？我们少许回顾一下 -->
 
 ---
 
@@ -960,19 +968,11 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 - **以矩阵记录游走**（Walk Matrix）：提出了一种走矩阵来避免加载不可更新的游走，从而消除无用的游走I/O操作。
 - **效益感知I/O模型**（Benefit-Aware I/O Model）：开发了一种效益感知的I/O模型，用于加载包含最大累积可更新游走的多个数据块，以提高I/O利用率。
 - **块集导向游走更新方案**（Block Set-Oriented Walk Updating Scheme）：采用了一种块集导向的游走更新方案，允许每个游走在已加载的数据块集中尽可能多地移动步数，从而显著提高游走更新率。
+[SOWalker: An I/O-Optimized Out-of-Core Graph Processing System for Second-Order Random Walks](https://www.usenix.org/conference/atc23/presentation/wu), ATC 23
 
 ---
 
-<style scoped>
-  p {
-    padding-top: 500px;
-    font-size: 23px;
-  }
-</style>
-
 ![bg fit](images/sowalker-background.jpg)
-
-[SOWalker: An I/O-Optimized Out-of-Core Graph Processing System for Second-Order Random Walks](https://www.usenix.org/conference/atc23/presentation/wu), ATC 23
 
 ---
 
