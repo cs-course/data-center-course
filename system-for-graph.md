@@ -23,6 +23,8 @@ math: mathjax
 
 ## 内容大纲
 
+![bg right h:300](images/course-barcode.png)
+
 <!-- paginate: true -->
 
 - 经典图应用及算法
