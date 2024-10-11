@@ -192,7 +192,7 @@ He comments that **the lack of experience in datacenter design may have been an 
   - 作业库：<https://github.com/cs-course/data-center-course-assignment-2024>
 - **开卷考试** 30%
   - TBA
-  - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**)
+  <!-- - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
 
 ---
 
