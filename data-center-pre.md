@@ -181,17 +181,18 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
-    - 第一次课内确认计划安排，43位同学每人选择1篇Paper准备汇报
-    - 每位同学有**15分钟汇报和3~5分钟讨论**
+    - 第一次课内确认计划安排，39位同学每人选择1篇Paper准备汇报
+    - 每位同学有**12分钟汇报和2~3分钟讨论**
       - 请严格守时（开PPT排练计时），可自备讲稿辅助（讲台没有分屏模式）
 - **综述报告** *40%*
   - 围绕自选研讨主题综述**不少于5篇近3年CCF-A/B类会议、期刊论文**
     - 内容按**计算机学报样式**([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版
     - 研讨课中所提的问题和意见需要随文附上**附录：汇报记录**（所提问题，文中相应阐述）
-- **汇报胶片、综述报告**课程结束一周内(**2023-12-29**)提交作业库，有特殊情况补充说明可延期一周(**2024-01-05**)提交
-  - 作业库：<https://github.com/cs-course/data-center-course-assignment-2023>
+- **汇报胶片、综述报告**课程结束一周内(**2025-01-03**)提交作业库，有特殊情况补充说明可延期一周(**2025-01-10**)提交
+  - 作业库：<https://github.com/cs-course/data-center-course-assignment-2024>
 - **开卷考试** 30%
-  - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**)
+  - TBA
+  <!-- - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
 
 ---
 
@@ -209,33 +210,33 @@ He comments that **the lack of experience in datacenter design may have been an 
   }
 </style>
 
-|   | 讲座内容 | 日期 | 地点 |
+|   | 讲座主题 | 日期 | 地点 |
 |:-:|:--------|:---| :--- |
-| 1 | [数据中心技术总体介绍](data-center-intro) | 10-31, 11-02 | D9-D309, D311 |
-| 2 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-07, 11-09 | D9-D309, D311 |
-| 3 | 数据中心可靠性保障技术 (数据中心纠删码，胡老师) | 11-14, 11-16 | D9-D309, D311 |
-| 4 | 数据中心固态存储技术 (ZNS固态盘，童老师) | 11-21, 11-23 | D9-D309, D311 |
-| 5 | 论文研讨* | 11-28, 11-30 | D9-D309, D311 |
-| 6 | 论文研讨 | 12-05, 12-07 | D9-D309, D311 |
-| 7 | 论文研讨 | 12-12, 12-14 | D9-D309, D311 |
-| 8 | 论文研讨 | 12-19, 12-21 | D9-D309, D311 |
+| 1 | [数据中心技术概述](data-center-intro) | 11-06, 11-08 | C12-S204 |
+| 2 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-13, 11-15 | C12-S204 |
+| 3 | 数据中心可靠性保障技术 (胡老师) | 11-20, 11-22 | C12-S204 |
+| 4 | 数据中心固态存储技术 (童老师) | 11-27, 11-29 | C12-S204 |
+| 5 | 数据中心磁盘故障预测技术 (谭老师) | 12-04, 12-06 | C12-S204 |
+| 6 | 论文研讨* | 12-11, 12-13 | C12-S204 |
+| 7 | 论文研讨 | 12-18, 12-20 | C12-S204 |
+| 8 | 论文研讨 | 12-25, 12-27 | C12-S204 |
 
-\* *每周11名同学，每人15分钟报告，3~5分钟问答。*
+\* *每周13名同学，每人12分钟报告，2~3分钟问答。*
 
 ---
 
 ## 研讨论文列表
 
-![bg right](images/reading-list-2023.png)
+![bg right](images/reading-list-2024.png)
 
 扫码在线填表
 
 - 每人选择1篇拟汇报论文
-- 选择范围：ATC/OSDI23相关论文合计97篇
+- 选择范围：CCF-A相关论文
 
 也可以点击
 
-- [【腾讯文档】数据中心技术课程论文研讨2023](https://docs.qq.com/sheet/DRFF3T0p1b05mcnJO)
+- [【腾讯文档】数据中心技术课程论文研讨2024](https://docs.qq.com/sheet/DRHJZV01EbWhwaHlZ)
 
 ---
 
@@ -260,7 +261,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
-![bg right:32% fit](images/qq-group-2023.jpg)
+![bg right:32% fit](images/qq-group-2024.jpg)
 
 |||
 |:-|:-|
@@ -273,7 +274,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ## 或者扫描问卷条码
 
-![bg right:32% fit](images/qq-group-2023.jpg)
+![bg right:32% fit](images/qq-group-2024.jpg)
 
 ![h:450](images/class-survey.jpg)
 
