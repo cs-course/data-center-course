@@ -192,7 +192,7 @@ He comments that **the lack of experience in datacenter design may have been an 
   - 作业库：<https://github.com/cs-course/data-center-course-assignment-2024>
 - **开卷考试** 30%
   - TBA
-  <!-- - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
+  - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**)
 
 ---
 
@@ -203,7 +203,7 @@ He comments that **the lack of experience in datacenter design may have been an 
     width: 100%;
   }
   th {
-    background: #003FFF;
+    background: #003F7F;
   }
   td, p, li {
     font-size: 27px;
@@ -212,7 +212,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 |   | 讲座主题 | 日期 | 地点 |
 |:-:|:--------|:---| :--- |
-| 1 | [数据中心技术概述](data-center-intro) | 11-06, 11-08 | C12-S204 |
+| 1 | [数据中心技术概述](data-center-intro) | 11-06(**周三5-6**) 11-08(**周五3-4**) | C12-S204 |
 | 2 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-13, 11-15 | C12-S204 |
 | 3 | 数据中心可靠性保障技术 (胡老师) | 11-20, 11-22 | C12-S204 |
 | 4 | 数据中心固态存储技术 (童老师) | 11-27, 11-29 | C12-S204 |
