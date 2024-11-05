@@ -733,10 +733,6 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-智算中心的范例？
-
----
-
 ### 国内情况
 
 <style scoped>
@@ -919,7 +915,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-国内的智算中心建设情况
+## 智算中心
 
 ---
 
@@ -1454,7 +1450,7 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 - PUE作为评估数据中心总用电量的衡量指标
   - 主要考察资源运转效率
   - 只考虑数据中心的内部操作，未揭露电力来源与实际用电量
-  - 数据中心占全球用电量的1~2%，但是来源呢？
+  - 数据中心占全球用电量的1~2%，但是电力来源呢？
 
 ---
 
@@ -1473,9 +1469,24 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-PUE优化中的猫腻
+### PUE测算中的问题
 
-<!-- 服务器更新换代之后，能耗得以控制，PUE反而更差，如果用PUE做指标，或许压抑换代愿望 -->
+- 测算标准
+  - 不同的测算方法和标准可能会导致PUE值的差异
+- 环境因素
+  - 在炎热或寒冷的地区，数据中心的制冷或加热能耗可能会增加
+- 负载情况
+  - 如果数据中心的负载较低，其能耗可能会与满载时有所不同，导致PUE值的变化
+
+---
+
+#### 延伸思考：一个"小"问题
+
+服务器升级 --> 算力更高的同时更节能
+
+温控设备，供电系统没有更换，于是PUE……
+
+反而更差？可是PUE已成为政策依据，或许因此影响设备选择
 
 ---
 
