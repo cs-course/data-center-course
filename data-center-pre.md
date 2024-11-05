@@ -161,13 +161,13 @@ He comments that **the lack of experience in datacenter design may have been an 
   - 跟踪一线应用**思考方向**
     - 华为（黄大年茶思屋）、腾讯（犀牛鸟）、阿里（AIR）、浪潮……
   - 积累工程基础**动手实践**
-    - Linux, Bash, Vagrant, VirtualBox, Docker……
-    - Kubernetes、OpenStack、Object Storage……
+    - [Kaggle](https://www.kaggle.com/competitions), [Codalab](https://codalab.lisn.upsaclay.fr/)
+    - 阿里[天池](https://tianchi.aliyun.com/), 腾讯[DataFountain](https://www.datafountain.cn/), [和鲸](https://www.heywhale.com/home/competition), 百度[飞桨AI Studio](https://aistudio.baidu.com/competition), [讯飞开放平台](https://challenge.xfyun.cn/)……
 - 学术探索方面
   - 相关领域**研讨前沿**技术与进展
     - 数据中心扩展性、性能、服务质量、可靠性……
   - 建立独立研究技能**解决问题**
-    - 选题汇报、综述归纳、实验观测和分析数据……
+    - 选题汇报与研讨、应用实践与检验……
 
 ---
 
@@ -175,24 +175,23 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 <style scoped>
   li {
-    font-size: 20px;
+    font-size: 27px;
   }
 </style>
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
-    - 第一次课内确认计划安排，39位同学每人选择1篇Paper准备汇报
+    - 第一周确认计划安排，39位同学每人选择1篇Paper准备汇报
     - 每位同学有**12分钟汇报和2~3分钟讨论**
-      - 请严格守时（开PPT排练计时），可自备讲稿辅助（讲台没有分屏模式）
-- **综述报告** *40%*
-  - 围绕自选研讨主题综述**不少于5篇近3年CCF-A/B类会议、期刊论文**
-    - 内容按**计算机学报样式**([Doc](http://cjc.ict.ac.cn/wltg/new/submit/CJC-Templet_Word2003.doc), [LaTeX](http://cjc.ict.ac.cn/wltg/new/submit/LatexTemplet.zip))排版
-    - 研讨课中所提的问题和意见需要随文附上**附录：汇报记录**（所提问题，文中相应阐述）
-- **汇报胶片、综述报告**课程结束一周内(**2025-01-03**)提交作业库，有特殊情况补充说明可延期一周(**2025-01-10**)提交
-  - 作业库：<https://github.com/cs-course/data-center-course-assignment-2024>
-- **开卷考试** 30%
+      - 请严格守时（开PPT排练计时），可自备讲稿辅助
+  - 论坛内就汇报内容回答相关问题，**积极参与问答可以加分**
+- **实验作业** *30%*
+  - [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270/introduction)
+    - 以完成提交为准，不追求PVP，重在以日常赛促**实践**
+    - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP收获成就
+- **开卷考试** 40%
   - TBA
-  <!-- - 综合应用题x3(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
+  <!-- - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
 
 ---
 

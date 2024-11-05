@@ -120,7 +120,11 @@ Source: <https://datareportal.com/reports/>
 
 ![bg opacity:.3 brightness:.5](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
 
-疫情甚至加快了这个过程
+疫情加快了这个过程
+
+---
+
+AI在进一步给这个过程提速
 
 ---
 
@@ -729,6 +733,10 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
+智算中心的范例？
+
+---
+
 ### 国内情况
 
 <style scoped>
@@ -908,6 +916,10 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
 
 China’s protectionist regulatory policy makes it extremely difficult for foreign companies to compete in the country’s vast data center market, and international players’ interest in China has waned. **As a result, Chinese hyperscalers’ explosive growth in recent years has driven huge growth for Chinese companies that build and operate data centers for the likes of Alibaba and Tencent.**
+
+---
+
+国内的智算中心建设情况
 
 ---
 
@@ -1461,6 +1473,12 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
+PUE优化中的猫腻
+
+<!-- 服务器更新换代之后，能耗得以控制，PUE反而更差，如果用PUE做指标，或许压抑换代愿望 -->
+
+---
+
 ## 学习目的
 
 - 数据中心技术的**基础知识**
@@ -1472,17 +1490,17 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 ## 后续内容
 
 - 数据中心专题讲座与实践
-  - **对象存储**技术
-    - [尾延迟问题](object-storage)，[课堂实验](https://github.com/cs-course/obs-tutorial)，[码云镜像](https://gitee.com/shi_zhan/obs-tutorial)
-    - [服务质量保障问题](qos-guarantee)
-  - 数据中心**固态存储**技术
-    - 开放通道固态存储OC-SSD、区域命名空间固态存储ZNS-SSD
-  - 数据中心**纠删码**技术
-    - 纠删码、再生码、大条带
+  - **对象存储**技术：[尾延迟问题](object-storage)、[服务质量保障问题](qos-guarantee)
+  - 数据中心**先进存储**技术：OC-SSD、ZNS-SSD……
+  - 数据中心**可靠编码**技术：纠删码、再生码、大条带……
+  - 数据中心**故障预测**技术：磁盘故障预测……
 
 ---
 
 ## 后续内容…
 
-- 阅读论文，准备下个月**研讨**
-- 检索相关工作，准备写**综述**
+- 选读论文，准备下个月**研讨**
+  - 读前提示，请务必落实主要引用文献，精辟阐述研究背景
+- 熟悉实验内容，准备以日常赛促**实践**
+  - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP
+  - [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270/introduction)
