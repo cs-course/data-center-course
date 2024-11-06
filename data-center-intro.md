@@ -124,7 +124,33 @@ Source: <https://datareportal.com/reports/>
 
 ---
 
-AI在进一步给这个过程提速
+### AI产业的强劲发展
+
+<style scoped>
+  li, p {
+    font-size: 27px;
+  }
+</style>
+
+![h:350](images/ai-market-2024.jpg)
+
+数据中心加速向算力中心演变，AI算力成为算力中心关键承载要素。人工智能应用、大模型训练、推理新需求、新业务快速崛起，带动人工智能市场规模高速增长，预计2022年到2032年全球人工智能市场规模的复合增长率高达42%，2032年达1.3万亿美元。
+
+---
+
+### AI进一步给数据中心的发展演化提速
+
+<style scoped>
+  li, p {
+    font-size: 30px;
+  }
+</style>
+
+近年来，自动驾驶、生命医学、智能制造等领域发展迅速，随之而来的是超大规模人工智能模型和海量数据对算力需求的不断提高，智算中心建设正当其时。
+
+- 工信部数据表示，截至2021年底，我国在用数据中心机架总规模达520万标准机架，在用**数据中心服务器规模1900万台**，**算力总规模超过140 EFLOPS**。全国在用**超大型和大型数据中心超过450个**，**智算中心超过20个**。
+
+- 据不完全统计，从2021年1月1到2022年2月15日，全国共有至少**26个城市**在推动或刚刚完成当地智算中心的建设，其中投入使用的有8个，包括南京、合肥等地的智算中心。除了这些投入使用的，全国至少还有18个城市签约、开工、招标、计划建设智算中心项目，包括深圳、长沙的项目都已经开工建设。
 
 ---
 
@@ -266,16 +292,17 @@ Source:
 
 <style scoped>
   li, p {
-    font-size: 30px;
+    font-size: 27px;
   }
 </style>
 
-- 国家发展改革委创新和高技术发展司2020年发布
+- 国家发展改革委创新和高技术发展司2020年4月发布
   - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
 - **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
   - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
   - 以人工智能、云计算、区块链等为代表的新技术基础设施
   - 以**数据中心**、**智能计算中心**为代表的算力基础设施
+- 中国智能算力占全国总算力的比重也由2016年的3%提升至2020年41%，预计到2023年智能算力的占比将提升至70%。
 
 Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
@@ -909,13 +936,69 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 
 ---
 
-It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
+It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some inte \nrnational presence) and still have huge share of  \nthe global market.**
 
 China’s protectionist regulatory policy makes it extremely difficult for foreign companies to compete in the country’s vast data center market, and international players’ interest in China has waned. **As a result, Chinese hyperscalers’ explosive growth in recent years has driven huge growth for Chinese companies that build and operate data centers for the likes of Alibaba and Tencent.**
 
 ---
 
 ## 智算中心
+
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p {
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit](images/aliyun-zhangbei-aidc.jpg)
+
+2024年8月30日，阿里云宣布正式启动张北超级智算中心。该智算中心总建设规模为12EFLOPS（每秒1200亿亿次浮点运算）AI算力，将超过谷歌的9EFLOPS和特斯拉的1.8EFLOPS，成为全球最大的智算中心，可为AI大模型训练、自动驾驶、空间地理等人工智能探索应用提供强大的智能算力服务。
+
+---
+
+## 智算中心…
+
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p {
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg fit](images/shangtang-aidc.webp)
+
+在WAIC2020大会期间，商汤科技宣布，上海“新一代人工智能计算与赋能平台”临港超算中心启动动工。该算力中心占地面积近80亩，总投资金额超过50亿元人民币，一期将安置5000个等效8000W的机柜。算力中心建成并投入使用后，总算力规模将超过3700PFLOPS，可同时接入850万路视频，1天即可完成23600年时长的视频处理工作。
+
+---
+
+## 智算中心……
+
+<style scoped>
+  h3 {
+    opacity: 0;
+  }
+  p {
+    padding-top: 350px;
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+  }
+</style>
+
+![bg](images/nanjing-aidc.jpg)
+
+南京智算中心采用浪潮AI服务器算力机组，搭载寒武纪思元270 和思元290 智能芯片及加速卡。目前已运营系统的AI计算能力达每秒80亿亿次（AI 算力远超传统数据中心提供的基础算力供给），1小时可完成100亿张图像识别、300万小时语音翻译或1万公里的自动驾驶AI数据处理任务。
 
 ---
 
@@ -1490,11 +1573,11 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-## 学习目的
+## 主要内容回顾
 
-- 数据中心技术的**基础知识**
+- 数据中心技术的**基础知识**：起源、定义、趋势
 - 大规模计算机系统**性能、可用性、可靠性**问题
-- 经典的**应对方法**
+- 核心指标PUE及经典**举措**
 
 ---
 
