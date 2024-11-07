@@ -945,29 +945,37 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 ## 智算中心
 
 <style scoped>
-  h3 {
-    opacity: 0;
-  }
-  p {
-    font-size: 27px;
-    text-align: left;
-    color: #F0F0F0;
-    background: rgba(0, 80, 192, 0.7);
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
   }
 </style>
 
-![bg fit](images/aliyun-zhangbei-aidc.jpg)
+---
 
-2024年8月30日，阿里云宣布正式启动张北超级智算中心。该智算中心总建设规模为12EFLOPS（每秒1200亿亿次浮点运算）AI算力，将超过谷歌的9EFLOPS和特斯拉的1.8EFLOPS，成为全球最大的智算中心，可为AI大模型训练、自动驾驶、空间地理等人工智能探索应用提供强大的智能算力服务。
+### 南京智算中心
+
+<style scoped>
+  p {
+    padding-top: 350px;
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+  }
+</style>
+
+![bg](images/nanjing-aidc.jpg)
+
+南京智算中心采用浪潮AI服务器算力机组，搭载寒武纪思元270 和思元290 智能芯片及加速卡。目前已运营系统的AI计算能力达每秒80亿亿次（AI 算力远超传统数据中心提供的基础算力供给），1小时可完成100亿张图像识别、300万小时语音翻译或1万公里的自动驾驶AI数据处理任务。
+
+<!-- 80亿亿=80*10^8*10^8=800*10^15=800*2^50=800P -->
 
 ---
 
-## 智算中心…
+### 上海“新一代人工智能计算与赋能平台”
 
 <style scoped>
-  h3 {
-    opacity: 0;
-  }
   p {
     font-size: 27px;
     text-align: left;
@@ -982,23 +990,86 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-## 智算中心……
+### 张北超级智算中心
 
 <style scoped>
-  h3 {
-    opacity: 0;
-  }
   p {
-    padding-top: 350px;
     font-size: 27px;
     text-align: left;
     color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
   }
 </style>
 
-![bg](images/nanjing-aidc.jpg)
+![bg fit](images/aliyun-zhangbei-aidc.jpg)
 
-南京智算中心采用浪潮AI服务器算力机组，搭载寒武纪思元270 和思元290 智能芯片及加速卡。目前已运营系统的AI计算能力达每秒80亿亿次（AI 算力远超传统数据中心提供的基础算力供给），1小时可完成100亿张图像识别、300万小时语音翻译或1万公里的自动驾驶AI数据处理任务。
+2024年8月30日，阿里云宣布正式启动张北超级智算中心。该智算中心总建设规模为12EFLOPS（每秒1200亿亿次浮点运算）AI算力，将超过谷歌的9EFLOPS和特斯拉的1.8EFLOPS，成为全球最大的智算中心，可为AI大模型训练、自动驾驶、空间地理等人工智能探索应用提供强大的智能算力服务。
+
+---
+
+### xAI Colossus
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  p {
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg](images/xAI-Colossus-web.jpg)
+
+对于那些听说过埃隆·马斯克的xAI在孟菲斯建造巨型AI超级计算机Colossus。这个价值数十亿美元的AI集群拥有100,000个 NVIDIA H100 GPU (正在通过增加另50,000个H100和50,000个H200 GPU，使其规模翻倍)，不仅规模大，而且建造速度快。仅用122天，团队就建造了这个巨型集群。
+
+- ![h:150](images/xAI-Colossus-url.jpg)
+
+<!--
+https://www.bilibili.com/video/BV1bbSvYyEXX/
+https://www.youtube.com/watch?v=Jf8EPSBZU7Y
+-->
+
+---
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  p {
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg](images/xAI-Colossus-rack.jpg)
+
+Colossus 的基本构建模块是 Supermicro 液冷机架。它由 8 台 4U 服务器组成，每台服务器配备 8 个 NVIDIA H100，每台机架总共有 64 个 GPU。8 台这样的 GPU 服务器加上一台Supermicro 冷却液分配单元 (CDU)和相关硬件构成了一个 GPU 计算机架。这些机架以八个为一组排列，共计 512 个 GPU，再加上网络，又构成了一个子集群系统。
+
+---
+
+<style scoped>
+  h3 {
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+  p {
+    font-size: 27px;
+    text-align: left;
+    color: #F0F0F0;
+    background: rgba(0, 80, 192, 0.7);
+  }
+</style>
+
+![bg](images/xAI-Colossus-net.jpg)
+
+其网络中，每路光纤连接的速度是 400GbE，比我们在其他地方看到的常见 1GbE 网络快 400 倍。每台服务器有 9 个这样的链接，这意味着单 GPU 计算服务器的带宽约为 3.6Tbps。
 
 ---
 
@@ -1195,6 +1266,23 @@ Datacenters as a Computer
 算力规模持续扩大，缩小与世界先进国家差距。
 
 <!-- 据 IDC、Gartner、中国通服数字基建产业研究院等多方机构测算，2020 年我国算力总规模达到 135EFlops，全球占比约为 31%，同比增长 55%，进一步缩小与美国等发达国家差距。其中，基础算力规模（FP32）达到 77EFlops，全球同类占比约为 26%，美国占比 43%；智能算力规模（换算为 FP32）达到 20EFlops，全球同类占比约为 19%，美国占比 52%，中美差距较大；超算算力规模（换算为 FP32）约为 2EFlops，全球同类占比约为 20%，美国占比 31%。 -->
+
+---
+
+<style scoped>
+  p {
+    font-size: 14px;
+  }
+</style>
+![bg fit](images/idc-computing-power-2021.jpg)
+
+Source: <https://www.36kr.com/p/1964095815756041>
+
+<!--
+算力对数字经济乃至经济社会数字化转型发展具有明显带动作用，是新发展格局下衡量经济状况的“晴雨表”和“助推器”。统计分析显示，计算力指数的水平，与国家GDP的发展水平，与数字经济的发展水平呈现出明显的正相关的关系。
+
+根据分析结果，在15个国家里，算力指数每提高1%，数字经济和GDP将分别增长3.5‰和1.8‰。
+ -->
 
 ---
 
@@ -1567,9 +1655,66 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 服务器升级 --> 算力更高的同时更节能
 
-温控设备，供电系统没有更换，于是PUE……
+温控设备，供电系统没有更换 --> 非计算能耗保持不变
 
-反而更差？可是PUE已成为政策依据，或许因此影响设备选择
+---
+
+#### 延伸思考：一个"小"问题…
+
+服务器升级 --> 算力更高的同时更节能
+
+温控设备，供电系统没有更换 --> 非计算能耗保持不变
+
+于是PUE……反而更差？
+
+可是PUE已成为政策依据，或许因此影响设备选择
+
+---
+
+#### 延伸思考：一个"大"问题
+
+![bg fit](images/model-size.png)
+![bg fit](images/model-system-size.jpg)
+
+---
+
+#### 智算中心时代的新麻烦
+
+- 千亿级模型训练集群，涉及万卡以上规模，千万级以上器件
+  - …
+- 单器件故障会触发集群训练中断
+  - …
+- 分布式训练交互复杂，跨域故障定界技术难度与流程难度高
+  - …
+  - …
+
+---
+
+#### 智算中心时代的新麻烦…
+
+- 千亿级模型训练集群，涉及万卡以上规模，千万级以上器件
+  - **日均电费十余万**
+- 单器件故障会触发集群训练中断
+  - **意味着每天十余万的损失**
+- 分布式训练交互复杂，跨域故障定界技术难度与流程难度高
+  - 业界大模型平均稳定的集群**训练时长在天级别**
+  - 分布式训练故障处理时间在**1至30**天
+
+---
+
+#### 智算中心时代的新麻烦……
+
+- 千亿级模型训练集群，涉及万卡以上规模，千万级以上器件
+  - **日均电费十余万**
+- 单器件故障会触发集群训练中断
+  - **意味着每天十余万的损失**
+- 分布式训练交互复杂，跨域故障定界技术难度与流程难度高
+  - 业界大模型平均稳定的集群**训练时长在天级别**
+  - 分布式训练故障处理时间在**1至30**天
+
+热门研究方向，如何在大模型训练过程中**减少重训练代价**？
+
+<!-- checkpointing -->
 
 ---
 
@@ -1586,8 +1731,8 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 - 数据中心专题讲座与实践
   - **对象存储**技术：[尾延迟问题](object-storage)、[服务质量保障问题](qos-guarantee)
   - 数据中心**先进存储**技术：OC-SSD、ZNS-SSD……
-  - 数据中心**可靠编码**技术：纠删码、再生码、大条带……
   - 数据中心**故障预测**技术：磁盘故障预测……
+  - 数据中心**可靠编码**技术：纠删码、再生码、大条带……
 
 ---
 
