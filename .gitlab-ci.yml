@@ -7,7 +7,7 @@ marp-prepare:
   image: busybox:uclibc
   script:
     - wget https://github.com/marp-team/marp-cli/releases/download/v1.4.1/marp-cli-v1.4.1-linux.tar.gz
-    - tar xzvf marp-cli-v1.4.1-linux.tar.gz
+    - tar xzvf marp-cli-v4.0.3-linux.tar.gz
     - mkdir bin
     - mv marp ./bin/
   artifacts:
