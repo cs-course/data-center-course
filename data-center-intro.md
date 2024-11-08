@@ -893,6 +893,20 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 
 ---
 
+### 身旁的范例
+
+- 中金武汉数据中心
+- 光谷八路运营商数据中心
+- 中国电信在建临空港中部数据中心
+- 中国电信光谷八路数据中心
+- 汉口银行武汉光谷主数据中心
+- 建设银行武汉南湖数据中心
+- 楚天云花山数据中心
+
+[群模乱舞时代，数据中心、超算中心、智算中心三板斧（一）](https://mp.weixin.qq.com/s?__biz=MzkzNTQ5NDY2MA==&mid=2247483767&idx=1&sn=de2b1239953a08376be9f6cf7fe878b2)
+
+---
+
 ## 巨无霸背后的巨无霸
 
 ![bg fit right](images/here-are-the-10-largest-data-center-providers-in-the-world.jpg)
@@ -936,7 +950,7 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 
 ---
 
-It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some inte \nrnational presence) and still have huge share of  \nthe global market.**
+It’s important to note that China Telecom is one of five Chinese companies on the leaderboard (also China Unicom, China Mobile, GDS 万国数据, and 21Vianet 世纪互联), all of whom do business primarily in China. **China’s market is so vast that these providers can stay mostly domestic (with some international presence) and still have huge share of the global market.**
 
 China’s protectionist regulatory policy makes it extremely difficult for foreign companies to compete in the country’s vast data center market, and international players’ interest in China has waned. **As a result, Chinese hyperscalers’ explosive growth in recent years has driven huge growth for Chinese companies that build and operate data centers for the likes of Alibaba and Tencent.**
 
@@ -999,11 +1013,18 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
   }
+  li {
+    font-size: 27px;
+    text-align: left;
+    padding-top: 300px;
+  }
 </style>
 
 ![bg fit](images/aliyun-zhangbei-aidc.jpg)
 
-2024年8月30日，阿里云宣布正式启动张北超级智算中心。该智算中心总建设规模为12EFLOPS（每秒1200亿亿次浮点运算）AI算力，将超过谷歌的9EFLOPS和特斯拉的1.8EFLOPS，成为全球最大的智算中心，可为AI大模型训练、自动驾驶、空间地理等人工智能探索应用提供强大的智能算力服务。
+2022年8月30日，阿里云宣布正式启动张北超级智算中心。该智算中心总建设规模为12EFLOPS（每秒1200亿亿次浮点运算）AI算力，将超过谷歌的9EFLOPS和特斯拉的1.8EFLOPS，成为全球最大的智算中心，可为AI大模型训练、自动驾驶、空间地理等人工智能探索应用提供强大的智能算力服务。
+
+- Source: [阿里云启动超级智算中心，总算力达12 EFLOPS](https://tech.chinadaily.com.cn/a/202208/30/WS630dec22a3101c3ee7ae65cf.html)
 
 ---
 
@@ -1051,6 +1072,10 @@ https://www.youtube.com/watch?v=Jf8EPSBZU7Y
 ![bg](images/xAI-Colossus-rack.jpg)
 
 Colossus 的基本构建模块是 Supermicro 液冷机架。它由 8 台 4U 服务器组成，每台服务器配备 8 个 NVIDIA H100，每台机架总共有 64 个 GPU。8 台这样的 GPU 服务器加上一台Supermicro 冷却液分配单元 (CDU)和相关硬件构成了一个 GPU 计算机架。这些机架以八个为一组排列，共计 512 个 GPU，再加上网络，又构成了一个子集群系统。
+
+<!-- A100：A100拥有6912个CUDA核心和432个Tensor核心，理论最大半精度（FP16）算力为19.5 TFLOPS（每秒浮点运算次数），理论最大AI计算性能为624 TFLOPS（结合FP16、FP32和INT8等计算精度）。
+
+H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个。在算力方面，H100的FP64算力为60 TFLOPS，FP16算力为2000 TFLOPS，TF32算力为1000 TFLOPS，而针对AI任务优化的FP8精度算力更是高达4000 TFLOPS，是A100的六倍。 -->
 
 ---
 
@@ -1498,6 +1523,14 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
   - According to the [Uptime Institute research](https://www.colocationamerica.com/blog/what-is-pue), an average US data center has a PUE of 2.5. However, servers with a PUE of 3.3 and higher are common to find as well...
 - 工信部、国家机关事务管理局、国家能源局联合印发《[关于加强绿色数据中心建设的指导意见](http://www.gov.cn/xinwen/2019-02/14/content_5365516.htm)》，提出到2022年全国新建大型、超大型数据中心PUE需达到1.4以下。
   - [阿里国内自营平均 1.3 以内](http://dc.idcquan.com/mkh/164245.shtml)，[腾讯清远用间接蒸发冷却约 1.25](http://tech.idcquan.com/179786.shtml)。
+
+---
+
+### [新型数据中心发展三年行动计划(2021-2023年)](https://www.gov.cn/zhengce/2021-07/16/content_5625389.htm)
+
+《行动计划》以2021年和2023年两个时间节点提出了分阶段发展量化指标，引导传统数据中心向新型数据中心演进。为科学衡量数据中心产业发展水平，加快把体量优势变为质量优势，《行动计划》强化了新型数据中心**利用率、算力规模、能效水平、网络时延**等反映数据中心高质量发展的指标，弱化了反映体量的数据中心规模指标。
+
+计划到2023年底，利用率方面，全国数据中心**平均利用率力争提升到60%以上**；算力规模方面，**总算力规模超过200 EFLOPS，高性能算力占比达到10%**；能效水平方面，新建大型及以上数据中心**PUE降低到1.3以下**，严寒和寒冷地区力争降低到1.25以下；网络时延方面，国家枢纽节点内数据中心端到端网络单向时延原则上**小于20毫秒**。
 
 ---
 
