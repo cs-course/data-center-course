@@ -23,12 +23,13 @@ math: katex
 
 <!-- paginate: true -->
 
-- 对象存储背景
-- 典型对象存储系统
-- **长尾延迟问题**
-- 经典方法和实践
-- **预测问题**
-- 一些初步的探讨
+- 背景
+- **挑战一：扩展**
+- 对象存储系统的诞生
+- **挑战二：长尾**
+- 对冲，那么代价是？
+- **挑战三：预测**
+- 根源性矛盾？
 
 ---
 
@@ -76,7 +77,24 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 迫切需要扩展
+## 挑战一：扩展
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 60px;
+  }
+  p {
+    text-align: right;
+  }
+</style>
+
+配得上数据中心的规模化存储
+
+---
+
+### 扩展的两个方面
 
 <style scoped>
   th {
@@ -95,7 +113,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 元数据
+### 问题汇聚于元数据
 
 <style scoped>
   th {
@@ -114,7 +132,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-## 对象存储系统的提出
+### 对象存储系统的提出
 
 <style scoped>
   p {
@@ -137,7 +155,7 @@ Source: <https://www.snia.org/educational-library/object-storage-what-how-and-wh
 
 ---
 
-## 和传统存储系统的比较
+### 和传统存储系统的比较
 
 <style scoped>
   p {
@@ -184,9 +202,11 @@ Source: <https://www.ibm.com/cloud/learn/object-storage>
 
 Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
+<!-- 请回顾操作系统课程 -->
+
 ---
 
-## 定义
+### 定义
 
 - [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
   - Object Storage is a method of storing and subsequently retrieving sets of data as collections of single, uniquely identifiable indivisible items or objects. **It applies to any forms of data that can be wrapped up and managed as an object.**
@@ -194,7 +214,7 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
 ---
 
-## 特性
+### 特性
 
 - [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
   - When you create an object on this type of storage, the **entire set of data** is handled and processed without regard to what sub-parts it may have.
@@ -204,7 +224,7 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
 ---
 
-## 特性…
+### 特性…
 
 - [What is Object Storage?](https://www.snia.org/education/what-is-object-storage)
   - Object storage often supports meta-data.
@@ -214,7 +234,7 @@ Source: <https://usdc.vn/object-storage-vs-traditional-storage/>
 
 ---
 
-## 标准化
+### 标准化
 
 - **Storage Networking Industry Association** - SNIA
   - [Object Storage: What, How and Why, 2020](https://www.snia.org/educational-library/object-storage-what-how-and-why-2020)
@@ -343,7 +363,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-## 更进一步的扩展
+### 更进一步的扩展
 
 <style scoped>
   h2 {
@@ -368,6 +388,8 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 ![w:300](images/active-object-storage-award.png)
 **主动对象海量存储系统及关键技术**
 
+<!-- 我们十年前的努力 -->
+
 ---
 
 ### 算存一体化
@@ -384,6 +406,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education/what-is-computational-storage>
 
+<!-- 往后的路 -->
 ---
 
 ### 算存一体化…
@@ -396,10 +419,10 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 
 ---
 
-## 典型对象存储系统
+### 典型对象存储系统
 
 <style scoped>
-  h2 {
+  h3 {
     padding-top: 200px;
     text-align: center;
     font-size: 70px;
@@ -426,7 +449,7 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 
 ---
 
-### OpenStack
+#### OpenStack
 
 <style scoped>
   p {
@@ -442,7 +465,7 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 
 ---
 
-### OpenStack Swift
+#### OpenStack Swift
 
 - OpenStack Object Storage (swift) is used for **redundant, scalable data storage using clusters of standardized servers** to store petabytes of accessible data.
 - Swift uses a distributed architecture with **no central point of control**, providing greater scalability, redundancy, and performance.
@@ -465,7 +488,7 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
 ---
 
-### Ceph as a research project
+#### Ceph as a research project
 
 <style scoped>
   li {
@@ -486,7 +509,7 @@ Source: <https://docs.openstack.org/security-guide/object-storage.html>
 
 ---
 
-### Ceph
+#### Ceph
 
 - Ceph uniquely delivers **object, block, and file storage in one unified system**.
 - Ceph is highly reliable, easy to manage, and free.
@@ -546,7 +569,7 @@ Source: [Ceph storage on Ubuntu: An overview](https://ubuntu.com/blog/ceph-stora
 
 ---
 
-### Minio
+#### Minio
 
 - MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0.
 - It is **API compatible with Amazon S3** cloud storage service.
@@ -572,7 +595,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 课堂实践1
+### 课堂实践1
 
 - 说明
   - <https://github.com/cs-course/obs-tutorial>
@@ -586,7 +609,7 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-## 对象存储系统的问题之一：长尾延迟
+## 挑战二：长尾
 
 <style scoped>
   h2 {
@@ -594,7 +617,14 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
     text-align: center;
     font-size: 60px;
   }
+  p {
+    text-align: right;
+  }
 </style>
+
+伴随规模前来，很重要却容易被忽视
+
+<!-- 伴随规模扩展前来的幽灵 -->
 
 ---
 
@@ -811,7 +841,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 为何要谈尾延迟
+### 站在应用的角度上
 
 - [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
 - [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
@@ -821,7 +851,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 为何要谈尾延迟…
+### 经典观测很可能忽视
 
 - [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
 - [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
@@ -832,7 +862,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 为何要谈尾延迟……
+### 可是影响其实显著
 
 - [Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/)
 - [中译版](https://blog.csdn.net/u012802702/article/details/86421171)
@@ -844,7 +874,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 量化描述尾延迟
+### 量化描述尾延迟
 
 <style scoped>
   p {
@@ -859,7 +889,7 @@ Source: <https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/>
 
 ---
 
-## 规模扩展与尾延迟
+### 规模扩展与尾延迟的关系
 
 <style scoped>
   p {
@@ -881,7 +911,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 如何应对？
+### 如何应对？
 
 - 各组件状态的影响
   - 设备故障——容错——**提供冗余部件** *（回顾计算机系统结构课…）*
@@ -891,7 +921,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 如何应对？…
+### 如何应对？…
 
 - 必受各组件状态的影响
   - 设备故障——容错——**提供冗余部件**
@@ -901,7 +931,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 经典应对策略
+### 经典应对策略
 
 - [SNIA: Avoiding tail latency by failing IO operations on purpose](https://faststorage.eu/snia-avoiding-tail-latency-by-failing-io-operations-on-purpose/)
   - One of these initiatives is adding a per I/O tag that indicates whether a drive **can fail fast** and return an error if it takes too long to retrieve the data.
@@ -910,7 +940,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 主要方法分类
+### 主要方法分类
 
 <style scoped>
   li {
@@ -935,7 +965,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-### 案例1：HDFS
+#### 案例1：HDFS
 
 <style scoped>
   p {
@@ -953,7 +983,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-### 案例2：MongoDB
+#### 案例2：MongoDB
 
 <style scoped>
   p {
@@ -970,7 +1000,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-### 案例3：字节跳动HDFS改
+#### 案例3：字节跳动HDFS改
 
 <style scoped>
   th {
@@ -994,7 +1024,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 课堂实践2
+### 课堂实践2
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
@@ -1006,7 +1036,7 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 ---
 
-## 对象存储系统的问题之二：预测问题
+## 挑战三：预测
 
 <style scoped>
   h2 {
@@ -1014,7 +1044,15 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
     text-align: center;
     font-size: 60px;
   }
+  p {
+    text-align: right;
+  }
 </style>
+
+长尾、小概率、样本缺乏
+统计学模型矛盾
+
+<!-- 来自长尾的麻烦，同时也意味着样本缺乏，仅从统计学入手难免自相矛盾 -->
 
 ---
 
@@ -1124,7 +1162,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-## 初步尝试——排队论模型
+### 初步尝试——排队论模型
 
 <style scoped>
   li {
@@ -1162,7 +1200,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-## 更多的问题…
+### 更多的问题…
 
 <style scoped>
   li {
@@ -1227,10 +1265,10 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-## 预测是永恒的话题
+### 预测是永恒的话题
 
 <style scoped>
-  h2 {
+  h3 {
     padding-top: 200px;
     text-align: center;
     font-size: 60px;
@@ -1246,7 +1284,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-## 课堂实践3
+### 课堂实践3
 
 - 实验说明
   - <https://github.com/cs-course/obs-tutorial>
