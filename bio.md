@@ -20,6 +20,12 @@ header: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育�
 
 ---
 
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
 ## 教育及工作经历
 
 ### 教育
@@ -34,6 +40,12 @@ header: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育�
 
 ---
 
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
 ## 教学工作
 
 - **讲授课程**
@@ -47,13 +59,13 @@ header: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育�
 
 ---
 
-## 科研工作
-
 <style scoped>
   li {
     font-size: 27px;
   }
 </style>
+
+## 科研工作
 
 - **研究方向**：海量数据存储、存储管理、大数据、图数据处理等
 - **主持项目**
