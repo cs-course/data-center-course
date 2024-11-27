@@ -4,7 +4,7 @@ theme: gaia
 title: 个人简介
 # size: 4:3
 math: katex
-header: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育及工作经历)，[教学工作](bio#教学工作)，[科研工作](bio#科研工作)，[社会服务](bio#社会服务)'
+footer: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育及工作经历)，[教学工作](bio#教学工作)，[科研工作](bio#科研工作)，[社会服务](bio#社会服务)'
 ---
 
 # 个人简介
@@ -61,7 +61,7 @@ header: '[个人简介](bio#个人简介)，[教育及工作经历](bio#教育�
 
 <style scoped>
   li {
-    font-size: 27px;
+    font-size: 25px;
   }
 </style>
 
