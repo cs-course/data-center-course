@@ -15,7 +15,6 @@ math: katex
 - 联系方式
   - 电邮 zshi (AT) hust.edu.cn
   - 电话 13971459597
-  - 主页 <http://faculty.hust.edu.cn/shizhan/zh_CN/index.htm>
 
 ---
 
