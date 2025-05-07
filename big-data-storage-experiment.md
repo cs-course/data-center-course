@@ -73,6 +73,10 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 - [背景知识](object-storage)
 - [实验参考](https://github.com/cs-course/obs-tutorial)
+- 搭系统苦手？
+  - 推荐用LLM工具辅助
+    - <https://kimi.moonshot.cn/>
+    - <https://chat.deepseek.com/>
 
 ---
 
@@ -124,7 +128,7 @@ if not 学习过"缺失的一课"，至少第6讲:
   - [Minio](https://minio.io/)
   - [Ceph](https://ceph.com/)
 - 搭建示范
-  - [Ceph单机版](ceph-deployment-simple)
+  - [Ceph单机版](https://gitee.com/shi_zhan/data-center-course/blob/master/ceph-deployment-simple.md)
 
 ---
 
@@ -210,15 +214,21 @@ if not 学习过"缺失的一课"，至少第6讲:
 - 可以用什么方法来分析？
   - [Amdahl’s Law for Tail Latency](https://cacm.acm.org/research/amdahls-law-for-tail-latency/). Commun. ACM, 2018, 61(8): 65–72.
 - 读论文苦手？
-  - 用LLM工具辅助，如：<https://kimi.moonshot.cn/>
+  - 继续用LLM工具辅助
+    - <https://kimi.moonshot.cn/>
+    - <https://chat.deepseek.com/>
 
 ---
 
 ### Lab 3 尝试建模预测
 
-- 为一个应用，结合其参数，预测总体尾延迟分布，确定与其访存行为适配的对冲百分位
-- 为一段负载，预测每秒钟IOPS，确定是否在未来使用对冲
-- 为一段负载，预测未来一段时间的尾延迟分布，确定用于指导其灵活对冲的百分位阈值
+- 为**一个应用**，结合其参数
+  - 预测总体**尾延迟分布**，确定与其访存行为适配的对冲百分位
+- 为**一段负载**，结合其序列
+  - 预测**每秒钟IOPS**，确定是否在未来使用对冲
+- 为**一段负载**，结合其参数序列
+  - 预测未来一段时间的**尾延迟分布**，用于指导灵活对冲的百分位阈值
+- 范例: [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270)
 
 ---
 
@@ -267,7 +277,7 @@ if not 学习过"缺失的一课"，至少第6讲:
   }
 </style>
 
-在 <https://github.com/cs-course/bigdata-storage-experiment-assignment-2024> 中完成实验记录
+在微助教中完成**实验报告**。
 
 每周的**课堂学习也会要求交一份作业**，请上传进微助教。
 
