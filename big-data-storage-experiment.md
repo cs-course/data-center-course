@@ -73,32 +73,46 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 - [背景知识](object-storage)
 - [实验参考](https://github.com/cs-course/obs-tutorial)
-- 搭系统苦手？
+- 系统配置苦手？
   - 推荐用LLM工具辅助
     - <https://kimi.moonshot.cn/>
     - <https://chat.deepseek.com/>
 
 ---
 
-#### 学号目录 README.md 模板
+#### 实验报告（<学号>-lab.md）模板
 
 ```Markdown
 姓名：XXX
-班级：xxxx班
-学号：XXXXXXXX
+班级：XXXX 班
+学号：^U2022\d{5}$
+日期：2025-05-dd
+
+---
 
 # 实验简介
 
-……
+…介绍实验软硬件环境，实验目的和主要实验内容条目…
 
 # 实验内容
 
-## 实验1：……
-……
+## 实验1：搭建对象存储
+
+…实验过程，基本功能测试…
+
+…(可选) 应用集成测试…
+
+## 实验2：观测分析性能
+
+…实验案例，实验负载生成，实验观测，数据分析…
+
+## (可选)实验3：尝试建模预测
+
+…求解实际问题，达成额外成就…
 
 # 实验小结
 
-……
+…实验结论和收获…
 ```
 
 ---
@@ -107,7 +121,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 - 目标系统
   - [Minio](https://minio.io/)， 简便易上手
-  - [mock-s3](https://github.com/ShiZhan/mock-s3)，了解后台基本功能
+  - [mock-s3](https://github.com/ShiZhan/mock-s3)，从后台认识基本功能
   - [Ceph](https://ceph.com/)，生产环境标杆
 - 搭建示范
   - [Ceph单机版](https://gitee.com/shi_zhan/data-center-course/blob/master/ceph-deployment-simple.md)
@@ -228,7 +242,7 @@ if not 学习过"缺失的一课"，至少第6讲:
   }
 </style>
 
-| $组成部分$ | $基础$ | $进阶_1$ | $困难_2$ |
+| $组成部分$ | $基础★$ | $进阶_1★★$ | $困难_2★★★$ |
 | :--- | :--- | :--- | :--- |
 | $Server$ | Minio Server | mock-s3 | Ceph |
 | $Client$ | Minio Client | osm/s3cmd/aws-{cli\|shell} | boto3/awssdk |
@@ -237,10 +251,10 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 1. 提供**有限课堂帮助**，[实验参考](https://github.com/cs-course/obs-tutorial)库内提供在线资源传送门。
 2. 超过本资料库所提供导引之外部分**请自己探索**。
-3. s3bench/benchio/COSBench……
+3. s3bench/benchio/warp/ossperf……
 
-实验方案示例1：Minio Server (25) + boto3 (35) + 延迟分布随并发数的变化趋势分析 (35)=95分
-实验方案示例2：mock-s3 (30) + osm (30) + run-s3bench.cmd (25)=85分
+**实验方案示例1**：Minio Server (25) + boto3 (35) + 延迟分布随并发数的变化趋势分析 (35)=95分
+**实验方案示例2**：mock-s3 (30) + osm (30) + run-s3bench.cmd (25)=85分
 
 ---
 
