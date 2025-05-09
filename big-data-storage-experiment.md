@@ -118,7 +118,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 <style scoped>
   table, li {
-    font-size: 30px;
+    font-size: 27px;
   }
 </style>
 
@@ -132,34 +132,30 @@ if not 学习过"缺失的一课"，至少第6讲:
 | Delete (Destroy) | DELETE |       DELETE       |
 
 - 通过典型界面访问在搭建的系统，执行上述典型操作
-  - 从标配客户端到API编程
+  - 客户端: [MinIO Client (mc)](https://github.com/minio/mc), [OSM](https://github.com/appscode/osm), [s3cmd](https://github.com/s3tools/s3cmd), [aws-{cli\|shell}](https://github.com/awslabs/aws-shell)
+  - 编程API: [boto3](https://github.com/boto/boto3), [aws-c-s3](https://github.com/awslabs/aws-c-s3), [awssdk-rust](https://github.com/awslabs/aws-sdk-rust)
 
 ---
 
 #### 【扩展探索】应用集成
 
-- 通过部署实际应用来了解对象存储在云环境中的角色
-  - 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
-  - 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
-  - ……
+通过部署实际应用来了解对象存储在云环境中的角色
+- 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
+- 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
+- ……
 
 ---
 
 ### Lab 2 观测分析性能
 
-
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-</style>
-
 实验测试工具
 
-- [s3bench](https://github.com/igneous-systems/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) (Go语言)
+- [Warp](https://github.com/minio/warp)，[Minio官网参考](https://blog.min.io/how-to-benchmark-minio-warp-speedtest/#step-3-run-warp-and-launch-a-mixed-benchmark)
+- [s3bench](https://github.com/cs-course/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) (Go语言)
+- [OSSperf](https://github.com/christianbaun/ossperf), 包装[s3cmd](https://github.com/s3tools/s3cmd)
 - [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) (Rust语言)
   - 感谢 [@SKTT1Ryze](https://github.com/SKTT1Ryze) 同学提供，欢迎更多同学参与！
-- [COSBench](https://github.com/intel-cloud/cosbench) (Java语言)
+- [COSBench](https://github.com/intel-cloud/cosbench) (Java语言)，功能全面但过于古老，仅供参考。
 
 ---
 
@@ -206,8 +202,9 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 - 为**一个应用**，结合其参数
   - 预测总体**尾延迟分布**，确定与其访存行为适配的对冲百分位
-- 为**一段负载**，结合其序列
-  - 预测**每秒钟IOPS**，确定是否在未来使用对冲
+- 为**一段负载**，结合其请求序列
+  - 预测未来一段时间的**IOPS**，确定是否在未来使用对冲
+    - 高IOPS尽量避免，低IOPS积极发起
 - 为**一段负载**，结合其参数序列
   - 预测未来一段时间的**尾延迟分布**，用于指导灵活对冲的百分位阈值
 - 范例: [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270)
