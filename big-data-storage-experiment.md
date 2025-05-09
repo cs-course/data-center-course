@@ -106,9 +106,9 @@ if not 学习过"缺失的一课"，至少第6讲:
 ### Lab 1 搭建对象存储
 
 - 目标系统
-  - [mock-s3](https://github.com/ShiZhan/mock-s3)
-  - [Minio](https://minio.io/)
-  - [Ceph](https://ceph.com/)
+  - [Minio](https://minio.io/)， 简便易上手
+  - [mock-s3](https://github.com/ShiZhan/mock-s3)，了解后台基本功能
+  - [Ceph](https://ceph.com/)，生产环境标杆
 - 搭建示范
   - [Ceph单机版](https://gitee.com/shi_zhan/data-center-course/blob/master/ceph-deployment-simple.md)
 
@@ -140,9 +140,10 @@ if not 学习过"缺失的一课"，至少第6讲:
 #### 【扩展探索】应用集成
 
 通过部署实际应用来了解对象存储在云环境中的角色
+
 - 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
 - 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
-- ……
+- …更丰富应用请同学们自行探索…
 
 ---
 
@@ -151,11 +152,11 @@ if not 学习过"缺失的一课"，至少第6讲:
 实验测试工具
 
 - [Warp](https://github.com/minio/warp)，[Minio官网参考](https://blog.min.io/how-to-benchmark-minio-warp-speedtest/#step-3-run-warp-and-launch-a-mixed-benchmark)
-- [s3bench](https://github.com/cs-course/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) (Go语言)
-- [OSSperf](https://github.com/christianbaun/ossperf), 包装[s3cmd](https://github.com/s3tools/s3cmd)
-- [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) (Rust语言)
+- [s3bench](https://github.com/cs-course/s3bench), [benchio](https://github.com/giacomoguiulfo/benchio), [s3-benchmark](https://github.com/chinglinwen/s3-benchmark) , Go语言环境
+- [OSSperf](https://github.com/christianbaun/ossperf), 内部包装[s3cmd](https://github.com/s3tools/s3cmd)
+- [s3-bench-rs](https://github.com/SKTT1Ryze/s3-bench-rs) , Rust语言环境
   - 感谢 [@SKTT1Ryze](https://github.com/SKTT1Ryze) 同学提供，欢迎更多同学参与！
-- [COSBench](https://github.com/intel-cloud/cosbench) (Java语言)，功能全面但过于古老，仅供参考。
+- [COSBench](https://github.com/intel-cloud/cosbench) , Java语言环境，功能全面但过于古老，仅供参考。
 
 ---
 
@@ -169,13 +170,14 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 典型问题举例
 
-- 对象尺寸如何影响性能?
+- **对象尺寸**如何影响性能?
   - 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
-- 如何全面观测I/O延迟?
+- 如何全面观测**I/O延迟**?
   - 平均值与统计分布
 - 如果客户端爆满将怎样?
-  - 请求并发数如何同时影响延迟分布和吞吐率？如何保障服务质量？
-- 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
+  - **请求并发数**如何同时影响延迟分布和吞吐率？如何保障服务质量？
+- 横向扩展系统 (Scaling Out) 效果如何?
+  - 向系统中追加**更多存储设备**或服务器
 
 ---
 
