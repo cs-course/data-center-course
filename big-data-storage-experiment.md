@@ -120,7 +120,7 @@ if not 学习过"缺失的一课"，至少第6讲:
 ### Lab 1 搭建对象存储
 
 - 目标系统
-  - [Minio](https://minio.io/)， 简便易上手
+  - [Minio](https://www.min.io/)，[社区版](https://www.min.io/open-source/download)，[中文站](https://www.minio.org.cn/)，简便易上手
   - [mock-s3](https://github.com/ShiZhan/mock-s3)，从后台认识基本功能
   - [Ceph](https://ceph.com/)，生产环境标杆
 - 搭建示范
