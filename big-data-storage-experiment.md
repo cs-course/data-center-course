@@ -153,10 +153,12 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 #### 【扩展探索】应用集成
 
-通过部署实际应用来了解对象存储在云环境中的角色
+通过部署实际应用来了解对象存储在云乃至大模型应用中的角色
 
 - 个人云 [Nextcloud](https://github.com/nextcloud), [Seafile](https://www.seafile.com/home/), [zfile](https://github.com/zhaojun1998/zfile)
 - 图片管理 [Thumbor](http://thumbor.org/), [picfit](https://github.com/thoas/picfit)
+- 大模型应用 [Coze Studio](https://github.com/coze-dev/coze-studio), [Dify](https://github.com/langgenius/dify/), [FastGPT](https://github.com/labring/FastGPT)
+
 - …更丰富应用请同学们自行探索…
 
 ---
