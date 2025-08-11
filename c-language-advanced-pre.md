@@ -35,6 +35,26 @@ math: katex
 
 ---
 
+## 基本信息
+
+<!-- paginate: true -->
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+![bg right fit](images/ISBN-9787302581505.jpg)
+
+- 课程资料 <https://shi_zhan.gitlab.io/cs-courses/c-language-advanced-pre>  
+- 课程平台 *微助教*
+- 教材与参考书
+  - [**C语言程序设计**](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344701.html), 作者：卢萍、李开、王多强、甘早斌，清华大学出版社, 2021
+  - [C语言程序设计典型题解与实验指导](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344801.html)，作者：卢萍、李开、王多强、甘早斌，清华大学出版社，2019
+
+---
+
 <!-- paginate: true -->
 
 ## 背景知识
