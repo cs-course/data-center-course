@@ -141,8 +141,8 @@ Source: <https://datareportal.com/reports/>
 ### AI进一步给数据中心的发展演化提速
 
 <style scoped>
-  li, p {
-    font-size: 30px;
+  h4, li, p {
+    font-size: 25px;
   }
 </style>
 
@@ -158,6 +158,8 @@ Source: <https://datareportal.com/reports/>
 - **十大集群布局**从大城市周边，正在加速向西部地区拓展
 - "东数西算"实现**东西部资源协同**
 
+来源：[央视财经《经济半小时》栏目](https://mp.weixin.qq.com/s?__biz=MjM5OTUwMTc2OA==&mid=2650934305&idx=1&sn=21f771308dbdd908fa473ac0d23ea6b2&chksm=bd0f940729cc7a150fa08cf474b65a952e8192329b71679d8a7c7495a819848c58cbc240ba7e)
+
 ---
 
 ![bg](images/10-ai-datacenters-in-china.webp)
@@ -167,7 +169,7 @@ Source: <https://datareportal.com/reports/>
 ### 绿色革命与产业赋能
 
 <style scoped>
-  li, p, h4 {
+  h4, li, p {
     font-size: 25px;
   }
   table {
@@ -199,7 +201,7 @@ Source: <https://datareportal.com/reports/>
 ### 创新业态与未来趋势
 
 <style scoped>
-  li, p, h4 {
+  h4, li, p {
     font-size: 25px;
   }
 </style>

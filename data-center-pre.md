@@ -11,49 +11,16 @@ title: 数据中心技术
 
 **施展，童薇，胡燏翀，谭支鹏**
 武汉光电国家研究中心，计算机学院
-2024-11-06 至 2024-12-27
+2025-11-12 至 2026-01-02
 
 ---
 
 ## 授课教师
 
-- **施展** 副教授，武汉光电国家研究中心，存储部，C523
-- 联系方式
-  - EMail <zshi@hust.edu.cn>
-  - 主页
-    - <https://shizhan.github.io/>
-    - <http://faculty.hust.edu.cn/shizhan/zh_CN/index.htm>
-
----
-
-## 授课教师…
-
-- **童薇** 副教授，武汉光电国家研究中心，存储部，C522
-- 联系方式
-  - EMail <tongwei@hust.edu.cn>
-  - 主页
-    - <http://faculty.hust.edu.cn/tongwei/zh_CN/index.htm>
-
----
-
-## 授课教师……
-
-- **胡燏翀** 教授，计算机科学与技术学院，存储所，B518
-- 联系方式
-  - EMail <yuchonghu@hust.edu.cn>
-  - 主页
-    - <http://yuchonghu.com>
-    - <http://faculty.hust.edu.cn/huyuchong/zh_CN/index.htm>
-
----
-
-## 授课教师………
-
-- **谭支鹏** 教授，武汉光电国家研究中心，存储部，C525
-- 联系方式
-  - EMail <tanzhipeng@hust.edu.cn>
-  - 主页
-    - <http://faculty.hust.edu.cn/tanzhipeng/zh_CN/index.htm>
+- **施展** 武汉光电国家研究中心，C523，<zshi@hust.edu.cn>
+- **童薇** 武汉光电国家研究中心，C522，<tongwei@hust.edu.cn>
+- **胡燏翀** 计算机科学与技术学院，B518，<yuchonghu@hust.edu.cn>
+- **谭支鹏** 武汉光电国家研究中心，C525，<tanzhipeng@hust.edu.cn>
 
 ---
 
@@ -344,7 +311,7 @@ He comments that **the lack of experience in datacenter design may have been an 
   }
 </style>
 
-扫码进群，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
+加入微助教，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
 ![bg right:32% fit](images/qq-group-2024.jpg)
 
@@ -356,14 +323,6 @@ He comments that **the lack of experience in datacenter design may have been an 
 |**资料来源**<br/>- Stackoverflow<br/>- Github, Bitbucket, Gitee, GitLab<br/>- Linkedin<br/>- LeetCode<br/>- Release Mirrors, Vagrant, Docker…||
 
 <!-- 正式开始之前，让我们熟悉一下彼此，不是姓甚名谁，而是初步建立每一位同学的用户画像，毕竟我们的课堂成分有些复杂，还有来自于别的工程专业的研究生们 -->
-
----
-
-## 或者扫描问卷条码
-
-![bg right:32% fit](images/qq-group-2024.jpg)
-
-![h:450](images/class-survey.jpg)
 
 ---
 
