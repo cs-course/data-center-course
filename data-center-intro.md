@@ -23,15 +23,17 @@ math: katex
 
 <!-- paginate: true -->
 
-- 背景现状和驱动力
-- 历史起源和定义
-- 经典案例
-- 超算和数据中心
-- 主要问题和挑战
+- 起源、发展和现状
+- 平台软件与负载特性
+- 基础硬件与设计取舍
+- 基建、供电和冷却
+- 集中供能和效率优势
+- 集中使用和成本优势
+- 规模化运维挑战
 
 ---
 
-## 背景现状
+## 起源、发展和现状
 
 <style scoped>
   h2 {
@@ -43,36 +45,71 @@ math: katex
 
 ---
 
-### 刚刚发生的事情背后
+### 历史起源
 
-<style scoped>
-  p {
-    font-size: 18px;
-    text-align: center;
-  }
-</style>
-
-![h:450](images/Web-Application-Architecture.png)
-
-Source: <https://codecondo.com/web-application-architecture/>
+- 数据中心的概念可以追溯到互联网时代的早期 (60s)
+- ARPANET (70s) 与 WWW (90s)
+  - **应用日渐丰富**
+    - EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
+  - **网络能力增长**
+    - 拨号、ADSL、宽带、光纤入户，2G至5G ...
+- Server-side Computing -- **Cloud**
+  - 2006年，亚马逊开创性发布了Amazon Web Services云计算平台
 
 ---
 
-### 在腾讯公司的平台上
+### 标准规范
 
 <style scoped>
-  table, p {
-    font-size: 20px;
+  li, p {
+    font-size: 25px;
   }
 </style>
 
-![h:380](images/tencent-fact-2016.png)
+![bg right fit](images/ANSI_TIA-942_Standard.png)
 
-|全球服务器|数据存储规模|全球加速节点|带宽储备|云产品服务|
-|:-:|:-:|:-:|:-:|:-:|
-|100W+|EB级|2800+|200T|300+|
+- 数据中心设备及系统可靠性规范 [ANSI/TIA-942](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)，2005年发表，2010、2014年修订
+  - 一个**集中存储、处理和分发大量数据的设施**，用于支持各种信息技术服务和业务运营。
+  - 通常包括服务器、网络设备、存储设备、电力供应系统、冷却系统等基础设施，并**提供安全性、稳定性和可靠性保障**。
+  - 为企业和组织提供高效的数据管理和处理能力，支持**云计算、大数据分析、在线服务等应用场景**。
 
-Source: <https://cloud.tencent.com/about>
+---
+
+### 分级
+
+<style scoped>
+  th {
+    background: #007FFF;
+  }
+</style>
+
+|Tier|Feature|
+|:-|:-|
+|**Tier 1** –– basic data center|no redundancy|
+|**Tier 2** –– redundant components|Single distribution path with redundant components |
+|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
+|**Tier 4** –– fault tolerant|Multiple active distribution paths|
+
+Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
+
+---
+
+### 发展阶段
+
+![bg fit](images/datacenter-trend.png)
+
+---
+
+### 发展阶段…
+
+1. 计算中心阶段（2001-2006 年）
+    - 基础资源和设施**托管、维护**
+2. 信息中心阶段（2006-2012 年）
+    - 大型化、**虚拟化**、综合化
+3. 云中心阶段（2012-2019 年）
+    - **云计算**技术成熟，指标监控和度量
+4. 算力中心阶段（2019 年至今）
+    - **绿色化、智能化**，敏捷运营和精细管理
 
 ---
 
@@ -370,86 +407,6 @@ Source:
 - 中国智能算力占全国总算力的比重也由2016年的3%提升至2020年41%，预计到2023年智能算力的占比将提升至70%。
 
 Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
-
----
-
-## 历史起源和定义
-
-<style scoped>
-  h2 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-  }
-</style>
-
----
-
-### 历史起源
-
-- 数据中心的概念可以追溯到互联网时代的早期 (60s)
-- ARPANET (70s) 与 WWW (90s)
-  - **应用日渐丰富**
-    - EMail、SNS、IM、博客/微博、视频/短视频、地图 ...
-  - **网络能力增长**
-    - 拨号、ADSL、宽带、光纤入户，2G至5G ...
-- Server-side Computing -- **Cloud**
-  - 2006年，亚马逊开创性发布了Amazon Web Services云计算平台
-
----
-
-### 标准规范
-
-<style scoped>
-  li, p {
-    font-size: 25px;
-  }
-</style>
-
-![bg right fit](images/ANSI_TIA-942_Standard.png)
-
-- 数据中心设备及系统可靠性规范 [ANSI/TIA-942](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)，2005年发表，2010、2014年修订
-  - 一个**集中存储、处理和分发大量数据的设施**，用于支持各种信息技术服务和业务运营。
-  - 通常包括服务器、网络设备、存储设备、电力供应系统、冷却系统等基础设施，并**提供安全性、稳定性和可靠性保障**。
-  - 为企业和组织提供高效的数据管理和处理能力，支持**云计算、大数据分析、在线服务等应用场景**。
-
----
-
-### 分级
-
-<style scoped>
-  th {
-    background: #007FFF;
-  }
-</style>
-
-|Tier|Feature|
-|:-|:-|
-|**Tier 1** –– basic data center|no redundancy|
-|**Tier 2** –– redundant components|Single distribution path with redundant components |
-|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
-|**Tier 4** –– fault tolerant|Multiple active distribution paths|
-
-Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
-
----
-
-### 发展阶段
-
-![bg fit](images/datacenter-trend.png)
-
----
-
-### 发展阶段…
-
-1. 计算中心阶段（2001-2006 年）
-    - 基础资源和设施**托管、维护**
-2. 信息中心阶段（2006-2012 年）
-    - 大型化、**虚拟化**、综合化
-3. 云中心阶段（2012-2019 年）
-    - **云计算**技术成熟，指标监控和度量
-4. 算力中心阶段（2019 年至今）
-    - **绿色化、智能化**，敏捷运营和精细管理
 
 ---
 
@@ -1160,6 +1117,78 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
 ![bg](images/xAI-Colossus-net.jpg)
 
 其网络中，每路光纤连接的速度是 400GbE，比我们在其他地方看到的常见 1GbE 网络快 400 倍。每台服务器有 9 个这样的链接，这意味着单 GPU 计算服务器的带宽约为 3.6Tbps。
+
+---
+
+## 平台软件与负载特性
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 基础硬件与设计取舍
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 基建、供电和冷却
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 集中供能和效率优势
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 集中使用和成本优势
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 规模化运维挑战
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
 
 ---
 
