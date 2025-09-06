@@ -233,13 +233,13 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - 每人选择1篇拟汇报论文
 - 选择范围：CCF-A相关论文
-  - [FAST](https://www.usenix.org/conference/fast24/technical-sessions), [ATC](https://www.usenix.org/conference/atc24/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi24/technical-sessions), [SOSP](https://sosp2023.mpi-sws.org/program.html), [ISCA](https://www.iscaconf.org/isca2024/program/), [HPCA](https://www.hpca-conf.org/2024/program/main.php) (2023~24)
+  - [FAST](https://www.usenix.org/conference/fast24/technical-sessions), [ATC](https://www.usenix.org/conference/atc24/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi24/technical-sessions), [SOSP](https://sosp2023.mpi-sws.org/program.html), [ISCA](https://www.iscaconf.org/isca2024/program/), [HPCA](https://www.hpca-conf.org/2024/program/main.php) (2024~25)
 
 <!-- https://sigops.org/s/conferences/sosp/2024/accepted.html SOSP24刚开会，还没有正式发布论文集-->
 
 也可以点击
 
-- [【腾讯文档】数据中心技术课程论文研讨2024](https://docs.qq.com/sheet/DRHJZV01EbWhwaHlZ)
+- [【腾讯文档】数据中心技术课程论文研讨2025](https://docs.qq.com/sheet/DUG1YRWJkTU51endC?tab=BB08J2)
 
 ---
 
@@ -279,16 +279,16 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 |   | 讲座主题 | 日期 | 地点 |
 |:-:|:--------|:---| :--- |
-| 1 | [数据中心技术概述](data-center-intro) | 11-06(**周三5-6**) 11-08(**周五3-4**) | C12-S204 |
-| 2 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-13, 11-15 | C12-S204 |
-| 3 | 数据中心固态存储技术 (童老师) | 11-20, 11-22 | C12-S204 |
-| 4 | 数据中心磁盘故障预测技术 (谭老师) | 11-27, 11-29 | C12-S204 |
-| 5 | 数据中心可靠性保障技术 (胡老师) | 12-04, 12-06 | C12-S204 |
-| 6 | 论文研讨* | 12-11, 12-13 | C12-S204 |
-| 7 | 论文研讨 | 12-18, 12-20 | C12-S204 |
-| 8 | 论文研讨 | 12-25, 12-27 | C12-S204 |
+| 1 | [数据中心技术概述](data-center-intro) | 11-12(**周三5-6**) 11-14(**周五5-6**) | C12-S204 |
+| 2 | [对象存储技术](object-storage) 及 [存储服务质量保障技术](qos-guarantee) | 11-19, 11-21 | C12-S204 |
+| 3 | 数据中心固态存储技术 (童老师) | 11-26, 11-28 | C12-S204 |
+| 4 | 数据中心磁盘故障预测技术 (谭老师) | 12-03, 12-05 | C12-S204 |
+| 5 | 数据中心可靠性保障技术 (胡老师) | 12-10, 12-12 | C12-S204 |
+| 6 | 论文研讨* | 12-17, 12-19 | C12-S204 |
+| 7 | 论文研讨 | 12-24, 12-26 | C12-S204 |
+| 8 | 论文研讨 | 12-31, 01-02 | C12-S204 |
 
-\* *每周13名同学，每人12分钟报告，2~3分钟问答，相关问题还应**在课程平台讨论里作答**。*
+\* *每周17名同学，每人10分钟报告，2分钟问答，相关问题还应**在课程平台讨论里模拟Rebuttal**。*
 
 ---
 
@@ -314,6 +314,8 @@ He comments that **the lack of experience in datacenter design may have been an 
 加入微助教，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
 
 ![bg right:32% fit](images/qq-group-2024.jpg)
+
+<!-- 微助教条码 -->
 
 |||
 |:-|:-|
