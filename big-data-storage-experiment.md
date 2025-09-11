@@ -238,7 +238,7 @@ if not 学习过"缺失的一课"，至少第6讲:
     - 高IOPS尽量避免，低IOPS积极发起
 - 为**一段负载**，结合其参数序列
   - 预测未来一段时间的**尾延迟分布**，用于指导灵活对冲的百分位阈值
-- 范例: [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
+- 系统指标预测模型范例: [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
 
 ---
 
