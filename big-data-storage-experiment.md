@@ -18,17 +18,6 @@ math: katex
 2025-09-16 (第3周周二) 至 10-07 (第6周周二，可能提前至09-28)
 19:00~22:00 @ 南一楼116_1
 
-<!-- 
-
-周次 周二
-第3周 2025-09-15 至 2025-09-21 节次：9-12 课程名称：大数据存储系统与管理 上课教室：南一楼116_1
-第4周 2025-09-22 至 2025-09-28 节次：9-12 课程名称：大数据存储系统与管理 上课教室：南一楼116_1
-第5周 2025-09-29 至 2025-10-05 节次：9-12 课程名称：大数据存储系统与管理 上课教室：南一楼116_1
-第6周 2025-10-06 至 2025-10-12 节次：9-12 课程名称：大数据存储系统与管理 上课教室：南一楼116_1
-
-其中最后一次课(2025-10-07)将会被调休提前(2025-09-28)，三天之内两次晚归(09-28, 09-30)，嗯，需要注意下
- -->
-
 ---
 
 ## 授课教师
@@ -133,11 +122,11 @@ if not 学习过"缺失的一课"，至少第6讲:
 ### Lab 1 搭建对象存储
 
 - 目标系统
-  - [Minio](https://www.min.io/)，[社区版](https://www.min.io/open-source/download)，[中文站](https://www.minio.org.cn/)，简便易上手
-  - [mock-s3](https://github.com/ShiZhan/mock-s3)，从后台认识基本功能
+  - [Minio](https://www.min.io/)，功能精炼易上手
+    - [社区版](https://www.min.io/open-source/download)，[中文站](https://www.minio.org.cn/)
+  - [mock-s3](https://github.com/ShiZhan/mock-s3)，代码极简，便于从后台认识基本功能
   - [Ceph](https://ceph.com/)，生产环境标杆
-- 搭建示范
-  - [Ceph单机版](https://gitee.com/shi_zhan/data-center-course/blob/master/ceph-deployment-simple.md)
+    - [Ceph单机版搭建示范](https://gitee.com/shi_zhan/data-center-course/blob/master/ceph-deployment-simple.md)
 
 ---
 
