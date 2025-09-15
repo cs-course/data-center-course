@@ -231,31 +231,19 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 ---
 
-#### 【扩展探索】3.1 采集训练样本
+#### 【扩展探索】baseline
 
-<style scoped>
-  p, li {
-    font-size: 25px;
-  }
-</style>
 
-使用s3bench向MinIO发起不同参数请求，采集延迟数据，建立回归模型预测尾延迟
+使用s3bench向MinIO**发起不同参数请求**，**采集延迟数据**，建立**回归模型**预测尾延迟
 
 - 预装MinIO单节点
 - s3bench已编译
 - Python3（pandas, scikit-learn, matplotlib）
 
-##### 1. 启动MinIO
+##### 启动MinIO
 
 ```bash
 minio server /data --console-address ":9001"
-```
-
-##### 2. 创建测试桶
-
-```bash
-mc alias set myminio http://localhost:9000 minioadmin minioadmin
-mc mb myminio/test
 ```
 
 ---
@@ -266,7 +254,14 @@ mc mb myminio/test
   }
 </style>
 
-##### 3. 运行s3bench采集数据
+##### 创建测试桶
+
+```bash
+mc alias set myminio http://localhost:9000 minioadmin minioadmin
+mc mb myminio/test
+```
+
+##### 运行s3bench采集数据
 
 ```bash
 # 参数扫描：对象大小1KB-1MB，并发1-32
@@ -282,7 +277,7 @@ done
 
 ---
 
-##### 4. 解析延迟数据
+##### 解析延迟数据
 
 ```python
 import re, pandas as pd
@@ -304,7 +299,7 @@ df.to_csv('latency.csv', index=False)
 
 ---
 
-##### 5. 回归模型拟合
+##### 回归模型拟合
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -325,7 +320,7 @@ plt.xlabel('并发数'); plt.ylabel('延迟(ms)'); plt.legend(); plt.show()
 
 ---
 
-##### 6. 预测新负载
+##### 预测新负载
 
 ```python
 import numpy as np
@@ -335,14 +330,12 @@ def predict_p99(clients, size):
 print("12并发 256KB对象 预测P99:", predict_p99(12, 256*1024), "ms")
 ```
 
----
+##### 进一步探索
 
-#### 扩展探索
-
-- 尝试随机森林/XGBoost提升精度
-- 加入CPU/内存特征
-- 实时仪表盘展示预测曲线
-- 延迟实际上是个分布，怎样预测分布？
+- 尝试随机森林/XGBoost**提升精度**
+- 加入**CPU/内存特征**
+- 实时仪表盘展示**预测曲线**
+- 延迟实际上是个**分布**，怎样预测分布？
 
 ---
 
@@ -381,17 +374,14 @@ print("12并发 256KB对象 预测P99:", predict_p99(12, 256*1024), "ms")
 
 <style scoped>
   h3 {
-    font-size: 30px;
+    font-size: 35px;
   }
   p {
-    font-size: 25px;
-  }
-  li {
-    font-size: 18px;
+    font-size: 30px;
   }
 </style>
 
-在微助教中完成**实验报告**。
+在微助教中提交**实验报告**。
 
 每周的**课堂学习也会要求交一份作业**，请上传进微助教。
 
@@ -403,7 +393,7 @@ print("12并发 256KB对象 预测P99:", predict_p99(12, 256*1024), "ms")
 
 课堂部分，华老师会在微助教给出报告要求。
 
-实验部分，请同学们按照前述要求用Markdown编写，上传微助教账号，提交作业。
+实验部分，按照前述要求用Markdown编写，上传微助教账号，完成作业。
 
 ---
 
