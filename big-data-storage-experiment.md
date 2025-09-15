@@ -231,6 +231,121 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 ---
 
+#### 【扩展探索】3.1 采集训练样本
+
+<style scoped>
+  p, li {
+    font-size: 25px;
+  }
+</style>
+
+使用s3bench向MinIO发起不同参数请求，采集延迟数据，建立回归模型预测尾延迟
+
+- 预装MinIO单节点
+- s3bench已编译
+- Python3（pandas, scikit-learn, matplotlib）
+
+##### 1. 启动MinIO
+
+```bash
+minio server /data --console-address ":9001"
+```
+
+##### 2. 创建测试桶
+
+```bash
+mc alias set myminio http://localhost:9000 minioadmin minioadmin
+mc mb myminio/test
+```
+
+---
+
+<style scoped>
+  p, li {
+    font-size: 25px;
+  }
+</style>
+
+##### 3. 运行s3bench采集数据
+
+```bash
+# 参数扫描：对象大小1KB-1MB，并发1-32
+for size in 1024 16384 65536 1048576; do
+  for clients in 1 2 4 8 16 32; do
+    s3bench -accessKey minioadmin -secretKey minioadmin \
+            -bucket test -endpoint http://localhost:9000 \
+            -numClients $clients -numSamples 1000 -objectSize $size \
+            -verbose >> raw.txt
+  done
+done
+```
+
+---
+
+##### 4. 解析延迟数据
+
+```python
+import re, pandas as pd
+def parse_s3bench(path):
+    records = []
+    with open(path) as f:
+        for m in re.finditer(r'NumClients:\s*(\d+).*?ObjectSize:\s*(\d+).*?P50:\s*([\d.]+)ms.*?P99:\s*([\d.]+)ms', f.read(), re.S):
+            records.append({
+                'clients': int(m.group(1)),
+                'size': int(m.group(2)),
+                'p50': float(m.group(3)),
+                'p99': float(m.group(4))
+            })
+    return pd.DataFrame(records)
+
+df = parse_s3bench('raw.txt')
+df.to_csv('latency.csv', index=False)
+```
+
+---
+
+##### 5. 回归模型拟合
+
+```python
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+import matplotlib.pyplot as plt
+
+X = df[['clients', 'size']].values
+y = df['p99'].values
+
+model = LinearRegression().fit(X, y)
+print('R²:', r2_score(y, model.predict(X)))
+
+# 可视化
+plt.scatter(df['clients'], y, label='P99真实')
+plt.scatter(df['clients'], model.predict(X), label='P99预测')
+plt.xlabel('并发数'); plt.ylabel('延迟(ms)'); plt.legend(); plt.show()
+```
+
+---
+
+##### 6. 预测新负载
+
+```python
+import numpy as np
+def predict_p99(clients, size):
+    return model.predict([[clients, size]])[0]
+
+print("12并发 256KB对象 预测P99:", predict_p99(12, 256*1024), "ms")
+```
+
+---
+
+#### 扩展探索
+
+- 尝试随机森林/XGBoost提升精度
+- 加入CPU/内存特征
+- 实时仪表盘展示预测曲线
+- 延迟实际上是个分布，怎样预测分布？
+
+---
+
 ## 评分构成
 
 <style scoped>
