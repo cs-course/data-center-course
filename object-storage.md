@@ -77,6 +77,20 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
+<style scoped>
+  p {
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 64, 255, 0.5);
+  }
+</style>
+
+![bg opacity:.5](images/ai-storage-market.webp)
+
+因为AI的原因，存储市场迎来了新一轮的繁荣期。有预测数据显示，全球AI驱动存储市场在2024年的规模大约是287.1亿美元。预计2025年将增长到359.5亿美元，并在2034年达到大约2552.4亿美元，年均复合增长率大约是24.42%。
+
+---
+
 ## 挑战一：扩展
 
 <style scoped>
