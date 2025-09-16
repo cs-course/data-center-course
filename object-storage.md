@@ -6,7 +6,7 @@ title: 数据中心技术
 math: katex
 ---
 
-# 对象存储系统尾延迟问题
+# 对象存储系统与尾延迟问题
 
 <!-- _class: lead -->
 
@@ -21,8 +21,6 @@ math: katex
 
 ## 内容大纲
 
-<!-- paginate: true -->
-
 - 背景
 - **挑战一：扩展**
 - 对象存储系统的诞生
@@ -34,6 +32,8 @@ math: katex
 ---
 
 ## 对象存储背景
+
+<!-- paginate: true -->
 
 <style scoped>
   h2 {
