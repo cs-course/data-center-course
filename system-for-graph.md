@@ -19,27 +19,52 @@ math: mathjax
 
 ---
 
+## 参考资料
+
+- [CS224W: Machine Learning with Graphs(Stanford)](http://web.stanford.edu/class/cs224w/)
+  - [B站搬运 2021版](https://www.bilibili.com/video/BV18FNQeYEzz/)
+
+## 参考书
+
+- [Graph Representation Learning Book](https://www.cs.mcgill.ca/~wlh/grl_book/)
+- [Network Science](http://networksciencebook.com/)
+- [Networks, Crowds, and Markets:
+Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/)
+
+---
+
 ## 内容大纲
 
 ![bg right h:300](images/course-barcode.png)
 
 <!-- paginate: true -->
 
-- 经典图应用及算法
+<!-- - 经典图应用及算法
 - 对系统的挑战
 - 对系统设计的影响
 - 图应用的发展
 - 新的挑战
 - 对系统的探索
-- 实践作业
-<!-- 
+- 实践作业 -->
+
 - 影响深远的图应用
 - 追求高效的图系统
 - 表示学习与随机游走
 - 知识图谱
 - 大语言模型和知识图谱
 - 实践作业
- -->
+
+---
+
+## 影响深远的图应用
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
 
 ---
 
@@ -103,7 +128,73 @@ math: mathjax
 
 ---
 
-## 背后的系统
+## 图应用的发展
+
+- **电信欺诈**——异常模式侦测
+- **金融欺诈**——动态图分析
+
+---
+
+### 异常模式侦测
+
+![h:450](images/Telecom-Fraud.png)
+
+---
+
+#### 人工提取属性
+
+```SQL
+源电话拨打过电话的联系人的总数目
+源电话拨打目标圈的总通话次数
+源电话拨打目标圈的总通话时长
+源电话拨打目标圈的平均通话时长
+源电话拨打目标圈的平均通话次数
+源电话与每个目标圈的联系人平均通话的活跃天数
+目标圈内有回拨源电话的联系人的总数
+目标圈内回拨源电话的总通话个数
+目标圈内回拨源电话的平均回拨通话时长
+...
+```
+
+---
+
+### 动态图分析
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+![bg right w:500](images/evolving-graph-apps.png)
+
+- 动态图不仅规模巨大，其拓扑结构亦持续变化
+  - Facebook: 月活跃用户达25亿
+  - Twitter: 每天500亿条推文被发送
+  - 淘宝: 每秒54.4万笔订单被创建
+- 分析目标
+  - 复盘各时状态
+  - 找出演化趋势
+
+---
+
+![bg fit](images/fund-tracking.png)
+
+---
+
+## 追求高效的图系统
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
+
+---
+
+## 经典图系统
 
 <style scoped>
   li {
@@ -160,16 +251,6 @@ math: mathjax
 ![bg fit](images/neo4j-intro.png)
 
 <!-- 专攻图数据处理的系统，还专门分支出了一个门类，如今被归类为一种NoSQL的图数据库，曾经风光一时，但是其中最具标志意义的创业公司Neo4j的发展却颇为坎坷，最近倒是又有新的契机闪过，即KG与LLM的合作 -->
-
----
-
-## 想了解更多……
-
-<https://github.com/Team309/awesome-graph-processing>
-
-<https://chwan1016.github.io/awesome-gnn-systems/>
-
-[A software resource for large graph processing and analysis](https://www.nature.com/articles/s43588-023-00466-7), Nature Computational Science volume 3, pages 586–587 (2023)
 
 ---
 
@@ -438,7 +519,7 @@ void bfs(int source) {
   }
 </style>
 
-怎样布局？
+亲和布局
 
 ---
 
@@ -667,64 +748,29 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-### 相关研究
-
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
-- Lee E, Kim J, Lim K, Noh S H, Seo J. **Pre-Select Static Caching and Neighborhood Ordering for BFS-like Algorithms on Disk-based Graph Engines**, ATC 2019.
-- V. Balaji, B. Lucia. **When is Graph Reordering an Optimization? Studying the Effect of Lightweight Graph Reordering Across Applications and Input Graphs**, IISWC 2018.
-- K. Lakhotia, S. Singapura, R. Kannan, V. Prasanna. **ReCALL: Reordered Cache Aware Locality Based Graph Processing**, HiPC 2017.
-- J. Arai, H. Shiokawa, T. Yamamuro, M. Onizuka, S. Iwamura. **Rabbit Order: Just-in-Time Parallel Reordering for Fast Graph Analysis**, IPDPS 2016.
-- Wei H, Yu J X, Lu C, Lin X. **Speedup Graph Processing by Graph Ordering**, SIGMOD 2016.
-
----
-
-### 怎样分拆
-
-#### 分拆很耗时
-
-![w:1100](images/subgraph-construction-is-important.jpg)
-
----
-
-#### 也影响吞吐
-
-![w:1100](images/dilemma-on-data-loading.jpg)
-
----
-
-#### LOSC: Locality-optimized Subgraph Construction
-
-- 子图内，优先保证边(邻居)顺序访问
-  - 调整分块条件
-  - **子图创建提速**
-    - GraphChi不够细
-- 子图间，适当冗余减少子图切换
-  - 允许边复制
-  - **用空间换效率**
-    - X-Stream太极端
-
----
+## 挑战
 
 <style scoped>
   p {
-    font-size: 20px;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 72px;
   }
 </style>
 
-![w:1000](images/evaluation-on-losc.jpg)
-
-[Xu X, Wang F, Jiang H et al. **HUS-Graph: I/O-Efficient Out-of-Core Graph Processing with Hybrid Update Strategy**](https://dl.acm.org/doi/10.1145/3225058.3225108). ICPP 2018.
-[LOSC:Efficient Out-of-Core Graph Processing with Locality-optimized Subgraph Construction](https://ieeexplore.ieee.org/document/9068600). IWQoS 2019.
-[A Hybrid Update Strategy for I/O-Efficient Out-of-Core Graph Processing](https://ieeexplore.ieee.org/document/8994089). IEEE TPDS 2020.
+时空检索
 
 ---
 
-### 相关研究…
+## 来自实际应用的诉求
+
+找出10分钟以内的账号同IP多开？
+
+![h:400](images/evolving-graph-logic.png)
+
+---
+
+## 动态图数据结构
 
 <style scoped>
   li {
@@ -732,45 +778,15 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-- Zhao J, Zhang Y, Liao X, He L, He B, Jin H, Liu H, Chen Y. **GraphM: An Efficient Storage System for High Throughput of  Concurrent Graph Processing**, SC 2019.
-- Pacaci A, Özsu M T. **Experimental Analysis of Streaming Algorithms for Graph Partitioning**, SIGMOD 2019.
-- M. Zhang, Y. Zhuo, C. Wang, M. Gao, Y. Wu, K. Chen, C. Kozyrakis, X. Qian. **GraphP: Reducing Communication for PIM-Based Graph Processing with Efficient Data Partition**, HPCA 2018.
-- Li X, Zhang M, Chen K, Wu Y. **ReGraph: A Graph Processing Framework that Alternately Shrinks and Repartitions the Graph**, SC 2018.
-- Lakhotia K, Kannan R, Prasanna V. **Accelerating PageRank using Partition-Centric Processing**, ATC 2018.
+![h:300](images/snapshot-vs-log.png)
+
+- 快照模型: 支持高效地查询，但存储开销大
+- 日志模型: 降低了存储开销，但查询时间成本高
+- 全图模型: 存储开销大，且查询效率低
 
 ---
 
-## 图应用的发展
-
-- **电信欺诈**——异常模式侦测
-- **金融欺诈**——动态图分析
-
----
-
-### 异常模式侦测
-
-![h:450](images/Telecom-Fraud.png)
-
----
-
-#### 人工提取属性
-
-```SQL
-源电话拨打过电话的联系人的总数目
-源电话拨打目标圈的总通话次数
-源电话拨打目标圈的总通话时长
-源电话拨打目标圈的平均通话时长
-源电话拨打目标圈的平均通话次数
-源电话与每个目标圈的联系人平均通话的活跃天数
-目标圈内有回拨源电话的联系人的总数
-目标圈内回拨源电话的总通话个数
-目标圈内回拨源电话的平均回拨通话时长
-...
-```
-
----
-
-### 动态图分析
+## 动态图系统
 
 <style scoped>
   li {
@@ -778,64 +794,42 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-![bg right w:500](images/evolving-graph-apps.png)
+![h:300](images/evolving-graph-research.png)
 
-- 动态图不仅规模巨大，其拓扑结构亦持续变化
-  - Facebook: 月活跃用户达25亿
-  - Twitter: 每天500亿条推文被发送
-  - 淘宝: 每秒54.4万笔订单被创建
-- 分析目标
-  - 复盘各时状态
-  - 找出演化趋势
+- 快照模型: $G=<G_0, G_1, G_2, \dots, G_t>$
+- 日志模型: $G=<ev_0, ev_1, ev_2, \dots, ev_t>$
+- 全图模型: $G_[t_1, t_n]=<V_[t_1, t_n], E_[t_1, t_n]>$
+- 混合模型: 基于偏斜性感知或基于相关性感知
 
 ---
-
-![bg fit](images/fund-tracking.png)
-
----
-
-## 新的挑战
 
 <style scoped>
   li {
-    font-size: 18px;
+    font-size: 27px;
   }
 </style>
 
-问题1：**复杂模式**…
+### 时空检索数据结构
 
-超算可以拼GTEPS，可是还有那么多任务形式那么多应用？
-
-问题2：**时空检索**…
-
-…10分钟以内的账号同IP多开…？
-
-![h:200](images/evolving-graph-logic.png)
+- 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
+  - 基于偏斜性感知动态设置关键快照
+  - 偏斜性包括度的偏斜性(空间)和访问频率(时间)的偏斜性
 
 ---
 
-## 新的挑战…
+## 表示学习与随机游走
 
 <style scoped>
-  li {
-    font-size: 18px;
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
   }
 </style>
 
-问题1：**复杂模式**
-
-以表示学习取代点边遍历
-
-问题2：**时空检索**
-
-结合各类数据结构特长以综合使用
-
-- [CS224W: Machine Learning with Graphs(Stanford)](http://web.stanford.edu/class/cs224w/), [B站搬运](https://www.bilibili.com/video/BV1me411x7Rm)
-- [Kumar P, Huang H H. GraphOne: A Data Store for Real-time Analytics on Evolving Graphs. FAST 2019.](https://www.usenix.org/conference/fast19/presentation/kumar)
-
 ---
 
-## 对系统的探索——图表示学习
+## 图表示学习
 
 <style scoped>
   li {
@@ -852,7 +846,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 对系统的探索——图抽样系统
+## 图抽样系统
 
 <style scoped>
   th {
@@ -869,39 +863,6 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 |基于随机游走|DeepWalk(KDD'14), LINE(KDD'15), Node2Vec(KDD'16), Struct2Vec(KDD’17), DiaRW(FGCS’19)|扩展性更好（时间和空间）、适应性更强|
 
 ![h:280](images/deepwalk.png)
-
----
-
-## 对系统的探索——数据结构分析
-
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
-![h:300](images/snapshot-vs-log.png)
-
-- 快照模型: 支持高效地查询，但存储开销大
-- 日志模型: 降低了存储开销，但查询时间成本高
-- 全图模型: 存储开销大，且查询效率低
-
----
-
-## 对系统的探索——动态图系统
-
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
-![h:300](images/evolving-graph-research.png)
-
-- 快照模型: $G=<G_0, G_1, G_2, \dots, G_t>$
-- 日志模型: $G=<ev_0, ev_1, ev_2, \dots, ev_t>$
-- 全图模型: $G_[t_1, t_n]=<V_[t_1, t_n], E_[t_1, t_n]>$
-- 混合模型: 基于偏斜性感知或基于相关性感知
 
 ---
 
@@ -1001,29 +962,35 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
+## 知识图谱
+
 <style scoped>
-  li {
-    font-size: 27px;
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
   }
 </style>
-
-### 时空检索数据结构
-
-- 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
-  - 基于偏斜性感知动态设置关键快照
-  - 偏斜性包括度的偏斜性(空间)和访问频率(时间)的偏斜性
 
 ---
 
+
+
+---
+
+## 大语言模型和知识图谱
+
 <style scoped>
-  li {
-    font-size: 27px;
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
   }
 </style>
 
-### 社交网络对齐
+---
 
-- ……
+
 
 ---
 
@@ -1035,7 +1002,19 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ### 知识图谱帮助思维链
 
-- ……
+- …EMNLP 2025…
+
+---
+
+## 实践作业
+
+<style scoped>
+  h2 {
+    padding-top: 200px;
+    text-align: center;
+    font-size: 72px;
+  }
+</style>
 
 ---
 
@@ -1090,23 +1069,3 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 请在规定时间内完成实验，并按照要求完成官网和微助教提交。
 
 <!-- 如果因特殊原因赶不上官网提交，请及时联系老师，在微助教提交时同时提交实验Notebook和csv文件，并说明原因。 -->
-
----
-
-## 思考
-
-诺贝尔物理学奖和化学奖，都颁给AI：ANN和AlphaFold
-
-学术社区也认为，真正属于传统学科的伟大创新已凤毛麟角？
-
-为AI设计的系统又有哪些关键挑战问题？怎样去探索？
-
-<!-- 
-
-回到这一讲一开始的地方，我们首先从课本中的经典知识出发，怀疑局部性的来源，并行计算和层次存储的优势开始提问，并且动手观测
-
-然后抽丝剥茧，发现这样一个看起来简单的矛盾，在展开的过程中，还有活跃不活跃、冗余，压缩，分块，调度等逐步深入的方方面面
-
-这个研究历程的起点，也是我们理应萌发的，"第零号问题"，指向价值的来源，也是我们理应保持至今的好奇心，研究生的成色
-
--->
