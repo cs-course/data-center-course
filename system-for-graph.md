@@ -39,18 +39,10 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 <!-- paginate: true -->
 
-<!-- - 经典图应用及算法
-- 对系统的挑战
-- 对系统设计的影响
-- 图应用的发展
-- 新的挑战
-- 对系统的探索
-- 实践作业 -->
-
-- 影响深远的图应用
-- 追求高效的图系统
-- 表示学习与随机游走
-- 知识图谱
+- 影响深远的**图应用**
+- 追求高效的**图系统**
+- **表示学习**与随机游走
+- **知识图谱**
 - 大语言模型和知识图谱
 - 实践作业
 
@@ -254,7 +246,7 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 ---
 
-## 经典系统结构回顾
+## 回顾经典系统结构
 
 ![bg right fit](images/text-book.jpg)
 
@@ -497,11 +489,11 @@ void bfs(int source) {
   }
 </style>
 
-实践出真知……
+实践出真知
 
 - 图应用和传统应用访存有什么区别？
 - 重排图访存模式有什么变化？
-- 缓存性能有什么影响？
+- 对缓存性能造成什么影响？
 - 效果是否明确？适用是否广泛？
 - ……
 - *干脆躺平放弃排序* X-Stream, SOSP '13
@@ -762,31 +754,45 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 来自实际应用的诉求
-
-找出10分钟以内的账号同IP多开？
+### 来自实际应用的诉求
 
 ![h:400](images/evolving-graph-logic.png)
 
+怎样找出10分钟以内的社媒账号同IP多开？
+一个号码呼出10个以上被叫号码？……
+
 ---
 
-## 动态图数据结构
+### **研究背景**
+
+* **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
+* 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
+
+---
+
+### **现有存储模型及其局限**
 
 <style scoped>
   li {
-    font-size: 27px;
+    font-size: 22px;
   }
 </style>
 
-![h:300](images/snapshot-vs-log.png)
+![bg right fit](images/snapshot-vs-log.png)
 
-- 快照模型: 支持高效地查询，但存储开销大
-- 日志模型: 降低了存储开销，但查询时间成本高
-- 全图模型: 存储开销大，且查询效率低
+1. **Copy-Based (副本式)**
+  * **优点:** 查询速度快，结构局部性好。
+  * **缺点:** 存储冗余高，连续快照间差异小但存储成本巨大。
+2. **Log-Based (日志式)**
+  * **优点:** 存储开销小，只记录增量更新。
+  * **缺点:** 查询时需重建快照，时间开销大。
+3. **Hybrid (混合式, 如Pensieve)**
+  * 尝试结合两者优点，但**假设顶点度分布是静态的**。
+  * **关键问题:** 现实图中顶点度偏斜性会**随时间动态变化**，静态假设导致性能下降。
 
 ---
 
-## 动态图系统
+### **一系列动态图系统研究**
 
 <style scoped>
   li {
@@ -803,17 +809,56 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
+### **基于PMA的邻接数组**
+*   **目标:** 高效支持更新，避免全局重建。
+*   **方法:**
+    *   使用**Packed Memory Array (PMA)** 存储快照，在元素间预留空隙 (Gaps)。
+    *   插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
+    *   提出新的空隙分配与再平衡策略，适应时序图的动态特性。
 
-### 时空检索数据结构
+![(Fig. 4 from Paper: PMA Layout)](https://via.placeholder.com/400x200?text=PMA+Adjacency+Array+Structure) <!-- 建议替换为论文中的Fig 4 -->
 
-- 快照与日志的动态调整以支持高效率时空检索 APWeb-WAIM 2022
-  - 基于偏斜性感知动态设置关键快照
-  - 偏斜性包括度的偏斜性(空间)和访问频率(时间)的偏斜性
+- [LSM-Subgraph: Log-Structured Merge-Subgraph for Temporal Graph Processing, APWeb-WAIM 2022](https://link.springer.com/chapter/10.1007/978-3-031-25158-0_39)
+
+---
+
+### **变化感知的快照创建**
+*   **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
+*   **方法:**
+    *   定义差异度 `TD` (Temporal Discrepancy) 来衡量连续快照间的变化程度。
+    *   当 `TD > β` (阈值，实验确定最优值为 **0.03**) 时，才创建新的关键快照。
+    *   克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
+
+$$TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$$
+
+---
+
+### **日志合并方法**
+*   **目标:** 减少查询时需要处理的日志量。
+*   **方法:**
+    *   在合并前对日志进行预处理，消除对同一元素的冗余操作。
+    *   例如：多次插入视为最后一次插入；插入后删除则视为无操作。
+
+---
+
+### **系统架构**
+
+1.  **数据结构:** 将数据划分为多个 **Shard**，每个 Shard 包含一个PMA快照和一段日志。
+2.  **查询引擎:** 查询时，找到最近的关键快照，应用合并后的日志，快速重构目标时间点的图状态。
+
+---
+
+### **实验效果**
+
+*   **对比对象:** Chronos (Copy-Based), GraphPool (Log-Based), Pensieve (Hybrid)。
+*   **结果:**
+    *   **vs. GraphPool:** 查询效率 **平均提升86%**，内存开销降低 **9%~57%**。
+    *   **vs. Chronos:** 查询效率 **平均提升53%**，内存开销 **大幅降低**。
+    *   **vs. Pensieve:** 查询时间 **最多减少12.5倍** (因避免远程重建)，内存开销约为其3.2倍但**是可接受的权衡**。
+*   **自身组件的有效性:** PMA模型更新效率远高于CSR/AdjList；波动感知策略在存储和查询时间上均优于基于周期或随机的方法。
+
+![(Fig. 6 from Paper: Overall Performance)](https://via.placeholder.com/400x200?text=Performance+Comparison+Charts) <!-- 建议替换为论文中的Fig 6 -->
+
 
 ---
 
