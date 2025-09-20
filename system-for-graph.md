@@ -754,19 +754,21 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-### 来自实际应用的诉求
-
-![h:400](images/evolving-graph-logic.png)
-
-怎样找出10分钟以内的社媒账号同IP多开？
-一个号码呼出10个以上被叫号码？……
-
----
-
 ### **研究背景**
+
+<style scoped>
+  p {
+    text-align: center;
+    font-size: 25px;
+  }
+</style>
 
 * **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
 * 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
+
+![h:270](images/evolving-graph-logic.png) 
+
+怎样找出10分钟以内的社媒账号同IP多开？…一个号码呼出10个以上被叫号码？…
 
 ---
 
@@ -809,42 +811,50 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
+### **LSM-Subgraph**
+
+[LSM-Subgraph: Log-Structured Merge-Subgraph for Temporal Graph Processing, APWeb-WAIM 2022](https://link.springer.com/chapter/10.1007/978-3-031-25158-0_39)
+
+- 提出一种新型时序图混合存储模型 LSM-Subgraph，通过关键快照和中间日志，综合副本（copy-based）和日志（log-based）模式特长
+- 基于 PMA（Packed Memory Array）的邻接数组模型，提出一种动态空位分配策略，根据图演化特征分配空位，提升更新效率
+- 提出基于波动感知（fluctuation-aware）的关键快照创建方法，设定阈值 β，在存储开销和查询时间之间实现最优平衡
+
+
+---
+
 ### **基于PMA的邻接数组**
-*   **目标:** 高效支持更新，避免全局重建。
-*   **方法:**
-    *   使用**Packed Memory Array (PMA)** 存储快照，在元素间预留空隙 (Gaps)。
-    *   插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
-    *   提出新的空隙分配与再平衡策略，适应时序图的动态特性。
+* **目标:** 高效支持更新，避免全局重建。
+* **方法:**
+  * 用 **Packed Memory Array (PMA)** 存储快照，元素间预留空隙。
+  * 插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
+  * 提出新的空隙分配与再平衡策略，适应时序图的动态特性。
 
-![(Fig. 4 from Paper: PMA Layout)](https://via.placeholder.com/400x200?text=PMA+Adjacency+Array+Structure) <!-- 建议替换为论文中的Fig 4 -->
+![(Fig. 4 from Paper: PMA Layout) h:200](images/lsm-subgraph-snapshot.png)
 
-- [LSM-Subgraph: Log-Structured Merge-Subgraph for Temporal Graph Processing, APWeb-WAIM 2022](https://link.springer.com/chapter/10.1007/978-3-031-25158-0_39)
 
 ---
 
 ### **变化感知的快照创建**
-*   **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
-*   **方法:**
-    *   定义差异度 `TD` (Temporal Discrepancy) 来衡量连续快照间的变化程度。
-    *   当 `TD > β` (阈值，实验确定最优值为 **0.03**) 时，才创建新的关键快照。
-    *   克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
+* **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
+* **方法:**
+  * 定义差异度 `TD` (Temporal Discrepancy) 衡量连续快照间变化度。
+  * 当 `TD > β` (阈值，经验值 **0.03**) 时，才创建新的关键快照。
+  * 克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
 
-$$TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$$
+![(Fig. 5. The updated characteristic of temporal graphs) h:200](images/lsm-subgraph-evolving.png) $TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$
 
 ---
 
 ### **日志合并方法**
-*   **目标:** 减少查询时需要处理的日志量。
-*   **方法:**
-    *   在合并前对日志进行预处理，消除对同一元素的冗余操作。
-    *   例如：多次插入视为最后一次插入；插入后删除则视为无操作。
+* **目标:** 减少查询时需要处理的日志量。
+* **方法:**
+  * 在合并前对日志进行预处理，消除对同一元素的冗余操作。
+  * 例如：多次插入视为最后一次插入；插入后删除则视为无操作。
 
----
+### **系统设计**
 
-### **系统架构**
-
-1.  **数据结构:** 将数据划分为多个 **Shard**，每个 Shard 包含一个PMA快照和一段日志。
-2.  **查询引擎:** 查询时，找到最近的关键快照，应用合并后的日志，快速重构目标时间点的图状态。
+* **数据结构:** 将数据划分为多个 **Shard**，每个 Shard 包含一个PMA快照和一段日志。
+* **查询引擎:** 查询时，找到最近的关键快照，应用合并后的日志，快速重构目标时间点的图状态。
 
 ---
 
@@ -919,12 +929,6 @@ $$TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$$
 
 ---
 
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
 ### 表示学习样本缩减
 
 - 样本规模数十倍于图数据，不能在一周内完成千万个节点的表示学习
@@ -932,7 +936,7 @@ $$TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$$
     - 找出顶点度与游走冗余之间的关系，实现动态游走
   - 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
     - 用信息熵理论来估计游走冗余
-  - 进一步优化内存使用及多核并行增强系统扩展能力[IEEE ToBD](https://ieeexplore.ieee.org/document/9749008)
+  - 进一步优化内存使用及多核并行增强系统扩展能力[IEEE ToBD 2023](https://ieeexplore.ieee.org/document/9749008)
 
 ---
 
@@ -1039,15 +1043,96 @@ $$TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$$
 
 ---
 
+### 知识图谱帮助思维链
+
+#### **研究背景**
+
+- 大语言模型 (LLMs) 在诸多NLP任务上表现出色，但在复杂推理（算数、常识、符号）任务上仍存在显著局限。
+- 思维链推理 (Chain-of-Thought Reasoning) 通过让LLM生成中间推理步骤，有效提升了多步推理任务的性能。
+
+---
+
+#### **关键问题**
+
+- 通用思维链难专精
+  - 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
+  - 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
+    - 例: 在AQuA数据集上，多种CoT方法的准确率均低于55%。
+
+- 自然语言提示词表述模糊
+  - 自然语言思维链易理解，但推理准确性不如代码式提示
+  - 代码提示复杂性高、领域局限性大、语言风格单一
+
+---
+
+[CoT-RAG: Integrating Chain of Thought and Retrieval-Augmented Generation to Enhance Reasoning in Large Language Models](https://arxiv.org/abs/2504.13534v3), EMNLP 2025
+
+- 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
+- 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
+- 伪程序提示执行 (Pseudo-Program Prompting Execution)
+
+通过结构化知识表示、动态检索机制和伪程序化推理执行，解决了现有 CoT 方法在可靠性和推理性能上的两大瓶颈，为 LLM 在复杂和垂直领域的可靠推理提供了新范式。
+
+<!-- 
+**三阶段设计 (Three-Stage Design)**
+
+**Stage 1: 知识图谱驱动的CoT生成 (Knowledge Graph-driven CoT Generation)**
+*   **专家介入:** 领域专家构建一次性的、粗粒度的**决策树 (DT)**，封装领域推理逻辑。
+*   **LLM转化:** LLM将DT分解并转化为结构清晰、高度透明的**知识图谱 (KG)**。
+*   **KG节点:** 每个实体包含 `Sub-question`, `Sub-case`, `Sub-description`, `Answer` 属性。
+*   **优势:** 增强可控性、可靠性与领域适应性。
+
+**Stage 2: 可学习的知识案例感知RAG (Learnable Knowledge Case-aware RAG)**
+*   **LLM驱动的检索:** （非传统向量检索）利用LLM从用户长查询描述中，为KG中的每个实体精准提取对应的 `Sub-description`。
+*   **动态更新:** 新的用户查询可以反过来动态更新DT中的 `Knowledge case`，使知识图谱持续进化。
+
+**Stage 3: 伪程序提示执行 (Pseudo-Program Prompting Execution)**
+*   **执行方式:** LLM将KG表示为**伪程序知识图谱 (PKG)** 并逐步执行。
+*   **优势:**
+    *   **兼具NL与Code优点:** 像代码一样逻辑严谨，又如自然语言一般易于理解和通用。
+    *   **无需外部解释器:** 摆脱对Python解释器等环境的依赖。
+    *   **可扩展性强:** 可适配C++, Java等语言风格（见附录）。
+ -->
+
+---
+
+![bg fit](images/cot-rag.png)
+
+---
+
+#### **实验设置**
+
+*   **模型:** ERNIE-Speed, GPT-4o mini, GLM-4-flash, GPT-4o等
+*   **数据集 (9个):**
+    *   **通用领域:** AQuA, GSM8K, MultiArith, SingleEq, HotpotQA, CSQA, SIQA, Last Letter, Coin Flip.
+    *   **垂直领域:** LawBench, LegalBench, CFBenchmark, AGIEval.
+
+---
+
+#### **主要结果**
+
 <style scoped>
-  li {
-    font-size: 27px;
+  p, li, th, td {
+    font-size: 25px;
   }
 </style>
 
-### 知识图谱帮助思维链
+**在通用任务提升**
+| Method | AQuA | GSM8K | ... | **Average** |
+| :--- | :---: | :---: | :---: | :---: |
+| Zero-shot-CoT | 43.4 | 78.3 | ... | 72.4 |
+| Manual-CoT | 54.3 | 85.8 | ... | 77.3 |
+| PS | 50.1 | 82.8 | ... | 75.2 |
+| **CoT-RAG** | **65.7** | **94.7** | ... | **89.1** |
+*   ↑ 准确率提升幅度: **4.0% ~ 44.3%**
 
-- …EMNLP 2025…
+**垂直领域适配**
+*   准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
+*   专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
+
+<!-- 
+其实将GNN和LLM的融合才刚刚开始
+ -->
 
 ---
 
