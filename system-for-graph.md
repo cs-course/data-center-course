@@ -826,12 +826,11 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 - **目标:** 高效支持更新，避免全局重建。
 - **方法:**
-  * 用 **Packed Memory Array (PMA)** 存储快照，元素间预留空隙。
-  * 插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
-  * 提出新的空隙分配与再平衡策略，适应时序图的动态特性。
+  - 用 **Packed Memory Array (PMA)** 存储快照，元素间预留空隙。
+  - 插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
+  - 提出新的空隙分配与再平衡策略，适应时序图的动态特性。
 
 ![(Fig. 4 from Paper: PMA Layout) h:200](images/lsm-subgraph-snapshot.png)
-
 
 ---
 
@@ -839,9 +838,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 - **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
 - **方法:**
-  * 定义差异度 `TD` (Temporal Discrepancy) 衡量连续快照间变化度。
-  * 当 `TD > β` (阈值，经验值 **0.03**) 时，才创建新的关键快照。
-  * 克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
+  - 定义差异度 `TD` (Temporal Discrepancy) 衡量连续快照间变化度。
+  - 当 `TD > β` (阈值，经验值 **0.03**) 时，才创建新的关键快照。
+  - 克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
 
 ![(Fig. 5. The updated characteristic of temporal graphs) h:200](images/lsm-subgraph-evolving.png) $TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$
 
