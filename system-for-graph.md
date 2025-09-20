@@ -763,8 +763,8 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-* **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
-* 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
+- **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
+- 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
 
 ![h:270](images/evolving-graph-logic.png) 
 
@@ -823,8 +823,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 ---
 
 ### **基于PMA的邻接数组**
-* **目标:** 高效支持更新，避免全局重建。
-* **方法:**
+
+- **目标:** 高效支持更新，避免全局重建。
+- **方法:**
   * 用 **Packed Memory Array (PMA)** 存储快照，元素间预留空隙。
   * 插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
   * 提出新的空隙分配与再平衡策略，适应时序图的动态特性。
@@ -835,8 +836,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 ---
 
 ### **变化感知的快照创建**
-* **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
-* **方法:**
+
+- **目标:** 智能选择何时创建关键快照 (Key Snapshot)。
+- **方法:**
   * 定义差异度 `TD` (Temporal Discrepancy) 衡量连续快照间变化度。
   * 当 `TD > β` (阈值，经验值 **0.03**) 时，才创建新的关键快照。
   * 克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
@@ -846,29 +848,27 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 ---
 
 ### **日志合并方法**
-* **目标:** 减少查询时需要处理的日志量。
-* **方法:**
-  * 在合并前对日志进行预处理，消除对同一元素的冗余操作。
-  * 例如：多次插入视为最后一次插入；插入后删除则视为无操作。
+
+- **目标:** 减少查询时需要处理的日志量。
+- **方法:**
+  - 在合并前对日志进行预处理，消除对同一元素的冗余操作。
+  - 例如：多次插入视为最后一次插入；插入后删除则视为无操作。
 
 ### **系统设计**
 
-* **数据结构:** 将数据划分为多个 **Shard**，每个 Shard 包含一个PMA快照和一段日志。
-* **查询引擎:** 查询时，找到最近的关键快照，应用合并后的日志，快速重构目标时间点的图状态。
+- **数据结构:** 将数据划分为多个 **Shard**，每个 Shard 包含一个PMA快照和一段日志。
+- **查询引擎:** 查询时，找到最近的关键快照，应用合并后的日志，快速重构目标时间点的图状态。
 
 ---
 
 ### **实验效果**
 
-*   **对比对象:** Chronos (Copy-Based), GraphPool (Log-Based), Pensieve (Hybrid)。
-*   **结果:**
-    *   **vs. GraphPool:** 查询效率 **平均提升86%**，内存开销降低 **9%~57%**。
-    *   **vs. Chronos:** 查询效率 **平均提升53%**，内存开销 **大幅降低**。
-    *   **vs. Pensieve:** 查询时间 **最多减少12.5倍** (因避免远程重建)，内存开销约为其3.2倍但**是可接受的权衡**。
-*   **自身组件的有效性:** PMA模型更新效率远高于CSR/AdjList；波动感知策略在存储和查询时间上均优于基于周期或随机的方法。
-
-![(Fig. 6 from Paper: Overall Performance)](https://via.placeholder.com/400x200?text=Performance+Comparison+Charts) <!-- 建议替换为论文中的Fig 6 -->
-
+- **对比对象:** Chronos (Copy-Based), GraphPool (Log-Based), Pensieve (Hybrid)。
+- **结果:**
+  - **vs. GraphPool:** 查询效率 **平均提升86%**，内存开销降低 **9%~57%**。
+  - **vs. Chronos:** 查询效率 **平均提升53%**，内存开销 **大幅降低**。
+  - **vs. Pensieve:** 查询时间 **最多减少12.5倍** (因避免远程重建)，内存开销约为其3.2倍但**是可接受的权衡**。
+- **自身组件的有效性:** PMA模型更新效率远高于CSR/AdjList；波动感知策略在存储和查询时间上均优于基于周期或随机的方法。
 
 ---
 
@@ -884,7 +884,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 图表示学习
+### 图表示学习
 
 <style scoped>
   li {
@@ -901,7 +901,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 图抽样系统
+### 图抽样方法
 
 <style scoped>
   th {
@@ -921,15 +921,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 我们的尝试
-
-- **节流**: 缩减表示学习样本
-- **开源**: 重新挖掘传统分级存储特性
-- **适应**: 平衡动态图上的时空检索
-
----
-
-### 表示学习系统优化
+### **怎样优化表示学习系统**
 
 - 样本规模数十倍于图数据，不能在一周内完成千万个节点的表示学习
   - 动态调节采样，减少冗余 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
@@ -1055,23 +1047,23 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 #### **关键问题**
 
 - 通用思维链难专精
-  - 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
-  - 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
-    - 例: 在AQuA数据集上，多种CoT方法的准确率均低于55%。
+  * 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
+  * 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
+    * 例: 在AQuA数据集上，多种CoT方法的准确率均低于55%。
 
 - 自然语言提示词表述模糊
-  - 自然语言思维链易理解，但推理准确性不如代码式提示
-  - 代码提示复杂性高、领域局限性大、语言风格单一
+  * 自然语言思维链易理解，但推理准确性不如代码式提示
+  * 代码提示复杂性高、领域局限性大、语言风格单一
 
 ---
 
 [CoT-RAG: Integrating Chain of Thought and Retrieval-Augmented Generation to Enhance Reasoning in Large Language Models](https://arxiv.org/abs/2504.13534v3), EMNLP 2025
 
-- 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
-- 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
-- 伪程序提示执行 (Pseudo-Program Prompting Execution)
+通过结构化知识表示、动态检索机制和伪程序化推理执行，解决现有 CoT 方法在可靠性和推理性能上的两大瓶颈，为 LLM 在复杂和垂直领域的可靠推理提供新范式。
 
-通过结构化知识表示、动态检索机制和伪程序化推理执行，解决了现有 CoT 方法在可靠性和推理性能上的两大瓶颈，为 LLM 在复杂和垂直领域的可靠推理提供了新范式。
+* 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
+* 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
+* 伪程序提示执行 (Pseudo-Program Prompting Execution)
 
 <!-- 
 **三阶段设计 (Three-Stage Design)**
@@ -1102,10 +1094,10 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 #### **实验设置**
 
-* **模型:** ERNIE-Speed, GPT-4o mini, GLM-4-flash, GPT-4o等
-* **数据集 (9个):**
-  * **通用领域:** AQuA, GSM8K, MultiArith, SingleEq, HotpotQA, CSQA, SIQA, Last Letter, Coin Flip.
-  * **垂直领域:** LawBench, LegalBench, CFBenchmark, AGIEval.
+- **模型:** ERNIE-Speed, GPT-4o mini, GLM-4-flash, GPT-4o等
+- **数据集 (9个):**
+  - **通用领域:** AQuA, GSM8K, MultiArith, SingleEq, HotpotQA, CSQA, SIQA, Last Letter, Coin Flip.
+  - **垂直领域:** LawBench, LegalBench, CFBenchmark, AGIEval.
 
 ---
 
@@ -1117,7 +1109,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-**在通用任务提升**
+**提升通用任务**
 | Method | AQuA | GSM8K | ... | **Average** |
 | :--- | :---: | :---: | :---: | :---: |
 | Zero-shot-CoT | 43.4 | 78.3 | ... | 72.4 |
@@ -1126,7 +1118,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 | **CoT-RAG** | **65.7** | **94.7** | ... | **89.1** |
 * ↑ 准确率提升幅度: **4.0% ~ 44.3%**
 
-**垂直领域适配**
+**适配垂直领域**
 * 准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
 * 专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
 
