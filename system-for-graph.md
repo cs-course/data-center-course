@@ -646,9 +646,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 我们的一些工作
-
-### 反思重排
+### **反思重排**
 
 - 提高数据访问速度
   - Optimizing cpu cache performance for pregel-like graph computation  [ICDEW’15]
@@ -659,6 +657,8 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   - CLIP [ATC’17]
 
 ---
+
+### **两个都要**
 
 <style scoped>
   p {
@@ -704,7 +704,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-#### 预判活跃顶点：中介中心性
+### **预判活跃顶点：中介中心性**
 
 <style scoped>
   p {
@@ -720,7 +720,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-#### 汇聚不活跃顶点：直接邻居
+### **汇聚不活跃顶点：直接邻居**
 
 ![bg fit](images/placement-of-inactive-vertexes.jpg)
 
@@ -815,9 +815,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 [LSM-Subgraph: Log-Structured Merge-Subgraph for Temporal Graph Processing, APWeb-WAIM 2022](https://link.springer.com/chapter/10.1007/978-3-031-25158-0_39)
 
-- 提出一种新型时序图混合存储模型 LSM-Subgraph，通过关键快照和中间日志，综合副本（copy-based）和日志（log-based）模式特长
-- 基于 PMA（Packed Memory Array）的邻接数组模型，提出一种动态空位分配策略，根据图演化特征分配空位，提升更新效率
-- 提出基于波动感知（fluctuation-aware）的关键快照创建方法，设定阈值 β，在存储开销和查询时间之间实现最优平衡
+- 提出一种新型**时序图混合存储模型 LSM-Subgraph**，通过关键快照和中间日志，综合副本（copy-based）和日志（log-based）模式特长
+- 基于 PMA（Packed Memory Array）的邻接数组模型，提出一种**动态空位分配**策略，根据图演化特征分配空位，提升更新效率
+- 提出基于**波动感知**（fluctuation-aware）的关键快照创建方法，设定阈值 β，在存储开销和查询时间之间实现最优平衡
 
 
 ---
@@ -929,14 +929,14 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-### 表示学习样本缩减
+### 表示学习系统优化
 
 - 样本规模数十倍于图数据，不能在一周内完成千万个节点的表示学习
   - 动态调节采样，减少冗余 [FGCS 2019](http://www.sciencedirect.com/science/article/pii/S0167739X19300378)
-    - 找出顶点度与游走冗余之间的关系，实现动态游走
+    - 找出**顶点度与游走冗余之间的关系**，实现动态游走
   - 用理论来准确指导采样过程，充分优化样本尺寸 [ICDE 2021](https://doi.ieeecomputersociety.org/10.1109/ICDE51399.2021.00198)
-    - 用信息熵理论来估计游走冗余
-  - 进一步优化内存使用及多核并行增强系统扩展能力[IEEE ToBD 2023](https://ieeexplore.ieee.org/document/9749008)
+    - 用**信息熵理论**来估计游走冗余
+  - 多核**并行增强**系统扩展能力 [IEEE ToBD 2023](https://ieeexplore.ieee.org/document/9749008)
 
 ---
 
@@ -1102,10 +1102,10 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 #### **实验设置**
 
-*   **模型:** ERNIE-Speed, GPT-4o mini, GLM-4-flash, GPT-4o等
-*   **数据集 (9个):**
-    *   **通用领域:** AQuA, GSM8K, MultiArith, SingleEq, HotpotQA, CSQA, SIQA, Last Letter, Coin Flip.
-    *   **垂直领域:** LawBench, LegalBench, CFBenchmark, AGIEval.
+* **模型:** ERNIE-Speed, GPT-4o mini, GLM-4-flash, GPT-4o等
+* **数据集 (9个):**
+  * **通用领域:** AQuA, GSM8K, MultiArith, SingleEq, HotpotQA, CSQA, SIQA, Last Letter, Coin Flip.
+  * **垂直领域:** LawBench, LegalBench, CFBenchmark, AGIEval.
 
 ---
 
@@ -1124,11 +1124,11 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 | Manual-CoT | 54.3 | 85.8 | ... | 77.3 |
 | PS | 50.1 | 82.8 | ... | 75.2 |
 | **CoT-RAG** | **65.7** | **94.7** | ... | **89.1** |
-*   ↑ 准确率提升幅度: **4.0% ~ 44.3%**
+* ↑ 准确率提升幅度: **4.0% ~ 44.3%**
 
 **垂直领域适配**
-*   准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
-*   专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
+* 准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
+* 专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
 
 <!-- 
 其实将GNN和LLM的融合才刚刚开始
@@ -1152,11 +1152,8 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   h3 {
     font-size: 25px;
   }
-  li {
+  p, li {
     font-size: 20px;
-  }
-  p {
-    font-size: 16px;
   }
 </style>
 
