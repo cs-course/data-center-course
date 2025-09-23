@@ -409,8 +409,16 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 ## 图应用访存特点
 
-- 偏斜性
-- 随机性
+<style scoped>
+  p {
+    font-size: 72px;
+    text-align: center;
+  }
+</style>
+
+偏斜性
+
+随机性
 
 <!-- 趁着刚刚重温了相关概念，这里审视一下目标应用的特点，首先点个题，图应用最突出的存储器访问特点在于这两者：偏斜性和随机性，两者分别是分布式处理和分层存储架构的大敌 -->
 
