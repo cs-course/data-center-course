@@ -92,8 +92,6 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 ![h:300](images/shortest-path.jpg) ![h:300](images/example-sssp-parallel-bfs-in-pregel-l.jpg)
 
-最短路径、网页排名
-
 - [Stanford Network Analysis Project](http://snap.stanford.edu/)
 - [The Stony Brook Algorithm Repository](https://www.algorist.com/algorist.html)
 - [The Network Data Repository with Interactive Graph Analytics and Visualization](https://networkrepository.com/)
@@ -113,8 +111,6 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 </style>
 
 ![h:200](images/pagerank.webp) ![h:300](images/pagerank-pregel.jpg) ![h:300](images/pagerank-result.jpg)
-
-最短路径、网页排名
 
 - [Malewicz G, Austern M H, Bik A J C et al. **Pregel: A System for Large-Scale Graph Processing**. SIGMOD 2010.](https://dl.acm.org/doi/10.1145/1807167.1807184)
 
@@ -247,7 +243,7 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 🎯 **规模特征**：**千万级** 节点（人/车/场所）/ **亿级** 边，日增 **8 TB** 轨迹  
 ⚡ **性能亮点**：深链查询 **< 200 ms**；密接识别准确率 **> 95 %**  
 
-> 来源：[Mao Zijun 等，*JMIR mHealth uHealth*](https://mhealth.jmir.org/2021/1/e26836)，2021-01-22 
+> 来源：[Mao Zijun 等，*JMIR mHealth uHealth*](https://mhealth.jmir.org/2021/1/e26836)，2021-01-22
 
 ---
 
@@ -578,17 +574,15 @@ void bfs(int source) {
 
 ---
 
-## 挑战
+## 怎样使布局亲和架构？
 
 <style scoped>
-  p {
-    padding-top: 100px;
+  h2 {
+    padding-top: 200px;
     text-align: center;
     font-size: 72px;
   }
 </style>
-
-亲和布局
 
 ---
 
@@ -817,17 +811,15 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-## 挑战
+## 如何高效时空检索？
 
 <style scoped>
-  p {
-    padding-top: 100px;
+  h2 {
+    padding-top: 200px;
     text-align: center;
     font-size: 72px;
   }
 </style>
-
-时空检索
 
 ---
 
@@ -843,7 +835,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 - **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
 - 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
 
-![h:270](images/evolving-graph-logic.png) 
+![h:270](images/evolving-graph-logic.png)
 
 怎样找出10分钟以内的社媒账号同IP多开？…一个号码呼出10个以上被叫号码？…
 
@@ -859,15 +851,17 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ![bg right fit](images/snapshot-vs-log.png)
 
-1. **Copy-Based (副本式)**
-  * **优点:** 查询速度快，结构局部性好。
-  * **缺点:** 存储冗余高，连续快照间差异小但存储成本巨大。
-2. **Log-Based (日志式)**
-  * **优点:** 存储开销小，只记录增量更新。
-  * **缺点:** 查询时需重建快照，时间开销大。
-3. **Hybrid (混合式, 如Pensieve)**
-  * 尝试结合两者优点，但**假设顶点度分布是静态的**。
-  * **关键问题:** 现实图中顶点度偏斜性会**随时间动态变化**，静态假设导致性能下降。
+- **Copy-Based (副本式)**
+  - **优点:** 查询速度快，结构局部性好。
+  - **缺点:** 存储冗余高，连续快照间差异小但存储成本巨大。
+
+- **Log-Based (日志式)**
+  - **优点:** 存储开销小，只记录增量更新。
+  - **缺点:** 查询时需重建快照，时间开销大。
+
+- **Hybrid (混合式, 如Pensieve)**
+  - 尝试结合两者优点，但**假设顶点度分布是静态的**。
+  - **关键问题:** 现实图中顶点度偏斜性会**随时间动态变化**，静态假设导致性能下降。
 
 ---
 
@@ -895,7 +889,6 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 - 提出一种新型**时序图混合存储模型 LSM-Subgraph**，通过关键快照和中间日志，综合副本（copy-based）和日志（log-based）模式特长
 - 基于 PMA（Packed Memory Array）的邻接数组模型，提出一种**动态空位分配**策略，根据图演化特征分配空位，提升更新效率
 - 提出基于**波动感知**（fluctuation-aware）的关键快照创建方法，设定阈值 β，在存储开销和查询时间之间实现最优平衡
-
 
 ---
 
@@ -1105,9 +1098,11 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 ---
 
 ### 知识图谱嵌入（KG Embedding）
+
 目标：将实体和关系嵌入到低维向量空间中，使得存在的关系在嵌入空间中“接近”。
 
 #### 基本思想
+
 - 每个实体和关系都用一个向量表示。
 - 定义一个**评分函数** \( f_r(h, t) \) 来衡量三元组 \( (h, r, t) \) 的合理性。
 - 通过训练使得真实三元组的得分高，虚假三元组的得分低。
@@ -1176,12 +1171,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 | **基于提示工程与检索增强** | 在推理时，从KG中检索相关知识，并将其作为上下文（Prompt）的一部分输入给LLM。  | 无需修改模型参数，可应用于任何LLM。       | 灵活、高效，知识可实时更新；实现相对简单。       | 受限于上下文窗口长度；检索质量直接影响性能；可能引入无关噪声。 | [DR.KNOWS](https://ai.jmir.org/2025/1/e58670)  |
 | **基于推理路径探索与验证** | 将LLM作为智能体，在KG上动态探索、生成并评估多条推理路径，选择最优路径作为答案依据。 | 需要LLM具备强大的零样本或少样本推理和评估能力。 | 可解释性强，能提供完整的推理链条；无需训练，通用性好。 | 推理过程复杂，计算开销大；路径探索的效率和准确性是关键。    | [RwT](https://aclanthology.org/2025.coling-main.211/), [REKG-MCTS](https://aclanthology.org/2025.findings-acl.484/)     |
 
-
 ---
 
 ### 知识图谱帮助思维链
-
-#### **研究背景**
 
 - 大语言模型 (LLMs) 在诸多NLP任务上表现出色，但在复杂推理（算数、常识、符号）任务上仍存在显著局限。
 - 思维链推理 (Chain-of-Thought Reasoning) 通过让LLM生成中间推理步骤，有效提升了多步推理任务的性能。
@@ -1191,13 +1183,13 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 #### **关键问题**
 
 - 通用思维链难专精
-  * 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
-  * 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
-    * 例: 在AQuA数据集上，多种CoT方法的准确率均低于55%。
+  - 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
+  - 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
+    - 例: 在AQuA数据集上，多种CoT方法的准确率均低于55%。
 
 - 自然语言提示词表述模糊
-  * 自然语言思维链易理解，但推理准确性不如代码式提示
-  * 代码提示复杂性高、领域局限性大、语言风格单一
+  - 自然语言思维链易理解，但推理准确性不如代码式提示
+  - 代码提示复杂性高、领域局限性大、语言风格单一
 
 ---
 
@@ -1205,9 +1197,9 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 通过结构化知识表示、动态检索机制和伪程序化推理执行，解决现有 CoT 方法在可靠性和推理性能上的两大瓶颈，为 LLM 在复杂和垂直领域的可靠推理提供新范式。
 
-* 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
-* 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
-* 伪程序提示执行 (Pseudo-Program Prompting Execution)
+- 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
+- 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
+- 伪程序提示执行 (Pseudo-Program Prompting Execution)
 
 <!-- 
 **三阶段设计 (Three-Stage Design)**
@@ -1253,18 +1245,21 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-**提升通用任务**
+##### 提升通用任务
+
 | Method | AQuA | GSM8K | ... | **Average** |
 | :--- | :---: | :---: | :---: | :---: |
 | Zero-shot-CoT | 43.4 | 78.3 | ... | 72.4 |
 | Manual-CoT | 54.3 | 85.8 | ... | 77.3 |
 | PS | 50.1 | 82.8 | ... | 75.2 |
 | **CoT-RAG** | **65.7** | **94.7** | ... | **89.1** |
-* ↑ 准确率提升幅度: **4.0% ~ 44.3%**
 
-**适配垂直领域**
-* 准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
-* 专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
+- ↑ 准确率提升幅度: **4.0% ~ 44.3%**
+
+##### 适配垂直领域
+
+- 准确率远超其他基于图谱的RAG方法（如KG-CoT, GraphRAG, ToG等）。
+- 专家构建的DT至关重要：零专家参与（LLM自建DT）的变体性能下降 **7.8%**。
 
 <!-- 
 其实将GNN和LLM的融合才刚刚开始
