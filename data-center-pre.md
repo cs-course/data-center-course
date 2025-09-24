@@ -173,7 +173,7 @@ He comments that **the lack of experience in datacenter design may have been an 
       - 请严格守时（开PPT排练计时），可自备讲稿辅助
   - 论坛内就汇报内容回答相关问题，**积极参与问答可以加分**
 - **实验作业** *30%*
-  - [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270/introduction)
+  - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
     - 以完成提交为准，不追求PVP，重在以日常赛促**实践**
     - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP收获成就
 - **开卷考试** 40%
@@ -203,12 +203,6 @@ He comments that **the lack of experience in datacenter design may have been an 
 责编：项阳
 
 <!-- 所以，今年开始的论文研讨学习，我们不再要求提交综述，实验部分也不再要求复刻代码，前者要聚焦研讨，后者要面向实际问题，聚焦实验设计与数据分析 -->
-
----
-
-### 示范
-
-<https://kimi.moonshot.cn/chat/>
 
 ---
 
@@ -312,8 +306,6 @@ He comments that **the lack of experience in datacenter design may have been an 
 </style>
 
 加入微助教，参与[调查](https://docs.qq.com/form/page/DRFlyQ2xnaG9xY3Zk?_w_tencentdocx_form=1)，**合计25复选项**
-
-![bg right:32% fit](images/qq-group-2024.jpg)
 
 <!-- 微助教条码 -->
 
