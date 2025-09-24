@@ -25,7 +25,7 @@ math: katex
 
 ## 授课教师
 
-- **施展** 副教授，武汉光电国家研究中心，存储部，C523
+- **施展** 武汉光电国家研究中心，存储部，C523
 - 联系方式
   - EMail <zshi@hust.edu.cn>
   - 电话 027-87792450
@@ -47,8 +47,8 @@ math: katex
 
 ![bg right fit](images/ISBN-9787302581505.jpg)
 
-- 课程资料 <https://shi_zhan.gitlab.io/cs-courses/c-language-advanced-pre>  
-- 课程平台 *微助教*
+- 课程资料: <https://marp-public.pages.dev/c-language-advanced-pre>  
+- 课程平台: 学校官微**课程平台**
 - 教材与参考书
   - [**C语言程序设计**](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344701.html), 作者：卢萍、李开、王多强、甘早斌，清华大学出版社, 2021
   - [C语言程序设计典型题解与实验指导](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344801.html)，作者：卢萍、李开、王多强、甘早斌，清华大学出版社，2019
