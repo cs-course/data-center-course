@@ -168,10 +168,10 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
-    - 第一周确认计划安排，39位同学每人选择1篇Paper准备汇报
-    - 每位同学有**12分钟汇报和2~3分钟讨论**
-      - 请严格守时（开PPT排练计时），可自备讲稿辅助
-  - 论坛内就汇报内容回答相关问题，**积极参与问答可以加分**
+    - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（具体要求见后）
+    - 每位同学有**10分钟汇报和2~3分钟问答**
+      - 请严格守时（开PPT排练计时，超时扣分）
+  - 在课程平台讨论里**模拟Rebuttal**
 - **实验作业** *30%*
   - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
     - 以完成提交为准，不追求PVP，重在以日常赛促**实践**
@@ -227,11 +227,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - 每人选择1篇拟汇报论文
 - 选择范围：CCF-A相关论文
-  - [FAST](https://www.usenix.org/conference/fast24/technical-sessions), [ATC](https://www.usenix.org/conference/atc24/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi24/technical-sessions), [SOSP](https://sosp2023.mpi-sws.org/program.html), [ISCA](https://www.iscaconf.org/isca2024/program/), [HPCA](https://www.hpca-conf.org/2024/program/main.php) (2024~25)
-
-<!-- https://sigops.org/s/conferences/sosp/2024/accepted.html SOSP24刚开会，还没有正式发布论文集-->
-
-也可以点击
+  - [FAST](https://www.usenix.org/conference/fast25/technical-sessions), [ATC](https://www.usenix.org/conference/atc25/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi25/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2024/schedule.html), [ISCA](https://www.iscaconf.org/isca2025/program/), [HPCA](https://hpca-conf.org/2025/main-program/) (2024~25)
 
 - [【腾讯文档】数据中心技术课程论文研讨2025](https://docs.qq.com/sheet/DUG1YRWJkTU51endC?tab=BB08J2)
 
@@ -282,7 +278,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 | 7 | 论文研讨 | 12-24, 12-26 | C12-S204 |
 | 8 | 论文研讨 | 12-31, 01-02 | C12-S204 |
 
-\* *每周17名同学，每人10分钟报告，2分钟问答，相关问题还应**在课程平台讨论里模拟Rebuttal**。*
+\* 每周14名同学
 
 ---
 
