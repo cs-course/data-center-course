@@ -35,8 +35,6 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 ## 内容大纲
 
-![bg right h:300](images/course-barcode.png)
-
 <!-- paginate: true -->
 
 - 影响深远的**图应用**
