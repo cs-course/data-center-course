@@ -590,7 +590,15 @@ void bfs(int source) {
 
 ---
 
-![bg fit](images/krongen256bfs.jpg)
+![bg fit](images/bfs-on-krongen-i8.png)
+
+---
+
+![bg fit](images/bfs-on-krongen-i8-dd.png)
+
+---
+
+![bg fit](images/bfs-on-krongen-i8-bfs.png)
 
 ---
 
