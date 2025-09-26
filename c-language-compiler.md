@@ -27,214 +27,350 @@ math: katex
 ---
 
 ## 编译预处理
-- **编译预处理**：在编译之前，由预处理程序完成的工作。
-- **预处理指令**：以 `#` 开头的指令。
+
+**编译预处理**：对源程序进行编译之前所作的工作，它由预处理程序负责完成。编译时，系统将自动引用预处理程序对源程序中的预处理指令进行处理。
+
+**预处理指令**：以"#"号开始的指令。
 
 ---
 
 ## 文件包含 `#include`
-用指定文件的内容取代该预处理指令行：
 
-1. `#include <文件名>`  
-   在标准目录下寻找。
+用指定文件的内容取代该预处理指令行，有2种一般形式：
 
-2. `#include "文件名"`  
-   先在当前目录寻找，找不到再去标准目录。
+### （1）`#include <文件名>`
+在指定的标准目录下寻找被包含文件
+
+### （2）`#include "文件名"`
+首先在用户当前目录中寻找被包含文件，若找不到，再在指定的标准目录下寻找
 
 ---
 
 ## 宏定义 `#define`
-用一个标识符（宏名）表示一个字符串。
+
+用一个标识符来表示一个字符串
 
 ```c
-#define M (y*y+3*y)
+#define 标识符 字符串
 ```
 
-- **宏代换（宏展开）**：预处理时用字符串替换宏名。
+**宏名**：被定义的标识符。  
+**宏代换（宏展开）**：在编译预处理时，用字符串去取代宏名。
 
 ---
 
-### 宏展开示例
-**预处理前：**
+## 宏展开示例
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 创建两等宽的栏 */
+  gap: 2rem; /* 设置两栏之间的间距 */
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+### 预处理前
 ```c
 #define M (y*y+3*y)
-void main(void){
-    int s, y;
+void main(void)
+{
+    int s,y;
+    printf("Input a number: ");
     scanf("%d",&y);
-    s = 3*M + 4*M + y*M;
+    s=3*M+4*M+y*M;
+    printf("s=%d\n",s);
 }
 ```
 
-**预处理后：**
+</div>
+
+<div>
+
+### 预处理后
 ```c
-void main(void){
-    int s, y;
+void main(void)
+{
+    int s,y;
+    printf("Input a number: ");
     scanf("%d",&y);
-    s = 3*(y*y+3*y) + 4*(y*y+3*y) + y*(y*y+3*y);
+    s=3*(y*y+3*y)+4*(y*y+3*y)+y*(y*y+3*y);
+    printf("s=%d\n",s);
 }
 ```
+
+</div>
+
+</div>
 
 ---
 
-### 带参数的宏定义
+## 带参数的宏定义
+
+```c
+#define 标识符(标识符，标识符，…，标识符) 字符串
+```
+
+**宏调用**：给出实参  
+**宏展开**：
+1. 用字符串替换宏
+2. 用实参去替换形参
+
+---
+
+## 带参宏示例
+
 ```c
 #define SQ(x) ((x)*(x))
 ```
 
-- **宏调用**：`SQ(a+1)`
-- **宏展开**：`((a+1)*(a+1))`
+**宏调用**：`SQ(a+1)`  
+**宏展开**：`((a+1) * (a+1))`
+
+**宏调用**：`SQ(SQ(a))`  
+**宏展开**：`((((a)*(a))) * (((a)*(a))))`
 
 ---
 
-### 宏展开嵌套示例
+## 为什么要这么多的括号？
+
+### 错误示例1
 ```c
-SQ(SQ(a))
-// 展开：((((a)*(a))) * (((a)*(a))))
+#define SQ(x) x*x
+SQ(a+b)  // 展开为: a+b*a+b
 ```
 
----
-
-### 为什么要这么多括号？
-- 错误示例1：
-  ```c
-  #define SQ(x) x*x
-  SQ(a+b) // 展开：a+b*a+b ❌
-  ```
-
-- 错误示例2：
-  ```c
-  #define SQ(x) (x)*(x)
-  27/SQ(3) // 展开：27/(3)*(3) ❌
-  ```
-
-> ✅ 每个参数和整体表达式都要加括号！
-
----
-
-### 宏定义常见错误
+### 错误示例2
 ```c
-#define SQ (x) ((x)*(x))  // ❌ 宏名与括号间不能有空格
+#define SQ(x) (x)*(x)
+27/SQ(3)  // 展开为: 27/(3)*(3)
 ```
 
+**正确做法**：表达式中的每个参数用括号括起来，整个表达式也用括号括起来。
+
 ---
 
-### 宏的特点
-- ✅ 节省函数调用开销，速度快
-- ✅ 不分配内存，不需类型说明
-- ❌ 展开后源程序变长
-- ✅ 适合简短表达式和重复代码
+## 注意：宏名和左括号之间不能有空格
+
+```c
+#define SQ (x) ((x)*(x))  // 错误！被认为是无参宏定义
+```
+
+**宏调用**：`SQ(3)`  
+**宏展开**：`(x) ((x)*(x)) (3)` // 显然错误的
+
+---
+
+## 宏的特点
+
+- **优点**：节省函数调用的开销，程序运行速度更快，形式参数不分配内存单元，不必作类型说明
+- **缺点**：宏展开后使源程序增长
+- **适用场景**：经常使用的简短表达式，以及小的可重复的代码段
+- **不适用场景**：任务复杂需要多行代码，或要求程序越小越好时，应该使用函数
 
 ---
 
 ## 取消宏定义 `#undef`
-终止宏名的作用域：
+
+终止宏名的作用域，形式为：
 ```c
 #undef 标识符
 ```
 
-用途：
-- 防止宏名冲突
-- 确保调用的是函数而非宏
+### 使用场景1：防止宏名冲突
+```c
+#include "everything.h"
+#undef SIZE      // 取消everything.h中定义的SIZE
+#define SIZE 100 // 重新定义
+```
+
+### 使用场景2：保证调用实际函数
+```c
+#undef getchar
+int getchar(void) {…}
+```
 
 ---
 
 ## 条件编译
-根据条件选择性地包含程序部分，生成不同目标代码。
 
-三种形式：
-- `#if`
-- `#ifdef`
-- `#ifndef`
+预处理程序提供了条件编译指令，用于在预处理中进行条件控制，根据所求条件的值有选择地包含不同的程序部分，因而产生不同的目标代码。
+
+**三种形式**：`#if`、`#ifdef`、`#ifndef`
 
 ---
 
-### 条件编译示例1：计算圆面积
-**预处理前：**
+## 条件编译示例：计算圆形面积
+
+<style scoped>
+    h3 {
+        font-size: 27px;
+    }
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 创建两等宽的栏 */
+  gap: 2rem; /* 设置两栏之间的间距 */
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+### 预处理前（定义R）
 ```c
 #define R
-int main(void){
+int main(void)
+{
     float r, s;
-    scanf("%f",&r);
+    printf("input a number: ");
+    scanf("%f", &r);
 #ifdef R
-    s = 3.14159*r*r;
+    s = 3.14159 * r * r;
+    printf("%f\n", s);
 #else
-    s = r*r;
+    s = r * r;
+    printf("%f\n", s);
 #endif
+    return 0;
 }
 ```
 
-**预处理后（定义了R）：**
+</div>
+
+<div>
+
+### 预处理后
+
 ```c
-int main(void){
-    float r, s;
-    scanf("%f",&r);
-    s = 3.14159*r*r;
+int  main(void)
+{
+    float  r，s;
+    printf (“input a number: ”);
+    scanf(“%f ”，&r);
+    s=3.14159*r*r;
+    printf(“%f\n”，s)；
+    return 0；
 }
 ```
+
+生成计算圆面积的目标程序
+
+</div>
+
+</div>
 
 ---
 
-### 条件编译示例2：计算正方形面积
-**预处理前：**
+## 条件编译示例：计算方形面积
+
+<style scoped>
+    h3 {
+        font-size: 27px;
+    }
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 创建两等宽的栏 */
+  gap: 2rem; /* 设置两栏之间的间距 */
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+### 预处理前（未定义R）
 ```c
 // #define R
-int main(void){
+void main(void)
+{
     float c, s;
-    scanf("%f",&c);
+    printf("input a number: ");
+    scanf("%f", &c);
 #ifdef R
-    s = 3.14159*c*c;
+    s = 3.14159 * c * c;
+    printf("%f\n", s);
 #else
-    s = c*c;
+    s = c * c;
+    printf("%f\n", s);
 #endif
 }
 ```
 
-**预处理后（未定义R）：**
+</div>
+
+<div>
+
+### 预处理后
+
 ```c
-int main(void){
+// #define R
+void main(void)
+{
     float c, s;
-    scanf("%f",&c);
-    s = c*c;
+    printf("input a number: ");
+    scanf("%f", &c);
+    s = c * c;
+    printf("%f\n", s);
 }
 ```
 
+生成计算正方形面积的目标程序
+
+</div>
+
+</div>
+
 ---
 
-### 条件编译应用：调试程序
-**忽略代码：**
+## 条件编译应用：调试程序
+
+### 临时忽略代码
 ```c
 #if 0
     // 不编译的代码
 #endif
 ```
 
-**跟踪调试：**
+### 调试跟踪
 ```c
-#define DEBUG
+#define DEBUG  // 完成调试后，去掉该指令
+
 #ifdef DEBUG
     printf("x=%d\n", x);
+#endif
+
+#ifdef DEBUG
+    printf("y=%d\n", y);
 #endif
 ```
 
 ---
 
-## assert宏
-头文件：`assert.h`
+## 条件编译应用：assert宏
+
+在头文件`assert.h`中，测试表达式的值是否符合要求：
 
 ```c
-assert(e);
+assert(e)
 ```
 
-- 表达式为假时输出错误信息并中断执行：
-  ```
-  Assertion failed: e, file test.c, line 32
-  ```
+### 执行流程
+如果`n < 0`，会输出包含行号和文件名的错误信息并中断执行：
+```
+Assertion failed: n >= 0, file test.c, line 32
+```
 
 ---
 
-### 断言与防御性编程
-- 断言是一种简单有效的防御性编程手段。
-- 在开发阶段快速暴露错误。
+## assert宏与防御性编程
+
+**防御性编程**：使用户在运行程序（发布版本里）时，当出现意外情况时程序仍能继续工作。
+
+**断言的作用**：看作一种简单的制造栅栏的方法，这种栅栏能使错误在穿过自己时暴露。
 
 ---
 

@@ -47,7 +47,7 @@ math: katex
 
 ![bg right fit](images/ISBN-9787302581505.jpg)
 
-- 课程资料: <https://marp-public.pages.dev/c-language-advanced-pre>  
+- 课程资料: <https://marp-public.pages.dev/c-language-pre>  
 - 课程平台: [头歌平台教学课堂](https://www.educoder.net/classrooms)-《C语言程序设计2025秋》未来2502班（**邀请码：7BVX2R**）
 - 教材与参考书
   - [**C语言程序设计**](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344701.html), 作者：卢萍、李开、王多强、甘早斌，清华大学出版社, 2021
@@ -85,12 +85,12 @@ if not 学习过"缺失的一课"，至少第6讲:
 
 | 授课章节 | 主要内容概要 | 周二(7-8) | 周五(3-4) |
 | :---    | :---        | :--- | :--- |
-| [第6章 编译预处理](c-language-advanced-compiler) | 宏定义、文件包含、条件编译 | 11-11 | |
-| [第7章 数组](c-language-advanced-array) | 一维/二维数组、字符数组 | | 11-14 |
+| [第6章 编译预处理](c-language-compiler) | 宏定义、文件包含、条件编译 | 11-11 | |
+| [第7章 数组](c-language-array) | 一维/二维数组、字符数组 | | 11-14 |
 || 排序与查找算法 | 11-18 ||
-| [第8章 指针](c-language-advanced-pointer) | 指针概念、指针与数组/字符串 | | 11-21 |
+| [第8章 指针](c-language-pointer) | 指针概念、指针与数组/字符串 | | 11-21 |
 || 指针数组、函数指针| 11-25 | 11-28 |
-| [第9章 结构与联合](c-language-advanced-struct) | 结构体、联合体 | 12-02 | 12-05 |
+| [第9章 结构与联合](c-language-struct) | 结构体、联合体 | 12-02 | 12-05 |
 || 结构数组、单链表操作| 12-09 | 12-12|
-| [第10章 文件](c-language-advanced-file) | 文件操作、顺序/随机读写、文件状态检测 | 12-16 | 12-19 |
+| [第10章 文件](c-language-file) | 文件操作、顺序/随机读写、文件状态检测 | 12-16 | 12-19 |
 
