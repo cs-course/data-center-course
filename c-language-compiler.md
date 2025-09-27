@@ -19,6 +19,7 @@ math: katex
 ---
 
 ## 本章重点
+
 - 宏定义 `#define`
   - 无参宏定义
   - 带参宏定义 ✅
@@ -26,7 +27,7 @@ math: katex
 
 ---
 
-## 编译预处理
+## 基本概念
 
 **编译预处理**：对源程序进行编译之前所作的工作，它由预处理程序负责完成。编译时，系统将自动引用预处理程序对源程序中的预处理指令进行处理。
 
@@ -39,9 +40,11 @@ math: katex
 用指定文件的内容取代该预处理指令行，有2种一般形式：
 
 ### （1）`#include <文件名>`
+
 在指定的标准目录下寻找被包含文件
 
 ### （2）`#include "文件名"`
+
 首先在用户当前目录中寻找被包含文件，若找不到，再在指定的标准目录下寻找
 
 ---
@@ -74,6 +77,7 @@ math: katex
 <div>
 
 ### 预处理前
+
 ```c
 #define M (y*y+3*y)
 void main(void)
@@ -91,6 +95,7 @@ void main(void)
 <div>
 
 ### 预处理后
+
 ```c
 void main(void)
 {
@@ -116,6 +121,7 @@ void main(void)
 
 **宏调用**：给出实参  
 **宏展开**：
+
 1. 用字符串替换宏
 2. 用实参去替换形参
 
@@ -138,12 +144,14 @@ void main(void)
 ## 为什么要这么多的括号？
 
 ### 错误示例1
+
 ```c
 #define SQ(x) x*x
 SQ(a+b)  // 展开为: a+b*a+b
 ```
 
 ### 错误示例2
+
 ```c
 #define SQ(x) (x)*(x)
 27/SQ(3)  // 展开为: 27/(3)*(3)
@@ -176,11 +184,13 @@ SQ(a+b)  // 展开为: a+b*a+b
 ## 取消宏定义 `#undef`
 
 终止宏名的作用域，形式为：
+
 ```c
 #undef 标识符
 ```
 
 ### 使用场景1：防止宏名冲突
+
 ```c
 #include "everything.h"
 #undef SIZE      // 取消everything.h中定义的SIZE
@@ -188,6 +198,7 @@ SQ(a+b)  // 展开为: a+b*a+b
 ```
 
 ### 使用场景2：保证调用实际函数
+
 ```c
 #undef getchar
 int getchar(void) {…}
@@ -221,6 +232,7 @@ int getchar(void) {…}
 <div>
 
 ### 预处理前（定义R）
+
 ```c
 #define R
 int main(void)
@@ -243,7 +255,7 @@ int main(void)
 
 <div>
 
-### 预处理后
+### 预处理后（圆形）
 
 ```c
 int  main(void)
@@ -283,6 +295,7 @@ int  main(void)
 <div>
 
 ### 预处理前（未定义R）
+
 ```c
 // #define R
 void main(void)
@@ -304,7 +317,7 @@ void main(void)
 
 <div>
 
-### 预处理后
+### 预处理后（方形）
 
 ```c
 // #define R
@@ -329,6 +342,7 @@ void main(void)
 ## 条件编译应用：调试程序
 
 ### 临时忽略代码
+
 ```c
 #if 0
     // 不编译的代码
@@ -336,6 +350,7 @@ void main(void)
 ```
 
 ### 调试跟踪
+
 ```c
 #define DEBUG  // 完成调试后，去掉该指令
 
@@ -359,8 +374,10 @@ assert(e)
 ```
 
 ### 执行流程
+
 如果`n < 0`，会输出包含行号和文件名的错误信息并中断执行：
-```
+
+```log
 Assertion failed: n >= 0, file test.c, line 32
 ```
 
@@ -375,6 +392,7 @@ Assertion failed: n >= 0, file test.c, line 32
 ---
 
 ### 断言流程图
+
 ```mermaid
 flowchart TD
     A[assert(e)] --> B{e为真？}
@@ -386,7 +404,7 @@ flowchart TD
 ---
 
 ### 总结
+
 - 宏定义用于代码复用和性能优化。
 - 条件编译用于跨平台、调试和代码裁剪。
 - 断言用于开发和调试阶段的错误检测。
-
