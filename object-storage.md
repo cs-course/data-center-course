@@ -6,7 +6,7 @@ title: 数据中心技术
 math: katex
 ---
 
-# 对象存储系统与尾延迟问题
+# 对象存储系统专题
 
 <!-- _class: lead -->
 
@@ -15,7 +15,6 @@ math: katex
 光电信息存储研究部
 
 <https://shizhan.github.io/>
-<https://shi_zhan.gitee.io/>
 
 ---
 
@@ -28,6 +27,8 @@ math: katex
 - 对冲，那么代价是？
 - **挑战三：预测**
 - 根源性矛盾？
+- **负载特征分析**
+- 那些看不到的数据……
 
 ---
 
@@ -609,17 +610,48 @@ Source: <http://www.minio.org.cn/static/picture/architecture_diagram.svg>
 
 ---
 
-### 课堂实践1
+### 动手了解对象存储系统
 
 - 说明
-  - <https://github.com/cs-course/obs-tutorial>
-  - <https://gitee.com/shi_zhan/obs-tutorial>
+  - [对象存储实验](big-data-storage-experiment)
 - 内容
   - 认识对象存储系统
     - 快速部署：Minio、mock_s3…
     - 功能特性：RESTful接口
   - 熟悉性能指标：吞吐率、带宽、延迟
-    - 观测工具：s3bench、COSbench…
+    - 观测工具：s3bench、WARP…
+
+---
+
+### 参考文献
+
+<style scoped>
+  p {
+    font-size: 22px;
+  }
+</style>
+
+[Object Storage: The Future Building Block for Storage Systems](https://ieeexplore.ieee.org/document/1612479), (MSST '05)
+
+早期对对象存储架构的系统性探讨，提出对象存储作为未来存储系统基础组件的理念。
+
+[Ceph: A Scalable, High-Performance Distributed File System](https://www.usenix.org/conference/osdi-06/ceph-scalable-high-performance-distributed-file-system), (OSDI '06)
+
+Ceph的奠基性论文，提出了去中心化元数据管理、动态数据分布（CRUSH算法）和高可扩展性的设计理念。  
+
+[CRUSH: Controlled, Scalable, Decentralized Placement of Replicated Data](https://ieeexplore.ieee.org/document/4090205), (SC '06)
+
+提出CRUSH算法，解决分布式存储系统中数据分布与复制的核心问题，成为Ceph和后续系统的核心组件。  
+
+[Dynamo: Amazon's Highly Available Key-value Store](https://dl.acm.org/doi/10.1145/1294261.1294281), (SOSP '07)
+
+尽管Dynamo是键值存储，但其去中心化、最终一致性设计对Amazon S3等对象存储系统产生深远影响。  
+
+[RADOS: A Scalable, Reliable Storage Service for Petabyte-scale Storage Clusters](https://dl.acm.org/doi/10.1145/1374596.1374606), (PDSW '07)
+
+描述Ceph的底层对象存储系统RADOS，奠定了大规模分布式对象存储的自治管理机制。
+
+<!-- 华中科技大学信息存储这个专业方向也是在那个时期开始聚焦对象存储系统开展研究的，时至今日，华为、阿里、腾讯活跃着一大批大家的学长前辈，尤其是华为公司的存储业务部门，还有阿里云的云存储业务部门。 -->
 
 ---
 
@@ -1062,15 +1094,44 @@ $N_{Hedge}=2 \rightarrow Latency_{new} = P99 \times P99 = P9999$
 
 ---
 
-### 课堂实践2
+### 长尾延迟的观测和预防
 
 - 实验说明
-  - <https://github.com/cs-course/obs-tutorial>
-  - <https://gitee.com/shi_zhan/obs-tutorial>
+  - [对象存储实验](big-data-storage-experiment)
 - 实验内容
   - 分析不同负载下的指标、延迟的分布
   - 观测尾延迟现象
   - 尝试对冲请求方案
+
+---
+
+### 参考文献
+
+<style scoped>
+  p {
+    font-size: 22px;
+  }
+</style>
+
+[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), (CACM 2013)
+
+首次系统性分析了大规模分布式系统中长尾延迟的成因，提出了"对冲请求"等关键优化策略，成为后续研究的基石。
+
+[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), (CACM 2018)
+
+将阿姆达尔定律扩展至尾部延迟分析，建立了量化尾部延迟与系统并行度的理论框架。
+
+[Rein: Taming Tail Latency in Key-Value Stores via Multiget Scheduling](https://dl.acm.org/doi/10.1145/3064176.3064209), (EuroSys 2017)
+
+针对键值存储系统提出多请求调度算法，通过优化请求并行性显著降低尾部延迟。
+
+[Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints](https://www.microsoft.com/en-us/research/publication/managing-tail-latency-in-datacenter-scale-file-systems-under-production-constraints/), (EuroSys 2019)
+
+基于微软生产环境数据，提出动态优先级调度和负载均衡策略，有效应对大规模文件系统的尾部延迟挑战。
+
+[Taming Tail Latency for Erasure-coded, Distributed Storage Systems](https://ieeexplore.ieee.org/document/8713931), (IEEE TNSM 2019)
+
+针对纠删码存储系统提出数学建模与优化框架，显著降低尾部延迟概率。
 
 ---
 
@@ -1303,10 +1364,51 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 预测是永恒的话题
+### 建立模型预测性能指标
+
+- 实验说明
+  - [对象存储实验](big-data-storage-experiment)
+- 实验内容
+  - 网络存储仿真
+  - 排队论模型拟合
+  - 思考：准确预测的要素？
+
+---
+
+### 参考文献
 
 <style scoped>
-  h3 {
+  p {
+    font-size: 20px;
+  }
+</style>
+
+[Time Series Machine Learning Models for Precise SSD Access Latency Prediction](https://ieeexplore.ieee.org/document/11045247), (IEEE Computer Architecture Letters 2025)
+
+提出基于时间序列机器学习的SSD访问延迟预测模型，通过硬件级延迟分析实现高精度和高效性。
+
+[LPNS: Scalable and Latency-Predictable Local Storage Virtualization for Unpredictable NVMe SSDs in Clouds](https://www.usenix.org/conference/atc23/presentation/peng), (USENIX ATC 2023)
+
+设计首个具备延迟可预测性的NVMe虚拟化系统，通过自反馈控制与动态调度策略，显著优化云存储尾部延迟。
+
+[TTLoC: Taming Tail Latency for Erasure-Coded Cloud Storage Systems](https://ieeexplore.ieee.org/document/8713931), (IEEE TNSM 2019)
+
+针对纠删码存储系统提出尾部延迟数学建模框架，通过交替优化算法降低尾部延迟概率，实验验证其优于现有算法。
+
+[RL-Watchdog: A Fast and Predictable SSD Liveness Watchdog on Storage Systems](https://www.usenix.org/system/files/atc24-ha.pdf), (USENIX ATC 2024)
+
+基于强化学习的SSD命令超时预测模型（RLTP），动态适应SSD状态变化，实现低误报率与快速故障检测。
+
+[Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints](https://dl.acm.org/doi/10.1145/3302424.3303973), (EuroSys 2019)
+
+基于微软生产环境数据提出动态优先级调度策略，优化大规模文件系统的尾部延迟管理，减少生产级干扰影响。
+
+---
+
+## 如何做得更好？
+
+<style scoped>
+  h2 {
     padding-top: 200px;
     text-align: center;
     font-size: 60px;
@@ -1316,36 +1418,8 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-毕竟变化将一直持续！
-
-<!-- 研究的神坑…人类历史上一直在努力，从仰望星空制定历法就已经开始了…… -->
+负载特征分析
 
 ---
 
-### 课堂实践3
-
-- 实验说明
-  - <https://github.com/cs-course/obs-tutorial>
-  - <https://gitee.com/shi_zhan/obs-tutorial>
-- 实验内容
-  - 网络存储仿真
-  - 排队论模型拟合
-  - 思考：准确预测的要素？
-
----
-
-## 参考文献
-
-<style scoped>
-  li {
-    font-size: 20px;
-  }
-</style>
-
-1. [Tail Latency in Datacenter Networks](https://link.springer.com/chapter/10.1007%2F978-3-030-68110-4_17), MASCOTS 2020.
-2. [A Black-Box Fork-Join Latency Prediction Model for Data-Intensive Applications](https://ieeexplore.ieee.org/document/9043685), TPDS 2020.
-3. [The Fast and The Frugal: Tail Latency Aware Provisioning for Coping with Load Variations](https://dl.acm.org/doi/10.1145/3366423.3380117), WWW 2020.
-4. [Managing Tail Latency in Datacenter-Scale File Systems Under Production Constraints](https://dl.acm.org/doi/10.1145/3302424.3303973), EuroSys 2019.
-5. [Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), CACM 2018.
-6. [The Tail at Scale: How to Predict It?](https://www.usenix.org/conference/hotcloud16/workshop-program/presentation/nguyen), HotCloud 16.
-7. [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CACM 2013.
+…WIP…
