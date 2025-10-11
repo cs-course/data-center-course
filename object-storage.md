@@ -69,7 +69,7 @@ math: katex
 
 ---
 
-## 数据洪流
+### 总量日益增长
 
 <style scoped>
   p {
@@ -88,6 +88,8 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
 
 ---
 
+### 类型日益丰富
+
 <style scoped>
   p {
     font-size: 20px;
@@ -95,11 +97,13 @@ Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettab
   }
 </style>
 
-![h:580](images/what-happens-online-in-60-seconds.png)
+![h:500](images/what-happens-online-in-60-seconds.png)
 
 Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/>
 
 ---
+
+### AI加速驱动
 
 <style scoped>
   p {
@@ -128,7 +132,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
   }
 </style>
 
-配得上数据中心的规模化存储
+规模化存储的形成
 
 ---
 
