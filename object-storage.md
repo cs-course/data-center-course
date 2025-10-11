@@ -20,15 +20,38 @@ math: katex
 
 ## 内容大纲
 
-- 背景
+<style scoped>
+  li {
+    font-size: 45px;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+</style>
+
+- **背景** 对象存储系统的诞生、发展和现状
+
+<div class="columns">
+
+<div>
+
 - **挑战一：扩展**
-- 对象存储系统的诞生
+  - 规模化的诉求
 - **挑战二：长尾**
-- 对冲，那么代价是？
+  - 规模化的代价
+
+</div>
+
+<div>
+
 - **挑战三：预测**
-- 根源性矛盾？
+  - 怎样管控代价
 - **负载特征分析**
-- 那些看不到的数据……
+  - 看不到的数据……
+
+</div>
 
 ---
 
