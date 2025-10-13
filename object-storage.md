@@ -53,6 +53,8 @@ math: katex
 
 </div>
 
+</div>
+
 ---
 
 ## 对象存储背景
@@ -1308,21 +1310,89 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 性能模型——考虑要素
+### 研究背景
 
-![h:500](images/cloud-storage-performance-factors.png)
-
----
-
-### 性能模型——困难之处
-
-![h:500](images/cloud-storage-performance-prediction.png)
+- **云对象存储重要性**：Amazon S3、OpenStack Swift等支撑现代Web应用，存储海量小文件
+- **延迟是关键指标**：直接影响用户体验和收入，尾延迟尤为重要
+- **当前问题**：缺乏准确延迟分布理解，导致资源过度配置
+- **研究空白**：现有模型关注平均性能，无法预测延迟百分位数
+- **应用价值**：容量规划、过载控制、瓶颈识别、弹性存储
 
 ---
 
-### 性能模型——系统分析
+### 主要挑战
 
-![h:500](images/cloud-storage-request-analysis.png)
+- **多样磁盘操作**：索引查找、元数据读取、数据读取混合，性能特征各异
+- **数据分块传输**：事件驱动架构中请求交错处理，增加建模复杂度
+- **accept()等待时间**：连接池等待时间显著影响延迟，缺乏量化分析
+- **多进程排队网络**：后端多进程形成复杂排队系统，传统模型不适用
+- **成本敏感环境**：使用廉价HDD且内存有限，缓存效果受限
+
+---
+
+![bg fit](images/cloud-storage-performance-prediction.png)
+
+---
+
+![bg fit](images/cloud-storage-performance-factors.png)
+
+---
+
+### 关键创新
+
+#### **联合操作抽象**
+- 打包多样操作为单一"联合操作"
+- 整合缓存、数据分块、事件驱动调度
+
+#### **accept()等待时间建模**
+- 量化分析连接池等待时间
+- 建立与请求处理队列状态的关系
+
+---
+
+![bg fit](images/cloud-storage-request-analysis.png)
+
+---
+
+### 实验效果
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+</style>
+
+**实验设置**
+- 7节点OpenStack Swift集群
+- Wikipedia真实媒体访问追踪
+- 多种SLA要求(10/50/100ms)
+
+<div class="columns">
+
+<div>
+
+**预测精度**
+- 平均误差：**4.44%**
+- 最坏情况：**16.61%**
+- 显著优于基线模型
+
+</div>
+
+<div>
+
+**模型贡献**
+- 相比忽略多磁盘操作模型：误差降低**36-73%**
+- 相比忽略accept()等待模型：误差降低**9-61%**
+- 在多种配置下保持稳定表现
+
+</div>
+
+</div>
 
 ---
 
@@ -1445,7 +1515,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-负载特征分析
+知己更要知彼——负载特征分析
 
 ---
 
