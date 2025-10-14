@@ -1294,19 +1294,31 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 <style scoped>
   li {
-    font-size: 25px;
-  }
-  p {
-    text-align: center;
+    font-size: 22px;
   }
 </style>
 
-![h:300](images/Basic-structure-of-queueing-models.png)
+![h:350](images/Basic-structure-of-queueing-models.png)
+
+**平均等待时间** $W = \frac{1}{\mu - \lambda}$
+**等待时间分布** $P(W_q \leq t) = 1 - \frac{\lambda}{\mu}e^{-(\mu-\lambda)t}$
+
+---
+
+#### **真实的系统没有简单的队列**
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+</style>
 
 - 如何建模**非线性的系统**？
   - [Predicting Response Latency Percentiles for Cloud Object Storage Systems](https://ieeexplore.ieee.org/document/8025298), ICPP 2017.
 - 怎么分析**请求的分布**？
   - [Understanding the latency distribution of cloud object storage systems](http://www.sciencedirect.com/science/article/pii/S0743731518301175), JPDC 2019.
+
+![h:330](images/swift_network_diagram-1.png) $\rightarrow$ ![h:330](images/cloud-storage-request-analysis.png)
 
 ---
 
@@ -1347,10 +1359,6 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 #### **accept()等待时间建模**
 - 量化分析连接池等待时间
 - 建立与请求处理队列状态的关系
-
----
-
-![bg fit](images/cloud-storage-request-analysis.png)
 
 ---
 
@@ -1472,7 +1480,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 参考文献
+### 扩展阅读
 
 <style scoped>
   p {
@@ -1520,3 +1528,33 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 ---
 
 …WIP…
+
+---
+
+### 扩展阅读
+
+<style scoped>
+  p {
+    font-size: 20px;
+  }
+</style>
+
+[Towards Workload-aware Cloud Efficiency: A Large-scale Empirical Study of Cloud Workload Characteristics](https://dl.acm.org/doi/10.1145/3676151.3722008), (ICPE ’25)
+
+对微软10万VM层云负载数据，定义六大业务类别并给出可抢占、延迟容忍、地域亲和等关键属性分布，为平台优化提供可落地的匹配规则与收益估算。
+
+[Characterization of Large Language Model Development in the Datacenter](https://www.usenix.org/conference/nsdi24/presentation/hu), (NSDI ’24)
+
+基于数据中心运行日志量化 LLM 工作负载的 GPU/内存利用率、批量大小演进与故障分布，为资源调度提供依据。
+
+[Understanding the Workload Characteristics of Large Language Model Development](https://www.usenix.org/publications/loginonline/understanding-workload-characteristics-large-language-model-development), (USENIX ;Login: 2024)
+
+梳理 LLM 训练-微调全流程的 I/O、计算与通信特征，指出检查点写入与大规模参数同步是主要瓶颈。
+
+[An In-depth Comparative Analysis of Cloud Block Storage Workloads: Findings and Implications](https://dl.acm.org/doi/full/10.1145/3572779), (ACM ToS ’23)
+
+对比阿里与腾讯云盘块存储跟踪（共 28 B 次 I/O）与微软企业盘跟踪，量化负载强度、空间局部性与时间更新模式，揭示云盘写主导、高随机、高突发的新特征，并给出负载均衡、缓存、闪存集群管理三点设计启示。
+
+[Characterization of a Big Data Storage Workload in the Cloud](https://dl.acm.org/doi/10.1145/3297663.3310302), (ICPE ’19)
+
+基于Databricks 6个月生产级Spark-on-S3日志，首次系统刻画云原生大数据对象存储访问：读占绝对主导，日/周存在明显峰谷，文件大小、热度、集群级I/O均呈重尾分布。
