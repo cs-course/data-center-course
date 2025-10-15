@@ -1144,7 +1144,7 @@ $N_{Hedge}=2 \rightarrow Latency_{new} = P99 \times P99 = P9999$
 
 [The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), (CACM 2013)
 
-首次系统性分析了大规模分布式系统中长尾延迟的成因，提出了"对冲请求"等关键优化策略，成为后续研究的基石。
+首次系统性分析了大规模分布式系统中长尾延迟的成因，提出了"对冲请求"等关键策略，成为后续研究的基石。
 
 [Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559), (CACM 2018)
 
@@ -1178,7 +1178,7 @@ $N_{Hedge}=2 \rightarrow Latency_{new} = P99 \times P99 = P9999$
 </style>
 
 长尾、小概率、样本缺乏
-统计学模型矛盾
+统计学模型内在矛盾
 
 <!-- 来自长尾的麻烦，同时也意味着样本缺乏，仅从统计学入手难免自相矛盾 -->
 
@@ -1292,12 +1292,6 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ### 初步尝试——排队论模型
 
-<style scoped>
-  li {
-    font-size: 22px;
-  }
-</style>
-
 ![h:350](images/Basic-structure-of-queueing-models.png)
 
 **平均等待时间** $W = \frac{1}{\mu - \lambda}$
@@ -1305,7 +1299,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-#### **真实的系统没有简单的队列**
+#### **现实的系统没有简单的队列**
 
 <style scoped>
   li {
@@ -1334,7 +1328,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ### 主要挑战
 
-- **多样磁盘操作**：索引查找、元数据读取、数据读取混合，性能特征各异
+- **多样磁盘操作**：索引查找、元数据和数据读取混合，性能特征各异
 - **数据分块传输**：事件驱动架构中请求交错处理，增加建模复杂度
 - **accept()等待时间**：连接池等待时间显著影响延迟，缺乏量化分析
 - **多进程排队网络**：后端多进程形成复杂排队系统，传统模型不适用
@@ -1352,11 +1346,13 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ### 关键创新
 
-#### **联合操作抽象**
+#### **化繁为简** —— 联合操作抽象
+
 - 打包多样操作为单一"联合操作"
 - 整合缓存、数据分块、事件驱动调度
 
-#### **accept()等待时间建模**
+#### **抓住关键** —— accept()等待时间建模
+
 - 量化分析连接池等待时间
 - 建立与请求处理队列状态的关系
 
@@ -1404,7 +1400,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 更多的问题…
+### 更多的问题
 
 <style scoped>
   li {
