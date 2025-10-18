@@ -15,7 +15,6 @@ math: katex
 光电信息存储研究部
 
 <https://shizhan.github.io/>
-<https://shi_zhan.gitee.io/>
 
 ---
 
