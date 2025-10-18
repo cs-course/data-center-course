@@ -13,7 +13,8 @@ paginate: true
 
 ---
 
-## 主要内容
+# 主要内容
+
 - 结构化编程和C程序的一般结构
 - 函数的机制：函数定义、函数声明、函数调用
 - 变量的存储类型
@@ -21,61 +22,54 @@ paginate: true
 
 ---
 
-## 5.1 模块化程序设计
+# 5.1 模块化程序设计
 
-- 把一个问题逐步细化分解为若干子问题，用函数实现子问题
-- 使程序编制方便，易于管理、修改和调试
-- 增强了程序的可读性、可维护性和可扩充性
-- 函数可以公用，避免在程序中使用重复的代码
-- 提高软件的可重用性
+- 把一个问题逐步细化分解为若干子问题，用函数实现子问题。
+- 优点：
+  - 程序编制方便，易于管理、修改和调试
+  - 增强可读性、可维护性、可扩充性
+  - 函数可公用，避免重复代码
+  - 提高软件可重用性
 
 ---
 
-## 蒙特卡罗模拟：猜数游戏
+# 蒙特卡罗模拟：猜数游戏
 
-**模拟算法**：编程实现现实世界中的随机事件
-
-**随机数特点**：
-- 不确定性和偶然性
+- 模拟算法：模拟随机事件（抛硬币、掷骰子等）
+- 随机数：具有不确定性和偶然性
 - 应用领域：软件测试、加密系统、网络验证码
-
-**随机数发生器**：
-```c
-int rand(void);  // 在stdlib.h中
-```
+- 随机数发生器：`int rand(void);`（在 `stdlib.h` 中）
 
 ---
 
-## 猜数游戏主程序结构
+# 主程序结构
 
 ```c
 do {
-    计算机产生一个1到1000的随机数；
-    游戏者猜数，直至猜对；
+    magic = GetNum();      // 产生随机数
+    GuessNum(magic);       // 猜数
     printf("Play again? (Y/N) ");
-    scanf("%1s", &cmd);   
+    scanf("%1s", &cmd);
 } while (cmd == 'y' || cmd == 'Y');
 ```
 
 ---
 
-## 函数定义示例
+# 子任务1：GetNum(void)
 
 ```c
-#define MAX_NUMBER 1000
-
 int GetNum(void) {
     int x;
-    printf("A magic number between 1 and %d has been chosen.\n", MAX_NUMBER);  
-    x = rand();                    // 调用标准库函数rand产生随机数
-    x = x % MAX_NUMBER + 1;        // 限制在1～MAX_NUMBER之间
-    return x;  
+    printf("A magic number between 1 and %d has been chosen.\n", MAX_NUMBER);
+    x = rand();
+    x = x % MAX_NUMBER + 1;
+    return x;
 }
 ```
 
 ---
 
-## 完整猜数游戏代码
+# 函数 GuessNum 与 main
 
 ```c
 #include <stdio.h>
@@ -83,215 +77,232 @@ int GetNum(void) {
 #include <time.h>
 #define MAX_NUMBER 1000
 
-int GetNum(void);          // 函数原型
-void GuessNum(int x);      // 函数原型
-
-int main(void) {
-    char command;
-    int magic;
-    
-    srand(time(NULL));     // 初始化随机数种子
-    
-    do {
-        magic = GetNum();      // 调用GetNum产生随机数
-        GuessNum(magic);       // 调用GuessNum猜数
-        printf("Play again? (Y/N) ");
-        scanf("%1s", &command);    
-    } while (command == 'y' || command == 'Y');
-    
-    return 0;
-}
-```
-
----
-
-## 5.2 自定义函数
-
-使用自定义函数需要做三件事：
-1. 按语法规则编写函数（定义函数）
-2. 在调用函数之前进行函数声明
-3. 在需要时调用函数
-
----
-
-## 函数的定义
-
-**一般形式**：
-```c
-类型名 函数名(参数列表) {
-    声明部分
-    语句部分
-}
-```
-
-**return语句形式**：
-```c
-return;              // void函数：无返回值函数
-return 表达式;       // 非void函数：有返回值函数
-```
-
----
-
-## 函数原型与调用
-
-```c
-// 函数原型声明
 int GetNum(void);
 void GuessNum(int x);
 
 int main(void) {
+    char command;
     int magic;
-    magic = GetNum();        // 函数调用
-    GuessNum(magic);         // 函数调用
+    do {
+        magic = GetNum();
+        GuessNum(magic);
+        printf("Play again? (Y/N) ");
+        scanf("%1s", &command);
+    } while (command == 'y' || command == 'Y');
     return 0;
-}
-
-// 函数定义
-int GetNum(void) {
-    // 函数体
-}
-
-void GuessNum(int x) {
-    // 函数体
 }
 ```
 
 ---
 
-## 参数传递：值传递示例
+# 伪随机数算法
+
+- 递推公式（线性同余法）：
+  ```
+  a₀ = seed
+  aₙ = (A * aₙ₋₁ + B) % M, n ≥ 1
+  ```
+- 种子参数 `seed` 决定随机序列
+- 初始化种子：`srand(unsigned int x);`
+
+---
+
+# 初始化语句的位置
 
 ```c
-#include<stdio.h>
-long power(int, int);  // 函数原型
+srand(time(NULL));  // 使用系统时间作为种子
+```
 
-int main(void) {
-    int x, n;
-    for(x = 1; x <= 10; x++) {
-        for(n = 2; n <= 5; n++)
-            printf("%10ld", power(x, n));
-        printf("\n");
-    }
-    return 0;
-}
+- `time(NULL)` 返回自 1970年1月1日以来的秒数
+- 需包含头文件 `time.h`
 
-long power(int x, int n) {  // 计算x的n次方
-    long p;
-    for (p = 1; n > 0; n--) p *= x;
-    return p;
-}
+---
+
+# C程序的结构
+
+```mermaid
+graph TD
+    A[源文件] --> B[编译]
+    B --> C[目标文件]
+    C --> D[链接]
+    D --> E[可执行程序]
 ```
 
 ---
 
-## 5.3 变量的存储类型
+# 练习：蒙特卡罗法求圆周率
 
-**存储类型决定**：
+- 正方形内切圆，投掷飞镖 n 次
+- 比值 ≈ π/4
+- n 越大，结果越精确
+
+---
+
+# 5.2 自定义函数
+
+使用自定义函数的三个步骤：
+
+1. 定义函数
+2. 声明函数（可选，视情况）
+3. 调用函数
+
+---
+
+# 函数的定义
+
+```c
+类型名 函数名(参数列表) {
+    // 声明部分
+    // 语句部分
+}
+```
+
+- 无参数：`void` 或空
+- 无返回值：类型为 `void`
+
+---
+
+# 函数返回值
+
+```c
+return;           // 无返回值
+return 表达式;    // 有返回值
+```
+
+- 执行 `return` 后立即返回
+- `void` 函数可不写 `return`
+
+---
+
+# 函数原型
+
+```c
+类型名 函数名(参数类型表);
+```
+
+示例：
+
+```c
+int max(int x, int y);
+int max(int, int);
+```
+
+---
+
+# 良好的编程风格
+
+- 在调用函数前必须给出其定义或原型
+- 标准头文件中包含函数原型
+
+---
+
+# 函数调用与参数传递
+
+```c
+函数名(实参列表);
+```
+
+示例：
+
+```c
+putchar(c);
+c = getchar();
+printf("%f", sqrt(x));
+GuessNum(GetNum());
+```
+
+---
+
+# 实参的求值顺序
+
+- 由编译器决定（从左到右或从右到左）
+- 应避免使用有副作用的实参表达式
+
+---
+
+# 传地址（引用）调用
+
+```c
+int x;
+scanf("%d", &x);  // 传递变量地址
+```
+
+---
+
+# 5.3 变量的存储类型
+
+存储类型决定：
+
 - 作用域
-- 存储分配方式  
+- 存储分配方式
 - 生命周期
 - 初始化方式
 
-**关键字**：`auto`、`extern`、`static`、`register`
+关键字：`auto`、`extern`、`static`、`register`
 
 ---
 
-## 作用域与变量分类
+# 作用域
 
-**作用域**：标识符的有效范围
-
-**变量分类**：
-- **局部变量**：在函数内部定义，作用域是定义该变量的程序块
-- **全局变量**：在函数外部定义，作用域从其定义处开始到文件末尾
+- 局部变量：定义在函数内部
+- 全局变量：定义在函数外部
 
 ---
 
-## 自动变量(auto)
+# 自动变量
 
 ```c
-auto int a;  // 等价于 int a; 或 auto a;
+auto int a;  // 等价于 int a;
 ```
 
-**特性**：
-- 作用域：局部于定义它的块
-- 存储分配方式：动态分配
-- 生命周期：短暂的，只存在于该块的执行期间
-- 初始化：定义时没有显示初始化，初值不确定
+- 作用域：定义所在块
+- 存储方式：动态分配
+- 生命周期：块执行期间
 
 ---
 
-## 外部变量(extern)
+# 外部变量
 
 ```c
-int p = 1, q = 5;  // p、q为全局变量
-
-float f1(int a) {   // 形参a为局部变量
-    int b, c;       // b、c为局部变量
-    // ...
-}
+extern int seed;  // 引用性声明
+int seed = 0;     // 定义性声明
 ```
 
-**特性**：
-- 作用域：从定义之后直到源文件结束
-- 存储分配方式：静态分配
-- 生命周期：永久的，存在于整个程序执行期间
-- 初始化：定义时没有显示初始化，初值为0
+- 作用域：从定义处到文件尾
+- 存储方式：静态分配
+- 生命周期：整个程序运行期间
 
 ---
 
-## 静态变量(static)
-
-**两种用法**：
-1. 用于定义局部变量 → 静态局部变量
-2. 用于定义外部变量 → 静态外部变量
-
-**特性**：
-- 存储分配方式：静态分配
-- 生命周期：永久的
-- 缺省初值：0，只执行一次初始化
-
----
-
-## 静态局部变量示例
+# 静态变量
 
 ```c
-// 计算1! + 2! + 3! + ... + n!
-long factorial(int n) {
-    static long cache[100] = {0};  // 静态局部变量，缓存已计算的值
-    
-    if (n == 0 || n == 1) return 1;
-    if (cache[n] != 0) return cache[n];  // 如果已计算过，直接返回
-    
-    cache[n] = n * factorial(n - 1);     // 计算并缓存
-    return cache[n];
-}
+static int count = 0;
 ```
+
+- 静态局部变量：作用域同自动变量，生命周期永久
+- 静态外部变量：作用域限于本文件
 
 ---
 
-## 寄存器变量(register)
+# 寄存器变量
 
 ```c
-register int i;  // 等价于 register i;
-
-for (i = 0; i <= N; i++) {
-    // 频繁访问的变量
-}
+register int i;
 ```
 
-**目的**：提高程序执行速度
-**限制**：不可多，不能使用&运算
+- 建议编译器将变量存入寄存器
+- 不能取地址（`&`）
 
 ---
 
-## 5.4 递归
-
-**递归函数**：在定义中含有递归调用的函数
+# 5.4 递归
 
 ```c
 void prn_int(int n) {
     if (n > 0) {
         printf("%d ", n);
-        prn_int(n - 1);  // 递归调用
+        prn_int(n - 1);
     }
     printf("%d ", n);
 }
@@ -301,23 +312,43 @@ void prn_int(int n) {
 
 ---
 
-## 递归法求n!
+# 递归概述
 
-```c
-long fact(int n) {
-    if (n == 0 || n == 1) {          // 递归结束条件
-        return 1;
-    } else {
-        return (n * fact(n - 1));    // 递归调用
-    }
-}
-```
-
-**递归原则**："能进则进，不进则退"
+- 递归：函数直接或间接调用自身
+- 优点：代码简洁，易于理解
+- 缺点：效率低，占用内存多
 
 ---
 
-## 迭代法求n!
+# 递归法求 n!
+
+```c
+long fact(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+```
+
+---
+
+# n! 的递归执行过程
+
+```mermaid
+graph TD
+  A[fact(4)] --> B[4 * fact(3)]
+  B --> C[3 * fact(2)]
+  C --> D[2 * fact(1)]
+  D --> E[返回 1]
+  E --> F[返回 2]
+  F --> G[返回 6]
+  G --> H[返回 24]
+```
+
+---
+
+# n! 的迭代实现
 
 ```c
 long factorial_iteration(int n) {
@@ -330,13 +361,27 @@ long factorial_iteration(int n) {
 }
 ```
 
-**比较**：递归结构清晰但效率低，迭代效率高
+---
+
+# 递归 vs 迭代
+
+| 递归 | 迭代 |
+|------|------|
+| 代码简洁 | 效率高 |
+| 易理解 | 内存占用少 |
+| 适合递归数据结构 | 适合简单循环 |
 
 ---
 
-## 递归求Fibonacci数列
+# 递归的要素
 
-**基础版本**：
+1. 每次调用规模缩小
+2. 必须有递归结束条件
+
+---
+
+# 递归求 Fibonacci 数列
+
 ```c
 long long fibo(long n) {
     if (n == 1 || n == 2) return 1;
@@ -344,71 +389,75 @@ long long fibo(long n) {
 }
 ```
 
-**问题**：存在大量重复计算，效率低
-
 ---
 
-## 优化1：记忆化搜索
+# 优化1：记忆化搜索
 
 ```c
 long long fibo(long n) {
-    static long long f[1000] = {0, 1, 1};  // 储存计算过的值
-    
-    if (f[n]) {           // 已计算过，直接返回
-        return f[n];
-    }
-    return (f[n] = fibo(n - 1) + fibo(n - 2));
+    static long long f[1000] = {0, 1, 1};
+    if (f[n]) return f[n];
+    return f[n] = fibo(n - 1) + fibo(n - 2);
 }
 ```
 
 ---
 
-## 优化2：尾递归
+# 优化2：不重复求解
+
+```c
+long long fibo(long n) {
+    static long long a = 1;
+    long long b, c;
+    if (n == 1 || n == 2) return 1;
+    b = fibo(n - 1);
+    c = b + a;
+    a = b;
+    return c;
+}
+```
+
+---
+
+# 优化3：尾递归
 
 ```c
 long long fibo_tail_rec(int n, long long first, long long second) {
     if (n <= 1) return first;
     else return fibo_tail_rec(n - 1, second, first + second);
 }
-
-long long fibo(long n) {
-    return fibo_tail_rec(n, 1, 1);
-}
 ```
-
-**优点**：避免爆栈，当前运算结果通过参数传递
 
 ---
 
-## 字符串的递归处理
+# 字符串的递归处理
 
-**递归实现strlen**：
 ```c
 int strlen(char s[]) {
-    if (s[0] == '\0') {
-        return 0;
-    } else {
-        return (1 + strlen(s + 1));  // 或 &s[1]
-    }
+    if (s[0] == '\0') return 0;
+    else return 1 + strlen(s + 1);
 }
 ```
 
 ---
 
-## 汉诺塔问题
+# 汉诺塔问题
 
-**递归算法**：
-1. 把A上的n-1个盘子借助C移到B
-2. 把A上剩下的盘子（最大的）移到C
-3. 把B上的n-1个盘子借助A移到C
+- 将 n 个盘子从 A 借助 B 移到 C
+- 每次只能移动一个盘子
+- 大盘不能放在小盘上
+
+---
+
+# 汉诺塔递归算法
 
 ```c
 void move(int n, int a, int b, int c) {
-    if (n == 1) {
-        printf(" %c --> %c\n", a, c);
-    } else {
+    if (n == 1)
+        printf("%c --> %c\n", a, c);
+    else {
         move(n - 1, a, c, b);
-        printf(" %c --> %c\n", a, c);
+        printf("%c --> %c\n", a, c);
         move(n - 1, b, a, c);
     }
 }
@@ -416,50 +465,41 @@ void move(int n, int a, int b, int c) {
 
 ---
 
-## 递归练习
+# 递归练习
 
-**1. 数字逆序输出**：
-```c
-void reverse(long m) {
-    if (m < 10) {
-        printf("%ld", m);
-    } else {
-        printf("%ld", m % 10);
-        reverse(m / 10);
-    }
-}
+1. 逆序输出整数：`reverse(123)` → 输出 `321`
+2. 判断回文字符串：`is_palindrome("Level")` → 返回 `1`
+
+---
+
+# 整数的分划问题
+
+将正整数 M 划分为一系列正整数之和。
+
+示例：M=6
+
 ```
-
-**2. 判断回文字符串**：
-```c
-int is_palindrome(char str[], int n) {
-    if (n <= 1) return 1;
-    if (str[0] != str[n - 1]) return 0;
-    return is_palindrome(str + 1, n - 2);
-}
+6
+5+1
+4+2, 4+1+1
+3+3, 3+2+1, 3+1+1+1
+...
 ```
 
 ---
 
-## 整数的分划问题
+# 递归求解整数分划
 
 ```c
 void split(int n, int cur) {
-    static int a[100];  // 存储分划值
-    
-    if (!n) {  // 递归边界：已确定一种分划
+    if (n == 0) {
         // 输出分划方案
-        for (int i = 0; i < cur; i++) {
-            printf("%d ", a[i]);
-        }
-        printf("\n");
-        return;
-    }
-    
-    for (int i = n; i >= 1; i--) {  // 枚举当前位置的分划值
-        if (cur == 0 || i <= a[cur - 1]) {  // 避免重复，保持非递增
-            a[cur] = i;
-            split(n - i, cur + 1);  // 递归确定下一位置
+    } else {
+        for (int i = n; i >= 1; i--) {
+            if (i 值可行) {
+                a[cur] = i;
+                split(n - i, cur + 1);
+            }
         }
     }
 }
@@ -467,22 +507,39 @@ void split(int n, int cur) {
 
 ---
 
-## 枚举的递归实现
+# 枚举的递归实现
 
-**八皇后问题**：
 ```c
-int a[8];  // a[i]表示第i行皇后放在第a[i]列
-
-void find(int a[], int i) {
-    if (i == 8) {  // 递归边界：已枚举每一行
+void find(int a[], int k) {
+    if (k == 5) {
         // 输出解
-        return;
+    } else {
+        for (int i = 0; i < 10; i++) {
+            if (i 未用过) {
+                a[k] = i;
+                find(a, k + 1);
+            }
+        }
     }
-    
-    for (int j = 0; j < 8; j++) {  // 将i行皇后放到j列
-        if (is_valid(a, i, j)) {   // 判断是否互不攻击
-            a[i] = j;
-            find(a, i + 1);        // 枚举下一行
+}
+```
+
+---
+
+# 八皇后问题
+
+在 8×8 棋盘上放置 8 个皇后，使其互不攻击。
+
+```c
+void find(int a[], int i) {
+    if (i == 8) {
+        // 输出解
+    } else {
+        for (int j = 0; j < 8; j++) {
+            if (互不攻击) {
+                a[i] = j;
+                find(a, i + 1);
+            }
         }
     }
 }
