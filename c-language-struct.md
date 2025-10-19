@@ -4,6 +4,7 @@ theme: gaia
 title: 软件技术基础
 # size: 4:3
 math: katex
+paginate: true
 ---
 
 <!-- _class: lead -->
@@ -18,158 +19,281 @@ math: katex
 
 ---
 
-## 目录
+## 主要内容
+
 - 结构类型
-- 结构数组与指针
-- 结构作为函数参数与返回值
+  - 结构类型的声明和结构变量的定义
+  - 结构成员的引用（. 和 -> 运算符）
+  - 结构数组和结构指针
+  - 结构做函数参数与返回值
 - 字段结构
 - 联合类型
-- 结构指针应用：链表
+- 结构指针的应用：链表
 
 ---
 
-## 结构类型（struct）
+## 结构
 
-结构是一组相关联的数据集合，成员类型可以不同。
+- 一些相关联的数据的集合
+- 这些数据的类型可以相同，也可以不同
+- 这些数据都称为结构的成员
+
+**例如：学生信息结构**
 
 ```c
 struct stu {
-    char name[20];
-    float score;
+    char name[20];      // 姓名
+    float score;        // 成绩
+};
+```
+
+**例如：行星信息结构**
+
+```c
+struct planet {
+    char name[16];      // 行星的名称
+    double diameter;    // 行星直径的千米数
+    int moons;          // 卫星数
 };
 ```
 
 ---
 
-### 示例：求两点间距离
+## 结构类型示例：求两点距离
 
 ```c
-struct point {
-    int x;
-    int y;
+#include <stdio.h>
+#include <math.h>
+
+struct point {  // 点结构类型的声明
+    int x;     // x坐标
+    int y;     // y坐标
 };
 
-int main() {
-    struct point a, b;
+int main(void) {
+    struct point a, b;  // 声明点结构变量
+    double dx, dy, d;
+    
+    printf("输入两点的坐标：\n");
     scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);
-    double dx = b.x - a.x;
-    double dy = b.y - a.y;
-    double d = sqrt(dx*dx + dy*dy);
-    printf("distance: %f\n", d);
+    
+    dx = b.x - a.x;
+    dy = b.y - a.y;
+    d = sqrt(dx * dx + dy * dy);  // 计算距离
+    
+    printf("the distance is %f\n", d);  // 输出
+    return 0;
 }
 ```
 
 ---
 
-### 将求距离封装为函数
+## 结构成员访问与函数
+
+**结构成员访问：**
+- `结构变量名.结构成员`
+
+**将求距离定义为函数：**
 
 ```c
 double distance(struct point a1, struct point a2) {
-    double dx = a2.x - a1.x;
-    double dy = a2.y - a1.y;
-    return sqrt(dx*dx + dy*dy);
+    double dx, dy, d;
+    dx = a2.x - a1.x;
+    dy = a2.y - a1.y;
+    d = sqrt(dx * dx + dy * dy);  // 计算距离
+    return d;
 }
 ```
 
 ---
 
-### 使用结构指针传参
+## 结构指针作为函数参数
 
 ```c
 double distance(struct point *p1, struct point *p2) {
-    double dx = p2->x - p1->x;
-    double dy = p2->y - p1->y;
-    return sqrt(dx*dx + dy*dy);
+    double dx, dy, d;
+    dx = (*p2).x - (*p1).x;  // 等价于 p2->x - p1->x
+    dy = p2->y - p1->y;
+    d = sqrt(dx * dx + dy * dy);  // 计算距离
+    return d;
 }
 ```
 
+**结构成员访问：**
+- `结构指针->结构成员`
+
 ---
 
-### 结构变量赋值
+## 参数传递方式比较
+
+**结构变量作为函数参数：**
+1. 将实参结构拷贝给形参，占用内存较多，耗费时间较长
+   - 适用于较小的结构
+2. 传值，形参结构不影响实参结构的值
+
+**结构指针作为函数参数：**
+1. 将实参指针的值拷贝给形参指针，占用内存少，传参时间短
+   - 适用于较大的结构
+2. 传地址，在函数内部对形参指针的间访操作会影响实参指针所指结构变量的值
+   - 适合于要修改实参指针所指的结构变量值的情况
+
+---
+
+## 结构变量赋值与初始化
 
 ```c
-struct point a = {1, 2}, b;
-b = a; // 合法
-b = (struct point){3, 5}; // C99复合文字
+static struct point {
+    int x;
+    int y;
+} a = {1, 2}, b;
+
+b = a;                    // 合法，对应的各个成员赋值
+// b = {3, 5};           // 错误
+b = (struct point){3, 5}; // 正确，C99复合文字：结构常量
+```
+
+**初始化点结构变量的函数：**
+
+```c
+struct point Point(int x, int y) {
+    struct point temp;
+    temp.x = x;
+    temp.y = y;
+    return temp;
+}
 ```
 
 ---
 
 ## 结构数组
 
-```c
-struct student {
-    char name[20];
-    int score;
-};
-
-struct student class[30];
-```
-
----
-
-### 结构数组初始化
+**设计学生成绩结构类型：**
 
 ```c
-struct student class[3] = {
-    {"Alice", 90},
-    {"Bob", 85},
-    {"Charlie", 78}
-};
-```
+#define N 10
 
----
-
-## 嵌套结构访问
-
-```c
-stu[0].timeofenter.year
-```
-
----
-
-## 结构数组排序示例
-
-```c
 typedef struct {
-    long code;
-    char name[20];
-    float price;
+    long code;           // 货物编码
+    char name[20];       // 名称
+    float price;         // 价格
 } GOODS;
 
-void sort(GOODS *p, int n, int (*cmp)(const void*, const void*));
+void input(GOODS *, int);        // 输入n件物品的信息
+void display(GOODS *, int);      // 显示n件物品的信息
+void sort(GOODS *, int, int (*)(const void *, const void *));  // 排序
+int cmpbyName(const void *, const void *);     // 按名称比较
+int cmpbyPrice(const void *, const void *);    // 按单价比较
 ```
 
 ---
 
-## 回调函数示例
+## 结构数组函数实现
 
+**input函数：**
 ```c
-int cmpbyPrice(const void* s, const void* t) {
-    const GOODS *p1 = (const GOODS*)s;
-    const GOODS *p2 = (const GOODS*)t;
-    return p1->price < p2->price;
+void input(GOODS *p, int n) {
+    int i;
+    for(i = 0; i < n; i++) {
+        scanf("%ld", &p[i].code);
+        scanf("%s", (p + i)->name);
+        scanf("%f", &(p + i)->price);
+    }
+}
+```
+
+**display函数：**
+```c
+void display(GOODS *p, int n) {
+    int i;
+    for(i = 0; i < n; i++) {
+        printf("%ld\t", (*(p + i)).code);
+        printf("%s\t", (p + i)->name);
+        printf("%f\n", p[i].price);
+    }
 }
 ```
 
 ---
 
-## 联合（union）
+## 排序与回调函数
 
-联合所有成员共享同一段内存。
-
+**sort函数：**
 ```c
-union data {
-    char c;
-    short h;
-    long l;
-} v = {'A'};
+void sort(GOODS *p, int n, int (*fp)(const void *, const void *)) {
+    int i, j;
+    GOODS t;
+    for(i = 0; i < n - 1; i++) {       // 冒泡法
+        for(j = i + 1; j < n; j++) {
+            if(fp(p + i, p + j)) {
+                t = *(p + i);          // *(p+i) 等价于 p[i]
+                *(p + i) = *(p + j);   // *(p+j) 等价于 p[j]
+                *(p + j) = t;
+            }
+        }
+    }
+}
 ```
 
 ---
 
-### 判断大小端
+## 回调函数实现
 
+**按价格比较：**
+```c
+int cmpbyPrice(const void *s, const void *t) {
+    const GOODS *p1, *p2;
+    p1 = (const GOODS *)s;
+    p2 = (const GOODS *)t;
+    if(p1->price < p2->price)   // 按价格降序
+        return 1;
+    else
+        return 0;
+}
+```
+
+**按名称比较：**
+```c
+int cmpbyName(const void *s, const void *t) {
+    const GOODS *p1, *p2;
+    p1 = (const GOODS *)s;
+    p2 = (const GOODS *)t;
+    return (strcmp(p1->name, p2->name) > 0);  // 按名称升序
+}
+```
+
+---
+
+## 联合类型
+
+- 与结构类似，联合类型也是一种构造类型
+- **结构变量**：占据各自不同空间的各成员变量的集合
+- **联合变量**：占用同一内存空间的各成员变量的集合
+- **联合特点**：各成员共享存储
+
+```c
+union chl {
+    char c;
+    short h;
+    long l;
+} v = {'9'};  // 只能对联合的第1个成员进行初始化
+```
+
+---
+
+## 联合应用：分离高低字节
+
+```c
+union {
+    short n;     // 存放要进行分离的数据
+    char a[2];   // n与数组a占的字节数相同
+} test;
+
+test.n = 0x1234;
+low = test.a[0];   // 低字节数据, low = 0x34
+high = test.a[1];  // 高字节数据, high = 0x12
+```
+
+**判断大小端：**
 ```c
 int checkCPUendian() {
     union {
@@ -177,113 +301,147 @@ int checkCPUendian() {
         unsigned char b;
     } c;
     c.a = 1;
-    return (c.b == 1);
+    return (c.b == 1);  // return 1: little-endian, return 0: big-endian
 }
 ```
 
 ---
 
-### 分离short高低字节
+## 字段结构
+
+**压缩21世纪日期：**
+- 日有31个值 → 5位
+- 月有12个值 → 4位
+- 年有100个值 → 7位
+- 总计：16位整数
 
 ```c
-union {
-    short n;
-    char bytes[2];
-} test;
+struct date {
+    unsigned short year : 7;   // 年
+    unsigned short month : 4;  // 月
+    unsigned short day : 5;    // 日
+};
 
-test.n = 0x1234;
-// test.bytes[0] = 0x34
-// test.bytes[1] = 0x12
+struct date today;  // today是date字段结构变量
+```
+
+**字段布局：**
+```
+15               11  10              7   6                   0
+today:   day              month               year
+        2个字节
 ```
 
 ---
 
-## 字段结构（bit-field）
+## 字段结构与联合应用
 
 ```c
-struct date {
-    unsigned short year : 7;
-    unsigned short month : 4;
-    unsigned short day : 5;
+#include <stdio.h>
+
+struct w16_bytes {
+    unsigned short byte0 : 8;   // byte0：低字节
+    unsigned short byte1 : 8;   // byte1：高字节
+};
+
+struct w16_bits {
+    unsigned short b0:1, b1:1, b2:1, b3:1, b4:1, b5:1, b6:1, b7:1,
+                   b8:1, b9:1, b10:1, b11:1, b12:1, b13:1, b14:1, b15:1;
+};
+
+union w16 {  // i、byte、bit共享存储
+    short i;
+    struct w16_bytes byte;
+    struct w16_bits bit;
 };
 ```
 
 ---
 
-## 字段结构图示
+## 字段结构与联合应用（续）
 
-```mermaid
-graph TD
-    A[16位整型] --> B[0-4: day]
-    A --> C[5-8: month]
-    A --> D[9-15: year]
+```c
+int main(void) {
+    union w16 w = {0};   // w.i为0
+    
+    w.bit.b9 = 1;        // 相当于byte1为2
+    w.bit.b10 = 1;       // 相当于byte1为6
+    w.byte.byte0 = 0x62;
+    
+    printf("w.i=0x%x\n", w.i);  // 按整型解释
+    return 0;
+}
 ```
 
----
-
-## 联合与字段结合：访问16位字
-
-```mermaid
-graph TD
-    A[short i] --> B[union]
-    B --> C[struct w16_bytes]
-    B --> D[struct w16_bits]
-    C --> C1[byte0]
-    C --> C2[byte1]
-    D --> D0[b0] --> D15[b15]
+**运行结果：**
+```
+w.i=0x662
 ```
 
 ---
 
 ## 结构指针应用：链表
 
+**顺序存储 vs 链式存储：**
+
+| 特性 | 顺序存储（数组） | 链式存储（链表） |
+|------|------------------|------------------|
+| 存储分配 | 静态，声明时建立 | 动态，运行时申请 |
+| 存储大小 | 固定，不能改变 | 可变，可调节 |
+| 内存布局 | 连续 | 不连续 |
+
+**C的动态存储分配函数：**
+- `void *malloc(size_t size);`
+- `void *calloc(size_t n, size_t size);`
+- `void *realloc(void *p_block, size_t size);`
+- `void free(void *p_block);`
+
 ---
 
-### 顺序 vs 链式存储
+## 链表基础
 
-| 存储方式 | 特点 |
-|----------|------|
-| 数组     | 固定大小，连续内存 |
-| 链表     | 动态大小，非连续内存 |
-
----
-
-### 链表结点定义
-
+**链表结点结构：**
 ```c
 struct intNode {
     int data;
-    struct intNode* next;
+    struct intNode *next;  // 指向该结构自身的指针
 };
+
+struct intNode *head;  // 头指针
+```
+
+**动态创建结点：**
+```c
+head = (struct intNode *)malloc(sizeof(struct intNode));
+head->data = 10;
+head->next = (struct intNode *)malloc(sizeof(struct intNode));
+head->next->data = 12;
+head->next->next = NULL;
 ```
 
 ---
 
-### 链表结构图示
-
-```mermaid
-graph LR
-    A[head] --> B[Node1] --> C[Node2] --> D[NULL]
-```
-
----
-
-### 创建链表（先进先出）
+## 建立先进先出链表
 
 ```c
-struct intNode* createList() {
+struct intNode *createList() {
     struct intNode *head = NULL, *tail = NULL;
     int x;
-    scanf("%d", &x);
-    if (x) {
-        head = tail = malloc(sizeof(struct intNode));
-        head->data = x;
-        while (scanf("%d", &x), x) {
-            tail->next = malloc(sizeof(struct intNode));
-            tail = tail->next;
-            tail->data = x;
+    
+    scanf("%d", &x);  // 输入第1个整数
+    if(x) {
+        head = (struct intNode *)malloc(sizeof(struct intNode));
+        head->data = x;        // 对数据域赋值
+        tail = head;           // tail指向第一个结点
+        
+        scanf("%d", &x);       // 输入第2个整数
+        while(x) {             
+            tail->next = (struct intNode *)malloc(sizeof(struct intNode));
+            tail = tail->next;       // tail指向新创建的结点
+            tail->data = x;          // 向新创建的结点的数据域赋值
+            scanf("%d", &x);         // 继续输入整数
         }
-        tail->next = NULL;
+        tail->next = NULL;     // 对最后一个结点的指针域赋NULL值
     }
     return head;
 }
@@ -291,79 +449,287 @@ struct intNode* createList() {
 
 ---
 
-### 遍历链表
+## 遍历链表
 
 ```c
-void printList(struct intNode* head) {
-    while (head) {
-        printf("%d ", head->data);
-        head = head->next;
+void printList(struct intNode *head) {
+    struct intNode *p = head;  // 遍历指针p指向链头
+    
+    while(p != NULL) {         // p非空
+        printf("%d\t", p->data);  // 输出结点数据域中成员的值
+        p = p->next;           // 遍历指针p指向下一结点
+    }
+}
+```
+
+**递归建立链表：**
+```c
+struct intNode *createList() {
+    struct intNode *head = NULL;
+    int x;
+    scanf("%d", &x);
+    
+    if(x == 0)  // 遇到结束标记，返回NULL
+        return NULL;
+    else {
+        head = (struct intNode *)malloc(sizeof(struct intNode));
+        head->data = x;              // 对新创建结点的数据域赋值
+        head->next = createList();   // 递归创建下一结点
+        return head;                 // 返回链头地址
     }
 }
 ```
 
 ---
 
-### 插入结点
+## 统计链表结点数目
 
-```mermaid
-graph LR
-    A[last] --> B[new] --> C[p]
-```
-
----
-
-### 删除结点
-
-```mermaid
-graph LR
-    A[last] --> B[p] --> C[next]
-    A --> C
-```
-
----
-
-### 链表排序（交换数据）
-
+**循环遍历法：**
 ```c
-void sortList(struct intNode* head) {
-    for (struct intNode* p1 = head; p1; p1 = p1->next)
-        for (struct intNode* p2 = p1->next; p2; p2 = p2->next)
-            if (p1->data > p2->data) {
-                int t = p1->data;
-                p1->data = p2->data;
-                p2->data = t;
-            }
+int countNodes(struct intNode *head) {
+    struct intNode *p = head;
+    int num = 0;
+    
+    while(p != NULL) {
+        num++;
+        p = p->next;
+    }
+    return num;
+}
+```
+
+**递归法：**
+```c
+int countNodes_recursive(struct intNode *head) {
+    struct intNode *p = head;
+    if(p)
+        return (1 + countNodes_recursive(p->next));
+    else
+        return 0;
 }
 ```
 
 ---
 
-### 双向链表结构
+## 查找结点
 
-```mermaid
-graph LR
-    A[Node1] <--> B[Node2] <--> C[Node3]
+```c
+struct intNode *findNodes(struct intNode *head, int n) {
+    struct intNode *p = head;
+    
+    if(p) {  // 链表非空，查找
+        if(p->data == n)
+            return p;  // 找到，返回该结点的地址
+        else
+            return (findNodes(p->next, n));  // 递归查找
+    } else {
+        return NULL;
+    }
+}
 ```
 
 ---
 
-### 十字交叉链表（学生信息 + 成绩）
+## 插入结点
 
-```mermaid
-graph TD
-    A[学生1] --> B[成绩1]
-    A --> C[成绩2]
-    D[学生2] --> E[成绩1]
-    D --> F[成绩3]
+**插入位置：**
+- 链头、链尾、链中
+
+**插入方式：**
+- 作为插入点的新后继结点
+- 作为插入点的新前驱结点
+
+**插入操作：**
+- 链头：`head = new; new->next = p;`
+- 链尾：`new->next = NULL; p->next = new;`
+- 链中：`last->next = new; new->next = p;`
+
+---
+
+## 插入结点实现
+
+```c
+#define LEN sizeof(struct intNode)
+
+struct intNode *insertNode(struct intNode **hp, int x) {
+    struct intNode *p, *last, *new;
+    new = (struct intNode *)malloc(LEN);  // 创建一个新节点
+    new->data = x;
+    p = *hp;  // 寻找插入位置
+    
+    while(p != NULL && x > p->data) {
+        last = p;
+        p = p->next;
+    }
+    
+    if(p == *hp) {  // 插入点是链头
+        *hp = new;  // 新节点为链头
+        new->next = p;
+    } else if(p == NULL) {  // 插入点是链尾
+        new->next = NULL;   // 新节点为链尾
+        last->next = new;
+    } else {  // 插入点是链中
+        new->next = p;      // 新节点为p的前驱结点
+        last->next = new;
+    }
+    
+    return new;
+}
+```
+
+---
+
+## 删除结点
+
+**删除步骤：**
+1. 查找被删结点
+2. 改变连接关系
+3. 释放存储空间
+
+**删除操作：**
+- 链头：`head = p->next;`
+- 非链头：`last->next = p->next;`
+- 释放：`free(p);`
+
+---
+
+## 删除结点实现
+
+```c
+int deleteNodes(struct intNode **hp, int n) {
+    struct intNode *p, *last;
+    p = *hp;
+    
+    while(p != NULL && p->data != n) {  // 查找成员值与n相等的结点
+        last = p;      // last指向当前结点
+        p = p->next;   // p指向下一结点
+    }
+    
+    if(p == NULL)      // 没有符合条件的结点
+        return 0;
+    
+    if(p == *hp)       // 被删结点是链头
+        *hp = p->next;
+    else               // 被删结点不是链头
+        last->next = p->next;
+    
+    free(p);           // 释放被删结点的存储
+    return 1;
+}
+```
+
+---
+
+## 归并链表
+
+```c
+void conLists(struct intNode *a, struct intNode *b) {
+    struct intNode *p = a;
+    
+    while(p->next != NULL) {
+        p = p->next;
+    }
+    p->next = b;
+}
+```
+
+**归并过程：**
+1. 遍历链表A找到其链尾
+2. 将链表B的头指针值赋给链表A链尾的指针域
+
+---
+
+## 链表排序方法1：交换数据域
+
+```c
+void sortList(struct intNode *head) {
+    struct intNode *p1, *p2;
+    int t;
+    
+    for(p1 = head; p1 != NULL; p1 = p1->next) {
+        for(p2 = p1->next; p2 != NULL; p2 = p2->next) {
+            if(p1->data > p2->data) {
+                t = p1->data;           // 交换数据域
+                p1->data = p2->data;
+                p2->data = t;
+            }
+        }
+    }
+}
+```
+
+**适用情况：** 数据域较为简单的情况
+
+---
+
+## 链表排序方法2：改变连接关系
+
+```c
+if(p1->data > p2->data) {
+    t = p2->next;
+    prior1->next = p2;
+    prior2->next = p1;
+    p2->next = p1->next;
+    p1->next = t;
+    p2 = p1;
+    p1 = prior1->next;
+}
+```
+
+**适用情况：** 数据域较为复杂，成员较多的情况
+
+---
+
+## 高级链表类型
+
+**双向链表：**
+- 结点的指针域包含两个指针
+- 一个指向前一个结点，另一个指向后一个结点
+
+**十字交叉链表：**
+- 结点的指针域包含两个指针
+- 一个指向后一个结点，另一个指向另外一个链表
+
+**应用：** 用十字交叉链表保存学生基本信息和成绩
+
+---
+
+## 十字交叉链表结构
+
+**水平方向：** 学生基本信息链
+**垂直方向：** 各学生课程成绩链
+
+**学生课程成绩结点：**
+```c
+typedef struct score_tab {
+    char num[5];           // 学号
+    char course[20];       // 课程名称
+    int score;             // 成绩
+    struct score_tab *next; // 指向下一个课程成绩结点
+} courses;
+```
+
+**学生基本信息结点：**
+```c
+typedef struct student_tab {
+    char num[5];           // 学号
+    char name[10];         // 姓名
+    char sex;              // 性别
+    int age;               // 年龄
+    char addr[30];         // 家庭住址
+    char phone[12];        // 联系电话
+    char *memo;            // 备注字段
+    courses *head_score;   // 指向成绩链的头指针
+    struct student_tab *next; // 指向下一个结点
+} studs;
 ```
 
 ---
 
 ## 总结
 
-- 结构体用于封装不同类型数据
-- 结构数组、指针、函数传参灵活高效
-- 联合节省内存，字段结构压缩数据
-- 链表实现动态数据结构，支持插入、删除、排序等操作
-
+- 结构是C语言中组织相关数据的重要方式
+- 联合提供了共享内存的机制
+- 字段结构用于位级数据操作
+- 链表是动态数据结构的核心
+- 掌握这些概念对于编写高效的C程序至关重要
