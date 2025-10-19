@@ -22,13 +22,38 @@ math: katex
 
 <!-- paginate: true -->
 
-- 起源、发展和现状
+<style scoped>
+  li {
+    font-size: 50px;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 创建两等宽的栏 */
+    gap: 2rem; /* 设置两栏之间的间距 */
+  }
+</style>
+
+- **起源、发展和现状**
+
+<div class="columns">
+
+<div>
+
 - 平台软件与负载特性
 - 基础硬件与设计取舍
 - 基建、供电和冷却
+
+</div>
+
+<div>
+
 - 集中供能和效率优势
 - 集中使用和成本优势
-- 规模化运维挑战
+- 集中运维挑战
+
+</div>
+
+</div>
 
 ---
 
@@ -1179,7 +1204,7 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
 
 ---
 
-## 规模化运维挑战
+## 集中运维挑战
 
 <style scoped>
   h2 {
