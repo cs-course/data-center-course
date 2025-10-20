@@ -468,7 +468,10 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ![bg](images/active-object-storage.png)
 
-<!-- 我们十年前也希望通过参与国际标准化组织，为国内存储行业争取更高的音量，不过随后的发展，则因为工业界选择了事实标准而走向了另外一条路线，相关的研究重点也因此切换为近数据处理和存算一体化，在这里，对象存储同样拥有独特的优势 -->
+<!--
+- 实验室早期就跟进最新的网络存储发展，从双通道盘阵开始就在琢磨改装协议命令
+- 随后按照协议自研对象存储系统，尽量兼容传统协议栈方便应用整合
+ -->
 
 ---
 
@@ -484,6 +487,14 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ![w:300](images/active-object-storage-award.png)
 **主动对象海量存储系统及关键技术**
+
+<!-- 
+- 投入不少经历来研制系统，直到事实标准大行其道，不过万变不离其宗，其中
+  - 元数据管理方面的工作仍在继续，索引方面的工作还在发力
+  - 控制器方面的工作逐步下推，形成了延续至今的存算一体化硬件小组
+  - 从彼时跟踪借鉴 CMU NASD 和 Self-* 自组织、自管理，时至今日牵头推进 AI4Storage
+- 过程中不少同学奔赴华为（OceanStore）、腾讯（TFS）、阿里（盘古）、深信服、大普微从事存储系统方向的工作
+ -->
 
 ---
 
