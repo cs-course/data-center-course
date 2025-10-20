@@ -28,7 +28,7 @@ math: katex
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-}
+  }
 </style>
 
 - **背景** 对象存储系统的诞生、发展和现状
@@ -49,11 +49,15 @@ math: katex
 - 挑战三：**预测**
   - 怎样管控代价
 - **负载特征分析**
-  - 看不到的数据……
+  - 知己也要知彼
 
 </div>
 
 </div>
+
+<!-- 
+做研究首要任务是提出问题，问题不是空穴来风，要基于自己对于现实世界的观察和思考，并非空想或纸上谈兵，下面我们结合实验室20年来一条主线方向来谈谈我们经历过的几个关键的问题和主要的工作。
+ -->
 
 ---
 
@@ -67,7 +71,12 @@ math: katex
     text-align: center;
     font-size: 72px;
   }
+  p {
+    text-align: right;
+  }
 </style>
+
+对象存储系统的诞生、发展和现状
 
 ---
 
@@ -134,7 +143,49 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
   }
 </style>
 
-规模化存储的形成
+规模化的诉求
+
+---
+
+### 存储的两种形式
+
+<style scoped>
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  th, td {
+    width: 50%;
+    word-wrap: break-word;
+  } 
+  tr {
+    font-size: 25px;
+  }
+</style>
+
+| 文件存储 (File Storage) | 块存储 (Block Storage) |
+|------------------------|----------------------|
+| **组织结构**：层次化：目录和文件名，形成树状文件系统 | **组织结构**：扁平化：数据以固定大小的块存放，直接通过块地址访问 |
+| **访问方式**：通过文件路径和文件名进行访问，使用标准文件操作（打开、读取、写入、关闭） | **访问方式**：通过块编号直接访问，使用底层块设备操作（读块、写块） |
+| **管理层级**：由文件系统管理层处理，提供命名、权限控制和目录管理功能 | **管理层级**：在更接近硬件的层级操作，通常由设备驱动程序管理 |
+| **抽象级别**：提供高级抽象，用户通过文件名与数据交互，隐藏底层存储细节 | **抽象级别**：提供原始存储访问，不包含文件系统语义，呈现为原始磁盘卷 |
+| **典型应用**：传统硬盘文件系统（如NTFS、ext4）、网络附加存储(NAS) | **典型应用**：直接连接存储、存储区域网络(SAN)卷，表现为服务器本地磁盘 |
+| **适用场景**：适合通用应用程序，提供易于理解的文件管理方式 | **适用场景**：适用于对性能要求高的应用，如数据库和虚拟机磁盘 |
+
+<!-- 首先请同学们结合过去所学，从操作系统到组成原理还有系统结构，主要介绍了哪几种主要的存储访问模式？ -->
+
+---
+
+<style scoped>
+  p {
+    font-size: 25px;
+    text-align: center;
+  }
+</style>
+
+![h:550](images/the-storage-evolution.png)
+
+Source: <https://www.snia.org/sites/default/files/2025-03/The_Storage_Evolution.pdf>
 
 ---
 
@@ -157,7 +208,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 ---
 
-### 问题汇聚于元数据
+### 元数据的职责
 
 <style scoped>
   th {
@@ -172,7 +223,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 |规模|种类|
 |:-:|:-:|
 |![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
-|**检索地址**|**区分内容**|
+|**找位置**|**找内容**|
 
 ---
 
@@ -407,7 +458,7 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ---
 
-### 更进一步的扩展
+### **更进一步的扩展**
 
 <style scoped>
   h2 {
@@ -417,9 +468,11 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 
 ![bg](images/active-object-storage.png)
 
+<!-- 我们十年前也希望通过参与国际标准化组织，为国内存储行业争取更高的音量，不过随后的发展，则因为工业界选择了事实标准而走向了另外一条路线，相关的研究重点也因此切换为近数据处理和存算一体化，在这里，对象存储同样拥有独特的优势 -->
+
 ---
 
-### 主动对象存储
+### **主动对象存储**
 
 <style scoped>
   h2, p {
@@ -432,11 +485,9 @@ Source: <https://www.cloudhealthtech.com/blog/aws-cost-optimization-s3-storage-c
 ![w:300](images/active-object-storage-award.png)
 **主动对象海量存储系统及关键技术**
 
-<!-- 我们十年前的努力 -->
-
 ---
 
-### 算存一体化
+### 存算一体化
 
 <style scoped>
   p {
@@ -453,7 +504,7 @@ Source: <https://www.snia.org/computationaltwg>, <https://www.snia.org/education
 <!-- 往后的路 -->
 ---
 
-### 算存一体化…
+### 存算一体化…
 
 ![bg opacity:.3 fit](images/comp-storage-01.png)
 ![bg opacity:.3 fit](images/comp-storage-02.png)
@@ -697,9 +748,9 @@ Ceph的奠基性论文，提出了去中心化元数据管理、动态数据分�
   }
 </style>
 
-伴随规模前来，很重要却容易被忽视
+规模化的代价
 
-<!-- 伴随规模扩展前来的幽灵 -->
+<!-- 伴随规模前来，很重要却容易被忽视 -->
 
 ---
 
@@ -990,15 +1041,13 @@ Source：[The Tail at Scale](https://dl.acm.org/doi/10.1145/2408776.2408794), CA
 
 <style scoped>
   p {
-    font-size: 25px;
+    font-size: 30px;
   }
 </style>
 
-显然，横向扩展放大了尾延迟，不过另一方面
+显然，横向扩展放大了尾延迟，不过另一方面，缓存作为纵向扩展的基本方法，高命中率则帮助减少了尾延迟，事实上是公平减少了所有延迟
 
-缓存作为纵向扩展的基本方法，高命中率则帮助减少了尾延迟，事实上是公平减少了所有延迟
-
-当然这样的方法也有其代价，具体在系统结构课堂上已有阐述，那么，有没有更一般的减少尾延迟的方法？
+当然这样的方法也有其代价，具体在系统结构课堂上已有阐述，那么，有没有更具针对性的减少尾延迟的方法？
 
 执行冗余请求，可以达到和缓存相仿的效果，简单计算比较一下
 
@@ -1177,10 +1226,9 @@ $N_{Hedge}=2 \rightarrow Latency_{new} = P99 \times P99 = P9999$
   }
 </style>
 
-长尾、小概率、样本缺乏
-统计学模型内在矛盾
+怎样管控代价
 
-<!-- 来自长尾的麻烦，同时也意味着样本缺乏，仅从统计学入手难免自相矛盾 -->
+<!-- 来自长尾的麻烦，小概率同时也意味着样本缺乏，仅从统计学入手难免自相矛盾 -->
 
 ---
 
@@ -1612,6 +1660,19 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
+### **怎么办？**——数据量巨大、内容敏感、业务频繁更新
+
+- 标准化复现工具
+  - 不必受制于繁琐的脱敏流程
+  - 应对应用的快速迭代
+  - 降低分析与复现成本
+- 社区维护和验证
+  - 分享最佳实践
+  - 公平竞争提高
+  - 紧跟技术趋势
+
+---
+
 ### MLPerf 的诞生背景
 
 - **2018年**：[MLPerf 项目](https://mlcommons.org/benchmarks/)正式启动
@@ -1716,7 +1777,7 @@ CCF发展注意到与IO-500等国际基准的接轨。IO-500自2017年发布以�
 
 ---
 
-### 扩展阅读
+### 相关研究
 
 <style scoped>
   p {
@@ -1743,3 +1804,13 @@ CCF发展注意到与IO-500等国际基准的接轨。IO-500自2017年发布以�
 [Characterization of a Big Data Storage Workload in the Cloud](https://dl.acm.org/doi/10.1145/3297663.3310302), (ICPE ’19)
 
 基于Databricks 6个月生产级Spark-on-S3日志，首次系统刻画云原生大数据对象存储访问：读占绝对主导，日/周存在明显峰谷，文件大小、热度、集群级I/O均呈重尾分布。
+
+---
+
+## 本讲小结
+
+- 对象存储系统的诞生背景、发展现状
+- 三大挑战：扩展性、长尾延迟和性能预测
+- 典型系统案例和关键技术，在规模化应用中的问题与解决方案
+- 展望存算一体化和负载特征分析等前沿方向
+- 思考：怎样从实际系统中发现问题？给未来研究生学习做好准备？
