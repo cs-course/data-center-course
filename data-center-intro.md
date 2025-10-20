@@ -559,7 +559,7 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 
 ---
 
-### Swiss Fort Knox 瑞士诺克斯地堡
+#### 瑞士诺克斯地堡 (Swiss Fort Knox)
 
 <style scoped>
   li {
@@ -575,12 +575,10 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 
 ---
 
-### 瑞士诺克斯地堡
-
 <style scoped>
   p {
     font-size: 18px;
-    padding-top: 520px;
+    padding-top: 600px;
     text-align: left;
   }
 </style>
@@ -590,8 +588,6 @@ Source: [And The Title of The Largest Data Center in the World and Largest Data 
 Source: [SWISS FORT KNOX I + II is an underground datacenter concept with various locations, deep inside the Swiss Alps.](https://www.mount10.ch/en/mount10/swiss-fort-knox/)
 
 ---
-
-### 瑞士诺克斯地堡…
 
 <style scoped>
   li {
@@ -614,8 +610,6 @@ Source: [SWISS FORT KNOX I + II is an underground datacenter concept with variou
 Source: [Encrypted, daily monitored and fully automatic](https://www.mount10.ch/en/products/backup/combo.html)
 
 ---
-
-### 瑞士诺克斯地堡……
 
 <style scoped>
   p {
@@ -643,10 +637,10 @@ Ideal protection against NSA and PRISM!
 
 ---
 
-### NSA在用什么？
+#### NSA在用什么？
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
   }
@@ -667,10 +661,10 @@ Source: [FLAGSHIP UTAH DATA CENTER](https://www.novva.com/utah-data-center)
 
 ---
 
-### Utah Data Center 犹他数据中心
+#### Utah Data Center 犹他数据中心
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
     background: rgba(0, 80, 192, 0.7);
   }
@@ -705,11 +699,11 @@ Source: <http://www.iiclouds.org/20141114/maps-of-data-center-localization/>
 
 ---
 
-### 谷歌
+#### 谷歌
 
 <style scoped>
-  h3 {
-    padding-top: 5%;
+  h4 {
+    padding-top: 6%;
   }
   p {
     font-size: 18px;
@@ -724,7 +718,7 @@ Source: <https://www.google.cn/about/datacenters/locations/>
 
 ---
 
-### 亚马逊
+#### 亚马逊
 
 <style scoped>
   p {
@@ -740,12 +734,10 @@ Source: <https://www.cloudwards.net/news/amazon-announces-new-aws-paris-region-o
 
 ---
 
-### 亚马逊…
-
 <style scoped>
   p {
     font-size: 18px;
-    padding-top: 47%;
+    padding-top: 50%;
     text-align: left;
   }
 </style>
@@ -756,10 +748,10 @@ Source: <https://aws.amazon.com/cn/cloudfront/features/>
 
 ---
 
-### 微软
+#### 微软
 
 <style scoped>
-  h3 {
+  h4 {
     color: #F0F0F0;
   }
   p, a {
@@ -776,7 +768,7 @@ Source: <https://www.urtech.ca/2019/01/solved-where-are-microsofts-data-centers-
 
 ---
 
-### AWS, Azure and Google Cloud
+#### AWS, Azure and Google Cloud
 
 <style scoped>
   p {
@@ -792,7 +784,7 @@ Source: <https://www.atomia.com/2016/11/24/comparing-the-geographical-coverage-o
 
 ---
 
-### AWS, Azure and Google Cloud …
+#### AWS, Azure and Google Cloud …
 
 <style scoped>
   p {
@@ -820,7 +812,7 @@ Source: 中国数据中心产业发展白皮书，中国通服数字基建产业
 
 ---
 
-### 细分类型
+#### 细分类型
 
 <style scoped>
   p {
@@ -834,7 +826,7 @@ Source: [中国信息通信研究院 开放数据中心委员会](https://www.od
 
 ---
 
-### 地域分布
+#### 地域分布
 
 <style scoped>
   p {
@@ -848,10 +840,10 @@ Source: <https://www.newdc.org.cn/datacenter.html>
 
 ---
 
-### 阿里
+#### 阿里
 
 <style scoped>
-  h3 {
+  h4 {
     opacity: 0;
   }
   p, a {
@@ -868,12 +860,7 @@ Source: [阿里云宣布五大超级数据中心落成 未来还将再添十座]
 
 ---
 
-### 阿里…
-
 <style scoped>
-  h3 {
-    opacity: 0;
-  }
   p {
     font-size: 45px;
     text-align: left;
@@ -888,10 +875,10 @@ Source: [阿里云宣布五大超级数据中心落成 未来还将再添十座]
 
 ---
 
-### 腾讯
+#### 腾讯
 
 <style scoped>
-  h3 {
+  h4 {
     opacity: 0;
   }
   p, a {
@@ -907,12 +894,7 @@ Source: [腾讯云全球基础设施](https://cloud.tencent.com/act/event/global
 
 ---
 
-### 腾讯…
-
 <style scoped>
-  h3 {
-    opacity: 0;
-  }
   p {
     font-size: 45px;
     text-align: left;
@@ -927,7 +909,7 @@ Source: [腾讯云全球基础设施](https://cloud.tencent.com/act/event/global
 
 ---
 
-### T-Block
+#### T-Block
 
 ![bg right fit](images/tencent-qingyuan.jpg)
 
@@ -939,7 +921,7 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 
 ---
 
-### 身旁的范例
+#### 身旁的范例
 
 - 中金武汉数据中心
 - 光谷八路运营商数据中心
@@ -953,7 +935,7 @@ Source: [探访腾讯国内最大数据中心，百万台服务器啥概念](htt
 
 ---
 
-## 巨无霸背后的巨无霸
+### 巨无霸背后的巨无霸
 
 ![bg fit right](images/here-are-the-10-largest-data-center-providers-in-the-world.jpg)
 
@@ -1002,7 +984,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-## 智算中心
+### 智算中心
 
 <style scoped>
   h2 {
@@ -1014,7 +996,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-### 南京智算中心
+#### 南京智算中心
 
 <style scoped>
   p {
@@ -1033,7 +1015,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-### 上海“新一代人工智能计算与赋能平台”
+#### 上海“新一代人工智能计算与赋能平台”
 
 <style scoped>
   p {
@@ -1050,7 +1032,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-### 张北超级智算中心
+#### 张北超级智算中心
 
 <style scoped>
   p {
@@ -1074,7 +1056,7 @@ China’s protectionist regulatory policy makes it extremely difficult for forei
 
 ---
 
-### xAI Colossus
+#### xAI Colossus
 
 <style scoped>
   h3 {
@@ -1204,150 +1186,11 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
 
 ---
 
-## 集中运维挑战
-
-<style scoped>
-  h2 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-  }
-</style>
+……
 
 ---
 
-## 仓储规模的计算机系统，就是数据中心？
-
-![bg fit](images/wsc-arch.svg)
-
----
-
-### 一项经典的比较：HPC vs Cloud
-
-<style scoped>
-  h3 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 70px;
-  }
-</style>
-
----
-
-### 超算和云
-
-<style scoped>
-  p {
-    font-size: 18px;
-    text-align: left;
-  }
-</style>
-
-- 是 **集中力量办大事**
-- …
-- …
-
-![bg fit right](images/hpc_schematic.png)
-
-Source: <https://jgbarbosa.github.io/vis/docs/intro_to_hpc/intro_to_hpc_01.html>
-
----
-
-### 超算和云…
-
-<style scoped>
-  p {
-    font-size: 18px;
-    text-align: left;
-  }
-</style>
-
-- 是 **集中力量办大事**
-- 或 **人民群众无小事**
-- …
-
-![bg fit right](images/autoscaling-architecture5.png)
-
-Source: <https://www.networkcomputing.com/cloud-infrastructure/guide-cloud-computing-architectures>
-
----
-
-### 超算上云
-
-<style scoped>
-  p {
-    font-size: 14px;
-    text-align: left;
-  }
-</style>
-
-- 是 **集中力量办大事**
-- 或 **人民群众无小事**
-- 又或者 **动员广大人民办大事**
-
-![bg fit right](images/architecture-hpc-cfd.png)
-
-Source: <https://docs.microsoft.com/en-us/azure/architecture/example-scenario/infrastructure/hpc-cfd>
-
-Discussions:
-2013 [A comparative study of high-performance computing on the cloud, HPDC'13](https://dl.acm.org/doi/10.1145/2462902.2462919)
-2017 [Understanding the Performance and Potential of Cloud Computing for Scientific Applications, ToCC'17](https://ieeexplore.ieee.org/document/7045591)
-2018 [HPC Cloud for Scientific and Business Applications: Taxonomy, Vision, and Research Challenges, CSUR'18](https://dl.acm.org/doi/10.1145/3150224)
-2019 [Use Cases for HPC in the Cloud](https://insidehpc.com/2019/10/use-cases-for-hpc-in-the-cloud/)
-2020 [HPC in the Cloud? Yes, No and In Between](https://www.arm.com/blogs/blueprint/hpc-cloud)
-2020 [High Performance Computing Vs Cloud Computing: Which is Better?](https://www.1plus1tech.com/high-performance-computing-vs-cloud-computing/)
-2021 [HPC and the Cloud](https://www.cioreview.com/cxoinsight/hpc-and-the-cloud-nid-12863-cid-84.html)
-
----
-
-### 众包、边缘、雾计算
-
-<style scoped>
-  p {
-    font-size: 18px;
-    text-align: left;
-  }
-</style>
-
-- **从群众中来，到群众中去**
-
-![h:400](images/690px-SETI-home_ScrSaver.jpg) ![h:400](images/google-maps2-576x1024-small.jpg)
-
-Source: [The Power of the Community – Crowd Sourcing, Open Source and Social Networking](https://www.omniasecuritas.com/archives/116)
-
----
-
-<style scoped>
-  p {
-    font-size: 18px;
-    padding-top: 620px;
-    text-align: left;
-  }
-</style>
-
-![bg 80%](images/cloud-fog-edge_infographic.jpg)
-
-Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-difference/>
-
----
-
-![bg fit](images/IDC_edge_to_core.png)
-
----
-
-## 国家的愿景？
-
-<style scoped>
-  h2 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 70px;
-  }
-</style>
-
----
-
-### 数据中心集群
+### 进一步集中
 
 <style scoped>
   p {
@@ -1367,26 +1210,17 @@ Source: <https://www.winsystems.com/cloud-fog-and-edge-computing-whats-the-diffe
 
 ### 国家算力网
 
-<style scoped>
-  h3 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 70px;
-  }
-  p {
-    text-align: center;
-  }
-</style>
+![bg right fit](images/national-computing-infrastructure.jpeg)
 
-Datacenters as a Computer
+从 Datacenters as a Computer
 
-……
+到 **Nation as a Computer?**
 
-**Nation as a Computer?**
+[“东数西算”八大国家枢纽节点直接投资超过435亿元](https://www.gov.cn/lianbo/bumen/202408/content_6971147.htm), 2024-08-29 14:02 来源：新华社
 
 ---
 
-### 服务算力化
+### 算力服务化
 
 ![bg fit](images/china-new-construction.png)
 
@@ -1429,20 +1263,15 @@ Source: <https://www.36kr.com/p/1964095815756041>
 
 ---
 
-## 主要问题和挑战
+## 集中运维挑战
 
 <style scoped>
   h2 {
     padding-top: 200px;
     text-align: center;
-    font-size: 70px;
-  }
-  p {
-    text-align: center;
+    font-size: 72px;
   }
 </style>
-
-隐藏在规模化的背后的是？
 
 ---
 
