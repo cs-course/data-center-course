@@ -44,7 +44,7 @@ title: 数据中心技术
 
 ---
 
-## 计算机系统结构拓展
+## 计算机系统结构延伸
 
 <style scoped>
   li {
@@ -106,11 +106,27 @@ First awarded in 1979, it was named for John Presper Eckert and John William Mau
 
 ---
 
-## 一些关于先驱的故事
+## 从**一台机器**到**一个数据中心**
+
+在《The Datacenter as a Computer》中，谷歌工程师提出了一个革命性视角：**将数万台服务器组成的整个数据中心，视为一台统一的"仓储级计算机"**。
+
+这不仅仅是规模的扩张，更是根本性的范式转移：
+
+- **硬件协同**：通过网络化将分散的算力单元整合成强大引擎
+- **软件定义**：通过全局调度系统让数万芯片如臂使指
+- **容错设计**：接受部分组件故障，确保整体服务永续
+
+这个理念，正是我们今天理解算力革命的思想基石。
+
+---
+
+## 思想的缘起
 
 Barroso was born in Brazil and had a bachelor’s and master’s degree in electrical engineering from the Pontifical Catholic University of Rio de Janeiro.
 
 In the United States, he did a doctorate in **computer engineering** at the University of Southern California and worked with processors at Compaq and **Digital Equipment Corporation**. In 2001, he joined Google as a **software engineer**.
+
+- [Google Mourns Veteran Engineer Luiz André Barroso, Who Invented the Modern Data Center](https://www.wired.com/story/google-mourns-luiz-andre-barroso-veteran-engineer-invented-the-modern-data-center/), WIRED, Sep 21, 2023
 
 ---
 
@@ -120,19 +136,35 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
+## 当今的战略
+
+现在，把镜头拉远——如果单个数据中心可以是一台计算机，那么将全国的数据中心联网，不就构成了一台史无前例的"国家计算机"吗？
+
+这就是**中国算力网**的宏伟蓝图：
+
+- "拧成一股绳"：将东部的前沿推理与西部的庞大训练算力无缝衔接
+- 统一调度：像操作系统管理内存那样，在亿级用户间动态分配资源
+- 标准协议：建立跨地域的"机器语言"，让异构算力顺畅对话
+
+在国家尺度上，实践"数据中心作为计算机"的核心哲学
+
+---
+
+## 扬体制所长
+
 <style scoped>
   li {
-    font-size: 30px;
+    font-size: 33px;
   }
 </style>
 
-  Barroso shared three lessons he learnt in the first half of his career:
+通过**东数西算**工程，将"软硬协同"的思想提升到地理维度：
 
-  1. **Consider the winding road**: Although there are always risks when embarking on somethingnew, the upside of being adventurous in your professional career can be incredibly rewarding.
+- **东部"前端"**：在北京、上海、深圳部署低延迟计算，如同计算机的"缓存"
+- **西部"后端"**：在贵州、内蒙古等地建设大规模算力集群，如同"硬盘阵列"
+- **网络"总线"**：通过高速光纤网络，构建国家级的"数据总线系统"
 
-  2. **Develop respect for the obvious**: Big problems and important issues have one characteristic incommon: they tend to be simple to understand but difficult to solve. They are obvious and deserveattention.
-
-  3. **Even success has an expiry date**: Some of the most intellectual moments in Barrosa’s careercame when he was forced to abandon his original position, in which he had invested significanttime and effort and achieved some success.
+这恰如一台精密的计算机——不同部件各司其职，又通过高效互联成就整体性能。
 
 ---
 
