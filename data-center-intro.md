@@ -74,25 +74,6 @@ paginate: true
 
 ---
 
-### 分级
-
-<style scoped>
-  th {
-    background: #007FFF;
-  }
-</style>
-
-|Tier|Feature|
-|:-|:-|
-|**Tier 1** –– basic data center|no redundancy|
-|**Tier 2** –– redundant components|Single distribution path with redundant components |
-|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
-|**Tier 4** –– fault tolerant|Multiple active distribution paths|
-
-Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
-
----
-
 ### 发展阶段
 
 ![bg fit](images/datacenter-trend.png)
@@ -1181,6 +1162,25 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
 - [集中供能和效率优势](data-center-intro.md#集中供能和效率优势)
 - [集中使用和成本优势](data-center-intro.md#集中使用和成本优势)
 - [集中运维挑战](data-center-intro.md#集中运维挑战)
+
+---
+
+### 基础设施分级
+
+<style scoped>
+  th {
+    background: #007FFF;
+  }
+</style>
+
+|Tier|Feature|
+|:-|:-|
+|**Tier 1** –– basic data center|no redundancy|
+|**Tier 2** –– redundant components|Single distribution path with redundant components |
+|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
+|**Tier 4** –– fault tolerant|Multiple active distribution paths|
+
+Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
 
 ---
 
