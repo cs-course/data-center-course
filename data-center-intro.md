@@ -28,6 +28,10 @@ paginate: true
   strong {
     font-size: 80px;
   }
+  li {
+    padding-left: 20%;
+    list-style: none;
+  }
 </style>
 
 - [**历史和现状**](data-center-intro.md#历史和现状)
@@ -1106,6 +1110,10 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
   strong {
     font-size: 80px;
   }
+  li {
+    padding-left: 20%;
+    list-style: none;
+  }
 </style>
 
 - [历史和现状](data-center-intro.md#历史和现状)
@@ -1130,6 +1138,10 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
   }
   strong {
     font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
   }
 </style>
 
@@ -1156,6 +1168,10 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
   strong {
     font-size: 80px;
   }
+  li {
+    padding-left: 20%;
+    list-style: none;
+  }
 </style>
 
 - [历史和现状](data-center-intro.md#历史和现状)
@@ -1180,6 +1196,10 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
   }
   strong {
     font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
   }
 </style>
 
@@ -1206,6 +1226,10 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
   }
   strong {
     font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
   }
 </style>
 
@@ -1305,6 +1329,10 @@ Source: <https://www.36kr.com/p/1964095815756041>
   }
   strong {
     font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
   }
 </style>
 
