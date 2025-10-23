@@ -240,9 +240,9 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ### 个人推荐
 
-玻尔 | 全球科学家的 AI for Science 空间站  https://www.bohrium.com/
+玻尔 | 全球科学家的 AI for Science 空间站  <https://www.bohrium.com/>
 
-SciMaster ｜ Towards General-Purpose Scientific AI Agents https://scimaster.bohrium.com/chat
+SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bohrium.com/chat>
 
 学术码: 3ixmffnr
 
