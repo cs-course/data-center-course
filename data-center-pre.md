@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 title: 数据中心技术
 # size: 4:3
+math: mathjax
 ---
 
 <!-- _class: lead -->
@@ -214,7 +215,41 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
-### 说在选读论文之前
+## 研讨论文列表
+
+![bg right](images/reading-list-2024.png)
+
+扫码在线填表
+
+- 每人选择1篇拟汇报论文
+- 选择范围：CCF-A相关论文
+  - [FAST](https://www.usenix.org/conference/fast25/technical-sessions), [ATC](https://www.usenix.org/conference/atc25/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi25/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2024/schedule.html), [ISCA](https://www.iscaconf.org/isca2025/program/), [HPCA](https://hpca-conf.org/2025/main-program/) (2024~25)
+
+- [【腾讯文档】数据中心技术课程论文研讨2025](https://docs.qq.com/sheet/DUG1YRWJkTU51endC?tab=BB08J2)
+
+---
+
+### 关于论文选择
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+本次课堂仅做前述范围限定，同学们也可以自选在前面课堂中讨论过的，自己已经比较熟悉的论文进行汇报，**学习重点在于研讨过程**
+
+**选择举例**：[FAST24](https://www.usenix.org/conference/fast24/technical-sessions)
+
+- **Distributed Storage**（这个分论坛就属于课堂主题相关，其中论文优先挑选）
+- Session Chair: Raju Rangaswami, Florida International University
+  - TeRM: Extending RDMA-Attached Memory with SSD
+  - Combining Buffered I/O and Direct I/O in Distributed File Systems
+  - OmniCache: Collaborative Caching for Near-storage Accelerators
+
+---
+
+### 在读论文之前
 
 <style scoped>
   p, li {
@@ -261,37 +296,21 @@ SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bo
 
 ---
 
-## 研讨论文列表
+### 唤醒自己的工具
 
-![bg right](images/reading-list-2024.png)
+**提示词 baseline**:
 
-扫码在线填表
+    "请从实际应用落地的可行性、核心工作的代价和收益矛盾、实验场景和负载的代表性这几个方面，对这项工作提出质疑"
 
-- 每人选择1篇拟汇报论文
-- 选择范围：CCF-A相关论文
-  - [FAST](https://www.usenix.org/conference/fast25/technical-sessions), [ATC](https://www.usenix.org/conference/atc25/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi25/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2024/schedule.html), [ISCA](https://www.iscaconf.org/isca2025/program/), [HPCA](https://hpca-conf.org/2025/main-program/) (2024~25)
+**常用模型**：DeepSeek、KIMI、豆包、文心、ChatGPT
 
-- [【腾讯文档】数据中心技术课程论文研讨2025](https://docs.qq.com/sheet/DUG1YRWJkTU51endC?tab=BB08J2)
+**交叉评价**:
 
----
+$$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in ReadingList\}$$
 
-### 补充说明
+**参与贡献**:
 
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
-本次课堂在限定上述6个计算机系统结构方向主要会议之后，不再进行麻烦的列表选择，同学们也可以自选在前面课堂中讨论过的，自己已经比较熟悉的论文进行汇报，**学习重点在于研讨过程**
-
-**举例**：[FAST24](https://www.usenix.org/conference/fast24/technical-sessions)
-
-- **Distributed Storage**（这个分论坛就属于课堂主题相关，其中论文优先挑选）
-- Session Chair: Raju Rangaswami, Florida International University
-  - TeRM: Extending RDMA-Attached Memory with SSD
-  - Combining Buffered I/O and Direct I/O in Distributed File Systems
-  - OmniCache: Collaborative Caching for Near-storage Accelerators
+<https://github.com/cs-course/SocraticInquirer>
 
 ---
 
