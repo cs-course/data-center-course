@@ -9,8 +9,8 @@ footer: '微党课学习资料'
 # 二十届四中全会精神学习
 
 <style scoped>
-  h1, h2 {
-    color: orange;
+  h1, h2, p {
+    color: red;
   }
 </style>
 
