@@ -249,6 +249,20 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
+### 初学者参考
+
+首先明确：**读论文不是读课文**
+
+[如何读论文【论文精读·1】](https://www.bilibili.com/video/BV1H44y1t75x/), 2021-10-06
+
+[【论文干货】 顶级AI专家吴恩达教你：如何有效读论文？研究生必看！-CS230/人工智能论文/机器学习](https://www.bilibili.com/video/BV17w41167rC/), 2023-10-17
+
+务必**有了基础认识之后，再来找AI配合**
+
+不过……
+
+---
+
 ### 在读论文之前
 
 <style scoped>
@@ -273,7 +287,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
-### 个人推荐
+### "挖坑"工具推荐
 
 玻尔 | 全球科学家的 AI for Science 空间站  <https://www.bohrium.com/>
 
