@@ -93,6 +93,30 @@ paginate: true
 
 ---
 
+### 现实业务需求
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![bg right:50% fit](images/451figures.original.png)
+
+- **云计算**
+  - Continued cloud adoption
+- **物联网**
+  - IoT will further data center demand
+- **大数据**
+  - Analytics workloads driving computing demands
+
+Source: [Understanding the drivers behind data center demand](https://www.datacenterdynamics.com/en/opinions/understanding-the-drivers-behind-data-center-demand/), Data Centre Dynamics, 2018
+
+---
+
 <style scoped>
   p, a {
     padding-top: 620px;
@@ -138,6 +162,62 @@ Source: <https://datareportal.com/reports/>
 ![bg opacity:.3 brightness:.5](images/05-Changes-in-Connected-Behaviours-DataReportal-20200422-Digital-2020-April-Global-Statshot-Report-Slide-11.png)
 
 疫情加快了这个过程
+
+---
+
+### 随之而来的数据洪流
+
+<style scoped>
+  li, p {
+    font-size: 20px;
+  }
+</style>
+
+![w:1150](images/IDC_DataSphere.png)
+
+Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
+
+---
+
+### 从侧面观察这股洪流
+
+<style scoped>
+  p {
+    font-size: 18px;
+  }
+</style>
+
+![h:330](images/Global-electricity-demand-of-consumer-devices-2010-2030.png) ![h:330](images/Global-electricity-demand-of-data-centers-2010-2030.png)
+
+Source: [On Global Electricity Usage of Communication Technology: Trends to 2030](https://www.mdpi.com/2078-1547/6/1/117), Challenges, 2015
+
+---
+
+百度指数
+
+![w:1100](images/baidu-index-datacenter.jpg)
+
+---
+
+### 新基建倡议
+
+<style scoped>
+  li, p {
+    font-size: 27px;
+  }
+</style>
+
+- 国家发展改革委创新和高技术发展司2020年4月发布
+  - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
+- **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
+  - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
+  - 以人工智能、云计算、区块链等为代表的新技术基础设施
+  - 以**数据中心**、**智能计算中心**为代表的算力基础设施
+- 中国智能算力占全国总算力的比重也由2016年的3%提升至2020年41%，预计到2023年智能算力的占比将提升至70%。
+
+Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
+
+<!-- 认识到这些挑战，国家层面也行动起来，还前瞻性考虑到智能算力的战略性建设 -->
 
 ---
 
@@ -238,160 +318,6 @@ Source: <https://datareportal.com/reports/>
 - **绿色集约化**：西部集群PUE<**1.25**，自然冷却成标配
 - **智能泛在化**："超级智能体"APP将整合行业模型
 - **经济倍增效应**：每投入1元算力，带动**3-4元GDP增长**
-
----
-
-### 随之而来的数据洪流
-
-<style scoped>
-  li, p {
-    font-size: 20px;
-  }
-</style>
-
-![w:1150](images/IDC_DataSphere.png)
-
-Source: <https://www.datanami.com/2018/11/27/global-datasphere-to-hit-175-zettabytes-by-2025-idc-says/>
-
----
-
-### 从侧面观察这股洪流
-
-<style scoped>
-  p {
-    font-size: 18px;
-  }
-</style>
-
-![h:330](images/Global-electricity-demand-of-consumer-devices-2010-2030.png) ![h:330](images/Global-electricity-demand-of-data-centers-2010-2030.png)
-
-Source: [On Global Electricity Usage of Communication Technology: Trends to 2030](https://www.mdpi.com/2078-1547/6/1/117), Challenges, 2015
-
----
-
-百度指数
-
-![w:1100](images/baidu-index-datacenter.jpg)
-
----
-
-## 核心业务驱动
-
-<style scoped>
-  h2 {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-  }
-</style>
-
----
-
-### 来自多方的发展需求
-
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-  p {
-    font-size: 18px;
-  }
-</style>
-
-![bg right:50% fit](images/451figures.original.png)
-
-- **云计算**
-  - Continued cloud adoption
-- **物联网**
-  - IoT will further data center demand
-- **大数据**
-  - Analytics workloads driving computing demands
-
-Source: [Understanding the drivers behind data center demand](https://www.datacenterdynamics.com/en/opinions/understanding-the-drivers-behind-data-center-demand/), Data Centre Dynamics, 2018
-
----
-
-### AI大势所趋
-
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-  p {
-    font-size: 18px;
-  }
-  table {
-    font-size: 22px;
-    width: 100%;
-  }
-  th {
-    background: #007FFF;
-  }
-</style>
-
-- The extraordinary growth in the use of **Artificial Intelligence (AI)** in various sectors of activity is posing challenges and requiring changes in the design and operation of datacenters so that they can meet ever-increasing demand.
-
-|GPU|TDP (W)|TFLOPS (Training)|Over V100|TOPS (Inference)|Over V100|
-|:-|:-|:-|:-|:-|:-|
-|V100 SXM2 32GB|300|15.7|1X   |62   |1X   |
-|A100 SXM 80GB |400|156 |9.9X |624  |10.1X|
-|H100 SXM 80GB |700|500 |31.8X|2,000|32.3X|
-
-Source: [Schneider Electric – Energy Management Research Center White Paper 110 Version 1.1](https://www.se.com/ww/en/download/document/SPD_WP110_EN/?=1)
-
----
-
-### 飙升的能源消耗
-
-<style scoped>
-  li {
-    font-size: 30px;
-  }
-  p {
-    font-size: 14px;
-  }
-  table {
-    font-size: 22px;
-    width: 100%;
-  }
-  th {
-    background: #007FFF;
-  }
-</style>
-
-- An estimate by Schneider Electric, a company that operates inthe field of energy systems management and automation, points out that AI currently represents 4.3 GW of energy demand, a figure that is expected to grow at a **compound annual rate of 26% to36%**, resulting in a total of between 13.5 GW and 20 GW by 2028.
-
-|Schneider Electric estimate|2023|2028|
-|:-|-:|-:|
-|Total data center workload|54 GW|90 GW|
-|AI workload|4.3 GW|13.5-20 GW|
-|AI workload (% of total)|8%|15-20%|
-|AI workload (Training vs Inference)|20% Training, 80% Inference|15% Training, 85% Inference|
-|AI workload (Central vs Edge)|95% Central, 5% Edge|50% Central, 50% Edge|
-
-Source:
-[Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
-[AI and the Data Center: Challenges and Investment Strategies](https://www.informationweek.com/it-infrastructure/ai-and-the-data-center-challenges-and-investment-strategies-), Information Week, 2023
-
----
-
-### 新基建倡议
-
-<style scoped>
-  li, p {
-    font-size: 27px;
-  }
-</style>
-
-- 国家发展改革委创新和高技术发展司2020年4月发布
-  - 新型基础设施是以新发展理念为引领，以技术创新为驱动，以信息网络为基础，面向高质量发展需要，提供数字转型、智能升级、融合创新等服务的基础设施体系，主要包括信息基础设施、融合基础设施、创新基础设施等三方面内容。
-- **信息基础设施**主要是指基于新一代信息技术演化生成的基础设施。
-  - 以5G、物联网、工业互联网、卫星互联网为代表的通信网络基础设施
-  - 以人工智能、云计算、区块链等为代表的新技术基础设施
-  - 以**数据中心**、**智能计算中心**为代表的算力基础设施
-- 中国智能算力占全国总算力的比重也由2016年的3%提升至2020年41%，预计到2023年智能算力的占比将提升至70%。
-
-Source: <http://www.xinhuanet.com/fortune/2020-04/21/c_1125883443.htm>
 
 ---
 
@@ -1428,26 +1354,113 @@ H100：H100的CUDA核心数减少到5120个，但Tensor核心数增加到640个�
 
 ---
 
-### 基础设施分级
+### 数据中心分级（Tier I–IV）
 
-<style scoped>
-  th {
-    background: #007FFF;
-  }
-</style>
+| 等级 | 可用性 | 冗余 | 维护能力 |
+|------|--------|------|----------|
+| I    | 99.67% | 无   | 需停机   |
+| II   | 99.75% | N+1  | 部分可维护 |
+| III  | 99.98% | N+1  | 可并发维护 |
+| IV   | 99.995%| 2N   | 容错+可维护 |
 
-|Tier|Feature|
-|:-|:-|
-|**Tier 1** –– basic data center|no redundancy|
-|**Tier 2** –– redundant components|Single distribution path with redundant components |
-|**Tier 3** –– concurrently maintainable|Multiple distribution paths with only one active|
-|**Tier 4** –– fault tolerant|Multiple active distribution paths|
+> **启示**：等级越高，成本指数级上升，需权衡可用性与经济性。
 
 Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia942certification/ansi-tia-942-standard/)
 
 ---
 
-……
+### 供电系统架构
+
+- **供电路径**：
+  - 市电 → 变电站 → UPS → PDU → 服务器
+- **关键组件**：
+  - UPS：不间断电源（电池/飞轮）
+  - PDU：配电单元（分路、断路器）
+  - 发电机：柴油/燃气备用
+- **设计目标**：
+  - 高可用、低损耗、可扩展
+
+---
+
+### AC vs DC 供电对比
+
+| 项目 | AC供电 | DC供电 |
+|------|--------|--------|
+| 效率 | 85–94% | 94–99% |
+| 组件 | 多（逆变器、变压器） | 少（省略逆变） |
+| 成本 | 低（成熟） | 高（设备贵） |
+| 应用 | 主流 | Google、Facebook试点 |
+
+> Google采用**48V DC**机架级供电，减少能量损耗。
+
+<!-- 其实早期UPS和备用电池的使用已经埋下伏笔 -->
+
+---
+
+### 冷却系统原理
+
+- **热力学基础**：
+  - 所有电能最终转化为热能
+  - 需通过**热交换**将热量排出建筑
+- **冷却路径**：
+  - 服务器 → 热空气 → 冷却设备 → 外部环境
+- **冷却方式**：
+  - 风冷（CRAC、风墙）
+  - 液冷（冷板、液-液交换）
+  - 自然冷却（free cooling）
+
+---
+
+### 冷却系统设计类型
+
+| 类型 | 特点 | 适用场景 |
+|------|------|----------|
+| 风冷（CRAC） | 成本低、易维护 | 中低密度 |
+| 行间冷却 | 散热效率高 | 高密度机架 |
+| 液冷（冷板） | 散热强、节能 | AI/超算 |
+| 自然冷却 | 利用外部低温 | 寒冷地区 |
+
+<!-- 想想看还有什么特别的冷却方法？北欧的壁炉式"数据中心" -->
+
+---
+
+### Google案例——天花板冷却系统
+
+- **设计特点**：
+  - 热空气上升至天花板
+  - 通过**风扇盘管**冷却
+  - 冷空气垂直回流至冷通道
+- **优势**：
+  - 无地板、无冷热混合
+  - PUE < 1.2
+- **图示**（可插图）：
+  - 热通道封闭 + 顶部冷却单元
+
+---
+
+### 系统级优化与趋势
+
+- **能效优化**：
+  - 提高冷通道温度（25–30°C）
+  - 使用自然冷却（free cooling）
+- **功率与冷却协同**：
+  - 功率密度 ↑ → 液冷必要性 ↑
+- **绿色数据中心**：
+  - 使用可再生能源
+  - 热能回收（如供暖）
+
+<!-- 后面将配合PUE能效指标进一步讨论 -->
+
+---
+
+### 小结与启示
+
+- **基础设施是WSC的“地基”**，决定上限
+- **供电与冷却占TCO大头**，需精细化设计
+- **Google的实践表明**：创新冷却与供电可显著降低PUE
+- **未来方向**：
+  - 液冷普及
+  - 自然冷却与AI调控结合
 
 ---
 
@@ -1473,258 +1486,6 @@ Source: [ANSI/TIA-942 Standard](https://tiaonline.org/products-and-services/tia9
 - [**集中供能和效率优势**](data-center-intro.md#集中供能和效率优势)
 - [集中使用和成本优势](data-center-intro.md#集中使用和成本优势)
 - [集中运维挑战](data-center-intro.md#集中运维挑战)
-
----
-
-……
-
----
-
-## 集中使用和成本优势
-
-<style scoped>
-  h2 {
-    opacity: 0;
-  }
-  strong {
-    font-size: 80px;
-  }
-  li {
-    padding-left: 20%;
-    list-style: none;
-  }
-</style>
-
-- [历史和现状](data-center-intro.md#历史和现状)
-- [平台软件与负载特性](data-center-intro.md#平台软件与负载特性)
-- [基础硬件与设计取舍](data-center-intro.md#基础硬件与设计取舍)
-- [供电和冷却](data-center-intro.md#供电和冷却)
-- [集中供能和效率优势](data-center-intro.md#集中供能和效率优势)
-- [**集中使用和成本优势**](data-center-intro.md#集中使用和成本优势)
-- [集中运维挑战](data-center-intro.md#集中运维挑战)
-
----
-
-……
-
----
-
-### 进一步集中
-
-<style scoped>
-  p {
-    text-align: center;
-  }
-</style>
-
-![bg right fit](images/china-multi-cloud.png)
-
-- 多云
-  - BAT新增机柜主要用于**云承载**，占比达60%-80%
-  - 从小规模单中心向**行业/区域大规模多中心、跨行业/区域中心**演进
-- 东数西算
-  - 呈现由**中心向周边**转移趋势，未来也将由**东部向西部**迁移
-
----
-
-### 国家算力网
-
-![bg right fit](images/national-computing-infrastructure.jpeg)
-
-从 Datacenters as a Computer
-
-到 **Nation as a Computer?**
-
-[“东数西算”八大国家枢纽节点直接投资超过435亿元](https://www.gov.cn/lianbo/bumen/202408/content_6971147.htm), 2024-08-29 14:02 来源：新华社
-
----
-
-### 算力服务化
-
-![bg fit](images/china-new-construction.png)
-
-<!-- 算力 2.0 时代到来，算力由基础算力向智能算力发展，异构算力需求崛起。
-
-数字经济高质量发展诉求推动算力由 1.0 向 2.0 演进，单纯数据中心转向数算一体服务，并由基础算力向智算等高阶算力演化。算力 1.0 主要提供数据存储、分发服务，传统数据中心相当于一个算力“仓库”，对数据大规模处理和提供高性能计算（智算/超算）能力有限。算力 2.0 由新型数据中心提供大规模数据处理和高性能计算能力，具有互通性、智能性、融合性、绿色性、安全中立性等五大特征，自 2020 年“新基建”概念提出以后，国家着重开始规划新型算力中心，例如在 2020 年 4 月，国家发改委明确提出要推进新型算力设施规划。 -->
-
----
-
-### 算力规模情况
-
-<style scoped>
-  p {
-    text-align: center;
-  }
-</style>
-
-![h:450](images/china-computing-power.png)
-
-算力规模持续扩大，缩小与世界先进国家差距。
-
-<!-- 据 IDC、Gartner、中国通服数字基建产业研究院等多方机构测算，2020 年我国算力总规模达到 135EFlops，全球占比约为 31%，同比增长 55%，进一步缩小与美国等发达国家差距。其中，基础算力规模（FP32）达到 77EFlops，全球同类占比约为 26%，美国占比 43%；智能算力规模（换算为 FP32）达到 20EFlops，全球同类占比约为 19%，美国占比 52%，中美差距较大；超算算力规模（换算为 FP32）约为 2EFlops，全球同类占比约为 20%，美国占比 31%。 -->
-
----
-
-<style scoped>
-  p {
-    font-size: 14px;
-  }
-</style>
-![bg fit](images/idc-computing-power-2021.jpg)
-
-Source: <https://www.36kr.com/p/1964095815756041>
-
-<!--
-算力对数字经济乃至经济社会数字化转型发展具有明显带动作用，是新发展格局下衡量经济状况的“晴雨表”和“助推器”。统计分析显示，计算力指数的水平，与国家GDP的发展水平，与数字经济的发展水平呈现出明显的正相关的关系。
-
-根据分析结果，在15个国家里，算力指数每提高1%，数字经济和GDP将分别增长3.5‰和1.8‰。
- -->
-
----
-
-## 集中运维挑战
-
-<style scoped>
-  h2 {
-    opacity: 0;
-  }
-  strong {
-    font-size: 80px;
-  }
-  li {
-    padding-left: 20%;
-    list-style: none;
-  }
-</style>
-
-- [历史和现状](data-center-intro.md#历史和现状)
-- [平台软件与负载特性](data-center-intro.md#平台软件与负载特性)
-- [基础硬件与设计取舍](data-center-intro.md#基础硬件与设计取舍)
-- [供电和冷却](data-center-intro.md#供电和冷却)
-- [集中供能和效率优势](data-center-intro.md#集中供能和效率优势)
-- [集中使用和成本优势](data-center-intro.md#集中使用和成本优势)
-- [**集中运维挑战**](data-center-intro.md#集中运维挑战)
-
----
-
-### Typical first year for a new cluster
-
-<style scoped>
-  p {
-    font-size: 25px;
-  }
-</style>
-
-~0.5 **overheating** (power down most machines in <5 mins, ~1-2 days to recover)
-~1 **PDU failure** (~500-1000 machines suddenly disappear, ~6 hours to come back)
-~1 **rack-move** (plenty of warning, ~500-1000 machines powered down, ~6 hours)
-~1 **network rewiring** (rolling ~5% of machines down over 2-day span)
-~20 **rack failures** (40-80 machines instantly disappear, 1-6 hours to get back)
-~5 **racks go wonky** (40-80 machines see 50% packetloss)
-~8 **network maintenances** (4 might cause ~30-minute random connectivity losses)
-~12 **router reloads** (takes out DNS and external vips for a couple minutes)
-~3 **router failures** (have to immediately pull traffic for an hour)
-~dozens of minor 30-second **blips for dns**
-~1000 **individual machine failures**
-~thousands of **hard drive failures**
-**slow disks, bad memory, misconfigured machines, flaky machines**, etc.
-
-Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
-Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2009
-
----
-
-### 常见问题
-
-- 可靠性
-  - Failover to other replicas/datacenters.
-- 扩展性
-  - Ensure your design works if scale changes by 10X or 20X, but the right solution for X often not optimal for 100X.
-- 一致性
-  - Multiple data centers implies dealing with consistency issues.
-- 可用性
-  - Worry about variance! Redundancy or timeouts can help bring in latency tail.
-
----
-
-### 严峻的延迟难题
-
-<style scoped>
-  table {
-    width: 100%
-  }
-  li, th, td, p {
-    font-size: 14px;
-  }
-</style>
-
-|操作|用时||||
-|:-|-:|-:|-:|:-|
-| L1 cache reference                 |          0.5 ns |            |        |                             |
-| Branch mispredict                  |          5   ns |            |        |                             |
-| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
-| Mutex lock/unlock                  |         25   ns |            |        |                             |
-| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
-| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
-| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
-| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
-| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
-| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
-| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
-| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
-| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
-| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
-
-Notes
-
-$1 ns = 10^{-9} seconds$
-$1 us = 10^{-6} seconds = 1,000 ns$
-$1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
-
-Credit
-
-By Jeff Dean: <http://research.google.com/people/jeff/>, Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
-
-<!-- 延迟和可靠性问题还将在随后的讲座中详谈 -->
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
-
-Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg 68%](images/cpu-operations.png)
-
-Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-know>
-
----
-
-<style scoped>
-  p {
-    padding-top: 620px;
-    font-size: 18px;
-  }
-</style>
-
-![bg fit](images/Micron-Computex-2021-Keynote-Memory-Pyramid.jpg)
-
-<https://www.servethehome.com/compute-express-link-cxl-latency-how-much-is-added-at-hc34/>
 
 ---
 
@@ -1754,17 +1515,27 @@ https://www.fx361.com/page/2020/0503/6626362.shtml -->
 
 ---
 
-### 数据中心能源效率
+### 能源效率——PUE
 
-- PUE (Power Usage Effectiveness) 指标：几成能源用在实际业务中？
+- **PUE** (Power Usage Effectiveness) 指标：几成能源用在信息业务中？
 
-$$PUE=\frac{Total\ Facility\ Power}{IT\ Equipment\ Power}$$
+$$PUE=\frac{全设施总功耗}{IT设备功耗}$$
 
 - 由 [Green Grid](https://www.thegreengrid.org/) 倡导和维护
 - 理想 $PUE=1.0$
   - IT设备以外基本没有能耗，包括冷却
-  - 现实中不可能，哪台电脑不散热？
-- 早期一般在2.0左右，即整体耗能倍增。
+  - 现实中不可能，哪台电脑不散热？计算、网络、存储……
+
+---
+
+### 数据中心能效标尺
+
+- **历史数据**：
+  - 2006：平均 PUE = 2.0+
+  - Google 2023：平均 PUE = 1.10
+- **PUE 局限**：
+  - 不含服务器内部损耗
+  - 不反映利用率或碳排
 
 ---
 
@@ -1794,6 +1565,95 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
+### 能效损失来源
+
+| 环节 | 典型损失 | 优化方向 |
+|------|----------|----------|
+| UPS | 6–15 % | 高效/旁路/48V DC |
+| PDU & 线缆 | 1–3 % | 缩短路径、提高电压 |
+| 制冷 | 10–30 % | 自然冷却、液冷 |
+| 服务器电源 | 10–20 % | 80Plus Titanium |
+
+> **结论**：制冷是最大“敌人”，其次是服务器电源转换。
+
+---
+
+### 服务器能效曲线
+
+- **SPECpower 示例**：
+  - 100 % 负载：效率 100 %（基准）
+  - 50 % 负载：效率 ↓ 15 %
+  - 10 % 负载：效率 ↓ 50 %
+- **结论**：
+  - 低利用率 = 极低能效
+  - 需**能耗比例性**设计
+
+---
+
+### 能耗比例性（Energy Proportionality）
+
+- **定义**：功耗 ∝ 负载（理想线性）
+- **现状**：
+  - 早期服务器：idle ≈ 50 % 峰值功耗
+  - 现代服务器：idle ≈ 10–20 % 峰值
+- **目标**：
+  - idle → 接近 0 W（active idle）
+  - 线性或亚线性功耗曲线
+
+---
+
+### 改善能耗比例性的技术
+
+| 组件 | 低负载优化 | 示例 |
+|------|-------------|------|
+| CPU | 深睡眠状态 (C-states) | Intel C1E, AMD CC6 |
+| 内存 | 频率/电压缩放 | DDR5 LPDDR |
+| 磁盘 | 多速盘/磁盘休眠 | MAID 架构 |
+| 网络 | 能效以太网 (EEE) | 802.3az |
+
+> **软件角色**：负载聚合、功耗封顶、动态迁移
+
+---
+
+### Google 实践速览
+
+- **数据中心级**：
+  - 自然冷却 + 机器学习调控 → PUE 1.10
+- **服务器级**：
+  - 48 V 机架供电：转换损耗 ↓ 30 %
+  - 自研主板：去除不必要组件
+- **集群级**：
+  - Borg 动态功耗封顶（Dynamo）
+  - 利用 UPS 电池“削峰”→ 提高功率利用率
+
+---
+
+### 前沿趋势
+
+- **AI 驱动冷却**：
+  - DeepMind + Google：AI 控制制冷，节能 40 %
+- **液冷普及**：
+  - TPUv3 已采用冷板液冷
+- **可再生能源**：
+  - 24/7 无碳能源匹配（Carbon-free Energy）
+- **能效新指标**：
+  - CUE（碳使用效率）
+  - WUE（水使用效率）
+
+---
+
+### 小结与启示
+
+- **能效是TCO与可持续性的关键杠杆**
+- **PUE 仅冰山一角**，需关注服务器利用率与能耗比例性
+- **软硬件协同**：
+  - 硬件：高能效电源、深睡眠状态
+  - 软件：负载整合、功耗感知调度
+- **未来方向**：
+  - 零 idle 功耗
+  - AI 实时优化
+  - 液冷 + 可再生能源标配
+
 ### 数据中心能源效率…
 
 - 科技巨头 Amazon、Google 和 Microsoft 可以控制在 1.2 以内
@@ -1805,11 +1665,13 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
-### [新型数据中心发展三年行动计划(2021-2023年)](https://www.gov.cn/zhengce/2021-07/16/content_5625389.htm)
+### 延伸：[新型数据中心发展三年行动计划(2021-2023年)](https://www.gov.cn/zhengce/2021-07/16/content_5625389.htm)
 
 《行动计划》以2021年和2023年两个时间节点提出了分阶段发展量化指标，引导传统数据中心向新型数据中心演进。为科学衡量数据中心产业发展水平，加快把体量优势变为质量优势，《行动计划》强化了新型数据中心**利用率、算力规模、能效水平、网络时延**等反映数据中心高质量发展的指标，弱化了反映体量的数据中心规模指标。
 
 计划到2023年底，利用率方面，全国数据中心**平均利用率力争提升到60%以上**；算力规模方面，**总算力规模超过200 EFLOPS，高性能算力占比达到10%**；能效水平方面，新建大型及以上数据中心**PUE降低到1.3以下**，严寒和寒冷地区力争降低到1.25以下；网络时延方面，国家枢纽节点内数据中心端到端网络单向时延原则上**小于20毫秒**。
+
+<!-- 具体可以怎么实现？下面有几个范例参考 -->
 
 ---
 
@@ -1963,7 +1825,7 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-#### 延伸思考：一个"小"问题
+#### 思考：一个"小"问题
 
 服务器升级 --> 算力更高的同时更节能
 
@@ -1971,7 +1833,7 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-#### 延伸思考：一个"小"问题…
+#### 思考：一个"小"问题…
 
 服务器升级 --> 算力更高的同时更节能
 
@@ -1983,10 +1845,74 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
-#### 延伸思考：一个"大"问题
+#### 思考：一个"大"问题
 
 ![bg fit](images/model-size.png)
 ![bg fit](images/model-system-size.jpg)
+
+---
+
+#### AI趋势之下
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
+  table {
+    font-size: 22px;
+    width: 100%;
+  }
+  th {
+    background: #007FFF;
+  }
+</style>
+
+- The extraordinary growth in the use of **Artificial Intelligence (AI)** in various sectors of activity is posing challenges and requiring changes in the design and operation of datacenters so that they can meet ever-increasing demand.
+
+|GPU|TDP (W)|TFLOPS (Training)|Over V100|TOPS (Inference)|Over V100|
+|:-|:-|:-|:-|:-|:-|
+|V100 SXM2 32GB|300|15.7|1X   |62   |1X   |
+|A100 SXM 80GB |400|156 |9.9X |624  |10.1X|
+|H100 SXM 80GB |700|500 |31.8X|2,000|32.3X|
+
+Source: [Schneider Electric – Energy Management Research Center White Paper 110 Version 1.1](https://www.se.com/ww/en/download/document/SPD_WP110_EN/?=1)
+
+---
+
+#### 飙升的能源消耗
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+  p {
+    font-size: 14px;
+  }
+  table {
+    font-size: 22px;
+    width: 100%;
+  }
+  th {
+    background: #007FFF;
+  }
+</style>
+
+- An estimate by Schneider Electric, a company that operates inthe field of energy systems management and automation, points out that AI currently represents 4.3 GW of energy demand, a figure that is expected to grow at a **compound annual rate of 26% to36%**, resulting in a total of between 13.5 GW and 20 GW by 2028.
+
+|Schneider Electric estimate|2023|2028|
+|:-|-:|-:|
+|Total data center workload|54 GW|90 GW|
+|AI workload|4.3 GW|13.5-20 GW|
+|AI workload (% of total)|8%|15-20%|
+|AI workload (Training vs Inference)|20% Training, 80% Inference|15% Training, 85% Inference|
+|AI workload (Central vs Edge)|95% Central, 5% Edge|50% Central, 50% Edge|
+
+Source:
+[Challenges for datacenters in the face of advancing AI](https://network-king.net/challenges-for-datacenters-in-the-face-of-advancing-ai/), The IT Monitoring Magazine, 2023
+[AI and the Data Center: Challenges and Investment Strategies](https://www.informationweek.com/it-infrastructure/ai-and-the-data-center-challenges-and-investment-strategies-), Information Week, 2023
 
 ---
 
@@ -2030,6 +1956,496 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
 
 ---
 
+## 集中使用和成本优势
+
+<style scoped>
+  h2 {
+    opacity: 0;
+  }
+  strong {
+    font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
+  }
+</style>
+
+- [历史和现状](data-center-intro.md#历史和现状)
+- [平台软件与负载特性](data-center-intro.md#平台软件与负载特性)
+- [基础硬件与设计取舍](data-center-intro.md#基础硬件与设计取舍)
+- [供电和冷却](data-center-intro.md#供电和冷却)
+- [集中供能和效率优势](data-center-intro.md#集中供能和效率优势)
+- [**集中使用和成本优势**](data-center-intro.md#集中使用和成本优势)
+- [集中运维挑战](data-center-intro.md#集中运维挑战)
+
+---
+
+### TCO框架总览
+
+**TCO = CapEx + OpEx**
+- **CapEx**：
+  - 数据中心建设（$7–13/W）
+  - 服务器/网络/存储采购
+- **OpEx**：
+  - 电费（PUE > 1 部分）
+  - 运维、维修、人力
+- **折旧周期**：
+  - 数据中心：12–15年
+  - 服务器：3–4年
+
+---
+
+### CapEx 建模要点
+
+| 项目 | 单位成本 | 备注 |
+|------|----------|------|
+| 数据中心 | $9 / W | 含电力、冷却、建筑 |
+| 服务器 | $8 / W | $4000 / 500 W 服务器 |
+| 网络 & 其他 | $1–2 / W | 交换机、布线等 |
+| 加速器 | +$0.05/W/月 | 含NRE摊销（例：TPU） |
+
+> **提示**：成本按**临界功率（Critical Power）**归一化，便于横向对比。
+
+---
+
+### OpEx 建模要点
+
+| 项目 | 单位成本 | 备注 |
+|------|----------|------|
+| 电费 | $0.05 / W /月 | 6¢/kWh × PUE1.5 × 75% 利用率 |
+| 运维 & 维修 | $0.04 / W /月 | 安保、巡检、备件 |
+| 人力 | 隐性 | 1人/千台（Google SRE模式） |
+| 贷款利息 | 8% 年利率 | 按CapEx比例折算 |
+
+---
+
+### 案例A – 传统企业DC
+
+- **配置**：
+  - 标准服务器 $5000, 340 W
+  - PUE = 1.5, 电价 6.7¢/kWh
+- **TCO 占比**：
+  - 服务器采购：62%
+  - 数据中心折旧：17%
+  - 电费：7%
+- **结论**：**服务器贵、利用率低** → 云迁移潜力大
+
+---
+
+### 案例B – 高功耗低成本服务器
+
+- **配置**：
+  - 高密服务器 $2000, 600 W
+  - 电价 10¢/kWh
+- **TCO 占比**：
+  - 电费：19%
+  - 数据中心：44%
+  - 服务器：36%
+- **结论**：**基础设施成本反超硬件**，需极致PUE
+
+---
+
+### 案例C – 半满载数据中心
+
+- **现实场景**：
+  - 预留成长空间 → 50% 功率利用率
+- **影响**：
+  - CapEx & OpEx 按 1/利用率 放大
+  - **DC成本占比 75%**
+- **启示**：
+  - **功率封顶 + 动态调度**可显著提升实际利用率
+
+---
+
+### 云成本模型对比
+
+| 模式 | 3年总成本 | 备注 |
+|------|-----------|------|
+| 自建（案例A） | $7.8k | 100% 利用率 |
+| 公有云 On-Demand | $20k | 仅30% 时间运行 |
+| 公有云 3年预留 | $9k | 与自建接近，免运维 |
+
+- **结论**：**云的经济性 = 利用率 × 规模效应**
+
+---
+
+### 小结与启示
+
+- **TCO 是 WSC 设计核心指标**；硬件≠唯一焦点
+- **利用率是隐藏杠杆**：
+  - 50% → 成本翻倍
+- **PUE & 电价** 在高功耗场景下占主导
+- **云模式** 通过**分时复用**与**规模经济**实现成本优势
+- **未来方向**：
+  - 动态功率封顶
+  - 碳价纳入TCO（CUE）
+  - 加速器NRE成本模型优化
+
+---
+
+### 延伸思考
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
+![bg right fit](images/china-multi-cloud.png)
+
+- 多云
+  - BAT新增机柜主要用于**云承载**，占比达60%-80%
+  - 从小规模单中心向**行业/区域大规模多中心、跨行业/区域中心**演进
+- 东数西算
+  - 呈现由**中心向周边**转移趋势，未来也将由**东部向西部**迁移
+
+---
+
+### 国家算力网
+
+![bg right fit](images/national-computing-infrastructure.jpeg)
+
+从 Datacenters as a Computer
+
+到 **Nation as a Computer?**
+
+[“东数西算”八大国家枢纽节点直接投资超过435亿元](https://www.gov.cn/lianbo/bumen/202408/content_6971147.htm), 2024-08-29 14:02 来源：新华社
+
+---
+
+### 算力服务化
+
+![bg fit](images/china-new-construction.png)
+
+<!-- 算力 2.0 时代到来，算力由基础算力向智能算力发展，异构算力需求崛起。
+
+数字经济高质量发展诉求推动算力由 1.0 向 2.0 演进，单纯数据中心转向数算一体服务，并由基础算力向智算等高阶算力演化。算力 1.0 主要提供数据存储、分发服务，传统数据中心相当于一个算力“仓库”，对数据大规模处理和提供高性能计算（智算/超算）能力有限。算力 2.0 由新型数据中心提供大规模数据处理和高性能计算能力，具有互通性、智能性、融合性、绿色性、安全中立性等五大特征，自 2020 年“新基建”概念提出以后，国家着重开始规划新型算力中心，例如在 2020 年 4 月，国家发改委明确提出要推进新型算力设施规划。 -->
+
+---
+
+### 算力规模情况
+
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
+![h:450](images/china-computing-power.png)
+
+算力规模持续扩大，缩小与世界先进国家差距。
+
+<!-- 据 IDC、Gartner、中国通服数字基建产业研究院等多方机构测算，2020 年我国算力总规模达到 135EFlops，全球占比约为 31%，同比增长 55%，进一步缩小与美国等发达国家差距。其中，基础算力规模（FP32）达到 77EFlops，全球同类占比约为 26%，美国占比 43%；智能算力规模（换算为 FP32）达到 20EFlops，全球同类占比约为 19%，美国占比 52%，中美差距较大；超算算力规模（换算为 FP32）约为 2EFlops，全球同类占比约为 20%，美国占比 31%。 -->
+
+---
+
+<style scoped>
+  p {
+    font-size: 14px;
+  }
+</style>
+![bg fit](images/idc-computing-power-2021.jpg)
+
+Source: <https://www.36kr.com/p/1964095815756041>
+
+<!--
+算力对数字经济乃至经济社会数字化转型发展具有明显带动作用，是新发展格局下衡量经济状况的“晴雨表”和“助推器”。统计分析显示，计算力指数的水平，与国家GDP的发展水平，与数字经济的发展水平呈现出明显的正相关的关系。
+
+根据分析结果，在15个国家里，算力指数每提高1%，数字经济和GDP将分别增长3.5‰和1.8‰。
+ -->
+
+---
+
+## 集中运维挑战
+
+<style scoped>
+  h2 {
+    opacity: 0;
+  }
+  strong {
+    font-size: 80px;
+  }
+  li {
+    padding-left: 20%;
+    list-style: none;
+  }
+</style>
+
+- [历史和现状](data-center-intro.md#历史和现状)
+- [平台软件与负载特性](data-center-intro.md#平台软件与负载特性)
+- [基础硬件与设计取舍](data-center-intro.md#基础硬件与设计取舍)
+- [供电和冷却](data-center-intro.md#供电和冷却)
+- [集中供能和效率优势](data-center-intro.md#集中供能和效率优势)
+- [集中使用和成本优势](data-center-intro.md#集中使用和成本优势)
+- [**集中运维挑战**](data-center-intro.md#集中运维挑战)
+
+---
+
+### 新建机房的第一年
+
+<style scoped>
+  p {
+    font-size: 25px;
+  }
+</style>
+
+~0.5 **overheating** (power down most machines in <5 mins, ~1-2 days to recover)
+~1 **PDU failure** (~500-1000 machines suddenly disappear, ~6 hours to come back)
+~1 **rack-move** (plenty of warning, ~500-1000 machines powered down, ~6 hours)
+~1 **network rewiring** (rolling ~5% of machines down over 2-day span)
+~20 **rack failures** (40-80 machines instantly disappear, 1-6 hours to get back)
+~5 **racks go wonky** (40-80 machines see 50% packetloss)
+~8 **network maintenances** (4 might cause ~30-minute random connectivity losses)
+~12 **router reloads** (takes out DNS and external vips for a couple minutes)
+~3 **router failures** (have to immediately pull traffic for an hour)
+~dozens of minor 30-second **blips for dns**
+~1000 **individual machine failures**
+~thousands of **hard drive failures**
+**slow disks, bad memory, misconfigured machines, flaky machines**, etc.
+
+Source: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://research.google.com/people/jeff/stanford-295-talk.pdf)
+Source: [Designs, Lessons and Advice from Building Large Distributed Systems](http://www.cs.cornell.edu/projects/ladis2009/), LADIS 2009
+
+---
+
+### 为什么硬件容错不够？
+
+- **规模效应**：
+  - 10,000台MTBF=30年的机器 → 每天1台故障
+- **软件容错必要性**：
+  - 低成本硬件 + 软件冗余 → 更高性价比
+  - 快速迭代、在线升级、无需停机维护
+- **结论**：**“硬件故障不可避免，软件必须兜底”**
+
+---
+
+### 故障严重性分级
+| 级别 | 描述 | 举例 | 用户感知 |
+|------|------|------|----------|
+| 损坏 | 数据丢失或损坏 | 磁盘坏块、内存位翻转 | 是 |
+| 不可达 | 服务完全不可用 | 服务器宕机、网络断 | 是 |
+| 降级 | 服务性能下降 | 搜索少一个分片 | 部分 |
+| 屏蔽 | 故障被完全隐藏 | 副本切换成功 | 无 |
+
+> **目标**：将故障尽可能屏蔽或降级
+
+---
+
+### 故障来源分布（Google实例）
+
+- **软件错误**：~30%
+- **配置错误**：~30%
+- **人为操作**：~20%
+- **硬件故障**：~15%
+- **其他**：~5%
+
+> **启示**：**“硬件不是主要敌人，人和软件才是”**
+
+---
+
+### 机器级故障统计（Google）
+
+- **重启频率**：
+  - 平均：每月1次（含计划重启）
+  - 非计划：每2年1次（成熟机器）
+- **宕机时间**：
+  - 中位数：3分钟
+  - 99%：＜2天
+- **可用性**：99.93%（含计划维护）
+
+---
+
+### 故障根因举例
+
+| 组件 | 年故障率 | 备注 |
+|------|----------|------|
+| 磁盘 | 2–4% | 比厂商标称高3× |
+| 内存 | 1/3机器/年（可纠正） | ECC有效 |
+| 电源 | 1–2% | 通常伴随宕机 |
+| 网络端口 | 0.1–0.5% | 多路径可屏蔽 |
+
+> **结论**：**“故障是随机且常态的，必须假设它会发生”**
+
+---
+
+### 故障预测的挑战
+
+- **磁盘SMART**：
+  - 可预测**群体**寿命，**个体**准确率不足
+- **内存CECC**：
+  - 可纠正错误 → 提前退役页
+- **权衡**：
+  - 误报成本（更换、下线） vs 漏报风险（宕机）
+- **Google策略**：
+  - **“让故障发生，快速恢复”** 优于 **“提前过度干预”**
+
+---
+
+### 修复流程概览
+
+- **检测**：健康监控代理 + 时序数据库
+- **诊断**：机器学习模型推荐故障部件
+- **调度**：批量维修，每日巡检
+- **执行**：现场技师更换部件或整机
+- **验证**：自动 burn-in 测试后上线
+
+---
+
+### Google修复系统示例
+
+- **System Health Infrastructure**：
+  - 每台机器 >100 传感器指标
+  - 故障预测准确率 >90%
+- **维修优化**：
+  - 批量维修 → 降低单次成本
+  - 年维修成本 ≈ **0.75% 硬件成本**
+- **对比**：
+  - 传统企业 4小时响应：年费 10–15%
+  - Google 24–48小时：年费 <1%
+
+---
+
+### 故障容忍 vs 隐藏
+
+- **N+1 到 2N 冗余**：
+  - 容量冗余也提供容错
+- **风险**：
+  - 外部看不到内部冗余耗尽
+  - **“从健康到崩溃只隔一次故障”**
+- **解决**：
+  - **实时冗余度监控**
+  - **故障预算（Error Budget）** 与 SRE 结合
+
+---
+
+### 故障域与调度
+
+- **故障域粒度**：
+  - 机器 → 机架 → 电源 → 网络 → 楼宇
+- **调度策略**：
+  - Borg 跨域分散副本
+  - 降低**相关故障**概率
+- **示例**：
+  - 同一电源域不超过 2/3 副本
+  - 网络升级时保留至少 1 副本可用
+
+---
+
+### 跨域延迟挑战
+
+<style scoped>
+  table {
+    width: 100%
+  }
+  li, th, td, p {
+    font-size: 12px;
+  }
+</style>
+
+|操作|用时||||
+|:-|-:|-:|-:|:-|
+| L1 cache reference                 |          0.5 ns |            |        |                             |
+| Branch mispredict                  |          5   ns |            |        |                             |
+| L2 cache reference                 |          7   ns |            |        | 14x L1 cache                |
+| Mutex lock/unlock                  |         25   ns |            |        |                             |
+| Main memory reference              |        100   ns |            |        | 20x L2 cache, 200x L1 cache |
+| Compress 1K bytes with Zippy       |      3,000   ns |       3 us |        |                             |
+| Send 1K bytes over 1 Gbps network  |     10,000   ns |      10 us |        |                             |
+| Read 4K randomly from SSD*         |    150,000   ns |     150 us |        | ~1GB/sec SSD                |
+| Read 1 MB sequentially from memory |    250,000   ns |     250 us |        |                             |
+| Round trip within same datacenter  |    500,000   ns |     500 us |        |                             |
+| Read 1 MB sequentially from SSD*   |  1,000,000   ns |   1,000 us |   1 ms | ~1GB/sec SSD, 4X memory     |
+| Disk seek                          | 10,000,000   ns |  10,000 us |  10 ms | 20x datacenter roundtrip    |
+| Read 1 MB sequentially from disk   | 20,000,000   ns |  20,000 us |  20 ms | 80x memory, 20X SSD         |
+| Send packet CA->Netherlands->CA    |150,000,000   ns | 150,000 us | 150 ms |                             |
+
+Notes
+
+$1 ns = 10^{-9} seconds$
+$1 us = 10^{-6} seconds = 1,000 ns$
+$1 ms = 10^{-3} seconds = 1,000 us = 1,000,000 ns$
+
+Credit
+
+By Jeff Dean: <http://research.google.com/people/jeff/>, Originally by Peter Norvig: <http://norvig.com/21-days.html#answers>
+
+<!-- 延迟和可靠性问题还将在随后的讲座中详谈 -->
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/Latency-Numbers-Every-Programmer-Should-Know.png)
+
+Source: <https://colin-scott.github.io/personal_website/research/interactive_latency.html>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg 68%](images/cpu-operations.png)
+
+Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-know>
+
+---
+
+<style scoped>
+  p {
+    padding-top: 620px;
+    font-size: 18px;
+  }
+</style>
+
+![bg fit](images/Micron-Computex-2021-Keynote-Memory-Pyramid.jpg)
+
+<https://www.servethehome.com/compute-express-link-cxl-latency-how-much-is-added-at-hc34/>
+
+---
+
+### 前沿趋势
+- **AI 辅助诊断**：
+  - 日志 + 指标 → 故障根因定位
+- **自愈系统**：
+  - 自动隔离 + 重启 + 数据重建
+- **硬件即插即用**：
+  - 零配置上线、自动 burn-in
+- **碳感知容错**：
+  - 优先在绿色能源充足区域重建副本
+
+---
+
+### 小结
+- **故障是WSC的“常态变量”**，不是异常
+- **软件容错 > 硬件容错**：成本、灵活性双赢
+- **预测有用，但快速恢复更关键**
+- **规模使批量维修成为可能**，大幅降低单位成本
+- **可见性 + 自动化** 是容错体系核心
+
+---
+
+### 讨论与展望
+- **讨论题**：
+  - 如何在自主硬件上构建类似Google的故障预测系统？
+    - 天池云原生比赛
+  - 故障预算如何与SRE SLA结合？
+- **展望**：
+  - **“零人工干预”自愈数据中心**
+  - **故障注入即服务（FiaaS）** 成为标配
+  - **碳感知调度** 与容错策略融合
+
+---
+
 ## 主要内容回顾
 
 - 数据中心技术的**基础知识**：起源、定义、趋势
@@ -2054,4 +2470,4 @@ Source: [How much energy do data centers use?](https://davidmytton.blog/how-much
   - 读前提示，请务必落实主要引用文献，精辟阐述研究背景
 - 熟悉实验内容，准备以日常赛促**实践**
   - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP
-  - [构建多模态模型，生成主机观测指标学习赛](https://tianchi.aliyun.com/competition/entrance/532270/introduction)
+  - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
