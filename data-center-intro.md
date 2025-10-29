@@ -1517,9 +1517,15 @@ https://www.fx361.com/page/2020/0503/6626362.shtml -->
 
 ### 能源效率——PUE
 
+<style scoped>
+  p {
+    text-align: center;
+  }
+</style>
+
 - **PUE** (Power Usage Effectiveness) 指标：几成能源用在信息业务中？
 
-$$PUE=\frac{全设施总功耗}{IT设备功耗}$$
+$PUE=\frac{全设施总功耗}{IT设备功耗}$
 
 - 由 [Green Grid](https://www.thegreengrid.org/) 倡导和维护
 - 理想 $PUE=1.0$
@@ -1789,13 +1795,13 @@ Source: [How Much Energy Do Data Centers Really Use?](https://energyinnovation.o
 
 ---
 
-### 在PUE背后
+### PUE问题的复杂性
 
-- 问题依然复杂
-- PUE作为评估数据中心总用电量的衡量指标
-  - 主要考察资源运转效率
-  - 只考虑数据中心的内部操作，未揭露电力来源与实际用电量
-  - 数据中心占全球用电量的1~2%，但是电力来源呢？
+将PUE作为评估数据中心总用电量的衡量指标
+
+- 主要考察资源运转效率
+- 只考虑数据中心的内部操作，未揭露电力来源与实际用电量
+- 数据中心占全球用电量的1~2%，但是电力来源呢？
 
 ---
 
@@ -2407,7 +2413,7 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
   }
 </style>
 
-![bg fit](images/Micron-Computex-2021-Keynote-Memory-Pyramid.jpg)
+![bg](images/Micron-Computex-2021-Keynote-Memory-Pyramid.jpg)
 
 <https://www.servethehome.com/compute-express-link-cxl-latency-how-much-is-added-at-hc34/>
 
