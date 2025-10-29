@@ -34,7 +34,7 @@ paginate: true
   }
 </style>
 
-[**历史和现状**](data-center-intro.md#历史和现状)
+[**历史和现状**](#历史和现状)
 [平台软件与负载特性](data-center-intro.md#平台软件与负载特性)
 [基础硬件与设计取舍](data-center-intro.md#基础硬件与设计取舍)
 [供电和冷却](data-center-intro.md#供电和冷却)
