@@ -201,17 +201,18 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
-    - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（具体要求见后）
+    - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（[具体要求见后](#研讨论文列表)）
     - 每位同学有**10分钟汇报和2~3分钟问答**
       - 请严格守时（开PPT排练计时，超时扣分）
-  - 在课程平台讨论里**模拟Rebuttal**
+  - 做一些贡献，积累一些体验：[**模拟Rebuttal**](#唤醒自己的工具)
 - **实验作业** *30%*
   - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
-    - 以完成提交为准，不追求PVP，重在以日常赛促**实践**
-    - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP收获成就
+    - 以完成提交上榜为准，不追求PVP排名，重在以日常赛促**实践**
 - **开卷考试** 40%
   - TBA
   <!-- - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
+
+<!-- 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP收获成就 -->
 
 ---
 
@@ -291,9 +292,9 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 玻尔 | 全球科学家的 AI for Science 空间站  <https://www.bohrium.com/>
 
-SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bohrium.com/chat>
+SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bohrium.com/chat>，学术码: 3ixmffnr
 
-学术码: 3ixmffnr
+内建MCP负责Survey，适合于快速摸索新方向
 
 ---
 
