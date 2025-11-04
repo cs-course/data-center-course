@@ -7,9 +7,9 @@ math: katex
 paginate: true
 ---
 
-<!-- _class: lead -->
-
 # 软件技术基础
+
+<!-- _class: lead -->
 
 ## 数组
 
@@ -19,7 +19,6 @@ paginate: true
 
 ---
 
-<!-- 这一页对应PPT的主要内容页 -->
 ## 主要内容
 
 - 一维/二维数组的声明、初始化和使用
@@ -934,7 +933,6 @@ int BinarySearch(int a[], int x, int n) {
 
 ---
 
-<!-- 这一页对应PPT的分治法 -->
 ## 分治法
 
 **分治法的基本思想**：
@@ -949,7 +947,6 @@ int BinarySearch(int a[], int x, int n) {
 
 ---
 
-<!-- 这一页对应PPT的递归二分查找 -->
 ## 二分查找的递归形式
 
 ```c
@@ -967,7 +964,6 @@ int BinarySearch(int a[], int x, int left, int right) {
 
 ---
 
-<!-- 这一页对应PPT的快速排序 -->
 ## 快速排序
 
 ```c
@@ -984,7 +980,6 @@ void QuickSort(int a[], int left, int right) {
 
 ---
 
-<!-- 这一页对应PPT的分区函数 -->
 ## 分区函数
 
 ```c
@@ -1007,7 +1002,6 @@ int partition_v1(int a[], int left, int right) {
 
 ---
 
-<!-- 这一页对应PPT的交换函数 -->
 ## 交换函数
 
 ```c
