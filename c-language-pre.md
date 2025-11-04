@@ -6,9 +6,9 @@ title: 软件技术基础
 math: katex
 ---
 
-<!-- _class: lead -->
-
 # 软件技术基础
+
+<!-- _class: lead -->
 
 ## C语言
 
@@ -50,8 +50,6 @@ math: katex
   - [C语言程序设计典型题解与实验指导](http://www.tup.tsinghua.edu.cn/booksCenter/book_08344801.html)，作者：卢萍、李开、王多强、甘早斌，清华大学出版社，2019
 
 ---
-
-<!-- paginate: true -->
 
 ## 背景知识
 
