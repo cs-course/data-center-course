@@ -354,7 +354,7 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 | 7 | 论文研讨 | 12-24, 12-26 | C12-S207 |
 | 8 | 论文研讨 | 12-31, 01-02 | C12-S207 |
 
-\* 每周14名同学
+\* 每周13名同学
 
 ---
 
