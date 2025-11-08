@@ -422,13 +422,9 @@ Assertion failed: n >= 0, file test.c, line 32
 
 ### 断言流程图
 
-```mermaid
-flowchart TD
-    A[assert(e)] --> B{e为真？}
-    B -->|是| C[继续执行]
-    B -->|否| D[输出错误信息\n文件、行号]
-    D --> E[程序中断]
-```
+![bg right h:1600](images/assert_flow.svg)
+
+执行流程：
 
 ---
 
