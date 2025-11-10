@@ -53,6 +53,18 @@ paginate: true
 
 ## 数组基础概念
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 **数组**：是固定数量的同类型元素的集合。
 
 - 数组元素的下标从0开始
@@ -65,6 +77,16 @@ int score[SIZE];  // score是含有30个元素的int型数组
 
 - 数组score的30个元素：`score[0]`～`score[29]`
 - 数组score所占内存：`sizeof(int) * SIZE`
+
+</div>
+
+<div>
+
+![w:270](images/c-array-map.png)
+
+</div>
+
+</div>
 
 ---
 
@@ -88,6 +110,13 @@ int score[SIZE];  // score是含有30个元素的int型数组
 [n维数组](#n维数组)
 [字符数组和字符串](#字符数组和字符串)
 [基于数组的应用](#基于数组的应用)
+
+---
+
+### 一维数组概念
+
+- 只有**一个**下标
+- 可用于表示一个**线性的数据队列**
 
 ---
 
