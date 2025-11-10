@@ -285,14 +285,14 @@ int main(void)
 ### 预处理后（圆形）
 
 ```c
-int  main(void)
+int main(void)
 {
-    float  r，s;
-    printf (“input a number: ”);
-    scanf(“%f ”，&r);
+    float r, s;
+    printf("input a number: ");
+    scanf("%f ", &r);
     s = 3.14159 * r * r;
     printf("%f\n", s);
-    return 0；
+    return 0;
 }
 ```
 
