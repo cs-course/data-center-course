@@ -131,7 +131,7 @@ int score[SIZE];  // score是含有30个元素的int型数组
 int score[SIZE];
 static int y[10];
 extern double s[2];
-// C99支持：int n=4, a[n];
+int n=4, a[n]; // C99支持
 ```
 
 ---
@@ -152,6 +152,18 @@ extern double s[2];
 
 ### 下标越界问题
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 **错误示例**：
 ```c
 int a[4], i;
@@ -166,7 +178,17 @@ for(i = 0; i < 4; i++)
     a[i] = i + 1;  // 正确：a[0]~a[3]
 ```
 
-**警告**：下标越界会破坏数组以外的变量值，可能造成严重后果。
+</div>
+
+<div>
+
+![w:220](images/c-array-access.png)
+
+</div>
+
+</div>
+
+**警告**：下标越界会**破坏数组以外的变量值**，可能造成严重后果。
 
 ---
 
