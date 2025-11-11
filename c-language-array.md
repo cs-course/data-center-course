@@ -217,6 +217,18 @@ int z[6] = {1, 2, 3, 4};  // 前4个元素赋值
 
 ### 一维数组作为函数参数
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 void fun(int y[], int n) {
     int i;
@@ -227,11 +239,30 @@ int main(void) {
     int i, x[5] = {1, 2, 3, 4, 5};
     fun(x, 5);  // 数组名作参数，地址传递
     for(i = 0; i <= 4; i++) printf("%d", x[i]);
+    fun(&x[2], 3); // 函数形参为数组名，地址传递
+    printf("\n");
+    for(i = 0; i <= 4; i++) printf("%d", x[i]);
     return 0;
 }
 ```
 
+</div>
+
+<div>
+
+![w:270](images/c-array-as-parameter.png)
+
+</div>
+
+</div>
+
+---
+
+### C的参数传递
+
 **C的参数传递**：数组名作参数时为**地址传送**，实参和形参数组共享相同内存单元。
+
+相当于是**值的双向传递**
 
 ---
 
