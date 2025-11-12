@@ -218,7 +218,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ## 研讨论文列表
 
-![bg right](images/reading-list-2024.png)
+![bg right](images/reading-list-2025.png)
 
 扫码在线填表
 
