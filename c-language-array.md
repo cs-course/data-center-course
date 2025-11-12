@@ -450,13 +450,20 @@ int main(void) {
 
 ```c
 // 形参数组第1维不指定大小
-void fun(int a[][M+1], int n) {
+void fun(int a[][M+1], int n) { // n为学生人数，即a的行数
     int i, j, sum;
     for(i = 0; i < n; i++) {
         for(sum = 0, j = 0; j < M; j++)
             sum += a[i][j];           // 学生i的成绩和
         a[i][j] = sum * 1.0 / j + 0.5; // 学生i的平均成绩(4舍5入)
     }
+}
+int main(void) {
+    int x[N][M+1], i, j;
+    for(i=0;i<N;i++)
+        for(j=0;j<M;j++)
+            scanf("%d", &x[i][j]); // 输入学生成绩
+    fun(x, N); // 实参是数组名
 }
 ```
 
