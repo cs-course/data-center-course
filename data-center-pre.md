@@ -204,7 +204,7 @@ He comments that **the lack of experience in datacenter design may have been an 
     - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（[具体要求见后](#研讨论文列表)）
     - 每位同学有**10分钟汇报和2~3分钟问答**
       - 请严格守时（开PPT排练计时，超时扣分）
-  - 做一些贡献，积累一些体验：[**模拟Rebuttal**](#唤醒自己的工具)
+  - 做一些贡献，积累一些经验：[**模拟Rebuttal**](#尝试唤醒自己的工具)
 - **实验作业** *30%*
   - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
     - 以完成提交上榜为准，不追求PVP排名，重在以日常赛促**实践**
@@ -311,7 +311,23 @@ SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bo
 
 ---
 
-### 唤醒自己的工具
+### 现实问题
+
+读多了论文**头晕**
+
+导师只给了**大方向**
+
+学长**忙**着做实验
+
+项目只是**堆材料**
+
+开题在即，**问题在哪里**？
+
+如何**批判性的锻炼批判性思维**？
+
+---
+
+### 尝试唤醒自己的工具
 
 **提示词 baseline**:
 
