@@ -288,7 +288,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
-### "挖坑"工具推荐
+### 方向调研工具推荐
 
 玻尔 | 全球科学家的 AI for Science 空间站  <https://www.bohrium.com/>
 
@@ -317,15 +317,19 @@ SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bo
 
     "请从实际应用落地的可行性、核心工作的代价和收益矛盾、实验场景和负载的代表性这几个方面，对这项工作提出质疑"
 
-**常用模型**：DeepSeek、KIMI、豆包、文心、ChatGPT
+**常用模型**：DeepSeek、KIMI、豆包、文心、ChatGPT ……
 
 **交叉评价**:
 
 $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in ReadingList\}$$
 
-**参与贡献**:
+**注意**：提示词不要太长，建议100字以内，否则就不是引导模型质疑，而是用户在主导质疑了
 
-<https://github.com/cs-course/SocraticInquirer>
+---
+
+![bg fit](images/socratic-inquirer.svg)
+
+**参与贡献**: <https://github.com/cs-course/SocraticInquirer>
 
 ---
 
