@@ -418,7 +418,7 @@ int b[][3] = {{1, 3}, {5, 6, 7}};  // 第1维大小可省略
 | 3    | 92   | 88   | 91   | 85   |      89|
 | …    | …    | …    | …    | …    |       …|
 
-用二维数组表示上表 `int  s[N][M+1]；/*  N-人数，M-课程数*/` 。
+用二维数组表示 `int  s[N][M+1];`，`N`人数，`M`课程数，`+1`平均成绩。
 
 ---
 
@@ -1384,7 +1384,9 @@ int main(void) {
 
 ### 排序问题
 
-排序——计算机处理数据的一个重要问题。
+排序——计算机处理数据的一个重要问题（详情可见**算法**课程）。
+
+对`n`个整数排序，将冒泡排序法定义成函数。
 
 **冒泡排序函数原型**：
 
@@ -1401,11 +1403,34 @@ void BubbleSort(int a[], int n);
 
 ### 冒泡排序法
 
-**基本思路**：设有n个数，需将它们从小到大顺序排列。
+**基本思路**：设有`n`个数，需将它们从小到大顺序排列。
 
-1. 对n个元素，依次比较相邻的两个数，小的调到前头，比较(n-1)次后，最大的数"沉底"
-2. 对剩下的n-1个元素，比较(n-2)次后，得到次大的数
+1. 对`n`个元素，依次比较相邻的两个数，小的**前移**，比较`n-1`次后，最大的数"**沉底**"
+2. 对剩下的`n-1`个元素，比较`n-2`次后，得到次大的数
 3. 重复上述过程，直至剩下一个元素
+
+
+---
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+**算法示例**： `int a[4] = {10, 8, 5, 7};`
+
+<div class="columns">
+
+<div>
+
+![w:500](images/c-array-bubblesort.png)
+
+</div>
+
+<div>
 
 ```c
 for(i = 1; i < n; i++) {
@@ -1415,15 +1440,22 @@ for(i = 1; i < n; i++) {
 }
 ```
 
+- `n`个数进行 `?` 轮比较
+- 第`i`轮中要进行 `?` 次比较
+
+</div>
+
+</div>
+
 ---
 
-### 冒泡排序示例
+### 冒泡排序程序
 
 ```c
 #include<stdio.h>
 #define N 10
 
-void BubbleSort(int a[], int n) {
+void BubbleSort(int a[], int n) { // 形参数组a省略大小，由n给出排序元素数量
     int i, j, t;
     for(i = 1; i < n; i++) {           // 共进行n-1轮"冒泡"
         for(j = 0; j < n - i; j++) {   // 对两两相邻的元素进行比较
@@ -1438,7 +1470,7 @@ int main() {
     int x[N], i;
     printf("please input %d numbers: \n", N);
     for(i = 0; i < N; i++) scanf("%d", &x[i]);
-    BubbleSort(x, N);
+    BubbleSort(x, N); // 使用数组名x作为实参，双向传值
     printf("the sorted numbers: \n");
     for(i = 0; i < N; i++) printf("%d ", x[i]);
     return 0;
@@ -1460,6 +1492,27 @@ int main() {
 
 - 如果找到`x`，返回`x`在数组`a`中的位置（下标）
 - 如果没有找到，返回`-1`
+
+---
+
+<style scoped>
+  ul {
+    font-size: 20px;
+  }
+</style>
+
+![h:200](images/c-array-binarysearch.png)
+
+1) 令 `left = 0`，`right = n-1`
+
+2) `mid = (left + right) / 2`
+
+3) 比较 `x` 与 `a[mid]`，收缩范围
+  - x<a[mid], x在a[0]与a[mid-1]范围内（**左半**），令right=mid-1
+  - x>a[mid], x在a[mid+1]与a[right]范围内（**右半**），令left=mid+1
+  - x==a[mid], x在数组a中的下标为mid（**正中，返回**）
+
+4) 转`2`，直至`left>right`
 
 ---
 
@@ -1489,17 +1542,17 @@ int BinarySearch(int a[], int x, int n) {
 
 **分治法的基本思想**：将一个大问题划分成若干子问题，这些子问题：
 
-- 互相独立
-- 与原问题相同
-- 规模较小
+- 互相独立（易于并行）
+- 形式一致（方便递归）
+- 规模较小（实现高效）
 
 由分治法产生的子问题往往是原问题的较小模式，这为使用递归技术提供了方便。
 
-**分治与递归**：像一对孪生兄弟，经常同时应用在算法设计之中。
+**分治与递归**：经常同时应用在算法设计之中，简洁高效，清晰易懂。
 
 ---
 
-## 二分查找的递归形式
+### 二分查找的递归形式
 
 ```c
 // 在升序数组a[left]~a[right]中找x
@@ -1516,7 +1569,20 @@ int BinarySearch(int a[], int x, int left, int right) {
 
 ---
 
-## 快速排序
+### 使用分治法查找最大值
+
+使用分治的思想从一个无序的整数数组中查找最大值。
+
+- 如果数组大小为1，则可以直接给出结果
+- 如果数组大小为2，则一次比较即可结果
+- 如果数组大小>2，则二分，递归求解
+  `int find_max(int a[], int low, int high);`
+
+---
+
+### 使用分治法排序
+
+快速排序函数，参见教材5.4.5节，[递归函数部分](c-language-function.md#递归练习)
 
 ```c
 /* quick排序法 */
@@ -1535,8 +1601,7 @@ void QuickSort(int a[], int left, int right) {
 ## 分区函数
 
 ```c
-/* 将数组a中的元素a[left]至a[right]分成左右两部分，
-   返回切分点的下标 */
+/* 将数组a中的元素a[left]至a[right]分成左右两部分，返回切分点的下标 */
 int partition_v1(int a[], int left, int right) {
     int i, last; 
     int split = (left + right) / 2;  // 选择中间元素作为切分元素
@@ -1551,6 +1616,10 @@ int partition_v1(int a[], int left, int right) {
     return last;
 }
 ```
+
+---
+
+![bg fit](images/c-array-partition.png)
 
 ---
 
