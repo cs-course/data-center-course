@@ -1495,22 +1495,13 @@ int main() {
 
 ---
 
-<style scoped>
-  ul {
-    font-size: 20px;
-  }
-</style>
-
-![h:200](images/c-array-binarysearch.png)
+![h:270](images/c-array-binarysearch.png)
 
 1) 令 `left = 0`，`right = n-1`
 
 2) `mid = (left + right) / 2`
 
-3) 比较 `x` 与 `a[mid]`，收缩范围
-  - x<a[mid], x在a[0]与a[mid-1]范围内（**左半**），令right=mid-1
-  - x>a[mid], x在a[mid+1]与a[right]范围内（**右半**），令left=mid+1
-  - x==a[mid], x在数组a中的下标为mid（**正中，返回**）
+3) 比较 `x` 与 `a[mid]`，若非正中，则收缩范围为左半或右半
 
 4) 转`2`，直至`left>right`
 
