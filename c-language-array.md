@@ -427,7 +427,7 @@ int b[][3] = {{1, 3}, {5, 6, 7}};  // 第1维大小可省略
 #define N 10      // 人数
 #define M 4       // 课程数
 
-double CalAverage(int [], int);  // 计算平均值，该函数定义略
+double CalAverage(int [], int);  // 计算平均值，此处仅进行声明，该函数随后定义
 
 int main(void) {
     int x[N][M+1];
@@ -442,36 +442,245 @@ int main(void) {
 }
 ```
 
-**扩展程序功能**：加一行，储存每门课的平均成绩及总平均成绩
+---
+
+**程序功能**：录入10名学生4门课程的成绩，计算每位学生的平均成绩，最终输出“4门成绩+个人平均分”的成绩表。
+
+**头部准备（宏定义+声明）**
+
+```c
+#include<stdio.h>
+#define N  10       /* 人数 */
+#define M  4        /* 课程数 */
+// 计算平均值函数声明（定义略）
+double CalAverage(int [], int);
+```
+
+- 宏定义N/M：用符号常量替代数字，提升灵活性
+- 函数声明：接收整数数组（学生成绩）和长度，返回平均分
 
 ---
 
-### 二维数组作为函数参数
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+**变量与数组定义**
 
 ```c
-// 形参数组第1维不指定大小
-void fun(int a[][M+1], int n) { // n为学生人数，即a的行数
-    int i, j, sum;
-    for(i = 0; i < n; i++) {
-        for(sum = 0, j = 0; j < M; j++)
-            sum += a[i][j];           // 学生i的成绩和
-        a[i][j] = sum * 1.0 / j + 0.5; // 学生i的平均成绩(4舍5入)
-    }
+int x[N][M+1];  // 10行5列：10学生×(4课程+1平均分)
+int i,j;        // 循环变量
+```
+
+<div class="columns">
+
+<div>
+
+**录入成绩+逐位计算个人平均分**
+
+```c
+for(i=0;i<N;i++){  // 遍历学生
+    for(j=0;j<M;j++)  // 录入4门成绩
+        scanf("%d",&x[i][j]);
+    // 计算并存储第i名学生的平均分
+    x[i][M] = CalAverage(x[i], M);
 }
+```
+
+</div>
+
+<div>
+
+**输出成绩表**
+
+```c
+for(i=0;i<N;i++){  // 遍历学生输出
+    for(j=0;j<=M;j++)
+        printf("%d\t",x[i][j]);
+    printf("\n");
+}
+```
+
+</div>
+
+</div>
+
+---
+
+**扩展程序功能**：加一行，储存每门课的平均成绩及总平均成绩
+
+**注意**
+
+- 数组x为int类型，存储double类型平均分会丢失小数（如87.5→87）
+- 需补充课程平均分和总平均分的统计功能
+
+**扩展需求分析**：在原程序基础上，给数组x增加一行，实现：
+
+- 存储4门课程各自的平均分
+- 存储所有学生所有课程的总平均分
+- 匹配调整输入输出格式
+  - 第M列学生平均分、第N行课程平均分
+
+---
+
+**设计思路**
+
+1. **数组维度调整**：x[N+1][M+1]（11行5列）
+        前10行：学生成绩+个人平均分
+
+2. 第11行（下标N）：课程平均分+总平均分
+
+3. **数据类型优化**：数组改为double类型，保留小数精度
+
+4. **逻辑补充**：新增“按列遍历”计算课程平均分的循环
+
+5. **格式优化**：增加表头、分隔线，保留1位小数输出
+
+---
+
+**完整代码**
+
+```c
+#include<stdio.h>
+#define N  10       /* 学生人数 */
+#define M  4        /* 课程数 */
+
+// 计算一组整数的平均值（完整实现）
+double CalAverage(int arr[], int len) {
+    int sum = 0;
+    for (int k = 0; k < len; k++) sum += arr[k];
+    return (double)sum / len;  // 强制转换避免整数除法
+}
+
 int main(void) {
-    int x[N][M+1], i, j;
-    for(i=0;i<N;i++)
-        for(j=0;j<M;j++)
-            scanf("%d", &x[i][j]); // 输入学生成绩
-    fun(x, N); // 实参是数组名
+    // 11行5列：10学生+1统计行 × 4课程+1平均分
+    double x[N+1][M+1];
+    int i, j;
+    double totalSum = 0;  // 所有成绩总成绩（用于算总平均）
+
+    // 步骤1：录入学生成绩+计算个人平均分
+    printf("请输入%d名学生的%d门成绩（每行4个整数）：\n", N, M);
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) scanf("%d", &x[i][j]);
+        x[i][M] = CalAverage((int*)x[i], M);
+    }
+```
+
+---
+
+```c
+    // 步骤2：计算课程平均分+总平均分
+    for (j = 0; j < M; j++) {  // 按列遍历（每列是1门课）
+        int courseSum = 0;
+        for (i = 0; i < N; i++) courseSum += x[i][j];
+        x[N][j] = (double)courseSum / N;  // 课程平均分存第11行
+        totalSum += courseSum;  // 累加总成绩
+    }
+    x[N][M] = totalSum / (N * M);  // 总平均分存第11行第5列
+
+    // 步骤3：格式化输出成绩表
+    printf("\n======================= 学生成绩表 =======================\n");
+    printf("学生序号\t课程1\t课程2\t课程3\t课程4\t个人平均分\n");
+    printf("-----------------------------------------------------------------------\n");
+    for (i = 0; i < N; i++) {  // 输出学生数据
+        printf("第%d名\t\t", i + 1);
+        for (j = 0; j <= M; j++) printf("%.1f\t", x[i][j]);
+        printf("\n");
+    }
+    // 输出统计行
+    printf("-----------------------------------------------------------------------\n");
+    printf("课程平均分\t");
+    for (j = 0; j < M; j++) printf("%.1f\t", x[N][j]);
+    printf("%.1f\n", x[N][M]);  // 输出总平均分
+    printf("=======================================================================\n");
+
+    return 0;
 }
 ```
 
-**动态数组**：第1维不指定大小，第2维是m
+---
+
+**核心扩展：统计行计算逻辑**
+
+**按列遍历计算课程平均分**（原程序是按行遍历学生）
 
 ```c
-void fun(int n, int m, int a[][m])
+for (j = 0; j < M; j++) {  // j=0~3：4门课程
+    int courseSum = 0;
+    // 累加第j门课所有学生的成绩
+    for (i = 0; i < N; i++) courseSum += x[i][j];
+    x[N][j] = (double)courseSum / N;  // 课程平均分
+    totalSum += courseSum;  // 累计总成绩
+}
+// 总平均分 = 总成绩 / 总次数（10×4=40）
+x[N][M] = totalSum / (N * M);
 ```
+
+---
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+**输入示例**
+
+10名学生成绩
+
+```text
+80 85 90 95
+75 88 92 60
+90 92 88 95
+65 70 80 75
+88 90 92 85
+72 83 78 80
+95 98 90 93
+68 72 75 60
+82 86 88 90
+78 80 85 82
+```
+
+</div>
+
+<div>
+
+**输出效果**
+
+规范表格
+
+```text
+======================= 学生成绩表（含平均分） =======================
+学生序号	课程1	课程2	课程3	课程4	个人平均分
+-----------------------------------------------------------------------
+第1名		80.0	85.0	90.0	95.0	87.5	
+第2名		75.0	88.0	92.0	60.0	78.8	
+第3名		90.0	92.0	88.0	95.0	91.2	
+第4名		65.0	70.0	80.0	75.0	72.5	
+第5名		88.0	90.0	92.0	85.0	88.7	
+第6名		72.0	83.0	78.0	80.0	78.2	
+第7名		95.0	98.0	90.0	93.0	94.0	
+第8名		68.0	72.0	75.0	60.0	68.8	
+第9名		82.0	86.0	88.0	90.0	86.5	
+第10名		78.0	80.0	85.0	82.0	81.2	
+-----------------------------------------------------------------------
+课程平均分	81.8	85.2	85.8	81.5	83.6	
+=======================================================================
+```
+
+</div>
+
+</div>
 
 ---
 
@@ -506,7 +715,7 @@ void fun(int n, int m, int a[][m])
 ### 三维数组示例
 
 ```c
-int a[][3][3] = { 
+int a[][3][3] = { // 省略第一维
     { {81, 82, 90}, {73, 94, 90}, {65, 70, 80} },
     { {80, 86, 87}, {78, 90, 80}, {89, 60, 70} }
 };
@@ -564,7 +773,7 @@ char s[81];  // s是字符型数组，可以放入81个字符
 
 ---
 
-**示例**：产生26个大写英文字母组成的字符串
+**示例**：构造26个大写英文字母组成的字符串
 
 ```c
 #include <stdio.h>
@@ -572,7 +781,7 @@ int main(void) {
     char Capital[27];
     int i;
     for(i = 0; i < 26; i++)
-        Capital[i] = 'A' + i;
+        Capital[i] = 'A' + i; // 填入大写英文字母A..Z
     Capital[26] = '\0';  // 在末尾加'\0'来构造字符串
     puts(Capital);
     return 0;
@@ -596,11 +805,40 @@ char s2[28] = "Computer Science";  // 末尾自动加上'\0'
 char s3[] = "Computer";            // 数组长度由字符串确定
 ```
 
-**特殊示例**：
+---
+
+<style scoped>
+  strong {
+    font-size: 80px;
+    color: red;
+  }
+</style>
+
+特殊示例：
 
 ```c
-char s[] = "Com\0puter"; // strlen(s) = 3, sizeof s = 10
+char s[] = "Com\0puter";
 ```
+
+strlen(s) = **?**
+sizeof s = **?**
+
+---
+
+<style scoped>
+  strong {
+    font-size: 80px;
+  }
+</style>
+
+特殊示例：
+
+```c
+char s[] = "Com\0puter";
+```
+
+strlen(s) = **3**
+sizeof s = **10**
 
 ---
 
@@ -638,11 +876,11 @@ int main(void) {
 
 ---
 
-### 将字符串反转的函数
+### 反转字符串的函数
 
 ```c
 void mystrrev(char s[]) {
-    int i, j;  // 前、后指示器
+    int i, j;  // 前、后下标指示器
     char c;
     for(i = 0, j = strlen(s) - 1; i < j; i++, j--) {
         c = s[i];
@@ -656,15 +894,35 @@ void mystrrev(char s[]) {
 
 ---
 
-### 字符串拷贝的函数
-
-**正确版本**：
+### 拷贝字符串的函数
 
 ```c
-/* copies string s to t */
+/* 将字符串s复制为t */
+void mystrcpy(char t[], char s[]) {
+    int j=0;
+    while((s[j] != '\0')   
+        t[j] = s[j++]；
+}
+
+int main(void) {
+    char str1[30], str2[] = "there is a boat on the lake.";
+    mystrcpy(str1, str2);
+    puts(str1);  // 输出：there is a boat on the lake.
+    return 0;
+}
+```
+
+**不要着急，有没有问题？**：
+
+---
+
+### 拷贝字符串的函数（应该这样）
+
+```c
+/* 将字符串s复制为t */
 void mystrcpy(char t[], char s[]) {
     int j = 0;
-    while((t[j] = s[j]) != '\0') j++;
+    while((t[j] = s[j]) != '\0') j++; // 紧凑写法，注意先做什么后做什么？
 }
 
 int main(void) {
@@ -677,19 +935,41 @@ int main(void) {
 
 ---
 
-### 两个字符串比较函数
+### 比较两个字符串的函数
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
 
 **比较规则**：从两个字符串的第一个字符开始，按照字符ASCII码值的大小进行比较。
 
+<div class="columns">
+
+<div>
+
 ```c
-/* compares t to s
-   return: =0 if s=t, >0 if s>t, <0 if s<t */
+/* 比较字符串t是否与s相同，以s为基准 */
+   返回: =0 if s=t, >0 if s>t, <0 if s<t */
 int mystrcmp(char s[], char t[]) {
     int j = 0;
     while(s[j] == t[j] && s[j] != '\0') j++;
     return s[j] - t[j];
 }
 ```
+
+</div>
+
+<div>
+
+![w:500](images/c-array-strcmp.png)
+
+</div>
+
+</div>
 
 ---
 
@@ -698,14 +978,14 @@ int mystrcmp(char s[], char t[]) {
 ```c
 int main(void) {
     char pw[] = "1234", s[20];
-    int count = 3;
+    int count = 3; // 允许尝试3次
     do {
         printf("Input password\n");
         scanf("%s", s);
         count--;
     } while(mystrcmp(pw, s) && count);
     
-    if(mystrcmp(pw, s))
+    if(mystrcmp(pw, s)) // 密码错误
         return 1;
     // 进入系统
     return 0;
@@ -714,12 +994,12 @@ int main(void) {
 
 ---
 
-### 字符串连接函数
+### 拼接字符串的函数
 
 **正确版本**：
 
 ```c
-/* appends s to t */
+/* 将字符串s追加在t尾部 */
 void mystrcat(char t[], char s[]) {
     int j = 0, k = 0;
     while(t[j++] != '\0');  // 找到t的末尾
@@ -740,7 +1020,7 @@ int main(void) {
 ### 删除字符串首尾空白字符的函数
 
 ```c
-/* deletes spacing of beginning and end in s */
+/* 删除字符串s起始和结尾的空白字符 */
 int trim(char s[]) {
     int i, num, j = 0, k = 0, L = strlen(s);
     
@@ -751,7 +1031,7 @@ int trim(char s[]) {
     i = L - 1;
     while(s[i - k] == ' ' || s[i - k] == '\t' || s[i - k] == '\n' || s[i - k] == '\r') k++;
     
-    num = L - j - k;  // 新串字符数
+    num = L - j - k;  // 新串字符的长度
     
     // 移动字符
     for(i = 0; i < num; i++)
@@ -762,12 +1042,14 @@ int trim(char s[]) {
 }
 ```
 
+<!-- 可以尝试让大模型来给出完成此任务需要的步骤 -->
+
 ---
 
 ### 从串s中删除所有与给定字符c相同的字符
 
 ```c
-/* deletes all character c in s */
+/* 从字符串s中删除所有的c字符 */
 void strdelc(char s[], char c) {
     int j, k;
     for(j = k = 0; s[j] != '\0'; j++)
@@ -800,6 +1082,18 @@ void strdelc(char s[], char c) {
 
 ### 暴力法找子串
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 /* strstr: return index of t in s, -1 if none */
 int mystrstr(char s[], char t[]) {
@@ -815,10 +1109,24 @@ int mystrstr(char s[], char t[]) {
     return -1;  // 不存在子串，返回-1
 }
 ```
+</div>
+
+<div>
+
+![w:300](images/c-array-strstr-1.png)
+![w:300](images/c-array-strstr-2.png)
+![w:300](images/c-array-strstr-3.png)
+![w:300](images/c-array-strstr-4.png)
+
+</div>
+
+</div>
 
 ---
 
-**简化写法**：
+补充一个**简化写法**
+
+在第i轮匹配之内
 
 ```c
 for(j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++);
@@ -857,11 +1165,11 @@ int main(void) {
 
 ### 十进制串转换为整数(atoi)
 
-**算法**：ASCII码字符`s[j]`转换为对应数字`s[j] - '0'`，使用本位乘以10加下一位的算法。
+**算法**：将ASCII码字符`s[j]`转换为对应数字`s[j] - '0'`，使用本位乘以10加下一位的算法。
 
 ```c
 #define BASE 10
-/* converts a string s to an int */
+/* 将字符串s转化为整数num返回 */
 int myatoi(char s[]) {
     int j = 0, num = 0;
     for(; s[j] != '\0'; j++)
@@ -876,6 +1184,12 @@ int myatoi(char s[]) {
 
 ### 整数转换为十进制数字串（itoa）
 
+将一个十进制整数转换成为对应数字串的函数
+
+- 转换之后的数字串怎么返回？函数不能返回数组类型。
+  - 形式参数：整数n（拟转换数），字符数组s（转换结果）
+  - 返回值无
+
 **函数原型**：
 
 ```c
@@ -888,7 +1202,7 @@ void myitoa(int n, char s[]);
 
 ```c
 #define BASE 10
-/* converts a integer n to a string s */
+/* 将整数n转换为字符串s */
 void myitoa(int n, char s[]) {
     int sign, j = 0;
     if((sign = n) < 0) n = -n;
@@ -907,6 +1221,17 @@ void myitoa(int n, char s[]) {
 ---
 
 ### 十六进制数字串转换为对应的整数(htoi)
+
+- 将一个以`0x`或`0X`为前缀的十六进制数字串转换成为对应的整数 
+- **问题**
+  - 当基数BASE大于10，如：16，由于十六进制数的表示形式，如′a′和′A′，′b′和′B′
+  - 以及0到f或F在ASCII码表的编码不连续性
+  - 因此需要在转换中进行一定的调整
+- htoi函数
+  - 将一个存放在字符数组s中的十六进制数字串转换成为对应的整数
+  - 返回转换后的整数
+
+---
 
 ```c
 int htoi(char s[]) {
@@ -958,9 +1283,21 @@ char devices[][12] = {"hard disk", "CRT", "keyboard"};
 
 ### 二维字符数组的使用
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: 2rem;
+}
+</style>
+
 ```c
 char devices[][10] = {"hard disk", "CRT", "keyboard"};
 ```
+
+<div class="columns">
+
+<div>
 
 **可以引用单个字符元素**：
 
@@ -968,12 +1305,26 @@ char devices[][10] = {"hard disk", "CRT", "keyboard"};
 devices[2][3]  // 值为 'b'
 ```
 
+</div>
+
+<div>
+
 **可以引用字符串**：
 
 ```c
 devices[i]  // 表示devices数组中第i行字符串的首地址
 printf("%s", devices[1]);  // 输出：CRT
 ```
+
+</div>
+
+</div>
+
+|      |      |      |      |      |      |      |      |      |      |
+|------|------|------|------|------|------|------|------|------|------|
+| 80   | 85   | 90   | 95   | 75   | 88   | 92   | 60   | 90   | 92   |
+| 88   | 95   | 65   | 70   | 80   | 75   | 88   | 90   | 92   | 85   |
+| 72   | 83   | 78   | 80   | 95   | 98   | 90   | 93   | 68   | 72   |
 
 ---
 
