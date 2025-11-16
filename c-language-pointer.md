@@ -85,48 +85,86 @@ paginate: true
 
 ## 变量与地址
 
-- 变量占有一定数目（根据类型）的连续存储单元
-- 变量的连续存储单元首地址称为变量的地址
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+- 变量占有一定量（根据类型）的连续存储单元
 
 ```c
 short x;
 char a[5];
+```
+
+- 变量的连续存储单元首地址称为**变量的地址**
+
+```c
 &x, a <= => &a[0]
 ```
 
----
+- **思考**: 地址数据又是什么类型的变量?
 
-## 思考
+</div>
 
-用什么类型的变量来保存地址数据？
+<div>
 
-| 地址 | 变量名 |
-|------|--------|
-| x    | a[0]   |
-| a[0] | a[1]   |
-| a[1] | a[2]   |
-| a[2] | a[3]   |
-| a[3] | a[4]   |
+![w:300](images/c-pointer-concept.png)
+
+</div>
+
+</div>
 
 ---
 
 ## 指针定义
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
 
 - **指针**: 变量的地址
   - `&x`: 指针常量
   - `p`: 指针变量
 
 - **指针变量**: 存放地址数据的变量
-  - 指针变量也是一种变量，也要占用一定的内存单元
-  - 特殊之处在于它存放的是另一个变量所占存储单元的起始地址
+  - 指针变量也是一种变量，也要**占用一定的内存单元**
+  - 特殊之处在于它存放的是另一个变量所占存储单元的**起始地址**
+
+</div>
+
+<div>
+
+![w:300](images/c-pointer-concept-1.png)
+
+</div>
+
+</div>
 
 ---
 
 ## 指针变量的声明
 
 ```c
-数据类型 *标识符;  // 所指变量的数据类型
+数据类型 *标识符;
 ```
+
+↑所指变量的数据类型
 
 ```c
 short x = 1, y = 2, a[10], *p;
@@ -135,9 +173,23 @@ p = a;      // √
 p = a[0];   // ×
 ```
 
+**思考**: 为什么使用指针？
+
 ---
 
 ## 为什么使用指针？
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
 
 **直接访问**: 通过变量名存取变量
 ```c
@@ -146,26 +198,70 @@ printf("%x", x);
 ```
 
 **间接访问**: 通过变量的地址存取变量
+
 ```c
 p = &x;
 printf("%x", *p);
 ```
 
+先访问`p`，得到`x`的地址，再通过该地址找到它所指向的单元中的值。
+
+</div>
+
+<div>
+
+![w:300](images/c-pointer-concept-2.png)
+
+</div>
+
+</div>
+
 ---
 
-## 指针运算符 *
+## 指针运算符 `*`
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
-short x = 1, y = 2, *p;
+short x = 1, y = 2, *p; // p是short型指针变量
 p = &x;        // 指针p指向x
 y = *p;        // *p<==>x
-*p += 10;
-printf("x=%hd,y=%hd", x, y);  // 输出：x=11,y=1
+*p += 10;      // x+=10
+printf("x=%hd,y=%hd", x, y);
 ```
+输出:
+
+```bash
+x=11, y=1
+```
+
+**思考**: 为什么指针有类型?
+
+</div>
+
+<div>
+
+![w:270](images/c-pointer-concept-3.png)
+
+</div>
+
+</div>
 
 ---
 
-## 思考：为什么指针有类型？
+## 为什么指针有类型？
+
+下面程序段存在什么问题？
 
 ```c
 int x, *p;     // p是一个整型指针变量，其值不确定
@@ -176,21 +272,39 @@ scanf("%d", p); // 使用悬挂指针，错！
 
 **悬挂指针（野指针）**: 指针的声明只是创建了指针变量，但并没有指向具体的变量，此时指针的值是不确定的随机值。
 
+野指针**可能导致程序访问非法内存地址**，造成程序崩溃或数据损坏等严重后果。
+
 ---
 
-## 指针的移动操作 (+, -, ++, --, +=, -=)
+## 指针的移动操作
 
-指针的移动：指针在原有位置的基础上，通过加一个整数实现指针的前移（地址增大的方向）或者通过减一个整数实现指针的后移。
+运算符：`+, -, ++, --, +=, -=`
+
+**指针的移动**：指针在原有位置的基础上，通过加一个整数实现指针的**前移**（地址增大的方向）或者通过减一个整数实现指针的**后移**。
 
 `p ± k` - 指针p前移/后移k个元素
+
+↑_指针_ ↑_整数_
 
 ---
 
 ## 指针移动示例
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
 ```c
 int x[5] = {1, 3, 5, 7, 9}, *px = &x[1];
 ```
+
+<div class="columns">
+
+<div>
 
 | 表达式 | 值 |
 |--------|----|
@@ -201,9 +315,31 @@ int x[5] = {1, 3, 5, 7, 9}, *px = &x[1];
 | `*px++` | 3 |
 | `px += 2, *px` | 7 |
 
+</div>
+
+<div>
+
+![w:300](images/c-pointer-op.png)
+
+</div>
+
+</div>
+
 ---
 
 ## 指针的移动和类型有关
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 int x = 0x1234ABCD, a, b, *p1;
@@ -215,16 +351,36 @@ b = *(p2 + 1);
 printf("%x", b);        // AB
 ```
 
+</div>
+
+<div>
+
+![w:300](images/c-pointer-type.png)
+
+</div>
+
+</div>
+
 ---
 
 ## 指针的赋值运算
 
+<style scoped>
+  strong {
+    color: red;
+  }
+</style>
+
+**同类型**的指针可以直接赋值
+
 ```c
-// (1) 同类型的指针可以直接赋值
 int a[3] = {1, 2, 3}, x, *p, *q;
 p = a; q = &x;
+```
 
-// (2) 不同类型的指针必须使用类型强制转换
+**不同类型**的指针必须使用**类型强制转换**
+
+```c
 long x;
 char *p;
 p = (char *)&x;
@@ -236,24 +392,30 @@ p = (char *)&x;
 
 例：一个长整型数占4个字节，从低字节开始依次取出每个字节的高4位和低4位并以十六进制字符形式显示。
 
+![h:350](images/c-pointer-example.png)
+
+---
+
+### 完整例程
+
 ```c
 #include <stdio.h>
 int main(void) {
     long x = 0x1234ABCD, k;
-    char *p = (char *)&x;
+    char *p = (char *)&x; // 强制转换成char型指针
     char up_half, low_half;
     
-    for(k = 0; k < 4; k++) {
+    for(k = 0; k < 4; k++) {  // 循环4次，顺序访问每个字节
         low_half = (*p) & 0x0f;        // 取低4位
-        if(low_half < 10) low_half += '0';
-        else low_half = (low_half - 10) + 'A';
+        if(low_half < 10) low_half += '0';  // 转换成字符0-9
+        else low_half = (low_half - 10) + 'A';  // 转换成字符A-F
         
         up_half = (*p >> 4) & 0x0f;    // 取高4位
         if(up_half < 10) up_half |= '0';
         else up_half = (up_half - 10) + 'A';
         
         printf("%c %c\n", up_half, low_half);
-        p++;  // 指向下一个字节
+        p++;  // 指向长整数4个字节中的下一个字节
     }
     return 0;
 }
@@ -262,6 +424,12 @@ int main(void) {
 ---
 
 ## 指针练习一
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 1. **检测机器的大小端模式**
    ```c
@@ -327,7 +495,7 @@ void swap(int x, int y) {
 int main(void) {
     int a = 3, b = 5;
     swap(a, b);
-    printf("a=%d,b=%d\n", a, b);  // a=3,b=5
+    printf("a=%d,b=%d\n", a, b);  // a=3, b=5 保持原样
     return 0;
 }
 ```
@@ -337,6 +505,18 @@ int main(void) {
 ## 传址调用
 
 以指针作为函数的参数实现变量值的交换。
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 #include <stdio.h>
@@ -348,10 +528,20 @@ int main(void) {
     int a = 10, b = 20, c = 30;
     swap(&a, &b);
     swap(&b, &c);
-    printf("a=%d,b=%d,c=%d\n", a, b, c);  // a=10,b=30,c=20
+    printf("a=%d,b=%d,c=%d\n", a, b, c);
     return 0;
 }
 ```
+
+</div>
+
+<div>
+
+![w:300](images/c-pointer-swap.svg)
+
+</div>
+
+</div>
 
 ---
 
@@ -363,6 +553,7 @@ int main(void) {
 ```c
 // implicit returned values:
 void sum(int x, int y, int *p) {
+    // x, y 入口，*p 出口
     *p = x + y;
 }
 
@@ -404,7 +595,19 @@ sum(3, 4, &sum);
 
 ## 数组元素的表示
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+</style>
+
 数组元素既可以用下标表示，也可以用指针表示。
+
+<div class="columns">
+
+<div>
 
 ```c
 int a[10], *p = a;
@@ -416,15 +619,37 @@ int a[10], *p = a;
 | 指针法（数组名） | `*(a+i)` | `a+i` |
 | 指针法（指针变量） | `*(p+i)` | `p+i` |
 
+</div>
+
+<div>
+
+![w:350](images/c-pointer-to-array.png)
+
+</div>
+
+</div>
+
 ---
 
 ## 数组元素的输入
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
 
 ```c
 #define N 10
 int a[N], *p, i;
 p = a;
 ```
+
+<div class="columns">
+
+<div>
 
 **方法1:**
 ```c
@@ -437,6 +662,24 @@ for(i = 0; i < N; i++)
 for(; p < a + N; p++)
     scanf("%d", p);      // 或 p++
 ```
+
+</div>
+
+<div>
+
+**候选项**
+
+```c
+&a[i]
+a+i
+p+i
+p++
+a++ // 注意！
+```
+
+</div>
+
+</div>
 
 ---
 
@@ -463,6 +706,18 @@ for(; p < a + 10; p++)
 
 ## 数组元素的输入和输出
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 int a[10], *p, i;
 for(p = a, i = 0; i < 10; i++)
@@ -471,15 +726,16 @@ while(p < a + 10)        // 错误！p已指向数组末尾
     printf("%d", *p++);
 ```
 
-**正确做法：**
-```c
-// 逆序输出数组a的全部元素
-int a[10], *p = a;
-while(p < a + 10)
-    scanf("%d", p++);
-while(p > a)
-    printf("%d", *--p);
-```
+
+</div>
+
+<div>
+
+![w:350](images/c-pointer-to-array-1.png)
+
+</div>
+
+</div>
 
 ---
 
@@ -490,6 +746,36 @@ while(p > a)
 - 只限于同类型指针
 - 不同类型指针之间的关系运算被视为非法操作
 
+**前例正确做法：**
+
+```c
+int a[10], *p = a;
+while(p < a + 10) // 正序输出数组a的全部元素
+    scanf("%d", p++);
+while(p > a) // 逆序输出数组a的全部元素
+    printf("%d", *--p);
+```
+
+---
+
+### 两个指针相减
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+两个指针指向同一数组的元素，可以相减
+
+`pa2 – pa1` 等于所指元素的下标相减
+
 ```c
 int strlen(char s[]) {  // 等价于 int strlen(char *s)
     char *q = s;
@@ -497,6 +783,12 @@ int strlen(char s[]) {  // 等价于 int strlen(char *s)
     return (s - q);
 }
 ```
+
+</div> <div>
+
+![w:220](images/c-pointer-sub.png)
+
+</div> </div>
 
 ---
 
