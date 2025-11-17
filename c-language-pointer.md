@@ -957,20 +957,20 @@ int main() {
 #include<stdio.h>
 #define N 10
 
-void BubbleSort ( int *a,int n)  // 形参为指针
-{
-       int i, j, t;   
-       for (i=1; i<n; i++)   /* 共进行n-1轮"冒泡" */
-          for (j=0; j<n-i ; j++)  /* 对两两相邻的元素进行比较 */
-             if (*(a+j)>*(a+j+1) ) {  
-                 t=*(a+j);  *(a+j)=*(a+j+1);  *(a+j+1)=t; 
-             }
-  }
-int main ( )
-{  int x[N], i,*p=a;
-    printf (" please input %d numbers: \n ", N);
-    for (i=0; i<N; i++)    scanf(" %d ", &x[i]);
-    BubbleSort (p , N ) ;    // 实参为指针变量 
+void BubbleSort(int *a, int n) { // 形参为指针
+    int i, j, t;   
+    for(i = 1; i < n; i++)    // 共进行n-1轮"冒泡"
+      for(j = 0; j < n - i; j++)  // 对两两相邻的元素进行比较
+          if(*(a+j) > *(a+j+1)) {  // 改为指针实现
+              t = *(a+j); *(a+j) = *(a+j+1); *(a+j+1) = t; 
+          }
+}
+
+int main() {
+    int x[N], i, *p = x;
+    printf("please input %d numbers:\n", N);
+    for(i=0; i<N; i++) scanf("%d", &x[i]);
+    BubbleSort(p, N);    // 实参为指针变量 
     printf("the sorted numbers:\n");
     for(i = 0; i < N; i++) printf("%d ", x[i]);
     return 0;
