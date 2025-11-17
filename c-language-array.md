@@ -825,11 +825,21 @@ char s3[] = "Computer";            // 数组长度由字符串确定
 特殊示例：
 
 ```c
-char s[] = "Com\0puter";
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char s[] = "Com\0puter"; // 注意 string 内部不需要加 '\0'，如果有，则……
+
+    printf("%d\n", strlen(s));
+    printf("%d\n", sizeof(s));
+
+    return 0;
+}
 ```
 
-strlen(s) = **?**
-sizeof s = **?**
+strlen(s) = **?** sizeof s = **?**
 
 ---
 
@@ -842,11 +852,21 @@ sizeof s = **?**
 特殊示例：
 
 ```c
-char s[] = "Com\0puter";
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char s[] = "Com\0puter"; // 数组被初始化为全体字符数量，字符串则结束于 '\0'
+
+    printf("%d\n", strlen(s));
+    printf("%d\n", sizeof(s));
+
+    return 0;
+}
 ```
 
-strlen(s) = **3**
-sizeof s = **10**
+strlen(s) = **3** sizeof s = **10**
 
 ---
 

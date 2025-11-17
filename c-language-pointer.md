@@ -910,15 +910,20 @@ p = &b;                   // 非法，指针本身的值也不能修改
 ## 一维数组参数的指针表示
 
 ```c
-// 形参：不指定长度的数组 指针
-// 实参：数组名（指针常量） 指向数组元素的指针变量
-
 void sort(int a[], int n) { ... }  // 等价于 void sort(int *a, int n)
 ```
 
+- 形参
+  - 不指定长度的数组
+  - 即**指针变量**
+- 实参
+  - 数组名（指针常量）
+  - 数组元素地址
+  - 指向数组元素的指针变量
+
 ---
 
-## 冒泡排序示例
+## 冒泡排序示例——数组
 
 ```c
 #include<stdio.h>
@@ -946,9 +951,35 @@ int main() {
 
 ---
 
-# 高精度计算 - 超大整数的加法
+## 冒泡排序示例——指针
+
+```c
+#include<stdio.h>
+#define N 10
+
+void BubbleSort ( int *a,int n)  // 形参为指针
+{
+       int i, j, t;   
+       for (i=1; i<n; i++)   /* 共进行n-1轮"冒泡" */
+          for (j=0; j<n-i ; j++)  /* 对两两相邻的元素进行比较 */
+             if (*(a+j)>*(a+j+1) ) {  
+                 t=*(a+j);  *(a+j)=*(a+j+1);  *(a+j+1)=t; 
+             }
+  }
+int main ( )
+{  int x[N], i,*p=a;
+    printf (" please input %d numbers: \n ", N);
+    for (i=0; i<N; i++)    scanf(" %d ", &x[i]);
+    BubbleSort (p , N ) ;    // 实参为指针变量 
+    printf("the sorted numbers:\n");
+    for(i = 0; i < N; i++) printf("%d ", x[i]);
+    return 0;
+}
+```
 
 ---
+
+# 高精度计算 - 超大整数的加法
 
 ## 高精度运算概念
 
@@ -967,7 +998,27 @@ int main() {
 **存储**：用数组存储，每个数组元素存储1位
 
 - 个位在`x[0]`，十位在`x[1]`，...
-- 优点：每一位都是数的形式，可以直接加减
+- 优点：每一位都是数的形式，可以直接加减，方便处理
+
+---
+
+## 大数计算框架
+
+```c
+#define N 200 // 定义数位上限
+
+int main(void) {
+  int x[N+1], y[N+1], z[N+2];
+  printf("输入被加数：");
+  getBigNum(x, N);
+  printf("输入加数：");
+  getBigNum(y, N);
+  addBigNum(x, y, z); // z=x+y
+  putBigNum(z);
+  putchar('\n');
+  return 0;
+}
+```
 
 ---
 
