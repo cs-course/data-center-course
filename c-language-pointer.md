@@ -33,20 +33,20 @@ paginate: true
 
 <div>
 
-- 指针的基本概念与操作
-- 指针作为函数参数的使用
-- 指针与一维数组的关系
-- 指针与字符串的处理
-- 指针数组与二级指针
+- 指针的**基本概念与操作**
+- 指针作为**函数参数**的使用
+- 指针与**一维数组的关系**
+- 指针与**字符串的处理**
+- 指针数组与**二级指针**
 
 </div>
 
 <div>
 
-- 带参数的main函数与命令行参数
-- 指针函数与函数指针
-- 指针与二维数组的关系
-- 复杂指针声明与typedef使用
+- 带参数的main函数与**命令行参数**
+- **指针函数**与**函数指针**
+- 指针与**二维数组的关系**
+- 复杂指针声明与**typedef**使用
 
 </div>
 
@@ -192,6 +192,7 @@ p = a[0];   // ×
 <div>
 
 **直接访问**: 通过变量名存取变量
+
 ```c
 x = 0x1234;
 printf("%x", x);
@@ -239,13 +240,6 @@ y = *p;        // *p<==>x
 *p += 10;      // x+=10
 printf("x=%hd,y=%hd", x, y);
 ```
-输出:
-
-```bash
-x=11, y=1
-```
-
-**思考**: 为什么指针有类型?
 
 </div>
 
@@ -259,7 +253,115 @@ x=11, y=1
 
 ---
 
+## 指针运算符 `*` …
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+short x = 1, y = 2, *p; // p是short型指针变量
+p = &x;        // 指针p指向x
+y = *p;        // *p<==>x
+*p += 10;      // x+=10
+printf("x=%hd,y=%hd", x, y);
+```
+
+输出:
+
+```bash
+x=11, y=1
+```
+
+**思考**: 为什么指针有类型?
+
+</div>
+
+<div>
+
+![w:270](images/c-pointer-concept-3-1.png)
+
+</div>
+
+</div>
+
+---
+
 ## 为什么指针有类型？
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+int x = 0x1234ABCD, a, b, *p1;
+char *p2;
+p1 = &x; p2 = (char *)&x;
+a = *p1; b = *p2;
+printf("%x,%x", a, b);  // 输出: 1234ABCD,CD
+b = *(p2 + 1);
+printf("%x", b);        // 后面谈移动也与之有关
+```
+
+</div>
+
+<div>
+
+![w:270](images/c-pointer-type.png)
+
+</div>
+
+</div>
+
+---
+
+## 指针练习一
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
+
+1. **检测机器的大小端模式**
+   ```c
+   int checkEndion(void);  // 返回1小端，0大端
+   ```
+
+2. **定义宏提取16位数据的高八位和低八位**
+   ```c
+   #define BYTE0(hdata) ________
+   #define BYTE1(hdata) ________
+   ```
+
+3. **将int数的最高字节和最低字节交换**
+
+4. **将32位整数IP转为点分十进制输出**
+
+5. **32位本机字节序与网络字节序之间的转换**
+   ```c
+   unsigned long hton(unsigned long h);  // hton(0x1234)值为0x34120000
+   ```
+
+---
+
+## 悬挂指针
 
 下面程序段存在什么问题？
 
@@ -420,36 +522,6 @@ int main(void) {
     return 0;
 }
 ```
-
----
-
-## 指针练习一
-
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
-
-1. **检测机器的大小端模式**
-   ```c
-   int checkEndion(void);  // 返回1小端，0大端
-   ```
-
-2. **定义宏提取16位数据的高八位和低八位**
-   ```c
-   #define BYTE0(hdata) ________
-   #define BYTE1(hdata) ________
-   ```
-
-3. **将int数的最高字节和最低字节交换**
-
-4. **将32位整数IP转为点分十进制输出**
-
-5. **32位本机字节序与网络字节序之间的转换**
-   ```c
-   unsigned long hton(unsigned long h);  // hton(0x1234)值为0x34120000
-   ```
 
 ---
 
@@ -652,12 +724,14 @@ p = a;
 <div>
 
 **方法1:**
+
 ```c
 for(i = 0; i < N; i++)
     scanf("%d", &a[i]);  // 或 a+i, p+i
 ```
 
 **方法2:**
+
 ```c
 for(; p < a + N; p++)
     scanf("%d", p);      // 或 p++
@@ -691,12 +765,14 @@ p = a;
 ```
 
 **方法1:**
+
 ```c
 for(i = 0; i < 10; i++)
     printf("%d", a[i]);  // 或 *(a+i), *(p+i), *p++
 ```
 
 **方法2:**
+
 ```c
 for(; p < a + 10; p++)
     printf("%d", *p);
@@ -725,7 +801,6 @@ for(p = a, i = 0; i < 10; i++)
 while(p < a + 10)        // 错误！p已指向数组末尾
     printf("%d", *p++);
 ```
-
 
 </div>
 
@@ -890,6 +965,7 @@ int main() {
 3. **大数据的输入和输出**
 
 **存储**：用数组存储，每个数组元素存储1位
+
 - 个位在`x[0]`，十位在`x[1]`，...
 - 优点：每一位都是数的形式，可以直接加减
 
@@ -950,11 +1026,13 @@ void addBigNum(int *z, int *x, int *y);
 
 ## 优化策略
 
-**缺点**：
+**缺点**:
+
 1. 浪费空间：一个整型数组的每个元素只存放一位
 2. 浪费时间：一次加法只处理一位
 
-**优化**：
+**优化**:
+
 1. 分治策略：将"一个大数分为多个4位整数（0~9999）"
 2. 一个数组元素存放四位数；将标准数组改为紧缩数组
 3. 运算时：逢万进位；将"十进制运算"改为"万进制运算"
@@ -1355,7 +1433,8 @@ int main() {
 int (*p)(int, int);  // p是指向有两个int参数的int函数的指针
 ```
 
-**函数指针的声明**：
+**函数指针的声明**:
+
 ```c
 类型 (*标识符)(形参表);
 ```
@@ -1428,16 +1507,16 @@ sort(a, 6, asc);
 能够对int、char、double、字符串、struct类型的数据排序。
 
 ```c
-// stdlib.h中的标准库函数qsort----万能数组排序函数
-void qsort(void *base, int nelem, int width, 
-           int (*fcmp)(const void *, const void *));
+// stdlib.h中的标准库函数qsort
+void qsort(void *base, int nelem, int width, int (*fcmp)(const void *, const void *));
 ```
 
-**函数参数**：
-- `void *v`：待排序数组首地址
-- `int n`：数组中待排序元素数量
-- `int size`：各元素的占用空间大小（字节）
-- `int (*fcmp)(const void *, const void *)`：指向函数的指针，用于确定排序的规则
+**函数参数**:
+
+- `void *v`: 待排序数组首地址
+- `int n`: 数组中待排序元素数量
+- `int size`: 各元素的占用空间大小（字节）
+- `int (*fcmp)(const void *, const void *)`: 指向函数的指针，用于确定排序的规则
 
 **思考**：如何调用qsort对字符串数组排序。
 
