@@ -1010,15 +1010,15 @@ int main() {
 #define N 200 // 定义数位上限
 
 int main(void) {
-  int x[N+1], y[N+1], z[N+2];
-  printf("输入被加数：");
-  getBigNum(x, N);
-  printf("输入加数：");
-  getBigNum(y, N);
-  addBigNum(x, y, z); // z=x+y
-  putBigNum(z);
-  putchar('\n');
-  return 0;
+    int x[N+1], y[N+1], z[N+2];
+    printf("输入被加数：");
+    getBigNum(x, N);
+    printf("输入加数：");
+    getBigNum(y, N);
+    addBigNum(x, y, z); // z=x+y
+    putBigNum(z);
+    putchar('\n');
+    return 0;
 }
 ```
 
@@ -1340,6 +1340,171 @@ int *p[3];  // p是一个有3个元素的整型指针数组
 char *ps[2] = {"red", "green"};  // ps是一个有2个元素的字符指针数组
                                  // ps[0]指向字符串"red"
                                  // ps[1]指向字符串"green"
+const char *ps[2] = {"red", "green"}; // 只用不改
+```
+
+![h:200](images/c-pointer-array-1.png) ![h:200](images/c-pointer-array-2.png)
+
+---
+
+## 指针数组的应用
+
+- 描述二维数组
+  - 数值型二维数组
+  - 字符型二维数组 (字符串数组)
+- 尤其是
+  - 每行元素个数不相同的二维数组，如:
+    - 三角矩阵
+    - 图结构数据 (邻接表)
+    - 不同长度的字符串组成的字符串数组
+
+---
+
+### 杨辉三角形
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+#define N   5
+#define  SIZE  N*(N+1)/2
+int main()
+{
+    int *p[N], a[SIZE];
+    int sum=0,i;
+    for(i=0;i<N;i++) {  // p[i]指向各行首元素
+         p[i]=&a[sum];  // a[0], a[1], ..., a[i*(i+1)/2]
+         sum += i+1;
+    }
+    for(i=0;i<N;i++) {  // 遍历各行
+        *p[i]=1;        // 初始化行首元素为1
+        *(p[i]+i) = 1;  // 初始化行尾元素为1
+    }
+    for(i=2;i<N;i++)    // 填充内部三角
+        for(k=1;k<i;k++)
+            p[i][k]=p[i-1][k-1]+p[i-1][k]; // 引用上一行元素计算
+    return 0;
+}
+```
+
+</div>
+
+<div>
+
+![w:300](images/c-pointer-yanghui.png)
+
+用指针运算符计算数组元素首地址
+
+```c
+    for(i=0;i<N;i++) {
+         p[i]=&a[ i*(i+1)/2 ];
+     }
+```
+
+<!-- 变长元素数组，省时省地 -->
+
+</div>
+
+</div>
+
+---
+
+## 字符指针数组 - 文本菜单
+
+```c
+int selectMenu(void)
+{
+    static const char *menu[] = {
+        "1:Enter record",
+        "2:Search record on name", 
+        "3:Delete a record",
+        "4:Add a record",
+        "0:Quit",
+        NULL
+    };
+
+    int i, ch;
+    system("cls"); /* 清屏 */
+    do {
+        for(i = 0; menu[i] != NULL; i++)
+            puts(menu[i]);
+        printf("\n Enter your choice:");
+        scanf("%d", &ch); /* 输入选择项 */
+    } while(ch < 0 || ch > i); /* 选择项不在0-4之间重输 */
+    return ch; /* 返回选择项，调用函数根据该数调用相应的函数 */
+}
+```
+
+---
+
+## 字符指针数组 - 使用文本菜单
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int selectMenu(void);
+
+int main(void)
+{
+    int choice;
+    
+    while((choice = selectMenu())) {
+        switch(choice) {
+            case 1:    // 功能1
+                break;
+            case 2:    // 功能2
+                break;
+            case 3:    // 功能3
+                break;
+            case 4:    // 功能4
+                break;
+            default:   // 错误选择项
+                puts("Wrong choice!");
+                break;
+        }
+    }
+    
+    return 0;
+}
+```
+
+---
+
+## 字符指针数组 - 查找关键字
+
+```c
+#include <string.h>
+
+/* 若是关键字，函数返回1；否则，返回0 */
+int iskey(char *s)
+{
+    static char *keyword[] = { /* 关键字表 */
+        "auto", "_Bool", "break", "case", "char", "_Complex",
+        "const", "continue", "default", "restrict", "do", "double", 
+        "else", "enum", "extern", "float", "for", "goto",
+        "if", "_Imaginary", "inline", "int", "long", "register",
+        "return", "short", "signed", "sizeof", "static", "struct",
+        "switch", "typedef", "union", "unsigned", "void", "volatile",
+        "while", NULL
+    }; // 关键字表，用末尾空指针控制循环
+    
+    int i;
+    for(i = 0; keyword[i] != NULL; i++) { /* 将标识符s依次与每个关键字比较 */
+        if(!strcmp(s, keyword[i]))
+            return 1;
+    }
+    return 0; /* 不是关键字返回0 */
+}
 ```
 
 ---
@@ -1358,28 +1523,47 @@ int main() {
 }
 ```
 
+怎么改？
+
 ---
 
 ## 动态分配存储字符串的空间
 
+用 `malloc(size)` 分配size字节的存储区，返回所分配单元的起始地址。如不成功，返回NULL。
+
 ```c
 #define N 3
 #include<stdio.h>
-#include<stdlib.h>
+#include<stdlib.h> // malloc()
 int main() {
     int i;
     char *s[N];
     for(i = 0; i < N; i++) {
         char t[80];
         fgets(t, 80, stdin);
-        s[i] = (char *)malloc(strlen(t) + 1);
+        s[i] = (char *)malloc(strlen(t) + 1); // 别忘记字符串尺寸计算
         strcpy(s[i], t);
     }
     // ...
 }
 ```
 
-`malloc(size)`：分配size字节的存储区，返回所分配单元的起始地址。如不成功，返回NULL。
+---
+
+## 无类型指针与空指针
+
+类型为`void *`的指针称为无类型指针或`void指针`。
+
+不能对`void指针`执行访问操作，即对`void`指针施行`"*"`操作属于非法操作。**引用前必须先给出类型**。
+
+指针值为`0`的指针称为空指针，`0`在C中往往用符号常量`NULL`表示并被称为空值。
+
+```c
+scanf("%d", &n);
+/* 建立大小为n的int型数组 */
+p = (int *)malloc(n*sizeof(int));
+if(p==NULL) exit(-1);
+```
 
 ---
 
