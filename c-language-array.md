@@ -927,9 +927,9 @@ void mystrrev(char s[]) {
 ```c
 /* 将字符串s复制为t */
 void mystrcpy(char t[], char s[]) {
-    int j=0;
-    while((s[j] != '\0')   
-        t[j] = s[j++]；
+    int j = 0;
+    while(s[j] != '\0')
+        t[j] = s[j++];
 }
 
 int main(void) {
@@ -940,7 +940,9 @@ int main(void) {
 }
 ```
 
-**不要着急，有没有问题？**：
+**不要着急，有没有问题？**
+
+<!-- 结尾呢？ -->
 
 ---
 
