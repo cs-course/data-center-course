@@ -1400,9 +1400,9 @@ int main()
 
 <div>
 
-![w:300](images/c-pointer-yanghui.png)
+![w:330](images/c-pointer-yanghui.svg)
 
-用指针运算符计算数组元素首地址
+用指针运算快速定位数组元素首地址
 
 ```c
     for(i=0;i<N;i++) {
