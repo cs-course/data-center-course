@@ -1539,7 +1539,7 @@ int main() {
     int i;
     char *s[N];
     for(i = 0; i < N; i++) {
-        char t[80];
+        char t[80]; // 缓冲区
         fgets(t, 80, stdin);
         s[i] = (char *)malloc(strlen(t) + 1); // 别忘记字符串尺寸计算
         strcpy(s[i], t);
@@ -1601,7 +1601,7 @@ void strsort(char *s[], int n) {
 
 ---
 
-## 例：输入N本书名，排序后输出
+## 例：输入N字符串，排序后输出
 
 ```c
 #define N 3
@@ -1653,10 +1653,26 @@ int main() {
 
 ## 命令行参数
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
 求1+2+...+n，n值由用户指定
 
 **方式1**：运行后输入
 **方式2**：命令行中输入
+
+</div>
+
+<div>
 
 ```c
 // 方式2的main函数
@@ -1665,18 +1681,32 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-命令行：`C:\> sum 11`
+</div>
+
+</div>
 
 `argc`：命令行中参数的个数（包括文件名）
 `argv`：长度为argc的字符指针数组
+
+命令行：`C:\> sum 11`
+
+```c
+char *argv[] = {"sum", "11", NULL};
+```
 
 ---
 
 ## 命令行参数的传递
 
-```c
-char *argv[] = {"sum", "11", NULL};
-```
+</div>
+
+<div>
+
+`argv`的类型实质为 `char **`
+
+</div>
+
+</div>
 
 ```c
 #include<stdio.h>
@@ -1691,8 +1721,6 @@ int main(int argc, char **argv) {
     // ...
 }
 ```
-
-`argv`的类型实质为 `char **`
 
 ---
 
@@ -1919,7 +1947,7 @@ int a[M][N] = {{1, 3}, {4, 6}, {7, 9}};
 int *p;
 ```
 
-**思考**：如何用指针p逐行输出数组a的所有元素？
+**思考**：如何用指针`p`逐行输出数组`a`的所有元素？
 
 ---
 
