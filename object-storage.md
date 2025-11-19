@@ -178,14 +178,29 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 
 <style scoped>
   p {
+    padding-top: 600px;
     font-size: 25px;
     text-align: center;
   }
 </style>
 
-![h:550](images/the-storage-evolution.png)
+![bg h:550](images/the-storage-evolution.png)
 
 Source: <https://www.snia.org/sites/default/files/2025-03/The_Storage_Evolution.pdf>
+
+---
+
+![bg h:550](images/the-storage-evolution.png)
+
+![w:200](images/folder-tree.png)
+
+…
+扩展难题
+…
+
+![w:200](images/raid-0.png)
+
+<!-- Source: <https://www.snia.org/sites/default/files/2025-03/The_Storage_Evolution.pdf> -->
 
 ---
 
