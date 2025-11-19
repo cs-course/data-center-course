@@ -1395,11 +1395,11 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-![bg fit](images/cloud-storage-performance-prediction.png)
+![bg w:1000](images/cloud-storage-performance-prediction.png)
 
 ---
 
-![bg fit](images/cloud-storage-performance-factors.png)
+![bg w:1000](images/cloud-storage-performance-factors.png)
 
 ---
 
@@ -1585,7 +1585,18 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 大数据存储负载分析
+### 负载特征分析的必要性
+
+不同以往的负载正在主导存储系统设计，如何识别出这些特征？
+
+![w:500](images/ai-workload-dataset.png) ![w:500](images/ai-workload-checkpoint.png)
+
+[Diagnose the form, reveal the root, tune the whole.](https://github.com/LLNL/dftracer)
+**诊其形，明其本，调其全。**
+
+---
+
+### 大数据存储负载
 
 <style scoped>
   li {
@@ -1593,13 +1604,13 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-#### **必要性：为系统设计与优化提供依据**
+#### 需求：**为系统设计与优化提供依据**
 
 - **指导设计**：理解访问模式（长期趋势、突发性、文件热度）是设计下一代存储系统、缓存策略和数据框架的基础。
 - **提升性能**：识别出读取操作占主导、修改罕见、存在日/周周期性强弱波动等特征，有助于进行容量规划和负载均衡。
 - **成本优化**：发现负载的周期性低谷，可引导用户利用竞价实例等低成本资源执行非紧急任务。
 
-#### **核心挑战：规模、动态与复杂性**
+#### 挑战：**规模、动态与复杂性**
 
 - **数据海量**：原始日志规模庞大（如6个月日志超600TB），对数据收集、存储和处理能力构成挑战。
 - **动态演化**：负载特征并非一成不变，例如读取量可能在数月内翻倍，分析必须考虑其长期演变趋势。
@@ -1607,7 +1618,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 云服务负载分析
+### 云服务负载
 
 <style scoped>
   li {
@@ -1615,13 +1626,13 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-#### **必要性：云平台效率至上**
+#### 需求：**云平台效率至上**
 
 - **精准优化**：将负载特性（如延迟容忍度、可抢占性、地域无关性）与云平台优化功能（如Spot VM、自动扩缩）精准匹配，实现降本增效。
 - **资源效率**：通过分类（如Web Apps, Big Data, DevOps）和剖析，将合适的负载导向合适的资源，提升整个云平台的整体利用率和能效。
 - **可靠性保障**：识别高可用性、低容错性的关键负载，确保其获得必要的资源保障，满足服务等级协议。
 
-#### **核心挑战：特征获取与隐私**
+#### 挑战：**特征获取与隐私**
 
 - **特征隐含**：关键业务特征（如延迟容忍度）无法直接从资源监控指标（CPU、内存）推断，而直接询问用户在超大规模环境下不具可扩展性。
 - **数据敏感**：负载数据涉及用户业务细节和云平台内部信息，需进行严格的匿名化处理（如哈希处理），这为数据共享和验证带来障碍。
@@ -1629,7 +1640,7 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### 大语言模型负载分析
+### 大语言模型负载
 
 <style scoped>
   li {
@@ -1637,13 +1648,13 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-#### **必要性：软硬件协同设计的基石**
+#### 需求：**软硬件协同设计的基石**
 
 - **瓶颈识别**：精确分析训练和推理中不同算子（如GEMM, GEMV）是计算瓶颈还是内存瓶颈，是进行硬件选型、并行策略选择和性能调优的根本前提。
 - **系统规划**：通过性能建模，预测未来硬件（如从A100到B200）和技术（如更先进制程）的性能增益，并为未来芯片、内存和网络的设计指明投资方向。
 - **成本控制**：区分训练（成本主要在一次性计算）和推理（成本可能长期持续）的负载特性，对于评估总体拥有成本至关重要。
 
-#### **核心挑战：系统复杂性与“黑盒”硬件**
+#### 挑战：**系统复杂性与“黑盒”硬件**
 
 - **复杂度交织**：性能受计算单元、内存层次、节点内/间网络等多层级系统复杂交互的影响，难以准确归因瓶颈。
 - **硬件“黑盒”**：商业硬件（如NVIDIA GPU）的底层架构细节不公开，为构建精确的性能模型带来巨大挑战。
@@ -1755,7 +1766,25 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 ---
 
-### MLPerf发展现状
+<style scoped>
+  table {
+    font-size: 25px;
+  }
+</style>
+
+| Workload      | Domain           | Sample size                     | Total size    | I/O stress pattern             |
+|---------------|------------------|---------------------------------|---------------|--------------------------------|
+| 3D-UNet       | Biomedical       | 100–150 MB (NPZ)               | 0.1–2 TB      | Bandwidth + moderate metadata  |
+| ImageNet      | Computer vision  | ~200 KB (JPEG)                 | 150 GB        | Many small reads + metadata    |
+| CosmoFlow     | Cosmology        | 8–64 MB (HDF5) 2MB tfrecord    | 0.5–8 TB      | Large contiguous reads, high BW |
+| DeepCAM       | Climate science  | 200–300 MB (netCDF/HDF5)       | 1 TB          | Bandwidth -intensive           |
+| FFN           | neuroscience EM, | 16–64 MB (HDF5 or tfrecord)    | TB - PB       | Bandwidth (sub-volume access)  |
+| LLM training  | Language         | 1–4 KB tokens (Binary index / text) | 1–20 TB    | Many small random reads        |
+| LLM Checkpoint| Language         | Entire model (torch tensor)    | 1 GB – 16 TB  | Large sequential writes        |
+
+---
+
+### AI基准测试发展现状
 
 <style scoped>
   p, li {
@@ -1763,13 +1792,11 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
   }
 </style>
 
-已发展成为AI性能评估的**黄金标准**，被全球顶尖超算中心、云计算厂商和AI实验室广泛采用并认可。
+- MLPerf已被全球顶尖超算中心、云计算厂商和AI实验室广泛采用并认可
 
-- **存储基准测试演进**：MLPerf Storage v2.0基准测试的核心指标已从"每GPU带宽值"转变为"存储系统能支持的GPU数量"，反映出**万亿参数时代**对存储系统扩展能力的新要求。
-
-- **行业参与度**：在最新的MLPerf测试中，华为与国家超级计算济南中心合作的高性能存储系统在**三项核心性能指标上刷新世界纪录**，单台存储设备的数据传输速度高达每秒698GiB/s。
-
-- **客户端AI测试**：2025年7月，MLCommons发布MLPerf Client v1.0，为AI PC和客户端LLM基准测试设立新标准，支持AMD、Intel、NVIDIA和Apple等多种硬件平台。
+  - **存储基准测试演进**：MLPerf Storage v2.0基准测试的核心指标已从"每GPU带宽值"转变为"存储系统能支持的GPU数量"，反映出**万亿参数时代**对存储系统扩展能力的新要求。
+  - **行业参与度**：在最新的MLPerf测试中，华为与国家超级计算济南中心合作的高性能存储系统在**三项核心性能指标上刷新世界纪录**，单台存储设备的数据传输速度高达每秒698GiB/s。
+  - **客户端AI测试**：2025年7月，MLCommons发布MLPerf Client v1.0，为AI PC和客户端LLM基准测试设立新标准，支持AMD、Intel、NVIDIA和Apple等多种硬件平台。
 
 - **中国标准发展**：作为对MLPerf的补充，清华大学、鹏城实验室、中科院计算所联合推出了**AIPerf**基准测试，基于AutoML算法实现深度学习模型的实时生成，对不同规模机器有自适应扩展性。
 
