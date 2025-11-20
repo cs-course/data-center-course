@@ -1569,39 +1569,120 @@ if(p==NULL) exit(-1);
 
 ## 二级指针的应用
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+  strong {
+    color: red;
+  }
+</style>
+
 ```c
-char *s[4];  // s类型是char**（指向字符指针的指针）
+char *s[4];
 ```
+
+`s[0][0]`，`s[0]`，`s`**类型**分别是？
+
+<div class="columns">
+
+<div>
+
+- `(s+i)` 指向 `s[i]`
+- `*(s+i)` 等价于 …
+- `*(s+i)+j` 指向 …
+- `*(*(s+i)+j)` 等价于 …
+
+</div>
+
+<div>
+
+![w:500](images/c-pointer-pointer.svg)
+
+</div>
+
+---
+
+## 二级指针的应用…
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+  strong {
+    color: red;
+  }
+</style>
+
+```c
+char *s[4];
+```
+
+`s[0][0]`，`s[0]`，`s`**类型**分别是`char`，`char *`，`char **`
+
+<div class="columns">
+
+<div>
 
 - `(s+i)` 指向 `s[i]`
 - `*(s+i)` 等价于 `s[i]`
 - `*(s+i)+j` 指向 `s[i][j]`
 - `*(*(s+i)+j)` 等价于 `s[i][j]`
 
-**二级指针作函数的形参**：`char **s`
+</div>
+
+<div>
+
+![w:500](images/c-pointer-pointer.svg)
+
+二级指针作**函数形参** `char **s`
+
+</div>
 
 ---
 
 ## 字符串排序函数 - strsort
 
 ```c
-void strsort(char *s[], int n) {
+void strsort(char *s[], int n) { // char *s[] 即 char **s
     char *temp;
     int i, j;
     for(i = 0; i < n - 1; i++)
         for(j = 0; j < n - i - 1; j++)
-            if(strcmp(s[j], s[j + 1]) > 0) {
+            if(strcmp(s[j], s[j + 1]) > 0) { // 比较后交换s[j]与s[j + 1]
                 temp = s[j];
                 s[j] = s[j + 1];
                 s[j + 1] = temp;
             }
 }
-/* 移动指针变量 */
 ```
 
 ---
 
-## 例：输入N字符串，排序后输出
+## 字符串排序函数 - strsort 移动指针变量版本
+
+```c
+void strsort (char **s, int n)
+{ 
+    har *temp;
+    int i, j;
+    for(i = 0; i < n-1; i++)
+        for(j = 0; j < n-i-1; j++)
+            if(strcmp(*(s + j), *(s + j + 1)) > 0) {
+                temp = *(s + j);
+                *(s + j) = *(s + j + 1);
+	              *(s + j + 1) = temp; 
+            }
+}
+```
+
+---
+
+## 应用例程：输入N字符串，排序后输出
 
 ```c
 #define N 3
