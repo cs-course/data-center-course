@@ -1746,10 +1746,10 @@ int main() {
 
 <div>
 
-求1+2+...+n，n值由用户指定
+求`1+2+...+n`，`n`值由用户指定
 
 **方式1**：运行后输入
-**方式2**：命令行中输入
+**方式2**：使用**命令行**参数输入
 
 </div>
 
@@ -1769,15 +1769,60 @@ int main(int argc, char *argv[]) {
 `argc`：命令行中参数的个数（包括文件名）
 `argv`：长度为argc的字符指针数组
 
-命令行：`C:\> sum 11`
+**命令行**：在控制台界面（如Windows的cmd.exe、Linux的bash）下，用户输入的用于运行程序的文本行。
+**命令行参数**：在命令行中以空格隔开的字符串。
+
+---
+
+### 如果采用方式1
 
 ```c
-char *argv[] = {"sum", "11", NULL};
+#include<stdio.h>
+
+int main(void) {
+    int n, sum, i;
+    scanf("%d", &n); // 传统方式从 stdin 输入n
+    for(sum = 0, i = 1; i <= n; i++) sum += i;
+    printf("1+2+...+%d=%d\n", n, sum);
+    getchar();
+    return 0;
+}
 ```
 
 ---
 
-## 命令行参数的传递
+### 命令行参数的传递
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    int n, sum, i;
+    if(argc != 2) {
+        printf("Command line error!\n");
+        return -1;
+    }
+    n = atoi(argv[1]);
+    for(sum = 0, i = 1; i <= n; i++)
+        sum += i;
+    printf("1+2+...+%d=%d\n", n, sum);
+    return 0;
+}
+```
 
 </div>
 
@@ -1785,23 +1830,36 @@ char *argv[] = {"sum", "11", NULL};
 
 `argv`的类型实质为 `char **`
 
-</div>
-
-</div>
-
 ```c
 #include<stdio.h>
 #include<stdlib.h>
+
 int main(int argc, char **argv) {
     int n, sum, i;
     if(argc != 2) {
         printf("Command line error!\n");
         return 1;
     }
-    n = atoi(*++argv);
+    n = atoi(*++argv); // 所以可以写成这样
     // ...
 }
 ```
+
+</div>
+
+</div>
+
+---
+
+### 命令行参数的内容
+
+命令行：`C:\> sum 11`
+
+```c
+char *argv[] = {"sum", "11", NULL};
+```
+
+![w:1000](images/c-pointer-cmdline.svg)
 
 ---
 
@@ -1834,7 +1892,7 @@ int main(int argc, char **argv) {
 
 ---
 
-## 指针函数定义
+## 指针函数概念
 
 在C语言中，函数返回的只能是值。这个值可以是一般的数值，也可以是某种类型的指针值。如果函数的返回值是指针类型的值，该函数称为指针函数。
 
@@ -1842,11 +1900,17 @@ int main(int argc, char **argv) {
 类型 *函数名(形参表);
 ```
 
-如：`char *strcpy(char *t, const char *s);`
+如：
+
+```c
+char *strcpy(char *t, const char *s);
+```
+
+函数strcpy是一个字符指针函数。即：该函数的返回值是字符指针。
 
 ---
 
-## 指针函数的定义
+## 指针函数定义
 
 ```c
 char *strcpy(char *t, const char *s) {
@@ -1895,17 +1959,41 @@ int main() {
 
 ## 函数指针的声明
 
+<style scoped>
+  strong {
+    color: red;
+  }
+</style>
+
 每个函数都占用一段内存单元，有一个起始地址。
 
 ```c
 int (*p)(int, int);  // p是指向有两个int参数的int函数的指针
 ```
 
+前者指针指向返回值，这里是指针指向函数，**应该如何声明**？
+
+![w:700](images/c-pointer-function.svg)
+
+---
+
 **函数指针的声明**:
 
 ```c
 类型 (*标识符)(形参表);
 ```
+
+**类型**：函数返回值类型
+**标识符**：函数指针名
+**形参表**：函数参数列表
+
+```c
+int (*p) (int, int); // p 是指向有两个int参数的int函数的指针
+```
+
+函数指针的使用：
+1) 通过初始化使其指向特定的函数: `函数指针名=函数名;`
+2) 通过函数指针来调用它所指的函数
 
 ---
 
@@ -1938,6 +2026,20 @@ int main(void) {
 
 既能实现升序排序，也能实现降序排序
 
+函数名称：sort
+
+函数参数：
+
+    v: 待排序数组的首地址
+    n: 数组中待排序元素数量
+    comp: 指向函数的指针，用于确定排序的规则，如升序或降序
+
+函数返回值：无
+
+---
+
+## 通用的整数排序函数实现
+
 ```c
 // 对指针v指向的n个整数按comp规则排序
 void sort(int *v, int n, int (*comp)(int, int)) {
@@ -1952,21 +2054,22 @@ void sort(int *v, int n, int (*comp)(int, int)) {
 
 ---
 
-## 回调函数
+## 按升序排序的函数
+
+回调函数，通过函数指针参数调用的函数
 
 ```c
-// 规则：按升序排序
-int asc(int x, int y) {    // 回调函数
-    if(x > y) return 1;
+int asc(int x, int y) {
+    if(x > y) return 1; // x比y大，升序排序，返回1
     else return 0;
 }
 
 // caller
 int a[6] = {4, 6, 3, 9, 7, 2};
 sort(a, 6, asc);
-
-// 思考：如果要降序，如何定义回调函数？
 ```
+
+**思考**：如果要降序，如何定义回调函数？
 
 ---
 
@@ -1974,17 +2077,32 @@ sort(a, 6, asc);
 
 能够对int、char、double、字符串、struct类型的数据排序。
 
-```c
-// stdlib.h中的标准库函数qsort
-void qsort(void *base, int nelem, int width, int (*fcmp)(const void *, const void *));
-```
+既能实现升序排序，也能实现降序排序
 
 **函数参数**:
 
 - `void *v`: 待排序数组首地址
 - `int n`: 数组中待排序元素数量
-- `int size`: 各元素的占用空间大小（字节）
+- `int size`: 每个元素的字节大小，可使用`sizeof`获取
 - `int (*fcmp)(const void *, const void *)`: 指向函数的指针，用于确定排序的规则
+
+---
+
+### stdlib.h中的标准库函数qsort
+
+```c
+void qsort(void *base, int nelem, int width,
+           int (*fcmp)(const void *, const void *));
+```
+
+使用
+
+```c
+int arr[] = {5, 2, 8, 1, 9};
+int n = sizeof(arr) / sizeof(arr[0]);
+
+qsort(arr, n, sizeof(int), compare_func);
+```
 
 **思考**：如何调用qsort对字符串数组排序。
 
