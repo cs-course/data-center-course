@@ -1343,7 +1343,7 @@ char *ps[2] = {"red", "green"};  // ps是一个有2个元素的字符指针数�
 const char *ps[2] = {"red", "green"}; // 只用不改
 ```
 
-![h:200](images/c-pointer-array-1.png) ![h:200](images/c-pointer-array-2.png)
+![h:200](images/c-pointer-array.svg)
 
 ---
 
