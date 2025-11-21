@@ -1684,6 +1684,18 @@ void strsort (char **s, int n)
 
 ## 应用例程：输入N字符串，排序后输出
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 #define N 3
 #include<stdio.h>
@@ -1700,6 +1712,21 @@ int main() {
     for(i = 0; i < N; i++) puts(s[i]);
 }
 ```
+
+</div>
+
+<div>
+
+![w:350](images/c-pointer-strsort.png)
+
+**注意**：
+
+比的是元素
+排的是指针
+
+</div>
+
+</div>
 
 ---
 
@@ -1770,7 +1797,7 @@ int main(int argc, char *argv[]) {
 `argv`：长度为argc的字符指针数组
 
 **命令行**：在控制台界面（如Windows的cmd.exe、Linux的bash）下，用户输入的用于运行程序的文本行。
-**命令行参数**：在命令行中以空格隔开的字符串。
+**命令行参数**：在命令行中以空格隔开的字符串（例如：`C:\> sum 11`）。
 
 ---
 
@@ -1894,7 +1921,7 @@ char *argv[] = {"sum", "11", NULL};
 
 ## 指针函数概念
 
-在C语言中，函数返回的只能是值。这个值可以是一般的数值，也可以是某种类型的指针值。如果函数的返回值是指针类型的值，该函数称为指针函数。
+在C语言中，函数返回的只能是值。这个值可以是一般的数值，也可以是某种类型的指针值。如果函数的**返回值是指针类型**的值，该函数称为**指针函数**。
 
 ```c
 类型 *函数名(形参表);
@@ -1912,6 +1939,78 @@ char *strcpy(char *t, const char *s);
 
 ## 指针函数定义
 
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+char *strcpy(char *t, const char *s) {
+    char *p = t;
+    while(*t++ = *s++);
+    return(p);  // 返回第1个串的首地址
+}
+
+int main() {
+    char st1[] = "abcd", st2[] = "hijklmn";
+    printf("%s", strcpy(st1, st2));
+    return 0;
+}
+```
+
+有没有问题？
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+---
+
+## 指针函数定义…
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+char *strcpy(char *t, const char *s) {
+    char *p = t;
+    while(*t++ = *s++);
+    return(p);  // 返回第1个串的首地址
+}
+
+int main() {
+    char st1[] = "abcd", st2[] = "hijklmn";
+    printf("%s", strcpy(st1, st2));
+    return 0;
+}
+```
+
+回顾空间分配
+
+</div>
+
+<div>
+
 ```c
 char *strcpy(char *t, const char *s) {
     char *p = t;
@@ -1925,6 +2024,29 @@ int main() {
     return 0;
 }
 ```
+
+</div>
+
+</div>
+
+---
+
+## 查找子串的指针函数
+
+```c
+char *strstr(const char *s, const char *ms)
+{
+    char *ps=s, *pt, *pc;
+    while(*ps! = '\0') {
+        for(pt = ms, pc = ps; *pt! = '\0' && *pt == *pc; pt++, pc++);
+        if(*pt == '\0') return ps;
+            ps++;
+    }
+    return NULL; /*  NULL: 0 */
+}
+```
+
+类似的，让函数返回的指针指向一个数组（甚至是后面提及的结构体），即可间接解决函数返回多值的问题。
 
 ---
 
@@ -2030,9 +2152,11 @@ int main(void) {
 
 函数参数：
 
-    v: 待排序数组的首地址
-    n: 数组中待排序元素数量
-    comp: 指向函数的指针，用于确定排序的规则，如升序或降序
+```text
+v: 待排序数组的首地址
+n: 数组中待排序元素数量
+comp: 指向函数的指针，用于确定排序的规则，如升序或降序
+```
 
 函数返回值：无
 
@@ -2172,7 +2296,7 @@ for(i = 0; i < M; i++) {
 
 ## 行地址与元素地址
 
-二维数组被看成以1维数组（行）为元素的数组。
+二维数组被看成**以1维数组（行）为元素**的数组。
 
 ```c
 int u[2][3] = {{1, 3, 5}, {2, 4, 6}};
@@ -2188,6 +2312,21 @@ int u[2][3] = {{1, 3, 5}, {2, 4, 6}};
 
 ## 指向数组的指针
 
+<style scoped>
+  table {
+    font-size: 30px;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 类型名 (*标识符)[常量];
 ```
@@ -2198,12 +2337,20 @@ int (*p)[2];  // p是指向数组的指针，该数组有2个int型元素
 p = a;        // p[i][j]: a[i][j]
 ```
 
+</div>
+
+<div>
+
 | 表达式 | 等价表示 |
 |--------|----------|
 | `*(*p)` | `(*p)[0]` |
 | `*(*p + 1)` | `(*p)[1]` |
 | `*(*(p + 1))` | `(*(p + 1))[0]` |
 | `*(*(p + 1) + 1)` | `(*(p + 1))[1]` |
+
+ </div>
+
+</div>
 
 ---
 
@@ -2366,6 +2513,8 @@ string p, s[10];      // char *p, s[10];
 int (*p[2])(int);  // p是含有2个指针元素的数组
                    // 每个指针指向有一个整型参数，返回值为整型的函数
 ```
+
+![w:1000](images/c-pointer-complex.png)
 
 ---
 
