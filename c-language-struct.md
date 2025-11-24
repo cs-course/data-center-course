@@ -23,43 +23,63 @@ paginate: true
 
 - 结构类型
   - 结构类型的声明和结构变量的定义
-  - 结构成员的引用（. 和 -> 运算符）
+  - 结构成员的引用（`.` 和 `->` 运算符）
   - 结构数组和结构指针
   - 结构做函数参数与返回值
 - 字段结构
 - 联合类型
-- 结构指针的应用：链表
+- 结构指针的应用：**链表**
 
 ---
 
 ## 结构
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
 - 一些相关联的数据的集合
-- 这些数据的类型可以相同，也可以不同
-- 这些数据都称为结构的成员
+- 这些数据的类型可以相同，也**可以不同**
+- 这些数据都称为结构的**成员**
+
+<div class="columns">
+
+<div>
 
 **例如：学生信息结构**
 
 ```c
-struct stu {
+struct stu { // 结构类型声明: 学生信息
     char name[20];      // 姓名
     float score;        // 成绩
 };
 ```
 
+</div>
+
+<div>
+
 **例如：行星信息结构**
 
 ```c
-struct planet {
+struct planet { // 结构类型声明: 行星信息
     char name[16];      // 行星的名称
     double diameter;    // 行星直径的千米数
     int moons;          // 卫星数
 };
 ```
 
+</div>
+
+</div>
+
 ---
 
-## 结构类型示例：求两点距离
+## 结构类型示例：**求两点距离**
 
 ```c
 #include <stdio.h>
@@ -120,6 +140,7 @@ double distance(struct point *p1, struct point *p2) {
 ```
 
 **结构成员访问：**
+
 - `结构指针->结构成员`
 
 ---
