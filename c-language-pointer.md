@@ -1405,23 +1405,24 @@ const char *ps[2] = {"red", "green"}; // 只用不改
 <div>
 
 ```c
-#define N   5
-#define  SIZE  N*(N+1)/2
+#define N    5
+#define SIZE N*(N+1)/2
+
 int main()
 {
     int *p[N], a[SIZE];
-    int sum=0,i;
-    for(i=0;i<N;i++) {  // p[i]指向各行首元素
-         p[i]=&a[sum];  // a[0], a[1], ..., a[i*(i+1)/2]
-         sum += i+1;
+    int sum = 0, i;
+    for(i = 0; i < N; i++) {  // p[i]指向各行首元素
+         p[i] = &a[sum];  // a[0], a[1], ..., a[i*(i+1)/2]
+         sum += i + 1;
     }
-    for(i=0;i<N;i++) {  // 遍历各行
-        *p[i]=1;        // 初始化行首元素为1
-        *(p[i]+i) = 1;  // 初始化行尾元素为1
+    for(i = 0; i < N; i++) {  // 遍历各行
+        *p[i] = 1;        // 初始化行首元素为1
+        *(p[i] + i) = 1;  // 初始化行尾元素为1
     }
-    for(i=2;i<N;i++)    // 填充内部三角
-        for(k=1;k<i;k++)
-            p[i][k]=p[i-1][k-1]+p[i-1][k]; // 引用上一行元素计算
+    for(i = 2; i < N; i++)    // 填充内部三角
+        for(k = 1; k < i; k++)
+            p[i][k] = p[i-1][k-1] + p[i-1][k]; // 引用上一行元素计算
     return 0;
 }
 ```
@@ -1431,13 +1432,14 @@ int main()
 <div>
 
 ![w:330](images/c-pointer-yanghui.svg)
-
 用指针运算快速定位数组元素首地址
 
 ```c
-    for(i=0;i<N;i++) {
-         p[i]=&a[ i*(i+1)/2 ];
-     }
+    int *a_ptr = a;
+    for(i = 0; i < N; i++) {
+         p[i] = a_ptr;
+         a_ptr += (i + 1);
+    }
 ```
 
 <!-- 变长元素数组，省时省地 -->
