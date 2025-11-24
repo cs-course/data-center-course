@@ -1442,11 +1442,53 @@ int main()
     }
 ```
 
+</div>
+
+</div>
+
+---
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+#### 如果不是指针数组，而是二维数组？
+
+元素数组等长，因此
+
+<div class="columns">
+
+<div>
+
+**指针数组**
+
+`sizeof(p) = sizeof(int)*N`
+
+`sizeof(a) = sizeof(int)*SIZE`
+
+`SIZE = N*(N+1)/2`
+
+</div>
+
+<div>
+
+**二维数组**
+
+数组元素必须是同类，因此
+
+`sizeof(a) = sizeof(int)*N*N`
+
+</div>
+
+</div>
+
+如果对所有二维数据结构都使用这个维数的数组会怎样？
+
 <!-- 变长元素数组，省时省地 -->
-
-</div>
-
-</div>
 
 ---
 
@@ -1561,7 +1603,7 @@ int main() {
 
 ## 动态分配存储字符串的空间
 
-用 `malloc(size)` 分配size字节的存储区，返回所分配单元的起始地址。如不成功，返回NULL。
+用 `malloc(size)` 分配`size`字节的存储区，返回所分配单元的起始地址。如不成功，返回`NULL`。
 
 ```c
 #define N 3
@@ -1707,7 +1749,7 @@ void strsort (char **s, int n)
             if(strcmp(*(s + j), *(s + j + 1)) > 0) {
                 temp = *(s + j);
                 *(s + j) = *(s + j + 1);
-	              *(s + j + 1) = temp; 
+                *(s + j + 1) = temp; 
             }
 }
 ```
@@ -2180,9 +2222,9 @@ int main(void) {
 
 既能实现升序排序，也能实现降序排序
 
-函数名称：sort
+函数名称: `sort`
 
-函数参数：
+函数参数:
 
 ```text
 v: 待排序数组的首地址
@@ -2212,7 +2254,9 @@ void sort(int *v, int n, int (*comp)(int, int)) {
 
 ## 按升序排序的函数
 
-回调函数，通过函数指针参数调用的函数
+**回调函数**，通过函数指针参数调用的函数
+
+交给调用者随机应变，而非一开始的既定流程（所谓**预案**）
 
 ```c
 int asc(int x, int y) {
@@ -2220,9 +2264,8 @@ int asc(int x, int y) {
     else return 0;
 }
 
-// caller
 int a[6] = {4, 6, 3, 9, 7, 2};
-sort(a, 6, asc);
+sort(a, 6, asc); // 调用者 caller
 ```
 
 **思考**：如果要降序，如何定义回调函数？
@@ -2304,25 +2347,55 @@ int *p;
 
 **思考**：如何用指针`p`逐行输出数组`a`的所有元素？
 
+- 数组`a`元素类型为`int`，则指针必为`int *`
+- 此指针既可以指向一维数组元素，也可以指向二维数组的行首元素
+- 通过指针运算，可以进一步遍历二维数组
+
+**注意**：有别于指针数组，其外层元素类型是指针，并非内层元素类型。
+
 ---
 
 ## 用指向数组元素的指针表示二维数组
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+**方法1**：遍历一维数组元素
 ```c
-// 方法1
 for(p = a[0]; p < a[0] + M * N; p++) {
     if(!((p - a[0]) % N)) printf("\n");
     printf("%5d", *p);
 }
+```
 
-// 方法2
+</div>
+
+<div>
+
+**方法2**：遍历二维数组元素
+```c
 p = a[0];  // 等价于 p = &a[0][0]
 for(i = 0; i < M; i++) {
     printf("\n");
     for(j = 0; j < N; j++)
-        printf("%5d", *(p + i * N + j));  // a[i][j]
+        printf("%5d", *(p + i * N + j));
 }
 ```
+
+</div>
+
+</div>
+
+![h:150](images/c-pointer-2darray.svg)
 
 ---
 
@@ -2380,9 +2453,11 @@ p = a;        // p[i][j]: a[i][j]
 | `*(*(p + 1))` | `(*(p + 1))[0]` |
 | `*(*(p + 1) + 1)` | `(*(p + 1))[1]` |
 
- </div>
+</div>
 
 </div>
+
+使用指针`p`在二维数组`a`的第一维和第二维移动
 
 ---
 
@@ -2434,12 +2509,27 @@ void fun(int row, int col, int (*x)[col]) { ... }
 
 ## 三维数组的指针表示
 
+<style scoped>
+  table {
+    font-size: 30px;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
 三维数组被看成以2维数组（页）为元素的一维数组。
 
 ```c
 int x[2][3][4];
-int (*p)[3][4] = x;  // p是指向3行4列的二维整型数组的指针
+int (*p)[3][4] = x; // p是指向3行4列的二维整型数组的指针
 ```
+
+<div class="columns">
+
+<div>
 
 | 表达式 | 等价表示 |
 |--------|----------|
@@ -2447,6 +2537,16 @@ int (*p)[3][4] = x;  // p是指向3行4列的二维整型数组的指针
 | `*(*(p[i] + j) + k)` | `x[i][j][k]` |
 | `*(p[i][j] + k)` | `x[i][j][k]` |
 | `p[i][j][k]` | `x[i][j][k]` |
+
+</div>
+
+<div>
+
+![w:500](images/c-pointer-3darray.svg)
+
+</div>
+
+</div>
 
 ---
 
@@ -2503,9 +2603,40 @@ p_to_fun pf;  // int (*pf)(int, int)
 
 ```c
 #define string char *  // string是宏名，简单的串替换
-string p, s[10];      // char *p, s[10];
+string p, s[10];       // char *p, s[10];
                        // p是字符指针
                        // s是含有10个元素的字符数组
+```
+
+---
+
+```c
+#include <stdio.h>
+
+// 1. #define 定义指针类型（文本替换坑）
+#define PTR_INT int*
+
+// 2. typedef 定义指针类型（类型别名，安全）
+typedef int* PtrInt;
+
+int main() {
+    int x = 10, y = 20;
+
+    // 测试 #define：预期定义两个 int* 指针，实际出错
+    PTR_INT p1, p2;  // 预编译后替换为：int* p1, p2; 
+                     // 等价于 int *p1; int p2;（p2 是普通 int，不是指针！）
+    p1 = &x;
+    // p2 = &y;  // 编译报错：无法将 int* 赋值给 int
+
+    // 测试 typedef：正确定义两个 int* 指针
+    PtrInt q1, q2;  // 编译器识别 PtrInt 是 int*，等价于 int* q1; int* q2;
+    q1 = &x;
+    q2 = &y;        // 正常编译
+
+    printf("*q1 = %d, *q2 = %d\n", *q1, *q2);  // 结果：*q1=10, *q2=20
+
+    return 0;
+}
 ```
 
 ---
@@ -2589,6 +2720,18 @@ dispatch[index](x);  // (*dispatch[index])(x);
 
 ## 用函数指针数组控制菜单的驱动
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 void (*cmd[4])(void) = {f1, f2, f3, f4};
 // cmd是有4个元素的函数指针数组，函数无返回值，无参数
@@ -2607,12 +2750,23 @@ int main(void) {
             cmd[choice - 1]();
     } while(choice);
 }
+```
 
+</div>
+
+<div>
+
+```c
+// 菜单项函数具体实现
 void f1() { ... }
 void f2() { ... }
 void f3() { ... }
 void f4() { ... }
 ```
+
+</div>
+
+</div>
 
 ---
 
@@ -2622,7 +2776,9 @@ void f4() { ... }
 int (*f(char *, char *))(int, int);
 ```
 
-f是一个指针函数，f函数有2个char *类型的形参，其返回值是指向有2个int参数且返回值为int的函数的指针。
+`f`是一个指针函数，该函数有2个`char *`类型的形参，其返回值是一个函数指针，指向有2个`int`参数且返回值为`int`的函数。
+
+![h:200](images/c-pointer-pfp.svg)
 
 ---
 
@@ -2638,7 +2794,7 @@ char * (*(*v)(void))[10];
 4. `(*(*v)(void))[10]`：返回的指针指向有10个元素的数组
 5. `char * (*(*v)(void))[10]`：数组元素的类型是char *
 
-**v是指向函数的指针，所指函数没有参数，返回值是指向有10个元素的字符指针数组的指针。**
+`v`是指向函数的指针，所指函数没有参数，返回值是指向有10个元素的字符指针数组的指针。
 
 ---
 
