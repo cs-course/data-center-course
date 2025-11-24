@@ -1115,6 +1115,18 @@ void addBigNum(int *z, int *x, int *y);
 
 ---
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 // 大整数加法：z = x + y（x、y、z均为“低位在前、x[0]存位数”的结构）
 void addBigNum(int *z, int *x, int *y) {
@@ -1147,6 +1159,16 @@ void addBigNum(int *z, int *x, int *y) {
     *z = i - 1;
 }
 ```
+
+</div>
+
+<div>
+
+![w:500](images/c-pointer-addbignum.svg)
+
+</div>
+
+</div>
 
 ---
 
@@ -1226,7 +1248,15 @@ s = "This is a book.";  // 错，数组名s是指针常量
 strcpy(s, "This is a string.");  // √
 ```
 
+<!-- 
 用指针变量需注意：声明，初始化，移动指针访问字符
+
+欲用指针变量访问字符串，需：
+
+声明字符指针变量；
+通过初始化或者赋值使字符指针变量指向字符串；
+通过字符指针来访问字符串中对应的字符。
+ -->
 
 ---
 
@@ -1236,7 +1266,7 @@ strcpy(s, "This is a string.");  // √
 // (2) 声明和初始化字符指针变量
 char *p = "This is a string.";
 /* 分配内存给字符指针p；
-   分配内存（静态区）给字符串常量（只读）；
+   分配内存给字符串常量（只读）；
    将字符串首地址赋值给字符指针； */
 puts(p);        // 输出 This is a string.
 putchar(p[1]);  // 输出 h
