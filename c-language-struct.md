@@ -111,7 +111,7 @@ int main(void) {
     
     dx = b.x - a.x;
     dy = b.y - a.y;
-    d = sqrt(dx * dx + dy * dy);  // 计算距离
+    d = sqrt(dx * dx + dy * dy);  // 计算欧式距离
     
     printf("the distance is %f\n", d);  // 输出
     return 0;
@@ -122,9 +122,9 @@ int main(void) {
 
 <div>
 
-**结构成员访问**: `结构变量名.结构成员`
+**结构成员**访问: `结构变量名.结构成员`
 
-**将求距离定义为函数：**
+将求距离**定义为函数：**
 
 ```c
 double distance(struct point a1, struct point a2) {
@@ -136,8 +136,8 @@ double distance(struct point a1, struct point a2) {
 }
 ```
 
-- 结构类型的变量作为函数参数
-- 结构类型也可作为函数返回值
+- 结构类型的变量**作为函数参数**
+- 结构类型也可**作为函数返回值**
 
 </div>
 
@@ -161,7 +161,7 @@ int main(void) {
     double dx, dy, d;
     printf("输入两点的坐标：\n");
     scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);
-    d = distance(a, b);		              // 计算距离
+    d = distance(a, b);	                // 计算距离
     printf("the distance is %f\n", d);  // 输出
     return 0;
 }
