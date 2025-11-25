@@ -81,6 +81,18 @@ struct planet { // 结构类型声明: 行星信息
 
 ## 结构类型示例：**求两点距离**
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -106,12 +118,11 @@ int main(void) {
 }
 ```
 
----
+</div>
 
-## 结构成员访问与函数
+<div>
 
-**结构成员访问：**
-- `结构变量名.结构成员`
+**结构成员访问**: `结构变量名.结构成员`
 
 **将求距离定义为函数：**
 
@@ -125,9 +136,40 @@ double distance(struct point a1, struct point a2) {
 }
 ```
 
+- 结构类型的变量作为函数参数
+- 结构类型也可作为函数返回值
+
+</div>
+
+</div>
+
 ---
 
-## 结构指针作为函数参数
+```c
+#include<stdio.h>
+#include<math.h>
+
+struct point { // 点结构类型声明
+    int	x;
+    int y;
+};
+
+double distance(struct point, struct point); // 函数原型
+
+int main(void) {	
+    struct point a, b; // 声明点结构变量
+    double dx, dy, d;
+    printf("输入两点的坐标：\n");
+    scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);
+    d = distance(a, b);		              // 计算距离
+    printf("the distance is %f\n", d);  // 输出
+    return 0;
+}
+```
+
+---
+
+### 结构指针作为函数参数
 
 ```c
 double distance(struct point *p1, struct point *p2) {
@@ -139,28 +181,67 @@ double distance(struct point *p1, struct point *p2) {
 }
 ```
 
-**结构成员访问：**
+**结构成员访问**: `结构指针->结构成员`
 
-- `结构指针->结构成员`
+- 结构类型的指针也可以作为
+  - 函数的参数
+  - 函数的返回值
+
+---
+
+```c
+#include<stdio.h>
+#include<math.h>
+
+struct point{ // 点结构类型的声明
+    int x；
+    int y;	
+};
+
+double distance(struct point *, struct point *); // 函数原型
+
+int main(void) {	
+    struct point a, b; // 声明点结构变量
+    double dx, dy, d;
+    printf("输入两点的坐标：\n");
+    scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);
+    d = distance(&a, &b);                 // 计算距离
+    printf("the distance is %f\n", d);	  // 输出
+    return 0;
+}
+```
 
 ---
 
 ## 参数传递方式比较
 
-**结构变量作为函数参数：**
-1. 将实参结构拷贝给形参，占用内存较多，耗费时间较长
-   - 适用于较小的结构
-2. 传值，形参结构不影响实参结构的值
+<style scoped>
+  table {
+    font-size: 0.8rem;
+    table-layout: fixed;
+    width: 100%;
+  }
+  table td:nth-child(2),
+  table td:nth-child(3),
+  table th:nth-child(2),
+  table th:nth-child(3) {
+    width: 40%;
+  }
+</style>
 
-**结构指针作为函数参数：**
-1. 将实参指针的值拷贝给形参指针，占用内存少，传参时间短
-   - 适用于较大的结构
-2. 传地址，在函数内部对形参指针的间访操作会影响实参指针所指结构变量的值
-   - 适合于要修改实参指针所指的结构变量值的情况
+| 比较项目 | 结构变量作为函数参数 | 结构指针作为函数参数 |
+|---------|-------------------|-------------------|
+| 传递方式 | 传值（将实参结构拷贝给形参） | 传地址（将实参指针的值拷贝给形参指针） |
+| 内存占用 | 占用内存较多，耗费时间较长 | 占用内存少，传参时间短 |
+| 适用场景 | 适用于较小的结构 | 适用于较大的结构 |
+| 对原数据的影响 | 形参结构不影响实参结构的值 | 在函数内部对形参指针的访问操作会影响实参指针所指结构变量的值 |
+| 特殊用途 | 无特殊用途 | 适合于要修改实参指针所指的结构变量值的情况 |
 
 ---
 
-## 结构变量赋值与初始化
+## 结构变量赋值
+
+- **同类型**的结构变量可以相互赋值。例如:
 
 ```c
 static struct point {
@@ -169,11 +250,30 @@ static struct point {
 } a = {1, 2}, b;
 
 b = a;                    // 合法，对应的各个成员赋值
-// b = {3, 5};           // 错误
+b = {3, 5};               // 错误
 b = (struct point){3, 5}; // 正确，C99复合文字：结构常量
 ```
 
-**初始化点结构变量的函数：**
+- 若需要更强的可读性，则可以规范化封装 ……
+
+---
+
+## 结构变量初始化
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+- 结构成员作为函数的参数
+- 结构变量作为函数的返回值
 
 ```c
 struct point Point(int x, int y) {
@@ -184,11 +284,189 @@ struct point Point(int x, int y) {
 }
 ```
 
+</div>
+
+<div>
+
+```c
+#include<stdio.h>
+#include<math.h>
+
+struct point { // 点结构类型的声明
+    int x;
+    int y;
+};
+
+struct point Point(int, int);
+double distance(struct point *, struct point *);
+
+int main(void) {	
+    struct point a, b; // 声明点结构变量
+    double d;
+    a = Point(0，0);
+    b = Point(2，3);
+    d = distance(&a，&b);
+    printf("the distance is %f\n",d);
+    return 0;
+}
+```
+
+</div>
+
+</div>
+
 ---
 
 ## 结构数组
 
-**设计学生成绩结构类型：**
+设计一个能够描述学生成绩的结构类型，然后声明对应的结构数组，描述以下成绩表。
+
+| 学号 | 姓名 | 性别 | 入学时间</br>年 月 日 | 计算机原理 | 英语 | 数学 | 音乐 |
+|-----:|------|------|----------|------------|------|------|------|
+| 1    |      |      | … / … / … |            |      |      |      |
+| 2    |      |      |          |            |      |      |      |
+| 3    |      |      |          |            |      |      |      |
+
+---
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+### 结构数组的定义
+
+```c
+struct date {
+    int month;
+    int day;
+    int year;
+};
+
+struct STUDENT {
+    int ID;
+    char Name[10];
+    char Sex[4];
+    struct date timeOfEnter;
+    int Computer;
+    int English;
+    int Math;
+    int Music;
+};
+
+struct STUDENT stu[30];
+```
+
+</div>
+
+<div>
+
+### 结构数组的初始化
+
+```c
+struct STUDENT stu[30] = {
+    {1, "Tom", 'M', {2006,12,20}, 90,83,72,82},
+    {2, "Nick", 'M', {2007,05,01}, 78,92,88,78},
+    {3, "Sue", 'F', {2007,07,10}, 89,72,98,66},
+    {4, "Lay", 'M', {2007,08,06}, 78,95,87,90}
+};
+```
+
+### 嵌套结构成员的访问
+
+`结构变量名.结构成员名.成员名`
+
+亦: `(结构变量名.结构成员名).成员名`
+
+如: `stu[0].timeOfEnter.year`
+
+</div>
+
+</div>
+
+---
+
+### 计算结构数组元素的个数
+
+设有数组`a`，其元素个数可通过下述表达式获取:
+
+```c
+sizeof(a) / sizeof(a[0])
+```
+
+---
+
+## 计算表达式的值
+
+<style scoped>
+  li, table {
+    font-size: 0.6rem;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+char u[] = "abcde";
+char v[] = "xyz";
+struct {
+    int x;
+    char *t;
+} a[]={{1, u}, {10, v}}, *p = a;
+```
+
+| 表达式         | 值  | 表达式执行的操作                                   |
+|----------------|-----|----------------------------------------------------|
+| `++p->x`       | 2   | 访问x并使其增1                                     |
+| `p->x++`       | 1   | 访问x,取其原值参与运算，再使x增1                   |
+| `(++p)->x`     | 10  | p先自增,指向a[1],再访问x                           |
+| `p++->x, *p->t`| 'x' | 逗号表达式，逗号右侧p指向a[1],访问t所指字符'x'     |
+| `*p->t++`      | 'a' | 先访问t所指字符'a'后，t增1指向字符'b'              |
+| `*++p->t`      | 'b' | 先访问t，然后t增1，再访问t所指字符'b'              |
+| `*(++p)->t`    | 'x' | p先自增,指向a[1],再访问t所指字符'x'                |
+
+</div>
+
+<div>
+
+![w:350](images/c-struct-expression.svg)
+
+- 注意
+  - 此例中各表达式相互无关
+  - `->` 优先级高于 `++`（前缀 / 后缀）和 `*`
+
+</div>
+
+</div>
+
+---
+
+## 结构数组做函数参数
+
+**例**：输入商品信息（包括商品编码、名称、价格），分别按照价格和名称排序，并输出所有商品信息。
+
+| 商品编码 | 名称 | 价格（元） |
+|--------:|------|----------:|
+| 1       | 笔   | 2.0       |
+| 2       | 毛巾 | 10.5      |
+
+---
+
+### 结构类型声明和相关函数原型
 
 ```c
 #define N 10
