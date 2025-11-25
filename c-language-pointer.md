@@ -1608,14 +1608,15 @@ int main() {
 ```c
 #define N 3
 #include<stdio.h>
-#include<stdlib.h> // malloc()
+#include<stdlib.h> // 提供 malloc() 函数
+
 int main() {
     int i;
     char *s[N];
     for(i = 0; i < N; i++) {
         char t[80]; // 缓冲区
-        fgets(t, 80, stdin);
-        s[i] = (char *)malloc(strlen(t) + 1); // 别忘记字符串尺寸计算
+        fgets(t, 80, stdin);                  // 不知道输入有多长，需要先临时放进缓冲区
+        s[i] = (char *)malloc(strlen(t) + 1); // 别忘记字符串尺寸计算，然后根据实际输入的字符串长度来动态分配空间
         strcpy(s[i], t);
     }
     // ...
@@ -1626,18 +1627,17 @@ int main() {
 
 ## 无类型指针与空指针
 
-类型为`void *`的指针称为无类型指针或`void指针`。
-
-不能对`void指针`执行访问操作，即对`void`指针施行`"*"`操作属于非法操作。**引用前必须先给出类型**。
+类型为`void *`的指针称为无类型指针或`void指针`。不能对其执行访问操作，即对`void`指针用`*`属于非法操作。**引用前必须先给出类型**。
 
 指针值为`0`的指针称为空指针，`0`在C中往往用符号常量`NULL`表示并被称为空值。
 
 ```c
 scanf("%d", &n);
-/* 建立大小为n的int型数组 */
-p = (int *)malloc(n*sizeof(int));
+p = (int *)malloc(n*sizeof(int)); // 建立大小为n的int型数组
 if(p==NULL) exit(-1);
 ```
+
+简言之，`void *`类型未知，有地址，暂不能使用，`NULL`地址无效。
 
 ---
 
