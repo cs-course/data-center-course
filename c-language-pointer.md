@@ -2358,6 +2358,9 @@ int *p;
 ## 用指向数组元素的指针表示二维数组
 
 <style scoped>
+  p {
+    text-align: center;
+  }
   .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
