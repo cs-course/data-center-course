@@ -455,7 +455,7 @@ struct {
 
 ---
 
-## 结构数组做函数参数
+## 结构数组做函数参数示例
 
 **例**：输入商品信息（包括商品编码、名称、价格），分别按照价格和名称排序，并输出所有商品信息。
 
@@ -463,12 +463,15 @@ struct {
 |--------:|------|----------:|
 | 1       | 笔   | 2.0       |
 | 2       | 毛巾 | 10.5      |
+| 3       |      |           |
+| 4       |      |           |
 
 ---
 
 ### 结构类型声明和相关函数原型
 
 ```c
+#include<stdio.h>
 #define N 10
 
 typedef struct {
@@ -486,9 +489,22 @@ int cmpbyPrice(const void *, const void *);    // 按单价比较
 
 ---
 
-## 结构数组函数实现
+### 结构数组函数实现
 
-**input函数：**
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+**input函数**: 输入n件物品的信息
+
 ```c
 void input(GOODS *p, int n) {
     int i;
@@ -500,7 +516,12 @@ void input(GOODS *p, int n) {
 }
 ```
 
-**display函数：**
+</div>
+
+<div>
+
+**display函数**: 显示n件物品的信息
+
 ```c
 void display(GOODS *p, int n) {
     int i;
@@ -512,11 +533,16 @@ void display(GOODS *p, int n) {
 }
 ```
 
+</div>
+
+</div>
+
 ---
 
-## 排序与回调函数
+### 使用回调函数排序
 
-**sort函数：**
+**sort函数**: 按函数指针fp指明的规则对n件物品排序
+
 ```c
 void sort(GOODS *p, int n, int (*fp)(const void *, const void *)) {
     int i, j;
@@ -535,9 +561,22 @@ void sort(GOODS *p, int n, int (*fp)(const void *, const void *)) {
 
 ---
 
-## 回调函数实现
+### 回调函数实现
 
-**按价格比较：**
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+**按价格比较**
+
 ```c
 int cmpbyPrice(const void *s, const void *t) {
     const GOODS *p1, *p2;
@@ -550,7 +589,12 @@ int cmpbyPrice(const void *s, const void *t) {
 }
 ```
 
-**按名称比较：**
+</div>
+
+<div>
+
+**按名称比较**
+
 ```c
 int cmpbyName(const void *s, const void *t) {
     const GOODS *p1, *p2;
@@ -560,26 +604,87 @@ int cmpbyName(const void *s, const void *t) {
 }
 ```
 
+</div>
+
+</div>
+
+---
+
+### 主程序
+
+```c
+int main() {
+    GOODS g[N];
+    input(g, N);
+    display(g, N);
+    sort(g, N, cmpbyName);
+    display(g,N);
+    sort(g, N, cmpbyPrice);
+    display(g, N);
+    return 0;
+}
+```
+
 ---
 
 ## 联合类型
 
 - 与结构类似，联合类型也是一种构造类型
-- **结构变量**：占据各自不同空间的各成员变量的集合
-- **联合变量**：占用同一内存空间的各成员变量的集合
-- **联合特点**：各成员共享存储
+- **结构变量**：占据**各自不同空间**的各成员变量的集合
+- **联合变量**：占用**同一内存空间**的各成员变量的集合
+- **联合特点**：各成员**共享存储**
+
+---
+
+### 和结构类型比较
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 union chl {
     char c;
     short h;
     long l;
-} v = {'9'};  // 只能对联合的第1个成员进行初始化
+} v = {'9'};
 ```
+
+```text
+&u = &u.c
+   = &u.h
+   = &u.l
+```
+
+</div>
+
+<div>
+
+- 和`struct`相比，仅关键字改变为`union`
+- 联合类型的定义、联合变量的声明、以及联合成员的引用在语法上与结构完全相同
+- **注意**: 只能对联合的第1个成员进行初始化
+
+|        | &u          | &u.c   | &u.h    | &u.l   |
+|--------|-------------|--------|---------|--------|
+|**类型**| union chl * | char * | short * | long * |
+
+</div>
+
+</div>
+
+联合所有成员从同一存储空间的边界（低地址）开始存放，所以**联合各成员的地址和联合变量的地址是相同的**，只是类型不同。
 
 ---
 
-## 联合应用：分离高低字节
+## 联合应用：**分离高低字节**
 
 ```c
 union {
@@ -592,7 +697,12 @@ low = test.a[0];   // 低字节数据, low = 0x34
 high = test.a[1];  // 高字节数据, high = 0x12
 ```
 
-**判断大小端：**
+---
+
+## 联合应用：**判断大小端**
+
+如何检查处理器是big-endian还是little-endian?
+
 ```c
 int checkCPUendian() {
     union {
@@ -604,15 +714,36 @@ int checkCPUendian() {
 }
 ```
 
+联合体`union`的所有成员都从低地址开始存放，利用该特性就可以轻松获得CPU对内存采用`Little-endian`还是`Big-endian`模式读写。
+
 ---
 
 ## 字段结构
 
-**压缩21世纪日期：**
+<style scoped>
+  li {
+    font-size: 0.8rem;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+**压缩21世纪日期**
 - 日有31个值 → 5位
 - 月有12个值 → 4位
 - 年有100个值 → 7位
 - 总计：16位整数
+
+</div>
+
+<div>
 
 ```c
 struct date {
@@ -624,7 +755,12 @@ struct date {
 struct date today;  // today是date字段结构变量
 ```
 
-**字段布局：**
+</div>
+
+</div>
+
+**字段布局**
+
 ```
 15               11  10              7   6                   0
 today:   day              month               year
