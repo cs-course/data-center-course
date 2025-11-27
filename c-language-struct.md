@@ -839,8 +839,6 @@ struct {
 
 ---
 
-## 字段结构与联合应用…
-
 ```c
 #include <stdio.h>
 
@@ -863,7 +861,58 @@ union w16 {  // i、byte、bit共享存储
 
 ---
 
-## 字段结构与联合应用……
+### 使用及运行结果
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+int main(void) {
+    union w16 w = {0};   // w.i为0
+    
+    w.bit.b9 = 1;        // 相当于byte1为2
+    w.bit.b10 = 1;       // 相当于byte1为6
+    w.byte.byte0 = 0x62;
+    
+    printf("w.i=0x%x\n", w.i);  // 按整型解释
+    return 0;
+}
+```
+
+</div>
+
+<div>
+
+![h:500](images/c-struct-w16.svg)
+
+</div>
+
+</div>
+
+---
+
+### 使用及运行结果…
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 int main(void) {
@@ -879,13 +928,24 @@ int main(void) {
 ```
 
 **运行结果：**
-```
+
+```bash
 w.i=0x662
 ```
 
+</div>
+
+<div>
+
+![h:500](images/c-struct-w16-1.svg)
+
+</div>
+
+</div>
+
 ---
 
-## 结构指针应用：链表
+## 结构指针应用：**链表**
 
 **顺序存储 vs 链式存储：**
 
