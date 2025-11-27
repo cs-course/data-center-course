@@ -714,11 +714,11 @@ int checkCPUendian() {
 }
 ```
 
-联合体`union`的所有成员都从低地址开始存放，利用该特性就可以轻松获得CPU对内存采用`Little-endian`还是`Big-endian`模式读写。
+联合体`union`的所有成员都从低地址开始存放，利用该特性就可以轻松确认CPU对内存是采用`Little-endian`还是`Big-endian`模式读写。
 
 ---
 
-## 字段结构
+## 字段结构：以**日期**为例
 
 <style scoped>
   li {
@@ -726,7 +726,7 @@ int checkCPUendian() {
   }
   .columns {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
     gap: 2rem;
   }
 </style>
@@ -735,41 +735,111 @@ int checkCPUendian() {
 
 <div>
 
-**压缩21世纪日期**
-- 日有31个值 → 5位
-- 月有12个值 → 4位
-- 年有100个值 → 7位
+21世纪日期**紧凑表示**
+
+- 日有31个值(**\<32**) → 5位
+- 月有12个值(**\<16**) → 4位
+- 年有100个值(**\<128**) → 7位
 - 总计：16位整数
+
+### 字段布局
+
+![h:100](images/c-struct-date.svg)
 
 </div>
 
 <div>
 
+### 字段结构的声明
+
 ```c
 struct date {
-    unsigned short year : 7;   // 年
+    unsigned short year  : 7;  // 年
     unsigned short month : 4;  // 月
-    unsigned short day : 5;    // 日
+    unsigned short day   : 5;  // 日
+    //             字段名 : 字段宽
 };
 
 struct date today;  // today是date字段结构变量
 ```
 
-</div>
+**字段的宽度**：组成字段的二进制位的数目，是非负的整型常量表达式
 
 </div>
 
-**字段布局**
+</div>
 
-```
-15               11  10              7   6                   0
-today:   day              month               year
-        2个字节
+---
+
+## 字段结构引用
+
+- 与结构完全相同: `.` 或 `->`
+- 字段就是一个**小**整数，可以出现在其它整数可以出现的任何地方
+- 字段在参与运算时被自动转换为`int`或`unsigned int`类型的整数
+
+```c
+    today.year  = 25; // 2025
+    today.month = 12;
+    today.day   = 02;
 ```
 
 ---
 
+## 无名字段
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+struct {
+    unsigned a: 4;
+              : 2; // 无名字段"空穴"，用以填充
+    unsigned b: 4;
+} x;
+```
+
+![h:200](images/c-struct-padding.svg)
+
+</div>
+
+<div>
+
+**用途**:
+
+- 字节对齐:   性能需求
+- 寄存器映射: 硬件适配
+- 协议格式:   规范遵循
+- 保留标志位: 兼容性
+
+</div>
+
+</div>
+
+---
+
 ## 字段结构与联合应用
+
+如何访问16位字中的高低字节和各二进制位？
+
+1) 定义**8位宽**的字段`byte0`, `byte1`
+   - 表示一个16位字中的高/低字节
+2) 定义**1位宽**的字段`[b0-b15]`
+   - 表示一个16位字中的bit
+3) 定义**联合**类型
+   - 使1个`short`变量、2个`byte`字段与16个`bit`字段共享存储空间
+
+---
+
+## 字段结构与联合应用…
 
 ```c
 #include <stdio.h>
@@ -793,7 +863,7 @@ union w16 {  // i、byte、bit共享存储
 
 ---
 
-## 字段结构与联合应用（续）
+## 字段结构与联合应用……
 
 ```c
 int main(void) {
