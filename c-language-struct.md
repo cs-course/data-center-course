@@ -330,11 +330,11 @@ int main(void) {
 ---
 
 <style scoped>
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 </style>
 
 <div class="columns">
@@ -407,11 +407,11 @@ sizeof(a) / sizeof(a[0])
 
 <style scoped>
   li, table {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
   .columns {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 2rem;
   }
 </style>
@@ -614,13 +614,13 @@ int cmpbyName(const void *s, const void *t) {
 
 ```c
 int main() {
-    GOODS g[N];
-    input(g, N);
-    display(g, N);
-    sort(g, N, cmpbyName);
-    display(g,N);
-    sort(g, N, cmpbyPrice);
-    display(g, N);
+    GOODS g[N];    // 商品信息数组声明
+    input(g, N);   // 输入商品信息
+    display(g, N); // 显示商品信息
+    sort(g, N, cmpbyName); // 按名称排序
+    display(g,N);  // 显示排序后商品信息
+    sort(g, N, cmpbyPrice); // 按价格排序
+    display(g, N); // 显示排序后商品信息
     return 0;
 }
 ```
@@ -968,7 +968,7 @@ w.i=0x662
 
 ---
 
-### **C的动态存储分配函数：**
+### C语言的**动态存储分配函数**
 
 动态存储分配函数的原型声明在`<stdlib.h>`中
 
@@ -1014,6 +1014,8 @@ realloc：调整已分配内存块（p_block指向的内存）的大小为size�
 
 ### 链表结点的**结构类型定义**
 
+![h:100](images/c-struct-list-1.svg)
+
 ```c
 struct intNode {
     int data;
@@ -1025,11 +1027,11 @@ struct intNode *head;  // 头指针声明
 
 **自引用**：在定义内部引用自己定义的结构类型
 
-![h:100](images/c-struct-list-1.svg)
-
 ---
 
 ### 动态创建结点
+
+![h:100](images/c-struct-list-2.svg)
 
 ```c
 head = (struct intNode *)malloc(sizeof(struct intNode));
@@ -1039,19 +1041,15 @@ head->next->data = 12;
 head->next->next = NULL;
 ```
 
-![h:100](images/c-struct-list-2.svg)
-
 ---
 
 ## 建立单向链表
 
-1) 经典链表类型:
-  - **先进后出**链——用链表实现**栈**
+- 经典链表类型:
+  - **先进后出**链——用链表实现**栈(Stack)**
     - 结点的排列顺序和元素的输入顺序相反
-  - **先进先出**链——用链表实现**队列**
+  - **先进先出**链——用链表实现**队列(Queue)**
     - 结点的排列顺序和元素的输入顺序相同
-
-2) 后面课堂将接触学名: **Stack**: 先进后出; **Queue**: 先进先出
 
 ---
 
