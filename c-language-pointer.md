@@ -1740,9 +1740,8 @@ void strsort(char *s[], int n) { // char *s[] 即 char **s
 ## 字符串排序函数 - strsort 移动指针变量版本
 
 ```c
-void strsort (char **s, int n)
-{ 
-    har *temp;
+void strsort (char **s, int n) { 
+    char *temp;
     int i, j;
     for(i = 0; i < n-1; i++)
         for(j = 0; j < n-i-1; j++)
@@ -1960,7 +1959,7 @@ int main(int argc, char **argv) {
 char *argv[] = {"sum", "11", NULL};
 ```
 
-![w:1000](images/c-pointer-cmdline.svg)
+![h:200](images/c-pointer-cmdline.svg)
 
 ---
 
@@ -2108,13 +2107,12 @@ int main() {
 ## 查找子串的指针函数
 
 ```c
-char *strstr(const char *s, const char *ms)
-{
-    char *ps=s, *pt, *pc;
+char *strstr(const char *s, const char *ms) {
+    char *ps = s, *pt, *pc;
     while(*ps! = '\0') {
         for(pt = ms, pc = ps; *pt! = '\0' && *pt == *pc; pt++, pc++);
         if(*pt == '\0') return ps;
-            ps++;
+        ps++;
     }
     return NULL; /*  NULL: 0 */
 }
@@ -2598,7 +2596,7 @@ int (*p)[3][4] = x; // p是指向3行4列的二维整型数组的指针
 
 ## typedef用法
 
-typedef是关键字，为一个已有类型定义一个别名。
+`typedef`是关键字，为一个已有类型定义一个别名。
 
 ```c
 // (1) 基本类型别名
@@ -2694,7 +2692,7 @@ int (*p[2])(int);  // p是含有2个指针元素的数组
                    // 每个指针指向有一个整型参数，返回值为整型的函数
 ```
 
-![w:1000](images/c-pointer-complex.png)
+![h:100](images/c-pointer-complex.png)
 
 ---
 

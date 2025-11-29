@@ -947,35 +947,90 @@ w.i=0x662
 
 ## 结构指针应用：**链表**
 
-**顺序存储 vs 链式存储：**
+![bg right h:600](images/c-struct-list.svg)
+
+- **建立**: 单链表、队列、栈
+- **遍历**: 列举、统计、查找
+- **插入**: 头、尾、指定位置
+- **删除**: 定位、删除、释放
+- **归并**: 定位链尾、更新指针
+- **排序**: 交换数据、变更链接
+
+---
+
+### 顺序存储 vs 链式存储
 
 | 特性 | 顺序存储（数组） | 链式存储（链表） |
 |------|------------------|------------------|
 | 存储分配 | 静态，声明时建立 | 动态，运行时申请 |
-| 存储大小 | 固定，不能改变 | 可变，可调节 |
-| 内存布局 | 连续 | 不连续 |
+| 存储大小 | **固定**，不能改变 | **可变**，可调节 |
+| 内存布局 | **连续** | **不连续** |
 
-**C的动态存储分配函数：**
+---
+
+### **C的动态存储分配函数：**
+
+动态存储分配函数的原型声明在`<stdlib.h>`中
+
 - `void *malloc(size_t size);`
 - `void *calloc(size_t n, size_t size);`
 - `void *realloc(void *p_block, size_t size);`
 - `void free(void *p_block);`
 
+`size_t`在`<stdio.h>`中定义
+
+```c
+typedef unsigned size_t;
+```
+
+<!-- 
+malloc：从堆中分配指定字节数（size）的连续内存空间，内存内容未初始化，成功返回指向该内存的指针，失败返回NULL。
+calloc：从堆中分配n个大小为size字节的连续内存块（总大小n*size），并将所有字节初始化为 0，成功返回指向该内存的指针，失败返回NULL。
+realloc：调整已分配内存块（p_block指向的内存）的大小为size字节，可扩容 / 缩容，可能移动内存块，成功返回新内存指针（失败时原内存不变且返回NULL）。
+ -->
+
 ---
 
-## 链表基础
+### 基本概念
 
-**链表结点结构：**
+![bg right h:600](images/c-struct-list.svg)
+
+- 链表是一种常用的动态数据结构，由一系列包含**数据域**和**指针域**的**结点**组成。
+- 如果结点的指针域中**只包含一个指针指向后一个结点**，这种链表称为**单向链表**。
+
+---
+
+### 单向链表
+
+![bg right h:600](images/c-struct-list.svg)
+
+- **head**: 头指针，存放一个地址，指向第一个元素
+- **data**: 结点，链表中的元素，包括
+  - **数据域**，用户数据
+  - **指针域**，下一结点的地址
+- **tail**: 链尾，最后一个元素，指针域为`NULL`
+
+---
+
+### 链表结点的**结构类型定义**
+
 ```c
 struct intNode {
     int data;
-    struct intNode *next;  // 指向该结构自身的指针
+    struct intNode *next;  // 指向该结构类型的指针
 };
 
-struct intNode *head;  // 头指针
+struct intNode *head;  // 头指针声明
 ```
 
-**动态创建结点：**
+**自引用**：在定义内部引用自己定义的结构类型
+
+![h:100](images/c-struct-list-1.svg)
+
+---
+
+### 动态创建结点
+
 ```c
 head = (struct intNode *)malloc(sizeof(struct intNode));
 head->data = 10;
@@ -984,9 +1039,47 @@ head->next->data = 12;
 head->next->next = NULL;
 ```
 
+![h:100](images/c-struct-list-2.svg)
+
+---
+
+## 建立单向链表
+
+1) 经典链表类型:
+  - **先进后出**链——用链表实现**栈**
+    - 结点的排列顺序和元素的输入顺序相反
+  - **先进先出**链——用链表实现**队列**
+    - 结点的排列顺序和元素的输入顺序相同
+
+2) 后面课堂将接触学名: **Stack**: 先进后出; **Queue**: 先进先出
+
 ---
 
 ## 建立先进先出链表
+
+用循环方式建立先进先出链表的步骤：
+
+1) 声明头指针、尾指针`struct intNode *head=NULL,*tail;` 
+
+2) 创建第一个结点，包括:
+  - 给第一个结点动态分配存储并使头指针指向它
+    `head=(struct intNode *)malloc(sizeof(struct intNode));`
+  - 给第一个结点的数据域中成员赋值`head->data=x;`
+  - 使尾指针也指向第一个结点`tail=head;`
+
+---
+
+## 建立先进先出链表…
+
+3) 循环建立后续结点
+  - 如果没遇到结束标志，进行下列操作：
+	  - 给后继结点动态分配存储并使前驱结点的指针指向它。
+		`tail->next=(struct intNode *)malloc(sizeof(struct intNode));`
+	  - 使尾指针指向新建立的后继结点`tail=tail->next;`
+	  - 给后继结点的数据域中成员赋值`tail->data=x;`
+4) 给尾结点（最后一个结点）的指针赋NULL值`tail->next=NULL;`
+
+---
 
 ```c
 struct intNode *createList() {
@@ -994,13 +1087,13 @@ struct intNode *createList() {
     int x;
     
     scanf("%d", &x);  // 输入第1个整数
-    if(x) {
+    if(x) {           // 输入非空，若为0，结束输入
         head = (struct intNode *)malloc(sizeof(struct intNode));
         head->data = x;        // 对数据域赋值
         tail = head;           // tail指向第一个结点
         
         scanf("%d", &x);       // 输入第2个整数
-        while(x) {             
+        while(x) {             // 输入非空，若为0，结束输入
             tail->next = (struct intNode *)malloc(sizeof(struct intNode));
             tail = tail->next;       // tail指向新创建的结点
             tail->data = x;          // 向新创建的结点的数据域赋值
@@ -1012,22 +1105,46 @@ struct intNode *createList() {
 }
 ```
 
+输入: `10 12 3 4`
+
 ---
 
-## 遍历链表
+## 调用函数建立链表
+
+```c
+struct intNode *createList(void);     // 声明创建链表的函数
+void printList(struct intNode *head); // 声明输出链表结点内容的函数
+
+int main() {
+    struct intNode *head = createList(); // 调用createList函数创建链表
+    printList(head); // 输出链表结点内容
+    return 0;
+}
+```
+
+![h:100](images/c-struct-list-3.svg)
+
+---
+
+## 调用函数遍历链表
 
 ```c
 void printList(struct intNode *head) {
     struct intNode *p = head;  // 遍历指针p指向链头
     
     while(p != NULL) {         // p非空
-        printf("%d\t", p->data);  // 输出结点数据域中成员的值
+        printf("%d\t", p->data);  // 输出结点数据域中成员的值(以制表符分隔)
         p = p->next;           // 遍历指针p指向下一结点
     }
 }
 ```
 
-**递归建立链表：**
+![h:100](images/c-struct-list-3.svg)
+
+---
+
+## 递归建立链表
+
 ```c
 struct intNode *createList() {
     struct intNode *head = NULL;
@@ -1037,7 +1154,7 @@ struct intNode *createList() {
     if(x == 0)  // 遇到结束标记，返回NULL
         return NULL;
     else {
-        head = (struct intNode *)malloc(sizeof(struct intNode));
+        head = (struct intNode *)malloc(sizeof(struct intNode));                                 
         head->data = x;              // 对新创建结点的数据域赋值
         head->next = createList();   // 递归创建下一结点
         return head;                 // 返回链头地址
@@ -1045,16 +1162,30 @@ struct intNode *createList() {
 }
 ```
 
+![h:100](images/c-struct-list-4.svg)
+
 ---
 
 ## 统计链表结点数目
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 **循环遍历法：**
+
 ```c
 int countNodes(struct intNode *head) {
     struct intNode *p = head;
     int num = 0;
-    
     while(p != NULL) {
         num++;
         p = p->next;
@@ -1063,7 +1194,12 @@ int countNodes(struct intNode *head) {
 }
 ```
 
+</div>
+
+<div>
+
 **递归法：**
+
 ```c
 int countNodes_recursive(struct intNode *head) {
     struct intNode *p = head;
@@ -1073,6 +1209,12 @@ int countNodes_recursive(struct intNode *head) {
         return 0;
 }
 ```
+
+![h:100](images/c-struct-list-5.svg)
+
+</div>
+
+</div>
 
 ---
 
@@ -1103,6 +1245,8 @@ struct intNode *findNodes(struct intNode *head, int n) {
 **插入方式：**
 - 作为插入点的新后继结点
 - 作为插入点的新前驱结点
+
+---
 
 **插入操作：**
 - 链头：`head = new; new->next = p;`
@@ -1187,6 +1331,13 @@ int deleteNodes(struct intNode **hp, int n) {
 
 ## 归并链表
 
+---
+
+### 归并过程
+
+1. 遍历链表A找到其链尾
+2. 将链表B的头指针值赋给链表A链尾的指针域
+
 ```c
 void conLists(struct intNode *a, struct intNode *b) {
     struct intNode *p = a;
@@ -1198,9 +1349,11 @@ void conLists(struct intNode *a, struct intNode *b) {
 }
 ```
 
-**归并过程：**
-1. 遍历链表A找到其链尾
-2. 将链表B的头指针值赋给链表A链尾的指针域
+---
+
+## 链表排序
+
+链表排序是指将链表的结点按某个数据域从小到大（升序）或从大到小（降序）的**顺序连接**
 
 ---
 
@@ -1259,7 +1412,47 @@ if(p1->data > p2->data) {
 
 ---
 
-## 十字交叉链表结构
+## 双向链表
+
+如果结点的指针域包含两个指针，且一个指向前一个结点，另一个指向后一个结点，这种链表称为双向链表。
+
+---
+
+## 十字交叉链表
+
+---
+
+## 用十字交叉链表保存学生基本信息和成绩
+
+<style scoped>
+  table {
+    width: 100%;
+    font-size: 0.5em;
+  }
+</style>
+
+**学生基本信息表**
+
+| 学号  | 姓名 | 性别 | 年龄 | 家庭住址       | 联系电话 | 备注     |
+|-------|------|------|------|----------------|----------|----------|
+| 0001  | aaa  | m    | 18   | hubei,wuhan    | 12345678 | Abc def  |
+| 0001  | bbb  | f    | 18   | hunan,changsha | 76545678 | Aaaaa bbb|
+| ...   | ...  | ...  | ...  | ...            | ...      | ...      |
+| 00xx  | zzz  | m    | 19   | hubei,honghu   | 32145678 | Nnn kkk  |
+
+**学生学习成绩表**
+
+| 学号  | 高等数学 | 普通物理 | 电工基础 | 演讲与口才 | 欧洲文化 | 论语初探 |
+|-------|----------|----------|----------|------------|----------|----------|
+| 0001  | 86       | 85       | 73       | ×          | 80       | ×        |
+| 0002  | 77       | 83       | 76       | 82         | 87       | 75       |
+| 0003  | 87       | 82       | 81       | ×          | ×        | 86       |
+| ...   | ...      | ...      | ...      | ...        | ...      | ...      |
+| 00xx  | 89       | 87       | 85       | ×          | ×        | ×        |
+
+---
+
+### 十字交叉链表结构
 
 **水平方向：** 学生基本信息链
 **垂直方向：** 各学生课程成绩链
