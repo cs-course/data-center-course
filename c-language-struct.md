@@ -1222,6 +1222,14 @@ int countNodes_recursive(struct intNode *head) {
 
 ## 查找结点
 
+用递归法查找链表中数据成员值与形参`n`相同的结点。找到，返回该结点的地址，否则，返回`NULL`。
+
+![w:1100](images/c-struct-list-6.svg)
+
+---
+
+## 查找结点…
+
 ```c
 struct intNode *findNodes(struct intNode *head, int n) {
     struct intNode *p = head;
@@ -1241,23 +1249,51 @@ struct intNode *findNodes(struct intNode *head, int n) {
 
 ## 插入结点
 
-**插入位置：**
+![bg right w:600](images/c-struct-list-7.svg)
+
+**插入位置**
+
 - 链头、链尾、链中
 
-**插入方式：**
+**插入方式**
+
 - 作为插入点的新后继结点
 - 作为插入点的新前驱结点
 
----
-
-**插入操作：**
-- 链头：`head = new; new->next = p;`
-- 链尾：`new->next = NULL; p->next = new;`
-- 链中：`last->next = new; new->next = p;`
+这里以前驱插入为例介绍
 
 ---
 
-## 插入结点实现
+**插入操作**
+
+![bg right w:600](images/c-struct-list-8.svg)
+
+- 链头:
+  ```c
+  head = new;
+  new->next = p;
+  ```
+- 链尾:
+  ```c
+  new->next = NULL;
+  p->next = new;
+  ```
+- 链中:
+  ```c
+  last->next = new;
+  new->next = p;
+  ```
+
+<!--
+需要两个遍历指针，一个是指向插入点的遍历指针p，另一个是指向插入点前驱结点的指针last。
+设新结点由new指针所指，它将插入在p和last所指结点之间。
+ -->
+
+---
+
+### 插入结点实现
+
+![bg right w:600](images/c-struct-list-9.svg)
 
 ```c
 #define LEN sizeof(struct intNode)
@@ -1266,9 +1302,9 @@ struct intNode *insertNode(struct intNode **hp, int x) {
     struct intNode *p, *last, *new;
     new = (struct intNode *)malloc(LEN);  // 创建一个新节点
     new->data = x;
-    p = *hp;  // 寻找插入位置
+    p = *hp; // 用于寻找插入位置
     
-    while(p != NULL && x > p->data) {
+    while(p != NULL && x > p->data) { // 在升序链表中寻找
         last = p;
         p = p->next;
     }
@@ -1292,33 +1328,43 @@ struct intNode *insertNode(struct intNode **hp, int x) {
 
 ## 删除结点
 
+<style scoped>
+  ul {
+    font-size: 0.8em;
+  }
+</style>
+
+![bg right w:600](images/c-struct-list-10.svg)
+
 **删除步骤：**
 1. 查找被删结点
 2. 改变连接关系
 3. 释放存储空间
 
 **删除操作：**
-- 链头：`head = p->next;`
-- 非链头：`last->next = p->next;`
-- 释放：`free(p);`
+- 链头: `head = p->next;`
+- 非链头: `last->next = p->next;`
+- 释放: `free(p);`
 
 ---
 
 ## 删除结点实现
 
+![bg right w:600](images/c-struct-list-10.svg)
+
 ```c
 int deleteNodes(struct intNode **hp, int n) {
-    struct intNode *p, *last;
-    p = *hp;
-    
+    struct intNode *p, *last; // 用于寻找被删结点及其前驱结点
+    p = *hp;                  // 遍历指针p指向链头
+
     while(p != NULL && p->data != n) {  // 查找成员值与n相等的结点
         last = p;      // last指向当前结点
         p = p->next;   // p指向下一结点
     }
-    
+
     if(p == NULL)      // 没有符合条件的结点
         return 0;
-    
+
     if(p == *hp)       // 被删结点是链头
         *hp = p->next;
     else               // 被删结点不是链头
