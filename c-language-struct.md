@@ -1060,21 +1060,25 @@ head->next->next = NULL;
 1) 声明头指针、尾指针`struct intNode *head=NULL,*tail;` 
 
 2) 创建第一个结点，包括:
-  - 给第一个结点动态分配存储并使头指针指向它
-    `head=(struct intNode *)malloc(sizeof(struct intNode));`
-  - 给第一个结点的数据域中成员赋值`head->data=x;`
-  - 使尾指针也指向第一个结点`tail=head;`
+   - 给第一个结点动态分配存储并使头指针指向它
+     ```c
+     head=(struct intNode *)malloc(sizeof(struct intNode));
+     ```
+   - 给第一个结点的数据域中成员赋值`head->data=x;`
+   - 使尾指针也指向第一个结点`tail=head;`
 
 ---
 
 ## 建立先进先出链表…
 
 3) 循环建立后续结点
-  - 如果没遇到结束标志，进行下列操作：
-	  - 给后继结点动态分配存储并使前驱结点的指针指向它。
-		`tail->next=(struct intNode *)malloc(sizeof(struct intNode));`
-	  - 使尾指针指向新建立的后继结点`tail=tail->next;`
-	  - 给后继结点的数据域中成员赋值`tail->data=x;`
+   - 如果没遇到结束标志，进行下列操作：
+     - 给后继结点动态分配存储并使前驱结点的指针指向它。
+     ```c
+     tail->next=(struct intNode *)malloc(sizeof(struct intNode));
+     ```
+     - 使尾指针指向新建立的后继结点`tail=tail->next;`
+     - 给后继结点的数据域中成员赋值`tail->data=x;`
 4) 给尾结点（最后一个结点）的指针赋NULL值`tail->next=NULL;`
 
 ---
