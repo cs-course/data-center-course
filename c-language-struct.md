@@ -1473,11 +1473,11 @@ void sortList(struct intNode *head) {
 ```c
 if(p1->data > p2->data) {
     t = p2->next;
-    prior1->next = p2;
+    prior1->next = p2;   // 分别顶替
     prior2->next = p1;
-    p2->next = p1->next;
+    p2->next = p1->next; // 交换后继
     p1->next = t;
-    p2 = p1;
+    p2 = p1;             // 交换指向
     p1 = prior1->next;
 }
 ```
