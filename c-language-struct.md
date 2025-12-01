@@ -1379,12 +1379,16 @@ int deleteNodes(struct intNode **hp, int n) {
 
 ## 归并链表
 
+对于非空链表`A`、`B`，将链表`B`归并到链表`A`，指将链表`A`的链尾指向链表`B`的链头以形成一个新的链表。
+
+![h:270](images/c-struct-list-11.svg)
+
 ---
 
 ### 归并过程
 
-1. 遍历链表A找到其链尾
-2. 将链表B的头指针值赋给链表A链尾的指针域
+1. 遍历链表`A`找到其链尾
+2. 将链表`B`的头指针值赋给链表`A`链尾的指针域
 
 ```c
 void conLists(struct intNode *a, struct intNode *b) {
@@ -1401,11 +1405,25 @@ void conLists(struct intNode *a, struct intNode *b) {
 
 ## 链表排序
 
-链表排序是指将链表的结点按某个数据域从小到大（升序）或从大到小（降序）的**顺序连接**
+链表排序是指将链表的结点按**指定数据域**从小到大（升序）或从大到小（降序）的**顺序连接**
+
+![h:270](images/c-struct-list-12.svg)
 
 ---
 
 ## 链表排序方法1：交换数据域
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 void sortList(struct intNode *head) {
@@ -1424,11 +1442,33 @@ void sortList(struct intNode *head) {
 }
 ```
 
-**适用情况：** 数据域较为简单的情况
+适用于**数据域简单**的情况
+
+</div>
+
+<div>
+
+![w:500](images/c-struct-list-13.svg)
+
+</div>
+
+</div>
 
 ---
 
 ## 链表排序方法2：改变连接关系
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 if(p1->data > p2->data) {
@@ -1442,7 +1482,17 @@ if(p1->data > p2->data) {
 }
 ```
 
-**适用情况：** 数据域较为复杂，成员较多的情况
+适用于**数据域复杂**，**成员较多**的情况
+
+</div>
+
+<div>
+
+![w:400](images/c-struct-list-14.svg)
+
+</div>
+
+</div>
 
 ---
 
