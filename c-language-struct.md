@@ -1211,6 +1211,35 @@ void printList(struct intNode *head) {
 
 ---
 
+```c
+int main() {
+    // 1. 提示用户输入
+    printf("请输入链表节点的整数（输入0结束）：\n");
+    
+    // 2. 调用createList创建链表，返回头指针
+    struct intNode *listHead = createList();
+    
+    // 3. 遍历链表并输出内容
+    printf("链表内容为：");
+    printList(listHead);
+    printf("\n");
+    
+    // 4. 注意！释放链表内存，避免内存泄漏
+    struct intNode *current = listHead;
+    while (current != NULL) {
+        struct intNode *temp = current;  // 暂存当前节点
+        current = current->next;         // 先移动指针
+        free(temp);                      // 释放当前节点内存
+    }
+    
+    return 0;
+}
+```
+
+<!-- 配套主程序检验 -->
+
+---
+
 ## 递归建立链表
 
 ```c
