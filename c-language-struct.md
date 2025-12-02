@@ -1580,11 +1580,15 @@ if(p1->data > p2->data) {
 
 如果结点的指针域包含两个指针，且一个指向前一个结点，另一个指向后一个结点，这种链表称为双向链表。
 
+![h:350](images/c-struct-list-15.svg)
+
 ---
 
 ## 十字交叉链表
 
 如果结点的指针域包含两个指针，且一个指向后一个结点，另一个指向另外一个链表，这种链表称为十字交叉链表。
+
+![h:350](images/c-struct-list-16.svg)
 
 ---
 
@@ -1620,10 +1624,22 @@ if(p1->data > p2->data) {
 
 ### 十字交叉链表结构
 
-**水平方向：** 学生基本信息链
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
 **垂直方向：** 各学生课程成绩链
 
 **学生课程成绩结点：**
+
 ```c
 typedef struct score_tab {
     char num[5];           // 学号
@@ -1633,7 +1649,16 @@ typedef struct score_tab {
 } courses;
 ```
 
+**注意**: 先定义`↑`，后引用`→`
+
+</div>
+
+<div>
+
+**水平方向：** 学生基本信息链
+
 **学生基本信息结点：**
+
 ```c
 typedef struct student_tab {
     char num[5];           // 学号
@@ -1648,12 +1673,16 @@ typedef struct student_tab {
 } studs;
 ```
 
+</div>
+
+</div>
+
 ---
 
 ## 总结
 
-- 结构是C语言中组织相关数据的重要方式
-- 联合提供了共享内存的机制
-- 字段结构用于位级数据操作
-- 链表是动态数据结构的核心
+- **结构**是C语言中**组织相关数据**的重要方式
+- **联合**提供了**共享内存**的机制
+- **字段**结构用于**位级**数据操作
+- **链表**是**动态数据结构**的核心
 - 掌握这些概念对于编写高效的C程序至关重要
