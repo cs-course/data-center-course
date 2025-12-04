@@ -28,39 +28,45 @@ paginate: true
 
 ---
 
+## 主要内容
+
+- 文件的打开与关闭  
+  `fopen`、`fclose`、`freopen` 函数
+- 文本文件的读写  
+  `fgetc`、`fputc`、`fgets`、`fputs`、`fprintf`、`fscanf` 等函数
+- 二进制文件的读写  
+  `fread`、`fwrite` 函数
+- 文件的随机读写  
+  `fseek`、`rewind`、`ftell`、`fsetpos`、`fgetpos` 等文件指针定位函数
+
+---
+
 ## 场景问题
 
 > 从键盘输入若干行字符，保存到 `d:\a.txt` 中，该如何做？
 
----
+![w:600](images/c-file-fig-01.svg)
 
-### 方案：savefile.exe 运行示意
+### 方案：**savefile.exe** 运行示意
 
-```mermaid
-%% 键盘输入 → 程序 → 文件
-flowchart LR
-    A([键盘]) -->|stdin| B([savefile.exe])
-    B -->|fputc| C[(d:\a.txt)]
-```
+![w:600](images/c-file-fig-02.svg)
 
 ---
 
-### 示例代码 1：使用 `getchar`
+## 示例：将键盘输入写入文件
+
 ```c
-#include <stdio.h>
+#include<stdio.h>
 
-int main(void) {
+int main() {
     FILE *fp;
     char ch;
-
     if ((fp = fopen("d:\\a.txt", "w")) == NULL) {
         printf("can't open the file!");
         return -1;
     }
-
     while ((ch = getchar()) != EOF)
         fputc(ch, fp);
-
     fclose(fp);
     return 0;
 }
@@ -68,16 +74,119 @@ int main(void) {
 
 ---
 
-### 示例代码 2：使用 `fgetc(stdin)`
+## 文件操作步骤
+
+1. **打开文件** —— 建立文件指针与文件间联系
+2. 通过**文件指针**对文件进行读写操作
+3. **关闭文件** —— 取消文件指针与文件间的联系
+
+**提示**：打开文件时，就已确定文件读写格式和读写方式！
+
+---
+
+## 打开文件函数 `fopen()`
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
 ```c
-/* 功能同上，仅把 getchar 换成 fgetc(stdin) */
-while ((ch = fgetc(stdin)) != EOF)
-    fputc(ch, fp);
+FILE *fopen(const char *filename, const char *mode);
+```
+
+按照`mode`方式打开文件`filename`  
+成功：返回文件指针  
+失败：返回`NULL`
+
+<div class="columns">
+
+<div>
+
+```c
+FILE *fp;
+fp＝fopen("c:\\test.txt", "w");
+```
+
+</div>
+
+<div>
+
+![h:200](images/c-file-fig-03.svg)
+
+</div>
+
+</div>
+
+---
+
+## FILE 结构体
+
+```c
+struct _iobuf {
+    char  *_ptr;
+    int   _cnt;
+    char  *_base;
+    int   _flag;
+    int   _file;
+    int   _charbuf;
+    int   _bufsiz;
+    char  *_tmpfname;
+};
+typedef struct _iobuf FILE;
 ```
 
 ---
 
+## 标准文件指针
+
+```c
+#define stdin   (&_iob[0])
+#define stdout  (&_iob[1])
+#define stderr  (&_iob[2])
+```
+
+---
+
+## 打开方式 `mode`
+
+| 模式 | 说明 |
+|------|------|
+| r    | 只读文本文件 |
+| w    | 只写文本文件（清空） |
+| a    | 追加文本文件 |
+| rb   | 只读二进制文件 |
+| wb   | 只写二进制文件（清空） |
+| ab   | 追加二进制文件 |
+| r+   | 读写文本文件 |
+| w+   | 读写文本文件（清空） |
+| a+   | 读写文本文件（追加） |
+| rb+  | 读写二进制文件 |
+
+---
+
+## 注意事项
+
+- 使用 `r+`、`w+`、`a+` 时，读写可切换
+- 从读切到写：需遇到 `EOF` 或调用 `fseek`、`rewind`
+- 从写切到读：需调用 `fflush` 或文件定位函数
+
+---
+
+## 关闭文件函数 `fclose()`
+
+```c
+int fclose(FILE *stream);
+```
+关闭成功返回 `0`，失败返回 `EOF(-1)`
+
+---
+
 ## 字符读写函数
+
 - `int fgetc(FILE *stream);`  
 - `int fputc(int c, FILE *stream);`
 
@@ -111,6 +220,61 @@ int main(void) {
 
 ---
 
+## 文件重定向函数 `freopen()`
+
+```c
+FILE *freopen(const char *filename, const char *mode, FILE *fp);
+```
+相当于：
+```c
+fclose(fp);
+fp = fopen(filename, mode);
+```
+
+---
+
+## 使用 `freopen` 重定向输出
+
+```c
+#include<stdio.h>
+int main()
+{
+    char ch;
+    if (freopen("d:\\a.txt", "w", stdout) == NULL)
+    {
+        printf("can't open the file!");
+        return -1;
+    }
+    while ((ch = getchar()) != EOF)
+        putchar(ch);
+    return 0;
+}
+```
+
+---
+
+## 读取文件内容并显示
+
+```c
+#include<stdio.h>
+int main()
+{
+    FILE *fp;
+    char ch;
+    if ((fp = fopen("d:\\a.txt", "r")) == NULL)
+    {
+        printf("can't open the file!");
+        return -1;
+    }
+    while ((ch = fgetc(fp)) != EOF)
+        putchar(ch);
+    fclose(fp);
+    return 0;
+}
+```
+
+---
+
 ## 字符串读写函数
 - `char *fgets(char *s, int n, FILE *stream);`  
 - `int   fputs(const char *s, FILE *stream);`
@@ -135,7 +299,14 @@ int main(void) {
 
 ---
 
-## 文本文件分解示例
+## 文本文件的复制
+
+功能类似于 `copy source_file target_file` 命令。
+
+---
+
+## 文本文件的分解
+
 命令行：
 ```
 parts abc.txt a.txt b.txt c.txt 10
@@ -158,6 +329,7 @@ flowchart TD
 ---
 
 ## 数据采集与处理程序
+
 - 从键盘输入：商品名称、数量、单价  
 - 计算总金额  
 - 数据保存到 `d:\goods.txt`
@@ -165,6 +337,7 @@ flowchart TD
 ---
 
 ### 主函数
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -183,6 +356,7 @@ int main(void) {
 ---
 
 ### data_write：输入并保存
+
 ```c
 void data_write(char *filename) {
     FILE *out;
@@ -223,6 +397,12 @@ void data_cal(char *filename) {
 
 ---
 
+## 文本文件数据的间隔符
+
+写入多个数据时需加间隔符，以便正确读取。
+
+---
+
 ## 文件类型
 | 类型       | 描述                       |
 |------------|----------------------------|
@@ -249,12 +429,14 @@ flowchart LR
 ---
 
 ## 二进制文件读写
+
 - `size_t fread(void *ptr, size_t size, size_t n, FILE *stream);`  
 - `size_t fwrite(const void *ptr, size_t size, size_t n, FILE *stream);`
 
 ---
 
 ### 写示例
+
 ```c
 int x[] = {12, 8, 34, 421};
 FILE *fp = fopen("d:\\a.dat", "wb");
@@ -272,6 +454,7 @@ fclose(fp);
 ---
 
 ### 读示例
+
 ```c
 int x[10], i = 0;
 FILE *fp = fopen("d:\\a.dat", "rb");
@@ -285,6 +468,7 @@ fclose(fp);
 ---
 
 ### 文本 vs 二进制读取差异
+
 ```c
 short x;
 
@@ -298,12 +482,14 @@ fscanf(fp, "%hd", &x);             // x = 123
 ---
 
 ## 商品信息二进制版（结构体）
+
 - 将结构体数组整体写入文件  
 - 再从文件随机读取
 
 ---
 
 ### 写结构体
+
 ```c
 struct goods {
     long code;
@@ -318,6 +504,7 @@ fwrite(&g, sizeof(struct goods), 1, fp);
 ---
 
 ### 读结构体
+
 ```c
 while (fread(&g, sizeof(struct goods), 1, in) == 1)
     printf("%ld\t%s\t%f\n", g.code, g.name, g.price);
@@ -326,8 +513,11 @@ while (fread(&g, sizeof(struct goods), 1, in) == 1)
 ---
 
 ## 文件尾测试
-- `int feof(FILE *stream);`  
-  到达文件尾返回非 0，否则返回 0
+
+```c
+int feof(FILE *stream);  // 到文件尾返回非0
+int ferror(FILE *stream); // 出错返回非0
+```
 
 ```c
 /* 正确用法 */
@@ -340,6 +530,7 @@ while (!feof(in)) {
 ---
 
 ## 顺序 vs 随机读写
+
 | 方式     | 特点                          | 适用文件 |
 |----------|-------------------------------|----------|
 | 顺序     | 读写指针自动后移              | 文本/二进制 |
@@ -348,6 +539,7 @@ while (!feof(in)) {
 ---
 
 ### 顺序读写示意
+
 ```mermaid
 %% 文本文件数据长度不定，只能顺序读取
 sequenceDiagram
@@ -361,6 +553,7 @@ sequenceDiagram
 ---
 
 ### 随机读写示意
+
 ```mermaid
 %% 二进制文件长度固定，可随机访问
 stateDiagram-v2
@@ -374,10 +567,14 @@ stateDiagram-v2
 ---
 
 ## 文件定位函数
-- `int  fseek(FILE *stream, long offset, int origin);`  
-- `long ftell(FILE *stream);`  
-- `int  fgetpos/fsetpos(FILE *stream, fpos_t *pos);`  
-- `void rewind(FILE *stream);`
+
+```c
+int fseek(FILE *stream, long offset, int origin);
+long ftell(FILE *stream);
+void rewind(FILE *stream);
+int fgetpos(FILE *stream, fpos_t *pos);
+int fsetpos(FILE *stream, const fpos_t *pos);
+```
 
 ---
 
