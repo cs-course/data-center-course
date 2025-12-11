@@ -123,25 +123,102 @@ fp＝fopen("c:\\test.txt", "w");
 
 ---
 
-## FILE 结构体
+## 文件结构体
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
 struct _iobuf {
-    char  *_ptr;
-    int   _cnt;
-    char  *_base;
-    int   _flag;
-    int   _file;
-    int   _charbuf;
-    int   _bufsiz;
-    char  *_tmpfname;
+    char  *_ptr;       // 文件当前读写位置指针
+    int   _cnt;        // 当前读写位置剩余字节数
+    char  *_base;      // 文件缓冲区起始位置
+    int   _flag;       // 文件状态标志
+    int   _file;       // 文件描述符
+    int   _charbuf;    // 跟踪缓冲区状态
+    int   _bufsiz;     // 文件缓冲区大小
+    char  *_tmpfname;  // 临时文件名
 };
 typedef struct _iobuf FILE;
 ```
 
+</div>
+
+<div>
+
+`FILE`是`stdio.h`中定义的结构类型，记录一个文件的相关信息。
+
+←**文件描述符**是个普通整数，用以标明每一个被打开的文件。第一个打开的文件是0，第二个是1，依此类推。
+
+</div>
+
+</div>
+
 ---
 
-## 标准文件指针
+## 文件指针
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+程序中仅用`FILE *`型变量: FILE指针
+
+![h:380](images/c-file-fig-04.svg)
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+---
+
+## 文件指针: **标准文件**
+
+<style scoped>
+  table {
+    font-size: 0.7em;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+程序中仅用`FILE *`型变量: FILE指针
+
+![h:380](images/c-file-fig-04.svg)
+
+</div>
+
+<div>
+
+C程序会自动打开3个标准文件
 
 ```c
 #define stdin   (&_iob[0])
@@ -149,30 +226,79 @@ typedef struct _iobuf FILE;
 #define stderr  (&_iob[2])
 ```
 
+|标准文件|文件指针|默认值|
+|:---:|:---:|:---:|
+|标准输入文件|stdin|键盘|
+|标准输出文件|stdout|显示器|
+|标准错误文件|stderr|显示器|
+
+</div>
+
+</div>
+
 ---
 
 ## 打开方式 `mode`
 
-| 模式 | 说明 |
-|------|------|
-| r    | 只读文本文件 |
-| w    | 只写文本文件（清空） |
-| a    | 追加文本文件 |
-| rb   | 只读二进制文件 |
-| wb   | 只写二进制文件（清空） |
-| ab   | 追加二进制文件 |
-| r+   | 读写文本文件 |
-| w+   | 读写文本文件（清空） |
-| a+   | 读写文本文件（追加） |
-| rb+  | 读写二进制文件 |
+<style scoped>
+  table {
+    font-size: 0.7em;
+  }
+</style>
+
+模式字符串由 **访问权限** + **文本/二进制标识** 组合而成，核心标识如下：
+
+| 模式字符 | 核心功能                                                                 |
+|----------|--------------------------------------------------------------------------|
+| `r`      | 只读（Read）：打开已存在的文件，文件不存在则报错（`fopen` 返回 `NULL`）  |
+| `w`      | 只写（Write）：创建新文件；若文件已存在，**清空原有内容**（覆盖）         |
+| `a`      | 追加（Append）：创建新文件；若文件已存在，写入内容追加到文件末尾         |
+| `+`      | 读写扩展：附加在 `r/w/a` 后，开启“读+写”双权限（如 `r+` 表示读写）       |
+| `t`      | 文本模式（Text）：**默认模式**（可省略），换行符会自动转换（`\n` 系统换行符） |
+| `b`      | 二进制模式（Binary）：不转换换行符，按字节原样读写（如图片、视频文件）    |
 
 ---
 
-## 注意事项
+## 打开方式 `mode` **常用组合**
 
-- 使用 `r+`、`w+`、`a+` 时，读写可切换
-- 从读切到写：需遇到 `EOF` 或调用 `fseek`、`rewind`
-- 从写切到读：需调用 `fflush` 或文件定位函数
+<style scoped>
+  table {
+    font-size: 0.6em;
+  }
+</style>
+
+| 完整模式 | 权限类型 | 文件不存在时 | 已存在文件时       | 适用场景                     |
+|----------|----------|--------------|--------------------|------------------------------|
+| `r`      | 只读     | 报错（NULL） | 正常打开，读文件   | 读取配置文件、日志文件等     |
+| `w`      | 只写     | 创建文件     | 清空内容（覆盖）   | 生成新文件（如导出报表、日志） |
+| `a`      | 只写（追加） | 创建文件   | 内容追加到末尾     | 日志追加、累计数据写入       |
+| `r+`     | 读写     | 报错（NULL） | 保留原有内容       | 读写已存在的文件（不覆盖）   |
+| `w+`     | 读写     | 创建文件     | 清空内容（覆盖）   | 新建可读写文件（如临时文件） |
+| `a+`     | 读写（追加） | 创建文件   | 读：从开头读；写：追加到末尾 | 既要读历史内容，又要追加新内容 |
+| `rb`     | 二进制只读 | 报错（NULL） | 按字节读文件       | 读取图片、音频、二进制数据   |
+| `wb`     | 二进制只写 | 创建文件     | 清空并按字节写     | 写入图片、视频等二进制文件   |
+| `ab`     | 二进制追加 | 创建文件     | 字节数据追加到末尾 | 追加二进制日志、数据流       |
+| `rb+`/`wb+`/`ab+` | 二进制读写 | 同对应文本模式 | 同对应文本模式     | 二进制文件的读写操作         |
+
+---
+
+## 打开方式 `mode` **注意事项**
+
+<style scoped>
+  li {
+    font-size: 0.8em;
+  }
+</style>
+
+1. **模式大小写敏感**：必须小写（如 `R`/`W` 是错误的）。
+2. **文本模式与二进制模式的区别**：
+   - 文本模式（`t` 或省略）：Windows 系统中，`\n` 会自动转为 `\r\n`（换行+回车），读取时反向转换；Linux/Mac 无此转换。
+   - 二进制模式（`b`）：完全按字节读写，不做任何转换，**必须用于非文本文件**（图片、压缩包等），否则会导致文件损坏。
+3. **`r+` 与 `w+` 的核心差异**：
+   - `r+` 要求文件已存在，不会清空内容；
+   - `w+` 无论文件是否存在，都会创建新文件（覆盖原有）。
+4. **`a+` 的特殊行为**：写入时永远追加到末尾，但读取时可以从文件开头开始（需手动调整文件指针，如 `fseek`）。
+5. **模式兼容性**：部分系统（如 Linux）不区分文本/二进制模式（`t`/`b` 无实际效果），但为了跨平台兼容，建议明确指定（文本文件省略 `t`，二进制文件加 `b`）。
 
 ---
 
@@ -183,40 +309,33 @@ int fclose(FILE *stream);
 ```
 关闭成功返回 `0`，失败返回 `EOF(-1)`
 
+![h:300](images/c-file-fig-05.svg)
+
 ---
 
 ## 字符读写函数
 
-- `int fgetc(FILE *stream);`  
+- `int fgetc(FILE *stream);`
+  - 从输入流`stream`当前位置读取一个字符，读写位置后移一个字符，返回读取的字符。到文件尾或读操作出错时返回`EOF`。
 - `int fputc(int c, FILE *stream);`
+  - 参数`c`转换成为`unsigned char`类型然后写到输出流`stream`的当前位置处。返回被写字符；如果写操作出错或遇到文件尾返回`EOF`。
 
-| 等价关系               | 说明               |
-|------------------------|--------------------|
-| `fgetc(stdin)`         | `getchar()`        |
-| `fputc(c, stdout)`     | `putchar(c)`       |
+`fgetc(stdin)` 即 `getchar()`
+`fputc(c, stdout)` 即 `putchar(c)`
 
 ---
 
-## 读取文件内容并显示
-```c
-#include <stdio.h>
+## 操作**标准输入和输出**文件
 
-int main(void) {
-    FILE *fp;
-    char ch;
-
-    if ((fp = fopen("d:\\a.txt", "r")) == NULL) {
-        printf("can't open the file!");
-        return -1;
-    }
-
-    while ((ch = fgetc(fp)) != EOF)
-        putchar(ch);        /* 也可用 fputc(ch, stdout); */
-
-    fclose(fp);
-    return 0;
-}
-```
+- `getchar`、`gets`和`scanf`函数从`stdin`文件读数据
+- `putchar`、`puts`和`printf`函数向`stdout`文件写数据
+- `freopen`函数可以重定向`stdin`和`stdout`，如:
+  - `freopen("d:\\a.txt", "r", stdin);` 重定向输入
+    - 将原本从键盘输入的数据将改为从"d:\a.txt"文件中读取
+    - **常用于**: 测试输入数据，尤其是批量重复性检验
+  - `freopen("d:\\a.txt", "w", stdout);` 重定向输出
+    - 将原本向屏幕输出的数据改为向"d:\a.txt"文件中写入
+    - **常用于**: 记录输出数据，方便集中观察分析
 
 ---
 
@@ -237,17 +356,17 @@ fp = fopen(filename, mode);
 
 ```c
 #include<stdio.h>
-int main()
-{
+
+int main(void) {
     char ch;
-    if (freopen("d:\\a.txt", "w", stdout) == NULL)
-    {
+    if (freopen("d:\\a.txt", "w", stdout) == NULL) {
         printf("can't open the file!");
         return -1;
     }
     while ((ch = getchar()) != EOF)
         putchar(ch);
-    return 0;
+
+  return 0;
 }
 ```
 
@@ -257,18 +376,42 @@ int main()
 
 ```c
 #include<stdio.h>
-int main()
-{
+
+int main(void) {
     FILE *fp;
     char ch;
-    if ((fp = fopen("d:\\a.txt", "r")) == NULL)
-    {
+
+    if ((fp = fopen("d:\\a.txt", "r")) == NULL) {
         printf("can't open the file!");
         return -1;
     }
+
     while ((ch = fgetc(fp)) != EOF)
-        putchar(ch);
+        putchar(ch);        /* 也可用 fputc(ch, stdout); */
+
     fclose(fp);
+    return 0;
+}
+```
+
+---
+
+## **重定向**读取文件内容并显示
+
+```c
+#include<stdio.h>
+
+int main(void) {    
+    char ch;
+
+    if (freopen("d:\\a.txt", "r"，stdin)  == NULL) {
+        printf("can't open the file!");
+        return -1;
+    }
+
+    while((ch = getchar()) != EOF)   
+        putchar(ch);      
+
     return 0;
 }
 ```
