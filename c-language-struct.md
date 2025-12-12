@@ -1434,37 +1434,42 @@ struct intNode *findNodes(struct intNode *head, int n) {
 
 ![bg right w:600](images/c-struct-list-7.svg)
 
-**插入位置**
+### 插入位置
 
 - 链头、链尾、链中
 
-**插入方式**
+### 插入方式
 
 - 作为插入点的新后继结点
 - 作为插入点的新前驱结点
 
-这里以前驱插入为例介绍
+这里以**前驱插入**为例介绍
 
 ---
 
-**插入操作**
+### 插入操作
 
 ![bg right w:600](images/c-struct-list-8.svg)
 
 - 链头:
+
   ```c
   head = new;
   new->next = p;
   ```
+
 - 链尾:
+
   ```c
-  new->next = NULL;
-  p->next = new;
-  ```
-- 链中:
-  ```c
+  new->next = NULL; // p
   last->next = new;
+  ```
+
+- 链中:
+
+  ```c
   new->next = p;
+  last->next = new;
   ```
 
 <!--
@@ -1519,19 +1524,21 @@ struct intNode *insertNode(struct intNode **hp, int x) {
 
 ![bg right w:600](images/c-struct-list-10.svg)
 
-**删除步骤：**
+### 删除步骤
+
 1. 查找被删结点
 2. 改变连接关系
 3. 释放存储空间
 
-**删除操作：**
+### 删除操作
+
 - 链头: `head = p->next;`
 - 非链头: `last->next = p->next;`
 - 释放: `free(p);`
 
 ---
 
-## 删除结点实现
+### 删除结点实现
 
 ![bg right w:600](images/c-struct-list-10.svg)
 
