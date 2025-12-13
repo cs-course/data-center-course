@@ -419,79 +419,194 @@ int main(void) {
 ---
 
 ## 字符串读写函数
-- `char *fgets(char *s, int n, FILE *stream);`  
-- `int   fputs(const char *s, FILE *stream);`
 
-| 函数        | 特点                           |
-|-------------|--------------------------------|
-| `fgets`     | 会把换行符读入                 |
-| `gets`      | **已废弃**，不读入换行符       |
-| `fputs`     | 不自动追加换行符               |
-| `puts`      | 自动追加换行符                 |
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+- `char *fgets(char *s, int n, FILE *stream);`
+  - 从输入流`stream`当前位置读取一个字符串(`strlen(s) < n`>)，返回读取的字符串。到文件尾或读操作出错时返回`NULL`。 
+- `int   fputs(const char *s, FILE *stream);`
+  - 参数`s`写入输出流`stream`的当前位置处。返回被写入的字符数，如果写操作出错或遇到文件尾返回`EOF`。
+
+<div class="columns">
+
+<div>
+
+```c
+char s[10];          // 输入：hust
+fgets(s, 10, stdin); // 换行符被读入
+gets(s);             // 换行符不被读入
+```
+
+</div>
+
+<div>
+
+```c
+fputs("hust", stdout); // 输出：hust
+puts("hust"); // 追加输出换行符：hust
+```
+
+</div>
+
+</div>
 
 ---
 
 ## 格式读写函数
-- `int fprintf(FILE *stream, const char *fmt, …);`  
-- `int fscanf(FILE *stream, const char *fmt, …);`
+
+- `int fprintf(FILE *stream, const char *format, …);`
+  - 将输出参数列表中的数据按指定的格式写入到`stream`流中。写操作正常返回**输出字符个数**，写操作出错时返回负值。
+- `int fscanf(FILE *stream, const char *format, …);`
+  - 从`stream`流中，按指定的格式读去数据，并赋值给相应的参数变量。函数返回**已输入项数**，如果读操作出错返回`EOF`。
 
 | 等价关系                        | 说明          |
 |---------------------------------|---------------|
-| `fscanf(stdin, "%d", &x)`       | `scanf(...)`  |
-| `fprintf(stdout, "%d", x)`      | `printf(...)` |
+| `fscanf(stdin, "%d", &x)`       | `scanf("%d", &x)` |
+| `fprintf(stdout, "%d", x)`      | `printf("%d", x)` |
 
 ---
 
 ## 文本文件的复制
 
-功能类似于 `copy source_file target_file` 命令。
+- Windows 命令行：
+  - `copy source_file target_file` 命令
+- Linux 命令行：
+  - `cp source_file target_file` 命令
+
+---
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc, char* argv[]) {
+    int ch;
+    FILE *fpin,*fpout;
+
+    if(argc!=3) { /*命令行参数数目不等于3，说明命令行格式不对*/
+        printf("Arguments error!\n");
+        exit(-1);
+    }
+    if((fpin=fopen(argv[1],"r"))==NULL) { /* fpin指向source_file */
+        printf("Can't open %s file!\n",argv[1]);
+        exit(-1);
+    }
+    if((fpout=fopen(argv[2],"w"))==NULL) { /* fpout指向target_file */
+        printf("Can't open %s file!\n",argv[2]);
+        exit(-1);
+    }
+    while((ch=fgetc(fpin))!=EOF) /* 从source_file中读字符 */
+        fputc(ch,fpout); /* 向target_file中写字符，实现拷贝复制 */
+
+    fclose(fpin); /* 关闭source_file */
+    fclose(fpout); /* 关闭target_file */
+    return 0;
+}
+```
 
 ---
 
 ## 文本文件的分解
 
+将一个大的文本文件以行为单位分解成为若干个较小的文本文件，文件名和分解的行数都由用户从命令行输入。
+
 命令行：
-```
+
+```bash
 parts abc.txt a.txt b.txt c.txt 10
 ```
+
 > 把 `abc.txt` 每 10 行切成一个小文件
 
 ---
 
-### 分解流程图
-```mermaid
-flowchart TD
-    A[命令行参数解析\nlen=10] --> B[打开 abc.txt]
-    B --> C{还有目标文件名?}
-    C -->|是| D[新建目标文件]
-    D --> E[读 len 行写入]
-    E --> C
-    C -->|否| F[关闭所有文件]
+### 分解流程
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+0) 命令行: `parts abc.txt a.txt b.txt c.txt 10`
+1) `len=`命令行中提取的行数`atoi(argv[argc-1])`
+2) 以读方式打开源文件`fopen(argv[1], "r")`
+3) 依次打开目标文件，从源文件读`len`行写入
+  ```c
+  for(i = 2; i < argc-1; i++) {
+      以写方式打开文件 argv[i]
+      从argv[1]读1行写入argv[i]直到写了len行或源文件到文件尾
+      关闭 文件argv[i]
+  }
+  ```
+4) 关闭源文件`argv[1]`
+
+</div>
+
+<div>
+
+![w:200](images/c-file-fig-06.svg)
+
+</div>
+
+</div>
+
+---
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc,char *argv[]) {
+    FILE *fin, *fout;
+    int len = atoi(argv[argc-1]);/*将行数字符串转换为整数*/
+    int i, j;
+    char a[81];
+    if((fin = fopen(argv[1], "r")) == NULL){
+        printf("can't open the %s file!\n", argv[1]);
+        exit(-1);
+    }
+    for(i = 2; i < argc-1; i++){
+        fout = fopen(argv[i], "w");/*打开argv[i]指定的文件进行写操作*/
+        j=0;
+        while((fgets(a, 80, fin)!= NULL) && j++<len)/*从fin中读一行到a中*/
+            fputs(a, fout);/*将a中字符串写到fout中*/
+        fclose(fout);/*写满len行后关闭文件*/
+    }
+    fclose(fin);
+    return 0;
+}
 ```
 
 ---
 
 ## 数据采集与处理程序
 
-- 从键盘输入：商品名称、数量、单价  
-- 计算总金额  
-- 数据保存到 `d:\goods.txt`
-
----
-
-### 主函数
+键盘输入: 商品名称、数量、单价 → 计算总金额 → 数据保存到 `d:\goods.txt`
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-void data_write(char *);
-void data_cal(char *, float);
+void data_write(char *);         /* 数据采集并存盘 */
+void data_cal(char *, float);    /* 从文件读入数据并进行计算 */ 
 
 int main(void) {
-    char file[20] = "d:\\goods.txt";
-    data_write(file);
-    data_cal(file);
+    char a[20] = "d:\\goods.txt";
+    data_write(a);
+    data_cal(a);
     return 0;
 }
 ```
@@ -511,8 +626,8 @@ void data_write(char *filename) {
         exit(-1);
 
     puts("input name、number and price please!");
-    while (scanf("%s%d%f", name, &number, &price) != EOF)
-        fprintf(out, "%s %d %f\n", name, number, price);
+    while (scanf("%s%d%f", name, &number, &price) != EOF) // 输入由用户分隔
+        fprintf(out, "%s %d %f\n", name, number, price);  // 输出也要自备空格
 
     fclose(out);
 }
@@ -521,6 +636,7 @@ void data_write(char *filename) {
 ---
 
 ### data_cal：读取并计算
+
 ```c
 void data_cal(char *filename) {
     FILE *in;
@@ -542,15 +658,28 @@ void data_cal(char *filename) {
 
 ## 文本文件数据的间隔符
 
-写入多个数据时需加间隔符，以便正确读取。
+写入多个数据时需加**间隔符**，以便正确读取。
+
+屏幕输出可读性，机器采集便于后续`scanf`使用。
+
+```c
+fprintf(out, "%s %d\n", name, number);
+```
+
+```c
+fprintf(out, "%s\t%d\n", name, number);
+```
 
 ---
 
 ## 文件类型
+
+文件按照数据格式分为**文本文件**和**二进制文件**两类。
+
 | 类型       | 描述                       |
-|------------|----------------------------|
+|------------|---------------------------|
 | 文本文件   | ASCII 字符序列             |
-| 二进制文件 | 内存映像的原始数据序列     |
+| 二进制文件 | 与内存内容一致的原始数据序列 |
 
 ---
 
