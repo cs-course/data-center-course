@@ -816,55 +816,190 @@ fscanf(fp, "%hd", &x);  // 按文本格式读入1个short数
 
 ---
 
-## 商品信息二进制版（结构体）
+### 文件尾测试函数`feof()`
 
-- 将结构体数组整体写入文件  
-- 再从文件随机读取
+文件尾测试函数`feof()`，如果到文件尾，返回非0值，否则返回0。
+
+```c
+#define  _IOEOF  0x0010 
+#define  feof(_stream)  ((_stream) ->_flag & _IOEOF)  
+```
 
 ---
 
-### 写结构体
+### 使用`feof()`控制循环
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
 
 ```c
+int x;
+FILE *fp;
+
+fp = fopen("d:\\a.dat", "rb");
+
+fread(&x, sizeof(int), 1, fp);
+while(!feof(fp)) {
+    printf("%d ", x);
+    fread(&x, sizeof(int), 1, fp);
+}
+```
+
+</div>
+
+<div>
+
+```c
+int x;
+FILE *fp;
+
+fp = fopen("d:\\a.dat", "rb");
+
+while(!feof(fp)) {
+    fread(&x, sizeof(int), 1, fp);
+    printf("%d ", x);
+}
+```
+
+</div>
+
+</div>
+
+从二进制文件读数据显示到屏幕，用哪个？
+
+---
+
+### 使用`feof()`控制循环…
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
+
+<div class="columns">
+
+<div>
+
+```c
+int x;
+FILE *fp;
+
+fp = fopen("d:\\a.dat", "rb");
+
+fread(&x, sizeof(int), 1, fp);
+while(!feof(fp)) {
+    printf("%d ", x);
+    fread(&x, sizeof(int), 1, fp);
+}
+```
+
+</div>
+
+<div>
+
+```c
+int x;
+FILE *fp;
+
+fp = fopen("d:\\a.dat", "rb");
+
+while(!feof(fp)) { // 到EOF还会再来
+    fread(&x, sizeof(int), 1, fp);
+    printf("%d ", x); // 末尾输出2次
+}
+```
+
+</div>
+
+</div>
+
+只有当文件位置指针到了**文件末尾**，然后**再发生读/写操作**时，标志位`(fp->_flag)`才会被置为含有`_IOEOF`
+
+---
+
+## 数据采集与处理程序**二进制版**
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+// 声明物品信息结构类型struct goods
 struct goods {
-    long code;
-    char name[20];
-    float price;
-} g;
+    long code;        // 货物编码
+    char name[20];    // 名称
+    float price;      // 价格
+};
 
-/* 把 g 写入文件 */
-fwrite(&g, sizeof(struct goods), 1, fp);
-```
+void data_write(const char *filename);
+void data_read(const char *filename);
 
----
-
-### 读结构体
-
-```c
-while (fread(&g, sizeof(struct goods), 1, in) == 1)
-    printf("%ld\t%s\t%f\n", g.code, g.name, g.price);
-```
-
----
-
-## 文件尾测试
-
-```c
-int feof(FILE *stream);  // 到文件尾返回非0
-int ferror(FILE *stream); // 出错返回非0
-```
-
-```c
-/* 正确用法 */
-while (!feof(in)) {
-    if (fread(&g, sizeof(struct goods), 1, in) != 1) break;
-    printf("%ld\t%s\t%f\n", g.code, g.name, g.price);
+int main(void) {
+    char fname[]="goods_table.dat";
+    data_write(fname); // 将结构体数组整体写入文件
+    data_read(fname);  // 再从文件随机读取
+    return 0;
 }
 ```
 
 ---
 
-## 顺序 vs 随机读写
+### 输入商品信息写入磁盘文件
+
+```c
+void data_write(const char *filenamme) {
+    struct goods g; // 声明 struct goods 类型结构变量
+    FILE *out;
+
+    if((out = fopen(filenamme, "wb")) == NULL)
+        exit(-1);
+    printf("输入货物编码、名称、价格\n");
+    while(scanf("%ld%s%f", &g.code, g.name, &g.price) == 3) {
+        fwrite(&g, sizeof(struct goods), 1, out); // 写入结构体变量g
+    }
+    fclose(out);
+}
+```
+
+---
+
+### 从磁盘读取商品信息显示到屏幕
+
+```c
+void data_read(const char *filenamme) {
+    struct goods g;
+    FILE *in;
+
+    if((in = fopen(filenamme, "rb")) == NULL)
+        exit(-1);
+    printf("货物编码\t名称\t价格\n");
+    fread(&g, sizeof(struct goods), 1, in);
+    while(!feof(in)) { // 注意函数生效条件
+        printf("%ld\t%s\t%f\n", g.code, g.name, g.price);
+        fread(&g, sizeof(struct goods), 1, in); // 读入结构体变量g
+    }
+    fclose(in);
+}
+```
+
+---
+
+## 文件的读写方式: **顺序 vs 随机读写**
+
+- 打开文件时，读写指针指向文件头，读写一个"数据"后，读写指针自动指向下一个"数据"。
+- 文件的读写方式有两种: **顺序读写**和**随机读写**
+  - **顺序读写**：从文件头到文件尾顺序读写数据。
+  - **随机读写**：读写可以从指定的位置进行，不必每次从头顺序开始。
 
 | 方式     | 特点                          | 适用文件 |
 |----------|-------------------------------|----------|
@@ -875,29 +1010,25 @@ while (!feof(in)) {
 
 ### 顺序读写示意
 
-```mermaid
-%% 文本文件数据长度不定，只能顺序读取
-sequenceDiagram
-    participant P as fp
-    participant D as 数据流
-    P->>D: 第1次读
-    P->>D: 第2次读
-    P->>D: ...
+![w:1000](images/c-file-fig-09.svg)
+
+按文本格式，读入1个short 数据和1个char数据
+
+```c
+fscanf(fp, "%hd", &i); // x = 123 
+fscanf(fp,  "%c", &c); // x = 'a'
 ```
+
+**文本文件只能顺序读写**，因为其数据非定长，不能直接定位。
 
 ---
 
 ### 随机读写示意
 
-```mermaid
-%% 二进制文件长度固定，可随机访问
-stateDiagram-v2
-    [*] --> Seek
-    Seek --> Read: fseek
-    Seek --> Write: fseek
-    Read --> Seek
-    Write --> Seek
-```
+![w:1000](images/c-file-fig-10.svg)
+
+- 二进制文件数据长度由明确类型给出，**既能顺序，也能随机读写**。
+- 利用文件的**定位函数**和文件的读写函数，即可实现文件的随机读写。
 
 ---
 
@@ -913,25 +1044,96 @@ int fsetpos(FILE *stream, const fpos_t *pos);
 
 ---
 
+### 文件定位函数`fseek`
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
+```c
+int fseek(FILE *stream, long offset, int origin);
+```
+
+- 将`stream`指向的文件之当前读写指针，定位到`origin + offset`
+  - 如果正常定位，返回0，否则返回非0值。
+  - `origin`和`offset`分别称为基准点和偏移量。
+
+<div class="columns">
+
+<div>
+
+![w:350](images/c-file-fig-11.svg)
+
+</div>
+
+<div>
+
+```c
+// origin 基准点取值
+#define SEEK_SET  0  // 文件起始位置为基准点 
+#define SEEK_CUR  1  // 文件当前位置为基准点
+#define SEEK_END  2  // 文件尾部位置为基准点
+// 获取文件当前位置
+long ftell(FILE *stream); // 当前位置相对于文件首的偏移字节数，出错时返回-1L
+```
+
+</div>
+
+</div>
+
+---
+
+### 文件定位函数`fgetpos`和`fsetpos`
+
+```c
+int fgetpos(FILE *stream, fpos_t *pos);
+```
+
+将`stream`指向文件的读写指针当前值，保存到`pos`指针所指的`fpos_t`类型的对象中。成功保存，fgetpos返回0，否则返回非0值。
+
+```c
+int fsetpos(FILE *stream, const fpos_t *pos);
+```
+
+用`fgetpos`函数保存到`pos`指针所指对象中的值来设置`stream`所指向文件的当前位置。设置成功函数返回0，否则返回非0值。
+
+---
+
+### 文件定位函数`rewind`
+
+```c
+void rewind(FILE *stream);
+```
+
+将文件指针`stream`指向文件的读写指针重新定位到文件的起始位置，同时清除文件结束标志和出错标志。
+
+---
+
 ## 其它文件操作
-| 函数        | 说明               |
-|-------------|--------------------|
-| fflush      | 强制刷新缓冲区     |
-| setvbuf     | 自定义缓冲区       |
-| remove      | 删除文件           |
-| rename      | 重命名文件         |
-| tmpfile     | 创建临时文件       |
-| tmpnam      | 生成临时文件名     |
-| clearerr    | 清除错误标志       |
-| ferror      | 测试流错误         |
-| perror      | 打印错误信息       |
+
+```c
+int   fflush(FILE *stream); // 强制刷新缓冲区
+int   setvbuf(FILE *stream, char *buf, int mode, size_t size); // 自定义缓冲区
+void  setbuf(FILE *stream, char *buf); // 默认缓冲区
+int remove(const char * filename);     // 删除文件
+int rename(const char * oldname, const char * newname); // 重命名文件
+FILE * tmpfile(void);        // 创建临时文件
+char * tmpnam(char *s);      // 生成临时文件名
+void clearerr(FILE *stream); // 清除错误标志
+int ferror(FILE *stream);    // 测试文件错误
+void perror(const char *s);  // 打印错误信息
+```
 
 ---
 
 ## 总结
 
-- 文件操作是C语言中重要的数据持久化手段
-- 掌握文本文件和二进制文件的区别及适用场景
-- 熟练使用各种文件读写函数（字符、字符串、格式、二进制）
-- 理解顺序读写和随机读写的原理及应用
-- 掌握文件定位和错误处理的方法
+- 文件操作是C语言中重要的**数据持久化**手段
+- 掌握**文本文件**和**二进制文件**的区别及适用场景
+- 熟练使用各种文件**读写函数**（字符、字符串、格式、二进制）
+- 理解**顺序读写**和**随机读写**的原理及应用
+- 掌握**文件定位**和**错误处理**的方法
