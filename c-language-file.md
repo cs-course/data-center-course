@@ -544,13 +544,13 @@ parts abc.txt a.txt b.txt c.txt 10
 1) `len=`命令行中提取的行数`atoi(argv[argc-1])`
 2) 以读方式打开源文件`fopen(argv[1], "r")`
 3) 依次打开目标文件，从源文件读`len`行写入
-  ```c
-  for(i = 2; i < argc-1; i++) {
-      以写方式打开文件 argv[i]
-      从argv[1]读1行写入argv[i]直到写了len行或源文件到文件尾
-      关闭 文件argv[i]
-  }
-  ```
+    ```c
+    for(i = 2; i < argc-1; i++) {
+        以写方式打开文件 argv[i]
+        从argv[1]读1行写入argv[i]直到写了len行或源文件到文件尾
+        关闭 文件argv[i]
+    }
+    ```
 4) 关闭源文件`argv[1]`
 
 </div>
