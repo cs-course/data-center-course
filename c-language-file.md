@@ -674,36 +674,79 @@ fprintf(out, "%s\t%d\n", name, number);
 
 ## 文件类型
 
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+  }
+</style>
+
 文件按照数据格式分为**文本文件**和**二进制文件**两类。
 
-| 类型       | 描述                       |
-|------------|---------------------------|
-| 文本文件   | ASCII 字符序列             |
-| 二进制文件 | 与内存内容一致的原始数据序列 |
+<div class="columns">
+
+<div>
+
+**文本文件**:
+
+ASCII 字符序列
+
+```bash
+# head -n5 README.md
+---
+license: mit
+---
+
+This is a Llama 2 architecture ...
+```
+
+</div>
+
+<div>
+
+**二进制文件**:
+
+与内存内容一致的原始数据序列
+
+```bash
+# xxd stories15M.bin | head
+00000000: 2001 0000 0003 0000 0600 0000 0600 0000   ...............
+00000010: 0600 0000 007d 0000 0001 0000 b00a 75bd  .....}........u.
+...
+```
+
+</div>
+
+</div>
 
 ---
 
 ## 存储空间举例
+
 > 短整数 `x = 128` 分别占多少字节？
 
-```mermaid
-%% 128 的两种存储形式
-flowchart LR
-    subgraph 文本文件
-        A["'1' '2' '8'"] --> B["3 字节"]
-    end
-
-    subgraph 二进制文件
-        C["0x0080"] --> D["2 字节"]
-    end
-```
+![w:1000](images/c-file-fig-07.svg)
 
 ---
 
 ## 二进制文件读写
 
-- `size_t fread(void *ptr, size_t size, size_t n, FILE *stream);`  
-- `size_t fwrite(const void *ptr, size_t size, size_t n, FILE *stream);`
+文件直接输入输出又称为文件成组输入输出。
+
+标准C为文件的直接输入输出提供了两个函数`fread`和`fwrite`，适用于二进制形式文件的读写 。
+
+```c
+typedef unsigned int size_t;
+size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
+// ptr: 存储数据的指针，size: 每个元素大小，n: 元素个数,stream: 文件指针
+// 返回实际读取的元素个数，<n 表示读到文件尾部，返回实际读取的元素个数
+// 可以通过 feof() 函数判断文件是否读完，ferror() 函数判断文件是否出错
+```
+
+```c
+size_t fwrite(const void *ptr, size_t size, size_t n, FILE *stream);
+```
 
 ---
 
@@ -721,6 +764,12 @@ for (int i = 0; i < 4; i++)
     fwrite(x + i, sizeof(int), 1, fp);
 
 fclose(fp);
+```
+
+```bash
+# xxd a.dat
+00000000: 0c00 0000 0800 0000 2200 0000 a501 0000  ........".......
+00000010: 0c00 0000 0800 0000 2200 0000 a501 0000  ........".......
 ```
 
 ---
@@ -750,6 +799,20 @@ fread(&x, sizeof(short), 1, fp);   // x = 0x3231
 /* 按文本读 */
 fscanf(fp, "%hd", &x);             // x = 123
 ```
+
+---
+
+### 二进制文件无需间隔符
+
+```c
+short x;
+fread(&x, sizeof(short), 1, fp); // 按二进制读入1个short数
+                                 // x=0x3231, 低字节在前
+fscanf(fp, "%hd", &x);  // 按文本格式读入1个short数
+                        // x=123  
+```
+
+![w:1000](images/c-file-fig-08.svg)
 
 ---
 
