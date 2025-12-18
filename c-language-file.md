@@ -792,20 +792,6 @@ fclose(fp);
 
 ```c
 short x;
-
-/* 按二进制读 */
-fread(&x, sizeof(short), 1, fp);   // x = 0x3231
-
-/* 按文本读 */
-fscanf(fp, "%hd", &x);             // x = 123
-```
-
----
-
-### 二进制文件无需间隔符
-
-```c
-short x;
 fread(&x, sizeof(short), 1, fp); // 按二进制读入1个short数
                                  // x=0x3231, 低字节在前
 fscanf(fp, "%hd", &x);  // 按文本格式读入1个short数
