@@ -9,10 +9,11 @@ math: mathjax
 <!-- _class: lead -->
 
 # 数据中心技术
+(2026-2027 上学期)
 
 **施展，童薇，胡燏翀，谭支鹏**
 武汉光电国家研究中心，计算机学院
-2025-11-12 至 2026-01-02
+2学分 (32学时)
 
 ---
 
@@ -63,19 +64,13 @@ math: mathjax
 
 ![bg fit](images/caqa5e-ch6-wsc-p0.gif)
 
-<!-- 同学们刚刚重温过的计算机系统结构课，其自然延伸，自第五版起纳入数据中心一章，第六版引入的是DSA领域专属结构，即加速器 -->
-
 ---
 
 ![bg fit](images/caqa5e-ch6-wsc-p1.gif)
 
-<!-- 从指令集并行、数据级并行、线程级并行到请求级并行 -->
-
 ---
 
 ![bg fit](images/caqa5e-ch6-wsc-p2.gif)
-
-<!-- 对于越大规模的系统来说，其内生复杂性的重要性就越高 -->
 
 ---
 
@@ -92,18 +87,12 @@ math: mathjax
   }
 </style>
 
-- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org/)![h:33](images/white-flower-icon-5.jpg)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
+- [路易斯·安德烈·巴罗索（Luiz André Barroso）](https://www.barroso.org!)![h:33](images/white-flower-icon-5.jpg)，谷歌研究员、ACM会士、AAAS会士，领导着谷歌的工程基础设施工作。
 - [Warehouse-scale Computing](https://dl.acm.org/doi/10.1145/1807167.1837133), SIGMOD '10
 - [Warehouse-Scale Computing: Entering the Teenage Decade](https://dl.acm.org/doi/10.1145/2000064.2019527), ISCA '11
 - [A Brief History of Warehouse-Scale Computing](https://barroso.org/publications/IEEEMicro2021.pdf), 2020 [Eckert-Mauchly Award](https://awards.acm.org/eckert-mauchly)
 
 Before the onset of the current pandemic, some of us may have underappreciated how important computing technology and cloud-based services have become to our society. In this last year, these technologies have allowed many of us to continue to work, to connect with loved ones, and to support each other. I am grateful to all of those at Google and everywhere in our industry who have built such essential technologies, and I am inspired to be working in a field with still so much potential to improve people’s lives.
-
-<!--
-计算机体系结构最高奖Eckert-Mauchly奖，上一年奖项还是颁给那位提出强制、容量和冲突缺失，也就是3C缺失的科学家，就是计算机系统结构课本里面的内容，这次的，也要被写进课本里了，就是最新版的计算机系统结构课本
-
-First awarded in 1979, it was named for John Presper Eckert and John William Mauchly, who between 1943 and 1946 collaborated on the design and construction of the first large scale electronic computing machine, known as ENIAC, the Electronic Numerical Integrator and Computer.
--->
 
 ---
 
@@ -212,8 +201,6 @@ He comments that **the lack of experience in datacenter design may have been an 
   - TBA
   <!-- - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
 
-<!-- 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP收获成就 -->
-
 ---
 
 ## 研讨论文列表
@@ -283,8 +270,6 @@ He comments that **the lack of experience in datacenter design may have been an 
 作者：丹·萨罗菲安-布廷
 编译：李想
 责编：项阳
-
-<!-- 所以，今年开始的论文研讨学习，我们不再要求提交综述，实验部分也不再要求复刻代码，前者要聚焦研讨，后者要面向实际问题，聚焦实验设计与数据分析 -->
 
 ---
 
@@ -363,27 +348,18 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
   }
 </style>
 
-|   | 讲座主题 | 日期 | 地点 |
-|:-:|:--------|:---| :--- |
-| 1 | [数据中心技术概述](data-center-intro) | 11-12(**周三5-6**) 11-14(**周五5-6**) | C12-S207 |
-| 2 | [对象存储系统与尾延迟问题](object-storage) | 11-19, 11-21 | C12-S207 |
-| 3 | 数据中心固态存储技术 (童老师) | 11-26, 11-28 | C12-S207 |
-| 4 | 数据中心磁盘故障预测技术 (谭老师) | 12-03, 12-05 | C12-S207 |
-| 5 | 数据中心可靠性保障技术 (胡老师) | 12-10, 12-12 | C12-S207 |
-| 6 | 论文研讨* | 12-17, 12-19 | C12-S207 |
-| 7 | 论文研讨 | 12-24, 12-26 | C12-S207 |
-| 8 | 论文研讨 | 12-31, 01-02 | C12-S207 |
-
-\* 每周13名同学
+| 周次 | 日期 | 讲座主题 | 地点 |
+| :---: | :---: | :--- | :---: |
+| 2-9 | | 《信息存储理论与技术》(A1-404) | A1-404 |
+| 10 | 11-06 | [数据中心技术概述](data-center-intro) | A2-B106 |
+| 11 | 11-13 | [对象存储系统与尾延迟问题](object-storage) | A2-B106 |
+| 12 | 11-20 | 数据中心固态存储技术 (童老师) | A2-B106 |
+| 13 | 11-27 | 数据中心磁盘故障预测技术 (谭老师) | A2-B106 |
+| 14 | 12-04 | 数据中心可靠性保障技术 (胡老师) | A2-B106 |
+| 15 | 12-11 | 论文研讨 (I) | A2-B106 |
+| 16 | 12-18 | 论文研讨 (II) | A2-B106 |
+| 17 | 12-25 | 论文研讨 (III) | A2-B106 |
 
 ---
-
-<style scoped>
-  p {
-    padding-top: 200px;
-    text-align: center;
-    font-size: 72px;
-  }
-</style>
 
 [数据中心技术总体介绍](data-center-intro)
