@@ -1,26 +1,31 @@
 ---
 marp: true
 theme: gaia
-title: C语言程序设计 - 第1章 概论
-paginate: true
+title: 软件技术基础
+# size: 4:3
 math: katex
+paginate: true
 ---
+
+# 软件技术基础
 
 <!-- _class: lead -->
 
-# 第1章 概论
+## 概论
 
-**C语言程序设计**
+**施展**
+武汉光电国家研究中心 & 计算机学院
+华中科技大学
 
 ---
 
-## 本章内容
+## 主要内容
 
-- C语言的发展历史
-- C语言的特点
+- C语言的诞生与标准演进
+- C语言的特点与应用领域
 - 简单C程序介绍
 - C程序的开发过程
-- 常用开发环境
+- 常用开发环境与编码规范
 
 ---
 
@@ -114,7 +119,7 @@ math: katex
 - **操作系统**：Linux 内核、Windows 内核（部分）、macOS（XNU）
 - **嵌入式系统**：单片机、IoT 固件、RTOS
 - **数据库**：MySQL、PostgreSQL、SQLite
-- **语言运行时**：CPython、CPython 解释器、Lua VM
+- **语言运行时**：CPython 解释器、Lua VM
 - **图形/游戏**：SDL、OpenGL、Unreal Engine（底层）
 - **网络/安全**：OpenSSL、nginx、curl
 - **科学计算**：很多数值库（BLAS/LAPACK）的 C 接口
@@ -243,6 +248,21 @@ int main(void) {
 | 编译 | cc1 | `.i` | `.s` | 词法/语法分析→中间码→汇编 |
 | 汇编 | as | `.s` | `.o` | 汇编指令→机器码 |
 | 链接 | ld | `.o` + 库 | `a.out` | 符号解析、地址重定位 |
+
+---
+
+## 编译流程可视化
+
+![bg right fit](images/c-bg-compile.svg)
+
+从 `hello.c` 到可执行的 `hello`，需经历四个阶段：
+
+- **预处理**：展开 `#include` 与 `#define`，得到 `hello.i`
+- **编译**：生成汇编代码 `hello.s`
+- **汇编**：生成机器码目标文件 `hello.o`
+- **链接**：把目标文件与库合并为可执行文件
+
+日常练习用 `gcc -o hello hello.c` 一步到位即可；想看中间产物时再用 `-E / -S / -c` 分步。
 
 ---
 
@@ -379,7 +399,7 @@ gcc -Wall -Wextra -std=c11 -g -o hello hello.c
 
 ---
 
-## 本章小结
+## 总结
 
 <style scoped>
   li {
@@ -387,12 +407,10 @@ gcc -Wall -Wextra -std=c11 -g -o hello hello.c
   }
 </style>
 
-1. C 语言诞生于 1972 年，为 Unix 而生，是系统编程的基石
-2. 标准从 K&R → C89 → C99 → C11 → C23 不断演进
-3. C 的核心优势：**高效、底层访问、可移植**
-4. C 程序 = 预处理指令 + 全局声明 + 函数定义，`main` 是唯一入口
-5. 编译四阶段：预处理 → 编译 → 汇编 → 链接
-6. 推荐使用 GCC + VS Code，编译时加上 `-Wall -std=c11 -g`
-7. 从第一天就养成良好编码习惯
-
-**下一章**：第2章 基本元素——数据类型、常量变量、运算符和表达式
+- C 语言诞生于 1972 年，为 Unix 而生，是系统编程的基石
+- 标准从 K&R → C89 → C99 → C11 → C23 不断演进
+- C 的核心优势：**高效、底层访问、可移植**
+- C 程序 = 预处理指令 + 全局声明 + 函数定义，`main` 是唯一入口
+- 编译四阶段：预处理 → 编译 → 汇编 → 链接
+- 推荐使用 GCC + VS Code，编译时加上 `-Wall -std=c11 -g`
+- 从第一天就养成良好编码习惯

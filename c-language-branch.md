@@ -1,20 +1,25 @@
 ---
 marp: true
 theme: gaia
-title: C语言程序设计 - 第4章 流程控制
-paginate: true
+title: 软件技术基础
+# size: 4:3
 math: katex
+paginate: true
 ---
+
+# 软件技术基础
 
 <!-- _class: lead -->
 
-# 第4章 流程控制
+## 流程控制
 
-**C语言程序设计**
+**施展**
+武汉光电国家研究中心 & 计算机学院
+华中科技大学
 
 ---
 
-## 本章内容
+## 主要内容
 
 - 程序的三种基本结构
 - 条件语句（if、switch）
@@ -45,6 +50,18 @@ math: katex
 - 自顶向下，逐步求精
 
 > 1966年，Böhm 和 Jacopini 证明了：任何算法都可以用这三种结构表示。
+
+---
+
+## 三种基本结构图示
+
+![bg right fit](images/c-branch-structures.svg)
+
+- **顺序**：语句依次执行，只有一个入口、一个出口
+- **选择**：根据条件走不同分支（`if` / `switch`）
+- **循环**：在条件满足时重复执行（`while` / `do-while` / `for`）
+
+结构化程序 = 这三种结构的组合。
 
 ---
 
@@ -883,7 +900,7 @@ gcc -Wall -Wextra -std=c11 -g -fsanitize=address -o prog prog.c
 
 ---
 
-## 本章小结
+## 总结
 
 <style scoped>
   li {
@@ -891,13 +908,11 @@ gcc -Wall -Wextra -std=c11 -g -fsanitize=address -o prog prog.c
   }
 </style>
 
-1. **三种基本结构**：顺序、选择、循环——结构化编程的基石
-2. **if-else**：注意悬空 else，始终使用花括号
-3. **switch**：整型/字符型等值判断，必须加 `break`（除非有意穿透）
-4. **三种循环**：`while`（先判断）、`do-while`（先执行）、`for`（最常用）
-5. **break** 跳出最近一层循环/switch，**continue** 跳过本次循环
-6. **goto**：仅用于跳出多层循环，绝不向前跳转
-7. **经典算法**：九九表、素数、GCD、斐波那契、穷举
-8. **调试**：printf、assert、GDB、AddressSanitizer
-
-**下一章**：第5章 函数
+- **三种基本结构**：顺序、选择、循环——结构化编程的基石
+- **if-else**：注意悬空 else，始终使用花括号
+- **switch**：整型/字符型等值判断，必须加 `break`（除非有意穿透）
+- **三种循环**：`while`（先判断）、`do-while`（先执行）、`for`（最常用）
+- **break** 跳出最近一层循环/switch，**continue** 跳过本次循环
+- **goto**：仅用于跳出多层循环，绝不向前跳转
+- **经典算法**：九九表、素数、GCD、斐波那契、穷举
+- **调试**：printf、assert、GDB、AddressSanitizer

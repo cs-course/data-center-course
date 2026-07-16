@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380">
+  <defs>
+    <style>
+      .tt{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;}
+      .syn{fill:#202124;font-family:'Consolas',monospace;font-size:16px;}
+      .box{fill:#e8f0fe;stroke:#4285f4;stroke-width:2;}
+      .ex{fill:#d93025;font-family:'Consolas',monospace;font-size:22px;font-weight:700;}
+      .lab{fill:#5f6368;font-family:'Microsoft YaHei',sans-serif;font-size:13px;}
+    </style>
+  </defs>
+  <text x="20" y="34" class="tt">printf 格式控制符的结构</text>
+  <text x="20" y="66" class="syn">%  [标志 flags]  [宽度 width]  [.精度 precision]  [长度 length]  转换说明符 conversion</text>
+
+  <text x="20" y="120" class="lab">示例：printf("%-10.2f", 3.14) → "[3.14      ]"（占10位、左对齐、2位小数）</text>
+
+  <rect class="box" x="40" y="150" width="60" height="56" rx="6"/><text x="70" y="184" text-anchor="middle" class="ex">%</text>
+  <rect class="box" x="130" y="150" width="80" height="56" rx="6"/><text x="170" y="184" text-anchor="middle" class="ex">-</text>
+  <rect class="box" x="240" y="150" width="80" height="56" rx="6"/><text x="280" y="184" text-anchor="middle" class="ex">10</text>
+  <rect class="box" x="350" y="150" width="80" height="56" rx="6"/><text x="390" y="184" text-anchor="middle" class="ex">.2</text>
+  <rect class="box" x="460" y="150" width="80" height="56" rx="6"/><text x="500" y="184" text-anchor="middle" class="ex">f</text>
+
+  <text x="70" y="240" text-anchor="middle" class="lab">起始符</text>
+  <text x="170" y="240" text-anchor="middle" class="lab">标志：左对齐</text>
+  <text x="280" y="240" text-anchor="middle" class="lab">最小宽度 10</text>
+  <text x="390" y="240" text-anchor="middle" class="lab">小数点后 2 位</text>
+  <text x="500" y="240" text-anchor="middle" class="lab">转换符：浮点</text>
+
+  <text x="20" y="300" class="lab">常用标志：- 左对齐　+ 显示正负号　0 补零　# 替代形式　空格 正数前加空格</text>
+  <text x="20" y="330" class="lab">长度修饰：h(short)　l(long)　ll(long long)　z(size_t)　—— 与转换符搭配缺一不可</text>
+</svg>

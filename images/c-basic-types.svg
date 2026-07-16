@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470">
+  <defs>
+    <marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .root{fill:#1a73e8;stroke:#174ea6;stroke-width:2;}
+      .rt{fill:#fff;font-family:'Microsoft YaHei',sans-serif;font-size:20px;font-weight:700;}
+      .cat{fill:#e8f0fe;stroke:#4285f4;stroke-width:2;}
+      .ct{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:16px;font-weight:700;}
+      .leaf{fill:#fef7e0;stroke:#f9ab00;stroke-width:1.5;}
+      .lt{fill:#202124;font-family:'Microsoft YaHei',sans-serif;font-size:13px;}
+    </style>
+  </defs>
+  <rect class="root" x="320" y="20" width="180" height="46" rx="8"/>
+  <text x="410" y="49" text-anchor="middle" class="rt">C 语言数据类型</text>
+
+  <rect class="cat" x="30" y="130" width="160" height="40" rx="6"/>
+  <text x="110" y="156" text-anchor="middle" class="ct">基本类型</text>
+  <rect class="cat" x="230" y="130" width="160" height="40" rx="6"/>
+  <text x="310" y="156" text-anchor="middle" class="ct">构造类型</text>
+  <rect class="cat" x="430" y="130" width="160" height="40" rx="6"/>
+  <text x="510" y="156" text-anchor="middle" class="ct">指针类型</text>
+  <rect class="cat" x="630" y="130" width="160" height="40" rx="6"/>
+  <text x="710" y="156" text-anchor="middle" class="ct">空类型</text>
+
+  <line x1="410" y1="66" x2="110" y2="128" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="410" y1="66" x2="310" y2="128" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="410" y1="66" x2="510" y2="128" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="410" y1="66" x2="710" y2="128" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+
+  <rect class="leaf" x="10" y="220" width="180" height="60" rx="6"/>
+  <text x="100" y="245" text-anchor="middle" class="lt">整型 int/short/long</text>
+  <text x="100" y="268" text-anchor="middle" class="lt">char / _Bool(C99)</text>
+
+  <rect class="leaf" x="10" y="300" width="180" height="50" rx="6"/>
+  <text x="100" y="330" text-anchor="middle" class="lt">浮点 float/double</text>
+
+  <rect class="leaf" x="210" y="220" width="180" height="130" rx="6"/>
+  <text x="300" y="250" text-anchor="middle" class="lt">数组 array</text>
+  <text x="300" y="278" text-anchor="middle" class="lt">结构 struct</text>
+  <text x="300" y="306" text-anchor="middle" class="lt">联合 union</text>
+  <text x="300" y="334" text-anchor="middle" class="lt">枚举 enum</text>
+
+  <rect class="leaf" x="420" y="220" width="170" height="60" rx="6"/>
+  <text x="505" y="245" text-anchor="middle" class="lt">指向各类数据的</text>
+  <text x="505" y="268" text-anchor="middle" class="lt">地址 int* / char* …</text>
+  <rect class="leaf" x="420" y="300" width="170" height="50" rx="6"/>
+  <text x="505" y="330" text-anchor="middle" class="lt">函数指针</text>
+
+  <rect class="leaf" x="630" y="220" width="160" height="60" rx="6"/>
+  <text x="710" y="245" text-anchor="middle" class="lt">void</text>
+  <text x="710" y="268" text-anchor="middle" class="lt">无返回值/空类型</text>
+
+  <line x1="110" y1="170" x2="100" y2="218" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="110" y1="170" x2="100" y2="298" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="310" y1="170" x2="300" y2="218" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="510" y1="170" x2="505" y2="218" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="510" y1="170" x2="505" y2="298" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <line x1="710" y1="170" x2="710" y2="218" stroke="#333" stroke-width="1.5" marker-end="url(#ar2)"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290">
+  <defs>
+    <marker id="ar5" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .tt{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;}
+      .box{fill:#e8f0fe;stroke:#4285f4;stroke-width:2;}
+      .bt{fill:#202124;font-family:'Consolas',monospace;font-size:15px;}
+      .note{fill:#5f6368;font-family:'Microsoft YaHei',sans-serif;font-size:14px;}
+    </style>
+  </defs>
+  <text x="30" y="34" class="tt">阶乘递归的展开与回溯</text>
+
+  <text x="40" y="90" class="bt">fact(4)</text>
+  <line x1="40" y1="100" x2="40" y2="120" stroke="#333" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="40" y="150" class="bt">= 4 × fact(3)</text>
+  <line x1="40" y1="160" x2="40" y2="180" stroke="#333" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="40" y="210" class="bt">= 4 × 3 × fact(2)</text>
+  <line x1="40" y1="220" x2="40" y2="240" stroke="#333" stroke-width="2" marker-end="url(#ar5)"/>
+  <text x="40" y="270" class="bt">= 4 × 3 × 2 × fact(1) = 4×3×2×1 = 24</text>
+
+  <rect class="box" x="520" y="60" width="180" height="40" rx="6"/><text x="610" y="86" text-anchor="middle" class="bt">fact(4) 等待</text>
+  <rect class="box" x="540" y="110" width="180" height="40" rx="6"/><text x="630" y="136" text-anchor="middle" class="bt">fact(3) 等待</text>
+  <rect class="box" x="560" y="160" width="180" height="40" rx="6"/><text x="650" y="186" text-anchor="middle" class="bt">fact(2) 等待</text>
+  <rect class="box" x="580" y="210" width="180" height="40" rx="6"/><text x="670" y="236" text-anchor="middle" class="bt">fact(1)=1 返回</text>
+  <text x="690" y="280" text-anchor="middle" class="note">调用栈深度 = n</text>
+</svg>

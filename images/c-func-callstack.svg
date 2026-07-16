@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390">
+  <defs>
+    <marker id="ar4" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .tt{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;}
+      .frame{fill:#e8f0fe;stroke:#4285f4;stroke-width:2;}
+      .ft{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:14px;font-weight:700;}
+      .cell{fill:#fff;stroke:#c5cae9;stroke-width:1.5;}
+      .ct{fill:#202124;font-family:'Consolas',monospace;font-size:13px;}
+      .note{fill:#d93025;font-family:'Microsoft YaHei',sans-serif;font-size:13px;font-weight:700;}
+      .good{fill:#188038;font-family:'Microsoft YaHei',sans-serif;font-size:13px;font-weight:700;}
+    </style>
+  </defs>
+  <text x="220" y="28" text-anchor="middle" class="tt">值传递：swap_wrong(a,b)</text>
+  <text x="700" y="28" text-anchor="middle" class="tt">传地址：swap(&amp;a,&amp;b)</text>
+
+  <rect class="frame" x="40" y="50" width="360" height="90" rx="6"/>
+  <text x="56" y="74" class="ft">main 的变量</text>
+  <rect class="cell" x="60" y="84" width="120" height="40" rx="4"/><text x="120" y="109" text-anchor="middle" class="ct">a = 3</text>
+  <rect class="cell" x="220" y="84" width="120" height="40" rx="4"/><text x="280" y="109" text-anchor="middle" class="ct">b = 5</text>
+
+  <rect class="frame" x="40" y="170" width="360" height="90" rx="6"/>
+  <text x="56" y="194" class="ft">swap_wrong 的副本</text>
+  <rect class="cell" x="60" y="204" width="120" height="40" rx="4"/><text x="120" y="229" text-anchor="middle" class="ct">x = 5</text>
+  <rect class="cell" x="220" y="204" width="120" height="40" rx="4"/><text x="280" y="229" text-anchor="middle" class="ct">y = 3</text>
+  <line x1="220" y1="140" x2="220" y2="168" stroke="#333" stroke-width="2" marker-end="url(#ar4)"/>
+  <text x="232" y="158" class="note">副本互不影响</text>
+
+  <text x="220" y="305" text-anchor="middle" class="note">main 中 a 仍为 3、b 仍为 5 ✗</text>
+
+  <rect class="frame" x="520" y="50" width="360" height="90" rx="6"/>
+  <text x="536" y="74" class="ft">main 的变量</text>
+  <rect class="cell" x="540" y="84" width="120" height="40" rx="4"/><text x="600" y="109" text-anchor="middle" class="ct">a = 3</text>
+  <rect class="cell" x="700" y="84" width="120" height="40" rx="4"/><text x="760" y="109" text-anchor="middle" class="ct">b = 5</text>
+
+  <rect class="frame" x="520" y="170" width="360" height="90" rx="6"/>
+  <text x="536" y="194" class="ft">swap 的指针</text>
+  <rect class="cell" x="540" y="204" width="150" height="40" rx="4"/><text x="615" y="229" text-anchor="middle" class="ct">pa → a</text>
+  <rect class="cell" x="700" y="204" width="150" height="40" rx="4"/><text x="775" y="229" text-anchor="middle" class="ct">pb → b</text>
+  <line x1="700" y1="140" x2="700" y2="168" stroke="#333" stroke-width="2" marker-end="url(#ar4)"/>
+  <line x1="600" y1="124" x2="615" y2="204" stroke="#d93025" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#ar4)"/>
+  <line x1="760" y1="124" x2="775" y2="204" stroke="#d93025" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#ar4)"/>
+
+  <text x="700" y="305" text-anchor="middle" class="good">通过指针改原变量：a=5,b=3 ✓</text>
+</svg>

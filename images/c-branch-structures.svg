@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 380">
+  <defs>
+    <marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style>
+      .tt{fill:#174ea6;font-family:'Microsoft YaHei',sans-serif;font-size:18px;font-weight:700;}
+      .box{fill:#e8f0fe;stroke:#4285f4;stroke-width:2;}
+      .bt{fill:#202124;font-family:'Microsoft YaHei',sans-serif;font-size:15px;}
+      .dec{fill:#fef7e0;stroke:#f9ab00;stroke-width:2;}
+      .dt{fill:#202124;font-family:'Microsoft YaHei',sans-serif;font-size:14px;}
+      .lab{fill:#d93025;font-family:'Microsoft YaHei',sans-serif;font-size:13px;font-weight:700;}
+    </style>
+  </defs>
+
+  <text x="120" y="30" text-anchor="middle" class="tt">顺序结构</text>
+  <text x="470" y="30" text-anchor="middle" class="tt">选择结构</text>
+  <text x="790" y="30" text-anchor="middle" class="tt">循环结构</text>
+
+  <rect class="box" x="70" y="70" width="100" height="44" rx="6"/><text x="120" y="98" text-anchor="middle" class="bt">语句 A</text>
+  <rect class="box" x="70" y="150" width="100" height="44" rx="6"/><text x="120" y="178" text-anchor="middle" class="bt">语句 B</text>
+  <rect class="box" x="70" y="230" width="100" height="44" rx="6"/><text x="120" y="258" text-anchor="middle" class="bt">语句 C</text>
+  <line x1="120" y1="114" x2="120" y2="148" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="120" y1="194" x2="120" y2="228" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+
+  <polygon class="dec" points="470,70 530,110 470,150 410,110"/>
+  <text x="470" y="115" text-anchor="middle" class="dt">条件?</text>
+  <rect class="box" x="380" y="200" width="90" height="44" rx="6"/><text x="425" y="228" text-anchor="middle" class="bt">语句 A</text>
+  <rect class="box" x="500" y="200" width="90" height="44" rx="6"/><text x="545" y="228" text-anchor="middle" class="bt">语句 B</text>
+  <line x1="425" y1="150" x2="425" y2="198" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <line x1="515" y1="150" x2="545" y2="198" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="388" y="178" class="lab">真</text>
+  <text x="548" y="178" class="lab">假</text>
+
+  <polygon class="dec" points="790,70 850,110 790,150 730,110"/>
+  <text x="790" y="115" text-anchor="middle" class="dt">条件?</text>
+  <rect class="box" x="745" y="210" width="100" height="44" rx="6"/><text x="795" y="238" text-anchor="middle" class="bt">循环体</text>
+  <line x1="790" y1="150" x2="790" y2="208" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <path d="M745,232 C700,232 700,120 730,116" fill="none" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="648" y="182" class="lab">真</text>
+  <line x1="850" y1="110" x2="905" y2="110" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="858" y="100" class="lab">假→退出</text>
+</svg>

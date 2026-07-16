@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330">
+  <defs>
+    <marker id="arw" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#333"/>
+    </marker>
+    <style>
+      .box { fill:#e8f0fe; stroke:#4285f4; stroke-width:2; }
+      .t1 { fill:#1a73e8; font-family:'Microsoft YaHei','PingFang SC',sans-serif; font-size:20px; font-weight:700; }
+      .t2 { fill:#202124; font-family:'Microsoft YaHei','PingFang SC',sans-serif; font-size:15px; }
+      .tool { fill:#d93025; font-family:'Consolas',monospace; font-size:14px; }
+      .note { fill:#5f6368; font-family:'Microsoft YaHei',sans-serif; font-size:14px; }
+    </style>
+  </defs>
+  <text x="20" y="34" class="t1">C 程序编译的四个阶段</text>
+  <text x="20" y="60" class="note">一步到位：gcc -o hello hello.c　｜　分步观察：gcc -E / -S / -c / 链接</text>
+
+  <rect class="box" x="30" y="120" width="170" height="80" rx="8"/>
+  <text x="115" y="152" text-anchor="middle" class="t2">源文件</text>
+  <text x="115" y="178" text-anchor="middle" class="tool">hello.c</text>
+
+  <rect class="box" x="260" y="120" width="170" height="80" rx="8"/>
+  <text x="345" y="152" text-anchor="middle" class="t2">预处理</text>
+  <text x="345" y="178" text-anchor="middle" class="tool">cpp → .i</text>
+
+  <rect class="box" x="490" y="120" width="170" height="80" rx="8"/>
+  <text x="575" y="152" text-anchor="middle" class="t2">编译</text>
+  <text x="575" y="178" text-anchor="middle" class="tool">cc1 → .s</text>
+
+  <rect class="box" x="720" y="120" width="190" height="80" rx="8"/>
+  <text x="815" y="152" text-anchor="middle" class="t2">汇编 → 链接</text>
+  <text x="815" y="178" text-anchor="middle" class="tool">as .o → ld 可执行</text>
+
+  <line x1="200" y1="160" x2="258" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arw)"/>
+  <line x1="430" y1="160" x2="488" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arw)"/>
+  <line x1="660" y1="160" x2="718" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arw)"/>
+
+  <text x="115" y="240" text-anchor="middle" class="note">展开 #include/#define</text>
+  <text x="345" y="240" text-anchor="middle" class="note">词法/语法→汇编</text>
+  <text x="575" y="240" text-anchor="middle" class="note">汇编→机器码</text>
+  <text x="815" y="240" text-anchor="middle" class="note">符号解析/重定位</text>
+</svg>
