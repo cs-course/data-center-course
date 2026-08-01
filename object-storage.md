@@ -1491,58 +1491,81 @@ Source：[Amdahl's Law for Tail Latency](https://dl.acm.org/doi/10.1145/3232559)
 
 - 用预测提高**缓存算法效率**
   - [A Multi-Factor Adaptive Multi-Level Cooperative Replacement Policy in Block Storage Systems](https://ieeexplore.ieee.org/document/9978474). ICCD 2022
+  - → 专题讲座《闪存存储系统设计》挑战二展开
 - 用预测协调**缓存和调度公平性**
   - [Fair Will Go On: A Collaboration-Aware Fairness Scheme for NVMe SSD in Cloud Storage System](https://ieeexplore.ieee.org/document/10247718). DAC 2023.
+  - → 专题讲座《闪存存储系统设计》挑战三展开
 - 用预测改善**服务质量保障**
   - [Graph3PO: A Temporal Graph Data Processing Method for Latency QoS Guarantee in Object Cloud Storage System](https://dl.acm.org/doi/10.1145/3581784.3607075). SC 2023.
+  - → 专题讲座《性能预测技术与服务质量保障》「我们的工作」展开
 
 ---
 
 ### 用预测提高**缓存算法效率**
 
+<style scoped>
+  section > p {
+    padding-top: 510px;
+    font-size: 22px;
+  }
+  blockquote {
+    font-size: 19px;
+    color: #666;
+    margin-top: 8px;
+  }
+</style>
+
 ![bg 80%](images/iccd22-bg1.png)
 
-<!-- TODO: 浓缩提炼至每页一个问题及创新 -->
+缓存命中率**可预测** → 替换决策**可优化**
 
----
-
-![bg fit](images/iccd22-bg2.png)
-
----
-
-![bg fit](images/iccd22-bg3.png)
-
----
-
-![bg fit](images/iccd22-bg4.png)
+> 完整方法与实验详见专题讲座《闪存存储系统设计》挑战二
 
 ---
 
 ### 用预测协调**缓存和调度公平性**
 
+<style scoped>
+  section > p {
+    padding-top: 510px;
+    font-size: 22px;
+  }
+  blockquote {
+    font-size: 19px;
+    color: #666;
+    margin-top: 8px;
+  }
+</style>
+
 ![bg 80%](images/dac23-bg1.png)
 
----
+租户间存在**协作模式** → 公平性**可重定义**
 
-![bg fit](images/dac23-bg2.png)
-
----
-
-![bg fit](images/dac23-bg3.png)
+> 完整方法与实验详见专题讲座《闪存存储系统设计》挑战三
 
 ---
 
 ### 用预测改善**服务质量保障**
 
+<style scoped>
+  section > p {
+    padding-top: 510px;
+    font-size: 22px;
+  }
+  blockquote {
+    font-size: 19px;
+    color: #666;
+    margin-top: 8px;
+  }
+</style>
+
 ![bg 75%](images/sc23-bg1.png)
 
-<!-- 黑盒白盒各有不足 -->
+系统结构可建为**时序图** → 尾延迟**可预测**
 
----
+<!-- 黑盒白盒各有不足，不要逃避关联结构，要迎难而上 -->
 
-![bg 80%](images/sc23-bg2.png)
-
-<!-- 不要逃避关联结构，要迎难而上 -->
+> 完整方法与实验详见专题讲座《性能预测技术与服务质量保障》「我们的工作」
 
 ---
 
