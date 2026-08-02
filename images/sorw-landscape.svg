@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'Segoe UI','Microsoft YaHei',sans-serif">
+  <rect width="900" height="480" fill="#f7f9fc"/>
+  <text x="450" y="42" font-size="25" font-weight="700" fill="#1a2b4a" text-anchor="middle">图上游走系统演进：从内存式到分布式二阶</text>
+
+  <!-- timeline axis -->
+  <line x1="80" y1="250" x2="820" y2="250" stroke="#9aaac4" stroke-width="3"/>
+
+  <!-- nodes -->
+  <g font-size="14" text-anchor="middle">
+    <!-- KnightKing -->
+    <circle cx="170" cy="250" r="14" fill="#3b6fd4"/>
+    <text x="170" y="222" font-size="15" font-weight="700" fill="#1a2b4a">KnightKing</text>
+    <text x="170" y="200" font-size="13" fill="#5a6b85">SOSP'19</text>
+    <text x="170" y="288" font-size="13" fill="#3b6fd4">内存式</text>
+    <text x="170" y="308" font-size="13" fill="#5a6b85">通用游走引擎</text>
+
+    <!-- GraSorw -->
+    <circle cx="350" cy="250" r="14" fill="#2b9e8a"/>
+    <text x="350" y="222" font-size="15" font-weight="700" fill="#1a2b4a">GraSorw</text>
+    <text x="350" y="200" font-size="13" fill="#5a6b85">VLDB'22</text>
+    <text x="350" y="288" font-size="13" fill="#2b9e8a">out-of-core</text>
+    <text x="350" y="308" font-size="13" fill="#5a6b85">二阶先驱</text>
+
+    <!-- SOWalker (highlight) -->
+    <circle cx="530" cy="250" r="18" fill="#e08a2b" stroke="#7a4a10" stroke-width="2"/>
+    <text x="530" y="218" font-size="16" font-weight="700" fill="#7a4a10">SOWalker</text>
+    <text x="530" y="194" font-size="13" fill="#5a6b85">ATC'23（本组）</text>
+    <text x="530" y="292" font-size="13" fill="#e08a2b">out-of-core 二阶</text>
+    <text x="530" y="312" font-size="13" fill="#5a6b85">I/O 优化重点</text>
+
+    <!-- GOWalker -->
+    <circle cx="700" cy="250" r="14" fill="#8e44ad"/>
+    <text x="700" y="222" font-size="15" font-weight="700" fill="#1a2b4a">GOWalker</text>
+    <text x="700" y="200" font-size="13" fill="#5a6b85">CPU-GPU</text>
+    <text x="700" y="288" font-size="13" fill="#8e44ad">异构加速</text>
+    <text x="700" y="308" font-size="13" fill="#5a6b85">V100 2.2–4.1×</text>
+
+    <!-- DistGER-Pipe -->
+    <circle cx="820" cy="250" r="14" fill="#c0392b"/>
+    <text x="820" y="222" font-size="15" font-weight="700" fill="#1a2b4a">DistGER-Pipe</text>
+    <text x="820" y="200" font-size="13" fill="#5a6b85">TKDE'25（本组）</text>
+    <text x="820" y="288" font-size="13" fill="#c0392b">分布式</text>
+    <text x="820" y="308" font-size="13" fill="#5a6b85">流水线并行</text>
+  </g>
+
+  <text x="450" y="420" font-size="15" fill="#1a2b4a" text-anchor="middle" font-weight="600">演进维度：内存驻留 → 外存溢出 → 设备异构 → 多机分布式</text>
+  <text x="450" y="446" font-size="13" fill="#5a6b85" text-anchor="middle">蓝=通用引擎，绿/橙/紫/红=二阶与外存、异构、分布式优化（橙为本讲重点）</text>
+</svg>

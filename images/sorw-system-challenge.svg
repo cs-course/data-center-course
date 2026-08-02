@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" font-family="'Segoe UI','Microsoft YaHei',sans-serif">
+  <rect width="840" height="480" fill="#f7f9fc"/>
+  <text x="420" y="42" font-size="26" font-weight="700" fill="#1a2b4a" text-anchor="middle">二阶随机游走的系统挑战：状态空间膨胀 + 随机 I/O 放大</text>
+
+  <!-- left card: first-order -->
+  <rect x="40" y="90" width="350" height="330" rx="14" fill="#ffffff" stroke="#3b6fd4" stroke-width="2.5"/>
+  <text x="215" y="128" font-size="20" font-weight="700" fill="#1a2b4a" text-anchor="middle">一阶随机游走</text>
+  <text x="215" y="158" font-size="15" fill="#5a6b85" text-anchor="middle">状态只依赖当前节点 vᵢ</text>
+
+  <rect x="80" y="185" width="270" height="40" rx="8" fill="#e8f0fe"/>
+  <text x="215" y="211" font-size="16" font-weight="700" fill="#1a2b4a" text-anchor="middle">状态空间 O(|V|)</text>
+
+  <text x="215" y="255" font-size="14" fill="#5a6b85" text-anchor="middle">顺序扫描邻接表</text>
+  <rect x="95" y="270" width="240" height="22" rx="4" fill="#cfe0fb"/>
+  <rect x="95" y="298" width="240" height="22" rx="4" fill="#cfe0fb"/>
+  <rect x="95" y="326" width="240" height="22" rx="4" fill="#cfe0fb"/>
+  <text x="215" y="378" font-size="15" fill="#1f8a4c" text-anchor="middle">✓ 访存局部、I/O 友好</text>
+  <text x="215" y="404" font-size="14" fill="#5a6b85" text-anchor="middle">整张图可顺序读入内存</text>
+
+  <!-- right card: second-order -->
+  <rect x="450" y="90" width="350" height="330" rx="14" fill="#fff5f5" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="625" y="128" font-size="20" font-weight="700" fill="#7a1f1f" text-anchor="middle">二阶随机游走</text>
+  <text x="625" y="158" font-size="15" fill="#9a4a4a" text-anchor="middle">状态依赖 (前驱 t, 当前 vᵢ)</text>
+
+  <rect x="490" y="185" width="270" height="40" rx="8" fill="#fde0e0"/>
+  <text x="625" y="211" font-size="16" font-weight="700" fill="#7a1f1f" text-anchor="middle">状态空间 O(|E|)</text>
+
+  <text x="625" y="255" font-size="14" fill="#9a4a4a" text-anchor="middle">按 (t, vᵢ) 跳查下一跳</text>
+  <circle cx="520" cy="300" r="7" fill="#c0392b"/>
+  <circle cx="640" cy="285" r="7" fill="#c0392b"/>
+  <circle cx="700" cy="330" r="7" fill="#c0392b"/>
+  <circle cx="560" cy="345" r="7" fill="#c0392b"/>
+  <circle cx="680" cy="360" r="7" fill="#c0392b"/>
+  <line x1="520" y1="300" x2="640" y2="285" stroke="#e0a0a0" stroke-width="1.5" stroke-dasharray="3"/>
+  <line x1="640" y1="285" x2="700" y2="330" stroke="#e0a0a0" stroke-width="1.5" stroke-dasharray="3"/>
+  <line x1="520" y1="300" x2="560" y2="345" stroke="#e0a0a0" stroke-width="1.5" stroke-dasharray="3"/>
+  <text x="625" y="388" font-size="15" fill="#c0392b" text-anchor="middle">✗ 跳查 → 随机 I/O 放大</text>
+  <text x="625" y="414" font-size="14" fill="#9a4a4a" text-anchor="middle">状态表无法全内存驻留</text>
+
+  <text x="420" y="455" font-size="15" fill="#1a2b4a" text-anchor="middle" font-weight="600">研究问题：如何在外存上高效执行二阶转移？</text>
+</svg>
