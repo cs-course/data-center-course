@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+  <rect width="760" height="600" fill="#ffffff"/>
+  <text x="380" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1a202c">约束迁移：部署环境如何改变我们算的那笔账</text>
+  <text x="380" y="66" text-anchor="middle" font-size="14" fill="#718096">环境 / 方式改变 → 主导约束迁移 → 但科学方法本身不动</text>
+
+  <!-- Card 1: 传统数据中心 -->
+  <g>
+    <rect x="22" y="92" width="226" height="344" rx="12" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+    <path d="M22 104 a12 12 0 0 1 12 -12 h202 a12 12 0 0 1 12 12 v20 h-226 z" fill="#2b6cb0"/>
+    <text x="135" y="119" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">传统数据中心</text>
+    <text x="38" y="158" font-size="13" font-weight="700" fill="#2b6cb0">主导变量</text>
+    <text x="38" y="182" font-size="13" fill="#2d3748">· PUE、CAPEX / OPEX</text>
+    <text x="38" y="206" font-size="13" fill="#2d3748">· 容错：快速恢复(人换)</text>
+    <text x="38" y="230" font-size="13" fill="#2d3748">· 尾延迟：网络拥塞</text>
+    <text x="38" y="254" font-size="13" fill="#2d3748">· 人力：现场运维</text>
+    <line x1="38" y1="272" x2="232" y2="272" stroke="#cbd5e0"/>
+    <text x="38" y="298" font-size="13" font-weight="700" fill="#c05621">风险迁移到</text>
+    <text x="38" y="322" font-size="13" fill="#2d3748">· 制冷能耗</text>
+    <text x="38" y="346" font-size="13" fill="#2d3748">· 土地 / 电力准入</text>
+  </g>
+
+  <text x="256" y="272" text-anchor="middle" font-size="26" fill="#a0aec0">→</text>
+
+  <!-- Card 2: 预制化·模块化 -->
+  <g>
+    <rect x="270" y="92" width="226" height="344" rx="12" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+    <path d="M270 104 a12 12 0 0 1 12 -12 h202 a12 12 0 0 1 12 12 v20 h-226 z" fill="#c05621"/>
+    <text x="383" y="119" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">预制化 · 模块化</text>
+    <text x="286" y="158" font-size="13" font-weight="700" fill="#c05621">主导变量</text>
+    <text x="286" y="182" font-size="13" fill="#2d3748">· 部署速度 = ROI</text>
+    <text x="286" y="206" font-size="13" fill="#2d3748">· 接口可靠性</text>
+    <text x="286" y="230" font-size="13" fill="#2d3748">· 3–5 年运维账单</text>
+    <text x="286" y="254" font-size="13" fill="#2d3748">· 电力准入前置</text>
+    <line x1="286" y1="272" x2="480" y2="272" stroke="#cbd5e0"/>
+    <text x="286" y="298" font-size="13" font-weight="700" fill="#2b6cb0">风险迁移到</text>
+    <text x="286" y="322" font-size="13" fill="#2d3748">· 拼装“接口盲区”</text>
+    <text x="286" y="346" font-size="13" fill="#2d3748">· 智能运维替代人力</text>
+  </g>
+
+  <text x="504" y="272" text-anchor="middle" font-size="26" fill="#a0aec0">→</text>
+
+  <!-- Card 3: 太空数据中心 -->
+  <g>
+    <rect x="518" y="92" width="226" height="344" rx="12" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+    <path d="M518 104 a12 12 0 0 1 12 -12 h202 a12 12 0 0 1 12 12 v20 h-226 z" fill="#6b46c1"/>
+    <text x="631" y="119" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">太空数据中心</text>
+    <text x="534" y="158" font-size="13" font-weight="700" fill="#6b46c1">主导变量</text>
+    <text x="534" y="182" font-size="13" fill="#2d3748">· 供电(自带 / $kg)</text>
+    <text x="534" y="206" font-size="13" fill="#2d3748">· 辐射容限</text>
+    <text x="534" y="230" font-size="13" fill="#2d3748">· 极冗余 + 可丢弃</text>
+    <text x="534" y="254" font-size="13" fill="#2d3748">· 架构不需人力</text>
+    <line x1="534" y1="272" x2="728" y2="272" stroke="#cbd5e0"/>
+    <text x="534" y="298" font-size="13" font-weight="700" fill="#c05621">风险迁移到</text>
+    <text x="534" y="322" font-size="13" fill="#2d3748">· 发射成本</text>
+    <text x="534" y="346" font-size="13" fill="#2d3748">· 不可维修</text>
+  </g>
+
+  <!-- Bottom bar: 不变的内核 -->
+  <rect x="22" y="458" width="722" height="124" rx="12" fill="#1a202c"/>
+  <text x="383" y="488" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">不变的内核（工具箱）</text>
+  <text x="383" y="516" text-anchor="middle" font-size="13" fill="#e2e8f0">TCO = CapEx + OpEx ｜ 容错 = 冗余 + 软件兜底 ｜ 尾延迟 = 物理硬下限 ｜ 资源置换（无免费午餐）</text>
+  <text x="383" y="544" text-anchor="middle" font-size="13" fill="#a0aec0">变的只是哪个量卡脖子；从芯片 Scale-up → 国家算力网 → 太空，只是同一逻辑的尺度拉伸</text>
+</svg>
