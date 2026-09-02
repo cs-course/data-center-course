@@ -195,25 +195,27 @@ He comments that **the lack of experience in datacenter design may have been an 
       - 请严格守时（开PPT排练计时，超时扣分）
   - 做一些贡献，积累一些经验：[**模拟Rebuttal**](#尝试唤醒自己的工具)
 - **实验作业** *30%*
-  - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
-    - 以完成提交上榜为准，不追求PVP排名，重在以日常赛促**实践**
-- **开卷考试** 40%
   - TBA
-  <!-- - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
+- **课程报告** 40%
+  - 聚焦所选前沿论文所属方向调研
+  - 触及智能体版本边界
+<!-- - **开卷考试** 40%
+  - TBA
+  - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
 
 ---
 
 ## 研讨论文列表
 
-![bg right](images/reading-list-2025.png)
+![bg right](images/reading-list-2026.png)
 
 扫码在线填表
 
 - 每人选择1篇拟汇报论文
 - 选择范围：CCF-A相关论文
-  - [FAST](https://www.usenix.org/conference/fast25/technical-sessions), [ATC](https://www.usenix.org/conference/atc25/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi25/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2024/schedule.html), [ISCA](https://www.iscaconf.org/isca2025/program/), [HPCA](https://hpca-conf.org/2025/main-program/) (2024~25)
+  - [FAST](https://www.usenix.org/conference/fast26/technical-sessions), [ATC](https://www.usenix.org/conference/atc26/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi26/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2025/schedule.html), [ISCA](https://www.iscaconf.org/isca2026/program/), [HPCA](https://hpca-conf.org/2026/main-program/) (2025~26)
 
-- [【腾讯文档】数据中心技术课程论文研讨2025](https://docs.qq.com/sheet/DUG1YRWJkTU51endC?tab=BB08J2)
+- [【腾讯文档】数据中心技术课程论文研讨2026](https://docs.qq.com/sheet/DUEJuWVJ2ZmxYVWZk?tab=BB08J2)
 
 ---
 
@@ -273,16 +275,6 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
-### 方向调研工具推荐
-
-玻尔 | 全球科学家的 AI for Science 空间站  <https://www.bohrium.com/>
-
-SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bohrium.com/chat>，学术码: 3ixmffnr
-
-内建MCP负责Survey，适合于快速摸索新方向
-
----
-
 <style scoped>
   p {
     padding-top: 200px;
@@ -312,7 +304,7 @@ SciMaster ｜ Towards General-Purpose Scientific AI Agents <https://scimaster.bo
 
 ---
 
-### 尝试唤醒自己的工具
+### 打磨工具 VS 锻炼自己，学会从交手中成长
 
 **提示词 baseline**:
 
@@ -334,6 +326,18 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 
 ---
 
+### 智能体技能推荐
+
+[Academic Research Skills](https://github.com/Imbad0202/academic-research-skills/)
+
+[AI research and engineering skills](https://github.com/Orchestra-Research/AI-Research-SKILLs)
+
+其余方向参考
+
+[社会科学学科的实证研究](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills)
+
+---
+
 ## 课程计划
 
 <style scoped>
@@ -350,7 +354,6 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 
 | 周次 | 日期 | 讲座主题 | 地点 |
 | :---: | :---: | :--- | :---: |
-| 2-9 | | 《信息存储理论与技术》(A1-404) | A1-404 |
 | 10 | 11-06 | [数据中心技术概述](data-center-intro) | A2-B106 |
 | 11 | 11-13 | [对象存储系统与尾延迟问题](object-storage) | A2-B106 |
 | 12 | 11-20 | 数据中心固态存储技术 (童老师) | A2-B106 |
