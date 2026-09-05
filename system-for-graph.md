@@ -21,6 +21,12 @@ math: mathjax
 
 ## 参考资料
 
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
 - [CS224W: Machine Learning with Graphs(Stanford)](http://web.stanford.edu/class/cs224w/)
   - [B站搬运 2021版](https://www.bilibili.com/video/BV18FNQeYEzz/)
 
@@ -165,7 +171,7 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 <style scoped>
   table, tr, td {
-    font-size: 27px;
+    font-size: 23px;
   }
 </style>
 
@@ -330,6 +336,12 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 
 ## 早期形态（2005–2010）
 
+<style scoped>
+  table, tr, td {
+    font-size: 25px;
+  }
+</style>
+
 | 关键词 | 具体表现 |
 | --- | --- |
 | **通用框架缺位** | 无专用图引擎，先用 **MapReduce** 硬跑：邻表 → 迭代 → 磁盘 → 再迭代 |
@@ -344,6 +356,12 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 ---
 
 ## 影响后续图系统设计的基本概念
+
+<style scoped>
+  table, tr, td {
+    font-size: 27px;
+  }
+</style>
 
 | 概念 | 早期论文里的原话 & 今天对应术语 |
 | --- | --- |
@@ -481,7 +499,7 @@ grep -v "^#" com-amazon.ungraph.txt | awk '{print $1"\n"$2}' | sort -n | uniq -c
   }
 </style>
 
-![h:450](images/random-access-problem.jpg)
+![h:380](images/random-access-problem.jpg)
 
 - [Kyrola A, Blelloch G, Guestrin C. **GraphChi: Large-Scale Graph Computation on Just a PC**. OSDI 2012.](https://www.usenix.org/conference/osdi12/technical-sessions/presentation/kyrola)
 
@@ -541,6 +559,12 @@ Lecture12 Cache Memory
 ---
 
 #### 经典BFS算法：两个关键数据结构，两重循环体
+
+<style scoped>
+  pre {
+    font-size: 27px;
+  }
+</style>
 
 ```C
 void bfs(int source) {
@@ -604,12 +628,12 @@ void bfs(int source) {
 
 <style scoped>
   p {
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
     font-size: 72px;
   }
   li {
-    font-size: 25px;
+    font-size: 23px;
   }
 </style>
 
@@ -681,7 +705,7 @@ void bfs(int source) {
 
 - 让足量内存应对随机访存，然而…
 
-![h:400](images/dilemma-on-skewness.jpg)
+![h:330](images/dilemma-on-skewness.jpg)
 
 Pregel[SIGMOD’10] ,GraphLab[OSDI’12], Gemini[OSDI’16]
 
@@ -692,6 +716,9 @@ Pregel[SIGMOD’10] ,GraphLab[OSDI’12], Gemini[OSDI’16]
 <style scoped>
   p {
     font-size: 18px;
+  }
+  li {
+    font-size: 25px;
   }
 </style>
 
@@ -722,7 +749,7 @@ Pregel[SIGMOD’10] ,GraphLab[OSDI’12], Gemini[OSDI’16]
 
 GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
-![h:350](images/sequential-vs-random.jpg)
+![h:300](images/sequential-vs-random.jpg)
 
 [Roy A, Mihailovic I, Zwaenepoel W. X-Stream: edge-centric graph processing using streaming partitions. SOSP 2013.](https://dl.acm.org/doi/10.1145/2517349.2522740)
 
@@ -756,7 +783,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-![h:450](images/chaos.jpg)
+![h:370](images/chaos.jpg)
 
 - [Roy A, Bindschaedler L, Malicevic J et al. **Chaos: Scale-Out Graph Processing from Secondary Storage**. SOSP 2015.](https://dl.acm.org/doi/10.1145/2815400.2815408)
 
@@ -886,7 +913,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 - **时序图 (Temporal Graphs)** 广泛存在于现实世界（如社交网络、知识图谱），其结构和关系随时间不断演化。
 - 时序图核心挑战：如何在**存储开销**和**查询时间**之间取得高效平衡。
 
-![h:270](images/evolving-graph-logic.png)
+![h:220](images/evolving-graph-logic.png)
 
 怎样找出10分钟以内的社媒账号同IP多开？…一个号码呼出10个以上被叫号码？…
 
@@ -924,11 +951,11 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-![h:300](images/evolving-graph-research.png)
+![h:230](images/evolving-graph-research.png)
 
 - 快照模型: $G=<G_0, G_1, G_2, \dots, G_t>$
 - 日志模型: $G=<ev_0, ev_1, ev_2, \dots, ev_t>$
-- 全图模型: $G_[t_1, t_n]=<V_[t_1, t_n], E_[t_1, t_n]>$
+- 全图模型: $G_{[t_1, t_n]}=\langle V_{[t_1, t_n]}, E_{[t_1, t_n]}\rangle$
 - 混合模型: 基于偏斜性感知或基于相关性感知
 
 ---
@@ -951,7 +978,7 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   - 插入/删除操作可通过局部移动元素完成，大幅降低更新开销。
   - 提出新的空隙分配与再平衡策略，适应时序图的动态特性。
 
-![(Fig. 4 from Paper: PMA Layout) h:200](images/lsm-subgraph-snapshot.png)
+![(Fig. 4 from Paper: PMA Layout) h:160](images/lsm-subgraph-snapshot.png)
 
 ---
 
@@ -963,11 +990,17 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   - 当 `TD > β` (阈值，经验值 **0.03**) 时，才创建新的关键快照。
   - 克服了基于固定时间或固定日志大小方法的缺陷，实现动态优化。
 
-![(Fig. 5. The updated characteristic of temporal graphs) h:200](images/lsm-subgraph-evolving.png) $TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$
+![(Fig. 5. The updated characteristic of temporal graphs) h:150](images/lsm-subgraph-evolving.png) $TD(K_1, K_2) = \frac{|E_G|}{|E_{K_1}| + |E_{K_2}|}$
 
 ---
 
 ### **日志合并方法**
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - **目标:** 减少查询时需要处理的日志量。
 - **方法:**
@@ -982,6 +1015,12 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 ---
 
 ### **实验效果**
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - **对比对象:** Chronos (Copy-Based), GraphPool (Log-Based), Pensieve (Hybrid)。
 - **结果:**
@@ -1020,10 +1059,10 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
   }
 </style>
 
-- 图数据持续增大 --> 空间开销（状态向量，邻接矩阵）算力需求（矩阵运算）开销巨大
-- 图表示学习 --> 对于 $\forall v \in V$ 有 $f: v \rightarrow R^d(d \ll |V|)$，映射为低维稠密的实值向量
+- 图数据持续增大 → 空间开销（状态向量，邻接矩阵）算力需求（矩阵运算）开销巨大
+- 图表示学习 → 对于 $\forall v \in V$ 有 $f: v \rightarrow R^d(d \ll |V|)$，映射为低维稠密的实值向量
 
-![h:330](images/network-representative-learning.png)
+![h:250](images/network-representative-learning.png)
 
 - 将分类、预测等任务转化为对向量的计算
 
@@ -1042,14 +1081,14 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 |类别|代表方法|特点|
 |:-|:-|:-|
-|基于矩阵分解|LLE(Science'00), Laplacian Eigenmaps(NIPS'01), HOPE(SIGKDD'16), STRAP(KDD’19), ProNE(ICAJI’19)|时间和空间开销大、依赖相似矩阵的选择|
+|基于矩阵分解|LLE(Science'00), Laplacian Eigenmaps(NIPS'01), HOPE(SIGKDD'16), STRAP(KDD’19), ProNE(IJCAI'19)|时间和空间开销大、依赖相似矩阵的选择|
 |基于随机游走|DeepWalk(KDD'14), LINE(KDD'15), Node2Vec(KDD'16), Struct2Vec(KDD’17), DiaRW(FGCS’19)|扩展性更好（时间和空间）、适应性更强|
 
-![h:280](images/deepwalk.png)
+![h:230](images/deepwalk.png)
 
 ---
 
-### 段1 · DeepWalk：一阶随机游走 + Skip-gram (KDD'14)
+### DeepWalk：一阶随机游走 + Skip-gram (KDD'14)
 
 - **做法**：在图上做随机游走生成节点序列 → 当作"句子"用 Skip-gram 训练嵌入
 - **一阶转移**：下一步只依赖当前节点 $v_i$
@@ -1060,16 +1099,28 @@ $$P(v_{i+1} \mid v_i)$$
 
 ---
 
-### 段2 · node2vec：把"二阶"形式化 (KDD'16)
+### node2vec：把"二阶"形式化 (KDD'16)
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - 一阶游走丢失结构信息：无法同时刻画**同质性(homophily)**与**结构等价性(structural equivalence)**
 - node2vec 用 **p, q 参数**控制游走偏置，转移概率由"前驱 + 当前"联合状态决定
 
-![bg fit](images/sorw-node2vec-pq.svg)
+![h:280](images/sorw-node2vec-pq.svg)
 
 ---
 
-### 段2（续）· 二阶转移概率公式
+### node2vec：二阶转移概率
+
+<style scoped>
+  p, li {
+    font-size: 29px;
+  }
+</style>
 
 - 下一步 $x$ 的选择概率：
 
@@ -1083,16 +1134,13 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-### 段3 · 二阶游走的系统挑战
+### 二阶游走的系统挑战
 
-- 状态空间从 O(|V|) 涨到 O(|E|)：状态表无法全内存驻留
-- 转移时需按 $(t, v_i)$ **跳查**下一跳 → 访存模式高度随机 → **随机 I/O 放大**
-
-![bg fit](images/sorw-system-challenge.svg)
+![h:470](images/sorw-system-challenge.svg)
 
 ---
 
-### 段3（续）· 研究问题
+### 研究问题：外存上的二阶转移
 
 - 一阶：顺序扫描邻接表，I/O 友好
 - 二阶：每一步都要查"从 $(t, v_i)$ 出发的候选"，外存上产生大量小随机读
@@ -1100,13 +1148,11 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-### 段4 · 系统方案演进：从内存式到外存二阶
-
 ![bg fit](images/sorw-landscape.svg)
 
 ---
 
-### 段4（续）· KnightKing 与 GraSorw
+### KnightKing 与 GraSorw
 
 - **KnightKing (SOSP'19)**：分布式**内存式**通用游走引擎，支持一阶/二阶语义，但状态全在内存，难扩展到超大图
 - **GraSorw (VLDB'22)**：首个 **out-of-core 二阶游走**系统，把状态溢出到外存，但 I/O 调度仍非最优
@@ -1114,60 +1160,78 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-### 段4（续）· SOWalker：I/O 优化的外存二阶游走 (ATC'23)
+### SOWalker：I/O 优化的外存二阶游走 (ATC'23)
 
 - 背景：现有系统在二阶转移上产生大量随机 I/O，成为性能瓶颈
 
-![bg fit](images/sowalker-background.jpg)
+![h:390](images/sowalker-background.jpg)
 
 ---
 
-### 段4（续）· SOWalker 动机
+### SOWalker：动机
 
 - 关键观察：二阶游走中大量状态更新是"不可更新/冗余"的，直接加载造成 I/O 浪费
 
-![bg fit](images/sowalker-motivation.jpg)
+![h:340](images/sowalker-motivation.jpg)
 
 ---
 
-### 段4（续）· SOWalker 三大贡献
+### SOWalker：三大贡献
+
+<style scoped>
+  li {
+    font-size: 25px;
+  }
+</style>
 
 - **Walk Matrix（游走矩阵）**：记录游走、避免加载不可更新的游走，消除无用游走 I/O
 - **Benefit-Aware I/O Model（效益感知 I/O 模型）**：优先加载累积可更新游走最多的数据块
 - **Block Set-Oriented Walk Updating（块集导向更新）**：每个游走在已加载块内尽可能多走步
 
-![bg fit](images/sowalker-contribution.jpg)
+![h:280](images/sowalker-contribution.jpg)
 
 ---
 
-### 段4（续）· SOWalker 评测
+### SOWalker：评测
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - vs GraphWalker：最高 **10.2×** 加速
 - vs GraSorw：**5.7×** 加速，I/O 量减少 **80%+**
 
-![bg fit](images/sowalker-evaluation-1.jpg)
+![h:350](images/sowalker-evaluation-1.jpg)
 
 ---
 
-### 段4（续）· SOWalker 评测（扩展性）
+### SOWalker：评测（扩展性）
 
-![bg fit](images/sowalker-evaluation-2.jpg)
+![h:450](images/sowalker-evaluation-2.jpg)
 
 ---
 
-### 段5 · 另一条路：熵驱动的有偏一阶游走 (HuGE / HuGE+)
+### 另一条路：熵驱动的有偏一阶游走 (HuGE / HuGE+)
 
-- 注意：HuGE 系列是**信息熵驱动的有偏一阶游走**，定位为**"游走质量优化"**，并非二阶系统
+<style scoped>
+  li {
+    font-size: 22px;
+  }
+</style>
+
+- 注意：HuGE 系列是**信息熵驱动的有偏一阶游走**，定位为"**游走质量优化**"，并非二阶系统
 - 样本规模数十倍于图数据，无法在一周内完成千万节点表示学习
   - 动态调节采样，减少冗余 [FGCS 2019]：顶点度与游走冗余的关系
   - 用**信息熵理论**估计游走冗余 [ICDE 2021]
   - 多核**并行增强**系统扩展 [IEEE ToBD 2023]
 
-![bg fit](images/huge-hrw.jpg)
+![bg right w:420](images/huge-hrw.jpg)
 
 ---
 
-### 段5（续）· HuGE 的启发式随机游走 (HRW)
+### HuGE 的启发式随机游走 (HRW)
 
 ![bg right fit](images/huge-workflow.jpg)
 
@@ -1176,27 +1240,27 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-### 段5（续）· HuGE/HuGE+ 评测
+### HuGE/HuGE+ 评测
 
 - 内存占用平均降低 **68.9%**，运行时间与图大小呈线性关系
 
-![bg fit](images/huge-evaluation-0.jpg)
+![h:390](images/huge-evaluation-0.jpg)
 
 ---
 
-### 段5（续）· HuGE/HuGE+ 评测
+### HuGE/HuGE+ 评测（链接预测与分类）
 
-![bg fit](images/huge-evaluation-1.jpg)
-
----
-
-### 段5（续）· HuGE/HuGE+ 评测
-
-![bg fit](images/huge-evaluation-2.jpg)
+![h:470](images/huge-evaluation-1.jpg)
 
 ---
 
-### 段5（续）· 定位小结：有偏一阶 vs 二阶
+### HuGE/HuGE+ 评测（效率与内存）
+
+![h:470](images/huge-evaluation-2.jpg)
+
+---
+
+### 定位小结：有偏一阶 vs 二阶
 
 - **HuGE 系（有偏一阶）**：优化游走质量、降冗余、省内存 —— 与二阶**互补不替代**
 - **SOWalker（二阶）**：攻克外存二阶的随机 I/O 挑战
@@ -1204,16 +1268,22 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-### 段6 · 走向分布式：DistGER-Pipe (TKDE'25)
+### 走向分布式：DistGER-Pipe (TKDE'25)
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - 单图外存之上，进一步用**多机流水线**执行二阶游走
 - 图划分 → 二阶采样 → I/O 优化层 → 嵌入训练，各分区并行、I/O 与计算重叠
 
-![bg fit](images/sorw-distger-pipe.svg)
+![h:340](images/sorw-distger-pipe.svg)
 
 ---
 
-### 段6（续）· 异构加速与应用衔接
+### 异构加速与应用衔接
 
 - **GOWalker（CPU-GPU 异构）**：V100 平台上较 CPU 实现加速 **2.2–4.1×**
 - **KOWalker（KG 增强问答）**：把二阶游走嵌入用于知识图谱问答，H@1 / F1 提升 **8.2 / 5.5** 个百分点
@@ -1253,7 +1323,7 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 #### 基本思想
 
 - 每个实体和关系都用一个向量表示。
-- 定义一个**评分函数** \( f_r(h, t) \) 来衡量三元组 \( (h, r, t) \) 的合理性。
+- 定义一个**评分函数** $f_r(h, t)$ 来衡量三元组 $(h, r, t)$ 的合理性。
 - 通过训练使得真实三元组的得分高，虚假三元组的得分低。
 
 ---
@@ -1278,6 +1348,12 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 ---
 
 #### 模型特点与适用场景
+
+<style scoped>
+  li {
+    font-size: 27px;
+  }
+</style>
 
 - **TransE**：简单高效，适合快速实验，但不能处理对称关系和一对多关系。
 - **TransR**：通过引入关系特定的投影矩阵，增强了表达能力，能建模更复杂的关系。
@@ -1310,7 +1386,7 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 <style scoped>
   table, th, td {
     border: 1px solid black;
-    font-size: 22px;
+    font-size: 20px;
   }
 </style>
 
@@ -1331,6 +1407,12 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 #### **关键问题**
 
+<style scoped>
+  li {
+    font-size: 24px;
+  }
+</style>
+
 - 通用思维链难专精
   - 推理链生成基于LLM自身生成，无法利用知识图谱形成严谨逻辑
   - 在医疗、法律、金融等高风险领域，此问题带来不可估量的风险
@@ -1343,6 +1425,12 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 ---
 
 [CoT-RAG: Integrating Chain of Thought and Retrieval-Augmented Generation to Enhance Reasoning in Large Language Models](https://arxiv.org/abs/2504.13534v3), EMNLP 2025
+
+<style scoped>
+  p, li {
+    font-size: 27px;
+  }
+</style>
 
 通过结构化知识表示、动态检索机制和伪程序化推理执行，解决现有 CoT 方法在可靠性和推理性能上的两大瓶颈，为 LLM 在复杂和垂直领域的可靠推理提供新范式。
 
@@ -1390,7 +1478,10 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 <style scoped>
   p, li, th, td {
-    font-size: 25px;
+    font-size: 18px;
+  }
+  td, th {
+    padding: 3px 6px;
   }
 </style>
 
@@ -1433,7 +1524,7 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
     font-size: 25px;
   }
   p, li {
-    font-size: 20px;
+    font-size: 22px;
   }
 </style>
 
@@ -1449,6 +1540,22 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 - **必做**：实现二阶转移——按 $(t, v_i)$ 联合状态查下一跳，支持 node2vec 的 p/q 偏置；
 - **I/O 优化（至少选一）**：分块加载邻接表 / Walk Matrix 避免冗余游走 / 效益感知预取（呼应 SOWalker 三贡献）；
 - 用采样序列训练 Skip-gram 嵌入，在链接预测任务上计算 AUC。
+
+---
+
+<style scoped>
+  h1 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  p, li {
+    font-size: 19px;
+  }
+</style>
+
+## 二阶随机游走采样器实验：评测与提交
 
 ### 评测指标（双指标）
 
