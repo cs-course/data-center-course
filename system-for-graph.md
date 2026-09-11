@@ -28,7 +28,7 @@ math: mathjax
 </style>
 
 - [CS224W: Machine Learning with Graphs(Stanford)](http://web.stanford.edu/class/cs224w/)
-  - [B站搬运 2021版](https://www.bilibili.com/video/BV18FNQeYEzz/)
+  - [B站搬运 2021版](https://www.bilibili.com/video/BV18FNQeYEzz/), [中配](https://www.bilibili.com/video/BV1M7Nw6KE2U/)
 
 ## 参考书
 
@@ -36,6 +36,8 @@ math: mathjax
 - [Network Science](http://networksciencebook.com/)
 - [Networks, Crowds, and Markets:
 Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/)
+
+<!-- 油管上有2025版，不过没找到B站搬运 -->
 
 ---
 
@@ -1043,11 +1045,13 @@ GraphChi[OSDI’12], X-Stream[SOSP'13], GridGraph[ATC'15]，CLIP[ATC'17]
 
 ---
 
-### 本节主线：从一阶游走到二阶随机游走
+### 从一阶游走到二阶随机游走
 
-- 图表示学习把节点映射为低维向量；**随机游走是生成训练语料的核心手段**
-- 递进：一阶(DeepWalk) → 二阶定义(node2vec) → 系统挑战 → 系统方案(SOWalker) → 有偏一阶优化(HuGE) → 分布式(DistGER-Pipe)
-- 核心问题：**"二阶"二阶在哪？为什么二阶比一阶更难？**
+- 图表示学习把节点映射为低维向量
+  - 学习样本从哪里来？随机游走是**生成训练语料的核心手段**
+- 历史沿革：
+  - 一阶(DeepWalk) → 二阶定义(node2vec) → 系统挑战 → 系统方案(SOWalker) → 有偏一阶优化(HuGE) → 分布式(DistGER-Pipe)
+- 核心问题：**为什么要"二阶"，二阶体现在哪？为什么比一阶更难？**
 
 ---
 
@@ -1424,7 +1428,7 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 ---
 
-[CoT-RAG: Integrating Chain of Thought and Retrieval-Augmented Generation to Enhance Reasoning in Large Language Models](https://arxiv.org/abs/2504.13534v3), EMNLP 2025
+#### **主要工作**
 
 <style scoped>
   p, li {
@@ -1437,6 +1441,8 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 - 知识图谱驱动的 CoT 生成 (Knowledge Graph-driven CoT Generation)
 - 可学习的知识案例感知 RAG (Learnable Knowledge Case-aware RAG)
 - 伪程序提示执行 (Pseudo-Program Prompting Execution)
+
+[CoT-RAG: Integrating Chain of Thought and Retrieval-Augmented Generation to Enhance Reasoning in Large Language Models](https://arxiv.org/abs/2504.13534v3), EMNLP 2025
 
 <!-- 
 **三阶段设计 (Three-Stage Design)**
@@ -1528,7 +1534,7 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
   }
 </style>
 
-## 二阶随机游走采样器实验（主实验）
+## 二阶随机游走采样器实验
 
 ### 实验背景
 
@@ -1569,4 +1575,4 @@ $$\alpha_{pq}(t,x)=\begin{cases}1/p & d_{tx}=0\\ 1 & d_{tx}=1\\ 1/q & d_{tx}=2\e
 
 #### 时间安排
 
-- 开始日期 / 提交日期：TBA。
+- 开始日期 / 提交日期：**本学期暂不要求提交此项实验作业**。
