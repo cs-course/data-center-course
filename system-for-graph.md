@@ -351,7 +351,7 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 | **BSP 原型** | 在 **MPI** 上手工实现 3 步超步，验证 PageRank 收敛即可登上高分论文 |
 | **磁盘为王** | 2008 年单机能把 **10M 顶点 / 100M 边** 的图在 **SATA 盘** 上跑通就算“可扩展” |
 
-> 一句话：**“能跑完”就是创新，“跑得快”是奢侈。**
+> 在那时：**“能跑完”即创新，“跑得快”是奢侈。**
 
 <!-- 这里指代的就是前面提到的 Pregel 系统以及 GraphChi。 -->
 
@@ -368,9 +368,9 @@ Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinb
 | 概念 | 早期论文里的原话 & 今天对应术语 |
 | --- | --- |
 | **Vertex-centric** | “Think like a vertex” (Pregel, 2010) → 今日 GNN 消息传递前身 |
-| **Bulk Synchronous Parallel** | “Super-step makes global sync easy” → 今日 BSP/ASP/SSP 全家桶 |
-| **Edge-cuts vs Vertex-cuts** | “Min-cut graph partitioning” → 今日 Balanced & Streaming Partition |
-| **Graph-centric Storage** | “Adjacency lists stored in column blocks” → 今日 CSR/CSC/Compressed Adj. List |
+| **Bulk Synchronous Parallel** | “Super-step makes global sync easy” → 延续至今 BSP/ASP/SSP |
+| **Edge-cuts vs Vertex-cuts** | “Min-cut graph partitioning” → 经典分区方法 Balanced & Streaming Partition |
+| **Graph-centric Storage** | “Adjacency lists stored in column blocks” → 经典落盘格式 CSR/CSC/Compressed Adj. List |
 
 ---
 
@@ -550,7 +550,7 @@ Lecture12 Cache Memory
   - 4种经典随机图生成器，合成具备自然图特征的实验数据集
   - 清理自连边、重复边脚本，重编号脚本
 - [SNAP工具包](http://snap.stanford.edu/snap/download.html)
-  - Windows版本需要Cygwin，Linux版本需要Ubuntu
+  - Windows版本需要WSL或Linux虚拟机
 
 <!-- 从这个问题开始，我们演示一下作为一名研究生，大致的学习过程应该是怎样的
 
