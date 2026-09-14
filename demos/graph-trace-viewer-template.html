@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BFS 访存 Trace 交互演示 — CacheLab</title>
+<style>
+  :root{
+    --bg:#10151c; --panel:#161d26; --panel2:#1b2430; --line:#2a3442;
+    --text:#cfd8e3; --dim:#8a97a8; --accent:#4fc3f7;
+    --c-edge:#4fc3f7; --c-index:#ffb74d; --c-visited:#81c784; --c-frontier:#ce93d8; --c-marker:#ef5350;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    display:flex; flex-direction:column; overflow:hidden; user-select:none;
+  }
+  header{
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    padding:10px 18px 6px;
+  }
+  h1{font-size:19px; font-weight:600; letter-spacing:.5px;}
+  h1 small{color:var(--dim); font-weight:400; font-size:13px; margin-left:8px;}
+  .tabs{display:flex; gap:8px; margin-left:auto;}
+  .tab{
+    cursor:pointer; padding:6px 14px; border:1px solid var(--line); border-radius:8px;
+    background:var(--panel); font-size:13px; color:var(--dim); transition:.15s;
+  }
+  .tab:hover{border-color:var(--accent); color:var(--text);}
+  .tab.active{background:#12354a; border-color:var(--accent); color:#fff; font-weight:600;}
+  .tab .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; background:var(--accent);}
+  #stage{flex:1; position:relative; min-height:200px;}
+  canvas{position:absolute; inset:0; width:100%; height:100%; cursor:crosshair;}
+  #tip{
+    position:absolute; pointer-events:none; display:none; z-index:5;
+    background:rgba(13,19,26,.94); border:1px solid var(--line); border-radius:8px;
+    padding:8px 11px; font-size:12.5px; line-height:1.55; white-space:nowrap;
+    box-shadow:0 4px 18px rgba(0,0,0,.45);
+  }
+  #tip b{color:#fff;}
+  footer{
+    border-top:1px solid var(--line); background:var(--panel);
+    padding:8px 18px 10px; display:flex; flex-direction:column; gap:7px;
+  }
+  .row1{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .row2{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+  button{
+    cursor:pointer; border:1px solid var(--line); background:var(--panel2); color:var(--text);
+    border-radius:8px; padding:6px 13px; font-size:13.5px; transition:.15s;
+  }
+  button:hover{border-color:var(--accent); color:#fff;}
+  button.primary{background:#12354a; border-color:#2d6f92; font-weight:600;}
+  button:disabled{opacity:.4; cursor:default;}
+  #scrub{flex:1; min-width:180px; accent-color:var(--accent); height:4px; cursor:pointer;}
+  .ctl{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--dim);}
+  input[type=range].spd{width:110px; accent-color:var(--accent);}
+  #prog{font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--dim); min-width:110px;}
+  #info{
+    font-size:13px; font-variant-numeric:tabular-nums; min-width:330px;
+    background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:5px 12px;
+  }
+  #info .op{font-weight:700;}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--dim); align-items:center;}
+  .legend .it{display:flex; align-items:center; gap:5px;}
+  .sw{width:10px; height:10px; border-radius:50%; display:inline-block;}
+  .dmd{width:9px; height:9px; display:inline-block; transform:rotate(45deg); border-radius:2px;}
+  .counts{display:flex; gap:8px; flex-wrap:wrap; font-size:12px;}
+  .chip{border:1px solid var(--line); border-radius:6px; padding:2px 8px; background:var(--panel2); font-variant-numeric:tabular-nums;}
+  .chip b{font-weight:600;}
+  .note{font-size:11.5px; color:#67748a; line-height:1.5;}
+  .hint{font-size:12px; color:#67748a; margin-left:auto; text-align:right;}
+</style>
+</head>
+<body>
+<header>
+  <h1>BFS 访存 Trace 交互演示<small>krongen -i:8 · V=128 · CacheLab</small></h1>
+  <div class="tabs" id="tabs"></div>
+</header>
+
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div id="tip"></div>
+</div>
+
+<footer>
+  <div class="row1">
+    <button id="playBtn" class="primary">▶ 播放</button>
+    <button id="backBtn" title="后退一步">⏮ -1</button>
+    <button id="fwdBtn" title="前进一步">+1 ⏭</button>
+    <input id="scrub" type="range" min="0" max="100" value="100">
+    <span id="prog"></span>
+    <span class="ctl">速度
+      <input id="spd" class="spd" type="range" min="1" max="30" value="8">
+      <span id="spdv">8×</span>
+    </span>
+    <button id="resetBtn" title="双击画布亦可">重置视图</button>
+    <span class="hint">滚轮缩放 · 拖拽平移 · 双击复位 · 空格播放/暂停 · ←→ 单步</span>
+  </div>
+  <div class="row2">
+    <div id="info">就绪 — 点击「▶ 播放」从左向右重放程序访存过程</div>
+    <div class="counts" id="counts"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+  <div class="note" id="note"></div>
+</footer>
+
+<script>
+const TRACES = /*__DATA__*/[];
+
+const REGIONS = [
+  {key:'csr_edges', cn:'边数组 csr_edges[]',        lo:0x10C000, hi:0x10D000, color:'#4fc3f7', base:0x10C040, step:4, short:'csr_edges[]'},
+  {key:'csr_index', cn:'边索引 csr_index[]',        lo:0x110000, hi:0x110800, color:'#ffb74d', base:0x110040, step:4, short:'csr_index[]'},
+  {key:'visited',   cn:'访问标记 visited[]',        lo:0x110800, hi:0x110A00, color:'#81c784', base:0x110860, step:1, short:'visited[]'},
+  {key:'frontier',  cn:'遍历队列 frontier[]',       lo:0x110A00, hi:0x111000, color:'#ce93d8', base:0x110A60, step:4, short:'frontier[]'},
+  {key:'marker',    cn:'起止标记 MARKER_START/END', lo:0x111200, hi:0x111400, color:'#ef5350', base:0x111260, step:1, short:'MARKER'},
+];
+function regionOf(a){ for(const r of REGIONS){ if(a>=r.lo && a<r.hi) return r; } return null; }
+function describe(addr){
+  const r = regionOf(addr);
+  if(!r) return {cn:'未知区域', el:''};
+  const off = addr - r.base;
+  const idx = Math.floor(off / r.step);
+  return {cn:r.cn, el: r.key==='marker' ? (off===0?'MARKER_START':'MARKER_END') : (r.name||r.key)+'['+idx+']'};
+}
+
+/* ---------- state ---------- */
+let cur = 0;                       // current dataset index
+let data = TRACES[0].data;         // [ [op(0=L,1=S), addr, size], ... ]
+let n = data.length;
+let reveal = n;                    // points currently rendered (playhead)
+let playing = false, speed = 8;
+let view = null;                   // {x0,x1,y0,y1} in data coords
+let dpr = window.devicePixelRatio||1;
+let W=0, H=0;
+const M = {l:86, r:200, t:16, b:40};
+
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+const tip = document.getElementById('tip');
+const info = document.getElementById('info');
+const countsEl = document.getElementById('counts');
+const playBtn = document.getElementById('playBtn');
+const scrub = document.getElementById('scrub');
+const prog = document.getElementById('prog');
+
+/* ---------- view helpers ---------- */
+function defaultView(){
+  let ymin=Infinity, ymax=-Infinity;
+  for(const d of data){ if(d[1]<ymin) ymin=d[1]; if(d[1]>ymax) ymax=d[1]; }
+  const padY=(ymax-ymin)*0.06+64;
+  return {x0:-n*0.02, x1:n*1.03, y0:ymin-padY, y1:ymax+padY};
+}
+const xi = i => M.l + (i-view.x0)/(view.x1-view.x0)*(W-M.l-M.r);
+const yi = a => H-M.b - (a-view.y0)/(view.y1-view.y0)*(H-M.t-M.b);
+const xiInv = px => view.x0 + (px-M.l)/(W-M.l-M.r)*(view.x1-view.x0);
+const yiInv = py => view.y0 + (H-M.b-py)/(H-M.t-M.b)*(view.y1-view.y0);
+
+function resize(){
+  const st = document.getElementById('stage');
+  W = st.clientWidth; H = st.clientHeight;
+  dpr = window.devicePixelRatio||1;
+  cv.width = W*dpr; cv.height = H*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  draw();
+}
+
+/* ---------- drawing ---------- */
+function fmtDec(x){ return x.toLocaleString('en-US'); }
+function fmtHex(x){ return '0x'+x.toString(16).toUpperCase().padStart(6,'0'); }
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  if(!view) return;
+  const plotR = W-M.r, plotB = H-M.b;
+
+  /* region bands */
+  for(const r of REGIONS){
+    const yTop = yi(r.hi), yBot = yi(r.lo);
+    if(yBot < M.t || yTop > plotB) { /* still draw if partially visible */ }
+    const t = Math.max(yTop, M.t), b = Math.min(yBot, plotB);
+    if(b<=t) continue;
+    ctx.fillStyle = r.color+'10';
+    ctx.fillRect(M.l, t, plotR-M.l, b-t);
+    ctx.strokeStyle = r.color+'30';
+    ctx.setLineDash([4,4]); ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(M.l,b+.5); ctx.lineTo(plotR,b+.5); ctx.stroke();
+    ctx.setLineDash([]);
+    if(b-t > 9){
+      ctx.fillStyle = r.color;
+      ctx.font = (b-t>16 ? '12px ' : '11px ') + '"Segoe UI",sans-serif';
+      ctx.textAlign='left'; ctx.textBaseline='middle';
+      ctx.fillText(b-t>16 ? r.cn : r.short, plotR+8, (t+b)/2);
+    }
+  }
+
+  /* axes ticks */
+  ctx.strokeStyle='#2a3442'; ctx.fillStyle='#8a97a8';
+  ctx.font='11.5px Consolas,monospace'; ctx.lineWidth=1;
+  ctx.strokeRect(M.l+.5, M.t+.5, plotR-M.l-1, plotB-M.t-1);
+
+  /* Y ticks — snap to power-of-two hex-friendly steps, aim ~6 */
+  const spanY = view.y1-view.y0;
+  const rawStepY = spanY/6;
+  let stepY = 0x40;
+  while(stepY < rawStepY) stepY *= 2;
+  ctx.textAlign='right'; ctx.textBaseline='middle';
+  for(let v=Math.ceil(view.y0/stepY)*stepY; v<=view.y1; v+=stepY){
+    const y = yi(v);
+    if(y<M.t||y>plotB) continue;
+    ctx.strokeStyle='#232d3a';
+    ctx.beginPath(); ctx.moveTo(M.l,y+.5); ctx.lineTo(plotR,y+.5); ctx.stroke();
+    ctx.fillText(fmtHex(Math.round(v)), M.l-8, y);
+  }
+  /* X ticks */
+  const spanX = view.x1-view.x0;
+  const stepX = Math.max(1, Math.round(spanX/10));
+  ctx.textAlign='center'; ctx.textBaseline='top';
+  for(let v=Math.ceil(view.x0/stepX)*stepX; v<=view.x1; v+=stepX){
+    const x = xi(v);
+    if(x<M.l||x>plotR) continue;
+    ctx.strokeStyle='#232d3a';
+    ctx.beginPath(); ctx.moveTo(x+.5,M.t); ctx.lineTo(x+.5,plotB); ctx.stroke();
+    ctx.fillText(String(v), x, plotB+7);
+  }
+  ctx.fillStyle='#67748a'; ctx.font='12px "Segoe UI",sans-serif';
+  ctx.textAlign='left'; ctx.textBaseline='top';
+  ctx.fillText('访存序号（时间 →）', M.l+4, plotB+22);
+
+  /* points */
+  const x0i = Math.max(0, Math.floor(view.x0)), x1i = Math.min(n-1, Math.ceil(view.x1));
+  const lim = Math.min(reveal-1, x1i);
+  for(let i=x0i; i<=lim; i++){
+    const d=data[i], r=regionOf(d[1]); if(!r) continue;
+    const x=xi(i), y=yi(d[1]);
+    if(x<M.l-4||x>plotR+4||y<M.t-4||y>plotB+4) continue;
+    ctx.fillStyle=r.color;
+    if(d[0]===0){ /* load: circle */
+      ctx.beginPath(); ctx.arc(x,y,2.6,0,6.2832); ctx.fill();
+    } else {      /* store: diamond */
+      ctx.save(); ctx.translate(x,y); ctx.rotate(Math.PI/4);
+      ctx.fillRect(-2.3,-2.3,4.6,4.6); ctx.restore();
+    }
+  }
+
+  /* playhead + current point */
+  if(reveal>0 && reveal<=n){
+    const i = reveal-1, d = data[i];
+    const x=xi(i), y=yi(d[1]);
+    if(x>=M.l && x<=plotR){
+      ctx.strokeStyle='rgba(255,255,255,.28)'; ctx.setLineDash([3,4]); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(x+.5,M.t); ctx.lineTo(x+.5,plotB); ctx.stroke();
+      ctx.setLineDash([]);
+      if(y>=M.t&&y<=plotB){
+        ctx.strokeStyle='#fff'; ctx.lineWidth=1.6;
+        ctx.beginPath(); ctx.arc(x,y,6.5,0,6.2832); ctx.stroke();
+        /* crosshair to axes */
+        ctx.strokeStyle='rgba(255,255,255,.18)'; ctx.setLineDash([2,3]);
+        ctx.beginPath(); ctx.moveTo(M.l,y); ctx.lineTo(x,y); ctx.moveTo(x,y); ctx.lineTo(x,plotB); ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+  }
+}
+
+/* ---------- stats / info ---------- */
+function updateCounts(){
+  const c = {}; REGIONS.forEach(r=>c[r.key]=0);
+  let total=0, loads=0, stores=0;
+  for(let i=0;i<reveal;i++){
+    const d=data[i], r=regionOf(d[1]);
+    if(r) c[r.key]++;
+    total++; if(d[0]===0) loads++; else stores++;
+  }
+  countsEl.innerHTML = REGIONS.filter(r=>c[r.key]>0)
+    .map(r=>'<span class="chip" style="border-color:'+r.color+'55"><span style="color:'+r.color+'">'+r.key+'</span> <b>'+c[r.key]+'</b></span>').join('')
+    + '<span class="chip">共 <b>'+total+'</b>（L '+loads+' / S '+stores+'）</span>';
+  prog.textContent = reveal+' / '+n;
+  scrub.value = reveal;
+}
+function showInfo(i){
+  const d=data[i], r=describe(d[1]);
+  const opTxt = d[0]===0 ? 'L 载入' : 'S 写存';
+  const opCol = d[0]===0 ? '#4fc3f7' : '#ef5350';
+  info.innerHTML = '第 <b>'+(i+1)+'</b> 条 · <span class="op" style="color:'+opCol+'">'+opTxt+'</span> · 地址 <b>'+fmtHex(d[1])+'</b> ('+fmtDec(d[1])+') · '+d[2]+' B'+(r.el?' · <span style="color:#9fd6a8">'+r.el+'</span>':'');
+}
+
+/* ---------- playback ---------- */
+let rafId=null, lastT=0, acc=0;
+function tick(t){
+  if(!playing) return;
+  const dt = Math.min(100, t-lastT); lastT=t;
+  acc += speed*dt/1000*60/10;   /* points per frame-ish */
+  while(acc>=1 && reveal<n){ reveal++; acc--; }
+  if(reveal>=n){ reveal=n; stop(); }
+  if(reveal>0) showInfo(reveal-1);
+  updateCounts(); draw();
+  if(playing) rafId=requestAnimationFrame(tick);
+}
+function start(){
+  if(reveal>=n) { reveal=0; acc=0; }
+  playing=true; playBtn.textContent='⏸ 暂停';
+  lastT=performance.now(); acc=0;
+  rafId=requestAnimationFrame(tick);
+}
+function stop(){ playing=false; playBtn.textContent='▶ 播放'; if(rafId) cancelAnimationFrame(rafId); }
+
+playBtn.onclick = ()=> playing?stop():start();
+document.getElementById('fwdBtn').onclick = ()=>{ stop(); reveal=Math.min(n,reveal+1); updateCounts(); if(reveal>0) showInfo(reveal-1); draw(); };
+document.getElementById('backBtn').onclick = ()=>{ stop(); reveal=Math.max(0,reveal-1); updateCounts(); if(reveal>0) showInfo(reveal-1); draw(); };
+scrub.oninput = e=>{ stop(); reveal=+e.target.value; updateCounts(); if(reveal>0) showInfo(reveal-1); draw(); };
+const spd=document.getElementById('spd'), spdv=document.getElementById('spdv');
+spd.oninput = e=>{ speed=+e.target.value; spdv.textContent=speed+'×'; };
+document.getElementById('resetBtn').onclick = ()=>{ view=defaultView(); draw(); };
+
+/* ---------- interaction: zoom / pan / hover ---------- */
+let dragging=false, dragStart=null, viewStart=null, moved=false;
+function zoomAt(mx,my,f){
+  const dx=xiInv(mx), dy=yiInv(my);
+  view.x0=dx+(view.x0-dx)*f; view.x1=dx+(view.x1-dx)*f;
+  view.y0=dy+(view.y0-dy)*f; view.y1=dy+(view.y1-dy)*f;
+  if(view.x1-view.x0 < 8){ const c=(view.x0+view.x1)/2; view.x0=c-4; view.x1=c+4; }
+  if(view.x1-view.x0 > n*3){ view=defaultView(); }
+  draw();
+}
+cv.addEventListener('wheel', e=>{
+  e.preventDefault();
+  const rect=cv.getBoundingClientRect();
+  zoomAt(e.clientX-rect.left, e.clientY-rect.top, e.deltaY<0?1/1.15:1.15);
+},{passive:false});
+cv.addEventListener('pointerdown', e=>{
+  dragging=true; moved=false;
+  const rect=cv.getBoundingClientRect();
+  dragStart={x:e.clientX-rect.left, y:e.clientY-rect.top};
+  viewStart={...view};
+  cv.setPointerCapture(e.pointerId);
+});
+cv.addEventListener('pointermove', e=>{
+  const rect=cv.getBoundingClientRect();
+  const mx=e.clientX-rect.left, my=e.clientY-rect.top;
+  if(dragging){
+    const ddx=(mx-dragStart.x)/(W-M.l-M.r)*(viewStart.x1-viewStart.x0);
+    const ddy=(my-dragStart.y)/(H-M.t-M.b)*(viewStart.y1-viewStart.y0);
+    if(Math.abs(mx-dragStart.x)+Math.abs(my-dragStart.y)>3) moved=true;
+    view.x0=viewStart.x0-ddx; view.x1=viewStart.x1-ddx;
+    view.y0=viewStart.y0+ddy; view.y1=viewStart.y1+ddy;
+    tip.style.display='none';
+    draw();
+    return;
+  }
+  hover(mx,my,e);
+});
+cv.addEventListener('pointerup', ()=>{ dragging=false; });
+cv.addEventListener('pointerleave', ()=>{ dragging=false; tip.style.display='none'; });
+cv.addEventListener('dblclick', ()=>{ view=defaultView(); draw(); });
+
+function hover(mx,my,e){
+  if(!view) return;
+  let best=-1, bd=100;
+  const lim=Math.min(reveal-1,n-1);
+  for(let i=Math.max(0,Math.floor(view.x0)); i<=lim; i++){
+    const x=xi(i), y=yi(data[i][1]);
+    const dd=(x-mx)*(x-mx)+(y-my)*(y-my);
+    if(dd<bd){ bd=dd; best=i; }
+  }
+  if(best<0){ tip.style.display='none'; return; }
+  const d=data[best], r=describe(d[1]);
+  tip.style.display='block';
+  tip.innerHTML='<b>#'+(best+1)+'</b> '+(d[0]===0?'<b style="color:#4fc3f7">L</b>':'<b style="color:#ef5350">S</b>')
+    +' · '+fmtHex(d[1])+' · '+d[2]+' B'
+    +(r.el?'<br><span style="color:#9fd6a8">'+r.el+'</span>':'')
+    +'<br><span style="color:#8a97a8">'+r.cn+'</span>';
+  const st=document.getElementById('stage');
+  let tx=mx+16, ty=my+14;
+  if(tx+tip.offsetWidth>st.clientWidth-8) tx=mx-tip.offsetWidth-14;
+  if(ty+tip.offsetHeight>st.clientHeight-8) ty=my-tip.offsetHeight-12;
+  tip.style.left=tx+'px'; tip.style.top=ty+'px';
+}
+
+/* keyboard */
+window.addEventListener('keydown', e=>{
+  if(e.code==='Space'){ e.preventDefault(); playing?stop():start(); }
+  else if(e.key==='ArrowRight'){ document.getElementById('fwdBtn').click(); }
+  else if(e.key==='ArrowLeft'){ document.getElementById('backBtn').click(); }
+});
+
+/* ---------- tabs / legend / init ---------- */
+const tabsEl=document.getElementById('tabs');
+TRACES.forEach((t,i)=>{
+  const el=document.createElement('div');
+  el.className='tab'+(i===cur?' active':'');
+  el.innerHTML='<span class="dot" style="background:'+t.color+'"></span>'+t.label;
+  el.onclick=()=>selectTrace(i);
+  tabsEl.appendChild(el);
+});
+function selectTrace(i){
+  cur=i; data=TRACES[i].data; n=data.length;
+  view=defaultView(); reveal=n; stop();
+  [...tabsEl.children].forEach((c,j)=>c.classList.toggle('active',j===i));
+  updateCounts(); showInfo(n-1); draw();
+}
+const legendEl=document.getElementById('legend');
+legendEl.innerHTML = REGIONS.map(r=>'<span class="it"><span class="sw" style="background:'+r.color+'"></span>'+r.cn+'</span>').join('')
+  +'<span class="it"><span class="sw" style="background:#ddd;width:8px;height:8px"></span>L 载入(●)</span>'
+  +'<span class="it"><span class="dmd" style="background:#ddd"></span>S 写存(◆)</span>';
+
+document.getElementById('note').innerHTML =
+  '数据来源：graph-128-traces.xlsx（bfs-128-csr / bfs-128-dd-csr / bfs-128-bfs-csr 三张工作表，'
+  +TRACES.reduce((s,t)=>s+t.data.length,0)+' 条访存记录）。'
+  +'原表中 '+TRACES.reduce((s,t)=>s+(t.repaired||0),0)+' 处含 e0/e4/e8 的十六进制地址被 Excel 误解析为科学记数法（如 001100e4 → 11000000），已依据同名 .csv 原始 trace 修复。'
+  +'纵轴为数据地址，横轴为访存时序；着色对应 BFS 程序中各数据结构（.bss 段布局），Y 轴自下而上即内存由低到高。';
+
+window.addEventListener('resize', resize);
+selectTrace(0);
+resize();
+</script>
+</body>
+</html>

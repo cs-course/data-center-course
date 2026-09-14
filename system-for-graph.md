@@ -614,6 +614,10 @@ void bfs(int source) {
 - 遍历顺序排列
   - [ICPE '14](https://dl.acm.org/doi/10.1145/2568088.2576761)
 
+🎬 <a href="graph-trace-viewer.html" target="_blank">**现场演示：三种布局的访存 trace 逐条回放**</a>
+
+<!-- 三种布局各 128 点的 BFS，CacheLab trace 按 CSR 边数组 / 索引数组 / visited / frontier 着色分区，可播放、缩放、悬停看命中哪个数组元素 -->
+
 ---
 
 ![bg fit](images/bfs-on-krongen-i8.png)
@@ -1223,6 +1227,11 @@ $t$ 是上一站，$v_i$ 是当前站，$x$ 是候选下一站：
 - 二阶：每一步都要查"从 $(t, v_i)$ 出发的候选"，外存上产生大量小随机读
 - **核心问题**：如何在外存(out-of-core)上高效执行二阶转移，把随机 I/O 压下去？
 
+🎬 <a href="walk_io_demo.html" target="_blank">**现场演示：分块 I/O 上的一阶 / 二阶游走**</a>
+（karate 34 点 / 4 块 / 内存仅 M=2 块，逐轮换入换出，左上角实时累计块 I/O 次数）
+
+<!-- 演示要点：① 一阶只需 curr 块在内存，二阶需 prev+curr 两块共驻，I/O 涨得更快；② 策略切到「二阶 · naive」可见第 65 轮起 0 推进 —— 这就是 SOWalker 说的 non-updatable walks；③ 「并排对比」模式左右同步推进看 I/O 斜率差 -->
+
 ---
 
 ![bg fit](images/sorw-landscape.svg)
@@ -1618,6 +1627,7 @@ $t$ 是上一站，$v_i$ 是当前站，$x$ 是候选下一站：
 
 - **必做**：实现二阶转移——按 $(t, v_i)$ 联合状态查下一跳，支持 node2vec 的 p/q 偏置；
 - **I/O 优化（至少选一）**：分块加载邻接表 / Walk Matrix 避免冗余游走 / 效益感知预取（呼应 SOWalker 三贡献）；
+- **参考**：<a href="walk_io_demo.html" target="_blank">分块 I/O 动态演示</a>（调度策略：round-robin / state-aware / AUW，对照你自己实现的 I/O 计数）
 
 ---
 

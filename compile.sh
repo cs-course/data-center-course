@@ -26,6 +26,18 @@ bin/marp *.md
 mkdir -p "$BUILD_TMP"
 find . -maxdepth 1 -name "*.html" -exec mv {} "$BUILD_TMP/" \;
 
+# 3.5 把 demos/ 下的独立 HTML 演示一并纳入本次构建
+#     （public 由 rsync --delete 重建，不纳入就会被当成僵尸文件清掉）
+echo "🎬 正在挂载交互式演示..."
+mkdir -p "$BUILD_TMP"
+DEMOS=$(ls demos/*.html 2>/dev/null || true)
+if [ -n "$DEMOS" ]; then
+    cp -f $DEMOS "$BUILD_TMP/"
+    echo "   ↳ $(echo "$DEMOS" | tr '\n' ' ')"
+else
+    echo "   ↳ demos/ 下没有 HTML 演示，跳过"
+fi
+
 # 4. 在临时目录中同步图片资源
 echo "🖼️  正在同步图片资源..."
 mkdir -p "$BUILD_TMP/images"
