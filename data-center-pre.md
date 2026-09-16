@@ -193,9 +193,9 @@ He comments that **the lack of experience in datacenter design may have been an 
     - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（[具体要求见后](#研讨论文列表)）
     - 每位同学有**10分钟汇报和2~3分钟问答**
       - 请严格守时（开PPT排练计时，超时扣分）
-  - 做一些贡献，积累一些经验：[**模拟Rebuttal**](#尝试唤醒自己的工具)
+  - 做一些贡献，积累一些经验：[**模拟Rebuttal**](#学会从交手中成长)
 - **实验作业** *30%*
-  - TBA
+  - [头歌：云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)
 - **课程报告** 40%
   - 聚焦所选前沿论文所属方向调研
   - 触及智能体版本边界
@@ -304,7 +304,7 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ---
 
-### 打磨工具 VS 锻炼自己，学会从交手中成长
+### 学会从交手中成长
 
 **提示词 baseline**:
 
