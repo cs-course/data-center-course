@@ -3031,6 +3031,53 @@ Source: <http://stereobooster.github.io/latency-numbers-every-programmer-should-
 
 - 选读论文，准备下个月**研讨**
   - 读前提示，请务必落实主要引用文献，精辟阐述研究背景
-- 熟悉实验内容，准备以日常赛促**实践**
-  - 日常赛作为入门学习，学有余力可以遍寻各大竞赛平台PVP
-  - [数据科学挑战赛：内存故障预测](https://tianchi.aliyun.com/competition/entrance/532055)
+- 熟悉实验内容，准备初步**实践**窥豹一斑
+  - [云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)，头歌邀请码：DVPN6
+
+---
+
+### **延伸思考**：数据中心是系统结构的延伸，更是社会基础设施的延伸
+
+<style scoped>
+  h3 { font-size: 35px; }
+  table { font-size: 21px; }
+  p, li { font-size: 21px; }
+</style>
+
+基础设施堆叠、规模效应与协调成本
+
+| 层级 | 代表设施 | 新增规模效应 | 暗面 | 被迫发明的协调机制 |
+|------|----------|--------------|------|--------------------|
+| 农业定居 | 田亩·灌溉 | 单位土地产出倍增 | 水权争端·洪旱共担 | 历法·沟渠公约 |
+| 城池 | 城墙·路网 | 分工深化·防卫共享 | 瘟疫·补给线 | 市政·度量衡·货币 |
+| 区域物流 | 运河·铁路 | 市场半径扩大 | 单点中断波及全域 | 标准轨距·**时区**·海关 |
+| 工业 | 电网·流水线 | 边际成本递减 | 垄断·污染外部性 | 反垄断·标准·工会 |
+| 信息网络 | 骨干网·云 | 复制成本 ≈ 0 | 攻击面·平台权力 | IETF·ICANN·PKI |
+| **智能算力** | **数据中心·模型** | **认知劳动摊薄** | **资本博弈·咽喉点** | **？请伴随课程思考** |
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+}
+</style>
+
+<div class="columns">
+
+<div>
+
+- 协调机制本身也在**基础设施化**：度量衡→货币→时区→协议/生态，"软垫"决定硬设施能否运转
+- **Tainter 拐点**：协调成本递增 vs 规模收益递减，交点后系统被自身管理开销拖垮（罗马；铁路狂热 1873、光纤 2000）
+- 递归：**AIOps = 用第 N+1 层管理第 N 层**——管理层自身也开始需要被管理
+
+</div>
+
+<div>
+
+![h:220](images/infrastructure-scale-coordination.svg)
+
+</div>
+</div>
+
+<!-- > 素材：2026-10-10 讨论（B站 BV1aFpx6UE83 中美算力建设 引申）；Tainter《复杂社会的崩溃》；Farrell & Newman《Weaponized Interdependence》 -->

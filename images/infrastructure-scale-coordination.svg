@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <rect width="640" height="360" fill="#ffffff"/>
+  <!-- 拐点右侧风险区 -->
+  <rect x="465" y="36" width="135" height="266" fill="#dc2626" opacity="0.07"/>
+  <text x="505" y="58" font-size="13" fill="#b91c1c">出清 / 崩溃风险区</text>
+  <!-- 坐标轴 -->
+  <line x1="60" y1="302" x2="605" y2="302" stroke="#374151" stroke-width="1.5"/>
+  <line x1="60" y1="302" x2="60" y2="30" stroke="#374151" stroke-width="1.5"/>
+  <polygon points="605,302 596,298 596,306" fill="#374151"/>
+  <polygon points="60,30 56,39 64,39" fill="#374151"/>
+  <text x="602" y="292" font-size="13" fill="#374151" text-anchor="end">基础设施层级 →</text>
+  <text x="36" y="46" font-size="13" fill="#374151" transform="rotate(-90 36 46)"></text>
+  <text x="46" y="150" font-size="13" fill="#374151" transform="rotate(-90 46 150)" text-anchor="middle">相对水平</text>
+  <!-- x 轴层级刻度 -->
+  <g font-size="13" fill="#374151" text-anchor="middle">
+    <text x="100" y="322">农业</text>
+    <text x="185" y="322">城池</text>
+    <text x="270" y="322">物流</text>
+    <text x="355" y="322">工业</text>
+    <text x="440" y="322">信息</text>
+    <text x="525" y="322">智能</text>
+  </g>
+  <!-- 规模效应边际收益（递减） -->
+  <path d="M60,70 C250,92 400,142 560,186" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <!-- 协调成本（递增凸曲线） -->
+  <path d="M60,295 C300,287 430,238 560,52" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <!-- Tainter 拐点 -->
+  <circle cx="465" cy="168" r="6" fill="#111827"/>
+  <text x="452" y="150" font-size="14" font-weight="bold" fill="#111827" text-anchor="end">Tainter 拐点</text>
+  <text x="452" y="134" font-size="11.5" fill="#4b5563" text-anchor="end">协调成本 ≈ 规模收益</text>
+  <!-- 图例 -->
+  <line x1="80" y1="50" x2="112" y2="50" stroke="#2563eb" stroke-width="3"/>
+  <text x="118" y="55" font-size="13" fill="#1e40af">每层新增规模效应（递减）</text>
+  <line x1="80" y1="74" x2="112" y2="74" stroke="#dc2626" stroke-width="3"/>
+  <text x="118" y="79" font-size="13" fill="#991b1b">每层所需协调成本（递增）</text>
+  <!-- 底部注 -->
+  <text x="332" y="348" font-size="12" fill="#6b7280" text-anchor="middle">复杂度投资的边际收益递减（Joseph Tainter, The Collapse of Complex Societies）</text>
+</svg>
