@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>对象存储尾延迟演示 · 均值在说谎 / 预测对冲</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --line:#e3e6ea; --ink:#1b1f24; --ink2:#5b6472;
+  --ink3:#8b95a3; --accent:#2563eb; --warn:#dc2626; --ok:#059669; --amber:#d97706;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:14px/1.5 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:1440px;margin:0 auto;padding:14px 18px 28px}
+h1{font-size:17px;margin:0 0 2px;font-weight:650}
+.sub{color:var(--ink2);font-size:12.5px;margin-bottom:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.topbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:10px 14px;margin-bottom:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;color:var(--ink2);
+  font-size:13px;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--accent);color:#fff;font-weight:600}
+select,input{font:inherit}
+select{padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink)}
+input[type=number]{width:76px;padding:4px 6px;border:1px solid var(--line);border-radius:7px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;
+  cursor:pointer;color:var(--ink);font-size:13px}
+.btn:hover{background:#eef2f7}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.fire{background:#fff;border-color:#fca5a5;color:var(--warn);font-weight:600}
+.btn.fire.on{background:var(--warn);color:#fff;border-color:var(--warn)}
+.spacer{flex:1}
+.hint{color:var(--ink3);font-size:12px}
+.row{display:flex;gap:12px;align-items:stretch}
+.pane{flex:1;min-width:0;display:flex;flex-direction:column}
+.side{width:360px;flex:none}
+.ttl{font-size:12px;font-weight:650;color:var(--ink2);padding:9px 12px;
+  border-bottom:1px solid var(--line);letter-spacing:.3px}
+.ttl .tag{float:right;font-weight:400;color:var(--ink3)}
+.bodyP{padding:10px 12px}
+canvas{display:block;width:100%;height:auto;background:#fff}
+.poe{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:8px;
+  padding:8px 12px;font-size:12.5px;margin-bottom:12px}
+.poe b{color:#78350f}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 12px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:7px 9px;background:#fbfcfd}
+.stat .v{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .l{font-size:11px;color:var(--ink3)}
+.stat.hero{grid-column:span 3;background:#fef2f2;border-color:#fecaca;text-align:center}
+.stat.hero .v{font-size:34px;color:var(--warn)}
+.stat.hero.ok{background:#ecfdf5;border-color:#a7f3d0}
+.stat.hero.ok .v{color:var(--ok)}
+.lane{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line)}
+.lane:last-child{border-bottom:0}
+.lane .nm{font-weight:700;width:56px}
+.lane .st{flex:1;height:22px;border-radius:6px;background:#eceff3;position:relative;
+  overflow:hidden;font-size:11px;color:var(--ink2);display:flex;align-items:center;padding:0 8px}
+.lane .st.run{background:#dbeafe;color:#1d4ed8}
+.lane .st.gc{background:#fee2e2;color:#b91c1c;font-weight:650}
+.lane .q{font-size:11.5px;color:var(--ink3);width:86px;text-align:right;
+  font-variant-numeric:tabular-nums}
+pre.code{font:12px/1.55 ui-monospace,Consolas,monospace;background:#0f172a;color:#e2e8f0;
+  border-radius:8px;padding:10px 12px;margin:0;overflow-x:auto}
+pre.code .hl{background:#334155;border-radius:3px}
+pre.code .cm{color:#64748b}
+.tval{color:#fbbf24;font-weight:700}
+table.cmp{border-collapse:collapse;width:100%;font-size:12.5px}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:5px 8px;text-align:right;
+  font-variant-numeric:tabular-nums}
+table.cmp th{background:#fafbfc;color:var(--ink3);font-weight:500;text-align:center}
+table.cmp td:first-child,table.cmp th:first-child{text-align:left}
+.legend{display:flex;flex-wrap:wrap;gap:12px;padding:7px 12px;font-size:11.5px;
+  color:var(--ink2);border-top:1px solid var(--line)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.note{font-size:12px;color:var(--ink2);padding:8px 12px}
+kbd{background:#f1f3f6;border:1px solid var(--line);border-bottom-width:2px;
+  border-radius:4px;padding:0 4px;font-size:11px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>对象存储尾延迟：现场演示</h1>
+<div class="sub">仿真对象：一个"小而差"的对象存储服务（mock_s3 级性能）· 双副本 A/B · 客户端闭环并发 · 磁盘串行服务 + GC/坏块/扰动</div>
+
+<div class="card topbar">
+  <div class="seg" id="modeSeg">
+    <button data-m="observe">① 观测：均值在说谎</button>
+    <button data-m="hedge">② 对冲：驯服长尾</button>
+  </div>
+  <select id="wlSel"></select>
+  <span class="hint" id="stratWrap" style="display:none">策略
+    <select id="stratSel">
+      <option value="none">无对冲（基线）</option>
+      <option value="fixed">固定阈值对冲</option>
+      <option value="pred">预测阈值对冲（滑动窗口 P95）</option>
+    </select>
+    <span id="fixedWrap" style="display:none">阈值 <input type="number" id="fixedT" value="150"> ms</span>
+  </span>
+  <button class="btn fire" id="disturbBtn">🔥 注入扰动</button>
+  <div class="spacer"></div>
+  <span class="hint">速度 <input type="range" id="speed" min="1" max="20" value="4" style="width:90px;vertical-align:-3px"> <span id="speedV">4×</span></span>
+  <span class="hint">目标 <input type="number" id="target" value="3000" step="500"> 请求</span>
+  <button class="btn primary" id="runBtn">▶ 开始</button>
+  <button class="btn" id="resetBtn">重置</button>
+</div>
+
+<div class="poe" id="poeBox"></div>
+
+<div class="row">
+  <div class="pane card">
+    <div class="ttl">逐请求延迟（对数纵轴）<span class="tag" id="progTag">0 / 0</span></div>
+    <canvas id="scatter" width="1060" height="330"></canvas>
+    <div class="legend">
+      <span><i style="background:#2563eb"></i>普通请求</span>
+      <span><i style="background:#dc2626"></i>超过 P99</span>
+      <span id="lgHedge" style="display:none"><i style="background:#f59e0b"></i>触发对冲</span>
+      <span>— 均值（蓝线） · — P99（红线）</span>
+    </div>
+    <div class="ttl" style="border-top:1px solid var(--line)">副本节点状态<span class="tag">磁盘串行服务 · GC 暂停染红</span></div>
+    <div id="lanes">
+      <div class="lane"><span class="nm">副本 A</span><div class="st" id="laneA">空闲</div><span class="q" id="qA"></span></div>
+      <div class="lane"><span class="nm">副本 B</span><div class="st" id="laneB">空闲</div><span class="q" id="qB"></span></div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="card" style="margin-bottom:12px">
+      <div class="ttl">百分位实况<span class="tag">全部已完成请求</span></div>
+      <div class="stats" id="statBox"></div>
+    </div>
+    <div class="card" style="margin-bottom:12px">
+      <div class="ttl">延迟分布 CDF<span class="tag">对数横轴</span></div>
+      <canvas id="cdf" width="360" height="200"></canvas>
+    </div>
+    <div class="card" id="algoCard" style="display:none">
+      <div class="ttl">对冲算法（客户端，~15 行）<span class="tag">阈值实时值 <b class="tval" id="tLive">—</b></span></div>
+      <div class="bodyP" style="padding:10px 12px">
+<pre class="code">window = deque(maxlen=100)
+<span class="cm"># 阈值：滑动窗口实时预测的 P95</span>
+t = <span class="hl">P95(window)</span>  <span class="cm"># = <span class="tval" id="tLive2">—</span></span>
+r1 = async_get(副本A, obj)
+<span class="hl">if r1 等待超过 t:</span>
+    r2 = async_get(副本B, obj)  <span class="cm"># 补发对冲</span>
+    取先完成者, 取消慢者       <span class="cm"># tied</span>
+window.append(本次延迟)</pre>
+      </div>
+    </div>
+    <div class="card" id="cmpCard" style="display:none;margin-top:12px">
+      <div class="ttl">三轮对照<span class="tag"><button class="btn" id="saveRound" style="padding:2px 8px;font-size:11px">保存本轮</button> <button class="btn" id="clearRound" style="padding:2px 8px;font-size:11px">清空</button></span></div>
+      <div class="bodyP" id="cmpBody" style="padding:10px 12px"><span class="hint">每轮跑完后点「保存本轮」，三轮（无对冲 / 固定 / 预测）在此对照。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  演示要点 —— 模式①：先轻载跑 L2，让听众看到「均值一切正常」，再点 🔥 注入扰动，观察均值几乎不动而 P99 起飞；
+  模式②：扰动全程开启，同一负载连跑三轮（无对冲 → 固定阈值 → 预测阈值），每轮保存结果对照 P99 与额外流量。
+  快捷键：<kbd>空格</kbd> 开始/暂停 · <kbd>D</kbd> 扰动开关。
+</div>
+
+</div>
+<script>
+'use strict';
+/* ================= 随机数 ================= */
+function randn(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function lognormal(mu,sg){return Math.exp(mu+sg*randn());}
+function expRand(m){return -m*Math.log(1-Math.random());}
+function fmt(v){if(!isFinite(v))return '—';return v>=1000?(v/1000).toFixed(2)+'s':v.toFixed(1)+'ms';}
+function pctOf(sorted,q){if(!sorted.length)return NaN;
+  return sorted[Math.min(sorted.length-1,Math.floor(q/100*sorted.length))];}
+
+/* ================= 负载定义（模拟 mock_s3 级慢服务） ================= */
+const WLS={
+  L1:{name:'L1 · 大对象顺序读 8MB（Checkpoint 型）',mu:Math.log(120),sg:0.22,conc:4, gc:[400,900], burst:0},
+  L2:{name:'L2 · 小对象随机读 200KB（ImageNet 型）',mu:Math.log(35), sg:0.35,conc:8, gc:[250,700], burst:0},
+  L3:{name:'L3 · 混合读写 70/30 1MB（Web 应用型）', mu:Math.log(55), sg:0.42,conc:8, gc:[350,900], burst:0},
+  L4:{name:'L4 · 突发访问 512KB（竞价/批处理型）',  mu:Math.log(45), sg:0.35,conc:16,gc:[250,700], burst:1},
+};
+
+/* ================= 全局状态 ================= */
+const S={
+  mode:'observe', wl:'L2', running:false,
+  simNow:0, speed:4, target:3000,
+  disturb:false, strategy:'none', fixedT:150,
+  issued:0, done:0, seq:0, hedges:0, wasted:0,
+  lat:[], win:[], parents:[], rounds:[],
+};
+function newNode(n){return {name:n,queue:[],cur:null,busyUntil:0,gcUntil:0,nextGc:expRand(6000)};}
+let NA=newNode('A'), NB=newNode('B');
+
+/* ================= DOM ================= */
+const $=id=>document.getElementById(id);
+const wlSel=$('wlSel');
+Object.keys(WLS).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=WLS[k].name;wlSel.appendChild(o);});
+wlSel.value=S.wl;
+
+const POE={
+  observe:'📝 <b>POE · 先预测再观测</b>：跑之前请听众写下——扰动注入后 <b>P99 ÷ 均值 ≈ 多少倍？均值本身会涨多少倍？</b> 跑完对照右侧红色大数字。',
+  hedge:'📝 <b>POE · 先预测再观测</b>：开跑前请听众写下——预测对冲能把 <b>P99 压低百分之几？额外流量只多百分之几？</b> 三轮保存后对照。',
+};
+
+/* ================= 仿真步进 ================= */
+function curConc(){
+  const w=WLS[S.wl];
+  if(!w.burst)return w.conc;
+  const ph=Math.floor(S.simNow/8000)%3;      // 8s 开 / 16s 关 的方波
+  return ph===0?w.conc:0;
+}
+function nodeStep(nd){
+  if(S.simNow<nd.gcUntil)return;
+  if(S.simNow>=nd.nextGc){
+    const g=WLS[S.wl].gc, m=S.disturb?2:1;
+    nd.gcUntil=S.simNow+(g[0]+Math.random()*(g[1]-g[0]))*m;
+    nd.nextGc=S.simNow+expRand(S.disturb?1600:6000);
+    return;
+  }
+  if(!nd.cur && nd.queue.length){
+    const c=nd.queue.shift();
+    let s=lognormal(WLS[S.wl].mu,WLS[S.wl].sg);
+    if(Math.random()<(S.disturb?0.012:0.002))s*=25;   // 坏块重试级尖刺
+    c.state='run'; c.startAt=S.simNow; c.doneAt=S.simNow+s;
+    nd.cur=c; nd.busyUntil=c.doneAt;
+  }
+}
+function threshold(){
+  if(S.strategy==='fixed')return S.fixedT;
+  if(S.strategy==='pred')return S.win.length>=20?pctOf([...S.win].sort((a,b)=>a-b),95):Infinity;
+  return Infinity;
+}
+function tryIssue(){
+  const cap=curConc();
+  while(S.parents.length<cap && S.issued<S.target){
+    const p={id:++S.seq,t0:S.simNow,finished:false,hedged:false,copies:[]};
+    addCopy(p,NA);
+    S.parents.push(p); S.issued++;
+  }
+}
+function addCopy(p,nd){
+  const c={p,node:nd,state:'q',enqAt:S.simNow,startAt:0,doneAt:0};
+  p.copies.push(c); nd.queue.push(c);
+}
+function hedgeStep(){
+  if(S.mode!=='hedge'||S.strategy==='none')return;
+  const t=threshold();
+  if(!isFinite(t))return;
+  for(const p of S.parents){
+    if(!p.finished&&!p.hedged&&S.simNow-p.t0>t){
+      addCopy(p,NB); p.hedged=true; S.hedges++;
+    }
+  }
+}
+function completeStep(){
+  for(const nd of [NA,NB]){
+    const c=nd.cur;
+    if(c&&S.simNow>=c.doneAt){
+      nd.cur=null;
+      if(c.state==='run'){
+        const p=c.p;
+        if(p.finished){c.state='cxl';S.wasted++;}        // 慢者完成：作废（服务器白干）
+        else{
+          p.finished=true; c.state='done';
+          const L=c.doneAt-p.t0;
+          S.lat.push(L); S.win.push(L); if(S.win.length>100)S.win.shift();
+          S.done++;
+          for(const sib of p.copies){                      // tied：先到先赢，慢者取消
+            if(sib!==c){
+              if(sib.state==='q'){const q=sib.node.queue;const i=q.indexOf(sib);if(i>=0)q.splice(i,1);sib.state='cxl';}
+              else if(sib.state==='run'){sib.state='cxl-run';}
+            }
+          }
+          const i=S.parents.indexOf(p); if(i>=0)S.parents.splice(i,1);
+        }
+      }else if(c.state==='cxl-run'){S.wasted++;}
+    }
+  }
+}
+function step(h){
+  S.simNow+=h;
+  nodeStep(NA); nodeStep(NB);
+  hedgeStep();
+  completeStep();
+  tryIssue();
+  if(S.done>=S.target&&S.parents.length===0)stopRun();
+}
+
+/* ================= 主循环 ================= */
+let rafId=0,lastTs=0;
+function frame(ts){
+  if(!S.running)return;
+  let budget=Math.min(200,ts-lastTs)*S.speed; lastTs=ts;
+  while(budget>0&&S.running){step(2);budget-=2;}
+  drawAll();
+  if(S.running)rafId=requestAnimationFrame(frame);
+}
+function startRun(){
+  if(S.done>=S.target)resetRun();
+  S.running=true; $('runBtn').textContent='⏸ 暂停';
+  lastTs=performance.now(); rafId=requestAnimationFrame(frame);
+}
+function stopRun(){
+  S.running=false; cancelAnimationFrame(rafId);
+  $('runBtn').textContent='▶ 继续'; drawAll();
+}
+function resetRun(){
+  stopRun();
+  S.simNow=0;S.issued=0;S.done=0;S.seq=0;S.hedges=0;S.wasted=0;
+  S.lat=[];S.win=[];S.parents=[];
+  NA=newNode('A');NB=newNode('B');
+  $('runBtn').textContent='▶ 开始'; drawAll();
+}
+
+/* ================= 绘图 ================= */
+const sc=$('scatter').getContext('2d'), cf=$('cdf').getContext('2d');
+const LOG_LO=0, LOG_HI=4;   // 1ms .. 10s
+function yOf(v,H){const l=Math.max(LOG_LO,Math.min(LOG_HI,Math.log10(Math.max(1,v))));
+  return H-4-(l-LOG_LO)/(LOG_HI-LOG_LO)*(H-14);}
+function drawGrid(c,W,H){
+  c.clearRect(0,0,W,H);
+  c.strokeStyle='#eef1f4';c.fillStyle='#8b95a3';c.font='10px sans-serif';c.lineWidth=1;
+  [1,10,100,1000,10000].forEach(v=>{const y=yOf(v,H);
+    c.beginPath();c.moveTo(34,y);c.lineTo(W,y);c.stroke();
+    c.fillText(v>=1000?(v/1000)+'s':v+'ms',4,y+3);});
+}
+function drawScatter(){
+  const W=sc.canvas.width,H=sc.canvas.height;
+  drawGrid(sc,W,H);
+  const n=S.lat.length;
+  if(!n){sc.fillStyle='#8b95a3';sc.font='13px sans-serif';sc.fillText('点击 ▶ 开始',W/2-40,H/2);return;}
+  const sorted=[...S.lat].sort((a,b)=>a-b);
+  const mean=S.lat.reduce((a,b)=>a+b,0)/n, p99=pctOf(sorted,99);
+  const WIN=2400, st=Math.max(0,n-WIN);
+  for(let i=st;i<n;i++){
+    const v=S.lat[i],x=34+((i-st)/WIN)*(W-40),y=yOf(v,H);
+    sc.fillStyle=v>p99?'#dc2626':'rgba(37,99,235,.55)';
+    sc.fillRect(x,y,2,2);
+  }
+  sc.strokeStyle='#2563eb';sc.setLineDash([6,4]);sc.beginPath();
+  sc.moveTo(34,yOf(mean,H));sc.lineTo(W,yOf(mean,H));sc.stroke();
+  sc.strokeStyle='#dc2626';sc.beginPath();
+  sc.moveTo(34,yOf(p99,H));sc.lineTo(W,yOf(p99,H));sc.stroke();sc.setLineDash([]);
+  sc.fillStyle='#2563eb';sc.font='11px sans-serif';sc.fillText('均值 '+fmt(mean),W-110,yOf(mean,H)-5);
+  sc.fillStyle='#dc2626';sc.fillText('P99 '+fmt(p99),W-110,yOf(p99,H)+13);
+}
+function drawCDF(){
+  const W=cf.canvas.width,H=cf.canvas.height;
+  cf.clearRect(0,0,W,H);
+  const n=S.lat.length;
+  cf.strokeStyle='#eef1f4';cf.font='10px sans-serif';cf.fillStyle='#8b95a3';
+  [1,10,100,1000,10000].forEach(v=>{const x=30+(Math.log10(v)/LOG_HI)*(W-36);
+    cf.beginPath();cf.moveTo(x,0);cf.lineTo(x,H-16);cf.stroke();
+    cf.fillText(v>=1000?(v/1000)+'s':v+'',x-6,H-4);});
+  if(n<5)return;
+  const sorted=[...S.lat].sort((a,b)=>a-b);
+  cf.strokeStyle='#2563eb';cf.lineWidth=1.6;cf.beginPath();
+  for(let i=0;i<n;i++){
+    const x=30+(Math.log10(Math.max(1,sorted[i]))/LOG_HI)*(W-36);
+    const y=(H-16)-(i/(n-1))*(H-24);
+    i?cf.lineTo(x,y):cf.moveTo(x,y);
+  }
+  cf.stroke();cf.lineWidth=1;
+  [[50,'#059669'],[99,'#dc2626']].forEach(([q,col])=>{
+    const v=pctOf(sorted,q),x=30+(Math.log10(Math.max(1,v))/LOG_HI)*(W-36);
+    cf.strokeStyle=col;cf.setLineDash([4,3]);cf.beginPath();
+    cf.moveTo(x,0);cf.lineTo(x,H-16);cf.stroke();cf.setLineDash([]);
+    cf.fillStyle=col;cf.fillText('P'+q,x+2,10+(q===99?12:0));});
+}
+function statHTML(){
+  const n=S.lat.length;
+  const sorted=[...S.lat].sort((a,b)=>a-b);
+  const mean=n?S.lat.reduce((a,b)=>a+b,0)/n:NaN;
+  const p50=pctOf(sorted,50),p90=pctOf(sorted,90),p99=pctOf(sorted,99),
+        p999=pctOf(sorted,99.9),mx=n?sorted[n-1]:NaN;
+  const ratio=(isFinite(mean)&&isFinite(p99))?p99/mean:NaN;
+  const heroBad=isFinite(ratio)&&ratio>=10;
+  let h='<div class="stat hero'+(isFinite(ratio)?(heroBad?'':' ok'):'')+'">'
+    +'<div class="v">'+(isFinite(ratio)?ratio.toFixed(1)+'×':'—')+'</div>'
+    +'<div class="l">P99 ÷ 均值'+(isFinite(ratio)?(heroBad?' —— 均值岁月静好，长尾惊涛骇浪':(S.mode==='hedge'?' —— 已被驯服':' —— 尚在平静区间')):'')+'</div></div>'
+    +'<div class="stat"><div class="v">'+fmt(mean)+'</div><div class="l">均值</div></div>'
+    +'<div class="stat"><div class="v">'+fmt(p50)+'</div><div class="l">P50</div></div>'
+    +'<div class="stat"><div class="v">'+fmt(p90)+'</div><div class="l">P90</div></div>'
+    +'<div class="stat"><div class="v" style="color:var(--warn)">'+fmt(p99)+'</div><div class="l">P99</div></div>'
+    +'<div class="stat"><div class="v" style="color:var(--warn)">'+fmt(p999)+'</div><div class="l">P999</div></div>'
+    +'<div class="stat"><div class="v">'+fmt(mx)+'</div><div class="l">Max</div></div>';
+  if(S.mode==='hedge'){
+    const ex=S.done?S.hedges/S.done*100:0;
+    h+='<div class="stat"><div class="v">'+S.hedges+'</div><div class="l">对冲触发</div></div>'
+      +'<div class="stat"><div class="v" style="color:var(--amber)">'+ex.toFixed(1)+'%</div><div class="l">额外请求占比</div></div>'
+      +'<div class="stat"><div class="v">'+S.wasted+'</div><div class="l">慢者作废（服务器白干）</div></div>';
+  }
+  return h;
+}
+function laneHTML(nd,el,qel){
+  const st=$(el);
+  if(S.simNow<nd.gcUntil){st.className='st gc';
+    st.textContent='⛔ GC / 固件停顿（剩余 '+fmt(nd.gcUntil-S.simNow)+'）';}
+  else if(nd.cur){st.className='st run';
+    st.textContent='服务中 '+fmt(nd.cur.doneAt-nd.cur.startAt)+(nd.cur.state==='cxl-run'?'（已被客户端取消，服务器白干）':'');}
+  else{st.className='st';st.textContent='空闲';}
+  $(qel).textContent='队列 '+nd.queue.length;
+}
+function drawAll(){
+  drawScatter(); drawCDF();
+  $('statBox').innerHTML=statHTML();
+  laneHTML(NA,'laneA','qA'); laneHTML(NB,'laneB','qB');
+  $('progTag').textContent=S.done+' / '+S.target+(S.disturb?' · 🔥扰动中':'');
+  const t=threshold();
+  $('tLive').textContent=isFinite(t)?fmt(t):'∞（热身中）';
+  $('tLive2').textContent=isFinite(t)?fmt(t):'∞';
+}
+
+/* ================= 对照表 ================= */
+function renderCmp(){
+  const b=$('cmpBody');
+  if(!S.rounds.length){b.innerHTML='<span class="hint">每轮跑完后点「保存本轮」，三轮（无对冲 / 固定 / 预测）在此对照。</span>';return;}
+  let h='<table class="cmp"><tr><th>策略</th><th>均值</th><th>P99</th><th>P999</th><th>额外请求</th></tr>';
+  const nm={none:'无对冲',fixed:'固定阈值',pred:'预测阈值'};
+  for(const r of S.rounds)
+    h+='<tr><td>'+nm[r.strategy]+'</td><td>'+fmt(r.mean)+'</td><td style="color:var(--warn);font-weight:650">'+fmt(r.p99)+'</td><td>'+fmt(r.p999)+'</td><td>'+r.extra.toFixed(1)+'%</td></tr>';
+  b.innerHTML=h+'</table>';
+}
+
+/* ================= 交互 ================= */
+function setMode(m){
+  S.mode=m;
+  document.querySelectorAll('#modeSeg button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+  $('stratWrap').style.display=m==='hedge'?'':'none';
+  $('algoCard').style.display=m==='hedge'?'':'none';
+  $('cmpCard').style.display=m==='hedge'?'':'none';
+  $('lgHedge').style.display=m==='hedge'?'':'none';
+  $('poeBox').innerHTML=POE[m];
+  resetRun();
+}
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>{location.hash=b.dataset.m;setMode(b.dataset.m);});
+wlSel.onchange=()=>{S.wl=wlSel.value;resetRun();};
+$('stratSel').onchange=e=>{S.strategy=e.target.value;
+  $('fixedWrap').style.display=S.strategy==='fixed'?'':'none';resetRun();};
+$('fixedT').onchange=e=>{S.fixedT=Math.max(1,+e.target.value||150);};
+$('speed').oninput=e=>{S.speed=+e.target.value;$('speedV').textContent=S.speed+'×';};
+$('target').onchange=e=>{S.target=Math.max(500,+e.target.value||3000);};
+$('disturbBtn').onclick=()=>{S.disturb=!S.disturb;
+  $('disturbBtn').classList.toggle('on',S.disturb);
+  $('disturbBtn').textContent=S.disturb?'🔥 扰动中…点击关闭':'🔥 注入扰动';drawAll();};
+$('runBtn').onclick=()=>S.running?stopRun():startRun();
+$('resetBtn').onclick=resetRun;
+$('saveRound').onclick=()=>{
+  const n=S.lat.length;if(!n)return;
+  const sorted=[...S.lat].sort((a,b)=>a-b);
+  S.rounds.push({strategy:S.strategy,mean:S.lat.reduce((a,b)=>a+b,0)/n,
+    p99:pctOf(sorted,99),p999:pctOf(sorted,99.9),extra:S.done?S.hedges/S.done*100:0});
+  renderCmp();
+};
+$('clearRound').onclick=()=>{S.rounds=[];renderCmp();};
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  if(e.code==='Space'){e.preventDefault();S.running?stopRun():startRun();}
+  if(e.key==='d'||e.key==='D')$('disturbBtn').click();
+});
+
+/* ================= 初始化 ================= */
+setMode(location.hash==='#hedge'?'hedge':'observe');
+drawAll();
+</script>
+</body>
+</html>
