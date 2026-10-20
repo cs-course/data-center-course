@@ -47,7 +47,7 @@
 
 ## 三、逐 Session 论文明细
 
-> 标注说明：**✅** = 会议与标题已核实（SOSP'25 / ISCA'26 完整清单）；**◐** = 篇目已确认但英文全称待核（FAST'26，来自文摘）；**【待补】** = 需从 ATC'25 / OSDI'25 proceedings PDF 补 1 篇同方向论文。
+> 标注说明：**✅** = 会议与标题已逐篇核实（SOSP'25 / ISCA'26 / FAST'26 / ATC'25 / OSDI'26 完整清单）。36 篇全部落到真实篇目，无缺口。
 
 ### Week 15 · 12-11
 
@@ -56,11 +56,11 @@
 | 区 | # | 论文 | 会议 | 状态 |
 |:--:|:--:|---|---|:--:|
 | 🔴 红 | 1 | Mantle: Efficient Hierarchical Metadata Management for Cloud Object Storage Services | SOSP'25 | ✅ |
-| 🔴 红 | 2 | ACOS（Apple EB 级全球分布式对象存储） | FAST'26 | ◐ |
+| 🔴 红 | 2 | ACOS: Apple's Geo-Distributed Object Store at Exabyte Scale | FAST'26 | ✅ |
 | 🔴 红 | 3 | GoFS: Managing Scalable Direct Storage Accesses for GPUs | SOSP'25 | ✅ |
 | 🔵 蓝 | 4 | Rearchitecting the Thread Model of In-Memory Key-Value Stores with μTPS | SOSP'25 | ✅ |
 | 🔵 蓝 | 5 | Radical: Running Consistent Applications Closer to Users for Lower Latency | SOSP'25 | ✅ |
-| 🔵 蓝 | 6 | 【待补】对象存储 / 元数据方向 | ATC'25 / OSDI'25 | ⬜ |
+| 🔵 蓝 | 6 | "Range as a Key" is the Key! Fast and Compact Cloud Block Store Index with RASK | FAST'26 | ✅ |
 
 **S2 固态存储与闪存管理**（第 3–4 节）
 
@@ -68,10 +68,10 @@
 |:--:|:--:|---|---|:--:|
 | 🔴 红 | 7 | LOONG: Utilizing Long-Stride Reprogram to Enhance the Performance of SSDs | ISCA'26 | ✅ |
 | 🔴 红 | 8 | BoostX-NTI: Fast, Scalable and Flexible Storage Architecture with NVMe/TCP Initiator Acceleration | ISCA'26 | ✅ |
-| 🔴 红 | 9 | 【待补】SSD / 闪存设备层方向 | ATC'25 / OSDI'25 | ⬜ |
+| 🔴 红 | 9 | DPAS: A Prompt, Accurate and Safe I/O Completion Method for SSDs | FAST'26 | ✅ |
 | 🔵 蓝 | 10 | Aeolia: A Fast and Secure Userspace Interrupt-Based Storage Stack | SOSP'25 | ✅ |
 | 🔵 蓝 | 11 | Sleeping with One Eye Open: Fast, Sustainable Storage with Sandman | SOSP'25 | ✅ |
-| 🔵 蓝 | 12 | SolidAttention（SSD 长上下文 LLM 优化） | FAST'26 | ◐ |
+| 🔵 蓝 | 12 | SolidAttention: Low-Latency SSD-based Serving on Memory-Constrained PCs | FAST'26 | ✅ |
 
 ---
 
@@ -142,22 +142,34 @@
    - 上课时才宣布"红区第 N 篇 vs 蓝区第 M 篇"的配对，压缩预先沟通时间
    - 双轨：AI 基准问题保底 + **允许每组自带 1 个真正想问的尖锐问题**（自主追问权重更高）
 
-3. **评分（待补 rubric，见第五节）**
+3. **双轨对抗（已定稿）**
+   - **AI 基准问题保底**：每组拿到 AI 预生成的 3 个基准问题（方法论对比 / 实验设置 / 适用边界各 1），保证人人有问、不打空
+   - **自主追问加分**：允许/鼓励每组在上课前额外准备 **1 个自己真正想问的尖锐问题**；评分时自主追问质量权重 **高于** AI 问题
+   - 设计意图：AI 问题保底（防"不会问"），自主追问逼深度（防"念 AI 问题走流程"），延迟配对防表演
+
+4. **AI 提示词模板（已出，见配套文件）**
+   - 学生用：`todos/seminar-ai-prompt-templates.md`（含论文深读模板 + 对抗提问模板 + 报告打磨模板，针对"同学 AI 使用水平参差"统一底线）
+   - 教师/助教用：对抗问题批量生成模板（喂 6 篇 + 课程目标，按红蓝立场各出 3 问）
+
+5. **评分（待补 rubric，见下节）**
    - 报告者 / 提问者 / 现场评审 三方分别打分
 
 ---
 
 ## 五、待办与缺口
 
-| 项 | 内容 | 优先级 |
-|---|---|:--:|
-| 补 2 篇 | S1 蓝区第 6 篇、S2 红区第 9 篇 —— 从 **ATC'25 / OSDI'25 proceedings PDF** 各补 1 篇（对象存储元数据 / SSD 设备层方向） | 高 |
-| 核 2 篇 | ACOS、SolidAttention（FAST'26）英文全称 + 一作机构，确认无版权/获取问题 | 中 |
-| 出 rubric | 报告者/提问者/评审三方评分标准，提前公布 | 高 |
-| 出 AI 问题 prompt | 红蓝对抗问题生成模板（含"对方区 3 篇"上下文） | 中 |
-| 80 人分组 | 36 组 × 2–3 人的具体名单（结合选课名单） | 中 |
+> ✅ **36 篇全部落实真实篇目**（FAST'26 / ATC'25 / OSDI'26 三源已逐篇核实，2 个原缺口已补），无论文缺口。
 
-> **程序页说明**：ATC'26 / OSDI'26 / FAST'26 的 technical-sessions 页面为折叠面板或 404，未抓到正文；本表 SOSP'25、ISCA'26 两篇的清单为**完整逐篇核实**，FAST'26 篇目来自文摘确认。缺口篇目建议直接下载各会议 proceedings PDF 补齐。
+| 项 | 内容 | 优先级 | 状态 |
+|---|---|:--:|:--:|
+| ~~补 2 篇~~ | S1 蓝区第 6 篇 → RASK（FAST'26）；S2 红区第 9 篇 → DPAS（FAST'26） | 高 | ✅ 已补 |
+| ~~核 2 篇~~ | ACOS / SolidAttention 英文全称已从 FAST'26 程序页核实 | 中 | ✅ 已核 |
+| 出 rubric | 报告者/提问者/评审三方评分标准，提前公布 | 高 | ⬜ 待出 |
+| ~~出 AI 问题 prompt~~ | 红蓝对抗问题生成模板（含"对方区 3 篇"上下文） | 中 | ✅ 已出 |
+| 80 人分组 | 36 组 × 2–3 人的具体名单（结合选课名单） | 中 | ⬜ 待名单 |
+| 陪审团机制 | 每 session 随机抽 2–3 名非报告学生当"评审"打分（逼听众认真听） | 低 | ⬜ 待细化 |
+
+> **程序页说明**：FAST'26 / ATC'25 / OSDI'26 三个 technical-sessions 页面已由你手工抓取并**逐篇核实**（存于 `d:\tmp\`）；SOSP'25（sigops.org）、ISCA'26（iscaconf.org）此前已完整抓取。六会清单全部为真实逐篇来源，无编造。ATC'26 未开（全文未上官网）未纳入。
 
 ---
 
@@ -167,5 +179,13 @@
 |---|---|---|
 | SOSP'25 | sigops.org 完整日程（逐篇） | S1/S3/S4/S5 主力 |
 | ISCA'26 | iscaconf.org 完整日程（逐篇） | S2/S3/S4/S6 主力 |
-| FAST'26 | 文摘（ACOS / SolidAttention 等） | S1/S2 补充 |
-| ATC'25 / OSDI'25 | **待补**（程序页未公开完整清单） | 2 篇缺口 |
+| FAST'26 | USENIX 程序页（手工抓取，逐篇） | S1/S2 关键篇（ACOS/RASK/DPAS/SolidAttention） |
+| ATC'25 | USENIX 程序页（手工抓取，逐篇） | 备援池（本轮未直接采用，见下） |
+| OSDI'26 | USENIX 程序页（手工抓取，逐篇） | 备援池（本轮未直接采用，见下） |
+
+> **备援论文池**（ATC'25 / OSDI'26 中方向契合、可作替补的强候选，供某篇获取受阻或分组调整时替换）：
+> - 存储/元数据：`Oxbow: A Coordinated Architecture for Multi-Component File Systems`（OSDI'26）、`HotRAP: Hot Record Retention and Promotion for LSM-trees with Tiered Storage`（ATC'25）、`CETOFS: A High-Performance File System with Host-Server Collaboration for Remote Storage`（FAST'26）
+> - 可靠性/故障：`Understanding and Detecting Fail-Slow Hardware Failure Bugs in Cloud Systems`（ATC'25）、`FiDe: Reliable and Fast Crash Failure Detection to Boost Datacenter Coordination`（ATC'25）、`SMARTTalk: Teaching SMART Logs to Talk to LLMs`（OSDI'26）
+> - 内存/CXL：`MEGALON: Efficient Data Sharing for Partly Coherent CXL Memory`（OSDI'26）、`MAC: Metadata Acceleration for Sustainable Performance in Big-Data Systems with CXL DRAM`（OSDI'26）
+> - 能效/资源：`Kareus: Joint Reduction of Dynamic and Static Energy in Large Model Training`（OSDI'26）、`Hardware Lifecycle-Aware Power Planning in Commercial Hyperscale Datacenters`（OSDI'26）
+> - SSD 设备：`Unleashing Zoned UFS: Cross-Layer Optimizations for Next-Generation Mobile Storage`（FAST'26）、`Z-LFS: A Zoned Namespace-tailored Log-structured File System`（ATC'25）
