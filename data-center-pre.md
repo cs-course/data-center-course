@@ -43,10 +43,11 @@ math: mathjax
   - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Third Edition.](https://www.morganclaypool.com/doi/10.2200/S00874ED3V01Y201809CAC046), 2019, ([开放获取](https://link.springer.com/book/10.1007/978-3-031-01761-2))
   - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
   - [计算机系统结构教程（第3版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09019101.html)， 清华大学出版社，2021
+  - [计算机系统结构（微课版）](https://www.ptpress.com.cn/shopping/buy?bookId=43961df3-4a07-4e0e-8b0f-bdf3b21d695f), 人民邮电出版社, 2024
 
 ---
 
-## 计算机系统结构延伸
+## 系统结构课堂延伸
 
 <style scoped>
   li {
@@ -59,6 +60,22 @@ math: mathjax
 - [**计算机体系结构：量化研究方法**（第6版）](https://item.jd.com/13427803.html), 人民邮电出版社, 2022
 
 ![w:270](images/WSC-in-CAQA6e.png)
+
+---
+
+## 系统结构课堂延伸…
+
+<style scoped>
+  li {
+    font-size: 30px;
+  }
+</style>
+
+![bg right fit](images/ca-hust.jpg)
+
+- [计算机系统结构（微课版）](https://www.ptpress.com.cn/shopping/buy?bookId=43961df3-4a07-4e0e-8b0f-bdf3b21d695f), 人民邮电出版社, 2024
+
+![w:500](images/dc-in-ca-hust.png)
 
 ---
 
