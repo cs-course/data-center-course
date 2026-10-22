@@ -57,16 +57,16 @@
 |:--:|:--:|---|---|:--:|
 | 🔴 红 | 1 | Mantle: Efficient Hierarchical Metadata Management for Cloud Object Storage Services | SOSP'25 | ✅ |
 | 🔴 红 | 2 | ACOS: Apple's Geo-Distributed Object Store at Exabyte Scale | FAST'26 | ✅ |
-| 🔴 红 | 3 | GoFS: Managing Scalable Direct Storage Accesses for GPUs | SOSP'25 | ✅ |
+| 🔴 红 | 3 | Managing Scalable Direct Storage Accesses for GPUs with GoFS | SOSP'25 | ✅ |
 | 🔵 蓝 | 4 | Rearchitecting the Thread Model of In-Memory Key-Value Stores with μTPS | SOSP'25 | ✅ |
-| 🔵 蓝 | 5 | Radical: Running Consistent Applications Closer to Users for Lower Latency | SOSP'25 | ✅ |
+| 🔵 蓝 | 5 | Running Consistent Applications Closer to Users with Radical for Lower Latency | SOSP'25 | ✅ |
 | 🔵 蓝 | 6 | "Range as a Key" is the Key! Fast and Compact Cloud Block Store Index with RASK | FAST'26 | ✅ |
 
 **S2 固态存储与闪存管理**（第 3–4 节）
 
 | 区 | # | 论文 | 会议 | 状态 |
 |:--:|:--:|---|---|:--:|
-| 🔴 红 | 7 | LOONG: Utilizing Long-Stride Reprogram to Enhance the Performance of SSDs | ISCA'26 | ✅ |
+| 🔴 红 | 7 | LOONG: Utilizing Long-Stride Reprogramming to Enhance the Performance of SSDs | ISCA'26 | ✅ |
 | 🔴 红 | 8 | BoostX-NTI: Fast, Scalable and Flexible Storage Architecture with NVMe/TCP Initiator Acceleration | ISCA'26 | ✅ |
 | 🔴 红 | 9 | DPAS: A Prompt, Accurate and Safe I/O Completion Method for SSDs | FAST'26 | ✅ |
 | 🔵 蓝 | 10 | Aeolia: A Fast and Secure Userspace Interrupt-Based Storage Stack | SOSP'25 | ✅ |
@@ -95,7 +95,7 @@
 | 🔴 红 | 19 | ColumnKeeper: Efficient Solutions to the ColumnDisturb Vulnerability in DRAM-based Systems | ISCA'26 | ✅ |
 | 🔴 红 | 20 | PVAC: A RowHammer Mitigation Architecture Exploiting Per-victim-row Counting | ISCA'26 | ✅ |
 | 🔴 红 | 21 | From Lab to Fleet: Building and Deploying a Practical Rowhammer Defense in Cloud SoCs（Microsoft） | ISCA'26 | ✅ |
-| 🔵 蓝 | 22 | Orthrus: Efficient and Timely Detection of Silent User Data Corruption in the Cloud | SOSP'25 | ✅ |
+| 🔵 蓝 | 22 | Orthrus: Efficient and Timely Detection of Silent User Data Corruption in the Cloud with Resource-Adaptive Computation Validation | SOSP'25 | ✅ |
 | 🔵 蓝 | 23 | Fawkes: Finding Data Durability Bugs in DBMSs via Recovered Data State Verification | SOSP'25 | ✅ |
 | 🔵 蓝 | 24 | Optimistic Recovery for High-Availability Software via Partial Process State Preservation | SOSP'25 | ✅ |
 
@@ -111,7 +111,7 @@
 | 🔴 红 | 26 | Moirai: Optimizing Placement of Data and Compute in Hybrid Clouds | SOSP'25 | ✅ |
 | 🔴 红 | 27 | Tai Chi: A General High-Efficiency Scheduling Framework for SmartNICs in Hyperscale Clouds | SOSP'25 | ✅ |
 | 🔵 蓝 | 28 | Sailor: Automating Distributed Training over Dynamic, Heterogeneous, and Geo-distributed Clusters | SOSP'25 | ✅ |
-| 🔵 蓝 | 29 | Dandelion: Unlocking True Elasticity for the Cloud-Native Era | SOSP'25 | ✅ |
+| 🔵 蓝 | 29 | Unlocking True Elasticity for the Cloud-Native Era with Dandelion | SOSP'25 | ✅ |
 | 🔵 蓝 | 30 | Spirit: Fair Allocation of Interdependent Resources in Remote Memory Systems | SOSP'25 | ✅ |
 
 **S6 数据中心能效与散热**（第 3–4 节）
@@ -171,6 +171,15 @@
 
 > **程序页说明**：FAST'26 / ATC'25 / OSDI'26 三个 technical-sessions 页面已由你手工抓取并**逐篇核实**（存于 `d:\tmp\`）；SOSP'25（sigops.org）、ISCA'26（iscaconf.org）此前已完整抓取。六会清单全部为真实逐篇来源，无编造。ATC'26 未开（全文未上官网）未纳入。
 
+> **2026-10-21 逐篇回源复核**：36 篇主表 + 备援池全部按官方源逐字核对，共纠正 **6 处**：
+> ① LOONG：`Reprogram`→`Reprogramming`（ISCA'26 官网程序页系笔误，**以 IEEE Xplore 正式库为准**，doc 11617485）；
+> ② GoFS：原误用「系统名: 描述」，改官方格式 `Managing Scalable Direct Storage Accesses for GPUs with GoFS`；
+> ③ Radical：改官方格式 `Running Consistent Applications Closer to Users with Radical for Lower Latency`；
+> ④ Dandelion：改官方格式 `Unlocking True Elasticity for the Cloud-Native Era with Dandelion`；
+> ⑤ Orthrus：补全尾部 `with Resource-Adaptive Computation Validation`（原漏）；
+> ⑥ 备援池 Z-LFS：补全尾部 `for Commodity Small-zone ZNS SSDs`（原漏）。
+> 其余 30 篇主表标题逐字无误（ACOS 的 `Apple's` 官网用弯引号，表中用直引号，属排版差异，不影响检索）。
+
 ---
 
 ## 六、数据来源
@@ -188,4 +197,4 @@
 > - 可靠性/故障：`Understanding and Detecting Fail-Slow Hardware Failure Bugs in Cloud Systems`（ATC'25）、`FiDe: Reliable and Fast Crash Failure Detection to Boost Datacenter Coordination`（ATC'25）、`SMARTTalk: Teaching SMART Logs to Talk to LLMs`（OSDI'26）
 > - 内存/CXL：`MEGALON: Efficient Data Sharing for Partly Coherent CXL Memory`（OSDI'26）、`MAC: Metadata Acceleration for Sustainable Performance in Big-Data Systems with CXL DRAM`（OSDI'26）
 > - 能效/资源：`Kareus: Joint Reduction of Dynamic and Static Energy in Large Model Training`（OSDI'26）、`Hardware Lifecycle-Aware Power Planning in Commercial Hyperscale Datacenters`（OSDI'26）
-> - SSD 设备：`Unleashing Zoned UFS: Cross-Layer Optimizations for Next-Generation Mobile Storage`（FAST'26）、`Z-LFS: A Zoned Namespace-tailored Log-structured File System`（ATC'25）
+> - SSD 设备：`Unleashing Zoned UFS: Cross-Layer Optimizations for Next-Generation Mobile Storage`（FAST'26）、`Z-LFS: A Zoned Namespace-tailored Log-structured File System for Commodity Small-zone ZNS SSDs`（ATC'25）
