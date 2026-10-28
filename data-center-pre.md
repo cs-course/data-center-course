@@ -343,15 +343,15 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 
 ---
 
-### 智能体技能推荐
+### 技能推荐
 
 [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills/)
 
 [AI research and engineering skills](https://github.com/Orchestra-Research/AI-Research-SKILLs)
 
-其余方向参考
+其余方向参考: [社会科学学科的实证研究](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills)
 
-[社会科学学科的实证研究](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills)
+[校友](https://iayce.github.io/startup/)佳作: [LightRead](https://lightingread.cn/)，[邀请码: 4B49AAFB](https://lightingread.cn/login?ref=4B49AAFB)
 
 ---
 
