@@ -219,9 +219,9 @@ math: mathjax
 
 </div>
 
-**核心视角没有变：** 数据中心仍是一台计算机；变化的是设计边界——从服务器与集群软件，扩展到负载、芯片、设施乃至社会环境的全栈协同。
+**核心视角没有变：** 数据中心仍是一台计算机，变化的是设计边界——从服务器与集群软件，扩展到负载、芯片、设施乃至社会环境的全栈协同。
 
-本课程的切入点：对象存储与尾延迟 → SSD 与磁盘故障 → 可靠性保障；共同问题是让这台“计算机”更快、更省、更稳。来源：[第四版第 1.6 节](https://link.springer.com/chapter/10.1007/978-3-031-99489-0_1)
+本课程的切入点：对象存储与尾延迟 → SSD 与磁盘故障 → 可靠性保障，共同问题是让这台“计算机”更快、更省、更稳。来源：[第四版第 1.6 节](https://link.springer.com/chapter/10.1007/978-3-031-99489-0_1)
 
 ---
 
@@ -325,9 +325,9 @@ He comments that **the lack of experience in datacenter design may have been an 
     - 阿里[天池](https://tianchi.aliyun.com/), 腾讯[DataFountain](https://www.datafountain.cn/), [和鲸](https://www.heywhale.com/home/competition), 百度[飞桨AI Studio](https://aistudio.baidu.com/competition), [讯飞开放平台](https://challenge.xfyun.cn/)……
 - **学术探索**方面
   - 相关领域**研讨前沿**技术与进展
-    - 数据中心扩展性、性能、服务质量、可靠性……
+    - 扩展性、性能、服务质量、可靠性……
   - 建立独立研究技能**解决问题**
-    - 选题汇报与研讨、应用实践与检验……
+    - 工作复现、问题洞见、建模分析、观测比较……
 
 ---
 
@@ -341,10 +341,10 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
-    - 第一周确认计划安排，40位同学每人选择1篇Paper准备汇报（[具体要求见后](#研讨论文列表)）
-    - 每位同学有**10分钟汇报和2~3分钟问答**
+    - 第一周确认计划安排，80位同学分组选择36篇Paper准备汇报（[论文列表见后](#研讨论文列表)）
+    - 每组有**10分钟汇报和2~3分钟问答**
       - 请严格守时（开PPT排练计时，超时扣分）
-  - 做一些贡献，积累一些经验：[**模拟Rebuttal**](#学会从交手中成长)
+  - 不用纠结于具体方向表面上的喜好，**重在研讨**
 - **实验作业** *30%*
   - [头歌：云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)
 - **课程报告** 40%
@@ -360,102 +360,95 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ![bg right](images/reading-list-2026.png)
 
-扫码在线填表
+在线填表
 
-- 每人选择1篇拟汇报论文
-- 选择范围：CCF-A相关论文
+- 每组2~3位同学，选择1篇
+- 来源：CCF-A相关论文
   - [FAST](https://www.usenix.org/conference/fast26/technical-sessions), [ATC](https://www.usenix.org/conference/atc26/technical-sessions), [OSDI](https://www.usenix.org/conference/osdi26/technical-sessions), [SOSP](https://sigops.org/s/conferences/sosp/2025/schedule.html), [ISCA](https://www.iscaconf.org/isca2026/program/), [HPCA](https://hpca-conf.org/2026/main-program/) (2025~26)
 
 - [【腾讯文档】数据中心技术课程论文研讨2026](https://docs.qq.com/sheet/DUEJuWVJ2ZmxYVWZk?tab=BB08J2)
 
 ---
 
-### 关于论文选择
+### 初学者谨记：**读论文不是读课文**
 
-<style scoped>
-  li {
-    font-size: 27px;
-  }
-</style>
+[**古法三步**：Reading a Research Paper Using the Three-Pass Method](https://web.stanford.edu/class/cs245/readings/how-to-read-a-paper.pdf)
 
-本次课堂仅做前述范围限定，同学们也可以自选在前面课堂中讨论过的，自己已经比较熟悉的论文进行汇报，**学习重点在于研讨过程**
+[李沐老师：如何读论文【论文精读·1】](https://www.bilibili.com/video/BV1H44y1t75x/), 2021-10-06
 
-**选择举例**：[FAST24](https://www.usenix.org/conference/fast24/technical-sessions)
+[吴恩达老师：如何有效读论文？研究生必看！-CS230/人工智能论文/机器学习](https://www.bilibili.com/video/BV17w41167rC/), 2023-10-17
 
-- **Distributed Storage**（这个分论坛就属于课堂主题相关，其中论文优先挑选）
-- Session Chair: Raju Rangaswami, Florida International University
-  - TeRM: Extending RDMA-Attached Memory with SSD
-  - Combining Buffered I/O and Direct I/O in Distributed File Systems
-  - OmniCache: Collaborative Caching for Near-storage Accelerators
+[**新法探索**：How to Read a Paper in the Age of AI](https://project-delphi.github.io/ml-blog/posts/how-to-read-a-paper-in-the-age-of-ai/)
+
+> The classic advice on reading a research paper still holds: **read in layers, with a goal, and verify by reconstruction**.
 
 ---
 
-### 初学者参考
-
-首先明确：**读论文不是读课文**
-
-[如何读论文【论文精读·1】](https://www.bilibili.com/video/BV1H44y1t75x/), 2021-10-06
-
-[【论文干货】 顶级AI专家吴恩达教你：如何有效读论文？研究生必看！-CS230/人工智能论文/机器学习](https://www.bilibili.com/video/BV17w41167rC/), 2023-10-17
-
-务必**有了基础认识之后，再来找AI配合**
-
-不过……
-
----
-
-### 在读论文之前
+### **要学会站在AI的肩膀上**
 
 <style scoped>
-  p, li {
-    font-size: 25px;
-  }
-</style>
-
-- **传统教育模式的颠覆**：自2022年11月ChatGPT发布以来，基于LLM的AI工具在各种考试中表现出色，能够即时生成与学术研究人员撰写的论文相媲美的内容，学生可以轻松完成作业。
-- **作弊启示录**：ChatGPT的出现使得传统的评估模式变得过时，因为学生的成绩可能不再反映他们的真实能力。
-- **作弊的本质**：当任务被视为外在的、与个人身份无关时，使用工具完成任务并不被视为作弊。
-- **前进之路**：为了适应人工智能时代，大学教育需要从以教学为中心转变为以学习为中心，利用人工智能作为实时、自适应的导师、辅导员和助手。
-- **个性化辅导**：ChatGPT可以作为个性化辅导工具，帮助学生提高（非母语）写作和其他学术技能。
-
-**人工智能时代的大学教学变革**，[中国教育网络](https://cqvip.com/journal/37548/37548) 2024年8月刊
-来源：美国高等教育信息化协会 [EDUCAUSE](https://www.educause.edu/)
-作者：丹·萨罗菲安-布廷
-编译：李想
-责编：项阳
-
----
-
-<style scoped>
-  p {
+  h3 {
     padding-top: 200px;
     text-align: center;
     font-size: 70px;
   }
+  p {
+    text-align: center;
+    font-size: 50px;
+  }
 </style>
 
-**要学会站在AI的肩膀上**
 而不是靠着TA
+
+<!-- 尽信书不如无书 -->
 
 ---
 
 ### 现实问题
 
-读多了论文**头晕**
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+</style>
 
-导师只给了**大方向**
+<div class="columns">
 
-学长**忙**着做实验
+<div>
 
-项目只是**堆材料**
+项目只给**大方向**
 
-开题在即，**问题在哪里**？
+论文读多**心发慌**
 
-如何**批判性的锻炼批判性思维**？
+前辈师长**每日忙**
+
+成果你编**我来扛**
+
+</div>
+
+<div>
+
+AI求解只得仰望
+
+帮读论文不懂也装
+
+求助先批脑袋方方
+
+上手便知幻觉很糖
+
+</div>
+
+</div>
+
+半年之后要开题，我的课题在哪里？——问题的价值，根植于实际应用
+
+良弓尚需健儿张，思维链里见真章！——清楚认识每一步自己要问什么
 
 ---
 
-### 学会从交手中成长
+### 如何**批判性的锻炼批判性思维**？
 
 **提示词 baseline**:
 
@@ -482,8 +475,6 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills/)
 
 [AI research and engineering skills](https://github.com/Orchestra-Research/AI-Research-SKILLs)
-
-其余方向参考: [社会科学学科的实证研究](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills)
 
 [校友](https://iayce.github.io/startup/)佳作: [LightRead](https://lightingread.cn/)，[邀请码: 4B49AAFB](https://lightingread.cn/login?ref=4B49AAFB)
 
