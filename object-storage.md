@@ -164,7 +164,7 @@ Source: <https://www.smartinsights.com/internet-marketing-statistics/happens-onl
 </style>
 
 | 文件存储 (File Storage) | 块存储 (Block Storage) |
-|------------------------|----------------------|
+| ------------------------ | ---------------------- |
 | **组织结构**：层次化：目录和文件名，形成树状文件系统 | **组织结构**：扁平化：数据以固定大小的块存放，直接通过块地址访问 |
 | **访问方式**：通过文件路径和文件名进行访问，使用标准文件操作（打开、读取、写入、关闭） | **访问方式**：通过块编号直接访问，使用底层块设备操作（读块、写块） |
 | **管理层级**：由文件系统管理层处理，提供命名、权限控制和目录管理功能 | **管理层级**：在更接近硬件的层级操作，通常由设备驱动程序管理 |
@@ -219,7 +219,7 @@ Source: <https://www.snia.org/sites/default/files/2025-03/The_Storage_Evolution.
 |规模|种类|
 |:-:|:-:|
 |![w:550](images/scaleout-diagram.jpg)|![w:550](images/OSD-Metadata.webp)|
-| Source: <http://sancluster.com/scale-out-file-system/>| Source: <http://storagegaga.com/the-future-is-intelligent-objects/>|
+|Source: <http://sancluster.com/scale-out-file-system/>|Source: <http://storagegaga.com/the-future-is-intelligent-objects/>|
 
 ---
 
@@ -303,7 +303,7 @@ Source: <https://www.ibm.com/cloud/learn/object-storage>
 </style>
 
 | Object | File | Block | Archive |
-|:-|:-|:-|:-|
+| :- | :- | :- | :- |
 | Object Storage | NAS | SAN | Tape |
 | Videos, photos serving streaming | All kinds of file | Attach to server | The file needs to be saved permanently |
 | Read (download) data regularly | Read data regularly, install as a network drive | Run data directly on Storage | Rarely to download |

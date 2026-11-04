@@ -1,0 +1,37 @@
+﻿周次,Session,编号,论文标题,会议,一句话方向
+15,S1 对象存储与元数据,1,"Mantle: Efficient Hierarchical Metadata Management for Cloud Object Storage Services",SOSP'25,云对象存储的分层元数据管理
+15,S1 对象存储与元数据,2,"ACOS: Apple's Geo-Distributed Object Store at Exabyte Scale",FAST'26,Apple EB 级全球分布式对象存储系统
+15,S1 对象存储与元数据,3,"Managing Scalable Direct Storage Accesses for GPUs with GoFS",SOSP'25,面向 GPU 的可扩展直接存储访问管理
+15,S1 对象存储与元数据,4,"Rearchitecting the Thread Model of In-Memory Key-Value Stores with μTPS",SOSP'25,重构内存 KV 存储线程模型以降延迟
+15,S1 对象存储与元数据,5,"Running Consistent Applications Closer to Users with Radical for Lower Latency",SOSP'25,把一致性应用部署到离用户更近处以降延迟
+15,S1 对象存储与元数据,6,"""Range as a Key"" is the Key! Fast and Compact Cloud Block Store Index with RASK",FAST'26,云块存储"以范围作键"的快速紧凑索引
+15,S2 固态存储与闪存管理,7,"LOONG: Utilizing Long-Stride Reprogramming to Enhance the Performance of SSDs",ISCA'26,SSD 长跨步重编程提升性能
+15,S2 固态存储与闪存管理,8,"BoostX-NTI: Fast, Scalable and Flexible Storage Architecture with NVMe/TCP Initiator Acceleration",ISCA'26,NVMe/TCP Initiator 加速的存储架构
+15,S2 固态存储与闪存管理,9,"DPAS: A Prompt, Accurate and Safe I/O Completion Method for SSDs",FAST'26,SSD 快速、准确、安全的 I/O 完成机制
+15,S2 固态存储与闪存管理,10,"Aeolia: A Fast and Secure Userspace Interrupt-Based Storage Stack",SOSP'25,快速安全的用户态中断式存储栈
+15,S2 固态存储与闪存管理,11,"Sleeping with One Eye Open: Fast, Sustainable Storage with Sandman",SOSP'25,兼顾速度与可持续（节能）的存储
+15,S2 固态存储与闪存管理,12,"SolidAttention: Low-Latency SSD-based Serving on Memory-Constrained PCs",FAST'26,内存受限 PC 上的 SSD 加速 LLM 推理
+16,S3 内存层次与 CXL/HBM 互联,13,"Vistara: Making CXL Real—Full Path from ASIC Design and OS Support to Hyperscale Deployment",ISCA'26,CXL 从 ASIC 设计、OS 支持到超大规模部署
+16,S3 内存层次与 CXL/HBM 互联,14,"Oasis: Pooling PCIe Devices Over CXL to Boost Utilization",SOSP'25,通过 CXL 池化 PCIe 设备提升利用率
+16,S3 内存层次与 CXL/HBM 互联,15,"HBM-CASO: A Coordinated Approach to HBM System-Level and On-Die ECC",ISCA'26,HBM 系统级与片上 ECC 协同纠错
+16,S3 内存层次与 CXL/HBM 互联,16,"Scalable Far Memory: Balancing Faults and Evictions",SOSP'25,远端内存中故障与逐出的平衡
+16,S3 内存层次与 CXL/HBM 互联,17,"Five-Minute Rule 40 Years Later: A First-Principles Revisit for Modern Memory Hierarchy",ISCA'26,"五分钟规则"40 年后的第一性原理重审
+16,S3 内存层次与 CXL/HBM 互联,18,"Demeter: A Scalable and Elastic Tiered Memory Solution for Virtualized Cloud via Guest Delegation",SOSP'25,虚拟化云中的弹性分层内存（客户机委托）
+16,S4 可靠性与故障检测/预测,19,"ColumnKeeper: Efficient Solutions to the ColumnDisturb Vulnerability in DRAM-based Systems",ISCA'26,DRAM 列干扰（ColumnDisturb）漏洞的高效防护
+16,S4 可靠性与故障检测/预测,20,"PVAC: A RowHammer Mitigation Architecture Exploiting Per-victim-row Counting",ISCA'26,基于逐受害行计数的 RowHammer 缓解架构
+16,S4 可靠性与故障检测/预测,21,"From Lab to Fleet: Building and Deploying a Practical Rowhammer Defense in Cloud SoCs",ISCA'26,云 SoC 上实用 RowHammer 防御的落地部署
+16,S4 可靠性与故障检测/预测,22,"Orthrus: Efficient and Timely Detection of Silent User Data Corruption in the Cloud with Resource-Adaptive Computation Validation",SOSP'25,云端用户静默数据损坏的高效及时检测
+16,S4 可靠性与故障检测/预测,23,"Fawkes: Finding Data Durability Bugs in DBMSs via Recovered Data State Verification",SOSP'25,通过恢复数据状态验证发现数据库持久性 Bug
+16,S4 可靠性与故障检测/预测,24,"Optimistic Recovery for High-Availability Software via Partial Process State Preservation",SOSP'25,基于部分进程状态保存的高可用乐观恢复
+17,S5 数据中心资源调度,25,"COpter: Efficient Large-Scale Resource-Allocation via Continual Optimization",SOSP'25,基于持续优化的高效大规模资源分配
+17,S5 数据中心资源调度,26,"Moirai: Optimizing Placement of Data and Compute in Hybrid Clouds",SOSP'25,混合云中数据与算力放置优化
+17,S5 数据中心资源调度,27,"Tai Chi: A General High-Efficiency Scheduling Framework for SmartNICs in Hyperscale Clouds",SOSP'25,超大规模云中 SmartNIC 的高效通用调度框架
+17,S5 数据中心资源调度,28,"Sailor: Automating Distributed Training over Dynamic, Heterogeneous, and Geo-distributed Clusters",SOSP'25,动态异构地理分布集群上的分布式训练自动化
+17,S5 数据中心资源调度,29,"Unlocking True Elasticity for the Cloud-Native Era with Dandelion",SOSP'25,云原生时代的真弹性
+17,S5 数据中心资源调度,30,"Spirit: Fair Allocation of Interdependent Resources in Remote Memory Systems",SOSP'25,远程内存系统中相互依赖资源的公平分配
+17,S6 数据中心能效与散热,31,"Prometheus: Toward Resilient Datacenters through Optimized Cooling Infrastructure",ISCA'26,优化冷却基础设施构建韧性数据中心
+17,S6 数据中心能效与散热,32,"R2D2: Robotized Reconfigurable Network for Disaggregated Datacenters",ISCA'26,面向解聚数据中心的机器人可重构网络
+17,S6 数据中心能效与散热,33,"Power Sloshing in Compound Servers for Large-Scale AI Inference Workloads",ISCA'26,大规模 AI 推理负载下复合服务器的功耗波动
+17,S6 数据中心能效与散热,34,"PowerGrad: Hierarchical Power Management for Power-Limited ML Inference Clusters",ISCA'26,功耗受限 ML 推理集群的分层功耗管理
+17,S6 数据中心能效与散热,35,"PowerWeave: Unlocking Energy-Efficient ML on GPUs with OS-Level Spatial Power Management",ISCA'26,OS 级空间功耗管理提升 GPU 上 ML 能效
+17,S6 数据中心能效与散热,36,"Rearchitecting the Datacenter Lifecycle for AI",ISCA'26,面向 AI 重构数据中心生命周期

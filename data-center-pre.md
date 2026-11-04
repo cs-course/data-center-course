@@ -9,6 +9,7 @@ math: mathjax
 <!-- _class: lead -->
 
 # 数据中心技术
+
 (2026-2027 上学期)
 
 **施展，童薇，胡燏翀，谭支鹏**
@@ -40,7 +41,7 @@ math: mathjax
 - 课程平台 <https://smartcourse.hust.edu.cn/mooc-ans/course/17310000017334.html>
 - 参考书
   - [John Hennessy](https://hennessy.stanford.edu/), [David Patterson](https://www2.eecs.berkeley.edu/Faculty/Homepages/patterson.html), [**Computer Architecture: A Quantitative Approach**, 6th Edition.](https://www.elsevier.com/books/computer-architecture/hennessy/978-0-12-811905-1), 2017
-  - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Datacenter as a Computer: Designing Warehouse-Scale Machines**, Forth Edition.](https://link.springer.com/book/10.1007/978-3-031-99489-0), 2026
+  - [Luiz André Barroso](https://www.barroso.org/), Urs Hölzle, and Parthasarathy Ranganathan, [**The Data Center as a Computer: Designing Warehouse-Scale Machines**, Fourth Edition.](https://link.springer.com/book/10.1007/978-3-031-99489-0), 2026
   - [**数据中心一体化最佳实践：设计仓储级计算机**（原书第3版）](https://book.douban.com/subject/34950732/), [美] [路易斯·安德烈·巴罗索](https://www.barroso.org/) 著，徐凌杰 译, 2020
   - [计算机系统结构教程（第3版）](http://www.tup.tsinghua.edu.cn/booksCenter/book_09019101.html), 清华大学出版社, 2021
   - [计算机系统结构（微课版）](https://www.ptpress.com.cn/shopping/buy?bookId=43961df3-4a07-4e0e-8b0f-bdf3b21d695f), 人民邮电出版社, 2024
@@ -88,6 +89,139 @@ math: mathjax
 ---
 
 ![bg fit](images/caqa5e-ch6-wsc-p2.gif)
+
+---
+
+## 新版参考书：从 **8 章**到 **12 章**
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 170px 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .cover { text-align: center; }
+  .cover p { font-size: 18px; line-height: 1.35; margin: 8px 0; }
+  .toc h4 { font-size: 24px; color: #003F7F; margin: 0 0 7px; }
+  .toc ol { margin: 0 0 15px; padding-left: 29px; }
+  .toc li { font-size: 23px; line-height: 1.35; margin-bottom: 6px; }
+  .toc li strong { color: #C23B22; font-size: 18px; }
+  section > p:last-child { font-size: 20px; color: #666; margin-top: 8px; }
+</style>
+
+<div class="columns">
+
+<div class="cover">
+
+![w:140](images/data-center-computer-4e.jpg)
+
+**第四版 · 2026**\
+12 章 / 347 页
+
+**第三版**\
+8 章 / 189 页
+
+开放获取\
+新增案例 · 重绘插图\
+优化在线阅读
+
+</div>
+
+<div class="toc">
+
+#### 认识系统
+
+1. 引言
+2. WSC 体系结构概览
+3. WSC 工作负载概览
+
+#### 构建系统
+
+4. WSC 软件：分布式系统基础设施 **【新增】**
+5. WSC 硬件：数据中心基础设施
+6. WSC 硬件：计算构建模块
+
+</div>
+
+<div class="toc">
+
+#### 构建系统（续）
+
+7. 软件定义基础设施 **【新增】**
+
+#### 评价与保障
+
+8. 性能与成本
+9. 能源与可持续性
+10. 可信计算：可靠性、可用性、安全与隐私
+
+#### 回顾与导读
+
+11. WSC 二十五年历程 **【新增】**
+12. 二十五篇代表论文评注 **【新增】**
+
+</div>
+
+</div>
+
+目录对照：[第四版](https://link.springer.com/book/10.1007/978-3-031-99489-0) / [第三版](https://link.springer.com/book/10.1007/978-3-031-01761-2)。第 4、7、11、12 章为新增；其余章节亦有拆分、重写与扩展。
+
+---
+
+## 第四版的技术重心：**AI 时代的全栈协同**
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  .columns blockquote {
+    background: #F4F7FA;
+    border-left: 5px solid #467A9F;
+    padding: 10px 15px;
+    margin: 0 0 15px;
+  }
+  .columns blockquote::before,
+  .columns blockquote::after { content: none; }
+  .columns h4 { font-size: 25px; color: #003F7F; margin: 0 0 6px; }
+  .columns p { font-size: 21px; line-height: 1.42; margin: 0; }
+  section > p:nth-last-child(2) { font-size: 30px; line-height: 1.45; margin-top: 18px; }
+  section > p:last-child { font-size: 25px; color: #666; margin-top: 8px; }
+</style>
+
+<div class="columns">
+
+<div>
+
+> #### 负载：AI / LLM 成为一等公民
+>
+> 扩写 Search、YouTube、Gmail，并加入 AI 训练与推理、公有云及数据处理案例；数万芯片、低精度计算和同步通信进入设计方程。
+
+> #### 软件：用全局控制提升硬件效率
+>
+> 软件定义服务器、加速器、网络、存储、电力与机队；依靠全局遥测、抽象和调度优化局部决策，并迈向“自驾驶系统”。
+
+</div>
+
+<div>
+
+> #### 硬件：从芯片封装延伸到机房
+>
+> 多节点服务器、TPU / GPU / VCU、先进互连、无 Spine 与光交换、解耦存储；AI 功率密度进一步推动液冷、模块化与物理自动化。
+
+> #### 目标：从性能成本扩展到可信与可持续
+>
+> 能源讨论扩展到环境可持续性；可信计算整合可靠性、可用性、安全与隐私，并补入静默数据损坏和新的安全威胁模型。
+
+</div>
+
+</div>
+
+**核心视角没有变：** 数据中心仍是一台计算机；变化的是设计边界——从服务器与集群软件，扩展到负载、芯片、设施乃至社会环境的全栈协同。
+
+本课程的切入点：对象存储与尾延迟 → SSD 与磁盘故障 → 可靠性保障；共同问题是让这台“计算机”更快、更省、更稳。来源：[第四版第 1.6 节](https://link.springer.com/chapter/10.1007/978-3-031-99489-0_1)
 
 ---
 
