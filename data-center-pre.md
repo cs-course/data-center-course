@@ -249,7 +249,7 @@ Before the onset of the current pandemic, some of us may have underappreciated h
 
 ## 从**一台机器**到**一个数据中心**
 
-在《The Datacenter as a Computer》中，谷歌工程师提出了一个革命性视角：**将数万台服务器组成的整个数据中心，视为一台统一的"仓储级计算机"**。
+在《The Datacenter as a Computer》中，谷歌工程师提出了一个革命性视角：**将数万台服务器组成的整个数据中心，视为一台统一的“仓储级计算机”**。
 
 这不仅仅是规模的扩张，更是根本性的范式转移：
 
@@ -271,7 +271,7 @@ In the United States, he did a doctorate in **computer engineering** at the Univ
 
 ---
 
-According to an article in Wired, Barroso had never designed a datacenter until he received this request from Google. He came up with the concept of **"datacenter as a computer"**, building data centres with low-cost components, as we know them today.
+According to an article in Wired, Barroso had never designed a datacenter until he received this request from Google. He came up with the concept of **“datacenter as a computer”**, building data centres with low-cost components, as we know them today.
 
 He comments that **the lack of experience in datacenter design may have been an advantage**, as we questioned almost every aspect of how these facilities were designed. Perhaps the most important thing was having **the opportunity to look at the entire design**, from the cooling towers to the compilers, and this quickly revealed important opportunities for improvement. Barroso’s idea quickly spread throughout Silicon Valley, among the datacenters of other Internet giants.
 
@@ -279,15 +279,15 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ## 当今的战略
 
-现在，把镜头拉远——如果单个数据中心可以是一台计算机，那么将全国的数据中心联网，不就构成了一台史无前例的"国家计算机"吗？
+现在，把镜头拉远——如果单个数据中心可以是一台计算机，那么将全国的数据中心联网，不就构成了一台史无前例的“国家计算机”吗？
 
 这就是**中国算力网**的宏伟蓝图：
 
-- "拧成一股绳"：将东部的前沿推理与西部的庞大训练算力无缝衔接
+- “拧成一股绳”：将东部的前沿推理与西部的庞大训练算力无缝衔接
 - 统一调度：像操作系统管理内存那样，在亿级用户间动态分配资源
-- 标准协议：建立跨地域的"机器语言"，让异构算力顺畅对话
+- 标准协议：建立跨地域的“机器语言”，让异构算力顺畅对话
 
-在国家尺度上，实践"数据中心作为计算机"的核心哲学
+在国家尺度上，实践“数据中心作为计算机”的核心哲学
 
 ---
 
@@ -299,11 +299,11 @@ He comments that **the lack of experience in datacenter design may have been an 
   }
 </style>
 
-通过**东数西算**工程，将"软硬协同"的思想提升到地理维度：
+通过**东数西算**工程，将“软硬协同”的思想提升到地理维度：
 
-- **东部"前端"**：在北京、上海、深圳部署低延迟计算，如同计算机的"缓存"
-- **西部"后端"**：在贵州、内蒙古等地建设大规模算力集群，如同"硬盘阵列"
-- **网络"总线"**：通过高速光纤网络，构建国家级的"数据总线系统"
+- **东部“前端”**：在北京、上海、深圳部署低延迟计算，如同计算机的“缓存”
+- **西部“后端”**：在贵州、内蒙古等地建设大规模算力集群，如同“硬盘阵列”
+- **网络“总线”**：通过高速光纤网络，构建国家级的“数据总线系统”
 
 这恰如一台精密的计算机——不同部件各司其职，又通过高效互联成就整体性能。
 
@@ -372,33 +372,41 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 ### 初学者谨记：**读论文不是读课文**
 
-[**古法三步**：Reading a Research Paper Using the Three-Pass Method](https://web.stanford.edu/class/cs245/readings/how-to-read-a-paper.pdf)
+<style scoped>
+  section > p { font-size: 29px; }
+  section > p:last-child { font-size: 19px; line-height: 1.6; }
+  ul { margin: 20px 0 26px; }
+  li { font-size: 31px; margin-bottom: 12px; }
+  blockquote, blockquote p { font-size: 20px; }
+</style>
 
-[李沐老师：如何读论文【论文精读·1】](https://www.bilibili.com/video/BV1H44y1t75x/), 2021-10-06
+课文是从第一页逐字读到最后一页的；论文是**分层读**的：
 
-[吴恩达老师：如何有效读论文？研究生必看！-CS230/人工智能论文/机器学习](https://www.bilibili.com/video/BV17w41167rC/), 2023-10-17
-
-[**新法探索**：How to Read a Paper in the Age of AI](https://project-delphi.github.io/ml-blog/posts/how-to-read-a-paper-in-the-age-of-ai/)
+- **第一遍 · 10 分钟**｜标题、摘要、图表、结论 —— 只判断值不值得读
+- **第二遍 · 1 小时**｜看懂每条图、每个实验 —— 说不说得出 TA 的贡献
+- **第三遍 · 半天**｜在脑子里重跑一遍 —— 换我会怎么做
 
 > The classic advice on reading a research paper still holds: **read in layers, with a goal, and verify by reconstruction**.
 
+[CS245 三步法](https://web.stanford.edu/class/cs245/readings/how-to-read-a-paper.pdf) · [李沐：如何读论文](https://www.bilibili.com/video/BV1H44y1t75x/) · [吴恩达：如何有效读论文](https://www.bilibili.com/video/BV17w41167rC/) · [新法：How to Read a Paper in the Age of AI](https://project-delphi.github.io/ml-blog/posts/how-to-read-a-paper-in-the-age-of-ai/)
+
 ---
 
-### **要学会站在AI的肩膀上**
+### **要学会站在 AI 的肩膀上**
 
 <style scoped>
   h3 {
     padding-top: 200px;
     text-align: center;
-    font-size: 70px;
+    font-size: 68px;
   }
   p {
     text-align: center;
-    font-size: 50px;
+    font-size: 46px;
   }
 </style>
 
-而不是靠着TA
+而不是让 TA 替你站着
 
 <!-- 尽信书不如无书 -->
 
@@ -424,27 +432,96 @@ He comments that **the lack of experience in datacenter design may have been an 
 
 前辈师长**每日忙**
 
-成果你编**我来扛**
+成果你出**我来扛**
 
 </div>
 
 <div>
 
-AI求解只得仰望
+</div>
 
-帮读论文不懂也装
+</div>
 
-求助先批脑袋方方
+半年之后要开题，我的课题在哪里？
 
-上手便知幻觉很糖
+良弓尚需健儿张，思维链里见真章！
+
+---
+
+### 现实问题 **找 AI？**
+
+<style scoped>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .columns > div:first-child { opacity: 0.4; }
+</style>
+
+<div class="columns">
+
+<div>
+
+项目只给**大方向**
+
+论文读多**心发慌**
+
+前辈师长**每日忙**
+
+成果你出**我来扛**
+
+</div>
+
+<div>
+
+AI 讲得**像模像样**
+
+帮读论文**不懂也装**
+
+一问细节**满口荒唐**
+
+上手复现**原地投降**
 
 </div>
 
 </div>
 
-半年之后要开题，我的课题在哪里？——问题的价值，根植于实际应用
+半年之后要开题，我的课题在哪里？——课题的价值，根植于应用实际
 
 良弓尚需健儿张，思维链里见真章！——清楚认识每一步自己要问什么
+
+---
+
+### 一句大实话
+
+```c++
+try {
+  开篇吹爆，实际何用？有谁愿用？
+  有谁开团？何人夺旗？金主在哪里？
+
+  这概念是个啥？这公式什么意思？
+  为什么这样说？凭什么这样做？
+  结果怎么会这样？有没有感觉哪里不正常？
+
+  反复试了好几次，为何不是那么回事？
+  作者大意了？刻意了？还是自己片面了？
+
+  // 通篇都是问句，一个 throw 都没有 —— 所以 catch 永远等不到
+}
+catch {
+  反正 DDL 临近，已经力竭了
+}
+// C++ 没有 finally（正如人生没有），但这句话还是得说出口：
+// 就这样吧
+```
+
+<style scoped>
+  pre { font-size: 25px; line-height: 1.3; margin: 12px 0 14px; }
+  p { font-size: 20px; color: #666; text-align: right; margin: 0; }
+</style>
+
+<!-- 上面这一堆问句，换个包装就是下一页那份 baseline 提示词。 -->
 
 ---
 
@@ -452,7 +529,7 @@ AI求解只得仰望
 
 **提示词 baseline**:
 
-    "请从实际应用落地的可行性、核心工作的代价和收益矛盾、实验场景和负载的代表性这几个方面，对这项工作提出质疑"
+    “请从实际应用落地的可行性、核心工作的代价和收益矛盾、实验场景和负载的代表性这几个方面，对这项工作提出质疑”
 
 **常用模型**：DeepSeek、KIMI、豆包、文心、ChatGPT ……
 
@@ -470,7 +547,7 @@ $$\{evaluator(reviewer(paper)) | reviewer, evaluator \in [DS, KM, DB], paper \in
 
 ---
 
-### 技能推荐
+### 专业化技能
 
 [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills/)
 
