@@ -337,22 +337,23 @@ He comments that **the lack of experience in datacenter design may have been an 
   li {
     font-size: 27px;
   }
+  p {
+    font-size: 16px;
+  }
 </style>
 
 - **论文研讨** *30%*
   - 制作胶片汇报一篇相关论文
     - 第一周确认计划安排，80位同学分组选择36篇Paper准备汇报（[论文列表见后](#研讨论文列表)）
-    - 每组有**10分钟汇报和2~3分钟问答**
-      - 请严格守时（开PPT排练计时，超时扣分）
+    - 每组有**10分钟汇报和2~3分钟问答**，请严格守时（开PPT排练计时，超时扣分）
   - 不用纠结于具体方向表面上的喜好，**重在研讨**
 - **实验作业** *30%*
   - [头歌：云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)
 - **课程报告** 40%
-  - 聚焦选题方向调研
-  - 模拟会议投稿、评审
-<!-- - **开卷考试** 40%
-  - TBA
-  - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
+  - 聚焦选题方向调研，模拟会议投稿、评审
+  - Datacenter Course Simulation Conference 2026 — Class Peer‑Review Exercise
+
+The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
 
 ---
 
