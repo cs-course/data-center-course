@@ -348,8 +348,8 @@ He comments that **the lack of experience in datacenter design may have been an 
 - **实验作业** *30%*
   - [头歌：云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)
 - **课程报告** 40%
-  - 聚焦所选前沿论文所属方向调研
-  - 触及智能体版本边界
+  - 聚焦选题方向调研
+  - 模拟会议投稿、评审
 <!-- - **开卷考试** 40%
   - TBA
   - 综合应用题x4(**2024-01-10**晚**18:30-21:00**，**西五楼220**) -->
