@@ -351,7 +351,7 @@ He comments that **the lack of experience in datacenter design may have been an 
   - [头歌：云原生场景下的aiops实战](https://www.educoder.net/classrooms/y48q5vxr/shixun_homework/4130392/)
 - **课程报告** 40%
   - 聚焦选题方向调研，模拟会议投稿、评审
-  - Datacenter Course Simulation Conference 2026 — Class Peer‑Review Exercise
+  - [Datacenter Course Simulation Conference 2026 — Class Peer‑Review Exercise](https://cmt3.research.microsoft.com/HUSTDS2026/)
 
 The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
 
