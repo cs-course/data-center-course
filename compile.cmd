@@ -11,3 +11,6 @@ move *.html public
 
 REM 复制 images 目录
 xcopy images public\images /E /I /Y
+
+REM 复制 files 目录（zip、pdf 讲义等下载物）
+if exist files xcopy files public\files /E /I /Y

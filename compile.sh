@@ -38,6 +38,18 @@ else
     echo "   ↳ demos/ 下没有 HTML 演示，跳过"
 fi
 
+# 3.6 把 files/ 下的下载物（zip、pdf 讲义等）一并纳入本次构建
+#     同理：rsync --delete 会清掉 public 里不在本次构建中的文件，所以要显式带上
+echo "📎 正在挂载下载文件..."
+mkdir -p "$BUILD_TMP/files"
+FILES=$(ls files/* 2>/dev/null || true)
+if [ -n "$FILES" ]; then
+    cp -f $FILES "$BUILD_TMP/files/"
+    echo "   ↳ $(echo "$FILES" | tr '\n' ' ')"
+else
+    echo "   ↳ files/ 下没有下载文件，跳过"
+fi
+
 # 4. 在临时目录中同步图片资源
 echo "🖼️  正在同步图片资源..."
 mkdir -p "$BUILD_TMP/images"
