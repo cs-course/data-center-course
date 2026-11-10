@@ -49,7 +49,7 @@ paginate: true
 
 <style scoped>
   td, th, p {
-    font-size: 25px;
+    font-size: 30px;
   }
 </style>
 
@@ -70,7 +70,7 @@ paginate: true
 
 <style scoped>
   li, p {
-    font-size: 24px;
+    font-size: 30px;
   }
   .columns {
     display: grid;
@@ -115,11 +115,11 @@ paginate: true
 
 ---
 
-## 写作包：只给 LaTeX
+## 写作包：限 LaTeX 格式
 
 <style scoped>
-  li, p, td {
-    font-size: 23px;
+  li, p, table {
+    font-size: 30px;
   }
 </style>
 
@@ -139,12 +139,6 @@ paginate: true
 
 ## 怎么投：三条硬规矩
 
-<style scoped>
-  li, p {
-    font-size: 26px;
-  }
-</style>
-
 1. **4–6 页，单栏**，用写作包里的 `paper/hustds2026-paper.tex`
 2. **双盲**：姓名、学号、邮箱、导师、致谢、基金号，一个都不能留
    - CMT 的 Authors 字段要如实填（只有我看得到，用于回避分派）
@@ -160,11 +154,6 @@ python tools/check_submission.py --pdf my-paper.pdf
 
 ## 你也要评别人
 
-<style scoped>
-  td, th, p, li {
-    font-size: 26px;
-  }
-</style>
 
 每人 1 篇，12-20 前提交。评审占 **10 分**：
 
@@ -181,12 +170,6 @@ python tools/check_submission.py --pdf my-paper.pdf
 
 ## 三个坑
 
-<style scoped>
-  li, p {
-    font-size: 26px;
-  }
-</style>
-
 1. **匿名没做干净**：PDF 属性里的作者名、图注里的「我们组」、截图里的用户名、致谢忘了删
 2. **页数踩线**：6 页是硬上限，图表也算；压缩先删例子，别删分析
 3. **AI 幻觉文献**：查不到的条目一律删，这比少引两篇严重得多
@@ -194,12 +177,6 @@ python tools/check_submission.py --pdf my-paper.pdf
 ---
 
 <!-- _class: lead -->
-
-<style scoped>
-  p, li {
-    font-size: 26px;
-  }
-</style>
 
 ## 下一步
 
