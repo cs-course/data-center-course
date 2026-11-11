@@ -57,7 +57,7 @@ paginate: true
 | :---: | :--- | :---: |
 | 11-13 | CFP 发布，CMT 开放投稿 | Chair |
 | 11-27 | 分组定稿（36 组），完成注册 | 各组 |
-| **12-04** | **题目与摘要登记截止**（不登记无法进入分派） | 各组 |
+| **12-04** | **占位稿截止**：交 1 页骨架 PDF 才能进 bidding | 各组 |
 | 12-06 ~ 12-10 | 评审意向（bidding） | 全体 |
 | **12-13** | **全文截止**（12-13 23:59） | 各组 |
 | 12-14 ~ 12-20 | 评审期 | 全体 |
@@ -181,7 +181,7 @@ python tools/check_submission.py --pdf my-paper.pdf
 ## 下一步
 
 **本周**：组队定稿 → 注册 CMT → 想清楚一个问题
-**12-04 前**：题目和摘要登记进 CMT
+**12-04 前**：交 1 页骨架稿；12-13 前换正式版
 
 投稿入口 <https://cmt3.research.microsoft.com/HUSTDS2026/>
 写作包 <https://marp-public.pages.dev/files/hustds2026-latex-kit.zip>
