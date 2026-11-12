@@ -1608,7 +1608,7 @@ int find_max(int a[], int low, int high);
 
 ### 使用分治法排序
 
-快速排序函数，参见教材5.4.5节，[递归函数部分](c-language-function.md#递归练习)
+快速排序函数，参见教材5.4.5节，[递归函数部分](c-language-function#递归)
 
 ```c
 /* quick排序法 */
