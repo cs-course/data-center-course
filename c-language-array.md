@@ -82,7 +82,7 @@ int score[SIZE];  // score是含有30个元素的int型数组
 
 <div>
 
-![w:270](images/c-array-map.png)
+![w:250](images/c-array-map.svg)
 
 </div>
 
@@ -186,7 +186,7 @@ for(i = 0; i < 4; i++)
 
 <div>
 
-![w:220](images/c-array-access.png)
+![w:250](images/c-array-access.svg)
 
 </div>
 
@@ -250,7 +250,7 @@ int main(void) {
 
 <div>
 
-![w:270](images/c-array-as-parameter.png)
+![w:300](images/c-array-as-parameter.svg)
 
 </div>
 
@@ -381,7 +381,7 @@ x[1][0]=82  x[1][1]=95  x[1][2]=88
 
 **物理存储结构**：
 
-![w:300](images/c-array-2d.png)
+![w:280](images/c-array-2d.svg)
 
 </div>
 
@@ -997,7 +997,7 @@ int mystrcmp(char s[], char t[]) {
 
 <div>
 
-![w:500](images/c-array-strcmp.png)
+![w:360](images/c-array-strcmp.svg)
 
 </div>
 
@@ -1146,12 +1146,36 @@ int mystrstr(char s[], char t[]) {
 
 <div>
 
-![w:300](images/c-array-strstr-1.png)
-![w:300](images/c-array-strstr-2.png)
-![w:300](images/c-array-strstr-3.png)
-![w:300](images/c-array-strstr-4.png)
+![w:300](images/c-array-strstr-1.svg)
+
+T 每轮右移一格，四轮完整过程见下页
 
 </div>
+
+</div>
+
+---
+
+### 暴方法找子串：四轮匹配过程
+
+<style scoped>
+.frames {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.frames p { margin: 0; }
+</style>
+
+<div class="frames">
+
+![w:460](images/c-array-strstr-1.svg)
+
+![w:460](images/c-array-strstr-2.svg)
+
+![w:460](images/c-array-strstr-3.svg)
+
+![w:460](images/c-array-strstr-4.svg)
 
 </div>
 
@@ -1458,7 +1482,7 @@ void BubbleSort(int a[], int n);
 
 <div>
 
-![w:500](images/c-array-bubblesort.png)
+![w:380](images/c-array-bubblesort.svg)
 
 </div>
 
@@ -1527,7 +1551,7 @@ int main() {
 
 ---
 
-![h:270](images/c-array-binarysearch.png)
+![w:560](images/c-array-binarysearch.svg)
 
 1) 令 `left = 0`，`right = n-1`
 
@@ -1645,7 +1669,7 @@ int partition_v1(int a[], int left, int right) {
 
 ---
 
-![bg fit](images/c-array-partition.png)
+![w:700](images/c-array-partition.svg)
 
 ---
 

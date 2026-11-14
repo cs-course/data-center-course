@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="380px" height="260px" viewBox="-0.5 -0.5 380 260" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-strsort&quot; name=&quot;Page-1&quot;&gt;7Vpdj6s2EP01lm77sMIGg3kEAve+VKq0D31G4E1QAUeOs8n219cGk/CVLLuBSK1gVxHM2JjMmXMYyAAzKM4/ebzf/cFSmgNkpGdgbgBCjmvIT2X4qA0YOrVhy7O0NsGr4TX7h2qjnrc9Zik9dAYKxnKR7bvGhJUlTUTHFnPOTt1hbyzvrrqPt3RgeE3ifGj9K0vFrrYSbFztv2i23TUrQ0N7irgZrA2HXZyyU8tkhsAMOGOi3ivOAc1V7Jq41POiG97LhXFaiikT0HCCPsd7nB/11z0IfmBc/Eh2MZee3w8A+wBLT6DOJOcho/wNhBHwA+B6ILQBCQBxQYiBtwGuA0IHeAHwbBBawCfAR8pF5DBcjQmB71azQuBWLt8DJNIBEh9N1AU9y0v0d6LIpQHKXXlh7G8asJxxaSlZKUf6b1me90xxnm1LeZjIL0ml3X+nXGQST087iixN1TL+aZcJ+rqPE7XmSSavtHF2LFOqAmao07NS6IyEZnOsLxLq42Z5gMx6k3YdVbkwPbcCrWH5SVlBBf+QQxovetE5okliN8ena8qZ2K5tu1a6NbkV6yzfXs59TQS5o3NhPC/MKXkBQgRcCDy5nlFB6wHPqoDcAK/G2FX78wOZ0zcxH4zocxhhZBLb+gaMqAsiIiMoXuRhbhStaSjeoakN3EAZQ1Kh62uXBFUNdoDvVzBLF/kP8HUEWFxt3wHWwi9TsDUXwhZ/haHwJkPlrVjK7srQC4pwVGgXo6g96QYsb7hGdcft4dSN2FhMWxC20ZIB23ghiYIBtNJjByT0ox4E+AsQTOfvg2DhIVKYjACFHgfKmcS3ykDTXvnYQoyWqacqUBWdPD4csuQez2RQA8N0kX/xNPUm0sEbRqodi5GkbWyc5rHI3rsXOhYgvcKfrK70mhqedIsT+NIjw4EdeUL1rHYF2jsRxL0yp3cpIuZbKgbnqeC6fOtJCJIpCCas2GcSLBwYs7ItqrYxgI1qu1FZttnlqb9F2dXHAo8JobUMv9ypQghXIRwKoWM/TQihsSrhHSUkzlxKSJyllBDCKRDuOdvyuCiycrvK4Q2SwbHEmoVlaKoeolUPR6p4Az1PEM1VEO8IIoTmXIoIm1AvIInW1OrwqDJ31cMbJIPQXohleH1SfkQQLfI8QbRXQbwniNidTRCxu5ggOusD2SN8c6zn8Y2sfLvHN4Ln4tvlyWkBvrlrwf/ID2vG814Fo/UNyD2+SZLMdn8jeCm+Ibi+Dv5qvT9SQy72Pnhaa8r6jgp/Xncs9pJqWpvI+tD82Y1qsYfmiR0gs4KCInu8mNjYoRUZnd/51fyYJ4Of+XuVxpMRQ13AzKl9V/YMgE1s67CBFwHXUl04rgdI1dPhEmVU7Tjy31Qu31LNWXVjHglaLXbDWXXPngNCVw0g5P/RffftphBo95t7THOs/84is7SFyMNrz2ddzFwbZ83wXw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>字符串排序：strcmp 比较内容，交换的是指针</title>
+  <desc>strsort(char *s[], int n) 用 strcmp 比较字符串内容，排序时只交换指针数组 s[] 的元素；三段字符串本身不动。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="190" y="16" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">strsort(char *s[], int n)：按字符串内容排序</text>
+    <text x="20" y="38" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">① 交换前</text>
+    <text x="310" y="38" fill="#555555" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">字符串本身不移动</text>
+    <text x="20" y="136" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">② 交换后</text>
+    <rect x="20" y="50" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="61.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[0]</text>
+    <path d="M 78 61.0 L 149 61" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="150" y="50" width="104" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="202.0" y="61.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">compile\0</text>
+    <rect x="20" y="76" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="87.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[1]</text>
+    <path d="M 78 87.0 L 149 87" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="150" y="76" width="150" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="225.0" y="87.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">programming\0</text>
+    <rect x="20" y="102" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="113.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[2]</text>
+    <path d="M 78 113.0 L 149 113" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="150" y="102" width="116" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="208.0" y="113.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">computer\0</text>
+    <rect x="20" y="148" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="159.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[0]</text>
+    <path d="M 78 159.0 L 149 159" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="20" y="174" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="185.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[1]</text>
+    <path d="M 78 185.0 L 149 211" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="20" y="200" width="58" height="22" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="49.0" y="211.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">s[2]</text>
+    <path d="M 78 211.0 L 149 185" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="150" y="148" width="104" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="202.0" y="159.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">compile\0</text>
+    <rect x="150" y="174" width="150" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="225.0" y="185.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">programming\0</text>
+    <rect x="150" y="200" width="116" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="208.0" y="211.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">computer\0</text>
+    <rect x="12" y="230" width="356" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="190.0" y="243.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">比的是元素，排的是指针</text>
+  </g>
+</svg>

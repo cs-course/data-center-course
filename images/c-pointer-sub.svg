@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="268px" height="444px" viewBox="-0.5 -0.5 268 444" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-sub-2026&quot; name=&quot;Page-1&quot;&gt;7VtLj6M4GPw1vq5sg405AiEzl5VW6sOeUXAnaAjOgLuT3l+/NjEkPCbtpAka7UJLLSi/4CuXbcoEONH+9K1MDrs/RcpzgGF6As4KYOz5UP3XwMcZIMg7A9syS88QugAv2T/cgKbc9i1LedXJKIXIZXboghtRFHwjO1hSluLYzfYq8m6rh2TLB8DLJsmH6N9ZKndnlBF4wb/zbLtrWkbQpOyTJrMBql2SiuMV5MTAiUoh5Plsf4p4rmPXxOVcbv2L1PbGSl5ImwJ4WMDU8Z7kb+ZxQYyBj0CgqoIgJkDRxyIQuyBkgCmEAp+AUJ14IAwBc3UeRgEjGvGDGqkzB+1JoEupSpgHYh/4GDBmAiI/mihLflK3FO7kPlcAUqeVLMUPHolclAopRKFyhq9ZnvegJM+2hbrcqIfiCg/feSkzxV9gEvZZmupmwuMuk/zlkGx0m0fVWRVWirci5TpAUFcvCml6IHKaa3OTyFw3zQPsnA+FmyiqhvnpKrCGhm9c7LksP1SWJhX/YfqEEQVrro+XLoZd94ztrrpX05cS06u3bd0X4tWJ4X68HzhW/aDPUDdSY7G8Iu+aJxWoqD4GpKoUWB+90JNhqFGg/+6i+25SoNvhxKEDSigcYYR9nRF3YcSGEerOxgixHStZCIJ4ocbHs1FDF7HYMIIwnI0Sz4aSBBC1biCrJ8z9OX+V08385POZv+Xzbpa8LksuHJn5PfqciZ/Z0oQWmnozD5uRJt+WJn+hqT/muTPyhKANUYcETToZrYKYrUcnIxqxOFw/EP61w9TS6qmTE/1saU3oc6YmhB5aLvAiDbR5oKORJ1WVbW5pSq8RoOPjsE1prALcBounHZ9hGKrrYIzM0w1W8jyR2XvXnRiLkGnhL5Gp526Z8HCHCdLTQSXeyg03Za69hF41CN6uRybllstBPTVb7TPbEYjtVIYXlfVUNrYCfJrMnEVmN2SGHHcanQ0qmlBo87sQa7ym4ypb0dhdw87CQpdPyk0jOfx7vHX16CHM0sejE2iOWI+MsLYqmDZfdX6kEZ0K/V4a7KboxDUII51uPOBQu7kBrN1chfg1QkDoaR/EZPb/G/5uO2Tf3Svcnr+LKBp1eOGTVqb0q6OxCX6lhhfZw9Kk2rWCvDVWh/Xxu43MfcX69LGRuZ1Kf1XRhCOzd8/ODapJLXNe1PL1tVL1Fs6yPfPw9gyGdM4NGmRl1HxfPE7szGc7Iytbhi+ktAzMQAq2smDyhRTM2HykoIUUux1mNN8Ws93XH2IhxXHn22W2/BSDRHDa1251+P7dvNg4+DPy5M0399t9oPFzcSB7DuTY+uxZDqTlJxv/VwcSu3QaB3JQ0XTvuXafdlSLzJCPPx0Ln6Yzb9FZRx99LtijQqP0dkUTCo0tVv9XrX4X4fmsfrtvQqqemf+zNfPJwMwnIFgB39O2YBCBgBo3MMS1CUiAGvm0qx/USYurP+rqu4g80dVXl5ffBpxFfvmBhRP/Cw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>两个指针相减：下标之差与 strlen</title>
+  <desc>上：pa1 指向 a[0]、pa2 指向 a[9]，下标相减得 9；下：q 指向串首、s 停在 '\0'，s − q 即字符串长度。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="134" y="18" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle" dominant-baseline="central">① 同一数组内的两个指针</text>
+    <rect x="104" y="36" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="104" y="64" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="104" y="92" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="106.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">⋮</text>
+    <rect x="104" y="120" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="174" y="50" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A1A1A" text-anchor="start" dominant-baseline="central">a[0]</text>
+    <text x="174" y="78" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A1A1A" text-anchor="start" dominant-baseline="central">a[1]</text>
+    <text x="174" y="134" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A1A1A" text-anchor="start" dominant-baseline="central">a[9]</text>
+    <rect x="16" y="36" width="56" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="44.0" y="50.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">pa1</text>
+    <path d="M 72 50 L 101 50" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="16" y="120" width="56" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="44.0" y="134.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">pa2</text>
+    <path d="M 72 134 L 101 134" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="12" y="158" width="244" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="134" y="171" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">pa2 − pa1 = 9 − 0 = 9  （下标之差）</text>
+    <path d="M 12 196 L 256 196" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="134" y="216" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#333333" text-anchor="middle" dominant-baseline="central">② strlen 里的两个指针</text>
+    <rect x="104" y="232" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="246.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">H</text>
+    <rect x="104" y="260" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="274.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">e</text>
+    <rect x="104" y="288" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="302.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">l</text>
+    <rect x="104" y="316" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="330.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">l</text>
+    <rect x="104" y="344" width="60" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="358.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">o</text>
+    <rect x="104" y="372" width="60" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="134.0" y="386.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A1A1A" text-anchor="middle" dominant-baseline="central">\0</text>
+    <rect x="16" y="232" width="56" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="44.0" y="246.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">q</text>
+    <path d="M 72 246 L 101 246" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="192" y="372" width="56" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="220.0" y="386.0" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">s</text>
+    <path d="M 192 386 L 165 386" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="12" y="412" width="244" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="134" y="425" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#1F3864" text-anchor="middle" dominant-baseline="central">s − q = 5  （字符串长度）</text>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="360px" height="280px" viewBox="-0.5 -0.5 360 280" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-to-array-1&quot; name=&quot;Page-1&quot;&gt;7Ztbb6s4EIB/jaXueaiwzcU8AoGzLyut1Id9RsFJ0BLIEtKk++t3bEwSAkldnaTuHk4qVTC+EOabGcxkjGi0Pnyv083qjyrjBSJWdkB0hgjxfAv+C8FbK3Cw1wqWdZ61InwSvOT/ciVU45a7POPbXsemqoom3/SF86os+bzpydK6rvb9bouq6F91ky75QPAyT4uh9K88a1atlDnWSf47z5er7srYUi3rtOusBNtVmlX7MxGNEY3qqmrao/Uh4oXQXaeXdlxypfX4xWpeNjoDyHCAmuM1LXbqdlFMkI9RAC0WihkKY+RTFDuIOShwUOyhMJQSF/kz5CeiCRCzWMwsxzgohE5EDoZjKWFMHsCYViJnYbaURCgI5ShLXKzVVPPWqb/hB/iu4apZFyDAcLht6upvHlVFVYOkrEroGS7yorgQpUW+LOF0DnfLQR6+8rrJAWygGtZ5lonLhPtV3vCXTToX19yDFYOsrnZlxoXmLDF9VTbKNDHtztWXxOq8uzwitP2AXKkXLswPZxpXfL7zas2b+g26dK3WszIW5S12d74/2R61lWx1ZnedkaXK3JfHuU8WAQfKKMYNhOoYyKKqn0BBsxSRKFfqyRFxC4EJqzO48fA3AXKelosnaP1nJ6wcxE52fhZtur6drr40ejJEjQPxdw/Un8va1mGNB0z6uhnT3hmuczKgqkh+BhihxZKfK342pmx9wB/FQvpQmD1EMkKE2j9OxNEhQqZHxDFGxNUhQqdHhBkj4ukQsadHBGNjSJgOEmeCSGxjSHwdJO4EkXjGkGBLh4k3xfWWOSZYhwmbIBNqjolWksKfIBPXHBOtvEAX4SYFxTcHResFPkVOaCFn9j/IreA75lbIZW4FnyTvsLlHbgU7umzw9Ng4htm4umzI9Ngww2w8XTZ0emwwNgyH6cKxJwjHNgzH14XjTBCOZxYOsXThuFNcqhmGg3XheBOEQw3DIbpw2AThuIbhUF04/gTh+IbhaKUH7pqxSeDj+2MZm5kb24nV070Yn9bzy8KK7twxks6h5n78J5opAxKO5Nl+bleimGi5ku0+yJU0Mwb39KVZELNkNPvpRiwOkyvucqMkDSeUufZjf15z+6VrbIhoLNrdw3s8/WjHs+XV6iZeZoEoGRXqKdLtNp/fciuRpbaoT8JjS1cgSpT2hqo6U4YzooxOVvMibfLX/hcd05C6wp9VDvd9cpk+CY/0J9hWu3rO1ZjzgtHLaZzRcNhN06T1kjeDaSSs4y3r8dPKLWx+uZhrzsX8Xy527hvMvXgoecen1Efd7FYp6P19jVp6ZeCOqMYOAlGrzeAgGSv9TlAYIT+Qdd8wTIy01BqlbWOsXw/uIhbIgwQxT3ZWbweq+31/2E1I4o67+HFFqlvd+8CnJumvbbplzPmik44tbdw7FHxrJT9A6QV/2nQ13i1gUd39/PwsK/6lPQQYxbawEIAsDgByIEv/sUCt+EaqiclRQSRH+YhRFM66pll/24En5pm8VXjsE61Cc6MIAATsVAQGwBjEEhfYgi+aQir2epwihNgwINRgiZu4ZlCbGuLbzf0C3x67YaDgi+ar/sLQf0JY7lg2gT7oHYjSz08nvO+mXzydcOHDhH6mD9vaT/lEbO2CIAw+HIZqp5d4bvsi9opo7IngHLQbvIQbn2K59Hc2u+XSIhbAY72N6irODwPHuwH/6+4F0nkh+Pib9GBBiMfcvXtv+kF3h9PTLsR2SXnayknj/wA=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>输入结束后 p 已走到数组末尾</title>
+  <desc>for(p=a,i=0;i&lt;10;i++) scanf("%d",p++); 结束后 p==a+10，此时 while(p&lt;a+10) 条件为假，输出为空；必须先重置 p=a。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="180" y="14" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">② 输入结束后 p 已走到数组末尾</text>
+    <text x="180" y="34" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">for(p=a,i=0;i&lt;10;i++) scanf("%d",p++);</text>
+    <rect x="20" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="35.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="50" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="65.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">2</text>
+    <rect x="80" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="95.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">3</text>
+    <rect x="110" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="125.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">4</text>
+    <rect x="140" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="155.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">5</text>
+    <rect x="170" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="185.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">6</text>
+    <rect x="200" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="215.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">7</text>
+    <rect x="230" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="245.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">8</text>
+    <rect x="260" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="275.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">9</text>
+    <rect x="290" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="305.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">10</text>
+    <text x="35.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[0]</text>
+    <text x="65.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[1]</text>
+    <text x="95.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[2]</text>
+    <text x="125.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[3]</text>
+    <text x="155.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[4]</text>
+    <text x="185.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[5]</text>
+    <text x="215.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[6]</text>
+    <text x="245.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[7]</text>
+    <text x="275.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[8]</text>
+    <text x="305.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[9]</text>
+    <rect x="320" y="84" width="30" height="34" fill="#FFFF99" stroke="#D6E4F0" stroke-width="1" rx="2"/>
+    <text x="335.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a+10</text>
+    <rect x="16" y="48" width="40" height="24" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="36.0" y="60.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">a</text>
+    <path d="M 36 72 L 36 84" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="66" y="48" width="40" height="24" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="86.0" y="60.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">p</text>
+    <path d="M 86 72 Q 210 24 335 84" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="12" y="146" width="336" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1"/>
+    <text x="180.0" y="159.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">循环结束：p == a+10（已越过 a[9]）</text>
+    <rect x="12" y="178" width="336" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1"/>
+    <text x="180.0" y="191.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">while(p&lt;a+10) ... 条件为假，一次都不输出</text>
+    <text x="14" y="216" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="start" dominant-baseline="central">正确写法：p=a;  while(p&lt;a+10) printf("%d",*p++);</text>
+    <rect x="12" y="238" width="336" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="180.0" y="251.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">必须先重置 p=a，再 while(p&lt;a+10) 才能正确输出</text>
+  </g>
+</svg>

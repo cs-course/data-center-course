@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300px" height="430px" viewBox="-0.5 -0.5 300 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-concept-3-1&quot; name=&quot;Page-1&quot;&gt;7ZvNb6s4EMD/Gl/2sPIHH/YRCLx3edJKPewZgV+ClkBEaJPuX782GEKApm5FrXQDjap4bMYwP08G2wMgwf78o4oPu19lynOAYXoGZAMwdhkU/6XgtRXYyG0F2ypLWxG6CJ6yf7kSqvO2z1nKj1cN67LM6+xwLUzKouBJfSWLq6o8XTf7XebXvR7iLZ8InpI4n0r/ztJ610qpDS/ynzzb7rqeEVQ1+7hrrATHXZyWp4GIhIAEVVnW7bf9OeC5tF1nl/a86I3a/sIqXtQ6J+DpCUrHS5w/q9sFIQYMAc8SYhA6gDLguSCkwEOABiC0gRc2XyLgB4B5EjNCqkgDCVkpPdavnQ1rfhYd+rt6nzf1xD/WVfkPD8q8rISkKAvR0v+d5flIFOfZthDFRFwyF3L/hVd1Juh4qmKfpansxj/tspo/HeJE9nkSQ1HIqvK5SLm8fSjVl0WtxhciXVldJFLlrnuASXsIubKR6JifB2ZTRv7Byz2vq1fRpKuFfyriasjTrny6DCBMlWw3GDzdSInVmN32ui9YxRdFdp4y0aEMz1EoeN0/J2vKBUWEOtYnuJARFmuOC/siLJY2ls2DY3Edg1hsXSwBfHAsiJp0F0ebC3pwLhiZ9BdXmwt+dC6WZZAL1eZCHp2Liw1yYdpcrAfnQiA0yAVBHTBoGlyujTNnvgGvIRphq0gcjE04Annv8hhZ275hbX3CH5+9jJ6SrQkU15mBQheAgrS8ZVEmQXN8MyYuNsdEa9Vg9ZNL2QQUsjqKHpTO2iagaE3x742JJ//MMrEdc0y05vczK2GPR4UajPNas/soXKn04dcEFb25PVypYMtgqKcrFU0qjsFYz9ZYr8WEmYv1WGtKf/5Gyyw3Nid7lh8m5Fo622DOF627YK0p/usKabz7Ai2TlLQm/YeVktYe2ZdRIvpBiKfbN5dqeJF6MlHmQuNNgMJctDn6mi4nBisDTq01sIQ9Y4lOVvE8rrOX66ucM4/q4a8yEzc9gEHHv2v9vlin5Vg+VwlXJw4TZca6qPOurjqutrye6GqY9Tevh9FaMd7AiCBejuOMsgVB2ivIWyDpgg45o2xBkI75p3tIGPbn+PY1F/Xy/LhKuhiH7+LRv39o6B79IZmJhe50wLkLREJ3cc9L8vh4zJJ3nG+E7V6cTyga73rDTzsfdvD7yhZ0Pqo3QyCbPw6NmWH7ESVJYoPgUNolptKbuawO8CLA7K4x+0YJrIs8yI4TVgmBJlNW9bIkQOgC3weMSF4sBGyYhCwuQzaCV6nIvbCXHZohYUk9dNMMgA1gYsDBb5MQi6fc7eZYhLuNjaYqQ+NxNsKRE82uom2c0Irg/cdZek1sZtsGd7KlV9gI+sBPs3Q0G/jCT92BCzJ/8Dut3jDw5EfeX1tmwj1ZU0GBTP+B6H/yQsGnU6XQOACT2XWG+ZXVj/upKF5eSmkj+OXNHhL+Bw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>指针运算符 *（执行结果）</title>
+  <desc>y=*p 读到 x 的旧值 1，*p+=10 把 x 改成 11；结果 x=11、y=1，p 的内容仍是 0xFEBC。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="150" y="18" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">⑤ 执行完：x=11，y=1</text>
+    <text x="48" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBC</text>
+    <text x="48" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBD</text>
+    <text x="48" y="198.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC0</text>
+    <text x="48" y="226.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC1</text>
+    <text x="48" y="254.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC2</text>
+    <text x="48" y="282.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC3</text>
+    <text x="48" y="310.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC4</text>
+    <rect x="100" y="44" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">11</text>
+    <rect x="100" y="72" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="100" y="100" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="114.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="100" y="128" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="142.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="100" y="156" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="184" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="198.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">BC</text>
+    <rect x="100" y="212" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="226.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">FE</text>
+    <rect x="100" y="240" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="254.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">00</text>
+    <rect x="100" y="268" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="282.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">00</text>
+    <rect x="100" y="296" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="204" y="58.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">x</text>
+    <text x="204" y="114.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">y</text>
+    <text x="204" y="198.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">p</text>
+    <path d="M 178.0 46.0 Q 186.0 46.0 186.0 54.0 L 186.0 65.0 Q 186.0 72.0 191.0 72.0 Q 186.0 72.0 186.0 79.0 L 186.0 90.0 Q 186.0 98.0 178.0 98.0" fill="none" stroke="#888888" stroke-width="1.3"/>
+    <path d="M 178.0 102.0 Q 186.0 102.0 186.0 110.0 L 186.0 121.0 Q 186.0 128.0 191.0 128.0 Q 186.0 128.0 186.0 135.0 L 186.0 146.0 Q 186.0 154.0 178.0 154.0" fill="none" stroke="#888888" stroke-width="1.3"/>
+    <path d="M 178.0 186.0 Q 186.0 186.0 186.0 194.0 L 186.0 233.0 Q 186.0 240.0 191.0 240.0 Q 186.0 240.0 186.0 247.0 L 186.0 286.0 Q 186.0 294.0 178.0 294.0" fill="none" stroke="#888888" stroke-width="1.3"/>
+    <rect x="222" y="203.0" width="7" height="7" fill="#C0392B" stroke="#C0392B" stroke-width="1" rx="3"/>
+    <path d="M 225 206 C 262 206 292 176 292 128 C 292 78 246 58 182 58" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ptr)"/>
+    <text x="150" y="340" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">y=*p;   *p+=10;   （执行完毕）</text>
+    <text x="150" y="362" fill="#555555" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">结果：x = 11，y = 1，p 仍存 0xFEBC</text>
+    <rect x="8" y="384" width="284" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="150.0" y="398.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">y=*p 得 1；*p+=10 把 x 改成 11</text>
+  </g>
+</svg>

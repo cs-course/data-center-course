@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="260px" height="430px" viewBox="-0.5 -0.5 260 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-access&quot; name=&quot;Page-1&quot;&gt;7Vpdb5swFP01lraXyh9gzCMQ2F4mTerDnhG4CRrBFXGbdL9+djAJX1udNmGrBI0qODY23HPPgVwHkGh7+FKnj5tvIuclwDA/ALICGHs+VP818NIALvIaYF0XeQOhM3Bf/OIGNOetn4qc73odpRClLB77YCaqimeyh6V1Lfb9bg+i7M/6mK75CLjP0nKM/ihyuWlQ5sIz/pUX6007M4KmZZu2nQ2w26S52HcgEgMS1ULIZm97iHipY9fGpTkv+UPr6cJqXkmbE/D4BDPGc1o+mdsFMQW+C0IIYg+EIWCOjiNwQ3h3R4CruqgWF/gRCJjeYRQwV+8EK+ArxAEh0/sxA2EC/NgMo5FTHzWD6habqMiXNtSSH9R1hRu5LRWA1O5O1uInj0QpaoVUolI9w4eiLAdQWhbrSh1m6s64wsNnXstCkRiYhm2R53qacL8pJL9/TDM9515lrMJq8VTlXEcJ6uFFJU0aItIem4tE5ridHmDSbAo3oVQT80MnuoaLL1xsuaxfVBfTyu5MXry0Cd8C+3OeYcdpsE0nx9qESk1qr09jn9lXOyYBppOB2CUDBkyRN6aqH7KpoHZY7BKmIhYdtxG7qgUetwEHdBzz8LhdxPul7JxkbNhx8IgbCsfU0CtQ41hR8w8ZcceMoED/zcoIgnaUEOf9lLg2lBxd8miRV/e1kj/I67kafd3VTnxezJI3ZMmfsDUGb+NqdJGOlXQInU06nq100CKdAUsOmVE6bJGOlXQ8OJt0fFvp4EU6Q5a8GaWD4KIdG+1g6MymHYRsxUMW8QxoQmhO8eBFPFbiIWw+8ZCFEytOvPm+giJnqdhcRA6BdLaSDXLtBcPzQcG5QxKv8kDXrM+Pkz8+gbpBbVra8jQ2wRtHqhMJdyISLVbzMpXFc/8qp8JjZvguCnXTJyJ8Z1TZxHeDIO/EU51xc2K3Zj0Yi9HXx5JpveZyNNaRs9PN29FoVT9wwg9QufZu+cIwIphO1a5deqM3BsuSwjUdcBXELJl0QBqxOEze8LqWEEad2zoi7rHkjv1wygXaItq7KGJX98OsTHe7InvFEiNIfPz/WSLxekww/DY39Flfdsi/mRP6b1ws1GuDELDVB7DIv4nycqkNLJHQKUe80XcoPH8BIsEJnTbEFY2dBPYir89P66wNPP4/Xub77kjYuDiBydQjjF2BMMvqRLPYrtQUEhD7IFByo2b5PWzW4VdAfzFXH5puNWOnRag4AWEEWHQcQH3IUaMOCODU2jzRwzCkBa0OA1fPppWdqLH1+w78pDzl8wcQNb7gyXtxxgxfRgljU2v2bYa8U+bq8PzjkMbDz7+wIfFv&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>数组元素在内存中的连续存放与首地址</title>
+  <desc>a[0] 到 a[3] 连续存放，4B (int) 为相邻元素地址步长，数组名 a 即首地址</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="130" y="20" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">数组 a[0..3] 在内存中连续存放</text>
+    <rect x="100" y="42" width="60" height="60" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="130.0" y="72.0" fill="#BBBBBB" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central">⋮</text>
+    <rect x="100" y="102" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="119" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">a[0]</text>
+    <rect x="100" y="136" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="153" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">a[1]</text>
+    <rect x="100" y="170" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="187" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">a[2]</text>
+    <rect x="100" y="204" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="221" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">a[3]</text>
+    <rect x="100" y="238" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="272" width="60" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="306" width="60" height="60" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="130.0" y="336.0" fill="#BBBBBB" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central">⋮</text>
+    <path d="M 94 102 C 86 102 80 118 80 136 C 80 154 72 170 72 170 C 72 170 80 186 80 204 C 80 222 86 238 94 238" fill="none" stroke="#BBBBBB" stroke-width="1.4"/>
+    <text x="42" y="170" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">4B</text>
+    <rect x="12" y="56" width="50" height="26" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="37.0" y="69.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">a</text>
+    <path d="M 37 82 L 97 119" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <text x="37" y="46" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">数组名</text>
+    <rect x="12" y="384" width="236" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="130.0" y="398.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">a 即首地址 &amp;a[0]，元素连续、步长 4B (int)</text>
+  </g>
+</svg>

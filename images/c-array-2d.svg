@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300px" height="400px" viewBox="-0.5 -0.5 300 400" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-2d&quot; name=&quot;Page-1&quot;&gt;7VvLjqM4FP0aSz29aPnBwyyBkO7NSCPVYtYoOAk9BErEVUnN148NJrzc1U46oOohVFTYxy9yj+/BhhtAwsP5axk/7/8sEpYBDJMzICuAsetB8V8CbzVgI7cGdmWa1BBqgaf0X6ZA1W73kibs2KvIiyLj6XMf3BR5zja8h8VlWZz61bZF1h/1Od6xEfC0ibMx+nea8H2NUhu2+DeW7vbNyAiqkkPcVFbAcR8nxakDkQiQsCwKXqcO55Bl0naNXep26x+UXi6sZDk3aYDHDVQfr3H2or7uGdgBBvZKnIg8iT4jG3gh8KlMUAdQWyb8FfAEYoGAynQk8BBQD0Qii2RaFoVVHVs2oVQWBWvgRSByQRBUrS79OMAT9SNlKP7WWJ+zs7jUYM8PmQCQSB55WfzDwiIrSoHkRS5qBts0ywZQnKW7XGQ34ssygQevrOSp4NVXBYc0SeQwwWmfcvb0HG/kmCcxiQVWFi95wqThoOy+yLmamYg0eXWRSOWb4QEm9SFwZV0xMDt3DK7o+cqKA+Plm6iiSukXNVXeGh9ogFM79TC1amzfmXbNHIvVbN9d+m4nhEioOaGfH8RkfqjZENTTYgUonICzjG35rIyhNaGOdQNjCPcII5aGMBdOw5dlypfgSLjiomlCzs95cibiyTbmSXxIpY4W8KESVxpIdRRZ6i6bwkb23qPQm4hCx4xCLNnyf6e7WIeZoDpuci48uG9ZjoYbm07DjWvCDTxvt8nHv1VZGofx5d8ttPQ5cXX+clms3psUakIKtUeE9E2jM16Hqy4twlJhdYw4FCWwOga2dgzEqrG9uRve4Dw9mhxq5DgE/zpHnul+ANb7ger00T3IvqcHUQMXmmp1h6CxruEl6xqCdE5hQ8iEFg89lG2obAji2aQN4Su1DS1d2/RuNJm4EWNxsxYtbhaeVdyMHilQ+hC3kbgRZz5xs68UN7x4cdO60WTi5hiLm7NocXOdWcXN6EEBxQ9xG4mbC+cTN2oqbuixK33HjSYTN89Y3OiSxU3/7m4yccNGTwu8xwO3kbhhaM0mbhhdKW6L35bq3WgqcTMLkajELV60uFmzvkwwi0x4bEs14kbme51gFo/QEbfFb0v1bjSZuJnFIVQASwZBcR2GWJ74Mq6utfyRxyUfYEl83FcGRe+xOXztPDZdd+JqDNNgJctinr72L1pnLTXCX0UqbNAGXvVX1I73ZWDwY/FSbphq1Y2xG3SEPfyzroSxdoyPuqrou3xxM0YNwxJc4Ifyg6VAwzZE76P7Hp4wnARb2OD5t+1M5IvutcyhB3M/YE6/RJyMOfoIBbomFAi7eMZYILOYBoCd+CCNIhcjab0Y+a6CnWUF2EQLiY8wAfyUfiaXzPc/PuP/R5jy7aF4cEAygVgbqDzRSoZA85XMnXYDa7x21trdwMqJrDXscSHbx+VmJIYGS8oJtwYDyizLkDB6B8KMn3sMvPEXf00QrWUr2XwUtC5jalfAt0HkAc+WXdXhtoEvxsXBb+DhU95jkTX0cEu3PBLifhcPF9n2ZzD1Qrj9LRGJ/gM=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>二维数组在内存中的行优先排布</title>
+  <desc>x[2][3] 六个元素按行连续存放，地址每次 +2B，右侧为对应下标</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="150" y="20" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">x[2][3] 在内存中按行优先连续存放</text>
+    <text x="12" y="44" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="start" dominant-baseline="central" font-weight="bold">地址</text>
+    <text x="116" y="44" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="start" dominant-baseline="central" font-weight="bold">值</text>
+    <text x="184" y="44" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="start" dominant-baseline="central" font-weight="bold">元素下标</text>
+    <text x="141" y="56" fill="#BBBBBB" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">⋮</text>
+    <text x="10" y="84.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffd0</text>
+    <rect x="112" y="68" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="84.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">85</text>
+    <text x="180" y="84.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[0][0]</text>
+    <text x="10" y="118.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffd2</text>
+    <rect x="112" y="102" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="118.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">91</text>
+    <text x="180" y="118.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[0][1]</text>
+    <text x="10" y="152.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffd4</text>
+    <rect x="112" y="136" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="152.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">88</text>
+    <text x="180" y="152.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[0][2]</text>
+    <text x="10" y="186.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffd6</text>
+    <rect x="112" y="170" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="186.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">82</text>
+    <text x="180" y="186.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[1][0]</text>
+    <text x="10" y="220.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffd8</text>
+    <rect x="112" y="204" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="220.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">95</text>
+    <text x="180" y="220.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[1][1]</text>
+    <text x="10" y="254.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">0xffda</text>
+    <rect x="112" y="238" width="58" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="141.0" y="254.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">88</text>
+    <text x="180" y="254.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central">x[1][2]</text>
+    <path d="M 8 169.0 L 292 169.0" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="242" y="118.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">第 0 行</text>
+    <text x="242" y="220.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">第 1 行</text>
+    <text x="141" y="282" fill="#BBBBBB" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">⋮</text>
+    <text x="150" y="312" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">&amp;x[i][j] = 0xffd0 + (i*3 + j)*2</text>
+    <rect x="10" y="344" width="280" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="150.0" y="358.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">x[i][j] 行优先连续存放，地址步长为 2B</text>
+  </g>
+</svg>

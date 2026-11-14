@@ -116,7 +116,7 @@ char a[5];
 
 <div>
 
-![w:300](images/c-pointer-concept.png)
+![w:270](images/c-pointer-concept.svg)
 
 </div>
 
@@ -150,7 +150,7 @@ char a[5];
 
 <div>
 
-![w:300](images/c-pointer-concept-1.png)
+![w:270](images/c-pointer-concept-1.svg)
 
 </div>
 
@@ -211,7 +211,7 @@ printf("%x", *p);
 
 <div>
 
-![w:300](images/c-pointer-concept-2.png)
+![w:270](images/c-pointer-concept-2.svg)
 
 </div>
 
@@ -219,7 +219,16 @@ printf("%x", *p);
 
 ---
 
-## 指针与 AI：为什么它更不可替代
+## 指针与 AI：失效的三层
+
+- AI 生成的 C 代码大多**能编译、能跑通**；说它「最常在指针与内存处出错」，其实是把**最容易测出来的**误当成了**最常发生的**。
+- **第一层 · 编译器能判**：野指针、越界、内存泄漏——有反例、有 Sanitizer，模型越强，这类错误越少。
+- **第二层 · 只有你能判**：没崩，却不是你要的；裁判是 SPEC，而 SPEC 写不全模块之间那些没说出口的约定。
+- **第三层 · 连裁判都没有**：通过了你写下的每条检查，却绕开了检查背后的意图；真实世界会主动去找 SPEC 没覆盖的组合。
+
+---
+
+## 抽象泄漏：为什么判断权不可替代
 
 <style scoped>
   li {
@@ -227,13 +236,12 @@ printf("%x", *p);
   }
 </style>
 
-- AI 能生成大量 C 代码，但**最常在指针与内存处出错**：段错误、野指针、越界、内存泄漏。
-- 这正是[《中国计算机学会通讯》（CCCF）​2026 年第 9 期](https://www.ccf.org.cn/Focus/2026-09-24/933992.shtml)：所谓"**抽象泄漏**"：高层工具隐藏了复杂性，却不会消灭它；一旦泄漏，必须有人能打开黑盒、解释机理、定位问题。
-- 指针训练需建立的，不是"手写 `*` 和 `&`"的肌肉记忆，而是三种底层判断力：
+- [《中国计算机学会通讯》（CCCF）​2026 年第 9 期](https://www.ccf.org.cn/Focus/2026-09-24/933992.shtml) 把这类现象称为「**抽象泄漏**」：高层工具隐藏了复杂性，却不会消灭它；一旦泄漏，必须有人能打开黑盒、解释机理、定位问题——**漏掉的不是语法，是判断权**。
+- 所以要练的不是手写 `*` 和 `&` 的肌肉记忆，而是三种底层判断力：
   - **地址 / 状态直觉**：每个变量在哪、指针指向哪、移动一步后指向哪；
   - **默认怀疑**：拿到任意指针先问"它合法吗？会越界吗？为空吗？"；
   - **调试判断力**：段错误来了，如何缩小范围、插桩、用 `assert` 定位。
-- 这些能力，AI 无法替你获得，也无法替你为结果负责。
+- 这些能力，AI 无法替你获得，也无法替你为结果负责——**责任主体不能转移，判断权就不能外包**。
 
 ---
 
@@ -263,7 +271,7 @@ printf("x=%hd,y=%hd", x, y);
 
 <div>
 
-![w:270](images/c-pointer-concept-3.png)
+![w:270](images/c-pointer-concept-3.svg)
 
 </div>
 
@@ -305,7 +313,7 @@ x=11, y=1
 
 <div>
 
-![w:270](images/c-pointer-concept-3-1.png)
+![w:270](images/c-pointer-concept-3-1.svg)
 
 </div>
 
@@ -341,7 +349,7 @@ printf("%x", b);        // 后面谈移动也与之有关
 
 <div>
 
-![w:270](images/c-pointer-type.png)
+![w:270](images/c-pointer-type.svg)
 
 </div>
 
@@ -439,7 +447,7 @@ int x[5] = {1, 3, 5, 7, 9}, *px = &x[1];
 
 <div>
 
-![w:300](images/c-pointer-op.png)
+![w:290](images/c-pointer-op.svg)
 
 </div>
 
@@ -475,7 +483,7 @@ printf("%x", b);        // AB
 
 <div>
 
-![w:300](images/c-pointer-type.png)
+![w:270](images/c-pointer-type.svg)
 
 </div>
 
@@ -512,7 +520,7 @@ p = (char *)&x;
 
 例：一个长整型数占4个字节，从低字节开始依次取出每个字节的高4位和低4位并以十六进制字符形式显示。
 
-![h:350](images/c-pointer-example.png)
+![w:620](images/c-pointer-example.svg)
 
 ---
 
@@ -713,7 +721,7 @@ int a[10], *p = a;
 
 <div>
 
-![w:350](images/c-pointer-to-array.png)
+![w:340](images/c-pointer-to-array.svg)
 
 </div>
 
@@ -824,7 +832,7 @@ while(p < a + 10)        // 错误！p已指向数组末尾
 
 <div>
 
-![w:350](images/c-pointer-to-array-1.png)
+![w:340](images/c-pointer-to-array-1.svg)
 
 </div>
 
@@ -879,7 +887,7 @@ int strlen(char s[]) {  // 等价于 int strlen(char *s)
 
 </div> <div>
 
-![w:220](images/c-pointer-sub.png)
+![w:250](images/c-pointer-sub.svg)
 
 </div> </div>
 
@@ -1808,7 +1816,7 @@ int main() {
 
 <div>
 
-![w:350](images/c-pointer-strsort.png)
+![w:350](images/c-pointer-strsort.svg)
 
 **注意**：
 
@@ -2710,7 +2718,7 @@ int (*p[2])(int);  // p是含有2个指针元素的数组
                    // 每个指针指向有一个整型参数，返回值为整型的函数
 ```
 
-![h:100](images/c-pointer-complex.png)
+![w:660](images/c-pointer-complex.svg)
 
 ---
 

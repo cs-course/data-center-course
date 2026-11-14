@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="320px" height="420px" viewBox="-0.5 -0.5 320 420" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-op&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>指针移动示例：px 指向 x[1]</title>
+  <desc>int x[5]={1,3,5,7,9}, *px=&amp;x[1]。数组 5 格与 px 初始指向 x[1]；下方 6 个表达式均从 px=&amp;x[1] 独立执行并给出结果。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="160" y="14" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">① 指针移动示例</text>
+    <text x="160" y="33" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">int x[5]={1,3,5,7,9},  *px = &amp;x[1];</text>
+    <rect x="100" y="46" width="56" height="26" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="128.0" y="59.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">px</text>
+    <path d="M 128 72 L 109 88" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="30" y="88" width="52" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="56.0" y="105.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="82" y="88" width="52" height="34" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="108.0" y="105.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">3</text>
+    <rect x="134" y="88" width="52" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="160.0" y="105.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">5</text>
+    <rect x="186" y="88" width="52" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="212.0" y="105.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">7</text>
+    <rect x="238" y="88" width="52" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="264.0" y="105.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">9</text>
+    <text x="56.0" y="134" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x[0]</text>
+    <text x="108.0" y="134" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x[1]</text>
+    <text x="160.0" y="134" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x[2]</text>
+    <text x="212.0" y="134" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x[3]</text>
+    <text x="264.0" y="134" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x[4]</text>
+    <text x="12" y="152" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">各行均从 px=&amp;x[1] 独立执行：</text>
+    <text x="16" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">表达式</text>
+    <text x="140" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">结果</text>
+    <text x="170" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">px / 值的变化</text>
+    <path d="M 12 178 L 308 178" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="194" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">++*px</text>
+    <text x="140" y="194" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">4</text>
+    <text x="170" y="194" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">x[1] 自增为 4</text>
+    <path d="M 12 208 L 308 208" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="224" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">*++px</text>
+    <text x="140" y="224" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <text x="170" y="224" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">px 先移到 x[2]</text>
+    <path d="M 12 238 L 308 238" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="254" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">*(--px)</text>
+    <text x="140" y="254" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">1</text>
+    <text x="170" y="254" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">px 先回到 x[0]</text>
+    <path d="M 12 268 L 308 268" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="284" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">*(px--)</text>
+    <text x="140" y="284" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">3</text>
+    <text x="170" y="284" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">取值 3，px 回到 x[0]</text>
+    <path d="M 12 298 L 308 298" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="314" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">*px++</text>
+    <text x="140" y="314" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">3</text>
+    <text x="170" y="314" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">取值 3，px 移到 x[2]</text>
+    <path d="M 12 328 L 308 328" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="344" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central">px+=2,*px</text>
+    <text x="140" y="344" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <text x="170" y="344" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">px 移到 x[3]，取 7</text>
+    <path d="M 12 358 L 308 358" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <rect x="12" y="372" width="296" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="160.0" y="385.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">前置先移指针 · 后置先取值 · 均从 &amp;x[1] 独立执行</text>
+  </g>
+</svg>

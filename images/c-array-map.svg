@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="260px" height="360px" viewBox="-0.5 -0.5 260 360" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-map&quot; name=&quot;Page-1&quot;&gt;7VpNb6M6FP013rzFyB9gzBInZGbzpCd1MWsU3AQNwRVxm/T9+rHBDp9tyUzCTCVoFcGxrw333GObawBZHc5fy+Rp/69MRQ4wTM+ArAHGQQj1rwFea8BHQQ3syiytIdQAD9n/woLWbvecpeLYqaikzFX21AW3sijEVnWwpCzlqVvtUebdXp+SnRgAD9skH6Lfs1Tta5T5sMG/iWy3dz0jaEsOiatsgeM+SeWpBZEYkFUpparPDueVyI3vnF9qu80bpZcbK0WhphjgoYFt4yXJn+3jgtgDnAEGQRwAzgH3QExB6APuEOa5OtwURRCwoKrDzHlc1TR1fMBYZaV/NyCMrXm0roooYL450Zfa0JivQWRv56henfeVOOtb5Xt1yDWA9OlRlfKHWMlclhopZKFr8scsz3tQkme7Ql9u9cMKjfMXUapM8xrZgkOWpqYbftpnSjw8JVvT50kHscZK+VykwjgOmuZloWxkIuKu7U0ie+26B5jUh8atd3XH4txyuKXnq5AHocpXXcWWsi82VF6dBhxwakIPe16N7Vth52IssdG+u7TdBIQ+sTExHh9kUnz0Gep6asyXLfLaPGlHrapjQKougdXRc703dDWKzN9VdF9LykXQlhRvSAmlQ0bIDRjxpjAC/yQl/sdq+AMUBRMpwr9PkT+FouNWlgL4ejD013cY4nLxqG43wNErKL2aqIB2iaIjA5xbMdx6fKNTqEKLmvpqQhDPJqfgGjmhRU60xxSbUU9sCleu1iKoFk3hfIIKrxGUJmtRVI+qORWF4CRJhYuk+pK6rJVnkBRCV2kqXDTV1ZQOrDk1hae/1op09+YyUBRpZNJJDRNvkqedxavjUuIyR9i6b+irlif8EU84rBR5orKX7l2Oucf28J/M9ENfqAgHGQbvsgJ3rRzlc7kV1rCdTuq1hQjpN0ZZvzGVlDuhBo1VpF2efhqPZOHxHR59dkMeGbwjj96SZpo0o/l0tjwT8ienhteAxSZvG66q3K5v8rYM/vXzm3fHrC3qEkfHchrBvWY3Oo25EES8SrQvzL3N3PjC5G7UBcuE1kxo3pd+lv1X5zNGP2zqhrPZpCQIwpB/gq2te74EDBcsZERr9E5bW2hSGsRMpdBubkaRMa/iqtqv1P+k2sH0ql3OsT3NZitTt6CLNoCvAFtZc46qk7Uxx/CTRAS+5Wsg7oWAfuUb294k9D4xgOHsC88N3tDN6MJzTWNvAzu+N/ZJue27vp93mXlVijuUETfefUgYuwFh6JoPFlofI+gmKtm+802CXg/pUjq2HtL/3DTxj8edhlmjYStdWxB+Ig2/N6pvCKPer4RHf64lGI9p2oXDb2paXzafy9SzdfPNEYl/Ag==&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>一维数组下标映射到连续内存条</title>
+  <desc>score[0..29] 共 30 个 int 元素连续占 120B，低地址到高地址</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="130" y="20" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">一维数组下标映射到连续内存条</text>
+    <rect x="100" y="40" width="66" height="30" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="70" width="66" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="133.0" y="86.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">0</text>
+    <text x="176" y="86" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">score[0]</text>
+    <rect x="100" y="102" width="66" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="133.0" y="118.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">1</text>
+    <text x="176" y="118" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">score[1]</text>
+    <rect x="100" y="192" width="66" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="133.0" y="208.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">28</text>
+    <text x="176" y="208" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">score[28]</text>
+    <rect x="100" y="224" width="66" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="133.0" y="240.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">29</text>
+    <text x="176" y="240" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="start" dominant-baseline="central" font-weight="bold">score[29]</text>
+    <path d="M 98 146 L 133 168 L 168 146" fill="none" stroke="#BBBBBB" stroke-width="1.4"/>
+    <path d="M 98 158 L 133 180 L 168 158" fill="none" stroke="#BBBBBB" stroke-width="1.4"/>
+    <rect x="100" y="256" width="66" height="30" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="76" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central" font-weight="bold">低地址</text>
+    <text x="10" y="240" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="start" dominant-baseline="central" font-weight="bold">高地址</text>
+    <path d="M 94 40 C 86 40 80 70 80 100 C 80 130 72 163 72 163 C 72 163 80 196 80 226 C 80 256 86 286 94 286" fill="none" stroke="#BBBBBB" stroke-width="1.4"/>
+    <text x="40" y="163" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">120B</text>
+    <text x="130" y="300" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">30 个 int 元素连续存放，共占 120B</text>
+    <rect x="12" y="318" width="236" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="130.0" y="332.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">下标 i 映射到首地址 + i*4B（共 120B）</text>
+  </g>
+</svg>

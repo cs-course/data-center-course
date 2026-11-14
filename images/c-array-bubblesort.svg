@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="420px" height="430px" viewBox="-0.5 -0.5 420 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-bubblesort&quot; name=&quot;Page-1&quot;&gt;7Vvbbqs4FP0avx75wsU8AiFnXkYaqQ/zjIKboENCRdymna8fGwzhdlqX5phGMo0qs3yDvbZ37KVsQOLj688qfTr8XWasABhmr4BsAMZ+AMV/Cbw1gIv8BthXedZA6Ao85P8xBap+++c8Y+dBQ16WBc+fhuCuPJ3Yjg+wtKrKy7DZY1kMZ31K92wCPOzSYor+m2f80KDUhVf8L5bvD+3MCKqaY9o2VsD5kGblpQeRBJC4KkvelI6vMSuk7Vq7NP22v6ntHqxiJ67TAU87qDFe0uJZvS5IXEA9EIiCByICQiQLNKkRF0QhoFuQbEEUA0rrxhtA/UlVoApBKKtCB4R1Gyo+BCQ+iAQCQRIACoHwkISCaAPCBCQOiCigUT07luM0puNvLR+cvYqHjw78WAgAieKZV+UvFpdFWQnkVJ5Ey+gxL4oRlBb5/iRud+L1mcCjF1bxXDAdqopjnmVymuhyyDl7eEp3cs6LcGuBVeXzKWPSlFAOX5648lXktvfqIZG6b6cHmDSXwJW9xcTstUeBIuwnK4+MV2+iSVsLfyjveRsDl6s3Oq3PHXqe2LpdqhbAvhv86iOioNxk3mWInsv4IIzlB0NR22ez8wEPhFsQOHVVIn0AQ1I39equqPWbuPaAUHqMdDsxCp40vb1HFOyR34k/eANvcPCMN5A/5Q2Ojje0cbtH0NBUc8bscdenSVgqrq8Jp0C+pbxGtvc/tj0K5d+n4sEXWfKcmRU7pYjQr1Pk6lBELUMuXYshT4ch1zLU7aPMU+TrUORbipCD16KI2jinRVFnBPMUBTbQ6VHkrxboELSRTosjglaLdAitsOveiisI7o0k11mNJD1tpQZYNhKcepyxUxZKzUrap0jP53z33sFWriZIAhx1Na1ChZX5prbqGcOdMUaLVaxIef4yfNA5C6kZ/ilz8d7XnQEdnoAo+TE6f57L52rHVLe+aDUaqTt1/nYknlZ7xicj1ZR1L67H4qflDqwvd2B9uQNbuWP+II1calLvQI7dZS6iiUJzkde128wliodRjjy7zVykeRglybf7zGWyh1GWqA13i4QPoyQFNt4tkj5MkoSh+c3dfR6r0XrhDlvxY6H4YZQlq368q36gILiV/DEz1O30j8//3IPo6x9IX/+AVv+YP1hj3zGpf+j94MNuNic0BZ652OvaveYS/cMoR57dai7SP4ySZPWPhfqHUZZW0D/ukqSx/mGUpBX0j/skyV8v3hGrfyzTP4ySZPWPhfqHUZZur3+oE+tZHO75CMvS86FmFn2gjkT19c20EILcW2khM0PdTgshmlpIAISJaa100ECmLImDt6yCdUqULxFZgCBCtdaxkSrHNX+qzXKSuVFUNhNIEIMwanslvYwqX2or1FFtKHwvteq7qyb4nSjxxeM3IbO/EsF/KkfK0V/9t4rQeOttZw/gGy9xtnBgedk/rXZjw4/lK8NniOF3KplRq0kbwQfh+haEuXpLuxYxZUpjp296gIbyo7MAOz3z46Udj2RUV6ZE0kSA4kmh2CdDKgXUVhYNYhUxmozL758g6WjsELaEes6itT9KkCTUnVv9lN5k9Yvba8Ju87VyzXomyf8=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>冒泡排序三轮比较与交换</title>
+  <desc>数组 10 8 5 7 经三轮冒泡：比较 3/2/1 次，交换 3/2/0 次，最终 5 7 8 10 有序</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="210" y="20" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">冒泡排序（升序）：大元素逐轮下沉</text>
+    <text x="16" y="52" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central" font-weight="bold">第 1 轮：比较 3 次，交换 3 次</text>
+    <rect x="16" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="36.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <rect x="58" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="78.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="100" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="120.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="142" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="162.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="228" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="248.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="270" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="290.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="312" y="64" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="332.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="354" y="64" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="374.0" y="83.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <path d="M 186 83.0 L 223 83.0" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <text x="16" y="168" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central" font-weight="bold">第 2 轮：比较 2 次，交换 2 次</text>
+    <rect x="16" y="180" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="36.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="58" y="180" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="78.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="100" y="180" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="120.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="142" y="180" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="162.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <rect x="228" y="180" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="248.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="270" y="180" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="290.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="312" y="180" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="332.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="354" y="180" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="374.0" y="199.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <path d="M 186 199.0 L 223 199.0" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <text x="16" y="284" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="start" dominant-baseline="central" font-weight="bold">第 3 轮：比较 1 次，交换 0 次</text>
+    <rect x="16" y="296" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="36.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="58" y="296" width="40" height="38" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="78.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="100" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="120.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="142" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="162.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <rect x="228" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="248.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <rect x="270" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="290.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <rect x="312" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="332.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">8</text>
+    <rect x="354" y="296" width="40" height="38" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="374.0" y="315.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="17" text-anchor="middle" dominant-baseline="central" font-weight="bold">10</text>
+    <path d="M 186 315.0 L 224 315.0" fill="none" stroke="#BBBBBB" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="16" y="348" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">黄色 = 已就位（沉到末尾）的最大元素</text>
+    <rect x="12" y="380" width="396" height="30" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="210.0" y="395.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">每轮把最大元素换到末尾，3 轮后 5 7 8 10 有序</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="320px" height="230px" viewBox="-0.5 -0.5 320 230" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-as-parameter&quot; name=&quot;Page-1&quot;&gt;7Vpdk5s2FP01emxGEkKIR8CQvnSmM/vQ9JExis0UWztYu/b21/cKBOYriZJ47XRs746Rjj4unHOvJCQjL9mdPtb58/YPVcgKUVyckLdClAYhhm8DvLWAT4IW2NRl0ULkDDyV/0oL2nabl7KQh1FFrVSly+cxuFb7vVzrEZbXtTqOq31W1djqc76RM+BpnVdz9K+y0NsWFT4+47/LcrPtLBNsS3Z5V9kCh21eqOMA8lLkJbVSuk3tTomsDHcdL2277Aul/Y3Vcq9dGtB5A9vHa1692MdFKUehj2KM0gDFMRIMpT4CEcUKpQzFKxQmBolSFKYmITIkoFWG4gSFUVMnQVHTHLKmOXQoUJShNEQRpHnTYdKYgMQKiY4f/daRruUJ7jDe6l0FAIHkQdfqH5moStWA7NUeasafy6qaQHlVbvaQXcMzSsDjV1nrEuSMbMGuLApjJj5uSy2fnvO1sXkE3wWsVi/7Qhq+sOle7bV1SOJ1eXuTxOY784h67QdwSyoYlqcBz1aVj1LtpK7foIotFR8sA2+T/PHscB5mLbYdOFvnWbn18U3f9dkNIGE9YdkrPDevmCkOVpEf+8iHctzUwiiAR8dQBEax11789sLbS9DUaupS/BuifKMbvkzWdA3uFdGhjU9NWQbff4O1xtgv7yp07hok8wRnF3CN6/oGc/GNTzNJxtQskTdQaygMMLWKUpElMxWhhCcijbMJ1/zbYdlz767396rkiZFI/lwiny4oJH5eId9FoS+FzhV18n8JnSBSvikUfx+huNMw2wCymKxIBpLJfRGZRY2hp8oPh3L9tbEPWE2wF9K4L+mWMNSyN6dqyAWec9FhtaxyXb6Ob3SJIGvhT1XCc/dKcDYSIpgwfFAv9VraNsMlzaQbNtaTEDruR+f1RupZP41Y/TM76Rc89BsSTxm9iIBcXEtA8RBwJGBwGQHJ9RQMXRSkF53lkuazJCtuPuNZjmKHWS4yf+87y7GJIsxplmPs52c5gl00Mi8O+P7W8pRNFvOE4w+OK5ALLOYJcdHGe8SPoLeLH+oaP+QO34XpbePHaafEf8QPma3KrxhAzDWA6P0FEAhz2why2q3gjwgiobhdBHHXCPLuMIJCcdsIctqGCB4R1CtwiwgSrhHE7vAlyOe3jaDQfR/oQgGU0Ywvb5WveMoyPOLetM/r9ZT66T76leejyRtRONeLhu+0cU7xjx5bD06r7SF1X6c/pP7KkTT883xnpO33K9pTbpEsHFWaLgUS6dLZOCSgPmmOxBmKRINwA5rKK9TN9v+LQcDlBOe7/Ws2JoRsYUygQlxkUIDs+VcX7Ubk+acrXvof&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>数组作函数参数传递的是首地址</title>
+  <desc>实参 a[5]={2,3,5,6,7}，形参 X 与 Y[] 通过首地址访问同一段内存</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="160" y="18" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">数组名作实参：传的是首地址</text>
+    <text x="160" y="38" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">实参 a[5] = { 2, 3, 5, 6, 7 }  -&gt;  形参 X / Y[]</text>
+    <rect x="38" y="50" width="52" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="64.0" y="64.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">X</text>
+    <rect x="230" y="50" width="56" height="28" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="258.0" y="64.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">Y[]</text>
+    <path d="M 64 78 L 41 112" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <path d="M 242 78 L 69 112" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <path d="M 272 78 L 169 112" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="24" y="114" width="56" height="44" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="52.0" y="136.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="20" text-anchor="middle" dominant-baseline="central" font-weight="bold">2</text>
+    <text x="52" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">a[0]</text>
+    <rect x="82" y="114" width="56" height="44" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="110.0" y="136.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="20" text-anchor="middle" dominant-baseline="central" font-weight="bold">3</text>
+    <text x="110" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">a[1]</text>
+    <rect x="140" y="114" width="56" height="44" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="168.0" y="136.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="20" text-anchor="middle" dominant-baseline="central" font-weight="bold">5</text>
+    <text x="168" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">a[2]</text>
+    <rect x="198" y="114" width="56" height="44" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="226.0" y="136.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="20" text-anchor="middle" dominant-baseline="central" font-weight="bold">6</text>
+    <text x="226" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">a[3]</text>
+    <rect x="256" y="114" width="56" height="44" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="284.0" y="136.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="20" text-anchor="middle" dominant-baseline="central" font-weight="bold">7</text>
+    <text x="284" y="170" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">a[4]</text>
+    <rect x="12" y="190" width="296" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="160.0" y="204.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">数组作参数传首地址 &amp;a[0]，形参与实参共用内存</text>
+  </g>
+</svg>

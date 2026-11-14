@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300px" height="430px" viewBox="-0.5 -0.5 300 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-concept&quot; name=&quot;Page-1&quot;&gt;7ZvPk5sgFMf/mnftIPgDj2p0e+lpDz07kY1OjWRcd5PtX1+ImMRIO2QnoU2jm8nAFwR9n8cQ4C2QZL17avNN+Y0XrAaMih2QBWAchEh8S+GjFzwn6IVVWxW95ByF5+onU6K6b/VWFex1VLHjvO6qzVhc8qZhy26k5W3Lt+NqL7we97rJV2wiPC/zeqp+r4qu7FXqoaP+lVWrcujZQapknQ+VlfBa5gXfnkgkBZK0nHd9ar1LWC1tN9ilvy/7TenhwVrWdCY34OkNqo33vH5TrwsphtCBSDSFIPWAZhBSSEOggUynLsQUaCqLwgTifZ1wAVQkMogTCCNZOfIh9HV1RIMLiImu5Unl3mjdx0CiYzvx2HHZrWshOCL52rX8B0t4zVuhNLwRNeOXqq7PpLyuVo3ILsWLM6HH76ztKsE4UgXrqihkN/G2rDr2vMmXss+tcGihtfytKZg0IpLN86ZTXuqQIa8e0lH5oXvApL+EriwtOma7E+MrVE+Mr1nXfogqQyn6okygBg4d8tujG+LBTOWJCw7+livPXx3aPjqHSCj/0PsKMfEVtMtSgfzf5+ROuTgZob77CS7kDIur4xLeCItrjGXx4FgC3yIWzxRLgh4ci0NtDhffmIvz4FywY3O8BMZc8KNzcV2LXKgxF/LoXAJskUtozMV9cC4EIYtcHGS0pDpHMjaNzngntE7BCEtl4grDCUWQby6vM1t7GltH8u8ivpevXc5+I7sTJIGvQUKvgMSxjiTZX3eGJMD2kOAZiQmSQ94GEzIzMWIyGNsGE3dmYsTE8+0x8eYZ3ogJtTjF+/M4MWFymHhtMAlmJkZMXItzPJ2ZGDHxLc7x4czEiElob47HRqv43R3trPzhPPLA8mJCgWty8uXfaKsFG63rc/BiBN5iZmV07nIzWNgUljPDmsLSH8bcDBYxhYVnWBpY2hOam8FyTWGRGZYGlvbY5mawPFNY7gxrCkt/lnMzWEa7Cq8lb7v+oWMZITd8lmXeygcQLD3Jcnj/uwhfuwq+83A1QpDNgDWzmAJIfYiyYyBjFO0VJCMXUw+iBcijQuSo4EeZDyClQCOgWEU40kQXvehLnYaQBiB+1MTxPowxBRqrmEfRh2gnzqQo68Sy8b4o9PYJ8bmHU3U8dRpvf13FaTxs1Wns75BkOPMz7Wp84aduhka2l/fn7fLc9H93qU7HxDQbv3jQrr5SN9s90QcXIznWjgHIfwhSVoHMOxkLTUWlIdB1GP/5qCD5TyKVPx2D4eDzUaxdbOr3by4fxSJ7jJnfl5384wFJfwE=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>变量与地址</title>
+  <desc>short x 占 0xFEBC~0xFEBD 两个连续单元，char a[5] 占 0xFEC0~0xFEC4 五个连续单元；变量名代表首地址。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="150" y="18" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">① 变量与地址：首地址即变量地址</text>
+    <text x="48" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBC</text>
+    <text x="48" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBD</text>
+    <text x="48" y="198.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC0</text>
+    <text x="48" y="226.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC1</text>
+    <text x="48" y="254.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC2</text>
+    <text x="48" y="282.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC3</text>
+    <text x="48" y="310.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC4</text>
+    <rect x="100" y="44" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="72" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="100" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="128" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="156" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="184" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="212" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="240" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="268" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="296" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="204" y="58.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">x</text>
+    <text x="204" y="198.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">a[0]</text>
+    <text x="204" y="226.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">a[1]</text>
+    <text x="204" y="254.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">a[2]</text>
+    <text x="204" y="282.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">a[3]</text>
+    <text x="204" y="310.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">a[4]</text>
+    <text x="150" y="340" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">short x;    char a[5];</text>
+    <text x="150" y="362" fill="#555555" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">每个格子 1 字节，变量按类型占连续单元</text>
+    <rect x="8" y="384" width="284" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="150.0" y="398.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">变量名即首地址：x→0xFEBC，a→0xFEC0</text>
+  </g>
+</svg>

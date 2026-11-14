@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300px" height="430px" viewBox="-0.5 -0.5 300 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-type&quot; name=&quot;Page-1&quot;&gt;7ZtNj6M2GMc/jS97qPwGmCMQ2F4qVZpDzwi8CSqBiDCTTD997WACidlZZzZxN4WMNMJ//ALPz+bxKyDR9vi1SXebP+qclwDD/AjICmDs+VD8l8J7JzjI64R1U+SdhAbhpfiHK1GlW78WOd9fRGzrumyL3aWY1VXFs/ZCS5umPlxG+1aXl6Xu0jXXhJcsLXX1ryJvN53KHDjov/NivelLRlDd2aZ9ZCXsN2leH0YSiQGJmrpuu6vtMeKltF1vly5d8p275wdreNWaJMB6ApXHW1q+qtcFMQY+AoEjZBBTEDIQBqeLELBO8QFjIHYBiwDzQOwDHyvFF4oPYg+ESMaPHeDHgIXq9dv33qYtP4oHCDftthQCEpf7tqn/5lFd1o1QqroSMcNvRVleSWlZrCsRzMQrcKGHb7xpC0ErUDe2RZ7LYsLDpmj5yy7NZJkHUTWF1tSvVc6lOaDMvq5aVd8Q6cPqIZEK98UDTLqf0JXNRMH8ODKjMvpXXm9527yLKP1d+JuqAaoJsD58GCoUZkrbjCpTX3NSVYfX57wHzOJCkZ6mTkyow2MSh9ETcKI6F5QQ5tJPcCFXWOgUF/9BWKgxltXMsXiuRSyOKZYIzhwLYjabi2vMBc2cC0Y224tnzAXPnQulFrkwYy5k7lw8bJGLb8yFzpwLgdAiFwTNwER6b+zSPFMGHBEbwxHWSsTP9zWSQL69/F3Z2/nA3uaMbx+/XPWTqYbFcyewsDtgQWZYgnDB4mF7WLAZFkIXLOewDS6Gg32EFy6oN7gNLkaj/bsyiU6/n2ISyD+7TBzXHhNnYWLEhFl09+7CxITJ2QHbYOItTIyYUIt+ni1MjJi4Fn28vzAxYuLb8/HYaFR/fKKZlg/WJ88sbybkUZOVMPdBUy/YaIy/QwsloxWYh2EyGvPv8ILJaCLzYZiIfTcEiY/DKTd0vjNkL9OnTdajwL+EjzpX7t5HQTKBzNOJeXcARhdgPw2MIMcesBsmDnh+tblsRJBXeSD3p0kDlel+X2QffSV1bP1uNKzspxtrZApn4nPTaw0v07Z4u3zQKQupEv6sC/HeIxbO9ZIaPC9B99ns69cm4yrleI/adWYO+3FmbdqseatldgJ3fn0zlu7C8mOWBLFPsxx27nw/szuytD9RsQpilkwOwNyIxWHy639I2SUfrI/NEGET1Q3f4TtqNIkh6sUXGekZuv/YoF/52eVxhK/b0uQ2UkQe1a80mt74IjlBuYeYuXJbMIZysYnQIIyeYRvjXQcCGjCKbQIj0HRYHXbMGAgdEIpUkJ7CDghWwPfkDRYAhmfPz3Gt8kOLO7sdmkP/O4dGjGZIsk3anDwanrtH07r6ll0aIWYuDWsubX7OTGdl2ZtR09lHzZuhxZtNArTszuxvt0hw4k67s5Ub0wQ+3ehsYicG7rV7L50Rs5mRiWOA2uk/cSE+nSE5NcIY+IE6VyiPE7ogiECAZLMMEpVKfmf904UHgv4QYhBMtOGYyEyY3ocdErsyTeD8P44g3nH0OLl2NL0Qe3vrF8HhWGs3lTOcDSbxvw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>为什么指针有类型</title>
+  <desc>0xFEBC 起连续 4 字节存 CD AB 34 12（小端 int 值 0x1234ABCD）；int* p1 与 char* p2 都指向 0xFEBC，*p1 读 4 字节，*p2 只读 1 字节。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="150" y="18" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">⑥ 为什么指针有类型</text>
+    <text x="48" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBC</text>
+    <text x="48" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBD</text>
+    <text x="48" y="198.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC0</text>
+    <text x="48" y="226.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC1</text>
+    <text x="48" y="254.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC2</text>
+    <text x="48" y="282.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC3</text>
+    <text x="48" y="310.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC4</text>
+    <rect x="100" y="44" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0xCD</text>
+    <rect x="100" y="72" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0xAB</text>
+    <rect x="100" y="100" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="114.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0x34</text>
+    <rect x="100" y="128" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="142.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0x12</text>
+    <rect x="100" y="156" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="184" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="212" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="240" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="268" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="296" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="204" y="58.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">x</text>
+    <text x="204" y="198.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">p1</text>
+    <text x="204" y="310.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">p2</text>
+    <rect x="222" y="203.0" width="7" height="7" fill="#C0392B" stroke="#C0392B" stroke-width="1" rx="3"/>
+    <rect x="222" y="315.0" width="7" height="7" fill="#C0392B" stroke="#C0392B" stroke-width="1" rx="3"/>
+    <path d="M 225 206 C 258 206 268 170 268 120 C 268 76 232 54 182 54" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ptr)"/>
+    <path d="M 225 318 C 276 318 292 250 292 160 C 292 88 240 62 182 62" fill="none" stroke="#C0392B" stroke-width="2.2" marker-end="url(#ptr)"/>
+    <rect x="8" y="326" width="138" height="52" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1" rx="4"/>
+    <text x="77" y="338" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">int* p1</text>
+    <text x="77" y="352" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">*p1 → 0x1234ABCD</text>
+    <text x="77" y="366" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">p1+1 走 4 字节</text>
+    <rect x="154" y="326" width="138" height="52" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1" rx="4"/>
+    <text x="223" y="338" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">char* p2</text>
+    <text x="223" y="352" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">*p2 → 0xCD</text>
+    <text x="223" y="366" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">p2+1 走 1 字节</text>
+    <rect x="8" y="384" width="284" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="150.0" y="398.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">指针类型决定一次读写几个字节、+1 走几步</text>
+  </g>
+</svg>

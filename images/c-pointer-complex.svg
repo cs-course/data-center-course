@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="520px" height="130px" viewBox="-0.5 -0.5 520 130" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-complex&quot; name=&quot;Page-1&quot;&gt;7VlNc5swEP01mkl66AiJD+kIGNJLTzn0zBjVMMXIQ0js9Nd3BQKDIRNo4tKWYI9HetpFRm+fJFaI+vvTXREdkq8yFhkiOD4hukGEOBzDrwKea8AynBrYFWlcQ8YZuE9/Cg1qv91jGouHnmEpZVamhz64lXkutmUPi4pCHvtm32XW7/UQ7cQAuN9G2RD9lsZlUqPMwmf8i0h3SdOzgXXLPmqMNfCQRLE8diAaIOoXUpZ1aX/yRabGrhmX2i98obX9Y4XIyykOZOig7/EUZY/6cVFgIeYgb4MCG3ELeVgVmK/AgCNOEGOdJrD0EDOVl0u1MWeIBZUXNNkoYMh1VGsQIs+v3B3ETeQZVV9gZqkCxAmvENdEvPYK1c21F9djWD43xJTiBE/hJeU+A8CA4kNZyB/Cl5ksAMllDpbe9zTLLqAoS3c5VLcwDgJw70kUZQqUu7phn8ax6sY7Jmkp7g/RVvV5hPgGrJCPeSzUmGJ1e5mXOmgN2tT1nzR0vekeEVpfgOuBh47FqcOFZu5OyL0oi2cwaVrxZx1GWkekqR/PUWk1sZd0IrIJv0gLYdfe+xwrUNDhMh46dEropNBE8M2nA7I8gqzN7Q0gt+2z/tXUsdepM0LKbPN3qBtyZ46QR69FnjlN90Tpz8X/AFnkmmTZF1yZeIQrx74OVdYUqg5Q1fMsTJHDufiSwP5Ajg11h9sujTCOfnUNOEcqWtU1fwZsmZkeHfM57DFo2ZP4o+Tt/NlzpGasXWoYL6k1ZwpXpNIabFZAa261X4EvrbRmjk2W69MaxkuJjc0RG1m72Ji5pNj45HePvr66y9zFS8iH9Jq1/s9Lz8BztEdXrj1isyW1ZxjTyGoV1nkZv0gFrF5zQOVimiNzNGeuXHPUIotqjk5e8ELESEdhuEqjrF1nQN9iOpuVL7FWrjOTLpowMaxpZDHkhSrprNY2D/HgQ2ctfYvpbFqy5D0pCkloh6MUbezADHFPRco/KrYDEem6NcKXqz7X3fP3p0U+pMvkY1Kz34EvZ1pysk7+v5Kj1Kc6vjLHlXmoikbjWW1Bld1wU1olY1gnK6OljOvjhtr78girPXp6YSL4v06Z3i/7zfnIZG42b99vnM2hej79rNo6R8g0+AU=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>int (*p[2])(int); 声明拆解</title>
+  <desc>由内向外读：p 是数组、有 2 个元素、元素是指针、指向函数、函数参数是 int、返回 int。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="260" y="12" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">函数指针数组声明拆解（由内向外读）</text>
+    <text x="260" y="34" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="18" text-anchor="middle" dominant-baseline="central" font-weight="bold">int (*p[2])(int);</text>
+    <text x="54.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">①</text>
+    <rect x="16" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="54.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">p 是数组</text>
+    <text x="138.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">②</text>
+    <rect x="100" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">2 个元素</text>
+    <text x="222.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">③</text>
+    <rect x="184" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="222.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">元素是指针</text>
+    <text x="306.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">④</text>
+    <rect x="268" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="306.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">指向函数</text>
+    <text x="390.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">⑤</text>
+    <rect x="352" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="390.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">参数 int</text>
+    <text x="474.0" y="50" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">⑥</text>
+    <rect x="436" y="56" width="76" height="32" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="474.0" y="72.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">返回 int</text>
+    <rect x="12" y="96" width="496" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="260.0" y="109.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">p[2] 是数组，p[0]/p[1] 各指向一个 int (int) 函数（返回 int）</text>
+  </g>
+</svg>

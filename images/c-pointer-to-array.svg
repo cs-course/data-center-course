@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="360px" height="280px" viewBox="-0.5 -0.5 360 280" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-to-array&quot; name=&quot;Page-1&quot;&gt;7Zxdb6M4FIZ/jaXduVjhT+xLyMfszUor9WKvUXATNCREhDbp/vq1wSQQ6IzTJvHMOmnVwrExcB6/cHxwAHiyPnwtk+3qryKVOUBBegB4ChAKRaD+asNbY6AwbAzLMksbEzwZnrJ/pTGa7ZYvWSp3vYpVUeRVtu0bF8VmIxdVz5aUZbHvV3su8v5et8lSDgxPiyQfWv/J0mrVWDkNTvY/ZbZctXuGgSlZJ21lY9itkrTYd0x4BvCkLIqqWVofJjLXvmv90mw3f6f0eGCl3FQ2G6DhBqaN1yR/MacLZggICCLVVABmDAgKYrUQgjgGnIAZBVz94tpCdDW1IKK6iICYAy60JQoBn9YL09pC9OZxCGYcRKpxXhcpY2Q8U7217q7kQR1bvKrWuTJAtbiryuKbnBR5USrLptiomvFzludnpiTPlhu1ulBnJ5U9fpVllSmQkSlYZ2mqdxPvV1kln7bJQu9zr3qtspXFyyaV2lOBbr7YVKYrQtyum4OEZr3dPUC4+Si7cafasTx0PGx4fJXFWlblm6rSlgZ/mM5h1EHa9f2pr2FibKtOP2s7VWK69/LY9qkHqAXTCcY7BLbpEJkqUrsBNFaKpMoy0T0DBV+2+r+uogrbM/8lQHbAwUj/XAPcfckRG3JwwKTvmzHvdXB1yShXTerPAKMqCerPBc62B3wpFtSHwskQyQgRTD5PhNoQQf4Roc6IMBsi2D8i3BmR0IYI8Y8IhM6QcBsk1EMkxBkSYYOEeYgkdIYEBjZMQh/jLXdMoA0T7iET7I6JVYpBeMiEuWNiNcpvr3BeQRHuoFgN4HXSpcm5/PS5FXjF3Ao6z63Ak+UHbK6RW4HUlg30jw11zIbZskH+seGO2YS2bLB/bCB0DIfbwiEewiGO4QhbONRDOKFbOCiwhcN8DNUcw4G2cEIP4WDHcJAtHO4hHOYYDraFIzyEIxzDsUoPXDVjM0dzNh/N2EzZjMyDnu/19km5aF2PzlBQJ+kc7O7hP7JMGaB4JM/2/5YShshKSoTdSEqWGYNramkazfi4ltiEz+L5O3L5zgQzOMeckds+XmP9iWh8iGjsancN9YT2VzuZLt+d3SQ3aaQnfGr35Mluly2+JyudpQ6wQPGxpJ3eiYz3hq7qOIOOOKO1lTJPquy1f6BjHjJ7+LtoJtm1kumTCFG/gV3xUi6k2aY73fO8GTp6OWybqZJyKatBMzWs4ynb8bPKLWwfEmPuJCYeEutqg7Ozm1J4vEtdKjN2fn+jg6auJzUc2M3hHs7SVqsBiCc3iD5y+VxdL/ZAFyj18jxfPxAhY4EIutlsa+tcRTY24rrj41jqaMpVnw5lAzZiJEjE10Bj/dUIHgJBfoEQnt1SRsNnGQyOKulGQrJKXXz5TY+3st89FBJ2qCTyUNKnMrT3VRK1U9LWUyUh6lBJ7OOhnpjUX9pTC1PAg0fM1yEoyF1jPsvUBkvW2kU3Cf4+OFS+c/apj+k4H/EeQrNKX7SkHmFflxK9581K2CbZMw/1g90JiAQPAX0s2ruvgAi0zNP6KKDzUO+uAkKPx72XX/FQnxcdeTyP2W3S6QTbxebNGzFi/R4NFZirEa+O1hkQQltirF+uYerMtIVP6joCCDU85mOVhy/UmOukrohOkWNQD66Ffs8GCk5JkDPzOyO6n++CfNOxwflTgE7uvtuN2gdcn7wgq9XTy16a5P/pjTl49h8=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>数组元素的三种等价表示</title>
+  <desc>a[i] 与 *(a+i)、*(p+i) 等价；&amp;a[i]、a+i、p+i 是同一地址。数组名 a 是首地址，p=a 指向 a[0]。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="180" y="14" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">① 数组元素的三种等价表示</text>
+    <text x="180" y="34" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">int a[10],  *p = a;</text>
+    <rect x="20" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="35.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="50" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="65.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">2</text>
+    <rect x="80" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="95.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">3</text>
+    <rect x="110" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="125.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">4</text>
+    <rect x="140" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="155.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">5</text>
+    <rect x="170" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="185.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">6</text>
+    <rect x="200" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="215.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">7</text>
+    <rect x="230" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="245.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">8</text>
+    <rect x="260" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="275.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">9</text>
+    <rect x="290" y="84" width="30" height="34" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="305.0" y="101.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">10</text>
+    <text x="35.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[0]</text>
+    <text x="65.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[1]</text>
+    <text x="95.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[2]</text>
+    <text x="125.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[3]</text>
+    <text x="155.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[4]</text>
+    <text x="185.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[5]</text>
+    <text x="215.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[6]</text>
+    <text x="245.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[7]</text>
+    <text x="275.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[8]</text>
+    <text x="305.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a[9]</text>
+    <rect x="320" y="84" width="30" height="34" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="2"/>
+    <text x="335.0" y="130" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">a+10</text>
+    <rect x="16" y="48" width="40" height="24" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="36.0" y="60.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">a</text>
+    <path d="M 36 72 L 36 84" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="66" y="48" width="40" height="24" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="86.0" y="60.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">p</text>
+    <path d="M 86 72 Q 62 52 45 84" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <text x="14" y="150" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">元素值</text>
+    <rect x="14" y="156" width="96" height="30" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="62.0" y="171.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">a[i]</text>
+    <text x="122" y="171" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">⇔</text>
+    <rect x="134" y="156" width="96" height="30" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="182.0" y="171.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">*(a+i)</text>
+    <text x="242" y="171" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">⇔</text>
+    <rect x="254" y="156" width="96" height="30" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="302.0" y="171.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">*(p+i)</text>
+    <text x="14" y="204" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central" font-weight="bold">元素地址</text>
+    <rect x="14" y="210" width="96" height="30" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="62.0" y="225.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">&amp;a[i]</text>
+    <text x="122" y="225" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">=</text>
+    <rect x="134" y="210" width="96" height="30" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="182.0" y="225.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">a+i</text>
+    <text x="242" y="225" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="16" text-anchor="middle" dominant-baseline="central" font-weight="bold">=</text>
+    <rect x="254" y="210" width="96" height="30" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="302.0" y="225.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">p+i</text>
+    <rect x="12" y="250" width="336" height="24" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="180.0" y="262.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">下标写法与指针写法等价：a[i] ≡ *(a+i) ≡ *(p+i)</text>
+  </g>
+</svg>

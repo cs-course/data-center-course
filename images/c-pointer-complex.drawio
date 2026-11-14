@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+<diagram id="c-pointer-complex" name="Page-1">
+<mxGraphModel dx="790" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<root>
+<mxCell id="0"/>
+<mxCell id="1" parent="0"/>
+<mxCell id="2" parent="1" value="函数指针数组声明拆解（由内向外读）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1">
+<mxGeometry x="10.0" y="2.0" width="500" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="3" parent="1" value="int (*p[2])(int);" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="110.0" y="24.0" width="300" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="4" parent="1" value="①" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="16.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="5" parent="1" value="p 是数组" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="16" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="6" parent="1" value="②" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="100.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="7" parent="1" value="2 个元素" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="100" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="8" parent="1" value="③" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="184.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="9" parent="1" value="元素是指针" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="184" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="10" parent="1" value="④" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="268.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="11" parent="1" value="指向函数" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="268" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="12" parent="1" value="⑤" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="352.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="13" parent="1" value="参数 int" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="352" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="14" parent="1" value="⑥" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="436.0" y="40.0" width="76" height="20" as="geometry"/>
+</mxCell>
+<mxCell id="15" parent="1" value="返回 int" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#000000;fontSize=13;fontStyle=1;fontColor=#1F3864;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="436" y="56" width="76" height="32" as="geometry"/>
+</mxCell>
+<mxCell id="16" parent="1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F6FC;strokeColor=#D6E4F0;rounded=1;arcSize=12;fontSize=15;fontColor=#1A1A1A;align=center;verticalAlign=middle;" vertex="1">
+<mxGeometry x="12" y="96" width="496" height="26" as="geometry"/>
+</mxCell>
+<mxCell id="17" parent="1" value="p[2] 是数组，p[0]/p[1] 各指向一个 int (int) 函数（返回 int）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#1F3864;" vertex="1">
+<mxGeometry x="16.0" y="99.0" width="488" height="20" as="geometry"/>
+</mxCell>
+</root>
+</mxGraphModel>
+</diagram>
+</mxfile>

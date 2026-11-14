@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300px" height="430px" viewBox="-0.5 -0.5 300 430" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-concept-1&quot; name=&quot;Page-1&quot;&gt;7ZrLcpswFIaf5my66Ahxk5aAId10lUXXjFEMU4w8hMS4T18JhC9AM0rGUZIaMpORfl0535GF4IAdbdu7Ot3lP3nGSsAoa8FeAcY+ReK/FA694Fp+L2zqIusl6yTcF3+YElW7zVORsceLig3nZVPsLsU1ryq2bi60tK75/rLaAy8vR92lGzYR7tdpOVV/FVmT9ypx0Un/wYpNPoxsIVWyTYfKSnjM04zvzyQ7BjuqOW/61LaNWCltN9ilb5f8o/Q4sZpVjU4DPG2g+nhOyyd1uxBjoBYEogRB7AGJgPgQU6AYCIHYhSAGGkDsQEiBUIgTCCOh7LoGnUoT2ZISCBLZgCQyLboQHYl0b4vmMBi4Ya2YTZg321IIlkg+NjX/zSJe8looFa9EzfChKMuRlJbFphLZtbgfJvTwmdVNIdAFqmBbZJkcJtznRcPud+lajrkXfiq0mj9VGZO2QbJ7XjXK+Sx7yKtJWio/DA/Y7i+hKwOKgVl7ZlNF4I7xLWvqg6gylKLvyh3UeiBDfn/yLkyUlp951uBGqXLozbHvE3ORUNjnXcDWcQHUJrFA+vk5OVMuVmITz3kDF3uExZnjQt8Ji6ONZXXjWHzPIBZXF0uEbhyLRUwuF0+bi3XjXLBlcr342lzwrXNxHINciDYX+9a5+NggF6rNxblxLjZCBrlYSAfMdG+5tM2c9c5wnZMRpoq6a4IR5K3La2Rs9wVj6wN+/eFl9JDsTJj43gwTcgUmltZiWZj42BwTrTcKeGFyzJuAYi8LRQ/KYG0TULRO+J+NSSD/zDJxPXNMXONMEnFR+tWYEIO7vLesEx0mx63XBBN/YaLFxDG4yZOFiRYTz+AeTxcmWkyouT0ea53k2y/0duWFb5JHlq8m5Ds6X7+8d3rdgrWO9ocF0vijC3JMUtI67O8WSlqfxt6Nktbp/zHndaMmLUojNVvcJ7/tjjf+JcI0rsJtHJZh28hkYIZeCEALsQ1iCsQ6dNE2LlCRcbogmxUEYh4Iq4JgBdSHmAAJgOAhSifso3SIDMUJAlkv9CG0zuJ2CASe6P+8S2e+y8/vIHjqIG53XcVBXGzUQT7gbQVOvGT26XLlxU6CLmwv26f1emz6j330JJfEZl5k4EG7+pOnp7ld6gXNDVF203XpyYwo62uQaFippDODrOHLdvJXgsq1LZ6+5e9GBGH/A7ICgv6PmLw3f2208Hhtz+7Z86eU169tkT0FfXZlZ5GzdvwX&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>指针定义</title>
+  <desc>x=1、y=2 各占两个字节；指针变量 p 自己也要占 4 个存储单元，用来存放另一个变量的首地址。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="150" y="18" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">② 指针定义：p 也是变量</text>
+    <text x="48" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBC</text>
+    <text x="48" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEBD</text>
+    <text x="48" y="198.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC0</text>
+    <text x="48" y="226.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC1</text>
+    <text x="48" y="254.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC2</text>
+    <text x="48" y="282.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC3</text>
+    <text x="48" y="310.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">0xFEC4</text>
+    <rect x="100" y="44" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="58.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="100" y="72" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="86.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="100" y="100" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="114.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">2</text>
+    <rect x="100" y="128" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="138.0" y="142.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="100" y="156" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="184" width="76" height="28" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="212" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="240" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="268" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="100" y="296" width="76" height="28" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="204" y="58.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">x</text>
+    <text x="204" y="114.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">y</text>
+    <text x="204" y="198.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central" font-weight="bold">p</text>
+    <text x="150" y="340" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">short x=1, y=2, *p;</text>
+    <text x="150" y="362" fill="#555555" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">x、y 各占 2 字节；p 自己也要占 4 字节</text>
+    <rect x="8" y="384" width="284" height="28" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="150.0" y="398.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">p 也是变量：占 4 格，存 x 的首地址</text>
+  </g>
+</svg>

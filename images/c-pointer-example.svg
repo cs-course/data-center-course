@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="480px" height="230px" viewBox="-0.5 -0.5 480 230" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-pointer-example&quot; name=&quot;Page-1&quot;&gt;7ZpLc6M4EIB/jSqzc5iShBDiiHjMXLZqq3LYM2UUm1oMHkwSZw/721cC8TSTkWdskpTtuAK0pJbpT49WS8Dyt4evZbzb/FkkIgMYJgdgBQBjx4XyvxK8NAIbOY1gXaZJI0K94D79V2ihLrd+TBOxH2WsiiKr0t1YuCryXKyqkSwuy+J5nO2hyMa17uK1OBLcr+LsWPp3mlSbRsps2Mu/iXS9aWtGUKds4zazFuw3cVI8D0RWCCy/LIqqudsefJEp27V2acpFP0jtflgp8sqkAD4uoHU8xdmjfl0QYuAi4ElVEIQOcAnwmDLvJi4/1zIXMAgk1dAGXgBcB4QMMA8wWZQC5gLXUkksAFzpyIp83aqSmYhOY6i+qVXI8jwCLq8l8p5qc1UvLYNKHOQP5ptqm0kBkrf7qiz+EX6RFaWU5EUuc/KHNMsmojhL17l8XMlXFlLOn0RZpZKupxO2aZKoavjzJq3E/S5eqTqfZVOWsrJ4zBOhzAeV+iKvdPtEVvusfyTSz231AFvNR8q1jWXF4jAwu4b0VRRbUZUvMkubCr/oFqO7DGmfn/sGSKiWbQaNr21psW7z60533yzkjW4Z863EMmklmupBkVUCCA8IW8TjflC/MBx+VdORl8+7LvenVvQHwDTeKlMfOkN9CO4DzshTf+fgjK0lQROj4WCKZGyaOeMNaA3BSEv59eeIokyB9Wdia/KKrc35nkpFjkCjvkePiZAZIOT3gdgmQPzg6pE4cDEk1ASJx68eiUsWQ+KYILHI1SNBiC3GhJkwQbfJBBG8GBP3Nr2bEKHLze8ImiAZeMtnZBN4IYtm2VCfhXL5NWZj/3x5gyKLUXJRVoiOWFH3CNWsb0zPgAqZ9x6RTAIIA2QiTzwVg1DmyeL9Pl29tpxRfQhaLuZdShtxwNp6x6YaGMOeMUYrK0UWV+nT+IfOWUjX8FeRyvfuSDhjEgx/mSxA9sVjuRK61DAGMVE06X4Mj9VUcbkW1ZGaGlf30mYE8Y3g0PCITFebvw7xWBeyyVTZGVEahSTkeMnr79ljCJl4qM4XQZgZSrsmc/IAScb9EkE2F0G4UAABmUUQjuOEGKpVrI4FNQFTdUEfIP6Dzxn/6QN7bbABzuDD8FL8jAIOfUD7bdxE603cROTgse8x063YhXwPaogFXR+Wzg9/AyzOzaEYOQHuxCekv+hMTPQgdDmfkN0QDk3f9ZXfRDjVc0mERmGNO//uNmV1FBYYHLFRaOMuuLtNWYtiMQtjhC7wOHDV5jwBPFD78/XG7ScVhKLrqn7r5kr6HVt4gA96jzfEQI4dbu3Zv/sF2Dm3cLE77nM2nXHgURs9ObcDb3qio4EazuCdpTn8DsgGV022j5YsQtYo5AH/U0u4ESTJ8/ujOlDEoTqQYVOHuepURhj1KcDmObCDjxgpORtOhOCiPA1DJRR4EWDR3NkqG/BQSTCsOauuzIDnGZ2n6tU5wPOBR989e3xJ9hZZlL19Uvjy9RN2EeA+YD6p8zE1mnuhJs+lUsimbeODcb9on7fZotzp4juwEY7o/C5fQEMSwZHpVfm4XE173HQLcOFFzBhZF/scOss2vcz+rNnRknokhvUg7Si32fvRaO2pPHWo28eAOzJrfbVIc0Vtb3a50dlapmrivBsC6tO2XE38rfuuXrT19aQ20g4FtcfXzR/vZb64VGTeZMv69I3o6UlNOOcOktl13OlDiXzsT4U3QZL+aL0V/g8=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>逐字节拆解 long 为十六进制字符</title>
+  <desc>long x=0x1234ABCD 小端存为 CD AB 34 12；char* p 首指 CD，每字节拆高/低 4 位转十六进制字符，p++ 逐字节前进。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="240" y="14" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">① 用 char* 逐字节打印 long 的十六进制</text>
+    <text x="240" y="33" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">long x = 0x1234ABCD;     char *p = (char *)&amp;x;</text>
+    <rect x="88" y="46" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="88" y="70" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="110.0" y="82.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">CD</text>
+    <rect x="88" y="94" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="110.0" y="106.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">AB</text>
+    <rect x="88" y="118" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="110.0" y="130.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">34</text>
+    <rect x="88" y="142" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="110.0" y="154.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="14" text-anchor="middle" dominant-baseline="central">12</text>
+    <rect x="88" y="166" width="44" height="24" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <rect x="16" y="69" width="60" height="26" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1"/>
+    <text x="46.0" y="82.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">char *p</text>
+    <path d="M 76 82.0 L 87 82" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <path d="M 140 82 L 140 154" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <text x="146" y="118" fill="#C0392B" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="start" dominant-baseline="central">p++</text>
+    <text x="224" y="50" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central">字节 CD = 1100 1101</text>
+    <rect x="172" y="60" width="48" height="26" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="196.0" y="73.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">1100</text>
+    <rect x="224" y="60" width="48" height="26" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="248.0" y="73.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">1101</text>
+    <path d="M 196 86 L 195 112" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <path d="M 248 86 L 247 112" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <rect x="172" y="112" width="48" height="26" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="196.0" y="125.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">'C'</text>
+    <rect x="224" y="112" width="48" height="26" fill="#CCCCCC" stroke="#000000" stroke-width="1"/>
+    <text x="248.0" y="125.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">'D'</text>
+    <text x="292" y="66" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="start" dominant-baseline="central">高4位  (*p&gt;&gt;4)&amp;0x0f  → C</text>
+    <text x="292" y="92" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="start" dominant-baseline="central">低4位  (*p)&amp;0x0f      → D</text>
+    <text x="292" y="120" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="start" dominant-baseline="central">0~15 → "0123456789ABCDEF"[n]</text>
+    <text x="292" y="144" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="start" dominant-baseline="central">每字节得 2 个十六进制字符</text>
+    <text x="292" y="168" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="start" dominant-baseline="central">p++ 逐字节，4 轮共 8 个字符</text>
+    <rect x="12" y="200" width="456" height="24" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="240.0" y="212.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="12" text-anchor="middle" dominant-baseline="central" font-weight="bold">小端字节序 CD·AB·34·12；char* 逐字节读，拆高/低 4 位得十六进制字符</text>
+  </g>
+</svg>

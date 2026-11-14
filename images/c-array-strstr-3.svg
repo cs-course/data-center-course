@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="400px" height="190px" viewBox="-0.5 -0.5 400 190" content="&lt;mxfile&gt;&lt;diagram id=&quot;c-array-strstr-3&quot; name=&quot;Page-1&quot;&gt;7Vzfb6M4EP5rrL6t/AOMeQwk2X056aRUumcOvAk6EipCm/T++jPBJEBId7KXxepiGlUwtjHM58/M2KNBLNwevxbRy+aPPJEZojg5IjZHlHo+Vv8rwXstcIlXC9ZFmtQichGs0n+lFup269c0kftOxTLPszJ96QrjfLeTcdmRRUWRH7rVvudZt9eXaC2vBKs4yq6lf6VJuamlwsUX+TeZrjdNzwTrkm3UVNaC/SZK8kNLxBaIhUWel/XZ9hjKrNJdo5e63fJG6fnBCrkrIQ3odQN9j7coe9Wvuy8L9VMytKDIJ2hG0WKJghD5s+eT1EVCXTO08NDMQ0GghPRUwNEMVxXrdy3fGwWW8qh6CzblNlMCok5VB/k/MsyzvFCSXb5TNYPvaZb1RFGWrnfqMlbPK5U8eJNFmSpoZrpgmyZJ1U1w2KSlXL1EcdXnQY1DJSvy110iq3fH1e3zXakHF2HNtX5Ioq+b7hFl9aHkWkGqY3ls6Uxr+KvMt7Is3lWVppR+0XDr8c6b68Nl9DCP17JNa+Q0wyTSA3Z9vvcFU3WiYR2GmEEgjq4g6qpqSJkt9NpAKU0tT8cVqqoEn44bum/VI7Pq7y6870XFpR1MHHEFScOODiLO/0fEgSCCPwFpyAfA3Q9HjyRUDLBkEJIHkMSFQPL39EjiOaZIwiGIkImRxHNMksSDQBJPjyQ+N0USAUGETowkPjdJEt+aW8NGMBGmWEIwBBM2MZooQEzyhBBrcg3j4mBjRAEtBzhTI4qDjRKFWbNrGBduzIMnIBfenRpRuFEfnrjW9BrGRRjz4gnIjedTI4ow6scTz5peg7hQbMyTJyBX3psYURQgRokCcuaTCRKFGnPmKciZF1MjCjXqzFNiTa9hXFxjzjxsb9+fGlFco848bDd+iqaXZ8yZh+3Hk6ltyCtEjDLFbsnfwMU35s0DN+WntiuvEDHKFM8aX4O4MGLMnYftzJOpbc0rRIwyBeTPIzfEDyeL799Nlg9CUccgDzPm4jOQi0+mtmGvEDFJHgby8VefABT3DoLdH1XRw+jib7aDvfEvwohaUwASokeaL+8Ysxmz4d6AIL1WlMUYk5ljvUtQmN6oTHFtzDckTm9kqnAbfwQK1BuVKp6N/IZE6o1MFWHNL1Co3qhU8W30NyRWb1yqONgaYKBgvTGp4hAb/w2J1huZKtRGIYHC9UalCrMR4JB4vZGp4tgF/p+N4RuVPa4NC4cE8Y3MHpCn/2xX+Pt+vzPiEr8D8vxrgUzWNxfN5C6ZVamQKu1n0X6fxh9BqBQWYubT4FzSJD6iWoXX+mopwx1QRiMrZBaV6Vv3QYc0pHv4M0/Ve1/gwF4PD683Qe3z1yKWulk7F9IP70RID7AyKtayvLrVCbPzm8NgFA+HUXPqE2Lo+33F4zPJ7kaRuL2bCfbl18How2F8lLFBl3wZDqE75wtniTsTY9U+KuJmXqQ35smRXdzeYhCnwGxY/AGJfkDrDqdMZmH1azKZCRTM0WxxTny2Qm6gDMm5qv8UP+ncaMKv8p1R/KwKsS6MnnQbEaKFKufI51XGtNkc+V7TTy1xUECqOsJFYv575EwjSya481PrU/0pgbtDX1kuHvKZVZeXpHv1PHDJXMgW/wE=&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <title>strstr ③：T 右移 2 格</title>
+  <desc>strstr 暴力匹配第 2 轮：T 再右移一格对齐 S[2]，首字符 c 与 a 不同，本轮结束。</desc>
+  <defs>
+    <marker id="ptr" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 9 4 L 0 8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+  <g>
+    <text x="200" y="16" fill="#333333" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">strstr ③：T 右移 2 格</text>
+    <rect x="52" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="63.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="63.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="74" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="85.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="85.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="96" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="107.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">c</text>
+    <text x="107.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">2</text>
+    <rect x="118" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="129.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="129.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">3</text>
+    <rect x="140" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="151.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="151.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">4</text>
+    <rect x="162" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="173.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">c</text>
+    <text x="173.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">5</text>
+    <rect x="184" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="195.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="195.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">6</text>
+    <rect x="206" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="217.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="217.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">7</text>
+    <rect x="228" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="239.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">d</text>
+    <text x="239.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">8</text>
+    <rect x="250" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="261.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="261.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">9</text>
+    <rect x="272" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="283.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="283.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">10</text>
+    <rect x="294" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="305.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="305.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">11</text>
+    <rect x="316" y="48" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="327.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="327.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">12</text>
+    <rect x="338" y="48" width="22" height="24" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="349.0" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">\0</text>
+    <text x="349.0" y="38" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">13</text>
+    <text x="26" y="60.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">S</text>
+    <rect x="96" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="107.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="107.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">0</text>
+    <rect x="118" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="129.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="129.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">1</text>
+    <rect x="140" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="151.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">c</text>
+    <text x="151.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">2</text>
+    <rect x="162" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="173.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">a</text>
+    <text x="173.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">3</text>
+    <rect x="184" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="195.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">b</text>
+    <text x="195.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">4</text>
+    <rect x="206" y="112" width="22" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+    <text x="217.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central">d</text>
+    <text x="217.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">5</text>
+    <rect x="228" y="112" width="22" height="24" fill="#FFFF99" stroke="#000000" stroke-width="1"/>
+    <text x="239.0" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">\0</text>
+    <text x="239.0" y="150" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="11" text-anchor="middle" dominant-baseline="central">6</text>
+    <text x="26" y="124.0" fill="#1A1A1A" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="15" text-anchor="middle" dominant-baseline="central" font-weight="bold">T</text>
+    <path d="M 107.0 74 L 106.0 110" fill="none" stroke="#C0392B" stroke-width="1.8" marker-end="url(#ptr)"/>
+    <path d="M 99.0 101.0 L 115.0 83.0" fill="none" stroke="#C0392B" stroke-width="2"/>
+    <rect x="12" y="162" width="376" height="26" fill="#F2F6FC" stroke="#D6E4F0" stroke-width="1" rx="4"/>
+    <text x="200.0" y="175.0" fill="#1F3864" font-family="Helvetica, Arial, 'Microsoft YaHei', sans-serif" font-size="13" text-anchor="middle" dominant-baseline="central" font-weight="bold">第 2 轮：S[2]='c' ≠ T[0]='a'，首字符失配</text>
+  </g>
+</svg>
