@@ -1669,7 +1669,7 @@ int partition_v1(int a[], int left, int right) {
 
 ---
 
-![w:700](images/c-array-partition.svg)
+![w:1000](images/c-array-partition.svg)
 
 ---
 
