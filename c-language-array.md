@@ -1218,6 +1218,8 @@ int main(void) {
 - 十六进制串转换为整数(`htoi`)
 - 整数转换为十进制串(`itoa`)
 
+`itoa/htoi` 是非标准扩展，可移植 C 代码建议不依赖；`atoi` 是简化版，健壮解析建议改用 `strtol`；格式化场景首选 `printf/scanf`。
+
 ---
 
 ### 十进制串转换为整数(atoi)
