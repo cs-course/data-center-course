@@ -180,8 +180,65 @@ python tools/check_submission.py --pdf my-paper.pdf
 
 ## 下一步
 
-**本周**：组队定稿 → 注册 CMT → 想清楚一个问题
+**本周**：组队定稿 → 注册 CMT → 留下注册邮箱
 **12-04 前**：交 1 页骨架稿；12-13 前换正式版
 
 投稿入口 <https://cmt3.research.microsoft.com/HUSTDS2026/>
 写作包 <https://marp-public.pages.dev/files/hustds2026-latex-kit.zip>
+
+---
+
+## 两个入口：都做完，占位稿才交得进去
+
+<style scoped>
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.4rem;
+    align-items: center;
+    margin-top: 1.2rem;
+  }
+  .entry p, .entry li {
+    font-size: 26px;
+  }
+  .entry .lead-line {
+    color: #1a4d8f;
+    font-weight: 700;
+  }
+  .qrbox {
+    text-align: center;
+  }
+  .qrbox p {
+    font-size: 19px;
+    color: #555;
+    margin: 0.3rem 0 0;
+  }
+</style>
+
+<div class="entry">
+
+<div>
+
+**① 注册 CMT** —— 随时可注册，选 Author 身份
+
+<https://cmt3.research.microsoft.com/HUSTDS2026/>
+
+**② 交 CMT 注册邮箱** —— 扫码填，一人一份
+
+邮箱必须与注册 CMT 时用的**完全一致**（QQ 邮箱写全址）
+
+<p class="lead-line">11-27（第 13 周）前两项到位</p>
+
+<p>12-04 占位稿、12-13 全文，都从这一步开始</p>
+
+</div>
+
+<div class="qrbox">
+
+![w:300](images/hustds2026-email-form-qr.png)
+
+收集表不设截止，随到随填
+
+</div>
+
+</div>
