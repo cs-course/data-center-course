@@ -107,7 +107,7 @@ char a[5];
 - 变量的连续存储单元首地址称为**变量的地址**
 
 ```c
-&x, a <= => &a[0]
+&x, a == &a[0]
 ```
 
 - **思考**: 地址数据又是什么类型的变量?
@@ -630,8 +630,8 @@ void sum(int x, int y, int *p) {
 }
 
 // the caller
-int sum;
-sum(3, 4, &sum);
+int result;
+sum(3, 4, &result);
 ```
 
 ---
@@ -1015,7 +1015,7 @@ int main(void) {
     getBigNum(x, N);
     printf("输入加数：");
     getBigNum(y, N);
-    addBigNum(x, y, z); // z=x+y
+    addBigNum(z, x, y); // z=x+y
     putBigNum(z);
     putchar('\n');
     return 0;
@@ -1293,7 +1293,7 @@ p = "This is a book.";  // √, p是指针变量, 不提倡
 
 ```c
 void mystrcpy(char *t, const char *s) {
-    while( (*t=*s) != ˊ\0ˊ )
+    while( (*t=*s) != '\0' )
         t++,s++;
 }
 ```
@@ -1411,7 +1411,7 @@ const char *ps[2] = {"red", "green"}; // 只用不改
 int main()
 {
     int *p[N], a[SIZE];
-    int sum = 0, i;
+    int sum = 0, i, k;
     for(i = 0; i < N; i++) {  // p[i]指向各行首元素
          p[i] = &a[sum];  // a[0], a[1], ..., a[i*(i+1)/2]
          sum += i + 1;
@@ -2109,8 +2109,8 @@ int main() {
 ```c
 char *strstr(const char *s, const char *ms) {
     char *ps = s, *pt, *pc;
-    while(*ps! = '\0') {
-        for(pt = ms, pc = ps; *pt! = '\0' && *pt == *pc; pt++, pc++);
+    while(*ps != '\0') {
+        for(pt = ms, pc = ps; *pt != '\0' && *pt == *pc; pt++, pc++);
         if(*pt == '\0') return ps;
         ps++;
     }
