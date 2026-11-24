@@ -194,7 +194,7 @@ double distance(struct point *p1, struct point *p2) {
 #include<math.h>
 
 struct point{ // 点结构类型的声明
-    int x；
+    int x;
     int y;	
 };
 
@@ -303,9 +303,9 @@ double distance(struct point *, struct point *);
 int main(void) {	
     struct point a, b; // 声明点结构变量
     double d;
-    a = Point(0，0);
-    b = Point(2，3);
-    d = distance(&a，&b);
+    a = Point(0, 0);
+    b = Point(2, 3);
+    d = distance(&a, &b);
     printf("the distance is %f\n",d);
     return 0;
 }
@@ -538,6 +538,7 @@ struct {
 
 ```c
 #include<stdio.h>
+#include <string.h>
 #define N 10
 
 typedef struct {
@@ -721,7 +722,7 @@ union chl {
     char c;
     short h;
     long l;
-} v = {'9'};
+} u = {'9'};
 ```
 
 ```text

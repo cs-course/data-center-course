@@ -108,7 +108,7 @@ FILE *fopen(const char *filename, const char *mode);
 
 ```c
 FILE *fp;
-fp＝fopen("c:\\test.txt", "w");
+fp = fopen("c:\\test.txt", "w");
 ```
 
 </div>
@@ -404,7 +404,7 @@ int main(void) {
 int main(void) {    
     char ch;
 
-    if (freopen("d:\\a.txt", "r"，stdin)  == NULL) {
+    if (freopen("d:\\a.txt", "r", stdin)  == NULL) {
         printf("can't open the file!");
         return -1;
     }
@@ -601,7 +601,7 @@ int main(int argc,char *argv[]) {
 #include<stdlib.h>
 
 void data_write(char *);         /* 数据采集并存盘 */
-void data_cal(char *, float);    /* 从文件读入数据并进行计算 */ 
+void data_cal(char *);    /* 从文件读入数据并进行计算 */ 
 
 int main(void) {
     char a[20] = "d:\\goods.txt";
@@ -640,7 +640,7 @@ void data_write(char *filename) {
 ```c
 void data_cal(char *filename) {
     FILE *in;
-    char name[5];
+    char name[20];
     int number;
     float price;
 
